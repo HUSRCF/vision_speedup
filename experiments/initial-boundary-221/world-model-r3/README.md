@@ -1,0 +1,11 @@
+# Initial temporal block: move the existing gather after the residual
+
+The common baseline is frozen221, including its16 regular expanded temporal blocks. Only the candidate extends the initial512-channel block's already partitioned FFN boundary backwards to QKV, FP32 temporal attention and residual normalization. Spatial positions are independent; every position retains all16 time steps. Full5D GroupNorm and320↔512 Conv1d projections remain replicated.
+
+The original initial-FFN gather is deferred from the raw FFN output until the complete BasicTransformerBlock residual result. It is still one40MiB/rank gather, with no additional collective. The raw FFN output has valid owned rows only; it must not be gathered after the residual has been evaluated elsewhere. The CPU preflight explicitly checks this ordering, invalid rows, both ranks and repeated-use rejection. Two grouped QKV copies are included in GPU timings. Original outer shapes, JIT bodies, tile/K arithmetic and weight owners remain unchanged.
+
+Two strictly idle, locked GPUs0,1 completed six dynamic states and six alternating timing pairs. All18 outputs per rank were signed-zero bitwise identical; baseline restoration and RNG checks passed. The selected570 FP32 Linear,782 norm and192 Conv2d tensors were changed, zeroed and restored. Conv1d tensors are outside that mutation set. Median world-forward savings were2.127869/2.097145ms; all six pairs were faster on both ranks. The two ranks must not be added together.550 world forwards suggest roughly1.15–1.17s, before complete-process overhead. This is model evidence, not an official V2 score.
+
+The first attempt failed a host-side installation invariant before graph/numerical testing: replacing spatial.parent_run conflicted with frozen221's installation check. The qualified revision preserves that entry point and chains through temporal221.parent_raw instead. Its scripts and CPU preflight were frozen before GPU execution. The second waiter was cancelled before allocation when its pair became busy; r3 is the clean completed test.
+
+Use ADOPTED221_ROOT, CANONICAL_ROOT and the existing verified INIT_FFN_CACHE_DIR/TEMPORAL_BLOCK_CACHE_DIR as in the adjacent temporal221 model experiments. Production/default and official log/JSON remain adopted220 until full-workload validation.

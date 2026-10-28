@@ -28,6 +28,18 @@ def main():
     for name,digest in other.items():assert sha(variant/name)==digest,name
     for name,digest in json.loads((nonv2/'asset-sha256.json').read_text()).items():assert sha(variant/name)==digest,name
     accepted=json.loads((nonv2/'accepted-cases.json').read_text())
+    boundary_root=root/'experiments/initial-boundary-221/world-model-r3'
+    for name,digest in json.loads((boundary_root/'source-hashes.json').read_text()).items():assert sha(boundary_root/name)==digest,name
+    boundary_evidence=json.loads((root/'results/aggressive-20261028/initial-boundary-221/world-model-r3/summary.json').read_text())
+    assert boundary_evidence['clean'] and boundary_evidence['passed'] and boundary_evidence['ready_for_model']
+    assert boundary_evidence['baseline_source_count']==221 and not boundary_evidence['full_V2_process_or_video_quality_qualification']
+    for rank in boundary_evidence['ranks']:
+        assert len(rank['cases'])==6 and rank['RNG_unchanged'] and rank['baseline_restoration_bitwise']
+        assert all(e['signedzero_bits'] for case in rank['cases'] for e in case['errors'])
+        assert len(rank['pairs'])==6 and all(pair['saved_ms']>0 for pair in rank['pairs'])
+        ctl=rank['attention_launches'];assert ctl['captured']==1 and ctl['full5D_norm_and16_time_steps_preserved']
+        assert ctl['rows'][0]['grouped_copy_nodes']==2 and ctl['rows'][0]['additional_collectives']==0
+        assert ctl['rows'][0]['existing_gather_moved_after_residual']
     for row in cases:
         if row['case'] in accepted:assert row['process_wall_s']==accepted[row['case']]['process_wall_s']
     import importlib.util

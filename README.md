@@ -44,6 +44,8 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 使用两张卡，其余�
 
 [完整尝试的存储失败记录](results/aggressive-20261028/temporal-block-220/full-failed-r2/summary.json)与模型检查分开保留：该次未计分；两卡峰值显存74,192MiB、最高73／72°C。[空间norm的world模型验证](experiments/spatial-norm-221/world-model-r2)现已通过六状态逐位检查与六对交替计时：38个启动分片，两卡每次前向中位省 **0.488449／0.484352 ms**，约0.27秒／550次，属于小增量；尚无该增量的完整V2成绩。此前72项CPU布局和16项时间GroupNorm拒绝检查亦保留。
 
+[初始时间块边界扩展](experiments/initial-boundary-221/world-model-r3)在同一221基线上也通过六状态逐位检查与六对交替计时：将已有初始FFN汇合移到残差完成之后，覆盖其前方QKV、FP32时间attention及残差norm，不增加collective，保留完整5D GroupNorm与Conv1d投影。两卡world前向中位省 **2.127869／2.097145 ms**，六对均更快，含两次QKV回写；550次约1.15–1.17秒，仅为模型外推。此结果与空间norm尚未组合验证，也没有替换正式220成绩。
+
 首版把`init_attn`一并纳入后未通过原图finite校验；其原始FFN输出先汇合、随后才加残差，不能套用普通块边界。r2保留`init_attn`已采用220路径。模型检查完成后，外层复制重复日志曾因RAM盘满失败；完整GPU报告和原始日志已取回并核对SHA，再压缩仅已结束任务的重复证据。该归档失败单独记录，不掩饰为成功退出，也未改动GPU测量或正式材料。
 
 
