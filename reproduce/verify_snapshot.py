@@ -189,6 +189,21 @@ def main():
         assert len(rank['pairs'])==6 and all(pair['saved_ms']>0 for pair in rank['pairs'])
         ctl=rank['attention_launches'];assert ctl['captured']==16 and ctl['no_new_collectives']
         assert sum(row['grouped_copy_nodes'] for row in ctl['rows'])==54
+    pending=root/'experiments/initial-boundary-221/production222'
+    spec=importlib.util.spec_from_file_location('initial222_pending_frozen',pending/'production_sources.py')
+    frozen222=importlib.util.module_from_spec(spec);spec.loader.exec_module(frozen222)
+    files222,proof222=frozen222.production_sources(code)
+    manifest222=json.loads((pending/'production-sources.json').read_text());assert len(manifest222)==222
+    for name,digest in manifest222.items():
+        actual=hashlib.sha256(files222[name].encode()).hexdigest() if name in files222 else sha(code/name)
+        assert actual==digest,name
+    for name,digest in json.loads((pending/'guard-source-hashes.json').read_text()).items():assert sha(pending/name)==digest,name
+    assert proof222==json.loads((pending/'timing-proof.json').read_text())
+    failed=json.loads((root/'results/aggressive-20261028/initial-boundary-221/full-storage-failed-r1/summary.json').read_text())
+    assert failed['status']=='failed_not_scorable' and failed['source_and_timed_assets_SHA_verified']
+    assert failed['no_full_process_time_or_PSNR_claim'] and failed['historical_log_compression_not_executed']
+    guard=(pending/'wait_nccl_full209.py').read_text()
+    assert guard.index('free>24*2**20')<guard.index('holds=[torch.empty')
     norm_root=root/'experiments/spatial-norm-221/world-model-r2'
     for name,digest in json.loads((norm_root/'source-hashes.json').read_text()).items():assert sha(norm_root/name)==digest,name
     assert sha(norm_root/'scripts/spatial_norm221_mode.py')==sha(root/'experiments/spatial-norm-221/cpu-r1/spatial_norm221_mode.py')

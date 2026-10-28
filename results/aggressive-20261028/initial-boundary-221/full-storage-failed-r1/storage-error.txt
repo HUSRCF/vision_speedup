@@ -1,0 +1,31 @@
+WAIT_GPU_PAIR=0,1
+Traceback (most recent call last):
+  File "/dev/shm/team07-initial222-full-_3k6z4dy/diagnostic/wait_nccl_full209.py", line 77, in main
+    telemetry.write(json.dumps(dict(time_utc=datetime.now(timezone.utc).isoformat(),gpus=rows,contexts={u:sorted(p) for u,p in contexts.items()}))+'\n');telemetry.flush()
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/dev/shm/team07-initial222-full-_3k6z4dy/diagnostic/wait_nccl_full209.py", line 72, in main
+    with (workspace/'gpu-telemetry.jsonl').open('x') as telemetry:
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/dev/shm/team07-initial222-full-_3k6z4dy/diagnostic/wait_nccl_full209.py", line 97, in <module>
+    if __name__=='__main__':main()
+  File "/dev/shm/team07-initial222-full-_3k6z4dy/diagnostic/wait_nccl_full209.py", line 88, in main
+    if run is not None:(run/'timing-contaminated.txt').write_text('Incomplete or failed whole-run guard; not eligible for scoring.\n')
+  File "/home/team07/.venv/lib/python3.10/pathlib.py", line 1154, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+OSError: [Errno 28] No space left on device

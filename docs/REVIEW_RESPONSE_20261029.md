@@ -96,3 +96,13 @@ GPU guard和所有完整模型报告成功结束后，外层retry将重复ranks.
 六对均更快，中位净省0.488449／0.484352ms／world forward。550次仅粗估约0.27秒，两个rank不能相加，初始化可能吸收这部分收益。该证据不构成完整V2提速或视频质量结论。精确源码与完整报告见[world-model-r2](../experiments/spatial-norm-221/world-model-r2)。
 
 为控制本轮磁盘使用，计算与六组状态／六对计时不变，仅省略每个case重复保存的同一controller清单，stdout改为汇总计时，已完成的新报告副本使用普通硬链接。没有压缩、删除或改写历史证据。当前正式pair和默认入口仍是220。
+
+## 222集成与共享控制内存失败
+
+初始时间块新边界现已冻结为222候选，原209／110JIT不变，计时接点及CPU生命周期／六项残差汇合顺序检查通过，控制器除报告外与已通过GPU六状态的world-model-r3具有相同AST。完整候选尚未得出耗时／PSNR：它与第二个双卡decision-norm诊断并行运行时，后者申请5,767,520字节NCCL共享控制缓冲失败，RAM盘满也导致完整候选遥测flush失败。两项任务均已结束；没有把不完整运行计作成绩，也没有动正式221材料。
+
+补查NCCL2.20.5日志已有P2P/CUMEM/read连接，不能把共享控制缓冲当作数据SHM回退。NCCL_SHM_DISABLE=1的独立小诊断仍在相同控制缓冲分配处失败，没有延迟或带宽结果。[对应proxy.cc源码](https://raw.githubusercontent.com/NVIDIA/nccl/v2.20.5-1/src/proxy.cc)含独立共享ncclProxyOpsPool分配。暂不继续基于设备可见范围的性能推测。
+
+修正的未来guard在CUDA分配之前要求24MiB RAM及11MiB /tmp，给控制缓冲、rank1视频与元数据留出预算；小双卡诊断要求14MiB RAM，低空间时串行。rank0 RESULT_DIR改为实际普通/tmp目录，metadata symlink不再作为官方validator输入。旧失败guard与修正guard分别保存，不能混称同一实测脚本。当前空间不足以重跑；历史8项日志压缩尚未获明确批准，未执行，源码、缓存、视频与他人文件未清理。
+
+精确候选：[production222](../experiments/initial-boundary-221/production222)。失败证据：[full-storage-failed-r1](../results/aggressive-20261028/initial-boundary-221/full-storage-failed-r1)。当前正式仍是270.825199秒／819.731123秒。

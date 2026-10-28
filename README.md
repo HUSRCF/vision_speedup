@@ -48,6 +48,8 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 使用两张卡，其余�
 
 [初始时间块边界扩展](experiments/initial-boundary-221/world-model-r3)在同一221基线上也通过六状态逐位检查与六对交替计时：将已有初始FFN汇合移到残差完成之后，覆盖其前方QKV、FP32时间attention及残差norm，不增加collective，保留完整5D GroupNorm与Conv1d投影。两卡world前向中位省 **2.127869／2.097145 ms**，六对均更快，含两次QKV回写；550次约1.15–1.17秒，仅为模型外推。此结果与空间norm尚未组合验证，也没有替换正式221成绩。
 
+该边界现已集成为[冻结222候选](experiments/initial-boundary-221/production222)，源码／计时接点和CPU检查核对通过；首次完整尝试因RAM盘耗尽中止，**没有222的完整耗时或PSNR**。并行启动的第二个NCCL实验在申请5,767,520字节共享控制缓冲时失败，完整任务的遥测写入也随之ENOSPC；[失败证据](results/aggressive-20261028/initial-boundary-221/full-storage-failed-r1)单独保留。修正后的未来guard在CUDA分配前要求RAM盘24MiB、/tmp11MiB，并将官方validator直接指向普通/tmp目录。小型双卡诊断也要预留14MiB RAM。NCCL日志已显示P2P/CUMEM/read连接，不能因共享控制缓冲失败而推断数据绕行主机内存；关闭SHM传输的诊断同样未完成初始化，无带宽结果。正式/default仍为221。
+
 [非V2的FP16 FFN双卡模型实验](experiments/nonv2-ffn-59)覆盖33个FFN，保留其余计算：decision六对均更快，两卡中位省 **3.876354／5.427204 ms**；world为 **5.751297／4.246525 ms**。权重修改／清零／恢复和RNG检查通过，但输出存在Half舍入差异，最大相对L2约0.0525%。这只是模型误差粗筛，尚无完整Z1视频PSNR或正式加速成绩。
 
 首版把`init_attn`一并纳入后未通过原图finite校验；其原始FFN输出先汇合、随后才加残差，不能套用普通块边界。r2保留`init_attn`已采用220路径。模型检查完成后，外层复制重复日志曾因RAM盘满失败；完整GPU报告和原始日志已取回并核对SHA，再压缩仅已结束任务的重复证据。该归档失败单独记录，不掩饰为成功退出，也未改动GPU测量或正式材料。
