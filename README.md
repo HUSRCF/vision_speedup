@@ -25,6 +25,7 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 使用两张卡，其余�
 - [`experiments/nonv2-vae-all-display`](experiments/nonv2-vae-all-display)：已采用的四个非 V2 分项精确源码与启动参数。
 - [`experiments/nccl-spatial-temporal-209`](experiments/nccl-spatial-temporal-209)：当前双卡 V2 的精确增量、计时证明与 215 文件清单；使用 `reproduce/run_v2_parallel.py`。旧 213 文件版本保留在 `experiments/nccl-ffn-209/timed-entry`。
 - [`docs/REVIEW_RESPONSE_20261028.md`](docs/REVIEW_RESPONSE_20261028.md)：外部审阅建议的核查结果、主干/head 新测量与 Kahan 既有证据。
+- [`docs/FP16_SCALAR_EXPERIMENTS_20261028.md`](docs/FP16_SCALAR_EXPERIMENTS_20261028.md)：FP16 全局／分组／通道缩放、INT8 残差补偿的实际输入测量，以及新的 decision 双卡逐位验证；这些实验尚未替换正式成绩。
 
 源码从正式运行的不可变目录取回，逐文件核对生产清单。保留上游 [`LICENSE`](unifolm/LICENSE) 和原始说明；上游赛题入口为 <https://github.com/HKUSTGZ-SCC/Newbie2.0>。
 
