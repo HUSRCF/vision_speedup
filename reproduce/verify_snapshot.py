@@ -11,12 +11,12 @@ def main():
     assert set(manifest)=={str(p.relative_to(code)) for p in (code/'src').rglob('*.py')}
     for name,digest in manifest.items():assert sha(code/name)==digest,name
     assert sha(code/'src/unifolm_wma/utils/native-graph-handles/team07_cuda_graph_handles.so')=='ab2f19b88cb9af02b42fb5fdcb39da49e062346fd30794be45fb81e12cb1b927'
-    assert sha(root/'results/runtime.log')=='3b4af883f713cdce5142f532fa14f66e3443b6034179ff55de3df0ed6312e8e4'
-    assert sha(root/'results/result.json')=='2a6a6bb108c8fbd747e03055408f8ec72555256cd79f8e2881d1adb2984095a9'
+    assert sha(root/'results/runtime.log')=='2b41fa3c4c0093faf0c7eb5acaa050b96697b8a28c53d793372df9c8d87673d3'
+    assert sha(root/'results/result.json')=='d6e83c9d31554191b14f5490815bafa4a3e23417e5d72ba751e81f517541b9e0'
     result=json.loads((root/'results/result.json').read_text());assert result['status']=='accepted'
     cases=result['cases'];assert len(cases)==5 and sum(c['videos'] for c in cases)==103
     assert [c['rounds'] for c in cases]==[12,7,11,8,11]
-    assert abs(sum(c['process_wall_s'] for c in cases)-782.213299)<1e-6
+    assert abs(sum(c['process_wall_s'] for c in cases)-778.585395)<1e-6
     log=(root/'results/runtime.log').read_text()
     timings=re.findall(r'^TIMING case=(\S+) process_wall_s=([0-9.]+)$',log,re.M)
     assert len(timings)==5 and len({case for case,_ in timings})==5
@@ -244,6 +244,10 @@ def main():
     verify_nonv2_all63()
     from verify_nonv2_other63_evidence import verify as verify_nonv2_other63
     verify_nonv2_other63()
-    print('Verified: original209/historical overlays/adopted V2 initial222;adopted63 Z1/dual/pencils;historical59 G1;official103 log/JSON.')
+    from verify_adopted222_profile import verify as verify_profile222
+    verify_profile222()
+    from verify_decision_temporal223_evidence import verify as verify_decision223
+    verify_decision223()
+    print('Verified: original209/historical overlays/adopted V2 decision223;adopted63 Z1/dual/pencils;historical59 G1;official103 log/JSON.')
 
 if __name__=='__main__':main()

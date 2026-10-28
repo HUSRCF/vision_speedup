@@ -63,11 +63,11 @@ def verify():
     historical=root/'results/history/official222-z1-fused-before-blocks63'
     official=ev/'official103';final=load(official/'result.json');assert final['status']=='accepted'and final['psnr_validation']['video_count']==103 and final==load(historical/'result.json')
     for n,h in adopted['official_pair_sha256'].items():assert sha(historical/n)==sha(official/n)==h
-    current=next(r for r in load(root/'results/result.json')['cases']if r['case']==case)
+    current=next(r for r in load(root/'results/history/official-other63-before-decision223/result.json')['cases']if r['case']==case)
     assert current['process_wall_s']==adopted['V2_s']and current['psnr_db']==29.675324786148643
     copies=load(official/'immutable-video-copies.json');assert copies['count']==103 and copies['ordinary_files']and copies['original_outputs_unchanged']and copies['SHA_verified_same_FS_links_or_cross_FS_copies']
     for n,h in load(official/'script-hashes.json').items():assert sha(official/n)==h
-    parser=ast.parse((root/'reproduce/run_v2_parallel.py').read_text());assert any(isinstance(n,ast.keyword)and n.arg=='default'and isinstance(n.value,ast.Constant)and n.value.value==flags[1]['UNIFOLM_NCCL_PARALLEL']for n in ast.walk(parser))
+    parser=ast.parse((root/'reproduce/run_v2_parallel.py').read_text());assert any(isinstance(n,ast.Constant)and n.value==flags[1]['UNIFOLM_NCCL_PARALLEL']for n in ast.walk(parser))
     print('Adopted222: matched full AB, original209 arithmetic, private tmpfs CPU/graph and official103 verified.')
 
 

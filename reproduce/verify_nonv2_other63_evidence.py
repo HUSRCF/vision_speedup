@@ -49,8 +49,13 @@ def verify():
     for n,h in outcome['previous_pair_sha256'].items():assert sha(before/n)==h
     official=ev/'official103'
     for n,h in load(official/'script-hashes.json').items():assert sha(official/n)==h
-    for n,h in outcome['official_pair_sha256'].items():assert sha(official/n)==sha(root/'results'/n)==h
-    result=load(official/'result.json');assert result['status']=='accepted'and result['psnr_validation']['video_count']==103 and result==load(root/'results/result.json')
+    historical=root/'results/history/official-other63-before-decision223'
+    for n,h in outcome['official_pair_sha256'].items():assert sha(official/n)==sha(historical/n)==h
+    result=load(official/'result.json');assert result['status']=='accepted'and result['psnr_validation']['video_count']==103 and result==load(historical/'result.json')
+    current={r['case']:r for r in load(root/'results/result.json')['cases']}
+    for row in result['cases']:
+        if row['case']!='unitree_z1_dual_arm_stackbox_v2':
+            assert current[row['case']]['process_wall_s']==row['process_wall_s']and current[row['case']]['psnr_db']==row['psnr_db']
     previous={r['case']:r for r in load(before/'result.json')['cases']}
     for row in result['cases']:
         case=row['case']

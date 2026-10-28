@@ -12,7 +12,7 @@
 
 G1保留 `UNIFOLM_FP32_FEEDBACK_HEADS=1` 和 `UNIFOLM_SIM_HEAD_TF32=0`；实际日志确认862个受保护模块。两rank视频一致并不意味着与参考视频一致。完整闭环PSNR失败原因尚未定位，Half GEMM形状／舍入变化是待检查方向，不能认定为已经证明的原因。当前正式G1仍为单卡160.897537秒／26.107156332dB。
 
-采用的32个新视频与其余71个既有已验收视频重新通过官方工具的103视频校验，当前五项合计 **782.213299秒**。这是一份分别计时的完整分项汇总，不是连续五项进程墙钟时间。网站未上传。当前可提交双文件为仓库根 `results/runtime.log` 和 `results/result.json`；原802.134091秒双文件保留在 `results/history/official-z1-blocks63-before-other63`。
+采用的32个新视频与其余71个既有已验收视频重新通过官方工具的103视频校验，当时五项合计 **782.213299秒**，其双文件保留在 `results/history/official-other63-before-decision223`；随后V2更新为223后，当前根双文件为 **778.585395秒**。这是一份分别计时的完整分项汇总，不是连续五项进程墙钟时间。网站未上传。当前可提交双文件为仓库根 `results/runtime.log` 和 `results/result.json`；原802.134091秒双文件保留在 `results/history/official-z1-blocks63-before-other63`。
 
 `results/aggressive-20261028/nonv2-other-blocks63` 保留各项完整日志、JSON、profile、遥测、rank视频哈希以及新 `official103` 汇总。三个单项shell都因其余四项缺席退出1；所选分项的推理进程退出0，工作量完整。G1的质量失败完整保留，不能拿任何单项原始JSON冒充五项有效提交。
 
