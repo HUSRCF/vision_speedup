@@ -24,7 +24,7 @@
 
 ## 剖析与改进方向
 
-`results/aggressive-20261028/initial-ffn-219/full-candidate-r1` 给出当前双卡 V2 的正式阶段时间；旧两阶段空间块版本保留在 `nccl-both-spatial-temporal-full-r1`，更早版本亦保留。`results/*telemetry-phase-evidence.json` 和 `results/profiles-209` 保留单卡 209 源码基线的计时与 CUPTI 归因；两阶段三个 FP32 输出逐位一致，RNG 与 master versions 未改变。较早的 207 版本结果亦保留用于对比。
+`results/aggressive-20261028/temporal-block-220/full-split-r3` 给出当前221双卡V2的正式阶段时间及存储包装复核记录；旧两阶段空间块版本保留在 `nccl-both-spatial-temporal-full-r1`，更早版本亦保留。`results/*telemetry-phase-evidence.json` 和 `results/profiles-209` 保留单卡 209 源码基线的计时与 CUPTI 归因；两阶段三个 FP32 输出逐位一致，RNG 与 master versions 未改变。较早的 207 版本结果亦保留用于对比。
 
 209 世界模型单次诊断内，时间卷积约 20.47 ms，单分支 GEGLU 约 20.12 ms，持久化 zero-low GEMM 约 19.21 ms，双分支 GEGLU 约 13.57 ms，原生 FP32 cross-attention 70 次合计约 13.93 ms。这些是带剖析开销的归因数字，不是正式成绩。明确按阶段过滤的 r3 元数据现已发布到 `results/profiles-209-r3`；真实操作数不发布。
 

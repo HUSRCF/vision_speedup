@@ -1,0 +1,157 @@
+{
+  "problem": "unifolm",
+  "status": "failed",
+  "exit_code": 1,
+  "external_wall_s": 272.001359,
+  "validation_wall_s": 7.671001367270947e-05,
+  "reason": "Incomplete case profiles",
+  "validation": {
+    "benchmark_exit_ok": false,
+    "complete_cases_ok": false,
+    "psnr_ok": false
+  },
+  "review_flags": [],
+  "validation_notes": [],
+  "workload": {
+    "cases": 5,
+    "rounds": [
+      12,
+      7,
+      11,
+      8,
+      11
+    ]
+  },
+  "cases": [
+    {
+      "case": "unitree_z1_stackbox",
+      "rounds": 12,
+      "process_wall_s": null,
+      "observed_process_wall_s": null,
+      "psnr_db": null,
+      "psnr_exact_match": false,
+      "psnr_passed": false,
+      "videos": 0,
+      "profile_complete": false,
+      "execution_ok": true,
+      "execution_exit_code": 0,
+      "reason": "Incomplete case profile",
+      "pure_model_cuda_s": 0
+    },
+    {
+      "case": "unitree_z1_dual_arm_stackbox",
+      "rounds": 7,
+      "process_wall_s": null,
+      "observed_process_wall_s": null,
+      "psnr_db": null,
+      "psnr_exact_match": false,
+      "psnr_passed": false,
+      "videos": 0,
+      "profile_complete": false,
+      "execution_ok": true,
+      "execution_exit_code": 0,
+      "reason": "Incomplete case profile",
+      "pure_model_cuda_s": 0
+    },
+    {
+      "case": "unitree_z1_dual_arm_stackbox_v2",
+      "rounds": 11,
+      "process_wall_s": 270.825199,
+      "observed_process_wall_s": 270.825199,
+      "psnr_db": null,
+      "psnr_exact_match": false,
+      "psnr_passed": false,
+      "videos": 0,
+      "profile_complete": true,
+      "execution_ok": true,
+      "execution_exit_code": 0,
+      "reason": "Video root must not be a symlink",
+      "pure_model_cuda_s": 259.595701
+    },
+    {
+      "case": "unitree_z1_dual_arm_cleanup_pencils",
+      "rounds": 8,
+      "process_wall_s": null,
+      "observed_process_wall_s": null,
+      "psnr_db": null,
+      "psnr_exact_match": false,
+      "psnr_passed": false,
+      "videos": 0,
+      "profile_complete": false,
+      "execution_ok": true,
+      "execution_exit_code": 0,
+      "reason": "Incomplete case profile",
+      "pure_model_cuda_s": 0
+    },
+    {
+      "case": "unitree_g1_pack_camera",
+      "rounds": 11,
+      "process_wall_s": null,
+      "observed_process_wall_s": null,
+      "psnr_db": null,
+      "psnr_exact_match": false,
+      "psnr_passed": false,
+      "videos": 0,
+      "profile_complete": false,
+      "execution_ok": true,
+      "execution_exit_code": 0,
+      "reason": "Incomplete case profile",
+      "pure_model_cuda_s": 0
+    }
+  ],
+  "psnr_validation": {
+    "metric": "psnr_rgb_uint8",
+    "threshold_db": 25.0,
+    "comparison": "strictly_greater",
+    "aggregation": "case_pooled_rgb_mse",
+    "reference_dir": "/share/results/unifolm/fp32/reference/outputs",
+    "video_count": 0,
+    "psnr_ok": false,
+    "cases": {
+      "unitree_z1_stackbox": {
+        "psnr_db": null,
+        "exact_match": false,
+        "passed": false,
+        "video_count": 0,
+        "frames": 0,
+        "reason": "Video root must not be a symlink"
+      },
+      "unitree_z1_dual_arm_stackbox": {
+        "psnr_db": null,
+        "exact_match": false,
+        "passed": false,
+        "video_count": 0,
+        "frames": 0,
+        "reason": "Video root must not be a symlink"
+      },
+      "unitree_z1_dual_arm_stackbox_v2": {
+        "psnr_db": null,
+        "exact_match": false,
+        "passed": false,
+        "video_count": 0,
+        "frames": 0,
+        "reason": "Video root must not be a symlink"
+      },
+      "unitree_z1_dual_arm_cleanup_pencils": {
+        "psnr_db": null,
+        "exact_match": false,
+        "passed": false,
+        "video_count": 0,
+        "frames": 0,
+        "reason": "Video root must not be a symlink"
+      },
+      "unitree_g1_pack_camera": {
+        "psnr_db": null,
+        "exact_match": false,
+        "passed": false,
+        "video_count": 0,
+        "frames": 0,
+        "reason": "Video root must not be a symlink"
+      }
+    },
+    "per_video": {},
+    "validation_wall_s": 7.671001367270947e-05
+  },
+  "video_count": 0,
+  "pure_model_cuda_s": 259.595701
+}

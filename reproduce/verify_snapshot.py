@@ -11,12 +11,12 @@ def main():
     assert set(manifest)=={str(p.relative_to(code)) for p in (code/'src').rglob('*.py')}
     for name,digest in manifest.items():assert sha(code/name)==digest,name
     assert sha(code/'src/unifolm_wma/utils/native-graph-handles/team07_cuda_graph_handles.so')=='ab2f19b88cb9af02b42fb5fdcb39da49e062346fd30794be45fb81e12cb1b927'
-    assert sha(root/'results/runtime.log')=='5acd9a4e064ae5e70426cb28d1e4c8e55b007deed3d4fcf1cd4de5457d530037'
-    assert sha(root/'results/result.json')=='1f19d7a1a4c8af2b18cefa6bb00843e8dbc4ef450d56108ed17d8412d3840835'
+    assert sha(root/'results/runtime.log')=='3e4b1d2b1ae3712089c357c23ebbe71723a23883ec6458d036fb437c7ea584ed'
+    assert sha(root/'results/result.json')=='2bb317accbde6beba4b128c1412041fadc556c4b680ae8d0ce70270030c7e0ad'
     result=json.loads((root/'results/result.json').read_text());assert result['status']=='accepted'
     cases=result['cases'];assert len(cases)==5 and sum(c['videos'] for c in cases)==103
     assert [c['rounds'] for c in cases]==[12,7,11,8,11]
-    assert abs(sum(c['process_wall_s'] for c in cases)-826.342893)<1e-6
+    assert abs(sum(c['process_wall_s'] for c in cases)-819.731123)<1e-6
     log=(root/'results/runtime.log').read_text()
     timings=re.findall(r'^TIMING case=(\S+) process_wall_s=([0-9.]+)$',log,re.M)
     assert len(timings)==5 and len({case for case,_ in timings})==5
@@ -156,7 +156,6 @@ def main():
     accepted=json.loads((latest/'accepted-outcome.json').read_text())
     assert accepted['GPUs']==2 and accepted['source_count']==220 and accepted['all103_officially_validated']
     assert accepted['V2_s']==277.436969 and accepted['saved_from_matched_baseline_s']==1.459912
-    assert next(c['process_wall_s'] for c in cases if c['case'].endswith('stackbox_v2'))==accepted['V2_s']
     latest=root/'experiments/temporal-block-220/production221'
     spec=importlib.util.spec_from_file_location('temporal221_pending_frozen',latest/'production_sources.py')
     frozen=importlib.util.module_from_spec(spec);spec.loader.exec_module(frozen)
@@ -166,6 +165,14 @@ def main():
     for name,digest in manifest221.items():
         actual=hashlib.sha256(files[name].encode()).hexdigest() if name in files else sha(code/name)
         assert actual==digest,name
+    accepted221=json.loads((latest/'accepted-outcome.json').read_text())
+    assert accepted221['official_adopted'] and accepted221['all103_officially_validated'] and accepted221['source_count']==221
+    assert accepted221['V2_s']==270.825199 and accepted221['saved_from_historical220_s']==6.611770
+    assert not accepted221['contemporaneous_whole_process_AB_pair']
+    assert not accepted221['original_split_root_video_validator_passed'] and accepted221['ordinary_packaging_23_video_validation_passed']
+    assert next(c['process_wall_s'] for c in cases if c['case'].endswith('stackbox_v2'))==accepted221['V2_s']
+    split=root/'experiments/temporal-block-220/full-split-r3'
+    for name,digest in json.loads((split/'source-hashes.json').read_text()).items():assert sha(split/name)==digest,name
     original209=json.loads((code/'world-head-filter-cache-production-sources.json').read_text())
     assert all(manifest221[n]==h for n,h in original209.items())
     for name,digest in json.loads((latest/'guard-source-hashes.json').read_text()).items():assert sha(latest/name)==digest,name
@@ -199,6 +206,6 @@ def main():
         assert len(records)==1 and records[0][1]=='true'
     for prefix in ('RUN_SUMMARY ','RESULT_JSON=','ACCEPTED '):assert len(re.findall('^'+re.escape(prefix),log,re.M))==1
     assert not re.search(r'^FAILED:',log,re.M)
-    print('Verified: original209 base;historical213/world215/both215 native-grid218/native-attention219 and adopted initial-FFN220 and pending temporal221 overlays;59 nonV2 sources;official103 log/JSON.')
+    print('Verified: original209 base;historical213/world215/both215 native-grid218/native-attention219 initial-FFN220 and adopted temporal221 overlays;59 nonV2 sources;official103 log/JSON.')
 
 if __name__=='__main__':main()

@@ -5,7 +5,7 @@ from pathlib import Path
 def main():
     p=argparse.ArgumentParser();p.add_argument('--gpus',required=True,help='Two physical GPU indices, for example 2,3')
     p.add_argument('--workdir',type=Path,required=True,help='New empty directory for source and diagnostic evidence')
-    p.add_argument('--variant',choices=('both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block','both-spatial-temporal-resblock-grid-native-attention-initial-ffn','both-spatial-temporal-resblock-grid-native-attention','both-spatial-temporal-resblock-grid','both-spatial-temporal','world-spatial-temporal','world-ffn-temporal'),default='both-spatial-temporal-resblock-grid-native-attention-initial-ffn')
+    p.add_argument('--variant',choices=('both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block','both-spatial-temporal-resblock-grid-native-attention-initial-ffn','both-spatial-temporal-resblock-grid-native-attention','both-spatial-temporal-resblock-grid','both-spatial-temporal','world-spatial-temporal','world-ffn-temporal'),default='both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block')
     p.add_argument('--smoke',action='store_true',help='One round only; not a competition result');a=p.parse_args()
     devices=a.gpus.split(',');assert len(devices)==2 and len(set(devices))==2 and all(v in ('0','1','2','3') for v in devices)
     directory=a.workdir.resolve();assert not directory.exists();directory.mkdir(parents=True)
