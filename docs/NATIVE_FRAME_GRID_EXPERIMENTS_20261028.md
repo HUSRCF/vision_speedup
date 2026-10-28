@@ -134,4 +134,12 @@ GPU 矩阵 r2 对全部 14 种 packed／Kahan 配置各测试初始、修改输�
 
 交错映射的第一次 harness 在进入 Kahan 路径时因 owner 没有 `replay()` 方法而停止，没有提供最终有效计时。r2 按原模型语义先刷新 owner，再重放其 graph；未放宽数值门槛或改动生产 owner。两轮采用的结果均有独占 GPU context 全程守护，原 209 文件前后核验一致。
 
-以上为合成卷积证据。尚未将这套映射接入真实 world ResBlock，也未测双卡通信、完整模型和 V2 PSNR。后续必须先通过原 23+45 owner 与旧 CUBIN SHA 门槛，再按权重对象筛选 21 个 ResBlock owner，保留另外两个 Upsample owner；不能直接替换所有 23 个 SGEMM。当前正式 V2 仍为 **287.745486 秒**，五项 **836.651410 秒**。
+以上仅提供合成卷积证据，没有真实 world ResBlock 的 GPU 执行、双卡通信、完整模型或 V2 PSNR 结果。后续集成必须先通过原 23+45 owner 与旧 CUBIN SHA 门槛，再按权重对象筛选 21 个 ResBlock owner，保留另外两个 Upsample owner；不能直接替换所有 23 个 SGEMM。当前正式 V2 仍为 **287.745486 秒**，五项 **836.651410 秒**。
+
+## 真实 world 集成候选：CPU 通过，GPU 结果待验证
+
+初次真实模型候选已实现并通过 **120 组 CPU 边界检查**，另用实际 23 个 owner 的 meta 权重对象验证：额外模型名前缀不影响 21 个目标 SGEMM 的身份绑定，两个外层 Upsample 不参与分帧。实际 21 个目标属于 **12 个 ResBlock**；其余十个没有目标 SGEMM，保持原执行，避免增加无收益的汇合。该选择覆盖全部 21 个已检查目标，并非减少它们的覆盖范围。[冻结源码](../experiments/world-native-frame-interleaved-209/model-r1) · [CPU 证据](../results/aggressive-20261028/world-native-frame-interleaved-209/model-r1-preflight)
+
+基准与候选都启用当前 world 空间／时间并行；候选额外执行这 12 个块的 N16 填充与前八帧重排，在原完整时间卷积前汇合。保留原 23+45 owner 和旧 Kahan CUBIN 门槛，新 kernel 使用独立缓存，编译与实际捕获图参数检查后恢复原缓存路径。新的捕获见证使用完整、类型正确的 Torch 缓冲，**不重放未初始化缓冲，不声称它提供数值结果**。真正的数值门槛仍是后续六个完整模型动态状态、570／782／192 master 修改、三路逐位输出、RNG 和原图恢复。
+
+这份快照还没有完成真实 GPU 模型检查或计时。等待进程只在所选两卡同时满足原空闲条件、取得两把锁并再次核验后才创建 CUDA context；CPU 等待期间不占显存。配对完整 world 前向、12 次汇合的净成本和完整 V2 质量均待验证，正式材料不变。
