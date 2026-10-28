@@ -221,6 +221,8 @@ def main():
         assert len(records)==1 and records[0][1]=='true'
     for prefix in ('RUN_SUMMARY ','RESULT_JSON=','ACCEPTED '):assert len(re.findall('^'+re.escape(prefix),log,re.M))==1
     assert not re.search(r'^FAILED:',log,re.M)
+    from verify_all_feedback_evidence import verify as verify_all_feedback
+    verify_all_feedback()
     print('Verified: original209 base;historical213/world215/both215 native-grid218/native-attention219 initial-FFN220 and adopted temporal221 overlays;59 nonV2 sources;official103 log/JSON.')
 
 if __name__=='__main__':main()
