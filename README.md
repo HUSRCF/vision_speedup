@@ -2,17 +2,17 @@
 
 NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 Z1、双臂堆箱、V2、清理铅笔各使用两张卡，G1 使用单卡。此仓库用于外部代码审阅。
 
-当前已验证的 V2 为 **265.216325 秒 / PSNR 29.675324786 dB**，五项有效耗时合计 **778.585395 秒**。完整原始材料为 [`results/runtime.log`](results/runtime.log) 和 [`results/result.json`](results/result.json)。这是官方工具在比赛机上的本地验证结果；不表示本仓库代码已经经过主办方独立复跑。
+当前已验证的 V2 为 **257.945205 秒 / PSNR 29.675324786 dB**，五项有效耗时合计 **771.314275 秒**。完整原始材料为 [`results/runtime.log`](results/runtime.log) 和 [`results/result.json`](results/result.json)。这是官方工具在比赛机上的本地验证结果；不表示本仓库代码已经经过主办方独立复跑。
 
 | 分项 | process_wall_s | PSNR dB |
 |---|---:|---:|
 | Z1 堆箱 | 152.203279 | 46.553398 |
 | 双臂堆箱 | 94.319011 | 31.972207 |
-| 双臂堆箱 V2 | 265.216325 | 29.675325 |
+| 双臂堆箱 V2 | 257.945205 | 29.675325 |
 | 清理铅笔 | 105.949243 | 34.881927 |
 | G1 相机装箱 | 160.897537 | 26.107156 |
 
-五项材料由各次已完成运行汇总后重新校验，共 49 轮、103 个视频；不是一次连续从头跑完五项的墙钟计时。V2 来自 2026-10-29 的双卡 223 源码版本；Z1、双臂堆箱和清理铅笔来自同日分别验证的双卡63文件完整内部Transformer块分片版本，G1保留59文件单卡非反馈VAE优化版本，来源见 `results/case-sources.json`。不能把五项汇总宣称为当前代码同一次完整复跑的实测结果。
+五项材料由各次已完成运行汇总后重新校验，共 49 轮、103 个视频；不是一次连续从头跑完五项的墙钟计时。V2 来自 2026-10-29 的双卡 225 源码版本；Z1、双臂堆箱和清理铅笔来自同日分别验证的双卡63文件完整内部Transformer块分片版本，G1保留59文件单卡非反馈VAE优化版本，来源见 `results/case-sources.json`。不能把五项汇总宣称为当前代码同一次完整复跑的实测结果。
 
 ## 审阅入口
 
@@ -23,8 +23,8 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 Z1、双臂堆箱、V2、清�
 - [`unifolm/src`](unifolm/src)：保留的单卡基线精确源码，209 个 Python 文件，110 个 Triton JIT 函数。
 - [`unifolm/world-head-filter-cache-production-sources.json`](unifolm/world-head-filter-cache-production-sources.json)：生产源码 SHA256 清单。
 - [`experiments/nonv2-vae-all-display`](experiments/nonv2-vae-all-display)：当前 G1 及历史非 V2 分项的59文件精确源码与启动参数。
-- [`experiments/decision-temporal-222`](experiments/decision-temporal-222)：当前V2的223文件增量、六对逐位模型验证、同卡完整AB、正式103视频验收与复现入口。
-- [`docs/WORLD_CO_SPLIT_20261029.md`](docs/WORLD_CO_SPLIT_20261029.md)：当前223基线的Winograd CO分片；14种几何完整逐位检查、9个owner筛选和六对真实模型净收益，完整进程对照进行中，尚未替换正式成绩。
+- [`experiments/decision-temporal-222`](experiments/decision-temporal-222)：历史V2的223文件增量、六对逐位模型验证、同卡完整AB、当时103视频验收与复现入口。
+- [`docs/WORLD_CO_SPLIT_20261029.md`](docs/WORLD_CO_SPLIT_20261029.md)：当前225的Winograd CO分片；14种几何完整逐位检查、9个owner筛选、同卡完整AB及新103视频验收，已采用。
 - [`experiments/adopted222-profile`](experiments/adopted222-profile)：原222双卡decision／world的实测热点；仅导出标量汇总。
 - [`experiments/nonv2-other-blocks63`](experiments/nonv2-other-blocks63)：当前双臂堆箱／清理铅笔的63文件源码、正式103视频验收，以及未通过质量的G1完整实验。
 - [`experiments/nonv2-all-blocks59`](experiments/nonv2-all-blocks59)：当前 Z1 的63文件增量、33个内部块分片、完整复现入口与新103视频验收证据。
@@ -46,7 +46,9 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 Z1、双臂堆箱、V2、清�
 
 ## 最新优化重点
 
-**当前正式/default已采用[decision时间块223](experiments/decision-temporal-222)**：依据[原222的新profile](experiments/adopted222-profile)，保留完整vendor GEMM描述符，只分片独立Triton工作，增加17次块末汇合。两rank六种动态状态的三路输出逐位一致，六对完整decision前向均更快，中位省16.610313／16.626686ms。随后同GPU0/1、相同guard／私有tmpfs的完整222／223对照为 **270.119302 → 265.216325秒**，净省 **4.902977秒**；decision生成CUDA119.431→114.393秒，world138.396→138.467秒。完整收益小于模型外推，采用进程计时结论。23视频与原正式及另一rank的SHA一致、PSNR29.675324786dB；新103视频官方汇总accepted，当前五项 **778.585395秒**，本机GPU双文件已更新，网站未上传。相对历史正式222少3.627904秒；原782.213299秒材料完整保留。默认复现入口已切换223，比赛机CPU重建源码／计时资源检查通过。
+**当前正式/default已采用[Winograd CO分片225](docs/WORLD_CO_SPLIT_20261029.md)**：在223上只为9个净收益稳定的world卷积分片输出通道，保留原CUBIN／constexpr／batch stride／K顺序及变换。14种几何两布局、两rank、六状态完整输出逐位通过；真实模型六对净省3.836426／3.806206ms。相同GPU0/1、guard、适配器及私有tmpfs的完整223／225对照为 **260.425380 → 257.945205秒**，净省 **2.480175秒**，world生成CUDA少2.200255秒、decision仅慢0.034572秒。23视频与原正式及另一rank的SHA相同、PSNR29.675324786dB；新103视频官方汇总accepted，五项 **771.314275秒**，本机GPU双文件已更新，网站未上传。相对历史正式265.216325秒少7.271120秒，其中包含运行波动，不能全部归因于CO分片。原778.585395秒双文件及223默认入口完整保留；公开225入口和新默认入口均已在比赛机通过CPU重建检查。
+
+此前正式/default采用[decision时间块223](experiments/decision-temporal-222)：依据[原222的新profile](experiments/adopted222-profile)，保留完整vendor GEMM描述符，只分片独立Triton工作，增加17次块末汇合。两rank六种动态状态的三路输出逐位一致，六对完整decision前向均更快，中位省16.610313／16.626686ms。随后同GPU0/1、相同guard／私有tmpfs的完整222／223对照为 **270.119302 → 265.216325秒**，净省 **4.902977秒**；decision生成CUDA119.431→114.393秒，world138.396→138.467秒。完整收益小于模型外推，采用进程计时结论。23视频与原正式及另一rank的SHA一致、PSNR29.675324786dB；新103视频官方汇总accepted，当时五项 **778.585395秒**，本机GPU双文件已更新，网站未上传。相对历史正式222少3.627904秒；原782.213299秒材料完整保留。当时默认复现入口切换223，比赛机CPU重建源码／计时资源检查通过。
 
 **双臂堆箱与清理铅笔已采用[逐项验证的63文件双卡分片](experiments/nonv2-other-blocks63)**：分别为 **94.319011秒 / PSNR31.972206776dB** 和 **105.949243秒 / PSNR34.881926888dB**，相对历史单卡记录少8.792173和11.128619秒。两项分别完整执行7／8轮、15／17视频，两rank视频SHA一致；它们在不同GPU对上并行运行，没有同期同GPU完整AB对照。新32个视频与其余71个已验收视频重新通过官方103视频校验，当时五项 **782.213299秒**，本机GPU双文件已更新，网站未上传。原802.134091秒双文件完整保留于[历史目录](results/history/official-z1-blocks63-before-other63)。同一分片在G1得到142.834192秒但PSNR仅19.081776215dB，**未采用**；FP32反馈head开关仍保留，失败原因尚未定位，不能继承Z1质量结论。复现入口为`reproduce/run_nonv2_parallel.py`。
 
@@ -89,7 +91,7 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 Z1、双臂堆箱、V2、清�
 
 [时间注意力实验](docs/TEMPORAL_ATTENTION_EXPERIMENTS.md)的补偿 Tensor Core 路线已完成完整 V2，但 PSNR 仅 22.76 dB；空间混合精度候选也未达质量要求。这两条路线未被采用。
 
-用户提供的领先成绩为 V2 **205.67 秒**、五项 **653.75 秒**；这只是用户提供的排行榜快照，尚未独立验证。当前仍分别相差约 **59.55 秒、124.84 秒**。此前221的决策生成CUDA时间约119.87秒，世界模型生成约139.73秒。`init_attn` 的 512 通道 FFN 已补齐；常规world时间块已扩展；初始时间块新边界已验证；非V2完整块分片已在Z1、双臂堆箱和清理铅笔通过正式质量验证，G1失败后应优先检查保留完整GEMM形状、仅缩小attention调用的方案。V2直接缩小空间Transformer输入batch和decision vendor GEMM有变慢或数值差异记录；Z1的Half路径结果不能直接继承到V2。
+用户提供的领先成绩为 V2 **205.67 秒**、五项 **653.75 秒**；这只是用户提供的排行榜快照，尚未独立验证。当前仍分别相差约 **52.28 秒、117.56 秒**。此前221的决策生成CUDA时间约119.87秒，世界模型生成约139.73秒。`init_attn` 的 512 通道 FFN 已补齐；常规world时间块已扩展；初始时间块新边界已验证；非V2完整块分片已在Z1、双臂堆箱和清理铅笔通过正式质量验证，G1失败后应优先检查保留完整GEMM形状、仅缩小attention调用的方案。V2直接缩小空间Transformer输入batch和decision vendor GEMM有变慢或数值差异记录；Z1的Half路径结果不能直接继承到V2。
 
 新增原始单卡图计时测得：两个阶段 head 各约 8.2 ms/步，其中约 2.8 ms 为 SpatialSoftmax。将其留在主卡后，余下 head 约 5.4 ms/步；按该样本外推，跨步流水线两阶段合计的理想节省上限约 **5.79 秒**，尚未扣通信、启动和图重构成本。它不是百秒级收益的证据。完整计时方法、18 次样本和逐位一致性证明见上述审阅回复。
 

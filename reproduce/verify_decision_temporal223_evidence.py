@@ -90,9 +90,9 @@ def verify_adoption(root):
     assert load(code/'full-baseline-r1/flags.json')==load(code/'full-candidate-r1/flags.json')
     historical=root/'results/history/official-other63-before-decision223';official=ev/'official103'
     for n,h in outcome['previous_pair_sha256'].items():assert sha(historical/n)==h
-    for n,h in outcome['official_pair_sha256'].items():assert sha(official/n)==sha(root/'results'/n)==h
+    for n,h in outcome['official_pair_sha256'].items():assert sha(official/n)==sha(root/'results/history/official223-before-world-co225'/n)==h
     for n,h in load(official/'script-hashes.json').items():assert sha(official/n)==h
-    result=load(official/'result.json');assert result==load(root/'results/result.json')and result['status']=='accepted'and result['psnr_validation']['video_count']==103
+    result=load(official/'result.json');assert result==load(root/'results/history/official223-before-world-co225/result.json')and result['status']=='accepted'and result['psnr_validation']['video_count']==103
     previous={r['case']:r for r in load(historical/'result.json')['cases']}
     for row in result['cases']:
         old=previous[row['case']]
@@ -102,7 +102,7 @@ def verify_adoption(root):
     links=load(official/'immutable-video-copies.json');assert links['count']==103 and links['ordinary_files']and links['original_outputs_unchanged']and links['SHA_verified_same_FS_links_or_cross_FS_copies']
     public=load(ev/'public-repro-cpu-r1/summary.json');assert public['passed']and public['no_GPU_execution']and public['source_count']==223 and public['exact_timed_manifest_and_assets']and public['public_script_SHA256']==sha(root/'reproduce/run_v2_decision223.py')
     gateway=load(ev/'public-gateway-cpu-r1/summary.json');assert gateway['passed']and gateway['no_GPU_execution']and gateway['source_count']==223 and gateway['exact_timed_manifest_and_assets']and gateway['default_entry_rebuilds_adopted223']
-    assert gateway['public_gateway_SHA256']==sha(root/'reproduce/run_v2_parallel.py')and gateway['public_runner_SHA256']==public['public_script_SHA256']and gateway['home_free_before']==gateway['home_free_after']
-    parser=ast.parse((root/'reproduce/run_v2_parallel.py').read_text());assert any(isinstance(n,ast.keyword)and n.arg=='default'and isinstance(n.value,ast.Constant)and n.value.value=='decision-temporal223'for n in ast.walk(parser))
+    assert gateway['public_gateway_SHA256']==sha(root/'experiments/decision-temporal-222/accepted-run_v2_parallel223.py')and gateway['public_runner_SHA256']==public['public_script_SHA256']and gateway['home_free_before']==gateway['home_free_after']
+    parser=ast.parse((root/'experiments/decision-temporal-222/accepted-run_v2_parallel223.py').read_text());assert any(isinstance(n,ast.keyword)and n.arg=='default'and isinstance(n.value,ast.Constant)and n.value.value=='decision-temporal223'for n in ast.walk(parser))
 
 if __name__=='__main__':verify()

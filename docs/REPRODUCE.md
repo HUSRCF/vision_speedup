@@ -25,23 +25,25 @@ python3 reproduce/verify_snapshot.py
 INIT_FFN_CACHE_DIR=/path/to/initial-cache \
 TEMPORAL_BLOCK_CACHE_DIR=/path/to/temporal-cache \
 ~/.venv/bin/python reproduce/run_v2_parallel.py --gpus 2,3 \
-  --workdir /var/tmp/unifolm-parallel-review-223 \
+  --workdir /var/tmp/unifolm-parallel-review-225 \
   --storage-config /var/tmp/team07-review-storage/storage-config.json \
   --decision-cache-dir /path/to/executable/decision-cache
 ```
 
-`--workdir` 必须是新目录。默认重建固定223文件源码：两阶段空间块、原生attention、decision原生卷积分帧、world初始FFN、16个常规world时间块及初始时间块边界扩展，再分片17个decision时间块内的独立Triton工作。Decision保留vendor GEMM描述符，新增17次块末汇合。完整5D GroupNorm和16时间步保留，既有FFN汇合边界复用。守护程序等待两张空闲卡并检查整段GPU占用；模型导入、双模型传输、通信及helper退出仍计入原始进程耗时。已验证完整结果为265.216325秒、PSNR29.675324786dB。`--variant both-spatial-temporal-resblock-grid-native-attention-initial-ffn` 可重建旧220版本（277.436969秒）；其余历史variant继续保留。单轮 `--smoke` 仅供排查，不能作为成绩。
+`--workdir` 必须是新目录。默认重建固定225文件，在223上新增9个world Winograd CO分片，保留原CUBIN、constexpr、batch stride和K顺序。完整同GPU0/1对照260.425380→257.945205秒，净省2.480175秒；23视频SHA及PSNR29.675324786dB相同，新103视频官方汇总accepted，五项771.314275秒。pack、9次新增world汇合、布局恢复和初始化均计入原process timer。公开入口与默认入口CPU重建均匹配完整运行的225文件及资源SHA。旧223可加`--variant decision-temporal223`重建。
 
-本轮同GPU0/1、同guard／适配器／存储的222／223完整对照为270.119302→265.216325秒，省4.902977秒；相对历史正式222少3.627904秒。23视频与原正式及另一rank的SHA一致，103视频官方汇总accepted，五项778.585395秒。六对模型检查的16.6ms净省不能代替完整进程差值。原222可通过`--variant both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block-initial-block`重建。此前221／222完整对照272.043547→268.844229秒的历史证据继续保留。历史221可通过`--variant both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block`重建。`--prepare-only`仅建立源码/guard，不使用GPU。
+历史223重建固定源码：两阶段空间块、原生attention、decision原生卷积分帧、world初始FFN、16个常规world时间块及初始时间块边界扩展，再分片17个decision时间块内的独立Triton工作。Decision保留vendor GEMM描述符，新增17次块末汇合。完整5D GroupNorm和16时间步保留，既有FFN汇合边界复用。守护程序等待两张空闲卡并检查整段GPU占用；模型导入、双模型传输、通信及helper退出仍计入原始进程耗时。已验证完整结果为265.216325秒、PSNR29.675324786dB。`--variant both-spatial-temporal-resblock-grid-native-attention-initial-ffn` 可重建旧220版本（277.436969秒）；其余历史variant继续保留。单轮 `--smoke` 仅供排查，不能作为成绩。
 
-223完整守护需要上述私有tmpfs配置，先按下面命令构建。比赛机/dev/shm空间受限，使用已经通过CPU和双卡图内通信测试的[私有tmpfs适配器](../experiments/private-nccl-tmpfs)。它只调整新建NCCL控制文件的存储位置，完整对照使用相同设置。选择两个新目录：
+历史同GPU0/1、同guard／适配器／存储的222／223完整对照为270.119302→265.216325秒，省4.902977秒；相对历史正式222少3.627904秒。23视频与原正式及另一rank的SHA一致，103视频官方汇总accepted，五项778.585395秒。六对模型检查的16.6ms净省不能代替完整进程差值。原222可通过`--variant both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block-initial-block`重建。此前221／222完整对照272.043547→268.844229秒的历史证据继续保留。历史221可通过`--variant both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block`重建。`--prepare-only`仅建立源码/guard，不使用GPU。
+
+223／225完整守护需要上述私有tmpfs配置，先按下面命令构建。比赛机/dev/shm空间受限，使用已经通过CPU和双卡图内通信测试的[私有tmpfs适配器](../experiments/private-nccl-tmpfs)。它只调整新建NCCL控制文件的存储位置，完整对照使用相同设置。选择两个新目录：
 
 ```bash
 ~/.venv/bin/python experiments/private-nccl-tmpfs/build_and_check.py \
   --workdir /var/tmp/team07-review-storage \
   --exec-dir "$HOME/.tmp/team07-review-storage-exec"
 ~/.venv/bin/python reproduce/run_v2_parallel.py --gpus 0,1 \
-  --workdir /var/tmp/team07-review223 \
+  --workdir /var/tmp/team07-review225 \
   --storage-config /var/tmp/team07-review-storage/storage-config.json \
   --decision-cache-dir /path/to/executable/decision-cache
 ```
@@ -59,7 +61,7 @@ python3 reproduce/run_v2.py --gpu 0
 
 后一条将加载 `reproduce/v2-effective-flags.json`，清除继承的 `UNIFOLM_*` 配置后启动原始 `team07_run.sh case-v2`。运行需要空闲 GPU、约 72 GiB 峰值显存、已预热的依赖/编译缓存；不同机器或冷缓存可能更慢。模型、权重缓存与图捕获的初始化仍在进程计时内。
 
-当前223双卡入口的输出位于所选 `--workdir/diagnostic/runs/`，历史单卡入口仍位于 `~/benchmark-runs/unifolm/<timestamp>-case-v2-<pid>/`。本轮正式 219/220 同卡对照都使用私有 RAM 文件系统输出，native `.so` 保留在可执行 home 挂载；该存储变化须与历史计时区别看待。这是单项完整 11 轮运行，其他四项缺席会在完整五项校验中显示缺项；不能直接拿该单项结果冒充完整五项提交。
+当前225双卡入口的输出位于所选 `--workdir/diagnostic/runs/`，历史单卡入口仍位于 `~/benchmark-runs/unifolm/<timestamp>-case-v2-<pid>/`。本轮正式 219/220 同卡对照都使用私有 RAM 文件系统输出，native `.so` 保留在可执行 home 挂载；该存储变化须与历史计时区别看待。这是单项完整 11 轮运行，其他四项缺席会在完整五项校验中显示缺项；不能直接拿该单项结果冒充完整五项提交。
 
 此前221正式推理因空间紧张，将rank0视频分放私有/tmp、rank1留在RAM。原官方校验器拒绝符号链接视频根；原失败证据保留。完成推理后，把同次rank1视频与rank0及220逐文件比对SHA，并硬链接为普通目录，官方校验通过后才汇总103视频。完整计时270.825199秒未修改。精确守护脚本及包装证明见 `experiments/temporal-block-220/full-split-r3`。常规复现应使用空间充足的普通目录，无需采用这个存储方案。
 

@@ -7,8 +7,11 @@ def main():
     p.add_argument('--workdir',type=Path,required=True,help='New empty directory for source and diagnostic evidence')
     p.add_argument('--storage-config',type=Path,help='Optional CPU-qualified private tmpfs adapter config');p.add_argument('--prepare-only',action='store_true',help='Prepare source/guard without GPU execution')
     p.add_argument('--decision-cache-dir',type=Path,help='Executable cache for decision temporal223')
-    p.add_argument('--variant',choices=('decision-temporal223','both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block-initial-block','both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block','both-spatial-temporal-resblock-grid-native-attention-initial-ffn','both-spatial-temporal-resblock-grid-native-attention','both-spatial-temporal-resblock-grid','both-spatial-temporal','world-spatial-temporal','world-ffn-temporal'),default='decision-temporal223')
+    p.add_argument('--variant',choices=('world-co225','decision-temporal223','both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block-initial-block','both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block','both-spatial-temporal-resblock-grid-native-attention-initial-ffn','both-spatial-temporal-resblock-grid-native-attention','both-spatial-temporal-resblock-grid','both-spatial-temporal','world-spatial-temporal','world-ffn-temporal'),default='world-co225')
     p.add_argument('--smoke',action='store_true',help='One round only; not a competition result');a=p.parse_args()
+    if a.variant=='world-co225':
+        subprocess.run([sys.executable,str(Path(__file__).with_name('run_v2_world_co225.py')),*sys.argv[1:]],check=True)
+        return
     if a.variant=='decision-temporal223':
         subprocess.run([sys.executable,str(Path(__file__).with_name('run_v2_decision223.py')),*sys.argv[1:]],check=True)
         return

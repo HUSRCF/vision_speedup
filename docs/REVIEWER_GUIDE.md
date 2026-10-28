@@ -8,6 +8,8 @@
 
 ## 当前方案
 
+当前正式/default为[225文件CO分片](WORLD_CO_SPLIT_20261029.md)：V2 **257.945205秒 / PSNR29.675324786dB**，五项 **771.314275秒**。在223上筛选9个world卷积，按输出通道分片，保留原CUBIN／constexpr／batch stride／K顺序，新增9次world汇合。请检查tile对齐、原cache检查先于替换、完整输出stride恢复、关闭恢复及权重版本刷新。完整同卡AB省2.480175秒，23视频逐文件SHA相同，新103视频官方验收通过。默认复现入口、CPU验证、精确源码和历史223材料均保留。
+
 - 主要公开激活、master weights、偏置和残差保持 FP32；内部采用缩放 FP16 的高低分解及补偿乘积。不能将此描述成全 FP32 算术或全 FP16 推理。
 - 缓存条件编码与静态权重变换，按权重 `_version` 刷新；输入激活每次重新计算。
 - 采用 GroupNorm/布局转换/投影与残差等融合，以及预打包 QKV、GEGLU、时间卷积。
@@ -44,8 +46,8 @@
 
 `experiments` 中的诊断探针部分依赖未发布的本地调度状态文件。当前双卡 V2 使用 `reproduce/run_v2_parallel.py`，单卡历史基线使用 `reproduce/run_v2.py`；已采用的四个非 V2 解码优化使用 `experiments/nonv2-vae-all-display/run_case.py`，其 59 个源码文件、入口脚本和分项参数均已固定。
 
-2026-10-29 已采用原生 xFormers attention 的八帧局部边界，最新完整 V2 为 **280.850431 秒**。应连同 [219 生产增量](../experiments/native-attention-218/production219)检查原全局 mask 的切片、full16 未归属帧在既有 gather 前不被消费、实际 FP32 CUTLASS 分派及局部输出复制成本。完整同卡／同存储对照省 5.874246 秒，103 视频重新验证通过；详见 [最新审阅回复](REVIEW_RESPONSE_20261029.md)。下一个重点是遗漏的 `init_attn` FFN，随后将已有时间 FFN 的汇合边界外移，保持全局 GroupNorm 统计和每个空间位置的完整时间序列。
+2026-10-29 已采用原生 xFormers attention 的八帧局部边界，当时完整 V2 为 **280.850431 秒**。应连同 [219 生产增量](../experiments/native-attention-218/production219)检查原全局 mask 的切片、full16 未归属帧在既有 gather 前不被消费、实际 FP32 CUTLASS 分派及局部输出复制成本。完整同卡／同存储对照省 5.874246 秒，103 视频重新验证通过；详见 [最新审阅回复](REVIEW_RESPONSE_20261029.md)。下一个重点是遗漏的 `init_attn` FFN，随后将已有时间 FFN 的汇合边界外移，保持全局 GroupNorm 统计和每个空间位置的完整时间序列。
 
 初始 512 通道 FFN 现已进入 [220 版本](../experiments/initial-ffn-219/production220)，完整 V2 **277.436969 秒**；同卡完整对照净省 1.459912 秒，六对模型前向省3.940857／3.897850ms。注意初始 FFN 按整齐 GROUP32×BM64 边界切行，两个原 JIT 的 K 累加不变，旧权重版本缓存继续刷新；每 rank40MiB输出在一个 gather 处汇合。额外 M20480 编译使用私有每 rank 缓存，随后恢复原目录。原103视频复核、原计时器和完整工作量均保持。[实际 meta 构造清单](../results/aggressive-20261028/temporal-block-219/meta-r3)确认16个常规时间块使用 Linear 投影，init_attn 使用320→512→320 Conv1d投影，扩展边界时应分开处理。
 
-当前正式V2已采用222（268.844229秒），新增初始时间块范围共用既有汇合，不改原209文件／110 JIT算术。完整同GPU0/1、同私有tmpfs对照272.043547→268.844229秒，23视频SHA及PSNR一致，103视频官方汇总accepted。源码与证据见`experiments/initial-boundary-221/production222`及`results/aggressive-20261028/initial-boundary-221/private-tmpfs-full`。存储适配器只影响本次进程树的新NCCL临时文件；CPU跨进程、GPU图内all-gather和实际控制文件映射均有独立证据。完整差值包含运行波动，未变decision阶段也更快；不能将3.199318秒全部归因于新增范围。
+历史正式V2曾采用222（268.844229秒），新增初始时间块范围共用既有汇合，不改原209文件／110 JIT算术。完整同GPU0/1、同私有tmpfs对照272.043547→268.844229秒，23视频SHA及PSNR一致，103视频官方汇总accepted。源码与证据见`experiments/initial-boundary-221/production222`及`results/aggressive-20261028/initial-boundary-221/private-tmpfs-full`。存储适配器只影响本次进程树的新NCCL临时文件；CPU跨进程、GPU图内all-gather和实际控制文件映射均有独立证据。完整差值包含运行波动，未变decision阶段也更快；不能将3.199318秒全部归因于新增范围。
