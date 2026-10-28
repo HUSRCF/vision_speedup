@@ -72,3 +72,12 @@ QKV原本按三个输出面存放，故半M计算先写局部连续scratch，再
 GPU guard和所有完整模型报告成功结束后，外层retry将重复ranks.log复制到顶层时遇到RAM盘不足，故outer archiver没有成功退出。完整原始日志／报告已在本机留存；严格确认任务结束并核对本机原件SHA后，仅将这三次新任务的重复证据gzip，释放约48.76MB。报告明确记录此归档错误；没有把失败复制算入GPU计时、修改输出或放宽质量检查。
 
 [`production221`](../experiments/temporal-block-220/production221)冻结新增helper和runtime路由；核心函数及Controller除report外与GPU验证r2的AST相同。完整候选使用原11轮／23视频、原process timer和官方PSNR，处于待验状态。原正式220（277.436969s，五项826.342893s）及默认入口继续保留。完整候选与历史220比较不是同时进行的full-process AB；六对交替测量仅指上述同GPU完整world前向。
+
+
+### 完整221尝试与后续空间norm草案
+
+完整r2使用GPU1/2，原11轮／23视频写入流程在共享RAM文件系统关闭生成视频时遇到ENOSPC。没有完整有效process time／PSNR，不计分、不替换220。冻结源码和计时资产与run source.tar.gz逐文件核对一致；GPU guard记录746次采样，峰值显存每卡74,192MiB，最高温度73／72°C。确认视频写入错误后只中断本任务自己的guard，依照其finally清理自身进程，不向其他任务发信号。原始完整日志保留本机；发布[摘要和限定错误片段](../results/aggressive-20261028/temporal-block-220/full-failed-r2)。
+
+为腾出独立系统盘输出空间而提出的8项历史已结束模型日志压缩，被自动审批拒绝：其认为原授权仅覆盖本轮新任务，历史证据处理需要用户明确批准。尚未执行历史压缩，重跑等待足够输出空间；本地正式pair保持277.436969s／826.342893s。
+
+可独立进行的空间norm草案已完成CPU检查：按SpatialTransformer scope内的独立16样本分配partial／finish_stats／apply／serial_norm／norm-layout-pack的行指针和grid，所有标量维度与stride（包括full M）不变；不增加通信，不触及TemporalTransformer的5D GroupNorm。72项布局/偏移检查、16项时间路径拒绝检查通过，无CUDA初始化；尚无GPU逐位或性能资格。精确草案见[spatial-norm-221/cpu-r1](../experiments/spatial-norm-221/cpu-r1)。

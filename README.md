@@ -40,7 +40,9 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 使用两张卡，其余�
 
 ## 最新优化重点
 
-时间块扩展候选已完成模型验证：[精确代码](experiments/temporal-block-220/model-r2)、[原始六对计时](results/aggressive-20261028/temporal-block-220/model-r2/summary.json)。在实际220基线上，16个常规 world 时间块沿空间位置分片，保留完整5D GroupNorm、16时间步及既有FFN汇合；QKV、FP32时间attention、投影及残差norm共享该边界，不增加通信。六组动态输入／权重状态的三路输出逐位一致；两卡每次 world 前向中位省 **11.475960／11.577858 ms**，六对均更快，包含54个QKV回写节点。按550次粗估约6.31–6.37秒，**不是完整V2成绩**。[221文件候选](experiments/temporal-block-220/production221)已冻结并排队完整工作量验证；默认运行器和本机提交材料仍选220。候选可用 `reproduce/run_v2_parallel.py --variant both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block` 显式选择。
+时间块扩展候选已完成模型验证：[精确代码](experiments/temporal-block-220/model-r2)、[原始六对计时](results/aggressive-20261028/temporal-block-220/model-r2/summary.json)。在实际220基线上，16个常规 world 时间块沿空间位置分片，保留完整5D GroupNorm、16时间步及既有FFN汇合；QKV、FP32时间attention、投影及残差norm共享该边界，不增加通信。六组动态输入／权重状态的三路输出逐位一致；两卡每次 world 前向中位省 **11.475960／11.577858 ms**，六对均更快，包含54个QKV回写节点。按550次粗估约6.31–6.37秒，**不是完整V2成绩**。[221文件候选](experiments/temporal-block-220/production221)已冻结；首个完整尝试因共享RAM盘视频写入ENOSPC失败，尚无有效新正式成绩，重跑等待输出空间；默认运行器和本机提交材料仍选220。候选可用 `reproduce/run_v2_parallel.py --variant both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block` 显式选择。
+
+[完整尝试的存储失败记录](results/aggressive-20261028/temporal-block-220/full-failed-r2/summary.json)与模型检查分开保留：该次未计分；两卡峰值显存74,192MiB、最高73／72°C。后续[空间norm草案](experiments/spatial-norm-221/cpu-r1)已通过72项CPU布局检查和16项时间GroupNorm拒绝检查，尚无GPU质量或性能结论。
 
 首版把`init_attn`一并纳入后未通过原图finite校验；其原始FFN输出先汇合、随后才加残差，不能套用普通块边界。r2保留`init_attn`已采用220路径。模型检查完成后，外层复制重复日志曾因RAM盘满失败；完整GPU报告和原始日志已取回并核对SHA，再压缩仅已结束任务的重复证据。该归档失败单独记录，不掩饰为成功退出，也未改动GPU测量或正式材料。
 

@@ -1,0 +1,18 @@
+[rank0]:     self.full_container.mux(packet)
+[rank0]:   File "av/container/output.pyx", line 250, in av.container.output.OutputContainer.mux
+[rank0]:   File "av/container/output.pyx", line 271, in av.container.output.OutputContainer.mux_one
+[rank0]:   File "av/container/core.pyx", line 286, in av.container.core.Container.err_check
+[rank0]:   File "av/error.pyx", line 326, in av.error.err_check
+[rank0]: av.error.OSError: [Errno 28] No space left on device: '/dev/shm/team07-temporal221-full-8bip_8ug/diagnostic-candidate-r2/runs/20261028T174612Z-case-v2-nccl-3557740/outputs/unitree_z1_dual_arm_stackbox_v2/inference/sample_5/../5_full_fs4.mp4'
+[rank0]: av.error.OSError: [Errno 28] No space left on device: '/dev/shm/team07-temporal221-full-8bip_8ug/diagnostic-candidate-r2/runs/20261028T174612Z-case-v2-nccl-3557740/outputs/unitree_z1_dual_arm_stackbox_v2/inference/sample_5/../5_full_fs4.mp4'
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "av/container/output.pyx", line 26, in av.container.output.close_output
+[rank0]:   File "av/container/core.pyx", line 286, in av.container.core.Container.err_check
+[rank0]:   File "av/error.pyx", line 326, in av.error.err_check
+[rank0]: av.error.OSError: [Errno 28] No space left on device
+Exception ignored in: 'av.container.output.OutputContainer.__dealloc__'
+Traceback (most recent call last):
+  File "av/container/output.pyx", line 26, in av.container.output.close_output
+  File "av/container/core.pyx", line 286, in av.container.core.Container.err_check
+  File "av/error.pyx", line 326, in av.error.err_check
+av.error.OSError: [Errno 28] No space left on device
