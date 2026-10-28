@@ -1,0 +1,2177 @@
+{
+  "controller": {
+    "captured": 48,
+    "spatial_captured": 32,
+    "ffn_captured": 16,
+    "temporal_captured": 88,
+    "spatial": {
+      "captured": 32,
+      "rows": [
+        {
+          "module": "input_blocks.1.1",
+          "input_shape": [
+            16,
+            320,
+            40,
+            64
+          ],
+          "shaders": {
+            "_primary": 5,
+            "_primary_qkv_pack": 1,
+            "_prepacked_attention": 1,
+            "_residual_layer_norm": 2,
+            "_mix": 1,
+            "_pack_half_weight": 1,
+            "_geglu": 1,
+            "inline_zero_low_gemm": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "input_blocks.2.1",
+          "input_shape": [
+            16,
+            320,
+            40,
+            64
+          ],
+          "shaders": {
+            "_primary": 5,
+            "_primary_qkv_pack": 1,
+            "_prepacked_attention": 1,
+            "_residual_layer_norm": 2,
+            "_mix": 1,
+            "_pack_half_weight": 1,
+            "_geglu": 1,
+            "inline_zero_low_gemm": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "input_blocks.4.1",
+          "input_shape": [
+            16,
+            640,
+            20,
+            32
+          ],
+          "shaders": {
+            "inline_zero_low_gemm": 5,
+            "_pack_half_weight": 1,
+            "_prepacked_attention": 1,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_primary_geglu_hidden_parts": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "input_blocks.5.1",
+          "input_shape": [
+            16,
+            640,
+            20,
+            32
+          ],
+          "shaders": {
+            "inline_zero_low_gemm": 5,
+            "_pack_half_weight": 1,
+            "_prepacked_attention": 1,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_primary_geglu_hidden_parts": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "input_blocks.7.1",
+          "input_shape": [
+            16,
+            1280,
+            10,
+            16
+          ],
+          "shaders": {
+            "_pack_half_weight": 6,
+            "_zero_low_gemm": 5,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_primary_geglu_hidden_high": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "input_blocks.8.1",
+          "input_shape": [
+            16,
+            1280,
+            10,
+            16
+          ],
+          "shaders": {
+            "_pack_half_weight": 6,
+            "_zero_low_gemm": 5,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_primary_geglu_hidden_high": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "middle_block.1",
+          "input_shape": [
+            16,
+            1280,
+            5,
+            8
+          ],
+          "shaders": {
+            "_pack_half_weight": 6,
+            "_zero_low_gemm": 5,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_primary_geglu_hidden_high": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.3.1",
+          "input_shape": [
+            16,
+            1280,
+            10,
+            16
+          ],
+          "shaders": {
+            "_pack_half_weight": 6,
+            "_zero_low_gemm": 5,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_primary_geglu_hidden_high": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.4.1",
+          "input_shape": [
+            16,
+            1280,
+            10,
+            16
+          ],
+          "shaders": {
+            "_pack_half_weight": 6,
+            "_zero_low_gemm": 5,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_primary_geglu_hidden_high": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.5.1",
+          "input_shape": [
+            16,
+            1280,
+            10,
+            16
+          ],
+          "shaders": {
+            "_pack_half_weight": 6,
+            "_zero_low_gemm": 5,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_primary_geglu_hidden_high": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.6.1",
+          "input_shape": [
+            16,
+            640,
+            20,
+            32
+          ],
+          "shaders": {
+            "inline_zero_low_gemm": 5,
+            "_pack_half_weight": 1,
+            "_prepacked_attention": 1,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_primary_geglu_hidden_parts": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.7.1",
+          "input_shape": [
+            16,
+            640,
+            20,
+            32
+          ],
+          "shaders": {
+            "inline_zero_low_gemm": 5,
+            "_pack_half_weight": 1,
+            "_prepacked_attention": 1,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_primary_geglu_hidden_parts": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.8.1",
+          "input_shape": [
+            16,
+            640,
+            20,
+            32
+          ],
+          "shaders": {
+            "inline_zero_low_gemm": 5,
+            "_pack_half_weight": 1,
+            "_prepacked_attention": 1,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_primary_geglu_hidden_parts": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.9.1",
+          "input_shape": [
+            16,
+            320,
+            40,
+            64
+          ],
+          "shaders": {
+            "_primary": 5,
+            "_primary_qkv_pack": 1,
+            "_prepacked_attention": 1,
+            "_residual_layer_norm": 2,
+            "_mix": 1,
+            "_pack_half_weight": 1,
+            "_geglu": 1,
+            "inline_zero_low_gemm": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.10.1",
+          "input_shape": [
+            16,
+            320,
+            40,
+            64
+          ],
+          "shaders": {
+            "_primary": 5,
+            "_primary_qkv_pack": 1,
+            "_prepacked_attention": 1,
+            "_residual_layer_norm": 2,
+            "_mix": 1,
+            "_pack_half_weight": 1,
+            "_geglu": 1,
+            "inline_zero_low_gemm": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.11.1",
+          "input_shape": [
+            16,
+            320,
+            40,
+            64
+          ],
+          "shaders": {
+            "_primary": 5,
+            "_primary_qkv_pack": 1,
+            "_prepacked_attention": 1,
+            "_residual_layer_norm": 2,
+            "_mix": 1,
+            "_pack_half_weight": 1,
+            "_geglu": 1,
+            "inline_zero_low_gemm": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "input_blocks.1.1",
+          "input_shape": [
+            16,
+            320,
+            40,
+            64
+          ],
+          "shaders": {
+            "_presplit_two_product_gemm": 1,
+            "_pack_half_weight": 1,
+            "_qkv_pack": 1,
+            "_attention_hidden_parts_vector": 1,
+            "_packed_attention_output_gemm": 1,
+            "_residual_layer_norm": 1,
+            "_mix": 1,
+            "_two_product_gemm": 1,
+            "_residual_norm_half_pack": 1,
+            "_geglu_subtile32": 1,
+            "_zero_low_gemm_residual": 1,
+            "_out_projection_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "input_blocks.2.1",
+          "input_shape": [
+            16,
+            320,
+            40,
+            64
+          ],
+          "shaders": {
+            "_presplit_two_product_gemm": 1,
+            "_pack_half_weight": 1,
+            "_qkv_pack": 1,
+            "_attention_hidden_parts_vector": 1,
+            "_packed_attention_output_gemm": 1,
+            "_residual_layer_norm": 1,
+            "_mix": 1,
+            "_two_product_gemm": 1,
+            "_residual_norm_half_pack": 1,
+            "_geglu_subtile32": 1,
+            "_zero_low_gemm_residual": 1,
+            "_out_projection_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "input_blocks.4.1",
+          "input_shape": [
+            16,
+            640,
+            20,
+            32
+          ],
+          "shaders": {
+            "_presplit_two_product_gemm": 1,
+            "_pack_half_weight": 1,
+            "_qkv_pack": 1,
+            "_attention_hidden_parts_vector": 1,
+            "_packed_attention_output_gemm": 1,
+            "_residual_layer_norm": 1,
+            "_mix": 1,
+            "_two_product_gemm": 1,
+            "_residual_norm_half_pack": 1,
+            "_geglu_subtile32": 1,
+            "_packed_two_product_gemm_residual": 1,
+            "_out_projection_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "input_blocks.5.1",
+          "input_shape": [
+            16,
+            640,
+            20,
+            32
+          ],
+          "shaders": {
+            "_presplit_two_product_gemm": 1,
+            "_pack_half_weight": 1,
+            "_qkv_pack": 1,
+            "_attention_hidden_parts_vector": 1,
+            "_packed_attention_output_gemm": 1,
+            "_residual_layer_norm": 1,
+            "_mix": 1,
+            "_two_product_gemm": 1,
+            "_residual_norm_half_pack": 1,
+            "_geglu_subtile32": 1,
+            "_packed_two_product_gemm_residual": 1,
+            "_out_projection_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "input_blocks.7.1",
+          "input_shape": [
+            16,
+            1280,
+            10,
+            16
+          ],
+          "shaders": {
+            "_pack_half_weight": 6,
+            "_zero_low_gemm_persistent": 10,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_both_geglu_subtile32": 1,
+            "_zero_low_gemm_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "input_blocks.8.1",
+          "input_shape": [
+            16,
+            1280,
+            10,
+            16
+          ],
+          "shaders": {
+            "_pack_half_weight": 6,
+            "_zero_low_gemm_persistent": 10,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_both_geglu_subtile32": 1,
+            "_zero_low_gemm_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "middle_block.1",
+          "input_shape": [
+            16,
+            1280,
+            5,
+            8
+          ],
+          "shaders": {
+            "_pack_half_weight": 6,
+            "_zero_low_gemm_persistent": 10,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_both_geglu_subtile32": 1,
+            "_zero_low_gemm_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.3.1",
+          "input_shape": [
+            16,
+            1280,
+            10,
+            16
+          ],
+          "shaders": {
+            "_pack_half_weight": 6,
+            "_zero_low_gemm_persistent": 10,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_both_geglu_subtile32": 1,
+            "_zero_low_gemm_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.4.1",
+          "input_shape": [
+            16,
+            1280,
+            10,
+            16
+          ],
+          "shaders": {
+            "_pack_half_weight": 6,
+            "_zero_low_gemm_persistent": 10,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_both_geglu_subtile32": 1,
+            "_zero_low_gemm_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.5.1",
+          "input_shape": [
+            16,
+            1280,
+            10,
+            16
+          ],
+          "shaders": {
+            "_pack_half_weight": 6,
+            "_zero_low_gemm_persistent": 10,
+            "_mix": 2,
+            "_residual_layer_norm": 1,
+            "_residual_norm_half_pack": 1,
+            "_both_geglu_subtile32": 1,
+            "_zero_low_gemm_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.6.1",
+          "input_shape": [
+            16,
+            640,
+            20,
+            32
+          ],
+          "shaders": {
+            "_presplit_two_product_gemm": 1,
+            "_pack_half_weight": 1,
+            "_qkv_pack": 1,
+            "_attention_hidden_parts_vector": 1,
+            "_packed_attention_output_gemm": 1,
+            "_residual_layer_norm": 1,
+            "_mix": 1,
+            "_two_product_gemm": 1,
+            "_residual_norm_half_pack": 1,
+            "_geglu_subtile32": 1,
+            "_packed_two_product_gemm_residual": 1,
+            "_out_projection_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.7.1",
+          "input_shape": [
+            16,
+            640,
+            20,
+            32
+          ],
+          "shaders": {
+            "_presplit_two_product_gemm": 1,
+            "_pack_half_weight": 1,
+            "_qkv_pack": 1,
+            "_attention_hidden_parts_vector": 1,
+            "_packed_attention_output_gemm": 1,
+            "_residual_layer_norm": 1,
+            "_mix": 1,
+            "_two_product_gemm": 1,
+            "_residual_norm_half_pack": 1,
+            "_geglu_subtile32": 1,
+            "_packed_two_product_gemm_residual": 1,
+            "_out_projection_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.8.1",
+          "input_shape": [
+            16,
+            640,
+            20,
+            32
+          ],
+          "shaders": {
+            "_presplit_two_product_gemm": 1,
+            "_pack_half_weight": 1,
+            "_qkv_pack": 1,
+            "_attention_hidden_parts_vector": 1,
+            "_packed_attention_output_gemm": 1,
+            "_residual_layer_norm": 1,
+            "_mix": 1,
+            "_two_product_gemm": 1,
+            "_residual_norm_half_pack": 1,
+            "_geglu_subtile32": 1,
+            "_packed_two_product_gemm_residual": 1,
+            "_out_projection_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.9.1",
+          "input_shape": [
+            16,
+            320,
+            40,
+            64
+          ],
+          "shaders": {
+            "_presplit_two_product_gemm": 1,
+            "_pack_half_weight": 1,
+            "_qkv_pack": 1,
+            "_attention_hidden_parts_vector": 1,
+            "_packed_attention_output_gemm": 1,
+            "_residual_layer_norm": 1,
+            "_mix": 1,
+            "_two_product_gemm": 1,
+            "_residual_norm_half_pack": 1,
+            "_geglu_subtile32": 1,
+            "_zero_low_gemm_residual": 1,
+            "_out_projection_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.10.1",
+          "input_shape": [
+            16,
+            320,
+            40,
+            64
+          ],
+          "shaders": {
+            "_presplit_two_product_gemm": 1,
+            "_pack_half_weight": 1,
+            "_qkv_pack": 1,
+            "_attention_hidden_parts_vector": 1,
+            "_packed_attention_output_gemm": 1,
+            "_residual_layer_norm": 1,
+            "_mix": 1,
+            "_two_product_gemm": 1,
+            "_residual_norm_half_pack": 1,
+            "_geglu_subtile32": 1,
+            "_zero_low_gemm_residual": 1,
+            "_out_projection_residual": 1
+          },
+          "collectives": 1
+        },
+        {
+          "module": "output_blocks.11.1",
+          "input_shape": [
+            16,
+            320,
+            40,
+            64
+          ],
+          "shaders": {
+            "_presplit_two_product_gemm": 1,
+            "_pack_half_weight": 1,
+            "_qkv_pack": 1,
+            "_attention_hidden_parts_vector": 1,
+            "_packed_attention_output_gemm": 1,
+            "_residual_layer_norm": 1,
+            "_mix": 1,
+            "_two_product_gemm": 1,
+            "_residual_norm_half_pack": 1,
+            "_geglu_subtile32": 1,
+            "_zero_low_gemm_residual": 1,
+            "_out_projection_residual": 1
+          },
+          "collectives": 1
+        }
+      ],
+      "two_GPUs": true,
+      "full16_python_shapes_and_original_dispatch": true,
+      "original_JIT_bodies_K_order_and_tiles": true,
+      "vendor_GEMM_dimensions_unchanged": true,
+      "decision_CUDNN_math_flag_unchanged": true,
+      "one_final_output_allgather_per_SpatialTransformer": true,
+      "original_global_action_masks_and_KV_caches": true,
+      "grouped_output_planes_and_unhandled_kernels_replicated": true
+    },
+    "temporal": {
+      "captured": 16,
+      "rows": [
+        {
+          "shape": [
+            40960,
+            320,
+            1280
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            40960,
+            320,
+            1280
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            10240,
+            640,
+            2560
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            10240,
+            640,
+            2560
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            640,
+            1280,
+            5120
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            10240,
+            640,
+            2560
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            10240,
+            640,
+            2560
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            10240,
+            640,
+            2560
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            40960,
+            320,
+            1280
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            40960,
+            320,
+            1280
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        },
+        {
+          "shape": [
+            40960,
+            320,
+            1280
+          ],
+          "rank": 1,
+          "collectives": 1,
+          "unchanged_two_shader_bodies": true
+        }
+      ],
+      "unchanged_shader_bodies": true,
+      "original_K64_order": true,
+      "original_full_shape_owners": true,
+      "one_final_output_allgather_per_FFN": true,
+      "two_GPUs": true,
+      "temporal_captured": 88,
+      "temporal_rows": [
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            640,
+            1280,
+            1280,
+            16,
+            40
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_zero_low_temporal",
+          "geometry": [
+            2560,
+            1280,
+            1280,
+            16,
+            160
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            10240,
+            640,
+            640,
+            16,
+            640
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        },
+        {
+          "shader": "_presplit_temporal",
+          "geometry": [
+            40960,
+            320,
+            320,
+            16,
+            2560
+          ],
+          "rank": 1,
+          "output_channel_shard": true,
+          "original_full_input_C_and_K_order": true,
+          "original_full_weight_Count": true,
+          "collectives": 1
+        }
+      ]
+    },
+    "spatial_FFN_inner_allgather_disabled": true,
+    "two_GPUs": true
+  },
+  "stage_captures": {
+    "decision": 16,
+    "world": 32
+  }
+}

@@ -11,12 +11,12 @@ def main():
     assert set(manifest)=={str(p.relative_to(code)) for p in (code/'src').rglob('*.py')}
     for name,digest in manifest.items():assert sha(code/name)==digest,name
     assert sha(code/'src/unifolm_wma/utils/native-graph-handles/team07_cuda_graph_handles.so')=='ab2f19b88cb9af02b42fb5fdcb39da49e062346fd30794be45fb81e12cb1b927'
-    assert sha(root/'results/runtime.log')=='79edf05f4afd73df3ae236794324173a72e54c13c2168c3470456d6ba5d46bac'
-    assert sha(root/'results/result.json')=='6a9ec891d56f625e31a9b24607b2d375babd1910a2dcec1eda9d84570888020b'
+    assert sha(root/'results/runtime.log')=='cef00f1d1f245f33fc27ca549d097bf053e46bac885d388d7def8ff8ec4d0fe3'
+    assert sha(root/'results/result.json')=='4dfa6c3abc33c44d390740a86866f29fc97767472ae8e45c0aa7b50df044f07d'
     result=json.loads((root/'results/result.json').read_text());assert result['status']=='accepted'
     cases=result['cases'];assert len(cases)==5 and sum(c['videos'] for c in cases)==103
     assert [c['rounds'] for c in cases]==[12,7,11,8,11]
-    assert abs(sum(c['process_wall_s'] for c in cases)-850.836587)<1e-6
+    assert abs(sum(c['process_wall_s'] for c in cases)-838.392232)<1e-6
     log=(root/'results/runtime.log').read_text()
     timings=re.findall(r'^TIMING case=(\S+) process_wall_s=([0-9.]+)$',log,re.M)
     assert len(timings)==5 and len({case for case,_ in timings})==5
@@ -64,7 +64,23 @@ def main():
     for name in ('scripts/run_compute_benchmark.sh','scripts/team07_env.sh'):assert sha(code/name)==assets[name]
     accepted=json.loads((latest/'accepted-outcome.json').read_text())
     assert accepted['GPUs']==2 and accepted['source_count']==215 and accepted['all103_officially_validated']
+    assert accepted['V2_s']==301.930663 # historical world-only spatial215 overlay
+    latest=root/'experiments/nccl-both-spatial-temporal-209'
+    spec=importlib.util.spec_from_file_location('both_parallel_frozen',latest/'production_sources.py')
+    frozen=importlib.util.module_from_spec(spec);spec.loader.exec_module(frozen)
+    files,proof=frozen.production_sources(code)
+    assert proof==json.loads((latest/'timing-proof.json').read_text())
+    manifest=json.loads((latest/'production-sources.json').read_text());assert len(manifest)==215
+    for name,digest in manifest.items():
+        actual=hashlib.sha256(files[name].encode()).hexdigest() if name in files else sha(code/name)
+        assert actual==digest,name
+    assets=json.loads((latest/'production-assets.json').read_text())
+    assert hashlib.sha256(files['scripts/evaluation/world_model_interaction.py'].encode()).hexdigest()==assets['scripts/evaluation/world_model_interaction.py']
+    assert sha(latest/'timing-proof.json')==assets['nccl-entry-timing-proof.json']
+    for name in ('scripts/run_compute_benchmark.sh','scripts/team07_env.sh'):assert sha(code/name)==assets[name]
+    accepted=json.loads((latest/'accepted-outcome.json').read_text())
+    assert accepted['GPUs']==2 and accepted['source_count']==215 and accepted['all103_officially_validated']
     assert next(c['process_wall_s'] for c in cases if c['case'].endswith('stackbox_v2'))==accepted['V2_s']
-    print('Verified: original209 base;historical213 and adopted215-source overlays;59 nonV2 sources;official103 log/JSON.')
+    print('Verified: original209 base;historical213/world215 and adopted both-stage215 overlays;59 nonV2 sources;official103 log/JSON.')
 
 if __name__=='__main__':main()

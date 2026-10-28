@@ -25,7 +25,9 @@ python3 reproduce/verify_snapshot.py
 ~/.venv/bin/python reproduce/run_v2_parallel.py --gpus 2,3 --workdir /tmp/unifolm-parallel-review-1
 ```
 
-`--workdir` 必须是新目录。默认重建固定的 215 文件源码、等待两张空闲卡并检查整段 GPU 占用；模型导入、双模型传输、通信和 helper 退出仍计入原始进程耗时。完整结果为 301.930663 秒、PSNR 29.675324786 dB。添加 `--variant world-ffn-temporal` 可运行保留的旧 213 文件版本，历史结果为 312.462900 秒。单轮 `--smoke` 仅供排查，不能作为成绩。
+`--workdir` 必须是新目录。默认重建固定的两阶段空间分片 215 文件源码、等待两张空闲卡并检查整段 GPU 占用；模型导入、双模型传输、通信和 helper 退出仍计入原始进程耗时。完整结果为 289.486308 秒、PSNR 29.675324786 dB。添加 `--variant world-spatial-temporal` 可运行仅 world 空间分片的旧 215 文件版本（301.930663 秒），`--variant world-ffn-temporal` 可运行旧 213 文件版本（312.462900 秒）。单轮 `--smoke` 仅供排查，不能作为成绩。
+
+原始 209 文件清单中的 `src/unifolm_wma/utils/projector.py` 含既有语法错误（条件使用赋值号），全树 `compileall` 会在该文件失败。当前正式推理配置未使用它，本次保留原始字节；新增 helper、修改入口和实际运行路径另有解析、逐位及完整视频验证。
 
 保留的单卡基线运行命令：
 

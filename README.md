@@ -2,13 +2,13 @@
 
 NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 使用两张卡，其余四项使用单卡。此仓库用于外部代码审阅。
 
-当前已验证的 V2 为 **301.930663 秒 / PSNR 29.675324786 dB**，五项有效耗时合计 **850.836587 秒**。完整原始材料为 [`results/runtime.log`](results/runtime.log) 和 [`results/result.json`](results/result.json)。这是官方工具在比赛机上的本地验证结果；不表示本仓库代码已经经过主办方独立复跑。
+当前已验证的 V2 为 **289.486308 秒 / PSNR 29.675324786 dB**，五项有效耗时合计 **838.392232 秒**。完整原始材料为 [`results/runtime.log`](results/runtime.log) 和 [`results/result.json`](results/result.json)。这是官方工具在比赛机上的本地验证结果；不表示本仓库代码已经经过主办方独立复跑。
 
 | 分项 | process_wall_s | PSNR dB |
 |---|---:|---:|
 | Z1 堆箱 | 167.819341 | 40.074914 |
 | 双臂堆箱 | 103.111184 | 31.991494 |
-| 双臂堆箱 V2 | 301.930663 | 29.675325 |
+| 双臂堆箱 V2 | 289.486308 | 29.675325 |
 | 清理铅笔 | 117.077862 | 36.537127 |
 | G1 相机装箱 | 160.897537 | 26.107156 |
 
@@ -23,9 +23,9 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 使用两张卡，其余�
 - [`unifolm/src`](unifolm/src)：保留的单卡基线精确源码，209 个 Python 文件，110 个 Triton JIT 函数。
 - [`unifolm/world-head-filter-cache-production-sources.json`](unifolm/world-head-filter-cache-production-sources.json)：生产源码 SHA256 清单。
 - [`experiments/nonv2-vae-all-display`](experiments/nonv2-vae-all-display)：已采用的四个非 V2 分项精确源码与启动参数。
-- [`experiments/nccl-spatial-temporal-209`](experiments/nccl-spatial-temporal-209)：当前双卡 V2 的精确增量、计时证明与 215 文件清单；使用 `reproduce/run_v2_parallel.py`。旧 213 文件版本保留在 `experiments/nccl-ffn-209/timed-entry`。
+- [`experiments/nccl-both-spatial-temporal-209`](experiments/nccl-both-spatial-temporal-209)：当前双卡 V2 的精确增量、计时证明与 215 文件清单；使用 `reproduce/run_v2_parallel.py`。仅拆 world 的旧 215 文件版本与旧 213 文件版本均保留。
 - [`docs/REVIEW_RESPONSE_20261028.md`](docs/REVIEW_RESPONSE_20261028.md)：外部审阅建议的核查结果、主干/head 新测量与 Kahan 既有证据。
-- [`docs/FP16_SCALAR_EXPERIMENTS_20261028.md`](docs/FP16_SCALAR_EXPERIMENTS_20261028.md)：FP16 全局／分组／通道缩放、INT8 残差补偿的实际输入测量，以及新的 decision 双卡逐位验证；这些实验尚未替换正式成绩。
+- [`docs/FP16_SCALAR_EXPERIMENTS_20261028.md`](docs/FP16_SCALAR_EXPERIMENTS_20261028.md)：FP16 全局／分组／通道缩放与 INT8 残差补偿的实际输入测量；新算术仍未替换正式成绩，decision 分片随后已完成正式验证。
 
 源码从正式运行的不可变目录取回，逐文件核对生产清单。保留上游 [`LICENSE`](unifolm/LICENSE) 和原始说明；上游赛题入口为 <https://github.com/HKUSTGZ-SCC/Newbie2.0>。
 
@@ -33,11 +33,11 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 使用两张卡，其余�
 
 ## 最新优化重点
 
-2026-10-28 的[双卡实验](docs/AGGRESSIVE_PARALLEL_EXPERIMENTS.md)现覆盖 **16 个完整空间 Transformer、16 个时间 FFN 和 88 个时间卷积**。保留 Python 层完整 16 帧形状，在原始 JIT 调度之后分配工作；空间块只在最终输出汇合一次。完整 11 轮为 **301.930663 秒**，比上个双卡版本快 **10.532237 秒**，比单卡基线快 **14.843733 秒**。23 个视频与单卡基线及另一 rank 全部逐文件相同，正式计时包含全部初始化、通信、模型传输和退出。
+2026-10-28 的[双卡实验](docs/AGGRESSIVE_PARALLEL_EXPERIMENTS.md)现覆盖 **decision 和 world 各 16 个完整空间 Transformer，以及 world 的 16 个时间 FFN、88 个时间卷积**。保留 Python 层完整 16 帧形状和 vendor GEMM 尺寸，在原始 JIT 调度之后分配工作；空间块只在最终输出汇合一次。完整 11 轮为 **289.486308 秒**，比上个双卡版本快 **12.444355 秒**，比单卡基线快 **27.288088 秒**。23 个视频与单卡基线及另一 rank 全部逐文件相同，正式计时包含全部初始化、通信、模型传输和退出。
 
 [时间注意力实验](docs/TEMPORAL_ATTENTION_EXPERIMENTS.md)的补偿 Tensor Core 路线已完成完整 V2，但 PSNR 仅 22.76 dB；空间混合精度候选也未达质量要求。这两条路线未被采用。
 
-用户提供的领先成绩为 V2 **205.67 秒**、五项 **653.75 秒**；这只是用户提供的排行榜快照，尚未独立验证。当前仍分别相差约 **96.26 秒、197.09 秒**。双卡 V2 的决策生成约 138.48 秒，世界模型生成约 151.40 秒。下一步重点是 decision 的完整形状算子分片。直接缩小空间 Transformer 的 Python 输入 batch、以及缩小 decision vendor GEMM，已有变慢或数值差异记录，不能直接复用为有效优化。
+用户提供的领先成绩为 V2 **205.67 秒**、五项 **653.75 秒**；这只是用户提供的排行榜快照，尚未独立验证。当前仍分别相差约 **83.82 秒、184.64 秒**。本次双卡 V2 的决策生成约 127.78 秒，世界模型生成约 150.85 秒。后续继续扩大主干算子的并行范围、减少补偿与打包开销。直接缩小空间 Transformer 的 Python 输入 batch、以及缩小 decision vendor GEMM，已有变慢或数值差异记录，不能直接复用为有效优化。
 
 新增原始单卡图计时测得：两个阶段 head 各约 8.2 ms/步，其中约 2.8 ms 为 SpatialSoftmax。将其留在主卡后，余下 head 约 5.4 ms/步；按该样本外推，跨步流水线两阶段合计的理想节省上限约 **5.79 秒**，尚未扣通信、启动和图重构成本。它不是百秒级收益的证据。完整计时方法、18 次样本和逐位一致性证明见上述审阅回复。
 
