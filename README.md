@@ -30,7 +30,9 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB 单卡。此仓库用于外部代码�
 
 ## 最新优化重点
 
-2026-10-28 的[时间注意力实验](docs/TEMPORAL_ATTENTION_EXPERIMENTS.md)已补充原始证据。逐位一致的 warp 调整在完整 V2 中未超过当前最佳，因此正式代码和成绩保持不变；补偿 Tensor Core 路线仍在做完整视频验证。
+2026-10-28 的[双卡 FFN 并行实验](docs/AGGRESSIVE_PARALLEL_EXPERIMENTS.md)覆盖 20 个 world FFN，六种动态检查的三个最终输出逐位一致，完整 world denoiser 每次前向的节省中位数约 9–13 ms，包含通信。尚无完整双卡 V2 成绩；扩大范围的版本仍在验证。
+
+[时间注意力实验](docs/TEMPORAL_ATTENTION_EXPERIMENTS.md)的补偿 Tensor Core 路线已完成完整 V2，但 PSNR 仅 22.76 dB；空间混合精度候选也未达质量要求。正式代码和成绩保持不变。
 
 用户提供的领先成绩为 V2 **205.67 秒**、五项 **653.75 秒**；这只是用户提供的排行榜快照，尚未独立验证。当前 V2 的决策生成约 134.88 秒，世界模型生成约 172.91 秒。重心转向主干补偿 GEMM、多路 cross-attention 的批处理与融合，而非仅累加微秒级卷积优化。
 

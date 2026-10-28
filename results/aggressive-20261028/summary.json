@@ -1,0 +1,157 @@
+{
+  "current_official_V2_s": 316.774396,
+  "current_official_five_case_sum_s": 889.570845,
+  "leader_snapshot_supplied_by_user_only": {
+    "V2_s": 205.67,
+    "five_case_sum_s": 653.75
+  },
+  "not_new_submission": true,
+  "experiments": {
+    "temporal_compensated_current_full_r1": {
+      "state": "temporal_compensated_full_slower_or_failed",
+      "clean": true,
+      "workload_complete": true,
+      "quality_passed": false,
+      "psnr_db": 22.759868629294225,
+      "official_adopted": false,
+      "case": "unitree_z1_dual_arm_stackbox_v2",
+      "case_metrics": {
+        "case": "unitree_z1_dual_arm_stackbox_v2",
+        "rounds": 11,
+        "process_wall_s": 316.512409,
+        "observed_process_wall_s": 316.512409,
+        "psnr_db": 22.759868629294225,
+        "psnr_exact_match": false,
+        "psnr_passed": false,
+        "videos": 23,
+        "profile_complete": true,
+        "execution_ok": true,
+        "execution_exit_code": 0,
+        "reason": "PSNR must be strictly greater than 25 dB",
+        "pure_model_cuda_s": 307.285173
+      }
+    },
+    "frame_protected_spatial_current_full_r1": {
+      "state": "frame_protected_spatial_full_slower_or_failed",
+      "clean": true,
+      "workload_complete": true,
+      "quality_passed": false,
+      "psnr_db": 21.895641247899977,
+      "official_adopted": false,
+      "case": "unitree_z1_dual_arm_stackbox_v2",
+      "case_metrics": {
+        "case": "unitree_z1_dual_arm_stackbox_v2",
+        "rounds": 11,
+        "process_wall_s": 311.596807,
+        "observed_process_wall_s": 311.596807,
+        "psnr_db": 21.895641247899977,
+        "psnr_exact_match": false,
+        "psnr_passed": false,
+        "videos": 23,
+        "profile_complete": true,
+        "execution_ok": true,
+        "execution_exit_code": 0,
+        "reason": "PSNR must be strictly greater than 25 dB",
+        "pure_model_cuda_s": 302.236449
+      }
+    },
+    "nonv2_aggressive_stackbox_full_r1": {
+      "state": "nonv2_aggressive_full_slower_or_failed",
+      "clean": true,
+      "workload_complete": true,
+      "quality_passed": true,
+      "psnr_db": 44.70758169669216,
+      "process_wall_s": 181.004042,
+      "ready_for_official103": false,
+      "official_adopted": false,
+      "case": "unitree_z1_stackbox",
+      "case_metrics": {
+        "case": "unitree_z1_stackbox",
+        "rounds": 12,
+        "process_wall_s": 181.004042,
+        "observed_process_wall_s": 181.004042,
+        "psnr_db": 44.70758169669216,
+        "psnr_exact_match": false,
+        "psnr_passed": true,
+        "videos": 25,
+        "profile_complete": true,
+        "execution_ok": true,
+        "execution_exit_code": 0,
+        "reason": null,
+        "pure_model_cuda_s": 172.278215
+      }
+    },
+    "nonv2_aggressive_stackbox_channels_last_full_r1": {
+      "state": "nonv2_aggressive_full_slower_or_failed",
+      "clean": true,
+      "workload_complete": true,
+      "quality_passed": true,
+      "psnr_db": 46.9394223746644,
+      "process_wall_s": 209.011749,
+      "ready_for_official103": false,
+      "official_adopted": false,
+      "case": "unitree_z1_stackbox",
+      "case_metrics": {
+        "case": "unitree_z1_stackbox",
+        "rounds": 12,
+        "process_wall_s": 209.011749,
+        "observed_process_wall_s": 209.011749,
+        "psnr_db": 46.9394223746644,
+        "psnr_exact_match": false,
+        "psnr_passed": true,
+        "videos": 25,
+        "profile_complete": true,
+        "execution_ok": true,
+        "execution_exit_code": 0,
+        "reason": null,
+        "pure_model_cuda_s": 200.412639
+      }
+    },
+    "nonv2_aggressive_stackbox_vae_cache_full_r1": {
+      "state": "nonv2_aggressive_full_ready_official103",
+      "clean": true,
+      "workload_complete": true,
+      "quality_passed": true,
+      "psnr_db": 40.07844649898501,
+      "process_wall_s": 172.482165,
+      "ready_for_official103": true,
+      "official_adopted": false,
+      "case": "unitree_z1_stackbox",
+      "case_metrics": {
+        "case": "unitree_z1_stackbox",
+        "rounds": 12,
+        "process_wall_s": 172.482165,
+        "observed_process_wall_s": 172.482165,
+        "psnr_db": 40.07844649898501,
+        "psnr_exact_match": false,
+        "psnr_passed": true,
+        "videos": 25,
+        "profile_complete": true,
+        "execution_ok": true,
+        "execution_exit_code": 0,
+        "reason": null,
+        "pure_model_cuda_s": 163.862548
+      }
+    },
+    "dual_gpu_peer_and_graph_feasibility_r1": {
+      "state": "clean_dual_gpu_pair_feasibility",
+      "clean": true,
+      "official_adopted": false
+    },
+    "nccl_geglu_row_shard_current209_pair_r1": {
+      "state": "clean_nccl_geglu_pair",
+      "clean": true,
+      "official_adopted": false
+    },
+    "nccl_geglu_current209_world_model_pair_r4": {
+      "state": "clean_nccl_geglu_actual_world_model_pair",
+      "clean": true,
+      "official_adopted": false
+    },
+    "nccl_ffn_current209_world_model_pair_r1": {
+      "state": "clean_nccl_geglu_actual_world_model_pair",
+      "clean": true,
+      "official_adopted": false
+    }
+  }
+}

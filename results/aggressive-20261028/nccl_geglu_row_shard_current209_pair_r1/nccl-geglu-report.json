@@ -1,0 +1,182 @@
+{
+  "passed": true,
+  "clean": true,
+  "physical_GPUs": [
+    "2",
+    "3"
+  ],
+  "owned_host_contexts": [
+    3165329,
+    3165408,
+    3165409
+  ],
+  "observations": 24,
+  "ranks": [
+    {
+      "rank": 0,
+      "passed": true,
+      "shape": [
+        10240,
+        2560,
+        640
+      ],
+      "unchanged_current_shader": true,
+      "full_size_inputs_replicated": true,
+      "original_FP32_K64_order": true,
+      "no_precision_reduction": true,
+      "no_input_broadcast_in_timed_graph": true,
+      "output_allgather_inplace": true,
+      "NCCL_inside_per_rank_CUDA_graph": true,
+      "cases": [
+        {
+          "case": "initial",
+          "all4_signedzero_bits": true,
+          "weight_low_count": 3276256
+        },
+        {
+          "case": "changed_inputs",
+          "all4_signedzero_bits": true,
+          "weight_low_count": 3276256
+        },
+        {
+          "case": "changed_masters",
+          "all4_signedzero_bits": true,
+          "weight_low_count": 3276351
+        },
+        {
+          "case": "Half_masters",
+          "all4_signedzero_bits": true,
+          "weight_low_count": 0
+        },
+        {
+          "case": "zero",
+          "all4_signedzero_bits": true,
+          "weight_low_count": 0
+        },
+        {
+          "case": "restored",
+          "all4_signedzero_bits": true,
+          "weight_low_count": 3276256
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_ms": 2.0090880393981934,
+          "parallel_ms": 1.5861760377883911,
+          "saved_ms": 0.42291200160980225
+        },
+        {
+          "parallel_ms": 1.5861760377883911,
+          "baseline_ms": 2.007040023803711,
+          "saved_ms": 0.4208639860153198
+        },
+        {
+          "baseline_ms": 2.008064031600952,
+          "parallel_ms": 1.581055998802185,
+          "saved_ms": 0.4270080327987671
+        },
+        {
+          "parallel_ms": 1.5790079832077026,
+          "baseline_ms": 2.0090880393981934,
+          "saved_ms": 0.4300800561904907
+        },
+        {
+          "baseline_ms": 2.016256093978882,
+          "parallel_ms": 1.5820800065994263,
+          "saved_ms": 0.43417608737945557
+        },
+        {
+          "parallel_ms": 1.5892479419708252,
+          "baseline_ms": 2.017280101776123,
+          "saved_ms": 0.42803215980529785
+        }
+      ],
+      "all_pairs_faster": true,
+      "no_model_or_official_score": true
+    },
+    {
+      "rank": 1,
+      "passed": true,
+      "shape": [
+        10240,
+        2560,
+        640
+      ],
+      "unchanged_current_shader": true,
+      "full_size_inputs_replicated": true,
+      "original_FP32_K64_order": true,
+      "no_precision_reduction": true,
+      "no_input_broadcast_in_timed_graph": true,
+      "output_allgather_inplace": true,
+      "NCCL_inside_per_rank_CUDA_graph": true,
+      "cases": [
+        {
+          "case": "initial",
+          "all4_signedzero_bits": true,
+          "weight_low_count": 3276256
+        },
+        {
+          "case": "changed_inputs",
+          "all4_signedzero_bits": true,
+          "weight_low_count": 3276256
+        },
+        {
+          "case": "changed_masters",
+          "all4_signedzero_bits": true,
+          "weight_low_count": 3276351
+        },
+        {
+          "case": "Half_masters",
+          "all4_signedzero_bits": true,
+          "weight_low_count": 0
+        },
+        {
+          "case": "zero",
+          "all4_signedzero_bits": true,
+          "weight_low_count": 0
+        },
+        {
+          "case": "restored",
+          "all4_signedzero_bits": true,
+          "weight_low_count": 3276256
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_ms": 1.9957760572433472,
+          "parallel_ms": 1.5872000455856323,
+          "saved_ms": 0.40857601165771484
+        },
+        {
+          "parallel_ms": 1.5882240533828735,
+          "baseline_ms": 1.8728959560394287,
+          "saved_ms": 0.2846719026565552
+        },
+        {
+          "baseline_ms": 1.87391996383667,
+          "parallel_ms": 1.5800319910049438,
+          "saved_ms": 0.2938879728317261
+        },
+        {
+          "parallel_ms": 1.5790079832077026,
+          "baseline_ms": 1.8759679794311523,
+          "saved_ms": 0.2969599962234497
+        },
+        {
+          "baseline_ms": 1.8923519849777222,
+          "parallel_ms": 1.5790079832077026,
+          "saved_ms": 0.31334400177001953
+        },
+        {
+          "parallel_ms": 1.5953919887542725,
+          "baseline_ms": 1.891327977180481,
+          "saved_ms": 0.2959359884262085
+        }
+      ],
+      "all_pairs_faster": true,
+      "no_model_or_official_score": true
+    }
+  ],
+  "ready_for_model": true,
+  "no_official_score": true
+}
