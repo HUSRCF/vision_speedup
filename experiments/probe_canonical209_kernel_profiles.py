@@ -12,7 +12,7 @@ def sources():
     name='scripts/profile_canonical209_graph_replay.py'
     profile=files[name]
     anchor='        original = model.apply_model\n';assert profile.count(anchor)==1
-    profile=profile.replace(anchor,'        from audit_cross_context_209 import Audit\n        cross_audit=Audit(model,stage='world' if args.require_cudnn_tf32=='off' else 'decision')\n'+anchor)
+    profile=profile.replace(anchor,"        from audit_cross_context_209 import Audit\n        cross_audit=Audit(model,stage='world' if args.require_cudnn_tf32=='off' else 'decision')\n"+anchor)
     anchor='            allocation_records=[]\n';assert profile.count(anchor)==1
     profile=profile.replace(anchor,'            cross_audit.finish(args.diagnostic_dir)\n'+anchor)
     files[name]=profile
