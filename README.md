@@ -1,18 +1,18 @@
 # UnifoLM 视频推理优化审阅包
 
-NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 和 Z1 使用两张卡，其余三项使用单卡。此仓库用于外部代码审阅。
+NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 Z1、双臂堆箱、V2、清理铅笔各使用两张卡，G1 使用单卡。此仓库用于外部代码审阅。
 
-当前已验证的 V2 为 **268.844229 秒 / PSNR 29.675324786 dB**，五项有效耗时合计 **802.134091 秒**。完整原始材料为 [`results/runtime.log`](results/runtime.log) 和 [`results/result.json`](results/result.json)。这是官方工具在比赛机上的本地验证结果；不表示本仓库代码已经经过主办方独立复跑。
+当前已验证的 V2 为 **268.844229 秒 / PSNR 29.675324786 dB**，五项有效耗时合计 **782.213299 秒**。完整原始材料为 [`results/runtime.log`](results/runtime.log) 和 [`results/result.json`](results/result.json)。这是官方工具在比赛机上的本地验证结果；不表示本仓库代码已经经过主办方独立复跑。
 
 | 分项 | process_wall_s | PSNR dB |
 |---|---:|---:|
 | Z1 堆箱 | 152.203279 | 46.553398 |
-| 双臂堆箱 | 103.111184 | 31.991494 |
+| 双臂堆箱 | 94.319011 | 31.972207 |
 | 双臂堆箱 V2 | 268.844229 | 29.675325 |
-| 清理铅笔 | 117.077862 | 36.537127 |
+| 清理铅笔 | 105.949243 | 34.881927 |
 | G1 相机装箱 | 160.897537 | 26.107156 |
 
-五项材料由各次已完成运行汇总后重新校验，共 49 轮、103 个视频；不是一次连续从头跑完五项的墙钟计时。V2 来自 2026-10-29 的双卡 222 源码版本；Z1来自同日的双卡63文件完整内部Transformer块分片版本，其余三项来自非反馈VAE优化版本，来源见 `results/case-sources.json`。不能把五项汇总宣称为当前代码同一次完整复跑的实测结果。
+五项材料由各次已完成运行汇总后重新校验，共 49 轮、103 个视频；不是一次连续从头跑完五项的墙钟计时。V2 来自 2026-10-29 的双卡 222 源码版本；Z1、双臂堆箱和清理铅笔来自同日分别验证的双卡63文件完整内部Transformer块分片版本，G1保留59文件单卡非反馈VAE优化版本，来源见 `results/case-sources.json`。不能把五项汇总宣称为当前代码同一次完整复跑的实测结果。
 
 ## 审阅入口
 
@@ -22,7 +22,8 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 和 Z1 使用两张卡，�
 - [`unifolm/SUBMISSION.md`](unifolm/SUBMISSION.md)：提交契约；完整工作量及 PSNR 门槛。
 - [`unifolm/src`](unifolm/src)：保留的单卡基线精确源码，209 个 Python 文件，110 个 Triton JIT 函数。
 - [`unifolm/world-head-filter-cache-production-sources.json`](unifolm/world-head-filter-cache-production-sources.json)：生产源码 SHA256 清单。
-- [`experiments/nonv2-vae-all-display`](experiments/nonv2-vae-all-display)：其余三个非 V2 分项及历史 Z1 的59文件精确源码与启动参数。
+- [`experiments/nonv2-vae-all-display`](experiments/nonv2-vae-all-display)：当前 G1 及历史非 V2 分项的59文件精确源码与启动参数。
+- [`experiments/nonv2-other-blocks63`](experiments/nonv2-other-blocks63)：当前双臂堆箱／清理铅笔的63文件源码、正式103视频验收，以及未通过质量的G1完整实验。
 - [`experiments/nonv2-all-blocks59`](experiments/nonv2-all-blocks59)：当前 Z1 的63文件增量、33个内部块分片、完整复现入口与新103视频验收证据。
 - [`experiments/nonv2-fused-half-geglu`](experiments/nonv2-fused-half-geglu)：历史 Z1 的60文件增量、完整复现入口与当时103视频验收证据。
 - [`experiments/temporal-block-220/production221`](experiments/temporal-block-220/production221)：历史双卡221的精确增量、计时证明与文件清单。此前220、219、218、215和213文件版本均保留。
@@ -42,7 +43,9 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 和 Z1 使用两张卡，�
 
 ## 最新优化重点
 
-**Z1已采用[完整内部块63分片](experiments/nonv2-all-blocks59)**：将16个空间和17个时间Transformer块的QKV／attention／LayerNorm／残差／FFN纳入原有33次汇合。空间mask保留全局帧编号，条件投影缓存按完整／本地模式分库，完整5D GroupNorm、16帧时间轴及外层投影保留。两阶段756参数的六状态检查和六对模型计时通过；完整Z1为 **152.203279秒 / PSNR46.553398187dB**，12轮25视频、两rank一致。比前次同GPU0/1时间块62全程少8.486515秒；相对历史单卡60正式Z1少14.577713秒，这些完整运行比较不能称为六对进程AB。新103视频官方汇总accepted，当前五项 **802.134091秒**，本机GPU双文件已更新；旧816.711804秒材料完整保留。复现用`reproduce/run_z1_parallel.py`，网站尚未提交。
+**双臂堆箱与清理铅笔已采用[逐项验证的63文件双卡分片](experiments/nonv2-other-blocks63)**：分别为 **94.319011秒 / PSNR31.972206776dB** 和 **105.949243秒 / PSNR34.881926888dB**，相对历史单卡记录少8.792173和11.128619秒。两项分别完整执行7／8轮、15／17视频，两rank视频SHA一致；它们在不同GPU对上并行运行，没有同期同GPU完整AB对照。新32个视频与其余71个已验收视频重新通过官方103视频校验，当前五项 **782.213299秒**，本机GPU双文件已更新，网站未上传。原802.134091秒双文件完整保留于[历史目录](results/history/official-z1-blocks63-before-other63)。同一分片在G1得到142.834192秒但PSNR仅19.081776215dB，**未采用**；FP32反馈head开关仍保留，失败原因尚未定位，不能继承Z1质量结论。复现入口为`reproduce/run_nonv2_parallel.py`。
+
+**Z1已采用[完整内部块63分片](experiments/nonv2-all-blocks59)**：将16个空间和17个时间Transformer块的QKV／attention／LayerNorm／残差／FFN纳入原有33次汇合。空间mask保留全局帧编号，条件投影缓存按完整／本地模式分库，完整5D GroupNorm、16帧时间轴及外层投影保留。两阶段756参数的六状态检查和六对模型计时通过；完整Z1为 **152.203279秒 / PSNR46.553398187dB**，12轮25视频、两rank一致。比前次同GPU0/1时间块62全程少8.486515秒；相对历史单卡60正式Z1少14.577713秒，这些完整运行比较不能称为六对进程AB。新103视频官方汇总accepted，当时五项 **802.134091秒**，本机GPU双文件已更新；旧816.711804秒材料完整保留。复现用`reproduce/run_z1_parallel.py`，网站尚未提交。
 
 [NCCL通信调优](experiments/nccl-tuning222)已完成13个独立进程配置的逐位检查。采用实际222汇合尺寸的通信替代图，32channels＋P2Pwrite合计约24.08ms，默认约29.27ms；该图按尺寸分组，不包含模型计算/实际调度。复用同一222源码、只改三项NCCL环境参数的完整GPU0/1对照为候选 **268.622236秒**、默认 **269.053273秒**，单次对照少 **0.431037秒**；23视频与正式版及另一rank的SHA相同，PSNR29.675324786dB。生成CUDA合计少1.044481秒，但完整进程收益被其他成本抵消。该亚秒收益尚无重复完整对照支持，未做新的103视频汇总，**暂不采用**；正式材料仍为下述268.844229秒。
 
@@ -81,7 +84,7 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 和 Z1 使用两张卡，�
 
 [时间注意力实验](docs/TEMPORAL_ATTENTION_EXPERIMENTS.md)的补偿 Tensor Core 路线已完成完整 V2，但 PSNR 仅 22.76 dB；空间混合精度候选也未达质量要求。这两条路线未被采用。
 
-用户提供的领先成绩为 V2 **205.67 秒**、五项 **653.75 秒**；这只是用户提供的排行榜快照，尚未独立验证。当前仍分别相差约 **63.17 秒、148.38 秒**。此前221的决策生成CUDA时间约119.87秒，世界模型生成约139.73秒。`init_attn` 的 512 通道 FFN 已补齐；常规world时间块已扩展；初始时间块新边界已验证；非V2完整块分片已在Z1通过正式质量验证，下一步可针对其他三个非V2项逐项适配并重新验证。V2直接缩小空间Transformer输入batch和decision vendor GEMM有变慢或数值差异记录；Z1的Half路径结果不能直接继承到V2。
+用户提供的领先成绩为 V2 **205.67 秒**、五项 **653.75 秒**；这只是用户提供的排行榜快照，尚未独立验证。当前仍分别相差约 **63.17 秒、128.46 秒**。此前221的决策生成CUDA时间约119.87秒，世界模型生成约139.73秒。`init_attn` 的 512 通道 FFN 已补齐；常规world时间块已扩展；初始时间块新边界已验证；非V2完整块分片已在Z1、双臂堆箱和清理铅笔通过正式质量验证，G1失败后应优先检查保留完整GEMM形状、仅缩小attention调用的方案。V2直接缩小空间Transformer输入batch和decision vendor GEMM有变慢或数值差异记录；Z1的Half路径结果不能直接继承到V2。
 
 新增原始单卡图计时测得：两个阶段 head 各约 8.2 ms/步，其中约 2.8 ms 为 SpatialSoftmax。将其留在主卡后，余下 head 约 5.4 ms/步；按该样本外推，跨步流水线两阶段合计的理想节省上限约 **5.79 秒**，尚未扣通信、启动和图重构成本。它不是百秒级收益的证据。完整计时方法、18 次样本和逐位一致性证明见上述审阅回复。
 
