@@ -1,0 +1,195 @@
+{
+  "stage": "world",
+  "instrumented": true,
+  "no_official_score": true,
+  "allocation_audit": false,
+  "filter_low_audit": false,
+  "weight_cache_audit": false,
+  "linear_low_audit": false,
+  "inline_low_audit": false,
+  "attention_parts_audit": false,
+  "total_kernel_us": 291790,
+  "fill_named_kernel_us": 3841,
+  "top_kernels": [
+    {
+      "name": "_presplit_temporal_0d1d2d3d4d5d6d",
+      "count": 80,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 20465,
+      "cuda_us": 20465,
+      "shapes": []
+    },
+    {
+      "name": "_geglu_subtile32_0d1d2d3d4d5d6d7d8d9d",
+      "count": 20,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 20117,
+      "cuda_us": 20117,
+      "shapes": []
+    },
+    {
+      "name": "_zero_low_gemm_persistent_0d1d2d3d4d5d6d",
+      "count": 154,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 19211,
+      "cuda_us": 19211,
+      "shapes": []
+    },
+    {
+      "name": "_zero_low_gemm_residual_0d1d2d3d4d5d6d7d",
+      "count": 22,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 14308,
+      "cuda_us": 14308,
+      "shapes": []
+    },
+    {
+      "name": "_zero_low_temporal_0d1d2d3d4d5d6d",
+      "count": 48,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 14027,
+      "cuda_us": 14027,
+      "shapes": []
+    },
+    {
+      "name": "fmha_cutlassF_f32_aligned_64x64_rf_sm80(AttentionKernel<float, cutlass::arch::Sm80, true, 64, 64, 64, true, true, DefaultToBatchHook>::Params)",
+      "count": 70,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 13931,
+      "cuda_us": 13931,
+      "shapes": []
+    },
+    {
+      "name": "_both_geglu_subtile32_0d1d2d3d4d5d6d7d8d9d",
+      "count": 12,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 13571,
+      "cuda_us": 13571,
+      "shapes": []
+    },
+    {
+      "name": "_attention_hidden_parts_vector_0d1d2d3d4d5d6d",
+      "count": 10,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 12737,
+      "cuda_us": 12737,
+      "shapes": []
+    },
+    {
+      "name": "transformed_gemm_fp16_kahan_0d1d2d",
+      "count": 8,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 12001,
+      "cuda_us": 12001,
+      "shapes": []
+    },
+    {
+      "name": "transformed_gemm_fp16_packed_0d1d2d3d",
+      "count": 15,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 11787,
+      "cuda_us": 11787,
+      "shapes": []
+    },
+    {
+      "name": "_components_f2_0d1d2d3d4d",
+      "count": 10,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 10832,
+      "cuda_us": 10832,
+      "shapes": []
+    },
+    {
+      "name": "_zero_low_gemm_0d1d2d3d4d5d6d",
+      "count": 15,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 7421,
+      "cuda_us": 7421,
+      "shapes": []
+    },
+    {
+      "name": "_packed_gemm_0d1d2d3d4d5d6d",
+      "count": 14,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 7357,
+      "cuda_us": 7357,
+      "shapes": []
+    },
+    {
+      "name": "_packed_two_product_gemm_residual_0d1d2d3d4d5d6d",
+      "count": 10,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 7044,
+      "cuda_us": 7044,
+      "shapes": []
+    },
+    {
+      "name": "_two_product_gemm_0d1d2d3d4d",
+      "count": 30,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 6572,
+      "cuda_us": 6572,
+      "shapes": []
+    },
+    {
+      "name": "_bk32_native_hidden_parts_0d1d2d3d4d5d6d7d",
+      "count": 1,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 6399,
+      "cuda_us": 6399,
+      "shapes": []
+    },
+    {
+      "name": "_out_projection_residual_0d1d2d3d4d5d",
+      "count": 20,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 6125,
+      "cuda_us": 6125,
+      "shapes": []
+    },
+    {
+      "name": "_attention_fp32_0d1d2d3d4d5d",
+      "count": 34,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 6048,
+      "cuda_us": 6048,
+      "shapes": []
+    },
+    {
+      "name": "_qkv_pack_0d1d2d3d4d5d6d7d8d9d",
+      "count": 10,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 5707,
+      "cuda_us": 5707,
+      "shapes": []
+    },
+    {
+      "name": "_pointwise_nchw_0d1d2d3d4d",
+      "count": 14,
+      "device_type": "DeviceType.CUDA",
+      "self_cpu_us": 0,
+      "self_cuda_us": 5404,
+      "cuda_us": 5404,
+      "shapes": []
+    }
+  ]
+}

@@ -12,7 +12,7 @@ def sources():
     name='scripts/profile_canonical209_graph_replay.py'
     profile=files[name]
     anchor='        original = model.apply_model\n';assert profile.count(anchor)==1
-    profile=profile.replace(anchor,'        from audit_cross_context_209 import Audit\n        cross_audit=Audit(model)\n'+anchor)
+    profile=profile.replace(anchor,'        from audit_cross_context_209 import Audit\n        cross_audit=Audit(model,stage='world' if args.require_cudnn_tf32=='off' else 'decision')\n'+anchor)
     anchor='            allocation_records=[]\n';assert profile.count(anchor)==1
     profile=profile.replace(anchor,'            cross_audit.finish(args.diagnostic_dir)\n'+anchor)
     files[name]=profile
@@ -20,7 +20,7 @@ def sources():
     for name,text in files.items():ast.parse(text)
     return files
 
-KEY='canonical209_both_kernel_profiles_r2'
+KEY='canonical209_both_kernel_profiles_r3'
 
 
 def main():
@@ -31,7 +31,7 @@ def main():
         kwargs={}
         assert not s['active_jobs']
         start(s,KEY,sources(),'scripts/run_canonical209_profiles.py','CANONICAL209_KERNEL_PROFILES_CHECK',threads=8,
-              scope='Revision2 corrects read-only operand snapshot lifetime: first eager module invocation only, module-qualified query identity, hard256MiB per-stage tensor budget, explicit skip report; r1 failed storage and all r1 operands excluded. Strategic reprofile current209/110 after new205.67s competitor V2 evidence. Both actual complete stage warmed graphs, three FP32 outputs bitwise/RNG/master versions fixed; new read-only cross-attention snapshots outside capture, representative branch shapes/strides/action-mask and shared-query groups for grouped cross-context attention fusion. Original function restored before CUPTI reference/profile, no original graph/cache/math changes. Native decision189/world23+45 owners retained. Attribution only; no official score or full-video quality claim. All GPU candidates exclusive/whole-attempt guard; preserve failures and original waiter.',**kwargs)
+              scope='Revision3 adds outer-stage gating: world snapshots must exclude preceding50decision calls; r2 CUPTI/bitwise replay attribution is valid but both operand files contain first decision operands. Revision2 corrects read-only operand snapshot lifetime: first eager module invocation only, module-qualified query identity, hard256MiB per-stage tensor budget, explicit skip report; r1 failed storage and all r1 operands excluded. Strategic reprofile current209/110 after new205.67s competitor V2 evidence. Both actual complete stage warmed graphs, three FP32 outputs bitwise/RNG/master versions fixed; new read-only cross-attention snapshots outside capture, representative branch shapes/strides/action-mask and shared-query groups for grouped cross-context attention fusion. Original function restored before CUPTI reference/profile, no original graph/cache/math changes. Native decision189/world23+45 owners retained. Attribution only; no official score or full-video quality claim. All GPU candidates exclusive/whole-attempt guard; preserve failures and original waiter.',**kwargs)
         return
     result=harvest(s,KEY,[])
     if result is None:return

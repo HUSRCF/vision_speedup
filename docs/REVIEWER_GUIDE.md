@@ -24,9 +24,11 @@
 
 ## 剖析与改进方向
 
-`results/*telemetry-phase-evidence.json` 给出当前 V2 的阶段时间。`results/profiles-207` 是较早 207 源码版本的 CUPTI 归因，不能冒充 209 版本的精确计时。209 主要增加了原生 filter 缓存，主干仍有相同的大类热点。
+`results/*telemetry-phase-evidence.json` 给出当前 V2 的正式阶段时间。`results/profiles-209` 是当前 209 源码版本的 CUPTI 归因；两阶段三个 FP32 输出逐位一致，RNG 与 master versions 未改变。较早的 207 版本结果亦保留用于对比。
 
-207 的世界模型单次诊断内，时间卷积约 20.37 ms，单分支 GEGLU 约 20.06 ms，持久化 zero-low GEMM 约 19.15 ms，其他 GEGLU、attention、Winograd GEMM 也占明显比例。这些是带剖析开销的归因数字，不是正式成绩。
+209 世界模型单次诊断内，时间卷积约 20.47 ms，单分支 GEGLU 约 20.12 ms，持久化 zero-low GEMM 约 19.21 ms，双分支 GEGLU 约 13.57 ms，原生 FP32 cross-attention 70 次合计约 13.93 ms。这些是带剖析开销的归因数字，不是正式成绩。
+
+`profiles-209/decision/cross-context-audit.json` 记录决策阶段代表性的 13 路 cross-attention 结构，包括 K 长度 77、16、2、256，以及动作分支 mask。采集限制为每阶段 256 MiB，9 个超出预算的代表路径未存储。r2 世界阶段的采集器也先遇到决策阶段，因此其 operand 快照不作为世界模型证据发布；世界阶段 CUPTI 与重放检查仍有效。`experiments` 中的 r3 代码已增加明确的阶段过滤，尚无新的 r3 运行结果。
 
 建议审查多路 cross-attention 能否共享 Q 访存与调度，同时保留文本、图像、状态、动作各自的 softmax 和动作 mask。主干 GEMM 可研究批量 vendor GEMM 或并行归约，但应保留补偿项并验证舍入误差。历史上仅将前 5/10 步 GEGLU 改为单乘积也未通过质量，相关失败不能当作待采用方案。
 

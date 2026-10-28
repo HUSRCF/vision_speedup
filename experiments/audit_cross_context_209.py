@@ -4,7 +4,9 @@ import torch
 from unifolm_wma.modules.attention import CrossAttention
 
 class Audit:
-    def __init__(self,model):
+    def __init__(self,model,stage):
+        assert stage in ('decision','world')
+        self.stage=stage
         self.names={id(module):name for name,module in model.named_modules() if isinstance(module,CrossAttention)}
         self.original=CrossAttention._efficient_attention
         self.first_queries={};self.ordinals={};self.records=[];self.payload={};self.signatures=set();self.queries={}
@@ -12,7 +14,8 @@ class Audit:
         self.active=set();self.done=set();self.hooks=[]
         def begin(module,args):
             name=self.names[id(module)]
-            if not torch.cuda.is_current_stream_capturing() and name not in self.done:self.active.add(name)
+            if (not torch.cuda.is_current_stream_capturing() and name not in self.done and
+                    bool(torch.backends.cudnn.allow_tf32)==(self.stage=='decision')):self.active.add(name)
         def end(module,args,output):
             name=self.names[id(module)]
             if name in self.active:self.active.remove(name);self.done.add(name)
@@ -72,6 +75,7 @@ class Audit:
         path=directory/'cross-context-operands.pt';torch.save(cpu,path)
         assert torch.equal(rng,torch.cuda.get_rng_state())
         report=dict(records=self.records,selected=len(self.records),query_groups=len(self.queries),
+            captured_stage=self.stage,
             first_query_branch_counts=self.ordinals,source='actual eager operands before graph capture',
             original_function_restored=True,original_outputs_returned_without_changes=True,
             snapshot_query_identity_includes_module_name=True,only_first_eager_module_invocation=True,
