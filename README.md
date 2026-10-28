@@ -26,6 +26,7 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 使用两张卡，其余�
 - [`experiments/nccl-both-spatial-temporal-209`](experiments/nccl-both-spatial-temporal-209)：当前双卡 V2 的精确增量、计时证明与 215 文件清单；使用 `reproduce/run_v2_parallel.py`。仅拆 world 的旧 215 文件版本与旧 213 文件版本均保留。
 - [`docs/REVIEW_RESPONSE_20261028.md`](docs/REVIEW_RESPONSE_20261028.md)：外部审阅建议的核查结果、主干/head 新测量与 Kahan 既有证据。
 - [`docs/FP16_SCALAR_EXPERIMENTS_20261028.md`](docs/FP16_SCALAR_EXPERIMENTS_20261028.md)：FP16 全局／分组／通道缩放与 INT8 残差补偿的实际输入测量；新算术仍未替换正式成绩，decision 分片随后已完成正式验证。
+- [`experiments/fp16-balanced-residual-209`](experiments/fp16-balanced-residual-209)：仅缩放 INT8 残差的新正向算子证据，实际双卡中间 FFN 约省 21.5%，局部相对误差 4.98e-6；完整模型与视频质量尚未验证。
 
 源码从正式运行的不可变目录取回，逐文件核对生产清单。保留上游 [`LICENSE`](unifolm/LICENSE) 和原始说明；上游赛题入口为 <https://github.com/HKUSTGZ-SCC/Newbie2.0>。
 
