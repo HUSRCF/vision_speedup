@@ -1,6 +1,6 @@
 # NonV2 Half projection + GEGLU fusion
 
-Adopted Z1-only dispatch: source60 at166.780992s / PSNR40.0749135dB. V2 remains source221 at270.825199s. A fresh official103-video validation accepted the five-case sum818.692774s; see accepted-outcome.json and ../../results/aggressive-20261028/nonv2-fused-half-geglu/official103-r2.
+Adopted Z1-only dispatch: source60 at166.780992s / PSNR40.0749135dB. At this Z1 adoption V2 was source221 at270.825199s, and its fresh official103-video validation accepted the five-case sum818.692774s; see accepted-outcome.json and ../../results/aggressive-20261028/nonv2-fused-half-geglu/official103-r2. Z1 is unchanged; the later adopted222 V2 is268.844229s and current five-case sum816.711804s, with the older pair preserved under results/history/official221-z1-fused-before222.
 
 Current nonV2 FP16 FFN materializes F.linear's two projection halves before the existing fused GEGLU. The new Tensor Core kernel computes both projection halves and applies the original Half projection, Half exact-GELU and output rounding boundaries in one launch. It reads the original Half weight/bias tensors directly. The selected geometry is M40960/C320/H1280, tile64/128/32,8warps,3stages. All other geometries, consumer GEMM, attention/norm, VAE, sampler and50-step workload remain original. The opt-in flag is UNIFOLM_NONV2_FUSED_HALF_GEGLU=1, restricted to Z1 and the selected geometry.
 

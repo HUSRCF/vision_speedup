@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "all_live_NCCL_backing_on_private_tmpfs": true,
+  "rank_control_files": [
+    {
+      "rank": 0,
+      "backing_files": [
+        {
+          "bytes": 5767524,
+          "device": 79,
+          "nlink": 0
+        },
+        {
+          "bytes": 5767524,
+          "device": 79,
+          "nlink": 0
+        }
+      ],
+      "exact_configured_storage_env_observed": true
+    },
+    {
+      "rank": 1,
+      "backing_files": [
+        {
+          "bytes": 5767524,
+          "device": 79,
+          "nlink": 0
+        },
+        {
+          "bytes": 5767524,
+          "device": 79,
+          "nlink": 0
+        }
+      ],
+      "exact_configured_storage_env_observed": true
+    }
+  ],
+  "dev_shm_device": 76,
+  "private_tmpfs_device": 79,
+  "no_pointer_or_argument_export": true
+}

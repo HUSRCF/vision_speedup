@@ -22,10 +22,25 @@
 
 ```bash
 python3 reproduce/verify_snapshot.py
-~/.venv/bin/python reproduce/run_v2_parallel.py --gpus 2,3 --workdir /tmp/unifolm-parallel-review-1
+~/.venv/bin/python reproduce/run_v2_parallel.py --gpus 2,3 --workdir /fresh/private/workdir/unifolm-parallel-review-1
 ```
 
-`--workdir` 必须是新目录。默认重建固定221文件源码：两阶段空间块、原生attention、decision原生卷积分帧、world初始FFN及16个常规world时间块扩展。完整5D GroupNorm和16时间步保留，既有FFN汇合边界复用。守护程序等待两张空闲卡并检查整段GPU占用；模型导入、双模型传输、通信及helper退出仍计入原始进程耗时。已验证完整结果为270.825199秒、PSNR29.675324786dB。`--variant both-spatial-temporal-resblock-grid-native-attention-initial-ffn` 可重建旧220版本（277.436969秒）；其余历史variant继续保留。单轮 `--smoke` 仅供排查，不能作为成绩。
+`--workdir` 必须是新目录。默认重建固定222文件源码：两阶段空间块、原生attention、decision原生卷积分帧、world初始FFN、16个常规world时间块及初始时间块边界扩展。完整5D GroupNorm和16时间步保留，既有FFN汇合边界复用。守护程序等待两张空闲卡并检查整段GPU占用；模型导入、双模型传输、通信及helper退出仍计入原始进程耗时。已验证完整结果为268.844229秒、PSNR29.675324786dB。`--variant both-spatial-temporal-resblock-grid-native-attention-initial-ffn` 可重建旧220版本（277.436969秒）；其余历史variant继续保留。单轮 `--smoke` 仅供排查，不能作为成绩。
+
+本轮同GPU0/1、同适配器/存储完整对照为272.043547→268.844229秒，省3.199318秒；与历史221的差值另为1.980970秒。23视频逐位一致，103视频官方汇总accepted。历史221可通过`--variant both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block`重建。`--prepare-only`仅建立源码/guard，不使用GPU。
+
+比赛机/dev/shm空间受限时，可使用已经通过CPU和双卡图内通信测试的[私有tmpfs适配器](../experiments/private-nccl-tmpfs)。它只调整新建NCCL控制文件的存储位置，完整对照使用相同设置。选择两个新目录：
+
+```bash
+~/.venv/bin/python experiments/private-nccl-tmpfs/build_and_check.py \
+  --workdir /var/tmp/team07-review-storage \
+  --exec-dir "$HOME/.tmp/team07-review-storage-exec"
+~/.venv/bin/python reproduce/run_v2_parallel.py --gpus 0,1 \
+  --workdir /var/tmp/team07-review222 \
+  --storage-config /var/tmp/team07-review-storage/storage-config.json
+```
+
+编译缓存仍需可执行挂载及足够空间；可设置`INIT_FFN_CACHE_DIR`和`TEMPORAL_BLOCK_CACHE_DIR`复用已验证的私有warm缓存。适配器配置不放宽原CUBIN检查，也不清理旧缓存或历史文件。两rank及官方validator使用普通视频目录，源码、metadata、输出和新NCCL控制文件放在私有tmpfs，host `.so`保留可执行挂载。适配器的loader符号/路径初始化早于Python计时；GPU/NCCL/模型工作没有移出原计时。
 
 原始 209 文件清单中的 `src/unifolm_wma/utils/projector.py` 含既有语法错误（条件使用赋值号），全树 `compileall` 会在该文件失败。当前正式推理配置未使用它，本次保留原始字节；新增 helper、修改入口和实际运行路径另有解析、逐位及完整视频验证。
 
@@ -38,9 +53,9 @@ python3 reproduce/run_v2.py --gpu 0
 
 后一条将加载 `reproduce/v2-effective-flags.json`，清除继承的 `UNIFOLM_*` 配置后启动原始 `team07_run.sh case-v2`。运行需要空闲 GPU、约 72 GiB 峰值显存、已预热的依赖/编译缓存；不同机器或冷缓存可能更慢。模型、权重缓存与图捕获的初始化仍在进程计时内。
 
-当前221双卡入口的输出位于所选 `--workdir/runs/`，历史单卡入口仍位于 `~/benchmark-runs/unifolm/<timestamp>-case-v2-<pid>/`。本轮正式 219/220 同卡对照都使用私有 RAM 文件系统输出，native `.so` 保留在可执行 home 挂载；该存储变化须与历史计时区别看待。这是单项完整 11 轮运行，其他四项缺席会在完整五项校验中显示缺项；不能直接拿该单项结果冒充完整五项提交。
+当前222双卡入口的输出位于所选 `--workdir/runs/`，历史单卡入口仍位于 `~/benchmark-runs/unifolm/<timestamp>-case-v2-<pid>/`。本轮正式 219/220 同卡对照都使用私有 RAM 文件系统输出，native `.so` 保留在可执行 home 挂载；该存储变化须与历史计时区别看待。这是单项完整 11 轮运行，其他四项缺席会在完整五项校验中显示缺项；不能直接拿该单项结果冒充完整五项提交。
 
-本次221正式推理因空间紧张，将rank0视频分放私有/tmp、rank1留在RAM。原官方校验器拒绝符号链接视频根；原失败证据保留。完成推理后，把同次rank1视频与rank0及220逐文件比对SHA，并硬链接为普通目录，官方校验通过后才汇总103视频。完整计时270.825199秒未修改。精确守护脚本及包装证明见 `experiments/temporal-block-220/full-split-r3`。常规复现应使用空间充足的普通目录，无需采用这个存储方案。
+此前221正式推理因空间紧张，将rank0视频分放私有/tmp、rank1留在RAM。原官方校验器拒绝符号链接视频根；原失败证据保留。完成推理后，把同次rank1视频与rank0及220逐文件比对SHA，并硬链接为普通目录，官方校验通过后才汇总103视频。完整计时270.825199秒未修改。精确守护脚本及包装证明见 `experiments/temporal-block-220/full-split-r3`。常规复现应使用空间充足的普通目录，无需采用这个存储方案。
 
 `results` 中保留了当前已验证的完整五项 log/JSON。重新提交必须使用新运行的真实输出，通过官方工作量和质量检查，保留同一份验证产生的完整 log/JSON，禁止改写耗时或 PSNR。
 

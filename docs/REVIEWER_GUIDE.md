@@ -24,7 +24,7 @@
 
 ## 剖析与改进方向
 
-`results/aggressive-20261028/temporal-block-220/full-split-r3` 给出当前221双卡V2的正式阶段时间及存储包装复核记录；旧两阶段空间块版本保留在 `nccl-both-spatial-temporal-full-r1`，更早版本亦保留。`results/*telemetry-phase-evidence.json` 和 `results/profiles-209` 保留单卡 209 源码基线的计时与 CUPTI 归因；两阶段三个 FP32 输出逐位一致，RNG 与 master versions 未改变。较早的 207 版本结果亦保留用于对比。
+`results/aggressive-20261028/temporal-block-220/full-split-r3` 保留历史221双卡V2的阶段时间及存储包装复核记录；旧两阶段空间块版本保留在 `nccl-both-spatial-temporal-full-r1`，更早版本亦保留。`results/*telemetry-phase-evidence.json` 和 `results/profiles-209` 保留单卡 209 源码基线的计时与 CUPTI 归因；两阶段三个 FP32 输出逐位一致，RNG 与 master versions 未改变。较早的 207 版本结果亦保留用于对比。
 
 209 世界模型单次诊断内，时间卷积约 20.47 ms，单分支 GEGLU 约 20.12 ms，持久化 zero-low GEMM 约 19.21 ms，双分支 GEGLU 约 13.57 ms，原生 FP32 cross-attention 70 次合计约 13.93 ms。这些是带剖析开销的归因数字，不是正式成绩。明确按阶段过滤的 r3 元数据现已发布到 `results/profiles-209-r3`；真实操作数不发布。
 
@@ -47,3 +47,5 @@
 2026-10-29 已采用原生 xFormers attention 的八帧局部边界，最新完整 V2 为 **280.850431 秒**。应连同 [219 生产增量](../experiments/native-attention-218/production219)检查原全局 mask 的切片、full16 未归属帧在既有 gather 前不被消费、实际 FP32 CUTLASS 分派及局部输出复制成本。完整同卡／同存储对照省 5.874246 秒，103 视频重新验证通过；详见 [最新审阅回复](REVIEW_RESPONSE_20261029.md)。下一个重点是遗漏的 `init_attn` FFN，随后将已有时间 FFN 的汇合边界外移，保持全局 GroupNorm 统计和每个空间位置的完整时间序列。
 
 初始 512 通道 FFN 现已进入 [220 版本](../experiments/initial-ffn-219/production220)，完整 V2 **277.436969 秒**；同卡完整对照净省 1.459912 秒，六对模型前向省3.940857／3.897850ms。注意初始 FFN 按整齐 GROUP32×BM64 边界切行，两个原 JIT 的 K 累加不变，旧权重版本缓存继续刷新；每 rank40MiB输出在一个 gather 处汇合。额外 M20480 编译使用私有每 rank 缓存，随后恢复原目录。原103视频复核、原计时器和完整工作量均保持。[实际 meta 构造清单](../results/aggressive-20261028/temporal-block-219/meta-r3)确认16个常规时间块使用 Linear 投影，init_attn 使用320→512→320 Conv1d投影，扩展边界时应分开处理。
+
+当前正式V2已采用222（268.844229秒），新增初始时间块范围共用既有汇合，不改原209文件／110 JIT算术。完整同GPU0/1、同私有tmpfs对照272.043547→268.844229秒，23视频SHA及PSNR一致，103视频官方汇总accepted。源码与证据见`experiments/initial-boundary-221/production222`及`results/aggressive-20261028/initial-boundary-221/private-tmpfs-full`。存储适配器只影响本次进程树的新NCCL临时文件；CPU跨进程、GPU图内all-gather和实际控制文件映射均有独立证据。完整差值包含运行波动，未变decision阶段也更快；不能将3.199318秒全部归因于新增范围。

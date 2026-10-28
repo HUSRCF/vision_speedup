@@ -11,12 +11,12 @@ def main():
     assert set(manifest)=={str(p.relative_to(code)) for p in (code/'src').rglob('*.py')}
     for name,digest in manifest.items():assert sha(code/name)==digest,name
     assert sha(code/'src/unifolm_wma/utils/native-graph-handles/team07_cuda_graph_handles.so')=='ab2f19b88cb9af02b42fb5fdcb39da49e062346fd30794be45fb81e12cb1b927'
-    assert sha(root/'results/runtime.log')=='3035a7e7905ef332eb22453bd7b2613aefb488f1d9f64b969e833d5b8f60c3b9'
-    assert sha(root/'results/result.json')=='633caadf2a2b2b879524301910f24e5154732fa7f0605989e460d3d606e6d8ff'
+    assert sha(root/'results/runtime.log')=='3d543553620a172c713df12b4a911bd8b588b0002b2f6007d73c8288bf165025'
+    assert sha(root/'results/result.json')=='04fd042de333e4a84add1c8412570144a6a1ed419b70924284b9d9e6aac63cf9'
     result=json.loads((root/'results/result.json').read_text());assert result['status']=='accepted'
     cases=result['cases'];assert len(cases)==5 and sum(c['videos'] for c in cases)==103
     assert [c['rounds'] for c in cases]==[12,7,11,8,11]
-    assert abs(sum(c['process_wall_s'] for c in cases)-818.692774)<1e-6
+    assert abs(sum(c['process_wall_s'] for c in cases)-816.711804)<1e-6
     log=(root/'results/runtime.log').read_text()
     timings=re.findall(r'^TIMING case=(\S+) process_wall_s=([0-9.]+)$',log,re.M)
     assert len(timings)==5 and len({case for case,_ in timings})==5
@@ -173,7 +173,7 @@ def main():
     assert accepted221['V2_s']==270.825199 and accepted221['saved_from_historical220_s']==6.611770
     assert not accepted221['contemporaneous_whole_process_AB_pair']
     assert not accepted221['original_split_root_video_validator_passed'] and accepted221['ordinary_packaging_23_video_validation_passed']
-    assert next(c['process_wall_s'] for c in cases if c['case'].endswith('stackbox_v2'))==accepted221['V2_s']
+    assert next(c['process_wall_s'] for c in json.loads((root/'results/history/official221-z1-fused-before222/result.json').read_text())['cases']if c['case'].endswith('stackbox_v2'))==accepted221['V2_s']
     split=root/'experiments/temporal-block-220/full-split-r3'
     for name,digest in json.loads((split/'source-hashes.json').read_text()).items():assert sha(split/name)==digest,name
     original209=json.loads((code/'world-head-filter-cache-production-sources.json').read_text())
@@ -228,6 +228,8 @@ def main():
     verify_all_feedback()
     from verify_fused_half_evidence import verify as verify_fused_half
     verify_fused_half()
-    print('Verified: original209/historical overlays/adopted V2 temporal221;historical59 nonV2/adopted60 Z1;official103 log/JSON.')
+    from verify_private222_evidence import verify as verify_private222
+    verify_private222()
+    print('Verified: original209/historical overlays/adopted V2 initial222;historical59 nonV2/adopted60 Z1;official103 log/JSON.')
 
 if __name__=='__main__':main()
