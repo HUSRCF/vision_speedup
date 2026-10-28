@@ -39,6 +39,20 @@ def verify():
             assert ev['all_three_outputs_six_states_bitwise']and len(ev['cases'])==6
             assert ev['controller']['captured']==10 and ev['mutated_projection_tensors']==20
             assert len(ev['pairs'])==6 and ev['all6_pairs_positive']
+    # Keep the later512-channel operator-only evidence separate from adoption.
+    probe=here/'initial512-micro-r6';ev=result/'initial512-micro-r6'
+    for n,h in json.loads((probe/'source-hashes.json').read_text()).items():assert hashlib.sha256((probe/n).read_bytes()).hexdigest()==h
+    assert (probe/'nonv2_fused_half_geglu.py').read_bytes()==(here/'nonv2_fused_half_geglu.py').read_bytes()
+    report=json.loads((ev/'micro-report.json').read_text());summary=json.loads((ev/'summary.json').read_text())
+    assert report['passed']and report['sweep_scope']=='initial512'and len(report['records'])==5
+    assert json.loads((ev/'clean.json').read_text())['clean']
+    for row in report['records']:
+        assert (row['M'],row['C'])==(40960,512)and len(row['cases'])==6 and all(c['signedzero_bits']for c in row['cases'])
+        assert row['RNG_unchanged']and row['original_values_and_pointers_restored']and len(row['pairs'])==6
+    winners=[row for row in report['records']if row['all6_pairs_positive']]
+    assert len(winners)==1 and winners[0]['config']==summary['winning_config']
+    assert not summary['official_adopted']and summary['no_actual_model_or_full_video_validation']
+    assert summary['conditional_savings_upper_budget_s']<.1
     complete=json.loads((result/'complete-process-AB.json').read_text())
     if 'same_GPU_complete_process_saved_s'in complete:
         assert complete['all25_videos_SHA_equal_original59_baseline']and complete['one_complete_AB_not_six_process_pairs']
