@@ -25,7 +25,7 @@ python3 reproduce/verify_snapshot.py
 ~/.venv/bin/python reproduce/run_v2_parallel.py --gpus 2,3 --workdir /tmp/unifolm-parallel-review-1
 ```
 
-`--workdir` 必须是新目录。默认重建两阶段空间分片、decision 原生卷积分帧与空间原生 xFormers 分片的固定 219 文件源码、等待两张空闲卡并检查整段 GPU 占用；模型导入、双模型传输、通信和 helper 退出仍计入原始进程耗时。完整结果为 280.850431 秒、PSNR 29.675324786 dB。添加 `--variant both-spatial-temporal-resblock-grid` 可运行旧 218 文件版本（287.745486 秒），`--variant both-spatial-temporal` 可运行旧的两阶段 215 文件版本（289.486308 秒），`--variant world-spatial-temporal` 可运行仅 world 空间分片的旧 215 文件版本（301.930663 秒），`--variant world-ffn-temporal` 可运行旧 213 文件版本（312.462900 秒）。单轮 `--smoke` 仅供排查，不能作为成绩。
+`--workdir` 必须是新目录。默认重建两阶段空间分片、decision 原生卷积分帧、空间原生 xFormers 分片及 world 初始 512 通道 FFN 分片的固定 220 文件源码、等待两张空闲卡并检查整段 GPU 占用；模型导入、双模型传输、通信和 helper 退出仍计入原始进程耗时。完整结果为 277.436969 秒、PSNR 29.675324786 dB。添加 `--variant both-spatial-temporal-resblock-grid-native-attention` 可运行旧 219 文件版本（280.850431 秒），`--variant both-spatial-temporal-resblock-grid` 可运行旧 218 文件版本（287.745486 秒），`--variant both-spatial-temporal` 可运行旧的两阶段 215 文件版本（289.486308 秒），`--variant world-spatial-temporal` 可运行仅 world 空间分片的旧 215 文件版本（301.930663 秒），`--variant world-ffn-temporal` 可运行旧 213 文件版本（312.462900 秒）。单轮 `--smoke` 仅供排查，不能作为成绩。
 
 原始 209 文件清单中的 `src/unifolm_wma/utils/projector.py` 含既有语法错误（条件使用赋值号），全树 `compileall` 会在该文件失败。当前正式推理配置未使用它，本次保留原始字节；新增 helper、修改入口和实际运行路径另有解析、逐位及完整视频验证。
 
@@ -38,7 +38,7 @@ python3 reproduce/run_v2.py --gpu 0
 
 后一条将加载 `reproduce/v2-effective-flags.json`，清除继承的 `UNIFOLM_*` 配置后启动原始 `team07_run.sh case-v2`。运行需要空闲 GPU、约 72 GiB 峰值显存、已预热的依赖/编译缓存；不同机器或冷缓存可能更慢。模型、权重缓存与图捕获的初始化仍在进程计时内。
 
-当前 219 双卡入口的输出位于所选 `--workdir/runs/`，历史单卡入口仍位于 `~/benchmark-runs/unifolm/<timestamp>-case-v2-<pid>/`。本轮正式 218/219 同卡对照都使用私有 RAM 文件系统输出，native `.so` 保留在可执行 home 挂载；该存储变化须与历史计时区别看待。这是单项完整 11 轮运行，其他四项缺席会在完整五项校验中显示缺项；不能直接拿该单项结果冒充完整五项提交。
+当前 220 双卡入口的输出位于所选 `--workdir/runs/`，历史单卡入口仍位于 `~/benchmark-runs/unifolm/<timestamp>-case-v2-<pid>/`。本轮正式 219/220 同卡对照都使用私有 RAM 文件系统输出，native `.so` 保留在可执行 home 挂载；该存储变化须与历史计时区别看待。这是单项完整 11 轮运行，其他四项缺席会在完整五项校验中显示缺项；不能直接拿该单项结果冒充完整五项提交。
 
 `results` 中保留了已验证的历史完整五项 log/JSON。重新提交必须使用新运行的真实输出，通过官方工作量和质量检查，保留同一份验证产生的完整 log/JSON，禁止改写耗时或 PSNR。
 
@@ -63,3 +63,7 @@ python3 experiments/nonv2-vae-all-display/run_case.py --case g1 --gpu 0
 ## 编译缓存的已知限制
 
 当前生产代码对七类 Kahan GEMM 检查完整 cubin SHA256。核对发现，不同源码绝对路径会改变 cubin 的调试信息，从而使完整哈希不同，即使可执行指令、常量与参数 ABI 区段逐位相同。现有比赛机原启动环境与缓存上的检查通过；全新缓存环境尚不能保证直接运行成功。原始验证没有放宽，详见 [双卡实验记录](AGGRESSIVE_PARALLEL_EXPERIMENTS.md) 与 `results/aggressive-20261028/cubin-source-path-debug-proof-all7.json`。这与源码快照校验通过是不同的检查。
+
+## 初始 FFN 的新形状缓存
+
+220 版本只将原两个 JIT 的 M 改为20480，保持函数体和 BK32 不变。新变体使用私有、每 rank 的标准 Triton 缓存，原完整形状和固定 CUBIN 检查仍使用原 warm cache。默认启动器在可执行的 `~/.tmp` 下创建独立缓存；可通过 `INIT_FFN_CACHE_DIR` 指定已验证的私有 warm cache，避免与其他同时运行的任务共用。冷缓存编译成本仍在原进程计时中，可能比本次已预热运行慢。不得删除旧缓存或放宽原 CUBIN 门槛。

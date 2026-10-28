@@ -17,7 +17,7 @@
 
 冻结的 [decision r2 源码](../experiments/native-attention-218/model-decision-r2)、[world r1 源码](../experiments/native-attention-218/model-world-r1)，以及 [decision 完整证据](../results/aggressive-20261028/native-attention-218/model-decision-r2)、[world 完整证据](../results/aggressive-20261028/native-attention-218/model-world-r1)可独立审阅。decision r1 在 CUDA 初始化前取消并迁移到空闲 GPU0/1，由 r2 替代，不属于数值失败。它们是诊断脚本；正式入口与最新结果见下一段。
 
-后续顺序是补齐 `init_attn` 的 512 通道 FFN，再研究将已有 world 时间 FFN 的汇合边界扩展到完整时间块，随后检查空间 norm/layout pack。world 卷积分帧仅在按完整块净收益筛选后再测，CO 分片和相同流水级数／实际形状的 Half chained 对照随后安排。非 V2 双卡适配需要单独处理 FP16 路径。这些尚未实施的方向不计作已取得收益，旧 profile 的预算不作为当前双卡实测。
+`init_attn` 的 512 通道 FFN 已完成正式验证，接下来研究将已有 world 时间 FFN 的汇合边界扩展到完整时间块，随后检查空间 norm/layout pack。world 卷积分帧仅在按完整块净收益筛选后再测，CO 分片和相同流水级数／实际形状的 Half chained 对照随后安排。非 V2 双卡适配需要单独处理 FP16 路径。这些尚未实施的方向不计作已取得收益，旧 profile 的预算不作为当前双卡实测。
 
 ## 正式入口与完整验证
 
@@ -42,4 +42,10 @@
 
 首轮在图构建后遇到测试脚本读取旧 `captured` 字段的 KeyError；r2 仅修正覆盖断言，算子代码 SHA256 未变。首轮没有数值／速度结论。新增 M20480 变体使用独立的每 rank 标准 Triton 缓存，立即恢复旧缓存目录；不替换 cache manager、不删除旧缓存。
 
-[220 文件正式候选](../experiments/initial-ffn-219/production220)已通过 CPU 生命周期及实际 storage offset 检查，正在排队进行同卡、同存储的完整进程对照。当前正式 280.850431 秒／五项829.756355秒保持；该候选完整 V2／视频质量尚待验证。下一项继续扩展时间块分片边界。
+[220 文件版本](../experiments/initial-ffn-219/production220)已完成正式验证：同一 GPU0/3、同一 RAM 输出存储，219 基线 **278.896881 秒**，220 候选 **277.436969 秒**，完整进程净省 **1.459912 秒**。World 生成 CUDA 时间为148.341296→146.375799秒，减少1.965497秒；模型传输为2.948446→3.506492秒，增加0.558046秒。相对历史219正式280.850431秒减少3.413462秒，包含跨轮波动，不能全部归因于新增 FFN 分片。
+
+23个视频与已采用219及另一rank的SHA256相同，PSNR仍为29.675324786dB。每个阶段550次调用、decision/world各16个空间块、16个原world时间FFN、88个时间卷积、decision22残差块／44原生消费者和每阶段70个原生attention捕获均核对；新增world初始FFN恰好捕获1次。峰值显存两卡均74,172MiB，最高温度71／68°C，繁忙频率范围均1335–1410MHz、中位1410MHz；整段无外来context。
+
+重新使用官方工具验证49轮／103视频通过，五项汇总 **826.342893 秒**；本机GPU与公开results双文件同字节。验证集合复用了此前已验证MP4的普通文件硬链接，逐文件校验SHA且原生成输出保持不变，全部103视频仍重新解码并与官方参考计算PSNR；这只发生在分项进程计时完成后的材料汇总中，不作为推理缓存。保留未改动的原log／JSON和完整源码证明，见[正式对照](../results/aggressive-20261028/initial-ffn-219/full-candidate-r1)。
+
+下一项扩展时间块分片边界。[实际配置的meta构造清单](../results/aggressive-20261028/temporal-block-219/meta-r3)确认17个时间模块，其中16个常规块使用Linear投影，init_attn的320→512→320投影使用Conv1d。该清单未加载checkpoint、输入或GPU，不是性能证据。

@@ -27,3 +27,8 @@ package source and ADOPTED219_ROOT supplies its verified10 helper files.
 Run the CPU fixture with CUDA hidden, then the guarded model retry entry with
 normal original209 flags, ADOPTED219_ROOT and INIT_FFN_CACHE_DIR. This is a
 model diagnostic, not a timed submission.
+
+Follow-up: the exact operator is now qualified in production220. Complete
+paired V2 was278.896881->277.436969s, PSNR29.675324786dB and all23 video hashes
+unchanged; fresh official103 validation passed. The model summary's pending
+flags describe its frozen pre-formal snapshot. See ../production220.

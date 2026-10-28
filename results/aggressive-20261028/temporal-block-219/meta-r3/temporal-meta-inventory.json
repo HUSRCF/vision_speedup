@@ -1,0 +1,491 @@
+{
+  "passed": true,
+  "source": "actual configured WMAModel instantiated on meta device",
+  "checkpoint_loaded": false,
+  "input_data_loaded": false,
+  "no_GPU_initialized": true,
+  "temporal_modules": [
+    {
+      "name": "input_blocks.1.2",
+      "input_channels": 320,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        320,
+        320
+      ],
+      "proj_out_weight": [
+        320,
+        320
+      ],
+      "norm_groups": 32,
+      "norm_channels": 320,
+      "transformer_blocks": 1,
+      "block_channels": 320,
+      "FFN_in": [
+        2560,
+        320
+      ],
+      "FFN_out": [
+        320,
+        1280
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "input_blocks.2.2",
+      "input_channels": 320,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        320,
+        320
+      ],
+      "proj_out_weight": [
+        320,
+        320
+      ],
+      "norm_groups": 32,
+      "norm_channels": 320,
+      "transformer_blocks": 1,
+      "block_channels": 320,
+      "FFN_in": [
+        2560,
+        320
+      ],
+      "FFN_out": [
+        320,
+        1280
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "input_blocks.4.2",
+      "input_channels": 640,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        640,
+        640
+      ],
+      "proj_out_weight": [
+        640,
+        640
+      ],
+      "norm_groups": 32,
+      "norm_channels": 640,
+      "transformer_blocks": 1,
+      "block_channels": 640,
+      "FFN_in": [
+        5120,
+        640
+      ],
+      "FFN_out": [
+        640,
+        2560
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "input_blocks.5.2",
+      "input_channels": 640,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        640,
+        640
+      ],
+      "proj_out_weight": [
+        640,
+        640
+      ],
+      "norm_groups": 32,
+      "norm_channels": 640,
+      "transformer_blocks": 1,
+      "block_channels": 640,
+      "FFN_in": [
+        5120,
+        640
+      ],
+      "FFN_out": [
+        640,
+        2560
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "input_blocks.7.2",
+      "input_channels": 1280,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        1280,
+        1280
+      ],
+      "proj_out_weight": [
+        1280,
+        1280
+      ],
+      "norm_groups": 32,
+      "norm_channels": 1280,
+      "transformer_blocks": 1,
+      "block_channels": 1280,
+      "FFN_in": [
+        10240,
+        1280
+      ],
+      "FFN_out": [
+        1280,
+        5120
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "input_blocks.8.2",
+      "input_channels": 1280,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        1280,
+        1280
+      ],
+      "proj_out_weight": [
+        1280,
+        1280
+      ],
+      "norm_groups": 32,
+      "norm_channels": 1280,
+      "transformer_blocks": 1,
+      "block_channels": 1280,
+      "FFN_in": [
+        10240,
+        1280
+      ],
+      "FFN_out": [
+        1280,
+        5120
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "init_attn.0",
+      "input_channels": 320,
+      "use_linear": false,
+      "proj_in_class": "Conv1d",
+      "proj_out_class": "Conv1d",
+      "proj_in_weight": [
+        512,
+        320,
+        1
+      ],
+      "proj_out_weight": [
+        320,
+        512,
+        1
+      ],
+      "norm_groups": 32,
+      "norm_channels": 320,
+      "transformer_blocks": 1,
+      "block_channels": 512,
+      "FFN_in": [
+        4096,
+        512
+      ],
+      "FFN_out": [
+        512,
+        2048
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "middle_block.2",
+      "input_channels": 1280,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        1280,
+        1280
+      ],
+      "proj_out_weight": [
+        1280,
+        1280
+      ],
+      "norm_groups": 32,
+      "norm_channels": 1280,
+      "transformer_blocks": 1,
+      "block_channels": 1280,
+      "FFN_in": [
+        10240,
+        1280
+      ],
+      "FFN_out": [
+        1280,
+        5120
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "output_blocks.3.2",
+      "input_channels": 1280,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        1280,
+        1280
+      ],
+      "proj_out_weight": [
+        1280,
+        1280
+      ],
+      "norm_groups": 32,
+      "norm_channels": 1280,
+      "transformer_blocks": 1,
+      "block_channels": 1280,
+      "FFN_in": [
+        10240,
+        1280
+      ],
+      "FFN_out": [
+        1280,
+        5120
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "output_blocks.4.2",
+      "input_channels": 1280,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        1280,
+        1280
+      ],
+      "proj_out_weight": [
+        1280,
+        1280
+      ],
+      "norm_groups": 32,
+      "norm_channels": 1280,
+      "transformer_blocks": 1,
+      "block_channels": 1280,
+      "FFN_in": [
+        10240,
+        1280
+      ],
+      "FFN_out": [
+        1280,
+        5120
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "output_blocks.5.2",
+      "input_channels": 1280,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        1280,
+        1280
+      ],
+      "proj_out_weight": [
+        1280,
+        1280
+      ],
+      "norm_groups": 32,
+      "norm_channels": 1280,
+      "transformer_blocks": 1,
+      "block_channels": 1280,
+      "FFN_in": [
+        10240,
+        1280
+      ],
+      "FFN_out": [
+        1280,
+        5120
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "output_blocks.6.2",
+      "input_channels": 640,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        640,
+        640
+      ],
+      "proj_out_weight": [
+        640,
+        640
+      ],
+      "norm_groups": 32,
+      "norm_channels": 640,
+      "transformer_blocks": 1,
+      "block_channels": 640,
+      "FFN_in": [
+        5120,
+        640
+      ],
+      "FFN_out": [
+        640,
+        2560
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "output_blocks.7.2",
+      "input_channels": 640,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        640,
+        640
+      ],
+      "proj_out_weight": [
+        640,
+        640
+      ],
+      "norm_groups": 32,
+      "norm_channels": 640,
+      "transformer_blocks": 1,
+      "block_channels": 640,
+      "FFN_in": [
+        5120,
+        640
+      ],
+      "FFN_out": [
+        640,
+        2560
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "output_blocks.8.2",
+      "input_channels": 640,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        640,
+        640
+      ],
+      "proj_out_weight": [
+        640,
+        640
+      ],
+      "norm_groups": 32,
+      "norm_channels": 640,
+      "transformer_blocks": 1,
+      "block_channels": 640,
+      "FFN_in": [
+        5120,
+        640
+      ],
+      "FFN_out": [
+        640,
+        2560
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "output_blocks.9.2",
+      "input_channels": 320,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        320,
+        320
+      ],
+      "proj_out_weight": [
+        320,
+        320
+      ],
+      "norm_groups": 32,
+      "norm_channels": 320,
+      "transformer_blocks": 1,
+      "block_channels": 320,
+      "FFN_in": [
+        2560,
+        320
+      ],
+      "FFN_out": [
+        320,
+        1280
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "output_blocks.10.2",
+      "input_channels": 320,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        320,
+        320
+      ],
+      "proj_out_weight": [
+        320,
+        320
+      ],
+      "norm_groups": 32,
+      "norm_channels": 320,
+      "transformer_blocks": 1,
+      "block_channels": 320,
+      "FFN_in": [
+        2560,
+        320
+      ],
+      "FFN_out": [
+        320,
+        1280
+      ],
+      "temporal_length": 16
+    },
+    {
+      "name": "output_blocks.11.2",
+      "input_channels": 320,
+      "use_linear": true,
+      "proj_in_class": "Linear",
+      "proj_out_class": "Linear",
+      "proj_in_weight": [
+        320,
+        320
+      ],
+      "proj_out_weight": [
+        320,
+        320
+      ],
+      "norm_groups": 32,
+      "norm_channels": 320,
+      "transformer_blocks": 1,
+      "block_channels": 320,
+      "FFN_in": [
+        2560,
+        320
+      ],
+      "FFN_out": [
+        320,
+        1280
+      ],
+      "temporal_length": 16
+    }
+  ],
+  "regular_linear_blocks": 16,
+  "initial_Conv1d_projection_blocks": 1,
+  "global5D_GroupNorm_must_remain_intact": true,
+  "dynamic_strides_JIT_launches_and_performance_not_measured": true
+}

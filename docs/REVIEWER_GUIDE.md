@@ -24,7 +24,7 @@
 
 ## 剖析与改进方向
 
-`results/aggressive-20261028/native-attention-218/full-candidate-r2` 给出当前双卡 V2 的正式阶段时间；旧两阶段空间块版本保留在 `nccl-both-spatial-temporal-full-r1`，更早版本亦保留。`results/*telemetry-phase-evidence.json` 和 `results/profiles-209` 保留单卡 209 源码基线的计时与 CUPTI 归因；两阶段三个 FP32 输出逐位一致，RNG 与 master versions 未改变。较早的 207 版本结果亦保留用于对比。
+`results/aggressive-20261028/initial-ffn-219/full-candidate-r1` 给出当前双卡 V2 的正式阶段时间；旧两阶段空间块版本保留在 `nccl-both-spatial-temporal-full-r1`，更早版本亦保留。`results/*telemetry-phase-evidence.json` 和 `results/profiles-209` 保留单卡 209 源码基线的计时与 CUPTI 归因；两阶段三个 FP32 输出逐位一致，RNG 与 master versions 未改变。较早的 207 版本结果亦保留用于对比。
 
 209 世界模型单次诊断内，时间卷积约 20.47 ms，单分支 GEGLU 约 20.12 ms，持久化 zero-low GEMM 约 19.21 ms，双分支 GEGLU 约 13.57 ms，原生 FP32 cross-attention 70 次合计约 13.93 ms。这些是带剖析开销的归因数字，不是正式成绩。明确按阶段过滤的 r3 元数据现已发布到 `results/profiles-209-r3`；真实操作数不发布。
 
@@ -45,3 +45,5 @@
 `experiments` 中的诊断探针部分依赖未发布的本地调度状态文件。当前双卡 V2 使用 `reproduce/run_v2_parallel.py`，单卡历史基线使用 `reproduce/run_v2.py`；已采用的四个非 V2 解码优化使用 `experiments/nonv2-vae-all-display/run_case.py`，其 59 个源码文件、入口脚本和分项参数均已固定。
 
 2026-10-29 已采用原生 xFormers attention 的八帧局部边界，最新完整 V2 为 **280.850431 秒**。应连同 [219 生产增量](../experiments/native-attention-218/production219)检查原全局 mask 的切片、full16 未归属帧在既有 gather 前不被消费、实际 FP32 CUTLASS 分派及局部输出复制成本。完整同卡／同存储对照省 5.874246 秒，103 视频重新验证通过；详见 [最新审阅回复](REVIEW_RESPONSE_20261029.md)。下一个重点是遗漏的 `init_attn` FFN，随后将已有时间 FFN 的汇合边界外移，保持全局 GroupNorm 统计和每个空间位置的完整时间序列。
+
+初始 512 通道 FFN 现已进入 [220 版本](../experiments/initial-ffn-219/production220)，完整 V2 **277.436969 秒**；同卡完整对照净省 1.459912 秒，六对模型前向省3.940857／3.897850ms。注意初始 FFN 按整齐 GROUP32×BM64 边界切行，两个原 JIT 的 K 累加不变，旧权重版本缓存继续刷新；每 rank40MiB输出在一个 gather 处汇合。额外 M20480 编译使用私有每 rank 缓存，随后恢复原目录。原103视频复核、原计时器和完整工作量均保持。[实际 meta 构造清单](../results/aggressive-20261028/temporal-block-219/meta-r3)确认16个常规时间块使用 Linear 投影，init_attn 使用320→512→320 Conv1d投影，扩展边界时应分开处理。

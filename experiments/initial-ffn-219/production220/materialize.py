@@ -1,4 +1,4 @@
-"""Materialize the experimental initial-FFN220 source tree."""
+"""Materialize the qualified initial-FFN220 source tree."""
 import argparse,hashlib,json,shutil
 from pathlib import Path
 from production_sources import production_sources
