@@ -42,7 +42,7 @@ python3 reproduce/run_v2.py --gpu 0
 
 ## 已采用的非 V2 分项
 
-已采用的 Z1、铅笔、G1 使用单独的 59 文件源码快照，避免误用 V2 的精度策略。例如：
+已采用的四个非 V2 分项使用单独的 59 文件源码快照，避免误用 V2 的精度策略。例如：
 
 ```bash
 python3 experiments/nonv2-vae-all-display/run_case.py --case stackbox --gpu 0

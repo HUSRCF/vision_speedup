@@ -133,7 +133,7 @@ CONDITION_CACHE_REFRESH
 >>> Pure model compute time (CUDA; excludes load/save): 159.303s [decision 80.346s + world 78.957s; 24 generation calls]
 NONV2_NONFEEDBACK_VAE {"clips": 24, "records": [{"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}], "owners": [{"builds": 1, "calls": 24, "feedback_calls": 24, "mode": "fp16_nchw", "master_version_guard": true}], "native_feedback_precision_and_flags_preserved": true, "all_setup_inside_process_wall": true, "denoiser_and_sampler_unchanged": true}
 
-===== CLEAN CASE unitree_z1_dual_arm_stackbox FROM /home/team07/benchmark-runs/unifolm/20261025T041202Z-case-dual-2933079 =====
+===== CLEAN CASE unitree_z1_dual_arm_stackbox FROM /home/team07/benchmark-runs/unifolm/20261028T070032Z-case-dual-2184283 =====
 SELECTED_CASE=unitree_z1_dual_arm_stackbox; other cases are absent from this run
 You are offline and the cache for model files in Transformers v4.22.0 has been updated while your local cache seems to be the one of a previous version. It is very likely that all your calls to any `from_pretrained()` method will fail. Remove the offline mode and enable internet connection to have your cache be updated automatically, then you can go back to offline mode.
 
@@ -193,48 +193,49 @@ CUDA_GRAPH enabled=true scope=complete_denoiser cached_normalizers=2 skip_unchan
   0%|          | 0/7 [00:00<?, ?it/s]>>> Step 0: generating actions ...
 CUDA_GRAPH_CAPTURE index=0 allocated_gib=11.378 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
 >>> Step 0: interacting with world model ...
-CUDA_GRAPH_CAPTURE index=1 allocated_gib=11.451 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=1 allocated_gib=11.546 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 14%|█▍        | 1/7 [00:16<01:39, 16.55s/it]>>> Step 1: generating actions ...
+ 14%|█▍        | 1/7 [00:15<01:34, 15.82s/it]>>> Step 1: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 1: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 29%|██▊       | 2/7 [00:30<01:14, 14.91s/it]>>> Step 2: generating actions ...
+ 29%|██▊       | 2/7 [00:28<01:10, 14.16s/it]>>> Step 2: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 2: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 43%|████▎     | 3/7 [00:44<00:57, 14.39s/it]>>> Step 3: generating actions ...
+ 43%|████▎     | 3/7 [00:41<00:54, 13.65s/it]>>> Step 3: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 3: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 57%|█████▋    | 4/7 [00:57<00:42, 14.12s/it]>>> Step 4: generating actions ...
+ 57%|█████▋    | 4/7 [00:54<00:40, 13.40s/it]>>> Step 4: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 4: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 71%|███████▏  | 5/7 [01:11<00:27, 13.97s/it]>>> Step 5: generating actions ...
+ 71%|███████▏  | 5/7 [01:07<00:26, 13.27s/it]>>> Step 5: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 5: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 86%|████████▌ | 6/7 [01:25<00:13, 13.88s/it]>>> Step 6: generating actions ...
+ 86%|████████▌ | 6/7 [01:20<00:13, 13.20s/it]>>> Step 6: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 6: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
-100%|██████████| 7/7 [01:38<00:00, 13.82s/it]
-100%|██████████| 7/7 [01:38<00:00, 14.13s/it]
->>> Pure model compute time (CUDA; excludes load/save): 98.764s [decision 49.592s + world 49.171s; 14 generation calls]
+100%|██████████| 7/7 [01:34<00:00, 13.14s/it]
+100%|██████████| 7/7 [01:34<00:00, 13.43s/it]
+>>> Pure model compute time (CUDA; excludes load/save): 93.860s [decision 47.513s + world 46.348s; 14 generation calls]
+NONV2_NONFEEDBACK_VAE {"clips": 14, "records": [{"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}], "owners": [{"builds": 1, "calls": 14, "feedback_calls": 14, "mode": "fp16_nchw", "master_version_guard": true}], "native_feedback_precision_and_flags_preserved": true, "all_setup_inside_process_wall": true, "denoiser_and_sampler_unchanged": true}
 
 ===== CLEAN CASE unitree_z1_dual_arm_stackbox_v2 FROM /home/team07/benchmark-runs/unifolm/20261028T062120Z-case-v2-nccl-2122801 =====
 SELECTED_CASE=unitree_z1_dual_arm_stackbox_v2; other cases are absent from this run
@@ -711,19 +712,19 @@ CONDITION_CACHE_REFRESH
 >>> Pure model compute time (CUDA; excludes load/save): 152.486s [decision 76.786s + world 75.699s; 22 generation calls]
 NONV2_NONFEEDBACK_VAE {"clips": 22, "records": [{"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}], "owners": [{"builds": 1, "calls": 22, "feedback_calls": 22, "mode": "fp16_nchw", "master_version_guard": true}], "native_feedback_precision_and_flags_preserved": true, "all_setup_inside_process_wall": true, "denoiser_and_sampler_unchanged": true}
 PSNR case=unitree_z1_stackbox psnr_db=40.07491350059081 threshold_db=25 pass=true
-PSNR case=unitree_z1_dual_arm_stackbox psnr_db=31.99328680150488 threshold_db=25 pass=true
+PSNR case=unitree_z1_dual_arm_stackbox psnr_db=31.991493643096341 threshold_db=25 pass=true
 PSNR case=unitree_z1_dual_arm_stackbox_v2 psnr_db=29.675324786148643 threshold_db=25 pass=true
 PSNR case=unitree_z1_dual_arm_cleanup_pencils psnr_db=36.537127402315754 threshold_db=25 pass=true
 PSNR case=unitree_g1_pack_camera psnr_db=26.107156331795942 threshold_db=25 pass=true
 
-$ /home/team07/.venv/bin/python /share/tools/unifolm-psnr.py --results /home/team07/benchmark-runs/unifolm/20261028T063619Z-assembled-nccl-world-ffn-temporal/outputs --reference /share/results/unifolm/fp32/reference/outputs --report /home/team07/benchmark-runs/unifolm/20261028T063619Z-assembled-nccl-world-ffn-temporal/profiles/psnr.json
+$ /home/team07/.venv/bin/python /share/tools/unifolm-psnr.py --results /home/team07/benchmark-runs/unifolm/20261028T071041Z-assembled-nonv2-vae-batch/outputs --reference /share/results/unifolm/fp32/reference/outputs --report /home/team07/benchmark-runs/unifolm/20261028T071041Z-assembled-nonv2-vae-batch/profiles/psnr.json
 TIMING case=unitree_z1_stackbox process_wall_s=167.819341
-TIMING case=unitree_z1_dual_arm_stackbox process_wall_s=109.197566
+TIMING case=unitree_z1_dual_arm_stackbox process_wall_s=103.111184
 TIMING case=unitree_z1_dual_arm_stackbox_v2 process_wall_s=312.462900
 TIMING case=unitree_z1_dual_arm_cleanup_pencils process_wall_s=117.077862
 TIMING case=unitree_g1_pack_camera process_wall_s=160.897537
-RUN_SUMMARY external_wall_s=867.548325 validation_wall_s=11.229090
-RESULT_JSON=/home/team07/benchmark-runs/unifolm/20261028T063619Z-assembled-nccl-world-ffn-temporal/result.json
-ACCEPTED external_wall_s=867.548325
+RUN_SUMMARY external_wall_s=861.461249 validation_wall_s=8.841747
+RESULT_JSON=/home/team07/benchmark-runs/unifolm/20261028T071041Z-assembled-nonv2-vae-batch/result.json
+ACCEPTED external_wall_s=861.461249
 
-$ /home/team07/.venv/bin/python /share/tools/unifolm-result.py --profiles /home/team07/benchmark-runs/unifolm/20261028T063619Z-assembled-nccl-world-ffn-temporal/profiles --result /home/team07/benchmark-runs/unifolm/20261028T063619Z-assembled-nccl-world-ffn-temporal/result.json --exit-code 0 --started 450638.213498917
+$ /home/team07/.venv/bin/python /share/tools/unifolm-result.py --profiles /home/team07/benchmark-runs/unifolm/20261028T071041Z-assembled-nonv2-vae-batch/profiles --result /home/team07/benchmark-runs/unifolm/20261028T071041Z-assembled-nonv2-vae-batch/result.json --exit-code 0 --started 452706.727273299

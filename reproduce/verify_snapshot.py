@@ -11,12 +11,12 @@ def main():
     assert set(manifest)=={str(p.relative_to(code)) for p in (code/'src').rglob('*.py')}
     for name,digest in manifest.items():assert sha(code/name)==digest,name
     assert sha(code/'src/unifolm_wma/utils/native-graph-handles/team07_cuda_graph_handles.so')=='ab2f19b88cb9af02b42fb5fdcb39da49e062346fd30794be45fb81e12cb1b927'
-    assert sha(root/'results/runtime.log')=='242f0f0626420bb69013d2d65966bdf10b96ae546bef020b60cec5152db0aa24'
-    assert sha(root/'results/result.json')=='fa6fdabf1464dd73f2463da505b6bef8013e58a2de8f97d6533d149a97b5107e'
+    assert sha(root/'results/runtime.log')=='65030f4108d00766aacba449d0f5de320170119c5ae232ca75db8fca48c352ca'
+    assert sha(root/'results/result.json')=='8a4d4807408bca2e5533c040cb67279154bc305f0f179f5bec6ea0d2276c0b38'
     result=json.loads((root/'results/result.json').read_text());assert result['status']=='accepted'
     cases=result['cases'];assert len(cases)==5 and sum(c['videos'] for c in cases)==103
     assert [c['rounds'] for c in cases]==[12,7,11,8,11]
-    assert abs(sum(c['process_wall_s'] for c in cases)-867.455206)<1e-6
+    assert abs(sum(c['process_wall_s'] for c in cases)-861.368824)<1e-6
     log=(root/'results/runtime.log').read_text()
     timings=re.findall(r'^TIMING case=(\S+) process_wall_s=([0-9.]+)$',log,re.M)
     assert len(timings)==5 and len({case for case,_ in timings})==5

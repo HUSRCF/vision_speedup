@@ -1,6 +1,6 @@
 {
   "current_official_V2_s": 312.4629,
-  "current_official_five_case_sum_s": 867.455206,
+  "current_official_five_case_sum_s": 861.368824,
   "leader_snapshot_supplied_by_user_only": {
     "V2_s": 205.67,
     "five_case_sum_s": 653.75
@@ -271,6 +271,38 @@
       "state": "clean_nccl_geglu_actual_world_model_pair",
       "clean": true,
       "official_adopted": false
+    },
+    "nonv2_aggressive_dual_vae_all_display_full_r1": {
+      "state": "nonv2_vae_all_display_full_official_adopted",
+      "clean": true,
+      "workload_complete": true,
+      "quality_passed": true,
+      "psnr_db": 31.99149364309634,
+      "process_wall_s": 103.111184,
+      "official_adopted": true
     }
+  },
+  "head_pipeline_measurement": {
+    "clean": true,
+    "source_count": 209,
+    "first_real_step": true,
+    "medians": {
+      "decision": {
+        "total_ms": 222.51007843017578,
+        "trunk_ms": 214.2586898803711,
+        "spatial_softmax_ms": 2.833407960832119,
+        "head_remaining_ms": 5.401599891483784,
+        "entire_head_ms": 8.231935977935791
+      },
+      "world": {
+        "total_ms": 292.8793487548828,
+        "trunk_ms": 284.68223571777344,
+        "spatial_softmax_ms": 2.8216320388019085,
+        "head_remaining_ms": 5.342720314860344,
+        "entire_head_ms": 8.164352416992188
+      }
+    },
+    "maximum_conditional_ideal_saving_s": 5.791188591219485,
+    "full_pipeline_not_implemented": true
   }
 }
