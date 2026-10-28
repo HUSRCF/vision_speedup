@@ -22,7 +22,7 @@ def main():
     (target/'fused-half-flags.json').write_bytes((here/'flags.json').read_bytes())
     assert set(manifest)=={str(p.relative_to(target))for p in(target/'src').rglob('*.py')}
     assert all(hashlib.sha256((target/n).read_bytes()).hexdigest()==h for n,h in manifest.items())
-    print(json.dumps(dict(source_count=60,experimental=True,output=str(target),changed_files=sorted(changed))))
+    print(json.dumps(dict(source_count=60,adopted_Z1_source60=True,output=str(target),changed_files=sorted(changed))))
 
 
 if __name__=='__main__':main()

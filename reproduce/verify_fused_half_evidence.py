@@ -54,7 +54,24 @@ def verify():
             code=here/f'full-{variant}-r1'
             for n,h in json.loads((code/'asset-hashes.json').read_text()).items():assert hashlib.sha256((code/n).read_bytes()).hexdigest()==h
         assert abs(complete['same_GPU_complete_process_saved_s']-.67096)<1e-6
-    print('Fused Half producer:60-source overlay, clean operator/model evidence verified; no score adoption asserted.')
+    adopted=json.loads((here/'accepted-outcome.json').read_text())
+    assert adopted['official_adopted']and adopted['all103_officially_validated']and adopted['same25_videos_as_previous_official']
+    assert adopted['Z1_s']==166.780992 and adopted['V2_unchanged_s']==270.825199
+    assert adopted['five_case_sum_s']==818.692774
+    for n,h in adopted['official_pair_sha256'].items():assert hashlib.sha256((root/'results'/n).read_bytes()).hexdigest()==h
+    gpu0=result/'full-candidate-r2'
+    raw_case=next(c for c in json.loads((gpu0/'result.json').read_text())['cases']if c['case']=='unitree_z1_stackbox')
+    assert raw_case['execution_ok']and raw_case['profile_complete']and raw_case['psnr_passed']and(raw_case['rounds'],raw_case['videos'])==(12,25)
+    assert raw_case['process_wall_s']==adopted['Z1_s']and raw_case['psnr_db']==adopted['PSNR_dB']
+    assert json.loads((gpu0/'profiles/unitree_z1_stackbox.json').read_text())['total_process_wall_s']==raw_case['process_wall_s']
+    gpu0_code=here/'full-candidate-r2'
+    for n,h in json.loads((gpu0_code/'asset-hashes.json').read_text()).items():assert hashlib.sha256((gpu0_code/n).read_bytes()).hexdigest()==h
+    final=result/'official103-r2';outcome=json.loads((final/'result.json').read_text());assert outcome['status']=='accepted'and outcome['psnr_validation']['video_count']==103
+    assert outcome==json.loads((root/'results/result.json').read_text())
+    links=json.loads((final/'immutable-video-links.json').read_text());assert links['count']==103 and links['ordinary_files']and links['existing_official103_SHA_equal_hardlinks_only']
+    proof=json.loads((final/'same-run-source-proof.json').read_text());assert proof['exact_timed_source60_verified']and proof['no_GPU_rerun_or_timer_rewrite']and len(proof['hashes'])==25
+    for n,h in json.loads((final/'script-hashes.json').read_text()).items():assert hashlib.sha256((final/n).read_bytes()).hexdigest()==h
+    print('Adopted Z1 Half producer:60 sources, clean model/full AB and fresh official103 evidence verified.')
 
 
 if __name__=='__main__':verify()

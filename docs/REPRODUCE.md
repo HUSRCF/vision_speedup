@@ -46,16 +46,18 @@ python3 reproduce/run_v2.py --gpu 0
 
 ## 已采用的非 V2 分项
 
-已采用的四个非 V2 分项使用单独的 59 文件源码快照，避免误用 V2 的精度策略。例如：
+Z1已采用60文件的Half projection／GEGLU融合版本，其他三个非V2项保留59文件快照。两者都使用非V2精度策略。例如：
 
 ```bash
-python3 experiments/nonv2-vae-all-display/run_case.py --case stackbox --gpu 0
+python3 experiments/nonv2-fused-half-geglu/run_case.py --gpu 0 --workdir /fresh/executable/path/z1-review
 python3 experiments/nonv2-vae-all-display/run_case.py --case dual --gpu 0
 python3 experiments/nonv2-vae-all-display/run_case.py --case pencils --gpu 0
 python3 experiments/nonv2-vae-all-display/run_case.py --case g1 --gpu 0
 ```
 
 每条命令均运行完整对应分项。所需外部模型、输入、验证工具与上面的 V2 相同。反馈帧使用原始 FP32 VAE；展示帧使用独立的 Half 权重缓存，原始 master weights 保留。
+
+Z1入口先核对并建立60文件源码和独立git快照，再使用已验证的整段GPU守护脚本运行12轮／25视频。`--prepare-only`只准备源码，不使用GPU。输出为所选workdir下的普通`outputs`目录，计时／官方验证材料位于`runs`。新kernel编译、模型导入、图捕获和退出仍在原始进程计时内；冷缓存可能更慢，缓存中的host `.so`需位于可执行挂载。旧的`nonv2-vae-all-display/run_case.py --case stackbox`默认转交当前60版本；加`--historical59`可重跑旧基线。完整GPU2对照为171.304477→170.633517秒，25视频一致；GPU0正式采用166.780992秒并通过新的103视频官方汇总，跨卡／跨历史运行差值不能全部归因于kernel。
 
 ## CUDA Graph 扩展
 

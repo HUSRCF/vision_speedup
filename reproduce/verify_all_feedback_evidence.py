@@ -39,7 +39,10 @@ def verify():
     assert summary['clean'] and summary['workload_complete'] and summary['quality_passed']
     assert summary['official103_adoption_not_done'] and summary['official_default_unchanged']
     for name,h in summary['official_result_sha256'].items():
-        assert hashlib.sha256((root/'results'/name).read_bytes()).hexdigest()==h
+        # This unadopted experiment recorded the then-current221 aggregate.
+        # Preserve and verify that exact historical pair after later adoption.
+        historical=root/'results/history/official221-before-fused-half'/name
+        assert hashlib.sha256(historical.read_bytes()).hexdigest()==h
     case=next(x for x in json.loads((full/'result.json').read_text())['cases'] if x['case']=='unitree_z1_stackbox')
     assert case['execution_ok'] and case['profile_complete'] and case['psnr_passed']
     assert (case['rounds'],case['videos'])==(12,25)
@@ -56,7 +59,7 @@ def verify():
     assert len([r for r in decoder['records'] if r.get('feedback_dtype')=='fp16'])==12
     for n,h in json.loads((here/'full-r2/asset-hashes.json').read_text()).items():
         assert hashlib.sha256((here/'full-r2'/n).read_bytes()).hexdigest()==h
-    print('All-feedback experimental source and full-case evidence verified; official221 unchanged.')
+    print('Historical unadopted all-feedback experiment and its exact221 aggregate evidence verified.')
 
 
 if __name__=='__main__':verify()
