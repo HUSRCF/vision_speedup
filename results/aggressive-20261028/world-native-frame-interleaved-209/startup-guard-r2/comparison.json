@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "CPU_only": true,
+  "no_Torch_import": true,
+  "strict_exactly_one_rank_context_preserved": true,
+  "fixtures": [
+    {
+      "fixture": "missing_rank_context",
+      "passed": true,
+      "attempts": [
+        "attempt-1",
+        "attempt-2"
+      ],
+      "retried": true
+    },
+    {
+      "fixture": "extra_context",
+      "passed": true,
+      "attempts": [
+        "attempt-1",
+        "attempt-2"
+      ],
+      "retried": true
+    },
+    {
+      "fixture": "foreign_context",
+      "passed": true,
+      "attempts": [
+        "attempt-1",
+        "attempt-2"
+      ],
+      "retried": true
+    },
+    {
+      "fixture": "model_numerics",
+      "passed": true,
+      "attempts": [
+        "attempt-1"
+      ],
+      "retried": false
+    }
+  ],
+  "retry_SHA256": "9d7fbd073cafab07a603b1035009304983747e06da36b21509cc2684ef0dea49",
+  "worker_SHA256": "417f1ad3d1e913aad6f86cec65c65401b50dc36e96144cbd2561c0fb6d3639b6",
+  "GPU_model_result": false
+}

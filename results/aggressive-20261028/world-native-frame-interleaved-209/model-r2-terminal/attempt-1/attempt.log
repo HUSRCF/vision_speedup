@@ -1,0 +1,45 @@
+WAIT_GPU_PAIR=2,3
+CLEAN_RUN_GPU=2
+CLEAN_RUN_GPU=3
+Traceback (most recent call last):
+  File "/tmp/team07-world-interleaved-model-5gg4iycm/wait_nccl_geglu_model_pair.py", line 60, in <module>
+    if __name__=='__main__':main()
+  File "/tmp/team07-world-interleaved-model-5gg4iycm/wait_nccl_geglu_model_pair.py", line 44, in main
+    assert process.returncode==0,Path('ranks.log').read_text()[-6000:]
+AssertionError: A256": "60be767f21819c7de15a7f708fa26722d2a3ddab28a52adb152a329388fb125d", "no_argument_bytes_or_addresses_exported": true, "capture_only_not_replayed": true, "no_uninitialized_numeric_result_claim": true, "proper_fullsize_known_Torch_allocations": true, "default_old_kernel_cache_restored": true}}, {"weight": "output_blocks.9.0.out_layers.3.weight", "geometry": [320, 2560, 320], "selected": true, "original_owner_validated_pointer_bytes_unchanged": true, "original_close_params_unchanged": true, "fresh_capture_ABI": {"argument_sizes": [8, 8, 8, 8], "bounded_pointer_ABI_verified": true, "all_captured_argument_bytes_match_known_Torch_pointers": true, "function_grid_block_shared_verified": true, "new_kernel_cubin_SHA256": "8154307f076647f4ad87bd57e01747c7c653b5b02318c162101629421d3dfdd1", "no_argument_bytes_or_addresses_exported": true, "capture_only_not_replayed": true, "no_uninitialized_numeric_result_claim": true, "proper_fullsize_known_Torch_allocations": true, "default_old_kernel_cache_restored": true}}, {"weight": "output_blocks.10.0.in_layers.2.weight", "geometry": [320, 2560, 640], "selected": true, "original_owner_validated_pointer_bytes_unchanged": true, "original_close_params_unchanged": true, "fresh_capture_ABI": {"argument_sizes": [8, 8, 8], "bounded_pointer_ABI_verified": true, "all_captured_argument_bytes_match_known_Torch_pointers": true, "function_grid_block_shared_verified": true, "new_kernel_cubin_SHA256": "4bf06a121d3d6e2b45b14c50c157d0e0b2672617708b3d572058770d371dfa3e", "no_argument_bytes_or_addresses_exported": true, "capture_only_not_replayed": true, "no_uninitialized_numeric_result_claim": true, "proper_fullsize_known_Torch_allocations": true, "default_old_kernel_cache_restored": true}}, {"weight": "output_blocks.10.0.out_layers.3.weight", "geometry": [320, 2560, 320], "selected": true, "original_owner_validated_pointer_bytes_unchanged": true, "original_close_params_unchanged": true, "fresh_capture_ABI": {"argument_sizes": [8, 8, 8, 8], "bounded_pointer_ABI_verified": true, "all_captured_argument_bytes_match_known_Torch_pointers": true, "function_grid_block_shared_verified": true, "new_kernel_cubin_SHA256": "8154307f076647f4ad87bd57e01747c7c653b5b02318c162101629421d3dfdd1", "no_argument_bytes_or_addresses_exported": true, "capture_only_not_replayed": true, "no_uninitialized_numeric_result_claim": true, "proper_fullsize_known_Torch_allocations": true, "default_old_kernel_cache_restored": true}}, {"weight": "output_blocks.11.0.in_layers.2.weight", "geometry": [320, 2560, 640], "selected": true, "original_owner_validated_pointer_bytes_unchanged": true, "original_close_params_unchanged": true, "fresh_capture_ABI": {"argument_sizes": [8, 8, 8], "bounded_pointer_ABI_verified": true, "all_captured_argument_bytes_match_known_Torch_pointers": true, "function_grid_block_shared_verified": true, "new_kernel_cubin_SHA256": "4bf06a121d3d6e2b45b14c50c157d0e0b2672617708b3d572058770d371dfa3e", "no_argument_bytes_or_addresses_exported": true, "capture_only_not_replayed": true, "no_uninitialized_numeric_result_claim": true, "proper_fullsize_known_Torch_allocations": true, "default_old_kernel_cache_restored": true}}, {"weight": "output_blocks.11.0.out_layers.3.weight", "geometry": [320, 2560, 320], "selected": true, "original_owner_validated_pointer_bytes_unchanged": true, "original_close_params_unchanged": true, "fresh_capture_ABI": {"argument_sizes": [8, 8, 8, 8], "bounded_pointer_ABI_verified": true, "all_captured_argument_bytes_match_known_Torch_pointers": true, "function_grid_block_shared_verified": true, "new_kernel_cubin_SHA256": "8154307f076647f4ad87bd57e01747c7c653b5b02318c162101629421d3dfdd1", "no_argument_bytes_or_addresses_exported": true, "capture_only_not_replayed": true, "no_uninitialized_numeric_result_claim": true, "proper_fullsize_known_Torch_allocations": true, "default_old_kernel_cache_restored": true}}]}
+W1028 23:14:51.855000 140172926555968 torch/distributed/elastic/multiprocessing/api.py:851] Sending process 3222933 closing signal SIGTERM
+E1028 23:14:52.170000 140172926555968 torch/distributed/elastic/multiprocessing/api.py:826] failed (exitcode: 1) local_rank: 1 (pid: 3222934) of binary: /home/team07/.venv/bin/python
+Traceback (most recent call last):
+  File "/home/team07/.venv/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/team07/.venv/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 883, in <module>
+    main()
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
+    return f(*args, **kwargs)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 879, in main
+    run(args)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 870, in run
+    elastic_launch(
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 132, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 263, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+check_nccl_geglu_model_rank.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-10-28_23:14:51
+  host      : contest-player
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 3222934)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+

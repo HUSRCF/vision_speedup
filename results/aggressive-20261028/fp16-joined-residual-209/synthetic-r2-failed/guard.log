@@ -1,0 +1,119 @@
+SINGLE_TMP_ATTEMPT=1
+FOREIGN_CONTEXT_ATTEMPT_EXCLUDED=1
+WAIT_IDLE_GPU=2
+SINGLE_TMP_ATTEMPT=2
+FOREIGN_CONTEXT_ATTEMPT_EXCLUDED=2
+WAIT_IDLE_GPU=2
+SINGLE_TMP_ATTEMPT=3
+Traceback (most recent call last):
+  File "/tmp/team07-fp16-joined-xao0dqhv/guard_fp16_joined209.py", line 123, in <module>
+    if __name__=='__main__':main()
+  File "/tmp/team07-fp16-joined-xao0dqhv/guard_fp16_joined209.py", line 109, in main
+    result=attempt(root,args.entry,args.gpu,index)
+  File "/tmp/team07-fp16-joined-xao0dqhv/guard_fp16_joined209.py", line 73, in attempt
+    assert process.returncode==0,(directory/'worker.log').read_text()[-8000:]
+AssertionError: Traceback (most recent call last):
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 1222, in ast_to_ttir
+    generator.visit(fn.parse())
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 1105, in visit
+    ret = super().visit(node)
+  File "/home/team07/.venv/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 303, in visit_Module
+    ast.NodeVisitor.generic_visit(self, node)
+  File "/home/team07/.venv/lib/python3.10/ast.py", line 426, in generic_visit
+    self.visit(item)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 1105, in visit
+    ret = super().visit(node)
+  File "/home/team07/.venv/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 376, in visit_FunctionDef
+    self.visit_compound_statement(node.body)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 298, in visit_compound_statement
+    ret_type = self.visit(stmt)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 1105, in visit
+    ret = super().visit(node)
+  File "/home/team07/.venv/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 629, in visit_If
+    self.visit_if_scf(cond, node)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 598, in visit_if_scf
+    self.visit_then_else_blocks(node, liveins, then_block, else_block)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 511, in visit_then_else_blocks
+    self.visit_compound_statement(node.orelse)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 298, in visit_compound_statement
+    ret_type = self.visit(stmt)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 1105, in visit
+    ret = super().visit(node)
+  File "/home/team07/.venv/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 885, in visit_For
+    self.visit_compound_statement(node.body)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 298, in visit_compound_statement
+    ret_type = self.visit(stmt)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 1105, in visit
+    ret = super().visit(node)
+  File "/home/team07/.venv/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 642, in visit_If
+    self.visit_compound_statement(node.body)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 298, in visit_compound_statement
+    ret_type = self.visit(stmt)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 1105, in visit
+    ret = super().visit(node)
+  File "/home/team07/.venv/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 428, in visit_Assign
+    values = self.visit(node.value)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 1105, in visit
+    ret = super().visit(node)
+  File "/home/team07/.venv/lib/python3.10/ast.py", line 418, in visit
+    return visitor(node)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 1027, in visit_Call
+    return fn(*args, **extra_kwargs, **kws)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/language/core.py", line 27, in wrapper
+    return fn(*args, **kwargs)
+TypeError: cat() got multiple values for argument 'can_reorder'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/team07-fp16-joined-xao0dqhv/audit_fp16_joined_residual209.py", line 164, in <module>
+    if __name__ == '__main__': main()
+  File "/tmp/team07-fp16-joined-xao0dqhv/audit_fp16_joined_residual209.py", line 151, in main
+    rows.extend(screen(*geometry))
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/tmp/team07-fp16-joined-xao0dqhv/audit_fp16_joined_residual209.py", line 109, in screen
+    check('initial')
+  File "/tmp/team07-fp16-joined-xao0dqhv/audit_fp16_joined_residual209.py", line 94, in check
+    original(); call(); torch.cuda.synchronize()
+  File "/tmp/team07-fp16-joined-xao0dqhv/audit_fp16_joined_residual209.py", line 90, in call
+    def call(): launch_fused(candidate_values, out, shift=shift, bm=bm, method=method)
+  File "/tmp/team07-fp16-joined-xao0dqhv/fp16_joined_residual209_candidate.py", line 105, in launch_fused
+    return _fused[(triton.cdiv(m, bm) * triton.cdiv(n, 64),)](
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 167, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 416, in run
+    self.cache[device][key] = compile(
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 191, in compile
+    module = src.make_ir(options)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 117, in make_ir
+    return ast_to_ttir(self.fn, self, options=options)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/code_generator.py", line 1231, in ast_to_ttir
+    raise CompilationError(fn.src, node, repr(e)) from e
+triton.compiler.errors.CompilationError: at 30:35:            xm = (rows[:, None] < M) & (ks[None, :] < K)
+            wm = (cols[None, :] < N) & (ks[:, None] < K)
+            xh = tl.load(XH + rows[:, None] * K + ks[None, :], xm, other=0)
+            xl = tl.load(XL + rows[:, None] * K + ks[None, :], xm, other=0)
+            wh = tl.load(WH + cols[None, :] * K + ks[:, None], wm, other=0)
+            xc = (xl.to(tl.float32) * (1. / (2 ** A_SHIFT))).to(tl.float16)
+            if A_SHIFT == 11:
+                wc = wh
+            else:
+                wc = (wh.to(tl.float32) * (1. / (2 ** (11 - A_SHIFT)))).to(tl.float16)
+            if METHOD == 0:
+                a = tl.cat(xh, xc, 1, can_reorder=False)
+                                   ^
+TypeError("cat() got multiple values for argument 'can_reorder'")
+
