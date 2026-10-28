@@ -2,7 +2,7 @@
 
 此前直接把 ResBlock 空间卷积 batch 从 16 改为 8，会改变 cuDNN 算法及原生滤波器缓存覆盖。新的实验保留完整 N16 形状、strides、卷积参数和原生 Tensor Core 算法，把其中一个 rank 应处理的八帧放在前八帧，其余位置填零。目标是之后在双卡中分别计算两半帧，汇合完整 16 帧后再执行原时间卷积。
 
-此处只有合成单卡算子实验；没有完整 ResBlock、双卡通信、完整模型或视频质量结论。不能把省去填零位置的算子时间直接作为完整视频加速。
+以下算子结果来自合成单卡实验，不能把省去填零位置的时间直接作为完整视频加速。新增的真实 ResBlock 双卡诊断与正式成绩分开记录，当前仍无这条候选的完整视频结论。
 
 ## 36 组只读检查
 
@@ -30,3 +30,21 @@
 两种布局、两个 rank 的单次节省范围约为 **0.128～0.843 ms**。这比仅缓存十处量化权重覆盖更大的单算子范围，但还不能推导完整模型节省多少秒。后续需要扩大到实际 ResBlock 的全部几何，再接入图中现有原生缓存 owner，保留其已验证的 filter 指针和恢复行为；同时重测 138+43+8 原 cache owner、全部 master 修改／恢复、通信成本和完整 V2 PSNR。
 
 精确源码见 [`native-frame-grid-209`](../experiments/native-frame-grid-209)，全部输出误差、启动维度、配对样本和 source proof 见 [结果](../results/aggressive-20261028/native-frame-grid-209)。当前正式 V2 仍为 **289.486308 秒**，五项 **838.392232 秒**。
+
+## 补齐实际配置的全部空间卷积形状
+
+使用原 209 文件对应的正式配置，在 meta device 构造视频主干；只将三个未检查的 head 工厂替换为 Identity，不加载 checkpoint、不初始化 CUDA。逐层检查 input/middle/output block 的通道及上下采样关系，得到 **22 个 ResBlock、14 种 3×3 卷积几何**。这一步证明配置的形状覆盖；实际运行的 strides 和 cuDNN 消费者仍须 GPU 检查。[拓扑及源码证明](../results/aggressive-20261028/native-frame-grid-209/topology-r1)
+
+原六种以外的八种几何，再测两种布局和两个 rank，共 **32 组、192 次动态比较**，前八帧全部逐位一致；32 次原网格恢复后的完整 16 帧也全部逐位一致。与原实验合计 **56 组、336 次动态比较**，覆盖全部 14 种几何。新 32 组均六对交替计时更快，单算子节省中位数范围 **0.144～0.736 ms**，仍未计入分帧复制及双卡汇合。[扩展实验](../results/aggressive-20261028/native-frame-grid-209/extended-fixture-r2)
+
+首次扩展在原先未支持的矩形 XMMA tile 检查处停止。后续只读检查发现 `tilesize256x128x32` 的实际网格为 `[ceil(CO/128), ceil(NHW/256), Z]`：第一个 tile 维度对应空间，第二个对应输出通道。只读程序完成了 32 组检查并写出进度，但汇总器字段名写错，进程失败；这些进度只用于识别内核，不作为干净完成的计时结果。修正网格规则后，上述 r2 独立完成全部动态检查和独占 GPU 守护。原来的扩展 r1 及其源码没有覆盖修改。
+
+## 真实 ResBlock 接入方式
+
+候选保留 N16 形状和 strides，把每个 rank 的八帧复制到前八帧。embedding Linear 仍执行完整 16 行或原单行广播，然后重排结果；skip 与 residual 相加后，只汇合两卡各自的前八帧，恢复完整 16 帧后再运行原时间卷积。生产配置不排除任何 ResBlock。
+
+原缓存 owner 完成严格检查后，候选只修改 `cached_consumer.params` 的空间网格，保留它已经验证的缓存 filter 指针以及全部参数字节。`original_consumer` 保持原网格，供原关闭流程恢复。CPU 检查覆盖 120 个 rank／三种布局／FiLM／上下采样／embedding 广播／时间卷积边界组合，并另用模拟 owner 检查缓存指针与恢复网格；模拟测试不代表真实 GPU 缓存检查已经通过。[CPU 检查](../results/aggressive-20261028/native-frame-grid-209/resblock-cpu-r2)
+
+真实模型 r1 在原缓存构建后，因为外层模型权重名有额外前缀，未匹配到 44 个空间卷积而主动停止，未获得有效模型计时。后续改为用权重对象身份匹配，并补上带完整前缀的 owner 测试；原 138+43+8 缓存和逐位数值门槛均保留。双卡诊断还需检查全部 Linear、norm 和 Conv2d master 修改／清零／恢复、三路输出、RNG、原基线恢复及完整前向通信耗时，通过后才有理由进入完整 V2。
+
+r2 执行的精确源码、生成的真实模型 profile 和双卡守护脚本见 [模型候选](../experiments/native-frame-grid-209/resblock-model-r2)，CPU 预检及当前状态见 [候选证据](../results/aggressive-20261028/native-frame-grid-209/resblock-model-r2)。共享机器上遇到其他 GPU context 的轮次由原守护排除，只有全程干净的完成轮次才会写入有效模型计时；运行中状态不能视为通过。
