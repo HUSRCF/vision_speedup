@@ -1,0 +1,34 @@
+{
+  "clean": true,
+  "run_directory": "/home/team07/benchmark-runs/unifolm/20261028T123116Z-case-v2-nccl-2843783",
+  "physical_GPUs": [
+    "2",
+    "3"
+  ],
+  "observations": 66,
+  "benchmark_exit_code": 1,
+  "parallel": {
+    "policy": "both-spatial-temporal-resblock-grid",
+    "GPUs": 2,
+    "full_workload_on_both_ranks": true,
+    "rank_videos_SHA256_equal": true,
+    "video_count": 3,
+    "video_hashes": {
+      "inference/5_full_fs4.mp4": "b0565de8b545c9620b139e824bc19005b04d6cdf48ab0deb56312cc555b9386d",
+      "inference/sample_5/dm/4/itr-0.mp4": "fc99cbc283a879d8ef53e0848054353446d37d58636cf809822fab1aded097b3",
+      "inference/sample_5/wm/4/itr-0.mp4": "b0565de8b545c9620b139e824bc19005b04d6cdf48ab0deb56312cc555b9386d"
+    },
+    "helper_exit_code": 0,
+    "setup_helper_outputs_and_teardown_inside_original_process_timer": true,
+    "stage_captures": {
+      "decision": 16,
+      "world": 32
+    },
+    "stage_calls": {
+      "decision": 50,
+      "world": 50
+    }
+  },
+  "smoke_only": true,
+  "no_official_adoption": true
+}

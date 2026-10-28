@@ -4113,8 +4113,8 @@
       "official_adopted": false
     },
     "nccl_resblock_native_full_descriptor_grid_current209_decision_model_pair_r2": {
-      "running": true,
-      "clean": false,
+      "running": false,
+      "clean": true,
       "GPU_pair": [
         "2",
         "3"
@@ -4123,7 +4123,50 @@
       "target_spatial_3x3_consumers": 44,
       "full_N16_descriptors_preserved": true,
       "official_adopted": false,
-      "full_V2_quality_and_walltime_unverified": true
+      "full_V2_quality_and_walltime_unverified": true,
+      "ready_for_full_trial": true,
+      "all18_outputs_per_rank_signedzero_bit_exact": true,
+      "median_saved_ms_per_rank": [
+        9.234939575195312,
+        6.184959411621094
+      ],
+      "all22_original_ResBlocks_and44_native_consumers_qualified": true
+    },
+    "nccl_resblock_native_grid_incremental_current209_decision_model_pair_r1": {
+      "running": false,
+      "clean": true,
+      "GPU_pair": [
+        "2",
+        "3"
+      ],
+      "original_ResBlocks": 22,
+      "target_spatial_3x3_consumers": 44,
+      "full_N16_descriptors_preserved": true,
+      "official_adopted": false,
+      "full_V2_quality_and_walltime_unverified": true,
+      "baseline_is_adopted_parallel_routing": true,
+      "ready_for_full_trial": true,
+      "all18_outputs_per_rank_signedzero_bit_exact": true,
+      "median_saved_ms_per_rank": [
+        9.342460632324219,
+        9.372673034667969
+      ],
+      "all22_original_ResBlocks_and44_native_consumers_qualified": true
+    },
+    "nccl_both_spatial_temporal_resblock_grid_current209_smoke_r1": {
+      "clean": true,
+      "smoke_only": true,
+      "original_sources": 209,
+      "production_sources": 218,
+      "GPUs": 2,
+      "rounds": 1,
+      "videos": 3,
+      "rank_videos_SHA256_equal": true,
+      "full_workload_quality_and_walltime_unverified": true,
+      "official_adopted": false,
+      "all_setup_and_teardown_inside_original_timer": true,
+      "four_reversible_lifecycle_hooks": true,
+      "original_110_JIT_sources_unchanged": true
     }
   },
   "head_pipeline_measurement": {

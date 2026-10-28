@@ -29,7 +29,7 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 使用两张卡，其余�
 - [`experiments/fp16-balanced-residual-209`](experiments/fp16-balanced-residual-209)：仅缩放 INT8 残差使中间 FFN 算子约省 21.5%，完整 world 前向每次省 0.975 ms；但完整 V2 的 PSNR 仅 24.786 dB，未通过质量门槛，未采用。失败的精确代码与完整单项 log／JSON 均保留。
 - [`experiments/fp16-outlier-residual-209`](experiments/fp16-outlier-residual-209)：缩放 INT8 残差加 256/5120 个 Half 通道保护，融合连续打包后，完整 V2 为 **321.720411 秒 / PSNR 25.743337 dB**，质量通过但未证明整项加速。另有 40 个微基准配置、六组整网与十层误差／求和顺序对照，均未替换正式成绩。
 - [`experiments/fp16-cached-outlier-residual-209`](experiments/fp16-cached-outlier-residual-209)：按原 FP32 master 版本缓存量化权重，完整 world 前向比动态打包中位省 0.322 ms。完整 V2 为 **322.518989 秒 / PSNR 25.743337 dB**，23 个视频与动态版本相同，尚未证明整项加速，未采用。
-- [`docs/NATIVE_FRAME_GRID_EXPERIMENTS_20261028.md`](docs/NATIVE_FRAME_GRID_EXPERIMENTS_20261028.md)：保留 N16 原生卷积描述符，只缩小有效半帧的空间启动网格。已覆盖 22 个 ResBlock 的全部 14 种 3×3 卷积几何，56 组、336 次动态状态检查逐位一致；双卡真实模型候选已启动，完整 V2 质量及耗时尚未验证。
+- [`docs/NATIVE_FRAME_GRID_EXPERIMENTS_20261028.md`](docs/NATIVE_FRAME_GRID_EXPERIMENTS_20261028.md)：保留 N16 描述符，对 22 个 ResBlock 的 44 个空间卷积分帧。相对正式版已有并行算法，完整 decision 前向从约 207.5 ms 降至 198.2 ms，每卡 18 路动态输出逐位通过；218 文件计时入口预检通过，完整 V2 正在验证。
 - [`experiments/kahan-packed-current209`](experiments/kahan-packed-current209)：八处 Kahan 权重 high/low 预打包，完整 world 前向中位省 1.577 ms；完整单卡 V2 为 324.052568 秒，23 个视频逐位一致，但未改善完整进程耗时，未采用。精确增量与完整 log／JSON 已保留。
 
 源码从正式运行的不可变目录取回，逐文件核对生产清单。保留上游 [`LICENSE`](unifolm/LICENSE) 和原始说明；上游赛题入口为 <https://github.com/HKUSTGZ-SCC/Newbie2.0>。
