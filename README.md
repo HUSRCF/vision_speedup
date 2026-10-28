@@ -41,6 +41,8 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 使用两张卡，其余�
 
 ## 最新优化重点
 
+[NCCL通信调优](experiments/nccl-tuning222)已完成13个独立进程配置的逐位检查。采用实际222汇合尺寸的通信替代图，32channels＋P2Pwrite合计约24.08ms，默认约29.27ms；该图按尺寸分组，不包含模型计算/实际调度，不能当作完整提速。复用同一222源码、只改三项NCCL环境参数的完整V2正在验证，正式材料仍为下述268.844229秒。
+
 当前正式/default已采用[初始时间块222](experiments/initial-boundary-221/production222)：将既有初始FFN汇合移到残差之后，覆盖前方QKV、FP32时间attention与残差norm，包含2个QKV回写节点，不增加collective，保留完整5D GroupNorm、16时间步、Conv1d边界投影与原始209文件／110个JIT算术。此前六状态逐位和六对模型计时通过；新的同GPU0/1、同私有tmpfs完整对照为 **272.043547 → 268.844229秒**，本次少 **3.199318秒**。这是一次完整进程AB，模型六对计时另有证据。本次world生成CUDA少1.388971秒，未改动的decision也少0.907554秒，因此不把全部进程差值归因于新路由。相对历史221正式成绩少1.980970秒。23视频与221及另一rank的SHA一致、PSNR29.675324786dB；新的103视频官方汇总accepted，五项 **816.711804秒**，本机GPU双文件已更新。
 
 本轮通过[私有tmpfs适配器](experiments/private-nccl-tmpfs)解除NCCL控制缓冲空间限制：仅本次进程树的新建NCCL临时文件放到私有/var/tmp，CPU跨进程mmap与双卡图内all-gather均逐位通过；两rank的实际控制文件映射设备也已核实。两个完整对照使用相同适配器、guard、缓存及输出挂载。没有清理或迁移原历史证据/缓存，安装的NCCL库和GPU内核保持不变。完整源码、逐项log/JSON及同配置对照见[private-tmpfs-full](results/aggressive-20261028/initial-boundary-221/private-tmpfs-full)。

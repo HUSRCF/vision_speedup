@@ -1,0 +1,49 @@
+[
+  {
+    "name": "default",
+    "env": {}
+  },
+  {
+    "name": "channels4",
+    "env": {
+      "NCCL_MIN_NCHANNELS": "4",
+      "NCCL_MAX_NCHANNELS": "4"
+    }
+  },
+  {
+    "name": "channels8",
+    "env": {
+      "NCCL_MIN_NCHANNELS": "8",
+      "NCCL_MAX_NCHANNELS": "8"
+    }
+  },
+  {
+    "name": "channels32",
+    "env": {
+      "NCCL_MIN_NCHANNELS": "32",
+      "NCCL_MAX_NCHANNELS": "32"
+    }
+  },
+  {
+    "name": "write",
+    "env": {
+      "NCCL_P2P_READ_ENABLE": "0"
+    }
+  },
+  {
+    "name": "simple",
+    "env": {
+      "NCCL_PROTO": "Simple"
+    }
+  },
+  {
+    "name": "LL128",
+    "env": {
+      "NCCL_PROTO": "LL128"
+    }
+  },
+  {
+    "name": "default_repeat",
+    "env": {}
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "clean": true,
+  "results": [
+    {
+      "config": {
+        "name": "default",
+        "env": {}
+      },
+      "phase_ms": {
+        "decision": 6.405632019042969,
+        "world": 22.863872528076172
+      }
+    },
+    {
+      "config": {
+        "name": "channels32_write",
+        "env": {
+          "NCCL_MIN_NCHANNELS": "32",
+          "NCCL_MAX_NCHANNELS": "32",
+          "NCCL_P2P_READ_ENABLE": "0"
+        }
+      },
+      "phase_ms": {
+        "decision": 5.2208640575408936,
+        "world": 18.861055374145508
+      }
+    },
+    {
+      "config": {
+        "name": "channels32_LL128",
+        "env": {
+          "NCCL_MIN_NCHANNELS": "32",
+          "NCCL_MAX_NCHANNELS": "32",
+          "NCCL_PROTO": "LL128"
+        }
+      },
+      "phase_ms": {
+        "decision": 5.272063970565796,
+        "world": 19.173888206481934
+      }
+    },
+    {
+      "config": {
+        "name": "channels32_threads256",
+        "env": {
+          "NCCL_MIN_NCHANNELS": "32",
+          "NCCL_MAX_NCHANNELS": "32",
+          "NCCL_NTHREADS": "256"
+        }
+      },
+      "phase_ms": {
+        "decision": 5.4184958934783936,
+        "world": 19.61728000640869
+      }
+    },
+    {
+      "config": {
+        "name": "default_repeat",
+        "env": {}
+      },
+      "phase_ms": {
+        "decision": 6.409728050231934,
+        "world": 22.834688186645508
+      }
+    }
+  ],
+  "all_configurations_completed": true,
+  "no_model_or_video_quality_claim": true
+}

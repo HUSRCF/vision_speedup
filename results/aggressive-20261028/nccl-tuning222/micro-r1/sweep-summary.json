@@ -1,0 +1,102 @@
+{
+  "clean": true,
+  "results": [
+    {
+      "config": {
+        "name": "default",
+        "env": {}
+      },
+      "phase_ms": {
+        "decision": 6.380032062530518,
+        "world": 22.627840042114258
+      }
+    },
+    {
+      "config": {
+        "name": "channels4",
+        "env": {
+          "NCCL_MIN_NCHANNELS": "4",
+          "NCCL_MAX_NCHANNELS": "4"
+        }
+      },
+      "phase_ms": {
+        "decision": 12.168191909790039,
+        "world": 41.020416259765625
+      }
+    },
+    {
+      "config": {
+        "name": "channels8",
+        "env": {
+          "NCCL_MIN_NCHANNELS": "8",
+          "NCCL_MAX_NCHANNELS": "8"
+        }
+      },
+      "phase_ms": {
+        "decision": 7.969792127609253,
+        "world": 27.828224182128906
+      }
+    },
+    {
+      "config": {
+        "name": "channels32",
+        "env": {
+          "NCCL_MIN_NCHANNELS": "32",
+          "NCCL_MAX_NCHANNELS": "32"
+        }
+      },
+      "phase_ms": {
+        "decision": 5.653504133224487,
+        "world": 20.345343589782715
+      }
+    },
+    {
+      "config": {
+        "name": "write",
+        "env": {
+          "NCCL_P2P_READ_ENABLE": "0"
+        }
+      },
+      "phase_ms": {
+        "decision": 5.898751974105835,
+        "world": 21.211647987365723
+      }
+    },
+    {
+      "config": {
+        "name": "simple",
+        "env": {
+          "NCCL_PROTO": "Simple"
+        }
+      },
+      "phase_ms": {
+        "decision": 6.450176000595093,
+        "world": 23.248384475708008
+      }
+    },
+    {
+      "config": {
+        "name": "LL128",
+        "env": {
+          "NCCL_PROTO": "LL128"
+        }
+      },
+      "phase_ms": {
+        "decision": 6.176768064498901,
+        "world": 22.29657554626465
+      }
+    },
+    {
+      "config": {
+        "name": "default_repeat",
+        "env": {}
+      },
+      "phase_ms": {
+        "decision": 6.407680034637451,
+        "world": 22.903295516967773
+      }
+    }
+  ],
+  "all_configurations_completed": true,
+  "no_model_or_video_quality_claim": true
+}
