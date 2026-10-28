@@ -49,3 +49,26 @@
 重新使用官方工具验证49轮／103视频通过，五项汇总 **826.342893 秒**；本机GPU与公开results双文件同字节。验证集合复用了此前已验证MP4的普通文件硬链接，逐文件校验SHA且原生成输出保持不变，全部103视频仍重新解码并与官方参考计算PSNR；这只发生在分项进程计时完成后的材料汇总中，不作为推理缓存。保留未改动的原log／JSON和完整源码证明，见[正式对照](../results/aggressive-20261028/initial-ffn-219/full-candidate-r1)。
 
 下一项扩展时间块分片边界。[实际配置的meta构造清单](../results/aggressive-20261028/temporal-block-219/meta-r3)确认17个时间模块，其中16个常规块使用Linear投影，init_attn的320→512→320投影使用Conv1d。该清单未加载checkpoint、输入或GPU，不是性能证据。
+
+
+## 时间块分片扩展：模型验证通过，完整221候选待验
+
+以实际采用的220源树及11个helper为基线，而不是旧209单卡或218。只读清单先核对17个时间模块，Tensor公开形状／stride／dtype及选定维度见 [`operator-inventory-r1`](../results/aggressive-20261028/temporal-block-220/operator-inventory-r1)。观察前后三路输出逐位一致；未读取或导出操作数、地址或driver参数。该清单本身不构成性能优化。
+
+新增范围为16个常规Linear时间块。完整5D GroupNorm和其norm/layout pack保留；从norm完成之后开始共享空间行所有权，覆盖proj_in、QKV、原FP32 16帧attention、输出投影、残差norm，直到原FFN汇合结束。proj_out及最终布局／残差仍在汇合后复制执行。每位置保留完整16时间步，且不增加collective。原FFN已经缩小M的launch直接透传，防止二次分片。
+
+QKV原本按三个输出面存放，故半M计算先写局部连续scratch，再一次strided copy写回全形状的对应空间行。两个device-predicate launch必须共享scratch，以防第二个inactive分支将有效输出覆盖成未初始化内容；16项CPU测试覆盖两种Count分支次序与两个rank的行所有权。原110个JIT主体、K求和顺序、tile、外层完整dispatch、master版本检查均保持。54个回写节点及全部新增分配成本包含在实际图计时内。
+
+| 完整world模型配对，GPU0/2 | rank0 | rank1 |
+|---|---:|---:|
+| 六对中位净节省 ms | 11.475960 | 11.577858 |
+| 六对均更快 | 是 | 是 |
+| 六状态×三输出，含signed zero逐位相同 | 18/18 | 18/18 |
+
+动态状态包括输入变化、570 Linear／782 norm／192 Conv2d FP32 master变化、清零、恢复；恢复条件缓存显式失效沿用既有检查，RNG不变。原world23 SGEMM（15packed＋8Kahan）和45head filter cache仍验证。两个rank收益不能相加。乘550得到约6.31–6.37秒只是当前样本的量级外推；完整V2、初始化、输出和PSNR仍须实测。精确代码及完整报告见 [`model-r2`](../experiments/temporal-block-220/model-r2)。
+
+首版包含init_attn时，原CUDA Graph finite gate失败，未通过、无速度结论。其220汇合仅包含FFN本身，后面还会加残差；源码确认它不具备常规块的相同汇合边界。r2排除此块后通过。失败源与日志单独保留于 [`model-r1`](../results/aggressive-20261028/temporal-block-220/model-r1)。
+
+GPU guard和所有完整模型报告成功结束后，外层retry将重复ranks.log复制到顶层时遇到RAM盘不足，故outer archiver没有成功退出。完整原始日志／报告已在本机留存；严格确认任务结束并核对本机原件SHA后，仅将这三次新任务的重复证据gzip，释放约48.76MB。报告明确记录此归档错误；没有把失败复制算入GPU计时、修改输出或放宽质量检查。
+
+[`production221`](../experiments/temporal-block-220/production221)冻结新增helper和runtime路由；核心函数及Controller除report外与GPU验证r2的AST相同。完整候选使用原11轮／23视频、原process timer和官方PSNR，处于待验状态。原正式220（277.436969s，五项826.342893s）及默认入口继续保留。完整候选与历史220比较不是同时进行的full-process AB；六对交替测量仅指上述同GPU完整world前向。

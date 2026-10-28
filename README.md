@@ -40,6 +40,11 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 使用两张卡，其余�
 
 ## 最新优化重点
 
+时间块扩展候选已完成模型验证：[精确代码](experiments/temporal-block-220/model-r2)、[原始六对计时](results/aggressive-20261028/temporal-block-220/model-r2/summary.json)。在实际220基线上，16个常规 world 时间块沿空间位置分片，保留完整5D GroupNorm、16时间步及既有FFN汇合；QKV、FP32时间attention、投影及残差norm共享该边界，不增加通信。六组动态输入／权重状态的三路输出逐位一致；两卡每次 world 前向中位省 **11.475960／11.577858 ms**，六对均更快，包含54个QKV回写节点。按550次粗估约6.31–6.37秒，**不是完整V2成绩**。[221文件候选](experiments/temporal-block-220/production221)已冻结并排队完整工作量验证；默认运行器和本机提交材料仍选220。候选可用 `reproduce/run_v2_parallel.py --variant both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block` 显式选择。
+
+首版把`init_attn`一并纳入后未通过原图finite校验；其原始FFN输出先汇合、随后才加残差，不能套用普通块边界。r2保留`init_attn`已采用220路径。模型检查完成后，外层复制重复日志曾因RAM盘满失败；完整GPU报告和原始日志已取回并核对SHA，再压缩仅已结束任务的重复证据。该归档失败单独记录，不掩饰为成功退出，也未改动GPU测量或正式材料。
+
+
 当前 220 版本补齐 world `init_attn` 的 512 通道 FFN：原 producer／consumer 一起按行分片，保持 BK32、full40960 外层形状和权重版本缓存，结束时汇合一次，每 rank 40 MiB。完整模型六对计时均更快，中位净省 3.940857／3.897850 ms，六组动态状态逐位一致。正式同 GPU0/3、同 RAM 输出对照为 **278.896881 → 277.436969 秒**，整项省 **1.459912 秒**。World 生成 CUDA 时间减少 1.965497 秒，模型传输增加约 0.558 秒，说明不能把前向收益直接当作进程收益。相对上一正式记录少 3.413462 秒，其中包含跨轮波动。23 视频与原基线及另一 rank 相同，103 视频官方复核通过；[完整证据](results/aggressive-20261028/initial-ffn-219/full-candidate-r1)。
 
 2026-10-29 已补上空间块中绕过 Triton hook 的原生 xFormers attention：每 rank 只处理自己的八帧 Q/K/V 和全局 mask 切片，保持外层 full16 形状与 GEMM 分派，复用原块末尾汇合。两阶段每次捕获各 70 个原生调用，没有新增 collective。六组动态状态逐位通过，两个阶段、两个 rank 的六对完整模型计时均更快。

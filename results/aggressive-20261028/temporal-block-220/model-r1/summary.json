@@ -1,0 +1,8 @@
+{
+  "clean_model_check_passed": false,
+  "no_speed_or_video_qualification": true,
+  "original_graph_finiteness_gate_failed": true,
+  "scope": "17 temporal modules including init_attn; rejected",
+  "observed_boundary": "init_attn existing220 gathers raw FFN output before residual add; ordinary world temporal FFN gathers residual-complete output.",
+  "next_revision": "Restrict wider routing to16 Linear temporal modules; keep init_attn exact220."
+}

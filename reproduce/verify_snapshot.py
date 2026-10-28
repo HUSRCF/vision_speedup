@@ -132,11 +132,36 @@ def main():
     assert accepted['GPUs']==2 and accepted['source_count']==220 and accepted['all103_officially_validated']
     assert accepted['V2_s']==277.436969 and accepted['saved_from_matched_baseline_s']==1.459912
     assert next(c['process_wall_s'] for c in cases if c['case'].endswith('stackbox_v2'))==accepted['V2_s']
+    latest=root/'experiments/temporal-block-220/production221'
+    spec=importlib.util.spec_from_file_location('temporal221_pending_frozen',latest/'production_sources.py')
+    frozen=importlib.util.module_from_spec(spec);spec.loader.exec_module(frozen)
+    files,proof=frozen.production_sources(code)
+    assert proof==json.loads((latest/'timing-proof.json').read_text())
+    manifest221=json.loads((latest/'production-sources.json').read_text());assert len(manifest221)==221
+    for name,digest in manifest221.items():
+        actual=hashlib.sha256(files[name].encode()).hexdigest() if name in files else sha(code/name)
+        assert actual==digest,name
+    original209=json.loads((code/'world-head-filter-cache-production-sources.json').read_text())
+    assert all(manifest221[n]==h for n,h in original209.items())
+    for name,digest in json.loads((latest/'guard-source-hashes.json').read_text()).items():assert sha(latest/name)==digest,name
+    assets=json.loads((latest/'production-assets.json').read_text())
+    assert hashlib.sha256(files['scripts/evaluation/world_model_interaction.py'].encode()).hexdigest()==assets['scripts/evaluation/world_model_interaction.py']
+    assert sha(latest/'timing-proof.json')==assets['nccl-entry-timing-proof.json']
+    for name in ('scripts/run_compute_benchmark.sh','scripts/team07_env.sh'):assert sha(code/name)==assets[name]
+    evidence=json.loads((root/'results/aggressive-20261028/temporal-block-220/model-r2/summary.json').read_text())
+    assert evidence['passed'] and evidence['clean'] and evidence['ready_for_model']
+    assert not evidence['runner_archive_copy_completed']
+    for rank in evidence['ranks']:
+        assert len(rank['cases'])==6 and rank['RNG_unchanged']
+        assert all(e['signedzero_bits'] for case in rank['cases'] for e in case['errors'])
+        assert len(rank['pairs'])==6 and all(pair['saved_ms']>0 for pair in rank['pairs'])
+        ctl=rank['attention_launches'];assert ctl['captured']==16 and ctl['no_new_collectives']
+        assert sum(row['grouped_copy_nodes'] for row in ctl['rows'])==54
     for row in cases:
         records=re.findall(r'^PSNR case='+re.escape(row['case'])+r' psnr_db=([^ ]+) threshold_db=25 pass=(\w+)$',log,re.M)
         assert len(records)==1 and records[0][1]=='true'
     for prefix in ('RUN_SUMMARY ','RESULT_JSON=','ACCEPTED '):assert len(re.findall('^'+re.escape(prefix),log,re.M))==1
     assert not re.search(r'^FAILED:',log,re.M)
-    print('Verified: original209 base;historical213/world215/both215 native-grid218/native-attention219 and adopted initial-FFN220 overlays;59 nonV2 sources;official103 log/JSON.')
+    print('Verified: original209 base;historical213/world215/both215 native-grid218/native-attention219 and adopted initial-FFN220 and pending temporal221 overlays;59 nonV2 sources;official103 log/JSON.')
 
 if __name__=='__main__':main()
