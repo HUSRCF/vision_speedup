@@ -34,6 +34,8 @@
 
 ## 未集成实验
 
+最新的[时间注意力实验](TEMPORAL_ATTENTION_EXPERIMENTS.md)包括原始 FP32 launch 的逐位一致优化，以及有原生回退的补偿 Tensor Core 候选。前者配对模型计时更快，但完整 V2 为 317.385042 秒，略慢于当前最佳，因此未采用。请保留这种微测、完整模型和完整视频结果之间的区别。
+
 `results/head-scaled-half-209-report.json`：隐式 gather 卷积采用独立分块/Kahan 后数值门槛通过，但比缓存原生基线更慢，已关闭。
 
 `results/head-prepacked-half-209-report.json`：显式 im2col、split-K GEMM、归并均进入计时。5 组真实形状中 4 组存在通过全部检查且六对计时均加速的配置，最快每组节省约 18–81 微秒。第 5 组未通过既定数值门槛。独立 cuDNN 基线含原生 filter 缓存，但其算法选择与完整模型不完全一致；目前没有实际模型集成或完整视频质量结论。

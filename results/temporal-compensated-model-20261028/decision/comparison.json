@@ -1,0 +1,2643 @@
+{
+  "stage": "decision",
+  "cases": [
+    {
+      "case": "initial",
+      "three_outputs_gross_passed": true,
+      "errors": [
+        {
+          "relative_l2": 0.00020717400184366852,
+          "max_abs": 0.0013394355773925781,
+          "signedzero_bits": false
+        },
+        {
+          "relative_l2": 8.46920011099428e-05,
+          "max_abs": 0.0008203983306884766,
+          "signedzero_bits": false
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        }
+      ],
+      "baseline_restored_bitwise": false,
+      "attention_launches": {
+        "captured": 34,
+        "captures": [
+          {
+            "shape": [
+              2560,
+              16,
+              512
+            ],
+            "heads": 8,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              512
+            ],
+            "heads": 8,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              40,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              40,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          }
+        ],
+        "fallbacks": {
+          "disabled": 136
+        },
+        "original_JIT_object_and_body_retained": true,
+        "private_candidate_JIT": true,
+        "original_all_input_output_storage": true,
+        "IEEE_FP32_softmax_tree": true,
+        "three_product_TensorCore_QK_and_PV": true,
+        "extreme_domain_native_FP32_fallback": true
+      }
+    },
+    {
+      "case": "changed_inputs",
+      "three_outputs_gross_passed": true,
+      "errors": [
+        {
+          "relative_l2": 0.00020084164862055331,
+          "max_abs": 0.0009668469429016113,
+          "signedzero_bits": false
+        },
+        {
+          "relative_l2": 6.835806561866775e-05,
+          "max_abs": 0.000263214111328125,
+          "signedzero_bits": false
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        }
+      ],
+      "baseline_restored_bitwise": false,
+      "attention_launches": {
+        "captured": 34,
+        "captures": [
+          {
+            "shape": [
+              2560,
+              16,
+              512
+            ],
+            "heads": 8,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              512
+            ],
+            "heads": 8,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              40,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              40,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          }
+        ],
+        "fallbacks": {
+          "disabled": 136
+        },
+        "original_JIT_object_and_body_retained": true,
+        "private_candidate_JIT": true,
+        "original_all_input_output_storage": true,
+        "IEEE_FP32_softmax_tree": true,
+        "three_product_TensorCore_QK_and_PV": true,
+        "extreme_domain_native_FP32_fallback": true
+      }
+    },
+    {
+      "case": "changed_Linear_masters",
+      "three_outputs_gross_passed": true,
+      "errors": [
+        {
+          "relative_l2": 0.00020105614385101944,
+          "max_abs": 0.0014505386352539062,
+          "signedzero_bits": false
+        },
+        {
+          "relative_l2": 7.099252252373844e-05,
+          "max_abs": 0.00025343894958496094,
+          "signedzero_bits": false
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        }
+      ],
+      "baseline_restored_bitwise": false,
+      "attention_launches": {
+        "captured": 34,
+        "captures": [
+          {
+            "shape": [
+              2560,
+              16,
+              512
+            ],
+            "heads": 8,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              512
+            ],
+            "heads": 8,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              40,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              40,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          }
+        ],
+        "fallbacks": {
+          "disabled": 136
+        },
+        "original_JIT_object_and_body_retained": true,
+        "private_candidate_JIT": true,
+        "original_all_input_output_storage": true,
+        "IEEE_FP32_softmax_tree": true,
+        "three_product_TensorCore_QK_and_PV": true,
+        "extreme_domain_native_FP32_fallback": true
+      }
+    },
+    {
+      "case": "restored_Linear_masters",
+      "three_outputs_gross_passed": true,
+      "errors": [
+        {
+          "relative_l2": 0.00020717400184366852,
+          "max_abs": 0.0013394355773925781,
+          "signedzero_bits": false
+        },
+        {
+          "relative_l2": 8.46920011099428e-05,
+          "max_abs": 0.0008203983306884766,
+          "signedzero_bits": false
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        }
+      ],
+      "baseline_restored_bitwise": true,
+      "attention_launches": {
+        "captured": 34,
+        "captures": [
+          {
+            "shape": [
+              2560,
+              16,
+              512
+            ],
+            "heads": 8,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              512
+            ],
+            "heads": 8,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              40,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              40,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          }
+        ],
+        "fallbacks": {
+          "disabled": 136
+        },
+        "original_JIT_object_and_body_retained": true,
+        "private_candidate_JIT": true,
+        "original_all_input_output_storage": true,
+        "IEEE_FP32_softmax_tree": true,
+        "three_product_TensorCore_QK_and_PV": true,
+        "extreme_domain_native_FP32_fallback": true
+      }
+    },
+    {
+      "case": "zero_Linear_masters",
+      "three_outputs_gross_passed": true,
+      "errors": [
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        }
+      ],
+      "baseline_restored_bitwise": false,
+      "attention_launches": {
+        "captured": 34,
+        "captures": [
+          {
+            "shape": [
+              2560,
+              16,
+              512
+            ],
+            "heads": 8,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              512
+            ],
+            "heads": 8,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              40,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              40,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          }
+        ],
+        "fallbacks": {
+          "disabled": 136
+        },
+        "original_JIT_object_and_body_retained": true,
+        "private_candidate_JIT": true,
+        "original_all_input_output_storage": true,
+        "IEEE_FP32_softmax_tree": true,
+        "three_product_TensorCore_QK_and_PV": true,
+        "extreme_domain_native_FP32_fallback": true
+      }
+    },
+    {
+      "case": "zero_then_restore",
+      "three_outputs_gross_passed": true,
+      "errors": [
+        {
+          "relative_l2": 0.00020717400184366852,
+          "max_abs": 0.0013394355773925781,
+          "signedzero_bits": false
+        },
+        {
+          "relative_l2": 8.46920011099428e-05,
+          "max_abs": 0.0008203983306884766,
+          "signedzero_bits": false
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        }
+      ],
+      "baseline_restored_bitwise": true,
+      "attention_launches": {
+        "captured": 34,
+        "captures": [
+          {
+            "shape": [
+              2560,
+              16,
+              512
+            ],
+            "heads": 8,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              512
+            ],
+            "heads": 8,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              40,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              40,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              160,
+              16,
+              1280
+            ],
+            "heads": 20,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              640,
+              16,
+              640
+            ],
+            "heads": 10,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          },
+          {
+            "shape": [
+              2560,
+              16,
+              320
+            ],
+            "heads": 5,
+            "warps": 2
+          }
+        ],
+        "fallbacks": {
+          "disabled": 136
+        },
+        "original_JIT_object_and_body_retained": true,
+        "private_candidate_JIT": true,
+        "original_all_input_output_storage": true,
+        "IEEE_FP32_softmax_tree": true,
+        "three_product_TensorCore_QK_and_PV": true,
+        "extreme_domain_native_FP32_fallback": true
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "baseline_samples_ms": [
+        223.1398468017578,
+        223.18284606933594,
+        223.383544921875,
+        222.67800903320312,
+        222.39642333984375,
+        222.3585205078125,
+        222.635009765625
+      ],
+      "baseline_ms": 222.67800903320312,
+      "candidate_samples_ms": [
+        220.8000030517578,
+        220.7211456298828,
+        220.115966796875,
+        220.8880615234375,
+        220.73446655273438,
+        220.06271362304688,
+        220.6361541748047
+      ],
+      "candidate_ms": 220.7211456298828,
+      "saved_ms": 1.9568634033203125
+    },
+    {
+      "candidate_samples_ms": [
+        220.65151977539062,
+        221.3949432373047,
+        220.44569396972656,
+        220.3187255859375,
+        220.36480712890625,
+        220.0647735595703,
+        220.548095703125
+      ],
+      "candidate_ms": 220.44569396972656,
+      "baseline_samples_ms": [
+        222.49984741210938,
+        221.8137664794922,
+        221.77381896972656,
+        222.6534423828125,
+        222.455810546875,
+        222.35340881347656,
+        222.59814453125
+      ],
+      "baseline_ms": 222.455810546875,
+      "saved_ms": 2.0101165771484375
+    },
+    {
+      "baseline_samples_ms": [
+        223.177734375,
+        222.60736083984375,
+        223.05381774902344,
+        222.3994903564453,
+        222.61964416503906,
+        222.80908203125,
+        222.57049560546875
+      ],
+      "baseline_ms": 222.61964416503906,
+      "candidate_samples_ms": [
+        220.74981689453125,
+        220.6228485107422,
+        220.7150115966797,
+        220.58700561523438,
+        220.63821411132812,
+        220.02584838867188,
+        220.8143310546875
+      ],
+      "candidate_ms": 220.63821411132812,
+      "saved_ms": 1.9814300537109375
+    },
+    {
+      "candidate_samples_ms": [
+        221.1164093017578,
+        220.66278076171875,
+        220.86041259765625,
+        221.01913452148438,
+        220.69349670410156,
+        220.3504638671875,
+        220.5173797607422
+      ],
+      "candidate_ms": 220.69349670410156,
+      "baseline_samples_ms": [
+        222.5285186767578,
+        222.66879272460938,
+        222.8080596923828,
+        222.2960662841797,
+        222.76095581054688,
+        222.708740234375,
+        222.6155548095703
+      ],
+      "baseline_ms": 222.66879272460938,
+      "saved_ms": 1.9752960205078125
+    },
+    {
+      "baseline_samples_ms": [
+        222.79373168945312,
+        223.34259033203125,
+        223.5135955810547,
+        223.64466857910156,
+        223.16236877441406,
+        222.75071716308594,
+        222.202880859375
+      ],
+      "baseline_ms": 223.16236877441406,
+      "candidate_samples_ms": [
+        220.9443817138672,
+        222.20083618164062,
+        221.3058624267578,
+        221.68678283691406,
+        221.03858947753906,
+        221.47482299804688,
+        221.4113311767578
+      ],
+      "candidate_ms": 221.4113311767578,
+      "saved_ms": 1.75103759765625
+    },
+    {
+      "candidate_samples_ms": [
+        220.68325805664062,
+        220.72933959960938,
+        220.8931884765625,
+        220.77952575683594,
+        220.68325805664062,
+        219.99923706054688,
+        220.6894073486328
+      ],
+      "candidate_ms": 220.6894073486328,
+      "baseline_samples_ms": [
+        223.3190460205078,
+        222.88485717773438,
+        222.6165771484375,
+        222.55001831054688,
+        222.8869171142578,
+        223.3272247314453,
+        223.17977905273438
+      ],
+      "baseline_ms": 222.8869171142578,
+      "saved_ms": 2.197509765625
+    }
+  ],
+  "median_saved_ms": 1.978363037109375,
+  "same_process": true,
+  "same_GPU": true,
+  "same_model_masters": true,
+  "current209_norm2_presplit_flags_preserved": true,
+  "original_graph_owners_and_all_version_checks_both_modes": true,
+  "temporal_compensated": true,
+  "all_diffusion_Linear_masters_tested": true,
+  "attention_launches": {
+    "captured": 34,
+    "captures": [
+      {
+        "shape": [
+          2560,
+          16,
+          512
+        ],
+        "heads": 8,
+        "warps": 2
+      },
+      {
+        "shape": [
+          2560,
+          16,
+          512
+        ],
+        "heads": 8,
+        "warps": 2
+      },
+      {
+        "shape": [
+          2560,
+          16,
+          320
+        ],
+        "heads": 5,
+        "warps": 2
+      },
+      {
+        "shape": [
+          2560,
+          16,
+          320
+        ],
+        "heads": 5,
+        "warps": 2
+      },
+      {
+        "shape": [
+          2560,
+          16,
+          320
+        ],
+        "heads": 5,
+        "warps": 2
+      },
+      {
+        "shape": [
+          2560,
+          16,
+          320
+        ],
+        "heads": 5,
+        "warps": 2
+      },
+      {
+        "shape": [
+          640,
+          16,
+          640
+        ],
+        "heads": 10,
+        "warps": 2
+      },
+      {
+        "shape": [
+          640,
+          16,
+          640
+        ],
+        "heads": 10,
+        "warps": 2
+      },
+      {
+        "shape": [
+          640,
+          16,
+          640
+        ],
+        "heads": 10,
+        "warps": 2
+      },
+      {
+        "shape": [
+          640,
+          16,
+          640
+        ],
+        "heads": 10,
+        "warps": 2
+      },
+      {
+        "shape": [
+          160,
+          16,
+          1280
+        ],
+        "heads": 20,
+        "warps": 2
+      },
+      {
+        "shape": [
+          160,
+          16,
+          1280
+        ],
+        "heads": 20,
+        "warps": 2
+      },
+      {
+        "shape": [
+          160,
+          16,
+          1280
+        ],
+        "heads": 20,
+        "warps": 2
+      },
+      {
+        "shape": [
+          160,
+          16,
+          1280
+        ],
+        "heads": 20,
+        "warps": 2
+      },
+      {
+        "shape": [
+          40,
+          16,
+          1280
+        ],
+        "heads": 20,
+        "warps": 2
+      },
+      {
+        "shape": [
+          40,
+          16,
+          1280
+        ],
+        "heads": 20,
+        "warps": 2
+      },
+      {
+        "shape": [
+          160,
+          16,
+          1280
+        ],
+        "heads": 20,
+        "warps": 2
+      },
+      {
+        "shape": [
+          160,
+          16,
+          1280
+        ],
+        "heads": 20,
+        "warps": 2
+      },
+      {
+        "shape": [
+          160,
+          16,
+          1280
+        ],
+        "heads": 20,
+        "warps": 2
+      },
+      {
+        "shape": [
+          160,
+          16,
+          1280
+        ],
+        "heads": 20,
+        "warps": 2
+      },
+      {
+        "shape": [
+          160,
+          16,
+          1280
+        ],
+        "heads": 20,
+        "warps": 2
+      },
+      {
+        "shape": [
+          160,
+          16,
+          1280
+        ],
+        "heads": 20,
+        "warps": 2
+      },
+      {
+        "shape": [
+          640,
+          16,
+          640
+        ],
+        "heads": 10,
+        "warps": 2
+      },
+      {
+        "shape": [
+          640,
+          16,
+          640
+        ],
+        "heads": 10,
+        "warps": 2
+      },
+      {
+        "shape": [
+          640,
+          16,
+          640
+        ],
+        "heads": 10,
+        "warps": 2
+      },
+      {
+        "shape": [
+          640,
+          16,
+          640
+        ],
+        "heads": 10,
+        "warps": 2
+      },
+      {
+        "shape": [
+          640,
+          16,
+          640
+        ],
+        "heads": 10,
+        "warps": 2
+      },
+      {
+        "shape": [
+          640,
+          16,
+          640
+        ],
+        "heads": 10,
+        "warps": 2
+      },
+      {
+        "shape": [
+          2560,
+          16,
+          320
+        ],
+        "heads": 5,
+        "warps": 2
+      },
+      {
+        "shape": [
+          2560,
+          16,
+          320
+        ],
+        "heads": 5,
+        "warps": 2
+      },
+      {
+        "shape": [
+          2560,
+          16,
+          320
+        ],
+        "heads": 5,
+        "warps": 2
+      },
+      {
+        "shape": [
+          2560,
+          16,
+          320
+        ],
+        "heads": 5,
+        "warps": 2
+      },
+      {
+        "shape": [
+          2560,
+          16,
+          320
+        ],
+        "heads": 5,
+        "warps": 2
+      },
+      {
+        "shape": [
+          2560,
+          16,
+          320
+        ],
+        "heads": 5,
+        "warps": 2
+      }
+    ],
+    "fallbacks": {
+      "disabled": 136
+    },
+    "original_JIT_object_and_body_retained": true,
+    "private_candidate_JIT": true,
+    "original_all_input_output_storage": true,
+    "IEEE_FP32_softmax_tree": true,
+    "three_product_TensorCore_QK_and_PV": true,
+    "extreme_domain_native_FP32_fallback": true
+  },
+  "baseline_restoration_bitwise": true,
+  "synthetic_master_condition_refresh": [
+    {
+      "restored": false,
+      "invalidated_keys": 130,
+      "original_output_storage_preserved": true
+    },
+    {
+      "restored": true,
+      "invalidated_keys": 130,
+      "original_output_storage_preserved": true,
+      "before_explicit_invalidation": [
+        {
+          "relative_l2": 0.005058229900896549,
+          "max_abs": 0.03832268714904785,
+          "signedzero_bits": false
+        },
+        {
+          "relative_l2": 0.0004645765002351254,
+          "max_abs": 0.001275777816772461,
+          "signedzero_bits": false
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        }
+      ],
+      "after_explicit_invalidation": [
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        }
+      ]
+    },
+    {
+      "restored": false,
+      "invalidated_keys": 130,
+      "original_output_storage_preserved": true
+    },
+    {
+      "restored": true,
+      "invalidated_keys": 130,
+      "original_output_storage_preserved": true,
+      "before_explicit_invalidation": [
+        {
+          "relative_l2": 0.21070635318756104,
+          "max_abs": 1.8236634731292725,
+          "signedzero_bits": false
+        },
+        {
+          "relative_l2": 0.032133765518665314,
+          "max_abs": 0.1620473861694336,
+          "signedzero_bits": false
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        }
+      ],
+      "after_explicit_invalidation": [
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true
+        }
+      ]
+    }
+  ],
+  "full_video_PSNR_unverified": true,
+  "balanced_warmup": 40,
+  "settle_per_mode": 2,
+  "samples_per_condition": 7,
+  "Linear_master_tensors": 570,
+  "norm_master_tensors": 782,
+  "master_refresh_uses_existing_eager_forward": true,
+  "RNG_unchanged": true,
+  "reports": {
+    "baseline": {
+      "selected": 138,
+      "native_weight_readers": 143,
+      "cached_bytes": 3230515200,
+      "graph_nodes": 3086,
+      "native_convolution_unchanged": true,
+      "first_refresh_inside_timed_capture": true
+    },
+    "candidate": {
+      "selected": 138,
+      "native_weight_readers": 143,
+      "cached_bytes": 3230515200,
+      "graph_nodes": 3086,
+      "native_convolution_unchanged": true,
+      "first_refresh_inside_timed_capture": true
+    }
+  },
+  "no_official_score": true
+}
