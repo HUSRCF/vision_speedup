@@ -8,7 +8,9 @@
 
 两卡 P2P 测得约 184 GB/s；每卡独立 CUDA Graph 可并行，但同进程的统一跨卡 Graph 捕获失败。因此采用两进程、每进程一张可见 GPU、每进程独立 Graph，通过捕获在图中的 NCCL 交换结果。单卡可见拓扑也保留了原始输入缓存的 RNG 检查。
 
-启动环境必须保留 `team07_env.sh` 的 `PYTHONHASHSEED=123`。缺少这一变量时，原有 Kahan kernel 的编译指纹检查失败，模型没有运行成功；没有取消或放宽该检查。补齐原环境后，两张卡上、NCCL 初始化前后的 14 项指纹全部匹配。
+启动时保留 `team07_env.sh` 的环境，包括 `PYTHONHASHSEED=123` 和 TMPDIR。最初原有 Kahan kernel 的编译指纹检查失败，没有取消或放宽该检查；恢复原启动环境后，两张卡上、NCCL 初始化前后的 14 项指纹全部匹配。
+
+进一步核对发现，七种 Kahan cubin 的实际指令、常量与参数 ABI 区段均相同，差异仅在编译调试信息记录的源码绝对路径。见 `cubin-source-path-debug-proof-all7.json`。这揭示了现有生产实现的冷缓存移植限制：完整 cubin 哈希依赖历史编译缓存和源码路径。CPU 对照未能将此独立归因于哈希种子或 TMPDIR，因此不作该因果声称；也没有为了新实验绕过原检查。移到全新缓存的环境时仍需处理这一复现问题。
 
 ## 完整 world denoiser 检查
 

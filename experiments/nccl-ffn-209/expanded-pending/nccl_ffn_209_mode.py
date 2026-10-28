@@ -56,11 +56,14 @@ class Controller:
                     from unifolm_wma.utils.paired_fused_vendor_hidden_pipeline import paired_hidden_residual
                     assert not args or len(args)==1
                     bias=args[0] if args else kwargs.pop('bias',None)
+                    chunk=kwargs.pop('chunk_k',512);assert chunk==512
+                    assert kwargs.pop('output_groups',1)==1
+                    poison=kwargs.pop('debug_fill',None) is not None
                     assert not kwargs
                     # Keep the original paired GEMM and device-predicated
                     # correction path; its host M=10240 eligibility guard would
                     # otherwise silently choose another consumer at M=5120.
-                    local=paired_hidden_residual(torch.stack(inputs),parts,residual[rows],get_count(parts),bias)
+                    local=paired_hidden_residual(torch.stack(inputs),parts,residual[rows],get_count(parts),bias,chunk_k=chunk,debug_poison=poison)
                 else:local=_after(inputs,parts,residual[rows],*args,**kwargs)
                 output=torch.empty((m,*local.shape[1:]),dtype=local.dtype,device=local.device)
                 dist.all_gather_into_tensor(output,local)
