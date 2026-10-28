@@ -14,7 +14,16 @@ NCCL_P2P_READ_ENABLE=0
 
 Its surrogate decision/world medians are5.220864/18.861055ms versus default6.405632/22.863873ms; a final default repeat gives6.409728/22.834688ms. Raw debug lines are retained privately; published transport summaries confirm32 coll channels and P2P/CUMEM write. All13 screen configurations completed cleanly. Four/eight channels regress; forcing Simple or LL128 alone offers no comparable improvement. These numbers are communication-only evidence, not a complete-model/video speedup or a new score.
 
-The full candidate reuses the exact adopted222 source directory, cache paths, evaluator, guard, two-GPU policy and unchanged timer. Only the three NCCL environment values change. A complete11-round/23-video result, same-GPU default control and fresh official103 validation are required before changing official artifacts. Full outcomes, when completed, are under `results/aggressive-20261028/nccl-tuning222/full-*`; raw single-case JSON files intentionally list the four absent cases and are not five-case submissions.
+The full candidate reuses the exact adopted222 source directory, cache paths, evaluator, guard, two-GPU policy and unchanged timer. Only the three NCCL environment values change. Both complete GPU0/1 trials have now finished:
+
+| Complete V2, 11 rounds / 23 videos | Process seconds | Decision CUDA seconds | World CUDA seconds | PSNR dB |
+|---|---:|---:|---:|---:|
+| Tuned candidate, run first | 268.622236 | 119.351468 | 137.607141 | 29.675324786 |
+| Default control, run second | 269.053273 | 119.531064 | 138.472026 | 29.675324786 |
+
+The candidate is 0.431037s faster in this one complete-process pair. Its generation CUDA total is 1.044481s lower; setup, transfer and other process costs offset part of that difference. All23 video SHA256 hashes match both the adopted222 baseline and the other rank. This is one sequential same-GPU pair, not six full paired runs, and does not establish a stable subsecond gain. Compared with the historical adopted268.844229s result, it is only0.221993s lower. **The tuning remains experimental; the official pair and default reproduction settings are unchanged.**
+
+Full source hashes, flags, profiles, video hash comparisons and scalar outcomes are under `results/aggressive-20261028/nccl-tuning222/full-*`. The selected evaluator exits0 and has a complete profile. The unchanged all-five-case shell exits1 because four cases were deliberately absent; raw single-case JSON/log files therefore contain those expected missing-case failures and are not five-case submissions. No fresh103-video assembly was performed for this tuning candidate. The guard's `clean` field describes GPU ownership and complete selected-case execution, not an accepted five-case result.
 
 Run the source-frozen communication screen after building the qualified private-tmpfs adapter:
 
