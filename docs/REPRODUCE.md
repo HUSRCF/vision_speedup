@@ -2,7 +2,7 @@
 
 ## 环境与资源
 
-实际环境为 Linux x86-64、Python 3.10、Torch 2.3.1+cu121、Triton 2.3.1、A800 80 GB 单卡。`environment/requirements-observed.txt` 是比赛环境的已安装包记录；`unifolm/pyproject.toml` 是上游项目依赖。请不要据此随意升级 Torch/Triton，原生图句柄和 kernel 参数布局均固定到该环境。
+实际环境为 Linux x86-64、Python 3.10、Torch 2.3.1+cu121、Triton 2.3.1、A800 80 GB。当前最快 V2 使用两张卡，保留的单卡基线为 316.774396 秒。`environment/requirements-observed.txt` 是比赛环境的已安装包记录；`unifolm/pyproject.toml` 是上游项目依赖。请不要据此随意升级 Torch/Triton，原生图句柄和 kernel 参数布局均固定到该环境。
 
 比赛共享路径：
 
@@ -18,7 +18,16 @@
 
 ## 检查与运行
 
-在仓库根目录：
+当前双卡版本在仓库根目录使用比赛虚拟环境运行：
+
+```bash
+python3 reproduce/verify_snapshot.py
+~/.venv/bin/python reproduce/run_v2_parallel.py --gpus 2,3 --workdir /tmp/unifolm-parallel-review-1
+```
+
+`--workdir` 必须是新目录。入口会重建固定的 213 文件源码、等待两张空闲卡并检查整段 GPU 占用；模型导入、双模型传输、通信和 helper 退出仍计入原始进程耗时。完整结果为 312.462900 秒、PSNR 29.675324786 dB。单轮 `--smoke` 仅供排查，不能作为成绩。
+
+保留的单卡基线运行命令：
 
 ```bash
 python3 reproduce/verify_snapshot.py
@@ -30,6 +39,18 @@ python3 reproduce/run_v2.py --gpu 0
 输出位于 `~/benchmark-runs/unifolm/<timestamp>-case-v2-<pid>/`。这是单项完整 11 轮运行，其他四项缺席会在完整五项校验中显示缺项；不能直接拿该单项结果冒充完整五项提交。
 
 `results` 中保留了已验证的历史完整五项 log/JSON。重新提交必须使用新运行的真实输出，通过官方工作量和质量检查，保留同一份验证产生的完整 log/JSON，禁止改写耗时或 PSNR。
+
+## 已采用的非 V2 分项
+
+已采用的 Z1、铅笔、G1 使用单独的 59 文件源码快照，避免误用 V2 的精度策略。例如：
+
+```bash
+python3 experiments/nonv2-vae-all-display/run_case.py --case stackbox --gpu 0
+python3 experiments/nonv2-vae-all-display/run_case.py --case pencils --gpu 0
+python3 experiments/nonv2-vae-all-display/run_case.py --case g1 --gpu 0
+```
+
+每条命令均运行完整对应分项。所需外部模型、输入、验证工具与上面的 V2 相同。反馈帧使用原始 FP32 VAE；展示帧使用独立的 Half 权重缓存，原始 master weights 保留。
 
 ## CUDA Graph 扩展
 

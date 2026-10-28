@@ -24,7 +24,7 @@
 
 ## 剖析与改进方向
 
-`results/*telemetry-phase-evidence.json` 给出当前 V2 的正式阶段时间。`results/profiles-209` 是当前 209 源码版本的 CUPTI 归因；两阶段三个 FP32 输出逐位一致，RNG 与 master versions 未改变。较早的 207 版本结果亦保留用于对比。
+`results/aggressive-20261028/nccl-timed-full-r2` 给出当前双卡 V2 的正式阶段时间。`results/*telemetry-phase-evidence.json` 和 `results/profiles-209` 保留单卡 209 源码基线的计时与 CUPTI 归因；两阶段三个 FP32 输出逐位一致，RNG 与 master versions 未改变。较早的 207 版本结果亦保留用于对比。
 
 209 世界模型单次诊断内，时间卷积约 20.47 ms，单分支 GEGLU 约 20.12 ms，持久化 zero-low GEMM 约 19.21 ms，双分支 GEGLU 约 13.57 ms，原生 FP32 cross-attention 70 次合计约 13.93 ms。这些是带剖析开销的归因数字，不是正式成绩。明确按阶段过滤的 r3 元数据现已发布到 `results/profiles-209-r3`；真实操作数不发布。
 
@@ -40,6 +40,6 @@
 
 `results/head-prepacked-half-209-report.json`：显式 im2col、split-K GEMM、归并均进入计时。5 组真实形状中 4 组存在通过全部检查且六对计时均加速的配置，最快每组节省约 18–81 微秒。第 5 组未通过既定数值门槛。独立 cuDNN 基线含原生 filter 缓存，但其算法选择与完整模型不完全一致；目前没有实际模型集成或完整视频质量结论。
 
-最新的[双卡 FFN 并行实验](AGGRESSIVE_PARALLEL_EXPERIMENTS.md)已通过 20 个 FFN 的完整 world denoiser 动态逐位检查与六对配对加速，尚未完成双卡完整 V2。请重点审阅独立输出行、隐藏张量指针配对、跨进程 RNG 一致性、每段只通信一次、完整计时中的初始化成本，以及正式日志是否只有 rank 0 记录。
+最新的[双卡实验](AGGRESSIVE_PARALLEL_EXPERIMENTS.md)已通过 32 个 FFN 加 88 个时间卷积的完整 world denoiser 动态逐位检查与六对配对加速，完整 V2 为 312.462900 秒，23 个视频与单卡基线相同。请重点审阅独立输出行/通道、隐藏张量指针配对、跨进程 RNG 一致性、每段只通信一次、原始计时中的初始化与退出成本，以及正式日志是否只有 rank 0 记录。decision 拆分出现数值差异，不能把 world 证明外推到 decision。
 
-`experiments` 中的探针来自本机调度环境，部分依赖未发布的本地实验状态文件；它们用于说明方法与证据，不能直接视为生产启动入口。生产复现请使用 `reproduce/run_v2.py`。
+`experiments` 中的诊断探针部分依赖未发布的本地调度状态文件。当前双卡 V2 使用 `reproduce/run_v2_parallel.py`，单卡历史基线使用 `reproduce/run_v2.py`；已采用的三个非 V2 解码优化使用 `experiments/nonv2-vae-all-display/run_case.py`，其 59 个源码文件、入口脚本和分项参数均已固定。
