@@ -230,6 +230,10 @@ def main():
     verify_fused_half()
     from verify_private222_evidence import verify as verify_private222
     verify_private222()
+    from verify_nccl_tuning222_evidence import verify as verify_nccl_tuning
+    verify_nccl_tuning()
+    from verify_nonv2_ffn61_evidence import verify as verify_nonv2_ffn61
+    verify_nonv2_ffn61()
     print('Verified: original209/historical overlays/adopted V2 initial222;historical59 nonV2/adopted60 Z1;official103 log/JSON.')
 
 if __name__=='__main__':main()

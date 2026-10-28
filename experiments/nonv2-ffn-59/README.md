@@ -1,4 +1,4 @@
-# NonV2 FP16 FFN row sharding — model evidence only
+# NonV2 FP16 FFN row sharding
 
 These probes use the exact59-source single-GPU nonV2 VAE baseline and official Z1 inputs/weights, not the V2 FP32 compensated kernels. The common nonV2 flags configure the full denoiser Half; `UNIFOLM_FFN_DTYPE=fp32` is a sentinel selecting the original `self.net(x)` forward, whose actual parameters and input are asserted Half at runtime.
 
@@ -8,6 +8,12 @@ Six dynamic states test original inputs, changed inputs, all132 FFN parameter ed
 
 Six alternating pairs with40 balanced warmups,2 settles and7 samples per condition all improve complete denoiser forward time. Decision GPUs0,1 median savings are3.876354/5.427204ms; world GPUs2,3 are5.751297/4.246525ms. Different stages used different pairs; do not add ranks or treat these as a process-level score.
 
-The largest observed video output relative L2 is about0.0525%, maximum absolute error0.00390625. Action/state errors also occur. These satisfy only a deliberately broad diagnostic screen (`relative_l2<=.005 OR max_abs<=.002`), not the official video quality requirement. Full12-round/25-video Z1 and official PSNR have not run. Production/default and the official log/JSON are unchanged.
+The largest observed model video-output relative L2 is about0.0525%, maximum absolute error0.00390625. Action/state errors also occur. These satisfy only a deliberately broad diagnostic screen (`relative_l2<=.005 OR max_abs<=.002`), not the official video quality requirement.
+
+The [full61 trial](full61-r1) now completes the original12-round/25-video Z1 workload on GPU0/1: **166.190328s, official PSNR47.080754066dB**. Both ranks produce identical25 video hashes; each phase records600 denoiser calls and33 captured FFNs. The original59 mathematical sources remain byte-identical, with two additional runtime/helper modules and four additive evaluator lifecycle hooks. Model construction, helper launch, communication setup, graph capture, both ranks' writes, graph/process-group teardown and helper completion stay inside the original process timer. CPU ownership tests cover36 cases. Full source/profiles/log/scalar evidence is published under `results/aggressive-20261028/nonv2-ffn-59/full61-r1`.
+
+This is a quality-passing candidate, **not adopted**. It is0.590664s below the historical adopted60-source Z1 result166.780992s, but no contemporaneous complete-process control was run. The model-pair improvements above therefore cannot be equated to a demonstrated multi-second full-process gain. This61-source candidate derives from59, without the adopted60 Half-producer fusion; its changed native GEMM dispatch also changes the trajectory, so the previous video's quality cannot be inherited. The actual complete trajectory has now been checked independently. No fresh103-video aggregate was assembled; production/default and the official log/JSON remain unchanged.
+
+The single-case shell intentionally reports the other four cases absent and exits1; the selected evaluator exits0, with12 complete rounds and official quality passing. The guard's `clean` field denotes complete selected execution and exclusive GPU ownership, not an accepted five-case submission. Verification: `python reproduce/verify_nonv2_ffn61_evidence.py`.
 
 Candidate FFN JIT shape variants use a new ordinary per-rank executable private cache; original warm caches are preserved. Scripts validate the59-source manifest before and after execution. The small CPU preflight covers36 ownership/layout cases without initializing CUDA. Compact new-attempt logs/reports use ordinary hardlinks after completed writes; no historical evidence is removed or compressed.
