@@ -24,7 +24,7 @@
 
 ## 剖析与改进方向
 
-`results/aggressive-20261028/nccl-native-frame-grid-full-r1` 给出当前双卡 V2 的正式阶段时间；旧两阶段空间块版本保留在 `nccl-both-spatial-temporal-full-r1`，更早版本亦保留。`results/*telemetry-phase-evidence.json` 和 `results/profiles-209` 保留单卡 209 源码基线的计时与 CUPTI 归因；两阶段三个 FP32 输出逐位一致，RNG 与 master versions 未改变。较早的 207 版本结果亦保留用于对比。
+`results/aggressive-20261028/native-attention-218/full-candidate-r2` 给出当前双卡 V2 的正式阶段时间；旧两阶段空间块版本保留在 `nccl-both-spatial-temporal-full-r1`，更早版本亦保留。`results/*telemetry-phase-evidence.json` 和 `results/profiles-209` 保留单卡 209 源码基线的计时与 CUPTI 归因；两阶段三个 FP32 输出逐位一致，RNG 与 master versions 未改变。较早的 207 版本结果亦保留用于对比。
 
 209 世界模型单次诊断内，时间卷积约 20.47 ms，单分支 GEGLU 约 20.12 ms，持久化 zero-low GEMM 约 19.21 ms，双分支 GEGLU 约 13.57 ms，原生 FP32 cross-attention 70 次合计约 13.93 ms。这些是带剖析开销的归因数字，不是正式成绩。明确按阶段过滤的 r3 元数据现已发布到 `results/profiles-209-r3`；真实操作数不发布。
 
@@ -43,3 +43,5 @@
 最新的[双卡实验](AGGRESSIVE_PARALLEL_EXPERIMENTS.md)覆盖 decision/world 各 16 个完整空间 Transformer、world 的 16 个时间 FFN 与 88 个时间卷积，以及 decision 22 个 ResBlock 的 44 个原生空间卷积，完整 V2 为 287.745486 秒，23 个视频与单卡生产基线相同。请重点检查 class-level JIT hook 是否在生产 owner 安装前建立、分片指针和全局帧编号、展平 K/V pack 的 batch 切片、分组输出的回退、空间块内 FFN 通信的暂停/恢复、每块末尾只通信一次，以及原始计时和退出流程。新增原生网格应保留完整 N16 描述符、已验证的 cached filter 参数和原网格关闭恢复，帧汇合必须在时间卷积之前。模型有六组动态逐位证明，并通过完整视频及官方 103 视频复核；此前缩小 decision vendor GEMM 的失败候选仍不可直接复用。
 
 `experiments` 中的诊断探针部分依赖未发布的本地调度状态文件。当前双卡 V2 使用 `reproduce/run_v2_parallel.py`，单卡历史基线使用 `reproduce/run_v2.py`；已采用的四个非 V2 解码优化使用 `experiments/nonv2-vae-all-display/run_case.py`，其 59 个源码文件、入口脚本和分项参数均已固定。
+
+2026-10-29 已采用原生 xFormers attention 的八帧局部边界，最新完整 V2 为 **280.850431 秒**。应连同 [219 生产增量](../experiments/native-attention-218/production219)检查原全局 mask 的切片、full16 未归属帧在既有 gather 前不被消费、实际 FP32 CUTLASS 分派及局部输出复制成本。完整同卡／同存储对照省 5.874246 秒，103 视频重新验证通过；详见 [最新审阅回复](REVIEW_RESPONSE_20261029.md)。下一个重点是遗漏的 `init_attn` FFN，随后将已有时间 FFN 的汇合边界外移，保持全局 GroupNorm 统计和每个空间位置的完整时间序列。

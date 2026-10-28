@@ -11,12 +11,12 @@ def main():
     assert set(manifest)=={str(p.relative_to(code)) for p in (code/'src').rglob('*.py')}
     for name,digest in manifest.items():assert sha(code/name)==digest,name
     assert sha(code/'src/unifolm_wma/utils/native-graph-handles/team07_cuda_graph_handles.so')=='ab2f19b88cb9af02b42fb5fdcb39da49e062346fd30794be45fb81e12cb1b927'
-    assert sha(root/'results/runtime.log')=='85577df5805bee57b7ab2389e04129ad674c637bf57e9772aa9621fcd5c97523'
-    assert sha(root/'results/result.json')=='8409390e111d7e636c2681217798b3b287658891cb4c96b34218aa6731c3386f'
+    assert sha(root/'results/runtime.log')=='1d84980848045b6dc1d6a14a7096627e1516457b68acb26c3babef249fc1eeea'
+    assert sha(root/'results/result.json')=='2c435e9cf06bc7299a8136fc7b16f8ebc30555ef3cf51533ecf919836d8e77f2'
     result=json.loads((root/'results/result.json').read_text());assert result['status']=='accepted'
     cases=result['cases'];assert len(cases)==5 and sum(c['videos'] for c in cases)==103
     assert [c['rounds'] for c in cases]==[12,7,11,8,11]
-    assert abs(sum(c['process_wall_s'] for c in cases)-836.651410)<1e-6
+    assert abs(sum(c['process_wall_s'] for c in cases)-829.756355)<1e-6
     log=(root/'results/runtime.log').read_text()
     timings=re.findall(r'^TIMING case=(\S+) process_wall_s=([0-9.]+)$',log,re.M)
     assert len(timings)==5 and len({case for case,_ in timings})==5
@@ -96,7 +96,30 @@ def main():
     for name in ('scripts/run_compute_benchmark.sh','scripts/team07_env.sh'):assert sha(code/name)==assets[name]
     accepted=json.loads((latest/'accepted-outcome.json').read_text())
     assert accepted['GPUs']==2 and accepted['source_count']==218 and accepted['all103_officially_validated']
+    assert accepted['V2_s']==287.745486 # historical218-source result
+    latest=root/'experiments/native-attention-218/production219'
+    spec=importlib.util.spec_from_file_location('native_attention219_frozen',latest/'production_sources.py')
+    frozen=importlib.util.module_from_spec(spec);spec.loader.exec_module(frozen)
+    files,proof=frozen.production_sources(code)
+    assert proof==json.loads((latest/'timing-proof.json').read_text())
+    manifest=json.loads((latest/'production-sources.json').read_text());assert len(manifest)==219
+    for name,digest in manifest.items():
+        actual=hashlib.sha256(files[name].encode()).hexdigest() if name in files else sha(code/name)
+        assert actual==digest,name
+    for name,digest in json.loads((latest/'guard-source-hashes.json').read_text()).items():assert sha(latest/name)==digest,name
+    assets=json.loads((latest/'production-assets.json').read_text())
+    assert hashlib.sha256(files['scripts/evaluation/world_model_interaction.py'].encode()).hexdigest()==assets['scripts/evaluation/world_model_interaction.py']
+    assert sha(latest/'timing-proof.json')==assets['nccl-entry-timing-proof.json']
+    for name in ('scripts/run_compute_benchmark.sh','scripts/team07_env.sh'):assert sha(code/name)==assets[name]
+    accepted=json.loads((latest/'accepted-outcome.json').read_text())
+    assert accepted['GPUs']==2 and accepted['source_count']==219 and accepted['all103_officially_validated']
+    assert accepted['V2_s']==280.850431 and accepted['saved_from_matched_baseline_s']==5.874246
     assert next(c['process_wall_s'] for c in cases if c['case'].endswith('stackbox_v2'))==accepted['V2_s']
-    print('Verified: original209 base;historical213/world215/both215 and adopted native-grid218 overlays;59 nonV2 sources;official103 log/JSON.')
+    for row in cases:
+        records=re.findall(r'^PSNR case='+re.escape(row['case'])+r' psnr_db=([^ ]+) threshold_db=25 pass=(\w+)$',log,re.M)
+        assert len(records)==1 and records[0][1]=='true'
+    for prefix in ('RUN_SUMMARY ','RESULT_JSON=','ACCEPTED '):assert len(re.findall('^'+re.escape(prefix),log,re.M))==1
+    assert not re.search(r'^FAILED:',log,re.M)
+    print('Verified: original209 base;historical213/world215/both215 native-grid218 and adopted native-attention219 overlays;59 nonV2 sources;official103 log/JSON.')
 
 if __name__=='__main__':main()

@@ -25,7 +25,7 @@ python3 reproduce/verify_snapshot.py
 ~/.venv/bin/python reproduce/run_v2_parallel.py --gpus 2,3 --workdir /tmp/unifolm-parallel-review-1
 ```
 
-`--workdir` 必须是新目录。默认重建两阶段空间分片加 decision 原生卷积分帧的固定 218 文件源码、等待两张空闲卡并检查整段 GPU 占用；模型导入、双模型传输、通信和 helper 退出仍计入原始进程耗时。完整结果为 287.745486 秒、PSNR 29.675324786 dB。添加 `--variant both-spatial-temporal` 可运行旧的两阶段 215 文件版本（289.486308 秒），`--variant world-spatial-temporal` 可运行仅 world 空间分片的旧 215 文件版本（301.930663 秒），`--variant world-ffn-temporal` 可运行旧 213 文件版本（312.462900 秒）。单轮 `--smoke` 仅供排查，不能作为成绩。
+`--workdir` 必须是新目录。默认重建两阶段空间分片、decision 原生卷积分帧与空间原生 xFormers 分片的固定 219 文件源码、等待两张空闲卡并检查整段 GPU 占用；模型导入、双模型传输、通信和 helper 退出仍计入原始进程耗时。完整结果为 280.850431 秒、PSNR 29.675324786 dB。添加 `--variant both-spatial-temporal-resblock-grid` 可运行旧 218 文件版本（287.745486 秒），`--variant both-spatial-temporal` 可运行旧的两阶段 215 文件版本（289.486308 秒），`--variant world-spatial-temporal` 可运行仅 world 空间分片的旧 215 文件版本（301.930663 秒），`--variant world-ffn-temporal` 可运行旧 213 文件版本（312.462900 秒）。单轮 `--smoke` 仅供排查，不能作为成绩。
 
 原始 209 文件清单中的 `src/unifolm_wma/utils/projector.py` 含既有语法错误（条件使用赋值号），全树 `compileall` 会在该文件失败。当前正式推理配置未使用它，本次保留原始字节；新增 helper、修改入口和实际运行路径另有解析、逐位及完整视频验证。
 
@@ -38,7 +38,7 @@ python3 reproduce/run_v2.py --gpu 0
 
 后一条将加载 `reproduce/v2-effective-flags.json`，清除继承的 `UNIFOLM_*` 配置后启动原始 `team07_run.sh case-v2`。运行需要空闲 GPU、约 72 GiB 峰值显存、已预热的依赖/编译缓存；不同机器或冷缓存可能更慢。模型、权重缓存与图捕获的初始化仍在进程计时内。
 
-输出位于 `~/benchmark-runs/unifolm/<timestamp>-case-v2-<pid>/`。这是单项完整 11 轮运行，其他四项缺席会在完整五项校验中显示缺项；不能直接拿该单项结果冒充完整五项提交。
+当前 219 双卡入口的输出位于所选 `--workdir/runs/`，历史单卡入口仍位于 `~/benchmark-runs/unifolm/<timestamp>-case-v2-<pid>/`。本轮正式 218/219 同卡对照都使用私有 RAM 文件系统输出，native `.so` 保留在可执行 home 挂载；该存储变化须与历史计时区别看待。这是单项完整 11 轮运行，其他四项缺席会在完整五项校验中显示缺项；不能直接拿该单项结果冒充完整五项提交。
 
 `results` 中保留了已验证的历史完整五项 log/JSON。重新提交必须使用新运行的真实输出，通过官方工作量和质量检查，保留同一份验证产生的完整 log/JSON，禁止改写耗时或 PSNR。
 
