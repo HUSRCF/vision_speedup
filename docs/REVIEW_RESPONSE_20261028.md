@@ -1,6 +1,6 @@
 # 对外部审阅建议的实测核查
 
-审阅基于 `9f88358`。其后已采用双卡 decision/world 完整空间块＋world 时间 FFN／卷积，以及四个非 V2 分项的 VAE 改进。当前正式材料的 V2 为 289.486308 秒、五项合计 838.392232 秒，已通过官方 103 视频校验；各项独立运行后汇总。下面的主干／head 和 Kahan 算子测量仍对应原始 209 文件基线。
+审阅基于 `9f88358`。其后已采用双卡 decision/world 完整空间块、world 时间 FFN／卷积、decision 原生卷积分帧，以及四个非 V2 分项的 VAE 改进。当前正式材料的 V2 为 287.745486 秒、五项合计 836.651410 秒，已通过官方 103 视频校验；各项独立运行后汇总。下面的主干／head 和 Kahan 算子测量仍对应原始 209 文件基线。
 
 ## 主干与 head 跨步流水线
 
@@ -36,6 +36,6 @@ SpatialSoftmax 列表中有共享 module 对象；诊断按对象去重安装 ho
 
 ## 后续优先级
 
-视频主干占每步约 96%–97%。当前 decision/world 双阶段完整空间块分片已完成正式运行，为 **289.486308 秒**，比此前仅 world 空间块分片的 301.930663 秒快 **12.444355 秒**，23 个视频与原始单卡基线及另一 rank 逐文件一致；代码见 [`nccl-both-spatial-temporal-209`](../experiments/nccl-both-spatial-temporal-209)。直接输入 batch 8+8 的历史版本仍保留为负结果。
+视频主干占每步约 96%–97%。此前 decision/world 双阶段完整空间块分片的正式运行是 **289.486308 秒**，比仅 world 空间块分片的 301.930663 秒快 **12.444355 秒**，23 个视频与原始单卡基线及另一 rank 逐文件一致；代码见 [`nccl-both-spatial-temporal-209`](../experiments/nccl-both-spatial-temporal-209)。后续原生卷积分帧已将正式 V2 降为 **287.745486 秒**，见 [完整记录](NATIVE_FRAME_GRID_EXPERIMENTS_20261028.md)。直接输入 batch 8+8 的历史版本仍保留为负结果。
 
 Decision 分片已通过六组完整模型检查，两个 rank 的前向节省中位数为 19.006966 / 15.908356 ms。Decision 的 norm/layout/half-pack、动作有效前缀 attention、扩大卷积并行范围，以及带精度保护的量化补偿仍是后续方向。Kahan 预打包的单卡完整结论如上，尚未证明它能改善当前双卡进程时间。

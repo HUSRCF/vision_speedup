@@ -1,0 +1,341 @@
+{
+  "CPU_source_and_mapping_proof_complete": true,
+  "source_proof": [
+    {
+      "source": "src/unifolm_wma/utils/native_winograd_gemm_fp16_packed_kernel.py",
+      "original_SHA256": "9bbeb5437c853f3b16fafc2140191afcdf70a1ce3d0d2693da38e7d37c412d34",
+      "original_function": "transformed_gemm_fp16_packed",
+      "candidate_function": "transformed_gemm_fp16_packed_frame_prefix",
+      "roundtrip_original_AST_exact": true,
+      "all_memory_offsets_masks_K_tiles_casts_products_and_FP32_sums_original": true,
+      "runtime_pointer_formal_arguments_unchanged": true
+    },
+    {
+      "source": "src/unifolm_wma/utils/native_winograd_gemm_fp16_kahan_kernel.py",
+      "original_SHA256": "d5206c762ead5550ab0c7ae21fa4a509252933aa7f70a6a35c9d380195aad9a5",
+      "original_function": "transformed_gemm_fp16_kahan",
+      "candidate_function": "transformed_gemm_fp16_kahan_frame_prefix",
+      "roundtrip_original_AST_exact": true,
+      "all_memory_offsets_masks_K_tiles_casts_products_and_FP32_sums_original": true,
+      "runtime_pointer_formal_arguments_unchanged": true
+    }
+  ],
+  "geometries": [
+    {
+      "co": 320,
+      "cols": 2560,
+      "k": 320,
+      "bm": 32,
+      "bn": 128,
+      "bk": 64,
+      "active_cols": 1280,
+      "rounded_written_prefix_cols": 1280,
+      "original_grid": [
+        200,
+        36
+      ],
+      "prefix_grid": [
+        100,
+        36
+      ],
+      "all_output_channel_tiles_covered": true,
+      "all_active_column_tiles_covered": true,
+      "duplicate_CTA_tiles": false,
+      "full_COLS_leading_dimensions_and_masks_preserved": true
+    },
+    {
+      "co": 320,
+      "cols": 2560,
+      "k": 640,
+      "bm": 32,
+      "bn": 64,
+      "bk": 32,
+      "active_cols": 1280,
+      "rounded_written_prefix_cols": 1280,
+      "original_grid": [
+        400,
+        36
+      ],
+      "prefix_grid": [
+        200,
+        36
+      ],
+      "all_output_channel_tiles_covered": true,
+      "all_active_column_tiles_covered": true,
+      "duplicate_CTA_tiles": false,
+      "full_COLS_leading_dimensions_and_masks_preserved": true
+    },
+    {
+      "co": 320,
+      "cols": 2560,
+      "k": 960,
+      "bm": 32,
+      "bn": 128,
+      "bk": 64,
+      "active_cols": 1280,
+      "rounded_written_prefix_cols": 1280,
+      "original_grid": [
+        200,
+        36
+      ],
+      "prefix_grid": [
+        100,
+        36
+      ],
+      "all_output_channel_tiles_covered": true,
+      "all_active_column_tiles_covered": true,
+      "duplicate_CTA_tiles": false,
+      "full_COLS_leading_dimensions_and_masks_preserved": true
+    },
+    {
+      "co": 640,
+      "cols": 640,
+      "k": 320,
+      "bm": 32,
+      "bn": 64,
+      "bk": 32,
+      "active_cols": 320,
+      "rounded_written_prefix_cols": 320,
+      "original_grid": [
+        200,
+        36
+      ],
+      "prefix_grid": [
+        100,
+        36
+      ],
+      "all_output_channel_tiles_covered": true,
+      "all_active_column_tiles_covered": true,
+      "duplicate_CTA_tiles": false,
+      "full_COLS_leading_dimensions_and_masks_preserved": true
+    },
+    {
+      "co": 640,
+      "cols": 640,
+      "k": 640,
+      "bm": 64,
+      "bn": 64,
+      "bk": 64,
+      "active_cols": 320,
+      "rounded_written_prefix_cols": 320,
+      "original_grid": [
+        100,
+        36
+      ],
+      "prefix_grid": [
+        50,
+        36
+      ],
+      "all_output_channel_tiles_covered": true,
+      "all_active_column_tiles_covered": true,
+      "duplicate_CTA_tiles": false,
+      "full_COLS_leading_dimensions_and_masks_preserved": true
+    },
+    {
+      "co": 640,
+      "cols": 640,
+      "k": 960,
+      "bm": 32,
+      "bn": 64,
+      "bk": 32,
+      "active_cols": 320,
+      "rounded_written_prefix_cols": 320,
+      "original_grid": [
+        200,
+        36
+      ],
+      "prefix_grid": [
+        100,
+        36
+      ],
+      "all_output_channel_tiles_covered": true,
+      "all_active_column_tiles_covered": true,
+      "duplicate_CTA_tiles": false,
+      "full_COLS_leading_dimensions_and_masks_preserved": true
+    },
+    {
+      "co": 640,
+      "cols": 640,
+      "k": 1280,
+      "bm": 32,
+      "bn": 64,
+      "bk": 32,
+      "active_cols": 320,
+      "rounded_written_prefix_cols": 320,
+      "original_grid": [
+        200,
+        36
+      ],
+      "prefix_grid": [
+        100,
+        36
+      ],
+      "all_output_channel_tiles_covered": true,
+      "all_active_column_tiles_covered": true,
+      "duplicate_CTA_tiles": false,
+      "full_COLS_leading_dimensions_and_masks_preserved": true
+    },
+    {
+      "co": 640,
+      "cols": 640,
+      "k": 1920,
+      "bm": 64,
+      "bn": 64,
+      "bk": 64,
+      "active_cols": 320,
+      "rounded_written_prefix_cols": 320,
+      "original_grid": [
+        100,
+        36
+      ],
+      "prefix_grid": [
+        50,
+        36
+      ],
+      "all_output_channel_tiles_covered": true,
+      "all_active_column_tiles_covered": true,
+      "duplicate_CTA_tiles": false,
+      "full_COLS_leading_dimensions_and_masks_preserved": true
+    },
+    {
+      "co": 640,
+      "cols": 2560,
+      "k": 640,
+      "bm": 32,
+      "bn": 64,
+      "bk": 32,
+      "active_cols": 1280,
+      "rounded_written_prefix_cols": 1280,
+      "original_grid": [
+        800,
+        36
+      ],
+      "prefix_grid": [
+        400,
+        36
+      ],
+      "all_output_channel_tiles_covered": true,
+      "all_active_column_tiles_covered": true,
+      "duplicate_CTA_tiles": false,
+      "full_COLS_leading_dimensions_and_masks_preserved": true
+    },
+    {
+      "co": 1280,
+      "cols": 192,
+      "k": 640,
+      "bm": 32,
+      "bn": 64,
+      "bk": 32,
+      "active_cols": 96,
+      "rounded_written_prefix_cols": 128,
+      "original_grid": [
+        120,
+        36
+      ],
+      "prefix_grid": [
+        80,
+        36
+      ],
+      "all_output_channel_tiles_covered": true,
+      "all_active_column_tiles_covered": true,
+      "duplicate_CTA_tiles": false,
+      "full_COLS_leading_dimensions_and_masks_preserved": true
+    },
+    {
+      "co": 1280,
+      "cols": 192,
+      "k": 1280,
+      "bm": 64,
+      "bn": 64,
+      "bk": 64,
+      "active_cols": 96,
+      "rounded_written_prefix_cols": 128,
+      "original_grid": [
+        60,
+        36
+      ],
+      "prefix_grid": [
+        40,
+        36
+      ],
+      "all_output_channel_tiles_covered": true,
+      "all_active_column_tiles_covered": true,
+      "duplicate_CTA_tiles": false,
+      "full_COLS_leading_dimensions_and_masks_preserved": true
+    },
+    {
+      "co": 1280,
+      "cols": 192,
+      "k": 1920,
+      "bm": 32,
+      "bn": 64,
+      "bk": 32,
+      "active_cols": 96,
+      "rounded_written_prefix_cols": 128,
+      "original_grid": [
+        120,
+        36
+      ],
+      "prefix_grid": [
+        80,
+        36
+      ],
+      "all_output_channel_tiles_covered": true,
+      "all_active_column_tiles_covered": true,
+      "duplicate_CTA_tiles": false,
+      "full_COLS_leading_dimensions_and_masks_preserved": true
+    },
+    {
+      "co": 1280,
+      "cols": 192,
+      "k": 2560,
+      "bm": 64,
+      "bn": 64,
+      "bk": 64,
+      "active_cols": 96,
+      "rounded_written_prefix_cols": 128,
+      "original_grid": [
+        60,
+        36
+      ],
+      "prefix_grid": [
+        40,
+        36
+      ],
+      "all_output_channel_tiles_covered": true,
+      "all_active_column_tiles_covered": true,
+      "duplicate_CTA_tiles": false,
+      "full_COLS_leading_dimensions_and_masks_preserved": true
+    },
+    {
+      "co": 1280,
+      "cols": 640,
+      "k": 1280,
+      "bm": 32,
+      "bn": 128,
+      "bk": 64,
+      "active_cols": 320,
+      "rounded_written_prefix_cols": 384,
+      "original_grid": [
+        200,
+        36
+      ],
+      "prefix_grid": [
+        120,
+        36
+      ],
+      "all_output_channel_tiles_covered": true,
+      "all_active_column_tiles_covered": true,
+      "duplicate_CTA_tiles": false,
+      "full_COLS_leading_dimensions_and_masks_preserved": true
+    }
+  ],
+  "candidate_SHA256": "34a5052939287561f9ebb73ee63d78c97c8424de9d28cce14d47358d935b594d",
+  "original209_sources_edited": false,
+  "new_JIT_functions": 2,
+  "world_native_input_transform_frame_order_unverified": true,
+  "runtime_cache_and_CUBIN_ABI_require_fresh_witness": true,
+  "GPU_numerics_full_model_and_quality_unverified": true,
+  "no_raw_operands_or_snapshots_used": true,
+  "not_a_speed_measurement": true
+}
