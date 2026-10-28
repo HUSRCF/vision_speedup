@@ -5,10 +5,12 @@ from pathlib import Path
 def main():
     p=argparse.ArgumentParser();p.add_argument('--gpus',required=True,help='Two physical GPU indices, for example 2,3')
     p.add_argument('--workdir',type=Path,required=True,help='New empty directory for source and diagnostic evidence')
+    p.add_argument('--variant',choices=('world-spatial-temporal','world-ffn-temporal'),default='world-spatial-temporal')
     p.add_argument('--smoke',action='store_true',help='One round only; not a competition result');a=p.parse_args()
     devices=a.gpus.split(',');assert len(devices)==2 and len(set(devices))==2 and all(v in ('0','1','2','3') for v in devices)
     directory=a.workdir.resolve();assert not directory.exists();directory.mkdir(parents=True)
-    repository=Path(__file__).resolve().parents[1];overlay=repository/'experiments/nccl-ffn-209/timed-entry'
+    repository=Path(__file__).resolve().parents[1]
+    overlay=repository/('experiments/nccl-spatial-temporal-209' if a.variant=='world-spatial-temporal' else 'experiments/nccl-ffn-209/timed-entry')
     source=directory/'source';diagnostic=directory/'diagnostic';diagnostic.mkdir()
     subprocess.run([sys.executable,str(overlay/'materialize.py'),'--output',str(source)],check=True)
     for name in ('flags.json','wait_nccl_full209.py','check_dual_gpu_graph.py','check_nccl_parallel209_cpu.py'):shutil.copyfile(overlay/name,diagnostic/name)

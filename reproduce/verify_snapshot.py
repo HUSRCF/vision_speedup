@@ -11,12 +11,12 @@ def main():
     assert set(manifest)=={str(p.relative_to(code)) for p in (code/'src').rglob('*.py')}
     for name,digest in manifest.items():assert sha(code/name)==digest,name
     assert sha(code/'src/unifolm_wma/utils/native-graph-handles/team07_cuda_graph_handles.so')=='ab2f19b88cb9af02b42fb5fdcb39da49e062346fd30794be45fb81e12cb1b927'
-    assert sha(root/'results/runtime.log')=='65030f4108d00766aacba449d0f5de320170119c5ae232ca75db8fca48c352ca'
-    assert sha(root/'results/result.json')=='8a4d4807408bca2e5533c040cb67279154bc305f0f179f5bec6ea0d2276c0b38'
+    assert sha(root/'results/runtime.log')=='79edf05f4afd73df3ae236794324173a72e54c13c2168c3470456d6ba5d46bac'
+    assert sha(root/'results/result.json')=='6a9ec891d56f625e31a9b24607b2d375babd1910a2dcec1eda9d84570888020b'
     result=json.loads((root/'results/result.json').read_text());assert result['status']=='accepted'
     cases=result['cases'];assert len(cases)==5 and sum(c['videos'] for c in cases)==103
     assert [c['rounds'] for c in cases]==[12,7,11,8,11]
-    assert abs(sum(c['process_wall_s'] for c in cases)-861.368824)<1e-6
+    assert abs(sum(c['process_wall_s'] for c in cases)-850.836587)<1e-6
     log=(root/'results/runtime.log').read_text()
     timings=re.findall(r'^TIMING case=(\S+) process_wall_s=([0-9.]+)$',log,re.M)
     assert len(timings)==5 and len({case for case,_ in timings})==5
@@ -45,7 +45,26 @@ def main():
     assert sha(overlay/'timing-proof.json')==assets['nccl-entry-timing-proof.json']
     for name in ('scripts/run_compute_benchmark.sh','scripts/team07_env.sh'):assert sha(code/name)==assets[name]
     outcome=json.loads((overlay/'accepted-outcome.json').read_text());assert outcome['GPUs']==2
-    assert next(c['process_wall_s'] for c in cases if c['case'].endswith('stackbox_v2'))==outcome['V2_s']
-    print('Verified: original209 base plus exact213-source dualGPU overlay;59 nonV2 sources;official103 log/JSON.')
+    assert outcome['V2_s']==312.462900 # historical213-source result
+    import sys
+    latest=root/'experiments/nccl-spatial-temporal-209'
+    sys.path.insert(0,str(latest))
+    try:
+        from nccl_spatial_parallel209_sources import production_sources as spatial_sources
+        new_files,new_proof=spatial_sources(code,'world-spatial-temporal')
+    finally:sys.path.pop(0)
+    assert new_proof==json.loads((latest/'timing-proof.json').read_text())
+    new_manifest=json.loads((latest/'production-sources.json').read_text());assert len(new_manifest)==215
+    for name,digest in new_manifest.items():
+        actual=hashlib.sha256(new_files[name].encode()).hexdigest() if name in new_files else sha(code/name)
+        assert actual==digest,name
+    assets=json.loads((latest/'production-assets.json').read_text())
+    assert hashlib.sha256(new_files['scripts/evaluation/world_model_interaction.py'].encode()).hexdigest()==assets['scripts/evaluation/world_model_interaction.py']
+    assert sha(latest/'timing-proof.json')==assets['nccl-entry-timing-proof.json']
+    for name in ('scripts/run_compute_benchmark.sh','scripts/team07_env.sh'):assert sha(code/name)==assets[name]
+    accepted=json.loads((latest/'accepted-outcome.json').read_text())
+    assert accepted['GPUs']==2 and accepted['source_count']==215 and accepted['all103_officially_validated']
+    assert next(c['process_wall_s'] for c in cases if c['case'].endswith('stackbox_v2'))==accepted['V2_s']
+    print('Verified: original209 base;historical213 and adopted215-source overlays;59 nonV2 sources;official103 log/JSON.')
 
 if __name__=='__main__':main()

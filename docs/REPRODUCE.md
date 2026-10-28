@@ -25,7 +25,7 @@ python3 reproduce/verify_snapshot.py
 ~/.venv/bin/python reproduce/run_v2_parallel.py --gpus 2,3 --workdir /tmp/unifolm-parallel-review-1
 ```
 
-`--workdir` 必须是新目录。入口会重建固定的 213 文件源码、等待两张空闲卡并检查整段 GPU 占用；模型导入、双模型传输、通信和 helper 退出仍计入原始进程耗时。完整结果为 312.462900 秒、PSNR 29.675324786 dB。单轮 `--smoke` 仅供排查，不能作为成绩。
+`--workdir` 必须是新目录。默认重建固定的 215 文件源码、等待两张空闲卡并检查整段 GPU 占用；模型导入、双模型传输、通信和 helper 退出仍计入原始进程耗时。完整结果为 301.930663 秒、PSNR 29.675324786 dB。添加 `--variant world-ffn-temporal` 可运行保留的旧 213 文件版本，历史结果为 312.462900 秒。单轮 `--smoke` 仅供排查，不能作为成绩。
 
 保留的单卡基线运行命令：
 
@@ -46,6 +46,7 @@ python3 reproduce/run_v2.py --gpu 0
 
 ```bash
 python3 experiments/nonv2-vae-all-display/run_case.py --case stackbox --gpu 0
+python3 experiments/nonv2-vae-all-display/run_case.py --case dual --gpu 0
 python3 experiments/nonv2-vae-all-display/run_case.py --case pencils --gpu 0
 python3 experiments/nonv2-vae-all-display/run_case.py --case g1 --gpu 0
 ```
