@@ -50,6 +50,8 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 V2 使用两张卡，其余�
 
 该边界现已集成为[冻结222候选](experiments/initial-boundary-221/production222)，源码／计时接点和CPU检查核对通过；首次完整尝试因RAM盘耗尽中止，**没有222的完整耗时或PSNR**。并行启动的第二个NCCL实验在申请5,767,520字节共享控制缓冲时失败，完整任务的遥测写入也随之ENOSPC；[失败证据](results/aggressive-20261028/initial-boundary-221/full-storage-failed-r1)单独保留。修正后的未来guard在CUDA分配前要求RAM盘24MiB、/tmp11MiB，并将官方validator直接指向普通/tmp目录。小型双卡诊断也要预留14MiB RAM。NCCL日志已显示P2P/CUMEM/read连接，不能因共享控制缓冲失败而推断数据绕行主机内存；关闭SHM传输的诊断同样未完成初始化，无带宽结果。正式/default仍为221。
 
+[非V2 Half projection／GEGLU融合](experiments/nonv2-fused-half-geglu)已完成单卡整网与完整Z1对照：只启用M40960／C320，保留Half舍入边界，10处producer／阶段，原权重直接读取。Decision／world六状态三路输出均逐位一致，六对完整前向分别省0.729084／0.690689ms。同GPU2、同/tmp输出的完整进程为 **171.304477 → 170.633517秒**，省 **0.670960秒**；25视频SHA完全一致、PSNR40.074914dB。640／1280通道已测配置更慢，未启用。该GPU2结果尚未超过历史已采用Z1，另在GPU0完整复核；正式/default仍保留原103视频材料。源码60文件增量、模型测试、完整log／JSON和微基准失败边界均公开。
+
 [Z1 全帧 Half VAE 候选](experiments/nonv2-all-feedback-vae)已完成完整12轮／25视频：**167.555672秒，PSNR29.290234dB**，独立GPU运行和官方单项检查通过。原来两张FP32反馈帧也改成Half，world合成一次16帧解码；原58个其余源码、FP32 master、DDIM及计时入口保持不变。实际TF32配置的六对解码微基准均更快，中位省39.146ms。相比历史已采用Z1的167.819341秒，仅少0.263669秒，且PSNR从40.074914降低；没有同期完整进程AB或官方103视频新汇总，因此**未替换正式材料**。关闭TF32的97.003ms微基准不代表生产收益。首次尝试在推理前因精简源码视图的完整git diff写满RAM中止；重试仅限制诊断补丁范围，完整执行源码仍归档并核对SHA，失败记录单独保留。
 
 [非V2的FP16 FFN双卡模型实验](experiments/nonv2-ffn-59)覆盖33个FFN，保留其余计算：decision六对均更快，两卡中位省 **3.876354／5.427204 ms**；world为 **5.751297／4.246525 ms**。权重修改／清零／恢复和RNG检查通过，但输出存在Half舍入差异，最大相对L2约0.0525%。这只是模型误差粗筛，尚无完整Z1视频PSNR或正式加速成绩。

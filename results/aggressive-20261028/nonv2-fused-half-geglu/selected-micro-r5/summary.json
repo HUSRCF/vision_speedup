@@ -1,0 +1,223 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "M": 40960,
+      "C": 320,
+      "H": 1280,
+      "checkpoint_tensor_name": "model.diffusion_model.input_blocks.1.1.transformer_blocks.0.ff.net.0.proj.weight",
+      "config": [
+        64,
+        128,
+        32,
+        8,
+        3
+      ],
+      "initial_error": {
+        "max_abs": 0.0,
+        "relative_l2": 0.0,
+        "mse": 0.0,
+        "signedzero_bits": true
+      },
+      "cases": [
+        {
+          "case": "initial",
+          "max_abs": 0.0,
+          "relative_l2": 0.0,
+          "mse": 0.0,
+          "signedzero_bits": true
+        },
+        {
+          "case": "changed_inputs",
+          "max_abs": 0.0,
+          "relative_l2": 0.0,
+          "mse": 0.0,
+          "signedzero_bits": true
+        },
+        {
+          "case": "changed_weights",
+          "max_abs": 0.0,
+          "relative_l2": 0.0,
+          "mse": 0.0,
+          "signedzero_bits": true
+        },
+        {
+          "case": "restored",
+          "max_abs": 0.0,
+          "relative_l2": 0.0,
+          "mse": 0.0,
+          "signedzero_bits": true
+        },
+        {
+          "case": "zero_weights",
+          "max_abs": 0.0,
+          "relative_l2": 0.0,
+          "mse": 0.0,
+          "signedzero_bits": true
+        },
+        {
+          "case": "zero_then_restore",
+          "max_abs": 0.0,
+          "relative_l2": 0.0,
+          "mse": 0.0,
+          "signedzero_bits": true
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_ms": 0.7229440212249756,
+          "baseline_samples_ms": [
+            0.7208960056304932,
+            0.7270399928092957,
+            0.7219200134277344,
+            0.7229440212249756,
+            0.7239680290222168,
+            0.7219200134277344,
+            0.7239680290222168
+          ],
+          "candidate_ms": 0.567296028137207,
+          "candidate_samples_ms": [
+            0.5611519813537598,
+            0.567296028137207,
+            0.5662720203399658,
+            0.567296028137207,
+            0.5693439841270447,
+            0.567296028137207,
+            0.567296028137207
+          ],
+          "saved_ms": 0.15564799308776855
+        },
+        {
+          "candidate_ms": 0.5662720203399658,
+          "candidate_samples_ms": [
+            0.5611519813537598,
+            0.5662720203399658,
+            0.5662720203399658,
+            0.567296028137207,
+            0.5662720203399658,
+            0.5683199763298035,
+            0.5683199763298035
+          ],
+          "baseline_ms": 0.634880006313324,
+          "baseline_samples_ms": [
+            0.6307839751243591,
+            0.6359040141105652,
+            0.634880006313324,
+            0.6369280219078064,
+            0.6359040141105652,
+            0.6328319907188416,
+            0.634880006313324
+          ],
+          "saved_ms": 0.06860798597335815
+        },
+        {
+          "baseline_ms": 0.634880006313324,
+          "baseline_samples_ms": [
+            0.6297600269317627,
+            0.634880006313324,
+            0.6359040141105652,
+            0.634880006313324,
+            0.6359040141105652,
+            0.6338559985160828,
+            0.6359040141105652
+          ],
+          "candidate_ms": 0.567296028137207,
+          "candidate_samples_ms": [
+            0.5611519813537598,
+            0.567296028137207,
+            0.5662720203399658,
+            0.567296028137207,
+            0.567296028137207,
+            0.567296028137207,
+            0.5662720203399658
+          ],
+          "saved_ms": 0.06758397817611694
+        },
+        {
+          "candidate_ms": 0.567296028137207,
+          "candidate_samples_ms": [
+            0.5601279735565186,
+            0.5683199763298035,
+            0.5662720203399658,
+            0.567296028137207,
+            0.567296028137207,
+            0.567296028137207,
+            0.567296028137207
+          ],
+          "baseline_ms": 0.634880006313324,
+          "baseline_samples_ms": [
+            0.6287360191345215,
+            0.634880006313324,
+            0.6369280219078064,
+            0.634880006313324,
+            0.6369280219078064,
+            0.6338559985160828,
+            0.6369280219078064
+          ],
+          "saved_ms": 0.06758397817611694
+        },
+        {
+          "baseline_ms": 0.634880006313324,
+          "baseline_samples_ms": [
+            0.6307839751243591,
+            0.6369280219078064,
+            0.6379520297050476,
+            0.634880006313324,
+            0.6359040141105652,
+            0.634880006313324,
+            0.6338559985160828
+          ],
+          "candidate_ms": 0.5662720203399658,
+          "candidate_samples_ms": [
+            0.5611519813537598,
+            0.5662720203399658,
+            0.5662720203399658,
+            0.567296028137207,
+            0.5662720203399658,
+            0.567296028137207,
+            0.567296028137207
+          ],
+          "saved_ms": 0.06860798597335815
+        },
+        {
+          "candidate_ms": 0.5703679919242859,
+          "candidate_samples_ms": [
+            0.5611519813537598,
+            0.5662720203399658,
+            0.567296028137207,
+            0.5703679919242859,
+            0.5703679919242859,
+            0.5703679919242859,
+            0.5724160075187683
+          ],
+          "baseline_ms": 0.6379520297050476,
+          "baseline_samples_ms": [
+            0.6307839751243591,
+            0.6379520297050476,
+            0.638975977897644,
+            0.6379520297050476,
+            0.6369280219078064,
+            0.6359040141105652,
+            0.6379520297050476
+          ],
+          "saved_ms": 0.06758403778076172
+        }
+      ],
+      "median_saved_ms": 0.06809601187705994,
+      "all6_pairs_positive": true,
+      "input_weight_bias_changed_and_restored": true,
+      "RNG_unchanged": true,
+      "original_values_and_pointers_restored": true
+    }
+  ],
+  "selected320_only": true,
+  "checkpoint_backed": true,
+  "synthetic_LayerNorm_like_inputs": true,
+  "baseline_is_cublas_Half_linear_plus_adopted_fused_geglu": true,
+  "numerical_candidate": true,
+  "no_full_model_or_video_quality_claim": true,
+  "no_official_score": true,
+  "clean": true,
+  "physical_gpu": "2",
+  "official_adopted": false
+}

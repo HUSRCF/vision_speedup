@@ -1,0 +1,17 @@
+# NonV2 Half projection + GEGLU fusion
+
+Experimental Z1-only dispatch. Official/default remains V2 source221 at270.825199s and five-case sum819.731123s until a separate accepted103-video update.
+
+Current nonV2 FP16 FFN materializes F.linear's two projection halves before the existing fused GEGLU. The new Tensor Core kernel computes both projection halves and applies the original Half projection, Half exact-GELU and output rounding boundaries in one launch. It reads the original Half weight/bias tensors directly. The selected geometry is M40960/C320/H1280, tile64/128/32,8warps,3stages. All other geometries, consumer GEMM, attention/norm, VAE, sampler and50-step workload remain original. The opt-in flag is UNIFOLM_NONV2_FUSED_HALF_GEGLU=1, restricted to Z1 and the selected geometry.
+
+Clean selected-micro-r5 uses actual checkpoint weights and normalized synthetic inputs. Its six alternating pairs are all faster, median0.068096ms; six input/master mutation,zero,restore states are bitwise equal to original cuBLAS Half linear + adopted GEGLU. These are synthetic-input operator results, not complete-video quality evidence.
+
+Actual Z1 input model tests on one GPU replace10 producer calls per stage. Decision and world each pass six states, all three outputs bitwise,20 projection-master modifications/zero/restoration and RNG checks. Six alternating full-denoiser graph pairs are all faster: median0.729084ms decision and0.690689ms world, including the graph's ordinary output clones. At600 calls per phase this suggests0.852s for Z1, before changes in full-process setup/exit. It is a model extrapolation, not a formal speedup.
+
+The 640/1280-channel trials were slower and are not enabled. Partial sweeps r2/r4 stopped at bounded cache-space guards and did not obtain a whole-attempt clean pass. Their completed numeric/timing rows are retained as partial evidence, separately from clean micro-r5. Setup failures r1(noexec host stub) andr3(Triton2.3 glob reading adjacent gzip) are also retained. Only this turn's fresh private diagnostic cache was archived locally/compacted; original/shared warm caches and historical8 pending log compression were not modified.
+
+`production-overlay` applies two files over ../nonv2-vae-all-display/unifolm: one attention dispatch edit and one new helper,60src files total. `_project_activate` and `fused` have the same ASTs as qualified micro/model code. The original evaluation process timer is unchanged. Full baseline/candidate on the same GPU use original12rounds/25videos, FP32 feedback decode, ordinary/tmp video output and separate RAM metadata. Exact source tar/assets are hash-verified privately; scalar/full logs and results are published under ../../results/aggressive-20261028/nonv2-fused-half-geglu.
+
+The complete-process-AB.json records whether full runs have finished and their measured difference. A completed local single-case result intentionally contains absent other-case failures. It must not be submitted as an accepted five-case aggregate. No weights, input/feedback tensors, raw operands, media, SSH helpers or credentials are exported.
+
+Low-space guard cache policy retains original warm keys read-only and isolates new kernels. Host launcher.so files are on executable home, GPU binaries/metadata on RAM; debug IR is compressed with a distinct prefix so Triton2.3's metadata glob ignores it. Compilation outputs/options/cubins are unchanged. This policy is orchestration for the constrained machine, not an arithmetic optimization.
