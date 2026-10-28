@@ -143,3 +143,5 @@ GPU 矩阵 r2 对全部 14 种 packed／Kahan 配置各测试初始、修改输�
 基准与候选都启用当前 world 空间／时间并行；候选额外执行这 12 个块的 N16 填充与前八帧重排，在原完整时间卷积前汇合。保留原 23+45 owner 和旧 Kahan CUBIN 门槛，新 kernel 使用独立缓存，编译与实际捕获图参数检查后恢复原缓存路径。新的捕获见证使用完整、类型正确的 Torch 缓冲，**不重放未初始化缓冲，不声称它提供数值结果**。真正的数值门槛仍是后续六个完整模型动态状态、570／782／192 master 修改、三路逐位输出、RNG 和原图恢复。
 
 这份快照还没有完成真实 GPU 模型检查或计时。等待进程只在所选两卡同时满足原空闲条件、取得两把锁并再次核验后才创建 CUDA context；CPU 等待期间不占显存。配对完整 world 前向、12 次汇合的净成本和完整 V2 质量均待验证，正式材料不变。
+
+等待期间另在 CPU 上完成了实际使用的 **9 种新 kernel** 的 SM80 静态编译，`CUDA_VISIBLE_DEVICES=''`、Torch CUDA 始终未初始化，产物写入新 kernel 专用缓存。初次尝试已生成第一个 CUBIN，但在 Triton2.3.1 随后构造运行时包装器时失败；该包装器要求无设备环境的 `UnsupportedDriver.binary_ext`。r2 在独立 CPU 进程中将最终返回对象换为编译文件读取器，保留全部编译阶段与 cache key，九种产物均完成。GPU worker 不导入此 helper，原 CUBIN 门槛与新捕获图 ABI 检查保留。该操作不提供 GPU 执行、整模型速度或质量证明，也不是冷编译耗时基准。[精确源码和说明](../experiments/world-native-frame-interleaved-209/offline-compile-r2) · [九种产物 SHA 与日志](../results/aggressive-20261028/world-native-frame-interleaved-209/offline-compile-r2) · [首次包装器失败](../results/aggressive-20261028/world-native-frame-interleaved-209/offline-compile-r1-failed)

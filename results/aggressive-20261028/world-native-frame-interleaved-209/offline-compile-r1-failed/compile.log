@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/tmp/team07-world-interleaved-offline-db126nei/precompile_world_interleaved209_cpu.py", line 59, in <module>
+    if __name__=='__main__':main()
+  File "/tmp/team07-world-interleaved-offline-db126nei/precompile_world_interleaved209_cpu.py", line 40, in main
+    kernel=triton.compile(ASTSource(function,signature,constants,attrs),target=('cuda',80),
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 202, in compile
+    return CompiledKernel(so_path, metadata_group.get(metadata_filename))
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 230, in __init__
+    self.asm = {
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 231, in <dictcomp>
+    file.suffix[1:]: file.read_bytes() if file.suffix[1:] == driver.binary_ext else file.read_text()
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/runtime/driver.py", line 210, in __getattr__
+    return getattr(self._obj, name)
+AttributeError: 'UnsupportedDriver' object has no attribute 'binary_ext'
