@@ -1,0 +1,4449 @@
+{
+  "passed": true,
+  "actual_fresh_model_operands": true,
+  "records": [
+    {
+      "label": "input_blocks.7.1.transformer_blocks.0.ff.net.2 first-rank half-row view",
+      "shape": [
+        1280,
+        1280,
+        5120
+      ],
+      "weight_low_nonzero": 0,
+      "original_launch_options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "baseline_fp64_sample_error": {
+        "relative_l2": 1.6475815614245242e-07,
+        "max_abs": 6.129766465523545e-07,
+        "rms": 1.2771008115984367e-07,
+        "finite": true
+      },
+      "input_range": {
+        "nonzero": 6553599,
+        "half_zero_from_nonzero": 14,
+        "min_abs_nonzero": 2.066371962428093e-09,
+        "max_abs": 11.05207633972168
+      },
+      "power2_half_reconstruction": [
+        {
+          "scale": 1.0,
+          "relative_l2": 0.00020747130021035005,
+          "max_abs": 0.00383758544921875,
+          "rms": 2.6834314186816728e-05,
+          "finite": true,
+          "changed_vs_scale1": 772
+        },
+        {
+          "scale": 16.0,
+          "relative_l2": 0.00020747130011042884,
+          "max_abs": 0.00383758544921875,
+          "rms": 2.6834314173892926e-05,
+          "finite": true,
+          "changed_vs_scale1": 12849
+        },
+        {
+          "scale": 256.0,
+          "relative_l2": 0.00020747130011039875,
+          "max_abs": 0.00383758544921875,
+          "rms": 2.683431417388904e-05,
+          "finite": true,
+          "changed_vs_scale1": 12908
+        },
+        {
+          "scale": 4096.0,
+          "relative_l2": 0.00020747130011039875,
+          "max_abs": 0.00383758544921875,
+          "rms": 2.683431417388904e-05,
+          "finite": true,
+          "changed_vs_scale1": 12908
+        }
+      ],
+      "records": [
+        {
+          "name": "half_same_correction",
+          "mode": 1,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 6.584320068359375,
+          "error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "relative_l2_without_residual": 0.0,
+          "fp64_sample_error": {
+            "relative_l2": 1.6475815614245242e-07,
+            "max_abs": 6.129766465523545e-07,
+            "rms": 1.2771008115984367e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": false,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.42885122299194334,
+              "saved_ms": -0.07014403343200681
+            },
+            {
+              "candidate": 0.42905597686767577,
+              "baseline": 0.3587071895599365,
+              "saved_ms": -0.07034878730773925
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.4289535999298096,
+              "saved_ms": -0.07034881114959718
+            },
+            {
+              "candidate": 0.4330495834350586,
+              "baseline": 0.3586047887802124,
+              "saved_ms": -0.07444479465484621
+            },
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.42905597686767577,
+              "saved_ms": -0.07024638652801513
+            },
+            {
+              "candidate": 0.4289535999298096,
+              "baseline": 0.3586047887802124,
+              "saved_ms": -0.07034881114959718
+            }
+          ],
+          "median_saved_ms": -0.07034879922866821,
+          "median_speedup": 0.8360186129991081,
+          "all_pairs_faster": false
+        },
+        {
+          "name": "exact_Half_residual_separate_FP32_sums",
+          "mode": 6,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.20070399343967438,
+          "error": {
+            "relative_l2": 1.412813613917297e-07,
+            "max_abs": 3.337860107421875e-06,
+            "rms": 1.332519519516101e-07,
+            "finite": true
+          },
+          "relative_l2_without_residual": 2.3135724842137022e-07,
+          "fp64_sample_error": {
+            "relative_l2": 1.578419321360438e-07,
+            "max_abs": 6.267835752638007e-07,
+            "rms": 1.2234906262298643e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.4132714366598606e-07,
+            "max_abs": 3.337860107421875e-06,
+            "rms": 1.33295100781186e-07,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0030719995498657005
+            },
+            {
+              "candidate": 0.3556351900100708,
+              "baseline": 0.3584000110626221,
+              "saved_ms": 0.0027648210525512695
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0029695987701415794
+            },
+            {
+              "candidate": 0.3555327892303467,
+              "baseline": 0.3621887922286987,
+              "saved_ms": 0.006656002998352006
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.35573759078979494,
+              "saved_ms": 0.0029695987701415794
+            },
+            {
+              "candidate": 0.3556351900100708,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.0028672218322753906
+            }
+          ],
+          "median_saved_ms": 0.0029695987701415794,
+          "median_speedup": 1.008348924535279,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 142.28172302246094,
+          "error": {
+            "relative_l2": 3.0433843426965716e-06,
+            "max_abs": 2.47955322265625e-05,
+            "rms": 2.870420416454349e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 4.983736145227833e-06,
+          "fp64_sample_error": {
+            "relative_l2": 3.578885396329636e-06,
+            "max_abs": 8.475338909907926e-06,
+            "rms": 2.7741251488142185e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.284185561942111e-06,
+            "max_abs": 1.8596649169921875e-05,
+            "rms": 2.15436848707275e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 0,
+          "exact_residual_fraction": 0.0,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.2800640106201172,
+              "saved_ms": 0.078438401222229
+            },
+            {
+              "candidate": 0.2802687883377075,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.07833600044250488
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.28037118911743164,
+              "saved_ms": 0.07823359966278076
+            },
+            {
+              "candidate": 0.2802687883377075,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.078438401222229
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.280678391456604,
+              "saved_ms": 0.0779263973236084
+            },
+            {
+              "candidate": 0.2827264070510864,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.07577600479125979
+            }
+          ],
+          "median_saved_ms": 0.07828480005264282,
+          "median_speedup": 1.279269460488317,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 140.9003448486328,
+          "error": {
+            "relative_l2": 2.45711790835529e-06,
+            "max_abs": 1.5735626220703125e-05,
+            "rms": 2.3174731205751677e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 4.023687432822469e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.9609183954368617e-06,
+            "max_abs": 6.03154847411691e-06,
+            "rms": 2.295116293131921e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.8450446347486382e-06,
+            "max_abs": 1.1563301086425781e-05,
+            "rms": 1.740185247894434e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 64,
+          "exact_residual_fraction": 0.0125,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.35891199111938477,
+              "candidate": 0.2884608030319214,
+              "saved_ms": 0.07045118808746337
+            },
+            {
+              "candidate": 0.28928000926971437,
+              "baseline": 0.35891199111938477,
+              "saved_ms": 0.0696319818496704
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.2888704061508179,
+              "saved_ms": 0.06973438262939452
+            },
+            {
+              "candidate": 0.2885632038116455,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.07004158496856688
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.2890752077102661,
+              "saved_ms": 0.06952958106994628
+            },
+            {
+              "candidate": 0.28876800537109376,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06993918418884276
+            }
+          ],
+          "median_saved_ms": 0.06983678340911864,
+          "median_speedup": 1.2418011072806694,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 2.8968958854675293,
+          "error": {
+            "relative_l2": 1.9904469919402548e-06,
+            "max_abs": 1.1444091796875e-05,
+            "rms": 1.8773243994786123e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.2594840157793635e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.4398246721535066e-06,
+            "max_abs": 5.840244017063512e-06,
+            "rms": 1.891197462947495e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.4958092746629557e-06,
+            "max_abs": 8.58306884765625e-06,
+            "rms": 1.4107979744277406e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 256,
+          "exact_residual_fraction": 0.05,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.2920448064804077,
+              "saved_ms": 0.0665599822998047
+            },
+            {
+              "candidate": 0.2919424057006836,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.06666238307952882
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.2919424057006836,
+              "saved_ms": 0.06656000614166263
+            },
+            {
+              "candidate": 0.291430401802063,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06727678775787355
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.2915328025817871,
+              "saved_ms": 0.0670719861984253
+            },
+            {
+              "candidate": 0.29184000492095946,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.06666240692138675
+            }
+          ],
+          "median_saved_ms": 0.06666239500045779,
+          "median_speedup": 1.2283809715426557,
+          "all_pairs_faster": true
+        }
+      ],
+      "no_operand_tensors_serialized": true,
+      "no_production_install": true
+    },
+    {
+      "label": "input_blocks.7.2.transformer_blocks.0.ff.net.2 first-rank half-row view",
+      "shape": [
+        1280,
+        1280,
+        5120
+      ],
+      "weight_low_nonzero": 0,
+      "original_launch_options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "baseline_fp64_sample_error": {
+        "relative_l2": 1.5692726164585223e-07,
+        "max_abs": 3.8947626590513096e-07,
+        "rms": 1.1305000374299863e-07,
+        "finite": true
+      },
+      "input_range": {
+        "nonzero": 6553600,
+        "half_zero_from_nonzero": 8,
+        "min_abs_nonzero": 8.818460628390312e-09,
+        "max_abs": 9.292272567749023
+      },
+      "power2_half_reconstruction": [
+        {
+          "scale": 1.0,
+          "relative_l2": 0.00020765053031259503,
+          "max_abs": 0.003459930419921875,
+          "rms": 7.360673985657958e-05,
+          "finite": true,
+          "changed_vs_scale1": 802
+        },
+        {
+          "scale": 16.0,
+          "relative_l2": 0.00020765053030593342,
+          "max_abs": 0.003459930419921875,
+          "rms": 7.360673985421821e-05,
+          "finite": true,
+          "changed_vs_scale1": 6861
+        },
+        {
+          "scale": 256.0,
+          "relative_l2": 0.00020765053030593155,
+          "max_abs": 0.003459930419921875,
+          "rms": 7.360673985421755e-05,
+          "finite": true,
+          "changed_vs_scale1": 6890
+        },
+        {
+          "scale": 4096.0,
+          "relative_l2": 0.00020765053030593155,
+          "max_abs": 0.003459930419921875,
+          "rms": 7.360673985421755e-05,
+          "finite": true,
+          "changed_vs_scale1": 6890
+        }
+      ],
+      "records": [
+        {
+          "name": "half_same_correction",
+          "mode": 1,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.027648000046610832,
+          "error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "relative_l2_without_residual": 0.0,
+          "fp64_sample_error": {
+            "relative_l2": 1.5692726164585223e-07,
+            "max_abs": 3.8947626590513096e-07,
+            "rms": 1.1305000374299863e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": false,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.429260778427124,
+              "saved_ms": -0.07045118808746337
+            },
+            {
+              "candidate": 0.4289535999298096,
+              "baseline": 0.3585024118423462,
+              "saved_ms": -0.07045118808746337
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.4330495834350586,
+              "saved_ms": -0.0745471715927124
+            },
+            {
+              "candidate": 0.42885122299194334,
+              "baseline": 0.3585024118423462,
+              "saved_ms": -0.07034881114959712
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.4289535999298096,
+              "saved_ms": -0.07045118808746337
+            },
+            {
+              "candidate": 0.42885122299194334,
+              "baseline": 0.35880959033966064,
+              "saved_ms": -0.07004163265228269
+            }
+          ],
+          "median_saved_ms": -0.07045118808746337,
+          "median_speedup": 0.8358191172513512,
+          "all_pairs_faster": false
+        },
+        {
+          "name": "exact_Half_residual_separate_FP32_sums",
+          "mode": 6,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.21401600539684296,
+          "error": {
+            "relative_l2": 1.636148812345741e-07,
+            "max_abs": 1.9073486328125e-06,
+            "rms": 1.2177693986336518e-07,
+            "finite": true
+          },
+          "relative_l2_without_residual": 2.1845078440492848e-07,
+          "fp64_sample_error": {
+            "relative_l2": 1.5298375316266505e-07,
+            "max_abs": 4.617883060387129e-07,
+            "rms": 1.1020911017161297e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.6352153296591518e-07,
+            "max_abs": 1.6689300537109375e-06,
+            "rms": 1.217074671153128e-07,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0030719995498657005
+            },
+            {
+              "candidate": 0.3555327892303467,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.0030719995498657005
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.35573759078979494,
+              "saved_ms": 0.0029695987701415794
+            },
+            {
+              "candidate": 0.3555327892303467,
+              "baseline": 0.35880959033966064,
+              "saved_ms": 0.0032768011093139426
+            },
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0031744003295898215
+            },
+            {
+              "candidate": 0.3556351900100708,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.0028672218322753906
+            }
+          ],
+          "median_saved_ms": 0.0030719995498657005,
+          "median_speedup": 1.0086393080206975,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.3420160114765167,
+          "error": {
+            "relative_l2": 2.9369161246363698e-06,
+            "max_abs": 1.341104507446289e-05,
+            "rms": 2.1859176597807817e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.9212303081311945e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.6982574156950946e-06,
+            "max_abs": 6.041140189760874e-06,
+            "rms": 1.9438178411110174e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.2054026831716624e-06,
+            "max_abs": 1.043081283569336e-05,
+            "rms": 1.641459504871977e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 0,
+          "exact_residual_fraction": 0.0,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.28139519691467285,
+              "saved_ms": 0.07710721492767336
+            },
+            {
+              "candidate": 0.281497597694397,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.07710719108581543
+            },
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.2815999984741211,
+              "saved_ms": 0.07720959186553955
+            },
+            {
+              "candidate": 0.2811903953552246,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.0773120164871216
+            },
+            {
+              "baseline": 0.35829761028289797,
+              "candidate": 0.281497597694397,
+              "saved_ms": 0.076800012588501
+            },
+            {
+              "candidate": 0.28139519691467285,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.07731199264526367
+            }
+          ],
+          "median_saved_ms": 0.07715840339660646,
+          "median_speedup": 1.2740996570415253,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.22118400037288666,
+          "error": {
+            "relative_l2": 2.7164648048518475e-06,
+            "max_abs": 1.1652708053588867e-05,
+            "rms": 2.0218379201530006e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.6268942222773224e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.3636198832205487e-06,
+            "max_abs": 5.1491264694836225e-06,
+            "rms": 1.7027458061948002e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.04005202914612e-06,
+            "max_abs": 8.702278137207031e-06,
+            "rms": 1.5183906409596994e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 64,
+          "exact_residual_fraction": 0.0125,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.2888704061508179,
+              "saved_ms": 0.06983678340911864
+            },
+            {
+              "candidate": 0.288972806930542,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.0696319818496704
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.2890752077102661,
+              "saved_ms": 0.0696319818496704
+            },
+            {
+              "candidate": 0.288972806930542,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06973438262939452
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.288972806930542,
+              "saved_ms": 0.0696319818496704
+            },
+            {
+              "candidate": 0.288972806930542,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.0696319818496704
+            }
+          ],
+          "median_saved_ms": 0.0696319818496704,
+          "median_speedup": 1.2409637868327426,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.22220799326896667,
+          "error": {
+            "relative_l2": 2.392002705972462e-06,
+            "max_abs": 9.894371032714844e-06,
+            "rms": 1.7803439850962747e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.1936879058649897e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.4419159589726076e-06,
+            "max_abs": 4.6173138952276815e-06,
+            "rms": 1.7591501018155815e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.797477888265801e-06,
+            "max_abs": 7.3909759521484375e-06,
+            "rms": 1.3378450960474553e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 256,
+          "exact_residual_fraction": 0.05,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.291430401802063,
+              "saved_ms": 0.06737918853759767
+            },
+            {
+              "candidate": 0.2916352033615112,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.0670719861984253
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.29173760414123534,
+              "saved_ms": 0.06686718463897706
+            },
+            {
+              "candidate": 0.29132800102233886,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.06717441082000736
+            },
+            {
+              "baseline": 0.3584000110626221,
+              "candidate": 0.29173760414123534,
+              "saved_ms": 0.06666240692138675
+            },
+            {
+              "candidate": 0.29184000492095946,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.06676478385925294
+            }
+          ],
+          "median_saved_ms": 0.06696958541870118,
+          "median_speedup": 1.2295945391882948,
+          "all_pairs_faster": true
+        }
+      ],
+      "no_operand_tensors_serialized": true,
+      "no_production_install": true
+    },
+    {
+      "label": "input_blocks.8.1.transformer_blocks.0.ff.net.2 first-rank half-row view",
+      "shape": [
+        1280,
+        1280,
+        5120
+      ],
+      "weight_low_nonzero": 0,
+      "original_launch_options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "baseline_fp64_sample_error": {
+        "relative_l2": 1.0761314012798246e-07,
+        "max_abs": 3.079010122419845e-07,
+        "rms": 9.210116077549809e-08,
+        "finite": true
+      },
+      "input_range": {
+        "nonzero": 6553600,
+        "half_zero_from_nonzero": 8,
+        "min_abs_nonzero": 1.5425030142068863e-09,
+        "max_abs": 7.683487892150879
+      },
+      "power2_half_reconstruction": [
+        {
+          "scale": 1.0,
+          "relative_l2": 0.00020789617396286823,
+          "max_abs": 0.0019130706787109375,
+          "rms": 2.2475860629529276e-05,
+          "finite": true,
+          "changed_vs_scale1": 801
+        },
+        {
+          "scale": 16.0,
+          "relative_l2": 0.0002078961738365562,
+          "max_abs": 0.0019130706787109375,
+          "rms": 2.247586061587356e-05,
+          "finite": true,
+          "changed_vs_scale1": 11362
+        },
+        {
+          "scale": 256.0,
+          "relative_l2": 0.0002078961738365204,
+          "max_abs": 0.0019130706787109375,
+          "rms": 2.2475860615869687e-05,
+          "finite": true,
+          "changed_vs_scale1": 11412
+        },
+        {
+          "scale": 4096.0,
+          "relative_l2": 0.00020789617383652038,
+          "max_abs": 0.0019130706787109375,
+          "rms": 2.2475860615869684e-05,
+          "finite": true,
+          "changed_vs_scale1": 11412
+        }
+      ],
+      "records": [
+        {
+          "name": "half_same_correction",
+          "mode": 1,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.028672000393271446,
+          "error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "relative_l2_without_residual": 0.0,
+          "fp64_sample_error": {
+            "relative_l2": 1.0761314012798246e-07,
+            "max_abs": 3.079010122419845e-07,
+            "rms": 9.210116077549809e-08,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": false,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.4289535999298096,
+              "saved_ms": -0.07014400959014894
+            },
+            {
+              "candidate": 0.4289535999298096,
+              "baseline": 0.3586047887802124,
+              "saved_ms": -0.07034881114959718
+            },
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.4289535999298096,
+              "saved_ms": -0.07014400959014894
+            },
+            {
+              "candidate": 0.4289535999298096,
+              "baseline": 0.3585024118423462,
+              "saved_ms": -0.07045118808746337
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.4291584014892578,
+              "saved_ms": -0.07055361270904542
+            },
+            {
+              "candidate": 0.4289535999298096,
+              "baseline": 0.3587071895599365,
+              "saved_ms": -0.07024641036987306
+            }
+          ],
+          "median_saved_ms": -0.07029761075973512,
+          "median_speedup": 0.8361183802368414,
+          "all_pairs_faster": false
+        },
+        {
+          "name": "exact_Half_residual_separate_FP32_sums",
+          "mode": 6,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.20070399343967438,
+          "error": {
+            "relative_l2": 1.1449051255154548e-07,
+            "max_abs": 5.7220458984375e-06,
+            "rms": 1.1421718583289337e-07,
+            "finite": true
+          },
+          "relative_l2_without_residual": 2.288366110990854e-07,
+          "fp64_sample_error": {
+            "relative_l2": 1.0871788302285652e-07,
+            "max_abs": 4.0513636478944903e-07,
+            "rms": 9.30466596509642e-08,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.1429663661563008e-07,
+            "max_abs": 5.7220458984375e-06,
+            "rms": 1.1402377285874467e-07,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.35573759078979494,
+              "saved_ms": 0.0029695987701415794
+            },
+            {
+              "candidate": 0.3556351900100708,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.0030719995498657005
+            },
+            {
+              "baseline": 0.35891199111938477,
+              "candidate": 0.35573759078979494,
+              "saved_ms": 0.0031744003295898215
+            },
+            {
+              "candidate": 0.35573759078979494,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.0029695987701415794
+            },
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.35573759078979494,
+              "saved_ms": 0.0030719995498657005
+            },
+            {
+              "candidate": 0.35573759078979494,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.0028671979904174583
+            }
+          ],
+          "median_saved_ms": 0.00302079916000364,
+          "median_speedup": 1.0084916501326076,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.22630399465560913,
+          "error": {
+            "relative_l2": 2.256159103779294e-06,
+            "max_abs": 2.574920654296875e-05,
+            "rms": 2.25077290582411e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 4.509472373763376e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.3919972903448744e-06,
+            "max_abs": 6.962853812075842e-06,
+            "rms": 2.0472009900519884e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.6933829312123132e-06,
+            "max_abs": 1.9073486328125e-05,
+            "rms": 1.6893402678222252e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 0,
+          "exact_residual_fraction": 0.0,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.27985920906066897,
+              "saved_ms": 0.07884798049926756
+            },
+            {
+              "candidate": 0.2800640106201172,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.07864317893981931
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.2800640106201172,
+              "saved_ms": 0.07854077816009519
+            },
+            {
+              "candidate": 0.27985920906066897,
+              "baseline": 0.35880959033966064,
+              "saved_ms": 0.07895038127899168
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.28016641139984133,
+              "saved_ms": 0.07843837738037107
+            },
+            {
+              "candidate": 0.2799616098403931,
+              "baseline": 0.35880959033966064,
+              "saved_ms": 0.07884798049926756
+            }
+          ],
+          "median_saved_ms": 0.07874557971954343,
+          "median_speedup": 1.281221423446969,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.18227200210094452,
+          "error": {
+            "relative_l2": 1.864098322051619e-06,
+            "max_abs": 1.3113021850585938e-05,
+            "rms": 1.859648102847806e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.7258453409555096e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.0859807719437055e-06,
+            "max_abs": 6.2939930376426645e-06,
+            "rms": 1.7852954594847648e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.3998935311733422e-06,
+            "max_abs": 1.049041748046875e-05,
+            "rms": 1.3965515237489236e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 64,
+          "exact_residual_fraction": 0.0125,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3590143918991089,
+              "candidate": 0.28764159679412843,
+              "saved_ms": 0.07137279510498046
+            },
+            {
+              "candidate": 0.2874367952346802,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.07116799354553222
+            },
+            {
+              "baseline": 0.35891199111938477,
+              "candidate": 0.2875391960144043,
+              "saved_ms": 0.07137279510498046
+            },
+            {
+              "candidate": 0.28784639835357667,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.07086079120635985
+            },
+            {
+              "baseline": 0.35891199111938477,
+              "candidate": 0.2875391960144043,
+              "saved_ms": 0.07137279510498046
+            },
+            {
+              "candidate": 0.2875391960144043,
+              "baseline": 0.35880959033966064,
+              "saved_ms": 0.07127039432525634
+            }
+          ],
+          "median_saved_ms": 0.0713215947151184,
+          "median_speedup": 1.2479971123935265,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.34303998947143555,
+          "error": {
+            "relative_l2": 1.5811049866616764e-06,
+            "max_abs": 1.1920928955078125e-05,
+            "rms": 1.577330366143193e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.160215627269795e-06,
+          "fp64_sample_error": {
+            "relative_l2": 1.6312071580068028e-06,
+            "max_abs": 4.831089657431065e-06,
+            "rms": 1.3960755400228511e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.188497600570934e-06,
+            "max_abs": 9.5367431640625e-06,
+            "rms": 1.1856602649332139e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 256,
+          "exact_residual_fraction": 0.05,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.2902015924453735,
+              "saved_ms": 0.06840319633483888
+            },
+            {
+              "candidate": 0.29040639400482177,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.06809601783752445
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.2905087947845459,
+              "saved_ms": 0.06809599399566652
+            },
+            {
+              "candidate": 0.29061119556427,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06809599399566652
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.2905087947845459,
+              "saved_ms": 0.06819839477539064
+            },
+            {
+              "candidate": 0.29040639400482177,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.06819839477539064
+            }
+          ],
+          "median_saved_ms": 0.06814720630645754,
+          "median_speedup": 1.2346201329070465,
+          "all_pairs_faster": true
+        }
+      ],
+      "no_operand_tensors_serialized": true,
+      "no_production_install": true
+    },
+    {
+      "label": "input_blocks.8.2.transformer_blocks.0.ff.net.2 first-rank half-row view",
+      "shape": [
+        1280,
+        1280,
+        5120
+      ],
+      "weight_low_nonzero": 0,
+      "original_launch_options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "baseline_fp64_sample_error": {
+        "relative_l2": 1.2614795436746064e-07,
+        "max_abs": 3.408395695680966e-07,
+        "rms": 8.923045375153526e-08,
+        "finite": true
+      },
+      "input_range": {
+        "nonzero": 6553600,
+        "half_zero_from_nonzero": 13,
+        "min_abs_nonzero": 4.103640094399452e-09,
+        "max_abs": 10.943275451660156
+      },
+      "power2_half_reconstruction": [
+        {
+          "scale": 1.0,
+          "relative_l2": 0.0002074595920355957,
+          "max_abs": 0.00384521484375,
+          "rms": 6.189845641402702e-05,
+          "finite": true,
+          "changed_vs_scale1": 899
+        },
+        {
+          "scale": 16.0,
+          "relative_l2": 0.00020745959202388332,
+          "max_abs": 0.00384521484375,
+          "rms": 6.189845641053246e-05,
+          "finite": true,
+          "changed_vs_scale1": 8523
+        },
+        {
+          "scale": 256.0,
+          "relative_l2": 0.00020745959202387841,
+          "max_abs": 0.00384521484375,
+          "rms": 6.189845641053101e-05,
+          "finite": true,
+          "changed_vs_scale1": 8569
+        },
+        {
+          "scale": 4096.0,
+          "relative_l2": 0.00020745959202387841,
+          "max_abs": 0.00384521484375,
+          "rms": 6.189845641053101e-05,
+          "finite": true,
+          "changed_vs_scale1": 8570
+        }
+      ],
+      "records": [
+        {
+          "name": "half_same_correction",
+          "mode": 1,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.028672000393271446,
+          "error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "relative_l2_without_residual": 0.0,
+          "fp64_sample_error": {
+            "relative_l2": 1.2614795436746064e-07,
+            "max_abs": 3.408395695680966e-07,
+            "rms": 8.923045375153526e-08,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": false,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.35891199111938477,
+              "candidate": 0.4291584014892578,
+              "saved_ms": -0.07024641036987306
+            },
+            {
+              "candidate": 0.4291584014892578,
+              "baseline": 0.3590143918991089,
+              "saved_ms": -0.07014400959014894
+            },
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.429260778427124,
+              "saved_ms": -0.07045118808746337
+            },
+            {
+              "candidate": 0.429260778427124,
+              "baseline": 0.3587071895599365,
+              "saved_ms": -0.07055358886718749
+            },
+            {
+              "baseline": 0.35891199111938477,
+              "candidate": 0.4291584014892578,
+              "saved_ms": -0.07024641036987306
+            },
+            {
+              "candidate": 0.429260778427124,
+              "baseline": 0.3587071895599365,
+              "saved_ms": -0.07055358886718749
+            }
+          ],
+          "median_saved_ms": -0.07034879922866821,
+          "median_speedup": 0.8360968867797047,
+          "all_pairs_faster": false
+        },
+        {
+          "name": "exact_Half_residual_separate_FP32_sums",
+          "mode": 6,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.19148799777030945,
+          "error": {
+            "relative_l2": 1.327235366088414e-07,
+            "max_abs": 2.384185791015625e-06,
+            "rms": 1.0413398418704007e-07,
+            "finite": true
+          },
+          "relative_l2_without_residual": 2.1620540620901148e-07,
+          "fp64_sample_error": {
+            "relative_l2": 1.3655936519455767e-07,
+            "max_abs": 2.8733132084735047e-07,
+            "rms": 9.659494029397538e-08,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.3305505140004934e-07,
+            "max_abs": 2.384185791015625e-06,
+            "rms": 1.0439407999048775e-07,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.35573759078979494,
+              "saved_ms": 0.0030719995498657005
+            },
+            {
+              "candidate": 0.35573759078979494,
+              "baseline": 0.35880959033966064,
+              "saved_ms": 0.0030719995498657005
+            },
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.3559423923492432,
+              "saved_ms": 0.0028671979904174583
+            },
+            {
+              "candidate": 0.3556351900100708,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.0030719995498657005
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0030719995498657005
+            },
+            {
+              "candidate": 0.3556351900100708,
+              "baseline": 0.3584000110626221,
+              "saved_ms": 0.0027648210525512695
+            }
+          ],
+          "median_saved_ms": 0.0030719995498657005,
+          "median_speedup": 1.0086355775419893,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.23756800591945648,
+          "error": {
+            "relative_l2": 2.497912712676136e-06,
+            "max_abs": 1.609325408935547e-05,
+            "rms": 1.959845326372168e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 4.069076567108456e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.9730771602422045e-06,
+            "max_abs": 8.242355738596885e-06,
+            "rms": 2.1029990171221364e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.8755267864532616e-06,
+            "max_abs": 1.2278556823730469e-05,
+            "rms": 1.4715254423570998e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 0,
+          "exact_residual_fraction": 0.0,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.280678391456604,
+              "saved_ms": 0.07802879810333252
+            },
+            {
+              "candidate": 0.2805759906768799,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.07813119888305664
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.28047358989715576,
+              "saved_ms": 0.07813119888305664
+            },
+            {
+              "candidate": 0.280678391456604,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.07802879810333252
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.28088319301605225,
+              "saved_ms": 0.07772159576416016
+            },
+            {
+              "candidate": 0.2807807922363281,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.07782399654388428
+            }
+          ],
+          "median_saved_ms": 0.07802879810333252,
+          "median_speedup": 1.2780007313651598,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.16896000504493713,
+          "error": {
+            "relative_l2": 2.2892492164028064e-06,
+            "max_abs": 1.1920928955078125e-05,
+            "rms": 1.796129366290586e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.729165673189716e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.430147128239208e-06,
+            "max_abs": 5.112389430461661e-06,
+            "rms": 1.718958757778388e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.7191098604221351e-06,
+            "max_abs": 9.059906005859375e-06,
+            "rms": 1.348801795895425e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 64,
+          "exact_residual_fraction": 0.0125,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.28825600147247316,
+              "saved_ms": 0.07034878730773925
+            },
+            {
+              "candidate": 0.2879487991333008,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.07065598964691161
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.2883584022521973,
+              "saved_ms": 0.07034878730773925
+            },
+            {
+              "candidate": 0.2885632038116455,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.070143985748291
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.2880511999130249,
+              "saved_ms": 0.07065598964691161
+            },
+            {
+              "candidate": 0.28815360069274903,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.07034881114959718
+            }
+          ],
+          "median_saved_ms": 0.07034879922866821,
+          "median_speedup": 1.2440930934764884,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.18636800348758698,
+          "error": {
+            "relative_l2": 1.981224886010267e-06,
+            "max_abs": 1.049041748046875e-05,
+            "rms": 1.5544555714997416e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.227396904994148e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.118196906075139e-06,
+            "max_abs": 4.397133693156974e-06,
+            "rms": 1.4983015143758572e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.4883798200769657e-06,
+            "max_abs": 7.987022399902344e-06,
+            "rms": 1.1677725900550433e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 256,
+          "exact_residual_fraction": 0.05,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.291430401802063,
+              "saved_ms": 0.06727678775787355
+            },
+            {
+              "candidate": 0.29122560024261473,
+              "baseline": 0.3584000110626221,
+              "saved_ms": 0.06717441082000736
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.2919424057006836,
+              "saved_ms": 0.06666238307952882
+            },
+            {
+              "candidate": 0.29184000492095946,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06686718463897706
+            },
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.29173760414123534,
+              "saved_ms": 0.0670719861984253
+            },
+            {
+              "candidate": 0.2915328025817871,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06717438697814943
+            }
+          ],
+          "median_saved_ms": 0.06712318658828736,
+          "median_speedup": 1.2301615582343834,
+          "all_pairs_faster": true
+        }
+      ],
+      "no_operand_tensors_serialized": true,
+      "no_production_install": true
+    },
+    {
+      "label": "output_blocks.3.1.transformer_blocks.0.ff.net.2 first-rank half-row view",
+      "shape": [
+        1280,
+        1280,
+        5120
+      ],
+      "weight_low_nonzero": 0,
+      "original_launch_options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "baseline_fp64_sample_error": {
+        "relative_l2": 1.3600897849035337e-07,
+        "max_abs": 9.738803687930897e-07,
+        "rms": 1.632930478805146e-07,
+        "finite": true
+      },
+      "input_range": {
+        "nonzero": 6553598,
+        "half_zero_from_nonzero": 13,
+        "min_abs_nonzero": 1.5425030142068863e-09,
+        "max_abs": 17.40475845336914
+      },
+      "power2_half_reconstruction": [
+        {
+          "scale": 1.0,
+          "relative_l2": 0.00020727208330920124,
+          "max_abs": 0.00439453125,
+          "rms": 3.6880765379515e-05,
+          "finite": true,
+          "changed_vs_scale1": 719
+        },
+        {
+          "scale": 16.0,
+          "relative_l2": 0.00020727208326898228,
+          "max_abs": 0.00439453125,
+          "rms": 3.688076537235868e-05,
+          "finite": true,
+          "changed_vs_scale1": 9810
+        },
+        {
+          "scale": 256.0,
+          "relative_l2": 0.0002072720832689699,
+          "max_abs": 0.00439453125,
+          "rms": 3.6880765372356475e-05,
+          "finite": true,
+          "changed_vs_scale1": 9861
+        },
+        {
+          "scale": 4096.0,
+          "relative_l2": Infinity,
+          "max_abs": Infinity,
+          "rms": Infinity,
+          "finite": false,
+          "changed_vs_scale1": 9864
+        }
+      ],
+      "records": [
+        {
+          "name": "half_same_correction",
+          "mode": 1,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.027648000046610832,
+          "error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "relative_l2_without_residual": 0.0,
+          "fp64_sample_error": {
+            "relative_l2": 1.3600897849035337e-07,
+            "max_abs": 9.738803687930897e-07,
+            "rms": 1.632930478805146e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": false,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3590143918991089,
+              "candidate": 0.4291584014892578,
+              "saved_ms": -0.07014400959014894
+            },
+            {
+              "candidate": 0.429260778427124,
+              "baseline": 0.35880959033966064,
+              "saved_ms": -0.07045118808746337
+            },
+            {
+              "baseline": 0.35891199111938477,
+              "candidate": 0.42885122299194334,
+              "saved_ms": -0.06993923187255857
+            },
+            {
+              "candidate": 0.4291584014892578,
+              "baseline": 0.3587071895599365,
+              "saved_ms": -0.0704512119293213
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.4291584014892578,
+              "saved_ms": -0.07055361270904542
+            },
+            {
+              "candidate": 0.4330495834350586,
+              "baseline": 0.3587071895599365,
+              "saved_ms": -0.07434239387512209
+            }
+          ],
+          "median_saved_ms": -0.07045120000839233,
+          "median_speedup": 0.8358582784258457,
+          "all_pairs_faster": false
+        },
+        {
+          "name": "exact_Half_residual_separate_FP32_sums",
+          "mode": 6,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.20479999482631683,
+          "error": {
+            "relative_l2": 1.4321756513848244e-07,
+            "max_abs": 6.67572021484375e-06,
+            "rms": 1.824347223027384e-07,
+            "finite": true
+          },
+          "relative_l2_without_residual": 2.3063424696043464e-07,
+          "fp64_sample_error": {
+            "relative_l2": 1.5849070901816382e-07,
+            "max_abs": 9.738803687930897e-07,
+            "rms": 1.9028472402029943e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.4322869055250162e-07,
+            "max_abs": 6.67572021484375e-06,
+            "rms": 1.8244890192491374e-07,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0030719995498657005
+            },
+            {
+              "candidate": 0.35573759078979494,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.0028671979904174583
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.35573759078979494,
+              "saved_ms": 0.0028671979904174583
+            },
+            {
+              "candidate": 0.35573759078979494,
+              "baseline": 0.36024320125579834,
+              "saved_ms": 0.004505610466003396
+            },
+            {
+              "baseline": 0.35932159423828125,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.003686404228210427
+            },
+            {
+              "candidate": 0.3556351900100708,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.0029695987701415794
+            }
+          ],
+          "median_saved_ms": 0.00302079916000364,
+          "median_speedup": 1.0084940951988415,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.21401600539684296,
+          "error": {
+            "relative_l2": 3.1957031596309454e-06,
+            "max_abs": 3.510713577270508e-05,
+            "rms": 4.070780130394786e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 5.1462862884025045e-06,
+          "fp64_sample_error": {
+            "relative_l2": 3.959780991292275e-06,
+            "max_abs": 1.3910379875081702e-05,
+            "rms": 4.75413251525378e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.3987585142191785e-06,
+            "max_abs": 2.6166439056396484e-05,
+            "rms": 3.055608867288375e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 0,
+          "exact_residual_fraction": 0.0,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.35891199111938477,
+              "candidate": 0.28344318866729734,
+              "saved_ms": 0.07546880245208742
+            },
+            {
+              "candidate": 0.28282880783081055,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.07567360401153567
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.28334081172943115,
+              "saved_ms": 0.07536637783050537
+            },
+            {
+              "candidate": 0.2830336093902588,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.07557117938995361
+            },
+            {
+              "baseline": 0.3584000110626221,
+              "candidate": 0.28323841094970703,
+              "saved_ms": 0.07516160011291506
+            },
+            {
+              "candidate": 0.28323841094970703,
+              "baseline": 0.3584000110626221,
+              "saved_ms": 0.07516160011291506
+            }
+          ],
+          "median_saved_ms": 0.0754175901412964,
+          "median_speedup": 1.2661246023132078,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.2242559939622879,
+          "error": {
+            "relative_l2": 2.66188165602692e-06,
+            "max_abs": 2.6702880859375e-05,
+            "rms": 3.3907826896125535e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 4.286632513560331e-06,
+          "fp64_sample_error": {
+            "relative_l2": 3.105164474881033e-06,
+            "max_abs": 9.150837080529328e-06,
+            "rms": 3.728075726335852e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.9988604515385603e-06,
+            "max_abs": 1.811981201171875e-05,
+            "rms": 2.5462069999911615e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 64,
+          "exact_residual_fraction": 0.0125,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.29061119556427,
+              "saved_ms": 0.06809599399566652
+            },
+            {
+              "candidate": 0.29081599712371825,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06789119243621827
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.29040639400482177,
+              "saved_ms": 0.06819839477539064
+            },
+            {
+              "candidate": 0.29081599712371825,
+              "baseline": 0.35880959033966064,
+              "saved_ms": 0.0679935932159424
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.29040639400482177,
+              "saved_ms": 0.06819839477539064
+            },
+            {
+              "candidate": 0.2905087947845459,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.06799361705780033
+            }
+          ],
+          "median_saved_ms": 0.06804480552673342,
+          "median_speedup": 1.2341850211646719,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.22835199534893036,
+          "error": {
+            "relative_l2": 2.231065995336355e-06,
+            "max_abs": 1.811981201171875e-05,
+            "rms": 2.841997103530589e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.592856960358775e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.6857323097141646e-06,
+            "max_abs": 8.66564676371695e-06,
+            "rms": 3.2245034078798385e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.6759425064457927e-06,
+            "max_abs": 1.239776611328125e-05,
+            "rms": 2.1348646616177688e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 256,
+          "exact_residual_fraction": 0.05,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.29358079433441164,
+              "saved_ms": 0.065228796005249
+            },
+            {
+              "candidate": 0.2933759927749634,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.065228796005249
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.2934783935546875,
+              "saved_ms": 0.06502401828765869
+            },
+            {
+              "candidate": 0.2934783935546875,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.065228796005249
+            },
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.2937855958938599,
+              "saved_ms": 0.06502399444580076
+            },
+            {
+              "candidate": 0.2939903974533081,
+              "baseline": 0.3617791891098022,
+              "saved_ms": 0.0677887916564941
+            }
+          ],
+          "median_saved_ms": 0.065228796005249,
+          "median_speedup": 1.222222219958554,
+          "all_pairs_faster": true
+        }
+      ],
+      "no_operand_tensors_serialized": true,
+      "no_production_install": true
+    },
+    {
+      "label": "output_blocks.3.2.transformer_blocks.0.ff.net.2 first-rank half-row view",
+      "shape": [
+        1280,
+        1280,
+        5120
+      ],
+      "weight_low_nonzero": 0,
+      "original_launch_options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "baseline_fp64_sample_error": {
+        "relative_l2": 1.741609828202522e-07,
+        "max_abs": 6.355096999755006e-07,
+        "rms": 2.25397351063074e-07,
+        "finite": true
+      },
+      "input_range": {
+        "nonzero": 6553600,
+        "half_zero_from_nonzero": 6,
+        "min_abs_nonzero": 5.413312464952469e-09,
+        "max_abs": 24.9598388671875
+      },
+      "power2_half_reconstruction": [
+        {
+          "scale": 1.0,
+          "relative_l2": 0.00020768754276129329,
+          "max_abs": 0.00759124755859375,
+          "rms": 0.0001217184499337107,
+          "finite": true,
+          "changed_vs_scale1": 792
+        },
+        {
+          "scale": 16.0,
+          "relative_l2": 0.000207687542759357,
+          "max_abs": 0.00759124755859375,
+          "rms": 0.00012171844993257593,
+          "finite": true,
+          "changed_vs_scale1": 5581
+        },
+        {
+          "scale": 256.0,
+          "relative_l2": 0.00020768754275935639,
+          "max_abs": 0.00759124755859375,
+          "rms": 0.00012171844993257556,
+          "finite": true,
+          "changed_vs_scale1": 5606
+        },
+        {
+          "scale": 4096.0,
+          "relative_l2": Infinity,
+          "max_abs": Infinity,
+          "rms": Infinity,
+          "finite": false,
+          "changed_vs_scale1": 5612
+        }
+      ],
+      "records": [
+        {
+          "name": "half_same_correction",
+          "mode": 1,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.027648000046610832,
+          "error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "relative_l2_without_residual": 0.0,
+          "fp64_sample_error": {
+            "relative_l2": 1.741609828202522e-07,
+            "max_abs": 6.355096999755006e-07,
+            "rms": 2.25397351063074e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": false,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.429260778427124,
+              "saved_ms": -0.07045118808746337
+            },
+            {
+              "candidate": 0.42936320304870607,
+              "baseline": 0.3587071895599365,
+              "saved_ms": -0.07065601348876954
+            },
+            {
+              "baseline": 0.35891199111938477,
+              "candidate": 0.42905597686767577,
+              "saved_ms": -0.070143985748291
+            },
+            {
+              "candidate": 0.4291584014892578,
+              "baseline": 0.35891199111938477,
+              "saved_ms": -0.07024641036987306
+            },
+            {
+              "baseline": 0.3590143918991089,
+              "candidate": 0.4314112186431885,
+              "saved_ms": -0.0723968267440796
+            },
+            {
+              "candidate": 0.4291584014892578,
+              "baseline": 0.3586047887802124,
+              "saved_ms": -0.07055361270904542
+            }
+          ],
+          "median_saved_ms": -0.0705024003982544,
+          "median_speedup": 0.8357389742489161,
+          "all_pairs_faster": false
+        },
+        {
+          "name": "exact_Half_residual_separate_FP32_sums",
+          "mode": 6,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.19763199985027313,
+          "error": {
+            "relative_l2": 1.6611085507326015e-07,
+            "max_abs": 3.337860107421875e-06,
+            "rms": 2.2116848319179813e-07,
+            "finite": true
+          },
+          "relative_l2_without_residual": 2.2367088388424415e-07,
+          "fp64_sample_error": {
+            "relative_l2": 1.521740602267897e-07,
+            "max_abs": 6.183644807311595e-07,
+            "rms": 1.9694210218732514e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.6583674111705476e-07,
+            "max_abs": 4.76837158203125e-06,
+            "rms": 2.2080350555803153e-07,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.35573759078979494,
+              "saved_ms": 0.0030719995498657005
+            },
+            {
+              "candidate": 0.35573759078979494,
+              "baseline": 0.35829761028289797,
+              "saved_ms": 0.0025600194931030273
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0029695987701415794
+            },
+            {
+              "candidate": 0.35583999156951907,
+              "baseline": 0.35880959033966064,
+              "saved_ms": 0.0029695987701415794
+            },
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.35573759078979494,
+              "saved_ms": 0.0030719995498657005
+            },
+            {
+              "candidate": 0.3556351900100708,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.0029695987701415794
+            }
+          ],
+          "median_saved_ms": 0.0029695987701415794,
+          "median_speedup": 1.0083501263473322,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.35225600004196167,
+          "error": {
+            "relative_l2": 3.413584574071652e-06,
+            "max_abs": 3.635883331298828e-05,
+            "rms": 4.5450209871075475e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 4.596445419292383e-06,
+          "fp64_sample_error": {
+            "relative_l2": 3.846334765295331e-06,
+            "max_abs": 1.6604151505283937e-05,
+            "rms": 4.977886857093258e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.5619835356915764e-06,
+            "max_abs": 2.753734588623047e-05,
+            "rms": 3.411155706824752e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 0,
+          "exact_residual_fraction": 0.0,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.2802687883377075,
+              "saved_ms": 0.078438401222229
+            },
+            {
+              "candidate": 0.2800640106201172,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.078438401222229
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.27985920906066897,
+              "saved_ms": 0.07864320278167725
+            },
+            {
+              "candidate": 0.28016641139984133,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.07854077816009519
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.2800640106201172,
+              "saved_ms": 0.07854077816009519
+            },
+            {
+              "candidate": 0.28016641139984133,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.07843837738037107
+            }
+          ],
+          "median_saved_ms": 0.0784895896911621,
+          "median_speedup": 1.280204643918049,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.21606400609016418,
+          "error": {
+            "relative_l2": 3.112544170085228e-06,
+            "max_abs": 2.7418136596679688e-05,
+            "rms": 4.14420040557626e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 4.19108977161471e-06,
+          "fp64_sample_error": {
+            "relative_l2": 3.1900581132430258e-06,
+            "max_abs": 1.2670244950108156e-05,
+            "rms": 4.128540370057177e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.3366361914288078e-06,
+            "max_abs": 2.0265579223632812e-05,
+            "rms": 3.11111674533617e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 64,
+          "exact_residual_fraction": 0.0125,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.28866560459136964,
+              "saved_ms": 0.07004158496856688
+            },
+            {
+              "candidate": 0.2884608030319214,
+              "baseline": 0.35880959033966064,
+              "saved_ms": 0.07034878730773925
+            },
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.2884608030319214,
+              "saved_ms": 0.07034878730773925
+            },
+            {
+              "candidate": 0.28825600147247316,
+              "baseline": 0.35891199111938477,
+              "saved_ms": 0.07065598964691161
+            },
+            {
+              "baseline": 0.35891199111938477,
+              "candidate": 0.2910207986831665,
+              "saved_ms": 0.06789119243621827
+            },
+            {
+              "candidate": 0.29061119556427,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.0678912162780762
+            }
+          ],
+          "median_saved_ms": 0.07019518613815307,
+          "median_speedup": 1.2432577977999513,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.20479999482631683,
+          "error": {
+            "relative_l2": 2.8249741128487755e-06,
+            "max_abs": 2.086162567138672e-05,
+            "rms": 3.7613149322439208e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.8038721580978066e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.659144435912076e-06,
+            "max_abs": 8.669195153299114e-06,
+            "rms": 3.441437354354419e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.1217915964504256e-06,
+            "max_abs": 1.5854835510253906e-05,
+            "rms": 2.825061680566547e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 256,
+          "exact_residual_fraction": 0.05,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.2911231994628906,
+              "saved_ms": 0.06748158931732179
+            },
+            {
+              "candidate": 0.291430401802063,
+              "baseline": 0.35880959033966064,
+              "saved_ms": 0.06737918853759767
+            },
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.29122560024261473,
+              "saved_ms": 0.06758399009704591
+            },
+            {
+              "candidate": 0.29122560024261473,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.06727681159973148
+            },
+            {
+              "baseline": 0.36198399066925047,
+              "candidate": 0.29091839790344237,
+              "saved_ms": 0.0710655927658081
+            },
+            {
+              "candidate": 0.29132800102233886,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.06717441082000736
+            }
+          ],
+          "median_saved_ms": 0.06743038892745973,
+          "median_speedup": 1.2314995033325844,
+          "all_pairs_faster": true
+        }
+      ],
+      "no_operand_tensors_serialized": true,
+      "no_production_install": true
+    },
+    {
+      "label": "output_blocks.4.1.transformer_blocks.0.ff.net.2 first-rank half-row view",
+      "shape": [
+        1280,
+        1280,
+        5120
+      ],
+      "weight_low_nonzero": 0,
+      "original_launch_options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "baseline_fp64_sample_error": {
+        "relative_l2": 1.2116018262934673e-07,
+        "max_abs": 5.980105759473275e-07,
+        "rms": 1.7519085395475925e-07,
+        "finite": true
+      },
+      "input_range": {
+        "nonzero": 6552472,
+        "half_zero_from_nonzero": 107,
+        "min_abs_nonzero": 2.9103830456733704e-11,
+        "max_abs": 47.02864074707031
+      },
+      "power2_half_reconstruction": [
+        {
+          "scale": 1.0,
+          "relative_l2": 0.0002059661699096218,
+          "max_abs": 0.01361846923828125,
+          "rms": 4.059830241193174e-05,
+          "finite": true,
+          "changed_vs_scale1": 840
+        },
+        {
+          "scale": 16.0,
+          "relative_l2": 0.00020596616983492518,
+          "max_abs": 0.01361846923828125,
+          "rms": 4.059830239720818e-05,
+          "finite": true,
+          "changed_vs_scale1": 22411
+        },
+        {
+          "scale": 256.0,
+          "relative_l2": 0.0002059661698348787,
+          "max_abs": 0.01361846923828125,
+          "rms": 4.059830239719901e-05,
+          "finite": true,
+          "changed_vs_scale1": 22618
+        },
+        {
+          "scale": 4096.0,
+          "relative_l2": Infinity,
+          "max_abs": Infinity,
+          "rms": Infinity,
+          "finite": false,
+          "changed_vs_scale1": 22634
+        }
+      ],
+      "records": [
+        {
+          "name": "half_same_correction",
+          "mode": 1,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.027648000046610832,
+          "error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "relative_l2_without_residual": 0.0,
+          "fp64_sample_error": {
+            "relative_l2": 1.2116018262934673e-07,
+            "max_abs": 5.980105759473275e-07,
+            "rms": 1.7519085395475925e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": false,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.42905597686767577,
+              "saved_ms": -0.07045118808746337
+            },
+            {
+              "candidate": 0.42905597686767577,
+              "baseline": 0.35891199111938477,
+              "saved_ms": -0.070143985748291
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.42905597686767577,
+              "saved_ms": -0.07055356502532956
+            },
+            {
+              "candidate": 0.4289535999298096,
+              "baseline": 0.3586047887802124,
+              "saved_ms": -0.07034881114959718
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.42905597686767577,
+              "saved_ms": -0.07034878730773925
+            },
+            {
+              "candidate": 0.429260778427124,
+              "baseline": 0.3587071895599365,
+              "saved_ms": -0.07055358886718749
+            }
+          ],
+          "median_saved_ms": -0.07039999961853027,
+          "median_speedup": 0.8358992803417802,
+          "all_pairs_faster": false
+        },
+        {
+          "name": "exact_Half_residual_separate_FP32_sums",
+          "mode": 6,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.1884160041809082,
+          "error": {
+            "relative_l2": 1.5527655929011255e-07,
+            "max_abs": 1.1444091796875e-05,
+            "rms": 2.179344104876199e-07,
+            "finite": true
+          },
+          "relative_l2_without_residual": 2.2795725823934763e-07,
+          "fp64_sample_error": {
+            "relative_l2": 1.3428466480748642e-07,
+            "max_abs": 7.771840282444487e-07,
+            "rms": 1.941681218211861e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.5525084440919035e-07,
+            "max_abs": 9.5367431640625e-06,
+            "rms": 2.1789836593837808e-07,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3584000110626221,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0027648210525512695
+            },
+            {
+              "candidate": 0.35583999156951907,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.0026624202728271484
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.35573759078979494,
+              "saved_ms": 0.0028671979904174583
+            },
+            {
+              "candidate": 0.35583999156951907,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.0026624202728271484
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0029695987701415794
+            },
+            {
+              "candidate": 0.3556351900100708,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.0030719995498657005
+            }
+          ],
+          "median_saved_ms": 0.002816009521484364,
+          "median_speedup": 1.0079170929429837,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.19251200556755066,
+          "error": {
+            "relative_l2": 3.387838832723259e-06,
+            "max_abs": 6.4849853515625e-05,
+            "rms": 4.754913827380407e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 4.97359327895387e-06,
+          "fp64_sample_error": {
+            "relative_l2": 3.3392861714314573e-06,
+            "max_abs": 1.5427746282270505e-05,
+            "rms": 4.828421212949684e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.543297995463303e-06,
+            "max_abs": 4.76837158203125e-05,
+            "rms": 3.569581082890398e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 0,
+          "exact_residual_fraction": 0.0,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.28098559379577637,
+              "saved_ms": 0.07761919498443604
+            },
+            {
+              "candidate": 0.2811903953552246,
+              "baseline": 0.3584000110626221,
+              "saved_ms": 0.07720961570739748
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.28129279613494873,
+              "saved_ms": 0.07720961570739748
+            },
+            {
+              "candidate": 0.28129279613494873,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.07741439342498779
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.281497597694397,
+              "saved_ms": 0.07710719108581543
+            },
+            {
+              "candidate": 0.2811903953552246,
+              "baseline": 0.3617791891098022,
+              "saved_ms": 0.08058879375457761
+            }
+          ],
+          "median_saved_ms": 0.07731200456619264,
+          "median_speedup": 1.274895284545927,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.2017280012369156,
+          "error": {
+            "relative_l2": 2.534051121869423e-06,
+            "max_abs": 3.719329833984375e-05,
+            "rms": 3.556602103465531e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.7201709557488857e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.3247820135109227e-06,
+            "max_abs": 1.3825600956529627e-05,
+            "rms": 3.361504888545736e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.9030559272281517e-06,
+            "max_abs": 2.765655517578125e-05,
+            "rms": 2.6709856452659135e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 64,
+          "exact_residual_fraction": 0.0125,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.288972806930542,
+              "saved_ms": 0.06973438262939452
+            },
+            {
+              "candidate": 0.2885632038116455,
+              "baseline": 0.35880959033966064,
+              "saved_ms": 0.07024638652801513
+            },
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.2890752077102661,
+              "saved_ms": 0.06973438262939452
+            },
+            {
+              "candidate": 0.288972806930542,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06973438262939452
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.28866560459136964,
+              "saved_ms": 0.06993918418884276
+            },
+            {
+              "candidate": 0.2910207986831665,
+              "baseline": 0.35891199111938477,
+              "saved_ms": 0.06789119243621827
+            }
+          ],
+          "median_saved_ms": 0.06973438262939452,
+          "median_speedup": 1.2413181481334192,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.20582400262355804,
+          "error": {
+            "relative_l2": 2.133992528043242e-06,
+            "max_abs": 2.86102294921875e-05,
+            "rms": 2.9951101808945333e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.1328559057462806e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.0470257971905023e-06,
+            "max_abs": 7.839675337129037e-06,
+            "rms": 2.9598849200674854e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.6038827544996454e-06,
+            "max_abs": 2.288818359375e-05,
+            "rms": 2.251088763427874e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 256,
+          "exact_residual_fraction": 0.05,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3584000110626221,
+              "candidate": 0.2919424057006836,
+              "saved_ms": 0.06645760536193851
+            },
+            {
+              "candidate": 0.2919424057006836,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06676478385925294
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.2921472072601318,
+              "saved_ms": 0.06645758152008058
+            },
+            {
+              "candidate": 0.2920448064804077,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06666238307952882
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.294707202911377,
+              "saved_ms": 0.06399998664855955
+            },
+            {
+              "candidate": 0.2920448064804077,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06666238307952882
+            }
+          ],
+          "median_saved_ms": 0.06655999422073366,
+          "median_speedup": 1.2279501226234215,
+          "all_pairs_faster": true
+        }
+      ],
+      "no_operand_tensors_serialized": true,
+      "no_production_install": true
+    },
+    {
+      "label": "output_blocks.4.2.transformer_blocks.0.ff.net.2 first-rank half-row view",
+      "shape": [
+        1280,
+        1280,
+        5120
+      ],
+      "weight_low_nonzero": 0,
+      "original_launch_options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "baseline_fp64_sample_error": {
+        "relative_l2": 2.6111187998512084e-07,
+        "max_abs": 1.5572337193070496e-06,
+        "rms": 3.682243340645066e-07,
+        "finite": true
+      },
+      "input_range": {
+        "nonzero": 6553536,
+        "half_zero_from_nonzero": 7,
+        "min_abs_nonzero": 5.908077582716942e-09,
+        "max_abs": 23.75349235534668
+      },
+      "power2_half_reconstruction": [
+        {
+          "scale": 1.0,
+          "relative_l2": 0.00020773992175104647,
+          "max_abs": 0.0076904296875,
+          "rms": 0.00014255734756374853,
+          "finite": true,
+          "changed_vs_scale1": 790
+        },
+        {
+          "scale": 16.0,
+          "relative_l2": 0.00020773992174951238,
+          "max_abs": 0.0076904296875,
+          "rms": 0.0001425573475626958,
+          "finite": true,
+          "changed_vs_scale1": 5904
+        },
+        {
+          "scale": 256.0,
+          "relative_l2": 0.00020773992174951192,
+          "max_abs": 0.0076904296875,
+          "rms": 0.00014255734756269545,
+          "finite": true,
+          "changed_vs_scale1": 5931
+        },
+        {
+          "scale": 4096.0,
+          "relative_l2": Infinity,
+          "max_abs": Infinity,
+          "rms": Infinity,
+          "finite": false,
+          "changed_vs_scale1": 5946
+        }
+      ],
+      "records": [
+        {
+          "name": "half_same_correction",
+          "mode": 1,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.028672000393271446,
+          "error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "relative_l2_without_residual": 0.0,
+          "fp64_sample_error": {
+            "relative_l2": 2.6111187998512084e-07,
+            "max_abs": 1.5572337193070496e-06,
+            "rms": 3.682243340645066e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": false,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.42905597686767577,
+              "saved_ms": -0.07055356502532956
+            },
+            {
+              "candidate": 0.42905597686767577,
+              "baseline": 0.3585024118423462,
+              "saved_ms": -0.07055356502532956
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.42905597686767577,
+              "saved_ms": -0.07055356502532956
+            },
+            {
+              "candidate": 0.42905597686767577,
+              "baseline": 0.3585024118423462,
+              "saved_ms": -0.07055356502532956
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.42905597686767577,
+              "saved_ms": -0.07055356502532956
+            },
+            {
+              "candidate": 0.4289535999298096,
+              "baseline": 0.3585024118423462,
+              "saved_ms": -0.07045118808746337
+            }
+          ],
+          "median_saved_ms": -0.07055356502532956,
+          "median_speedup": 0.8355609318382976,
+          "all_pairs_faster": false
+        },
+        {
+          "name": "exact_Half_residual_separate_FP32_sums",
+          "mode": 6,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.19763199985027313,
+          "error": {
+            "relative_l2": 1.7872622240453414e-07,
+            "max_abs": 4.76837158203125e-06,
+            "rms": 2.7717755561721345e-07,
+            "finite": true
+          },
+          "relative_l2_without_residual": 2.232362002266614e-07,
+          "fp64_sample_error": {
+            "relative_l2": 2.3340616504398344e-07,
+            "max_abs": 1.186191135982284e-06,
+            "rms": 3.291532721328828e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.787374414979851e-07,
+            "max_abs": 4.76837158203125e-06,
+            "rms": 2.771949446058427e-07,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0028672218322753906
+            },
+            {
+              "candidate": 0.3555327892303467,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.0029696226119995117
+            },
+            {
+              "baseline": 0.3584000110626221,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0027648210525512695
+            },
+            {
+              "candidate": 0.3556351900100708,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.0029695987701415794
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0030719995498657005
+            },
+            {
+              "candidate": 0.35573759078979494,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.0028671979904174583
+            }
+          ],
+          "median_saved_ms": 0.002918410301208485,
+          "median_speedup": 1.008206191015928,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.20684799551963806,
+          "error": {
+            "relative_l2": 3.4310653231059703e-06,
+            "max_abs": 3.62396240234375e-05,
+            "rms": 5.321067533497934e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 4.285537819548341e-06,
+          "fp64_sample_error": {
+            "relative_l2": 3.487906368694848e-06,
+            "max_abs": 1.421079217456267e-05,
+            "rms": 4.918703813726124e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.575707226141963e-06,
+            "max_abs": 2.7418136596679688e-05,
+            "rms": 3.994535313292704e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 0,
+          "exact_residual_fraction": 0.0,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.2794496059417725,
+              "saved_ms": 0.07905280590057373
+            },
+            {
+              "candidate": 0.2795520067214966,
+              "baseline": 0.3584000110626221,
+              "saved_ms": 0.07884800434112549
+            },
+            {
+              "baseline": 0.3584000110626221,
+              "candidate": 0.2794496059417725,
+              "saved_ms": 0.07895040512084961
+            },
+            {
+              "candidate": 0.2796544075012207,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.07884800434112549
+            },
+            {
+              "baseline": 0.3584000110626221,
+              "candidate": 0.2796544075012207,
+              "saved_ms": 0.07874560356140137
+            },
+            {
+              "candidate": 0.2799616098403931,
+              "baseline": 0.35829761028289797,
+              "saved_ms": 0.07833600044250488
+            }
+          ],
+          "median_saved_ms": 0.07884800434112549,
+          "median_speedup": 1.2819996515764953,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.1740799993276596,
+          "error": {
+            "relative_l2": 3.177309723183923e-06,
+            "max_abs": 2.9802322387695312e-05,
+            "rms": 4.927530670443929e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.968586925881393e-06,
+          "fp64_sample_error": {
+            "relative_l2": 3.3069961006040388e-06,
+            "max_abs": 1.3376327147707201e-05,
+            "rms": 4.663581132226662e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.385281524235547e-06,
+            "max_abs": 2.2411346435546875e-05,
+            "rms": 3.699213631114139e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 64,
+          "exact_residual_fraction": 0.0125,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.2871295928955078,
+              "saved_ms": 0.07147519588470458
+            },
+            {
+              "candidate": 0.2869247913360596,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.07167999744415282
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.28682239055633546,
+              "saved_ms": 0.07188479900360106
+            },
+            {
+              "candidate": 0.28723199367523194,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.07137279510498046
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.2870271921157837,
+              "saved_ms": 0.07147521972656251
+            },
+            {
+              "candidate": 0.28733439445495607,
+              "baseline": 0.3620863914489746,
+              "saved_ms": 0.07475199699401852
+            }
+          ],
+          "median_saved_ms": 0.07157760858535767,
+          "median_speedup": 1.2494202692735599,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.20479999482631683,
+          "error": {
+            "relative_l2": 2.839461518298466e-06,
+            "max_abs": 2.396106719970703e-05,
+            "rms": 4.403578793993153e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.546601005195842e-06,
+          "fp64_sample_error": {
+            "relative_l2": 3.19647347034503e-06,
+            "max_abs": 1.543783388013864e-05,
+            "rms": 4.507720273163106e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.1319309764537666e-06,
+            "max_abs": 1.9073486328125e-05,
+            "rms": 3.306304957533164e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 256,
+          "exact_residual_fraction": 0.05,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.28989439010620116,
+              "saved_ms": 0.06871039867401124
+            },
+            {
+              "candidate": 0.29030399322509765,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.06830079555511476
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.2899967908859253,
+              "saved_ms": 0.06860799789428712
+            },
+            {
+              "candidate": 0.2900991916656494,
+              "baseline": 0.3584000110626221,
+              "saved_ms": 0.06830081939697269
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.2916352033615112,
+              "saved_ms": 0.066867208480835
+            },
+            {
+              "candidate": 0.29184000492095946,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06686718463897706
+            }
+          ],
+          "median_saved_ms": 0.06830080747604372,
+          "median_speedup": 1.235356447939873,
+          "all_pairs_faster": true
+        }
+      ],
+      "no_operand_tensors_serialized": true,
+      "no_production_install": true
+    },
+    {
+      "label": "output_blocks.5.1.transformer_blocks.0.ff.net.2 first-rank half-row view",
+      "shape": [
+        1280,
+        1280,
+        5120
+      ],
+      "weight_low_nonzero": 0,
+      "original_launch_options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "baseline_fp64_sample_error": {
+        "relative_l2": 1.0299558726758648e-07,
+        "max_abs": 6.687242193326171e-07,
+        "rms": 1.4203048029727376e-07,
+        "finite": true
+      },
+      "input_range": {
+        "nonzero": 6553599,
+        "half_zero_from_nonzero": 12,
+        "min_abs_nonzero": 2.270098775625229e-09,
+        "max_abs": 14.449703216552734
+      },
+      "power2_half_reconstruction": [
+        {
+          "scale": 1.0,
+          "relative_l2": 0.00020717153984659177,
+          "max_abs": 0.0038299560546875,
+          "rms": 2.958220479161168e-05,
+          "finite": true,
+          "changed_vs_scale1": 836
+        },
+        {
+          "scale": 16.0,
+          "relative_l2": 0.00020717153978168427,
+          "max_abs": 0.0038299560546875,
+          "rms": 2.958220478234348e-05,
+          "finite": true,
+          "changed_vs_scale1": 10237
+        },
+        {
+          "scale": 256.0,
+          "relative_l2": 0.00020717153978166487,
+          "max_abs": 0.0038299560546875,
+          "rms": 2.958220478234071e-05,
+          "finite": true,
+          "changed_vs_scale1": 10285
+        },
+        {
+          "scale": 4096.0,
+          "relative_l2": 0.00020717153978166487,
+          "max_abs": 0.0038299560546875,
+          "rms": 2.958220478234071e-05,
+          "finite": true,
+          "changed_vs_scale1": 10285
+        }
+      ],
+      "records": [
+        {
+          "name": "half_same_correction",
+          "mode": 1,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.028672000393271446,
+          "error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "relative_l2_without_residual": 0.0,
+          "fp64_sample_error": {
+            "relative_l2": 1.0299558726758648e-07,
+            "max_abs": 6.687242193326171e-07,
+            "rms": 1.4203048029727376e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": false,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.4289535999298096,
+              "saved_ms": -0.07034881114959718
+            },
+            {
+              "candidate": 0.42905597686767577,
+              "baseline": 0.3587071895599365,
+              "saved_ms": -0.07034878730773925
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.4289535999298096,
+              "saved_ms": -0.07024641036987306
+            },
+            {
+              "candidate": 0.4289535999298096,
+              "baseline": 0.3585024118423462,
+              "saved_ms": -0.07045118808746337
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.4328447818756104,
+              "saved_ms": -0.07413759231567385
+            },
+            {
+              "candidate": 0.4289535999298096,
+              "baseline": 0.3585024118423462,
+              "saved_ms": -0.07045118808746337
+            }
+          ],
+          "median_saved_ms": -0.07039999961853027,
+          "median_speedup": 0.8358796857514427,
+          "all_pairs_faster": false
+        },
+        {
+          "name": "exact_Half_residual_separate_FP32_sums",
+          "mode": 6,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.19148799777030945,
+          "error": {
+            "relative_l2": 1.4914631802643655e-07,
+            "max_abs": 1.9073486328125e-05,
+            "rms": 1.87637961758983e-07,
+            "finite": true
+          },
+          "relative_l2_without_residual": 2.0946636310686316e-07,
+          "fp64_sample_error": {
+            "relative_l2": 1.0054239603386691e-07,
+            "max_abs": 4.442454186737166e-07,
+            "rms": 1.3864753993613942e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.4901899404594423e-07,
+            "max_abs": 1.9073486328125e-05,
+            "rms": 1.8747779589143566e-07,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0028672218322753906
+            },
+            {
+              "candidate": 0.3555327892303467,
+              "baseline": 0.3584000110626221,
+              "saved_ms": 0.0028672218322753906
+            },
+            {
+              "baseline": 0.35829761028289797,
+              "candidate": 0.3555327892303467,
+              "saved_ms": 0.0027648210525512695
+            },
+            {
+              "candidate": 0.3556351900100708,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.0028672218322753906
+            },
+            {
+              "baseline": 0.35829761028289797,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0026624202728271484
+            },
+            {
+              "candidate": 0.3555327892303467,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.0029696226119995117
+            }
+          ],
+          "median_saved_ms": 0.0028672218322753906,
+          "median_speedup": 1.0080622556845238,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.17817600071430206,
+          "error": {
+            "relative_l2": 3.065884229555683e-06,
+            "max_abs": 8.7738037109375e-05,
+            "rms": 3.857126849895611e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 4.305836226931761e-06,
+          "fp64_sample_error": {
+            "relative_l2": 4.27309664719187e-06,
+            "max_abs": 2.0839858410615086e-05,
+            "rms": 5.8925822480195784e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.3013496790654848e-06,
+            "max_abs": 6.103515625e-05,
+            "rms": 2.895281693242664e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 0,
+          "exact_residual_fraction": 0.0,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3584000110626221,
+              "candidate": 0.28334081172943115,
+              "saved_ms": 0.07505919933319094
+            },
+            {
+              "candidate": 0.2836479902267456,
+              "baseline": 0.3584000110626221,
+              "saved_ms": 0.07475202083587651
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.28334081172943115,
+              "saved_ms": 0.07516160011291506
+            },
+            {
+              "candidate": 0.28323841094970703,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.07526400089263918
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.28344318866729734,
+              "saved_ms": 0.07505922317504887
+            },
+            {
+              "candidate": 0.28354558944702146,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.07495682239532475
+            }
+          ],
+          "median_saved_ms": 0.0750592112541199,
+          "median_speedup": 1.2648600300937907,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.17100800573825836,
+          "error": {
+            "relative_l2": 2.610308484763938e-06,
+            "max_abs": 6.29425048828125e-05,
+            "rms": 3.2839762330335746e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.6660095410037023e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.365266353685327e-06,
+            "max_abs": 8.536502756673059e-06,
+            "rms": 3.261692322527601e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.959808427581161e-06,
+            "max_abs": 4.9591064453125e-05,
+            "rms": 2.465595521729911e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 64,
+          "exact_residual_fraction": 0.0125,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.2916352033615112,
+              "saved_ms": 0.0670719861984253
+            },
+            {
+              "candidate": 0.29184000492095946,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06686718463897706
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.291430401802063,
+              "saved_ms": 0.06727678775787355
+            },
+            {
+              "candidate": 0.2919424057006836,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.06656000614166263
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.29184000492095946,
+              "saved_ms": 0.06666240692138675
+            },
+            {
+              "candidate": 0.2916352033615112,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.06696958541870118
+            }
+          ],
+          "median_saved_ms": 0.06691838502883912,
+          "median_speedup": 1.2293787646672079,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.20684799551963806,
+          "error": {
+            "relative_l2": 2.117178046673828e-06,
+            "max_abs": 4.1961669921875e-05,
+            "rms": 2.663578817201013e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 2.9734397158088194e-06,
+          "fp64_sample_error": {
+            "relative_l2": 2.0829141068476802e-06,
+            "max_abs": 7.900404849880971e-06,
+            "rms": 2.872329765400011e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 1.590620396754815e-06,
+            "max_abs": 2.86102294921875e-05,
+            "rms": 2.0011274937986317e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 256,
+          "exact_residual_fraction": 0.05,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.2944000005722046,
+              "saved_ms": 0.0641024112701416
+            },
+            {
+              "candidate": 0.2942975997924805,
+              "baseline": 0.3584000110626221,
+              "saved_ms": 0.0641024112701416
+            },
+            {
+              "baseline": 0.3584000110626221,
+              "candidate": 0.29450240135192873,
+              "saved_ms": 0.06389760971069336
+            },
+            {
+              "candidate": 0.2942975997924805,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.06430718898773191
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.29460480213165285,
+              "saved_ms": 0.06389760971069336
+            },
+            {
+              "candidate": 0.29716479778289795,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.061542391777038574
+            }
+          ],
+          "median_saved_ms": 0.06400001049041748,
+          "median_speedup": 1.217353605698547,
+          "all_pairs_faster": true
+        }
+      ],
+      "no_operand_tensors_serialized": true,
+      "no_production_install": true
+    },
+    {
+      "label": "output_blocks.5.2.transformer_blocks.0.ff.net.2 first-rank half-row view",
+      "shape": [
+        1280,
+        1280,
+        5120
+      ],
+      "weight_low_nonzero": 0,
+      "original_launch_options": {
+        "num_warps": 4,
+        "num_stages": 3,
+        "enable_fp_fusion": false
+      },
+      "baseline_fp64_sample_error": {
+        "relative_l2": 1.852236327981098e-07,
+        "max_abs": 8.429674158705325e-07,
+        "rms": 2.8641354871797275e-07,
+        "finite": true
+      },
+      "input_range": {
+        "nonzero": 6553594,
+        "half_zero_from_nonzero": 13,
+        "min_abs_nonzero": 4.94765117764473e-10,
+        "max_abs": 49.50729751586914
+      },
+      "power2_half_reconstruction": [
+        {
+          "scale": 1.0,
+          "relative_l2": 0.0002072095174969752,
+          "max_abs": 0.0156097412109375,
+          "rms": 0.000152763989502284,
+          "finite": true,
+          "changed_vs_scale1": 842
+        },
+        {
+          "scale": 16.0,
+          "relative_l2": 0.00020720951749574604,
+          "max_abs": 0.0156097412109375,
+          "rms": 0.00015276398950137782,
+          "finite": true,
+          "changed_vs_scale1": 5653
+        },
+        {
+          "scale": 256.0,
+          "relative_l2": 0.00020720951749574567,
+          "max_abs": 0.0156097412109375,
+          "rms": 0.00015276398950137755,
+          "finite": true,
+          "changed_vs_scale1": 5675
+        },
+        {
+          "scale": 4096.0,
+          "relative_l2": Infinity,
+          "max_abs": Infinity,
+          "rms": Infinity,
+          "finite": false,
+          "changed_vs_scale1": 5751
+        }
+      ],
+      "records": [
+        {
+          "name": "half_same_correction",
+          "mode": 1,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.027648000046610832,
+          "error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "relative_l2_without_residual": 0.0,
+          "fp64_sample_error": {
+            "relative_l2": 1.852236327981098e-07,
+            "max_abs": 8.429674158705325e-07,
+            "rms": 2.8641354871797275e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "rms": 0.0,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": false,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.42905597686767577,
+              "saved_ms": -0.07034878730773925
+            },
+            {
+              "candidate": 0.42905597686767577,
+              "baseline": 0.3586047887802124,
+              "saved_ms": -0.07045118808746337
+            },
+            {
+              "baseline": 0.35880959033966064,
+              "candidate": 0.42905597686767577,
+              "saved_ms": -0.07024638652801513
+            },
+            {
+              "candidate": 0.42905597686767577,
+              "baseline": 0.3584000110626221,
+              "saved_ms": -0.07065596580505368
+            },
+            {
+              "baseline": 0.3590143918991089,
+              "candidate": 0.4302847862243652,
+              "saved_ms": -0.07127039432525634
+            },
+            {
+              "candidate": 0.42885122299194334,
+              "baseline": 0.3585024118423462,
+              "saved_ms": -0.07034881114959712
+            }
+          ],
+          "median_saved_ms": -0.07039999961853025,
+          "median_speedup": 0.8358797048837524,
+          "all_pairs_faster": false
+        },
+        {
+          "name": "exact_Half_residual_separate_FP32_sums",
+          "mode": 6,
+          "bn": 64,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.19865599274635315,
+          "error": {
+            "relative_l2": 2.0047957959825727e-07,
+            "max_abs": 4.76837158203125e-06,
+            "rms": 3.0328895450779676e-07,
+            "finite": true
+          },
+          "relative_l2_without_residual": 2.2901804785526826e-07,
+          "fp64_sample_error": {
+            "relative_l2": 1.809155195734561e-07,
+            "max_abs": 1.09531287595388e-06,
+            "rms": 2.797518610147798e-07,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.0070788237869445e-07,
+            "max_abs": 7.62939453125e-06,
+            "rms": 3.036342850746673e-07,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": null,
+          "candidate_bm": null,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "exact_residual_fraction": null,
+          "dense_outlier_gather_fused_into_quantization_pack": false,
+          "outlier_selection": null,
+          "residual_only_balance_main_Half_unchanged": false,
+          "residual_calibration_scope": null,
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0028672218322753906
+            },
+            {
+              "candidate": 0.3555327892303467,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.0029696226119995117
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.3556351900100708,
+              "saved_ms": 0.0028672218322753906
+            },
+            {
+              "candidate": 0.3556351900100708,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.0029695987701415794
+            },
+            {
+              "baseline": 0.3584000110626221,
+              "candidate": 0.3555327892303467,
+              "saved_ms": 0.0028672218322753906
+            },
+            {
+              "candidate": 0.3556351900100708,
+              "baseline": 0.3584000110626221,
+              "saved_ms": 0.0027648210525512695
+            }
+          ],
+          "median_saved_ms": 0.0028672218322753906,
+          "median_speedup": 1.0080634167325249,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.17817600071430206,
+          "error": {
+            "relative_l2": 4.2569458065025245e-06,
+            "max_abs": 5.984306335449219e-05,
+            "rms": 6.439980798232496e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 4.862926290969504e-06,
+          "fp64_sample_error": {
+            "relative_l2": 4.361782239986297e-06,
+            "max_abs": 1.6894539667244857e-05,
+            "rms": 6.744676752189542e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 3.1963485028402467e-06,
+            "max_abs": 4.315376281738281e-05,
+            "rms": 4.835490171124461e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 0,
+          "exact_residual_fraction": 0.0,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.2811903953552246,
+              "saved_ms": 0.07741439342498779
+            },
+            {
+              "candidate": 0.28098559379577637,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.07761919498443604
+            },
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.280678391456604,
+              "saved_ms": 0.0779263973236084
+            },
+            {
+              "candidate": 0.28098559379577637,
+              "baseline": 0.35829761028289797,
+              "saved_ms": 0.0773120164871216
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.2810879945755005,
+              "saved_ms": 0.07761919498443604
+            },
+            {
+              "candidate": 0.28088319301605225,
+              "baseline": 0.3585024118423462,
+              "saved_ms": 0.07761921882629397
+            }
+          ],
+          "median_saved_ms": 0.07761919498443604,
+          "median_speedup": 1.2761887381529928,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.17919999361038208,
+          "error": {
+            "relative_l2": 3.871844838754119e-06,
+            "max_abs": 3.6835670471191406e-05,
+            "rms": 5.857393433861497e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 4.423005816087976e-06,
+          "fp64_sample_error": {
+            "relative_l2": 4.1195814210335185e-06,
+            "max_abs": 1.5945930504468464e-05,
+            "rms": 6.370158689830426e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.9072269298649922e-06,
+            "max_abs": 2.7179718017578125e-05,
+            "rms": 4.398102156913997e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 64,
+          "exact_residual_fraction": 0.0125,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.28958721160888673,
+              "saved_ms": 0.06901757717132567
+            },
+            {
+              "candidate": 0.28917760848999025,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.06942718029022216
+            },
+            {
+              "baseline": 0.3587071895599365,
+              "candidate": 0.28917760848999025,
+              "saved_ms": 0.06952958106994628
+            },
+            {
+              "candidate": 0.28928000926971437,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06942718029022216
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.288972806930542,
+              "saved_ms": 0.06952960491180421
+            },
+            {
+              "candidate": 0.2893824100494385,
+              "baseline": 0.3584000110626221,
+              "saved_ms": 0.0690176010131836
+            }
+          ],
+          "median_saved_ms": 0.06942718029022216,
+          "median_speedup": 1.240042417402246,
+          "all_pairs_faster": true
+        },
+        {
+          "name": "half_primary_dense_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "channel_alpha": null,
+          "channel_calibration_scope": null,
+          "static_weight_pack_ms_includes_first_JIT": 0.18943999707698822,
+          "error": {
+            "relative_l2": 3.404095241581926e-06,
+            "max_abs": 2.8252601623535156e-05,
+            "rms": 5.149773802066187e-06,
+            "finite": true
+          },
+          "relative_l2_without_residual": 3.888671596891544e-06,
+          "fp64_sample_error": {
+            "relative_l2": 3.35897757143459e-06,
+            "max_abs": 1.6710400434938322e-05,
+            "rms": 5.19402773698582e-06,
+            "finite": true
+          },
+          "dynamic_input_error": {
+            "relative_l2": 2.557303388265208e-06,
+            "max_abs": 2.09808349609375e-05,
+            "rms": 3.868731894394977e-06,
+            "finite": true
+          },
+          "numerical_eligible_for_model_only": true,
+          "nonzero_weight_low_fallback_bitwise": true,
+          "residual_scale_group_k": 5120,
+          "candidate_bm": 64,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 256,
+          "exact_residual_fraction": 0.05,
+          "dense_outlier_gather_fused_into_quantization_pack": true,
+          "outlier_selection": "fixed first-sample top maxabs(XL)*maxabs(WH) K channels",
+          "residual_only_balance_main_Half_unchanged": true,
+          "residual_calibration_scope": "this first-world sample only; no full-step calibration",
+          "deployment": "logical half-row JIT sizes of current two-GPU spatial path",
+          "dynamic_pack_cost_included": true,
+          "pairs": [
+            {
+              "baseline": 0.3586047887802124,
+              "candidate": 0.29122560024261473,
+              "saved_ms": 0.06737918853759767
+            },
+            {
+              "candidate": 0.29184000492095946,
+              "baseline": 0.3584000110626221,
+              "saved_ms": 0.06656000614166263
+            },
+            {
+              "baseline": 0.3585024118423462,
+              "candidate": 0.29184000492095946,
+              "saved_ms": 0.06666240692138675
+            },
+            {
+              "candidate": 0.29184000492095946,
+              "baseline": 0.3586047887802124,
+              "saved_ms": 0.06676478385925294
+            },
+            {
+              "baseline": 0.3584000110626221,
+              "candidate": 0.2919424057006836,
+              "saved_ms": 0.06645760536193851
+            },
+            {
+              "candidate": 0.294707202911377,
+              "baseline": 0.3587071895599365,
+              "saved_ms": 0.06399998664855955
+            }
+          ],
+          "median_saved_ms": 0.06661120653152469,
+          "median_speedup": 1.2282456325669449,
+          "all_pairs_faster": true
+        }
+      ],
+      "no_operand_tensors_serialized": true,
+      "no_production_install": true
+    }
+  ],
+  "no_official_score": true,
+  "only_aggregate_statistics_exported": true,
+  "full_video_PSNR_required": true
+}

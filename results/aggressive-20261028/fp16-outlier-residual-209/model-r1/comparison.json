@@ -1,0 +1,2885 @@
+{
+  "stages": {
+    "world": {
+      "stage": "world",
+      "cases": [
+        {
+          "case": "initial",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 2.126570300619827e-05,
+              "max_abs": 0.00010585784912109375,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 3.44734085338826e-05,
+              "max_abs": 0.00014352798461914062,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            }
+          ],
+          "baseline_restored_bitwise": false,
+          "attention_launches": {
+            "captured": 10,
+            "captures": [
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              }
+            ],
+            "calibration_owners": 10,
+            "fallbacks": {
+              "disabled": 88,
+              "geometry_or_schedule": 48
+            },
+            "calibration": "frozen first eager activation per original Half weight owner",
+            "original_Half_main_unchanged": true,
+            "world_middle_FFN_only": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true,
+            "dynamic_weight_and_input_pack_cost_included": true,
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "changed_inputs",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 2.1249807172764733e-05,
+              "max_abs": 0.00013053417205810547,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 3.435450964859485e-05,
+              "max_abs": 9.655952453613281e-05,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            }
+          ],
+          "baseline_restored_bitwise": false,
+          "attention_launches": {
+            "captured": 10,
+            "captures": [
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              }
+            ],
+            "calibration_owners": 10,
+            "fallbacks": {
+              "disabled": 88,
+              "geometry_or_schedule": 48
+            },
+            "calibration": "frozen first eager activation per original Half weight owner",
+            "original_Half_main_unchanged": true,
+            "world_middle_FFN_only": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true,
+            "dynamic_weight_and_input_pack_cost_included": true,
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "changed_all_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            }
+          ],
+          "baseline_restored_bitwise": false,
+          "attention_launches": {
+            "captured": 10,
+            "captures": [
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              }
+            ],
+            "calibration_owners": 10,
+            "fallbacks": {
+              "disabled": 88,
+              "geometry_or_schedule": 60
+            },
+            "calibration": "frozen first eager activation per original Half weight owner",
+            "original_Half_main_unchanged": true,
+            "world_middle_FFN_only": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true,
+            "dynamic_weight_and_input_pack_cost_included": true,
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "restored_all_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 2.126570300619827e-05,
+              "max_abs": 0.00010585784912109375,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 3.44734085338826e-05,
+              "max_abs": 0.00014352798461914062,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            }
+          ],
+          "baseline_restored_bitwise": true,
+          "attention_launches": {
+            "captured": 10,
+            "captures": [
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              }
+            ],
+            "calibration_owners": 10,
+            "fallbacks": {
+              "disabled": 88,
+              "geometry_or_schedule": 84
+            },
+            "calibration": "frozen first eager activation per original Half weight owner",
+            "original_Half_main_unchanged": true,
+            "world_middle_FFN_only": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true,
+            "dynamic_weight_and_input_pack_cost_included": true,
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "zero_all_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            }
+          ],
+          "baseline_restored_bitwise": false,
+          "attention_launches": {
+            "captured": 10,
+            "captures": [
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              }
+            ],
+            "calibration_owners": 10,
+            "fallbacks": {
+              "disabled": 88,
+              "geometry_or_schedule": 96
+            },
+            "calibration": "frozen first eager activation per original Half weight owner",
+            "original_Half_main_unchanged": true,
+            "world_middle_FFN_only": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true,
+            "dynamic_weight_and_input_pack_cost_included": true,
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "zero_then_restore",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 2.126570300619827e-05,
+              "max_abs": 0.00010585784912109375,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 3.44734085338826e-05,
+              "max_abs": 0.00014352798461914062,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            }
+          ],
+          "baseline_restored_bitwise": true,
+          "attention_launches": {
+            "captured": 10,
+            "captures": [
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "candidate_bm": 64,
+                "bn": 128,
+                "group_k": 5120,
+                "stages": 3,
+                "residual_alpha": 0.5,
+                "dynamic_weight_and_input_pack": true,
+                "exact_Half_residual_K_channels": 256,
+                "dense_Half_outlier_pack_fused_into_INT8_pack": true
+              }
+            ],
+            "calibration_owners": 10,
+            "fallbacks": {
+              "disabled": 88,
+              "geometry_or_schedule": 120
+            },
+            "calibration": "frozen first eager activation per original Half weight owner",
+            "original_Half_main_unchanged": true,
+            "world_middle_FFN_only": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true,
+            "dynamic_weight_and_input_pack_cost_included": true,
+            "full_video_PSNR_unverified": true
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_samples_ms": [
+            292.6295166015625,
+            291.84307861328125,
+            291.47955322265625,
+            291.5133361816406,
+            291.4303894042969,
+            291.3761291503906,
+            292.19122314453125
+          ],
+          "baseline_ms": 291.5133361816406,
+          "candidate_samples_ms": [
+            291.1334533691406,
+            291.198974609375,
+            291.6259765625,
+            291.1877136230469,
+            291.3515625,
+            291.262451171875,
+            291.62188720703125
+          ],
+          "candidate_ms": 291.262451171875,
+          "saved_ms": 0.250885009765625
+        },
+        {
+          "candidate_samples_ms": [
+            291.97515869140625,
+            292.5946960449219,
+            291.2112731933594,
+            292.38067626953125,
+            291.1313781738281,
+            292.4933166503906,
+            292.01611328125
+          ],
+          "candidate_ms": 292.01611328125,
+          "baseline_samples_ms": [
+            293.3340148925781,
+            292.45953369140625,
+            292.92645263671875,
+            292.7175598144531,
+            292.18304443359375,
+            292.5516662597656,
+            292.843505859375
+          ],
+          "baseline_ms": 292.7175598144531,
+          "saved_ms": 0.701446533203125
+        },
+        {
+          "baseline_samples_ms": [
+            292.61517333984375,
+            292.44110107421875,
+            292.5475769042969,
+            292.5076599121094,
+            292.8066711425781,
+            292.178955078125,
+            292.6950378417969
+          ],
+          "baseline_ms": 292.5475769042969,
+          "candidate_samples_ms": [
+            292.4052429199219,
+            292.0867919921875,
+            292.6766052246094,
+            292.3786315917969,
+            292.3540344238281,
+            292.1103210449219,
+            292.5445251464844
+          ],
+          "candidate_ms": 292.3786315917969,
+          "saved_ms": 0.1689453125
+        },
+        {
+          "candidate_samples_ms": [
+            292.1195373535156,
+            292.8271484375,
+            292.23321533203125,
+            293.022705078125,
+            291.86968994140625,
+            292.8322448730469,
+            291.5051574707031
+          ],
+          "candidate_ms": 292.23321533203125,
+          "baseline_samples_ms": [
+            292.67047119140625,
+            292.3878479003906,
+            293.359619140625,
+            293.1415100097656,
+            293.6678466796875,
+            292.5608825683594,
+            293.0114440917969
+          ],
+          "baseline_ms": 293.0114440917969,
+          "saved_ms": 0.778228759765625
+        },
+        {
+          "baseline_samples_ms": [
+            292.411376953125,
+            292.87322998046875,
+            292.29876708984375,
+            293.676025390625,
+            292.642822265625,
+            293.22650146484375,
+            292.7298583984375
+          ],
+          "baseline_ms": 292.7298583984375,
+          "candidate_samples_ms": [
+            293.0851745605469,
+            291.86663818359375,
+            292.6510009765625,
+            291.90142822265625,
+            292.2711181640625,
+            291.6382751464844,
+            292.65509033203125
+          ],
+          "candidate_ms": 292.2711181640625,
+          "saved_ms": 0.458740234375
+        },
+        {
+          "candidate_samples_ms": [
+            292.11749267578125,
+            292.5926513671875,
+            292.8384094238281,
+            292.6868591308594,
+            291.9342041015625,
+            291.7539978027344,
+            292.5926513671875
+          ],
+          "candidate_ms": 292.5926513671875,
+          "baseline_samples_ms": [
+            293.01556396484375,
+            293.5818176269531,
+            292.6766052246094,
+            293.2285461425781,
+            292.35711669921875,
+            293.0380859375,
+            292.70733642578125
+          ],
+          "baseline_ms": 293.01556396484375,
+          "saved_ms": 0.42291259765625
+        }
+      ],
+      "median_saved_ms": 0.440826416015625,
+      "same_process": true,
+      "same_GPU": true,
+      "same_model_masters": true,
+      "current209_norm2_presplit_flags_preserved": true,
+      "original_graph_owners_and_all_version_checks_both_modes": true,
+      "balanced_INT8_residual": true,
+      "all_diffusion_all_masters_tested": true,
+      "attention_launches": {
+        "captured": 10,
+        "captures": [
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "candidate_bm": 64,
+            "bn": 128,
+            "group_k": 5120,
+            "stages": 3,
+            "residual_alpha": 0.5,
+            "dynamic_weight_and_input_pack": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "candidate_bm": 64,
+            "bn": 128,
+            "group_k": 5120,
+            "stages": 3,
+            "residual_alpha": 0.5,
+            "dynamic_weight_and_input_pack": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "candidate_bm": 64,
+            "bn": 128,
+            "group_k": 5120,
+            "stages": 3,
+            "residual_alpha": 0.5,
+            "dynamic_weight_and_input_pack": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "candidate_bm": 64,
+            "bn": 128,
+            "group_k": 5120,
+            "stages": 3,
+            "residual_alpha": 0.5,
+            "dynamic_weight_and_input_pack": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "candidate_bm": 64,
+            "bn": 128,
+            "group_k": 5120,
+            "stages": 3,
+            "residual_alpha": 0.5,
+            "dynamic_weight_and_input_pack": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "candidate_bm": 64,
+            "bn": 128,
+            "group_k": 5120,
+            "stages": 3,
+            "residual_alpha": 0.5,
+            "dynamic_weight_and_input_pack": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "candidate_bm": 64,
+            "bn": 128,
+            "group_k": 5120,
+            "stages": 3,
+            "residual_alpha": 0.5,
+            "dynamic_weight_and_input_pack": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "candidate_bm": 64,
+            "bn": 128,
+            "group_k": 5120,
+            "stages": 3,
+            "residual_alpha": 0.5,
+            "dynamic_weight_and_input_pack": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "candidate_bm": 64,
+            "bn": 128,
+            "group_k": 5120,
+            "stages": 3,
+            "residual_alpha": 0.5,
+            "dynamic_weight_and_input_pack": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "candidate_bm": 64,
+            "bn": 128,
+            "group_k": 5120,
+            "stages": 3,
+            "residual_alpha": 0.5,
+            "dynamic_weight_and_input_pack": true,
+            "exact_Half_residual_K_channels": 256,
+            "dense_Half_outlier_pack_fused_into_INT8_pack": true
+          }
+        ],
+        "calibration_owners": 10,
+        "fallbacks": {
+          "disabled": 88,
+          "geometry_or_schedule": 120
+        },
+        "calibration": "frozen first eager activation per original Half weight owner",
+        "original_Half_main_unchanged": true,
+        "world_middle_FFN_only": true,
+        "exact_Half_residual_K_channels": 256,
+        "dense_Half_outlier_pack_fused_into_INT8_pack": true,
+        "dynamic_weight_and_input_pack_cost_included": true,
+        "full_video_PSNR_unverified": true
+      },
+      "baseline_restoration_bitwise": true,
+      "synthetic_master_condition_refresh": [
+        {
+          "restored": false,
+          "invalidated_keys": 131,
+          "original_output_storage_preserved": true
+        },
+        {
+          "restored": true,
+          "invalidated_keys": 131,
+          "original_output_storage_preserved": true,
+          "before_explicit_invalidation": [
+            {
+              "relative_l2": 0.005625521764159203,
+              "max_abs": 0.057267069816589355,
+              "signedzero_bits": false
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0005444125272333622,
+              "max_abs": 0.0021535158157348633,
+              "signedzero_bits": false
+            }
+          ],
+          "after_explicit_invalidation": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            }
+          ]
+        },
+        {
+          "restored": false,
+          "invalidated_keys": 131,
+          "original_output_storage_preserved": true
+        },
+        {
+          "restored": true,
+          "invalidated_keys": 131,
+          "original_output_storage_preserved": true,
+          "before_explicit_invalidation": [
+            {
+              "relative_l2": 0.20817974209785461,
+              "max_abs": 1.8111679553985596,
+              "signedzero_bits": false
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.05904891714453697,
+              "max_abs": 0.20770609378814697,
+              "signedzero_bits": false
+            }
+          ],
+          "after_explicit_invalidation": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            }
+          ]
+        }
+      ],
+      "full_video_PSNR_unverified": true,
+      "balanced_warmup": 40,
+      "settle_per_mode": 2,
+      "samples_per_condition": 7,
+      "Conv2d_master_tensors": 192,
+      "Linear_master_tensors": 570,
+      "norm_master_tensors": 782,
+      "master_refresh_uses_existing_eager_forward": true,
+      "RNG_unchanged": true,
+      "reports": {
+        "baseline": {
+          "selected": 23,
+          "plans": [
+            {
+              "weight": "model.diffusion_model.input_blocks.1.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.1.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.2.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.2.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.4.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                320
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "2daa957ff67201a6158b53f025ade1b002b5b2156db96e512f0ed51488fd312f",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.4.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.5.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.5.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.7.0.in_layers.2.weight",
+              "geometry": [
+                1280,
+                192,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8f16557ec155e0480eb4305ed8b3a7adaaffacb97986332af87f6827595838eb",
+              "cached_native_filter_bytes": 117964800,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.5.0.in_layers.2.weight",
+              "geometry": [
+                1280,
+                192,
+                1920
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "d255b2d7c2386c2812154e8e8b52a39e12faca771f1d0f4536692429a6fad2e5",
+              "cached_native_filter_bytes": 353894400,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.5.3.conv.weight",
+              "geometry": [
+                1280,
+                640,
+                1280
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 235929600,
+              "packed_filter_bytes": 235929600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.6.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.7.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                1280
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "db5bcb8c4b233404a3ffbc28c3ed80d7e670f249a085603eabee34a559c345a7",
+              "cached_native_filter_bytes": 117964800,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.7.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                960
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "490ccb3992f302fa1e2bc4ad85765da525865ae7bdba9e9e6ebd2cc02191cebf",
+              "cached_native_filter_bytes": 88473600,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.3.conv.weight",
+              "geometry": [
+                640,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "e69f99bebccb2402c1e2985cf226c2da73b4adf507e396dc3c1cca77d47459aa",
+              "cached_native_filter_bytes": 58982400,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.9.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                960
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 44236800,
+              "packed_filter_bytes": 44236800
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.9.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.10.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8131985e717553e86bf86993df382b1eddaf7416d28a2c5f2b6032ffc2fa575d",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.10.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.11.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8131985e717553e86bf86993df382b1eddaf7416d28a2c5f2b6032ffc2fa575d",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.11.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            }
+          ],
+          "setup_ms": 88.23439903790131,
+          "prepacked_weights": true,
+          "direct_params": true,
+          "numerical_selected": 15,
+          "native_only_selected": 0,
+          "kahan_selected": 8,
+          "cached_native_filter_bytes": 1563033600,
+          "packed_filter_bytes": 737280000,
+          "template_bytes": 24,
+          "kahan_template_bytes": 32,
+          "original_native_transforms": true,
+          "numerical_SGEMM_only": true,
+          "first_setup_inside_timed_capture": true,
+          "full_video_PSNR_required": true
+        },
+        "candidate": {
+          "selected": 23,
+          "plans": [
+            {
+              "weight": "model.diffusion_model.input_blocks.1.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.1.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.2.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.2.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.4.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                320
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "2daa957ff67201a6158b53f025ade1b002b5b2156db96e512f0ed51488fd312f",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.4.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.5.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.5.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.7.0.in_layers.2.weight",
+              "geometry": [
+                1280,
+                192,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8f16557ec155e0480eb4305ed8b3a7adaaffacb97986332af87f6827595838eb",
+              "cached_native_filter_bytes": 117964800,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.5.0.in_layers.2.weight",
+              "geometry": [
+                1280,
+                192,
+                1920
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "d255b2d7c2386c2812154e8e8b52a39e12faca771f1d0f4536692429a6fad2e5",
+              "cached_native_filter_bytes": 353894400,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.5.3.conv.weight",
+              "geometry": [
+                1280,
+                640,
+                1280
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 235929600,
+              "packed_filter_bytes": 235929600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.6.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.7.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                1280
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "db5bcb8c4b233404a3ffbc28c3ed80d7e670f249a085603eabee34a559c345a7",
+              "cached_native_filter_bytes": 117964800,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.7.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                960
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "490ccb3992f302fa1e2bc4ad85765da525865ae7bdba9e9e6ebd2cc02191cebf",
+              "cached_native_filter_bytes": 88473600,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.3.conv.weight",
+              "geometry": [
+                640,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "e69f99bebccb2402c1e2985cf226c2da73b4adf507e396dc3c1cca77d47459aa",
+              "cached_native_filter_bytes": 58982400,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.9.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                960
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 44236800,
+              "packed_filter_bytes": 44236800
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.9.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.10.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8131985e717553e86bf86993df382b1eddaf7416d28a2c5f2b6032ffc2fa575d",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.10.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.11.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8131985e717553e86bf86993df382b1eddaf7416d28a2c5f2b6032ffc2fa575d",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.11.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            }
+          ],
+          "setup_ms": 24.54620902426541,
+          "prepacked_weights": true,
+          "direct_params": true,
+          "numerical_selected": 15,
+          "native_only_selected": 0,
+          "kahan_selected": 8,
+          "cached_native_filter_bytes": 1563033600,
+          "packed_filter_bytes": 737280000,
+          "template_bytes": 24,
+          "kahan_template_bytes": 32,
+          "original_native_transforms": true,
+          "numerical_SGEMM_only": true,
+          "first_setup_inside_timed_capture": true,
+          "full_video_PSNR_required": true
+        }
+      },
+      "no_official_score": true
+    }
+  },
+  "ready_for_full_trial": true,
+  "no_official_score": true
+}

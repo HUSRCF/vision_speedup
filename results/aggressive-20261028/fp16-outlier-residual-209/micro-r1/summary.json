@@ -1,0 +1,342 @@
+{
+  "clean": true,
+  "primitive_only": true,
+  "actual_deployment_half_rows": true,
+  "fresh_in_memory_operands": true,
+  "new_configs": 20,
+  "reassociation_controls": 0,
+  "original_compensation_controls": 3,
+  "records": [
+    {
+      "label": "(640, 1280, 5120) first-rank half-row view",
+      "shape": [
+        320,
+        1280,
+        5120
+      ],
+      "candidates": [
+        {
+          "name": "half_same_correction",
+          "mode": 1,
+          "bn": 64,
+          "num_stages": 3,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "relative_l2_without_residual": 0.0,
+          "median_saved_ms": -0.003839993476867684,
+          "median_speedup": 0.9676307912555493,
+          "all_pairs_faster": false,
+          "numerical_eligible_for_model_only": true
+        }
+      ]
+    },
+    {
+      "label": "(2560, 1280, 5120) first-rank half-row view",
+      "shape": [
+        1280,
+        1280,
+        5120
+      ],
+      "candidates": [
+        {
+          "name": "half_same_correction",
+          "mode": 1,
+          "bn": 64,
+          "num_stages": 3,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "relative_l2_without_residual": 0.0,
+          "median_saved_ms": -0.07024639844894409,
+          "median_speedup": 0.836686108942502,
+          "all_pairs_faster": false,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 2,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 0,
+          "relative_l2_without_residual": 4.983736145227833e-06,
+          "median_saved_ms": 0.04229120016098023,
+          "median_speedup": 1.1330543868667329,
+          "all_pairs_faster": true,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 2,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 32,
+          "relative_l2_without_residual": 4.2408155500092835e-06,
+          "median_saved_ms": 0.03927040100097656,
+          "median_speedup": 1.1224260657650773,
+          "all_pairs_faster": true,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 2,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 64,
+          "relative_l2_without_residual": 4.023687432822469e-06,
+          "median_saved_ms": 0.029440009593963645,
+          "median_speedup": 1.0889542388361235,
+          "all_pairs_faster": true,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 2,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 128,
+          "relative_l2_without_residual": 3.6863018296431038e-06,
+          "median_saved_ms": 0.0003072023391723633,
+          "median_speedup": 1.0008541425859694,
+          "all_pairs_faster": false,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 2,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 256,
+          "relative_l2_without_residual": 3.2594840157793635e-06,
+          "median_saved_ms": -0.04705280065536499,
+          "median_speedup": 0.8845477381790187,
+          "all_pairs_faster": false,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 2,
+          "residual_channel_alpha": 0.75,
+          "exact_residual_channels": 0,
+          "relative_l2_without_residual": 6.384547544978808e-06,
+          "median_saved_ms": 0.041932809352874745,
+          "median_speedup": 1.1318841574197824,
+          "all_pairs_faster": true,
+          "numerical_eligible_for_model_only": false
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 2,
+          "residual_channel_alpha": 0.75,
+          "exact_residual_channels": 32,
+          "relative_l2_without_residual": 4.617728056292963e-06,
+          "median_saved_ms": 0.03962879180908202,
+          "median_speedup": 1.1236027682775953,
+          "all_pairs_faster": true,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 2,
+          "residual_channel_alpha": 0.75,
+          "exact_residual_channels": 64,
+          "relative_l2_without_residual": 4.391013396291056e-06,
+          "median_saved_ms": 0.02908160686492922,
+          "median_speedup": 1.0878578802955872,
+          "all_pairs_faster": true,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 2,
+          "residual_channel_alpha": 0.75,
+          "exact_residual_channels": 128,
+          "relative_l2_without_residual": 3.968123182178987e-06,
+          "median_saved_ms": 5.120038986206055e-05,
+          "median_speedup": 1.0001422485942393,
+          "all_pairs_faster": false,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 2,
+          "residual_channel_alpha": 0.75,
+          "exact_residual_channels": 256,
+          "relative_l2_without_residual": 3.3839398205886425e-06,
+          "median_saved_ms": -0.0469503879547119,
+          "median_speedup": 0.8846686524801515,
+          "all_pairs_faster": false,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 0,
+          "relative_l2_without_residual": 4.983736145227833e-06,
+          "median_saved_ms": 0.07731199264526367,
+          "median_speedup": 1.2746952739288655,
+          "all_pairs_faster": true,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 32,
+          "relative_l2_without_residual": 4.2408155500092835e-06,
+          "median_saved_ms": 0.00947200059890746,
+          "median_speedup": 1.0269954998982849,
+          "all_pairs_faster": true,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 64,
+          "relative_l2_without_residual": 4.023687432822469e-06,
+          "median_saved_ms": -0.0057344079017639105,
+          "median_speedup": 0.9843048113570895,
+          "all_pairs_faster": false,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 128,
+          "relative_l2_without_residual": 3.6863018296431038e-06,
+          "median_saved_ms": -0.04234240055084229,
+          "median_speedup": 0.8948505394565199,
+          "all_pairs_faster": false,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "residual_channel_alpha": 0.5,
+          "exact_residual_channels": 256,
+          "relative_l2_without_residual": 3.2594840157793635e-06,
+          "median_saved_ms": -0.11479039192199708,
+          "median_speedup": 0.7583531452185139,
+          "all_pairs_faster": false,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "residual_channel_alpha": 0.75,
+          "exact_residual_channels": 0,
+          "relative_l2_without_residual": 6.384547544978808e-06,
+          "median_saved_ms": 0.07690238952636719,
+          "median_speedup": 1.2722508805845896,
+          "all_pairs_faster": true,
+          "numerical_eligible_for_model_only": false
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "residual_channel_alpha": 0.75,
+          "exact_residual_channels": 32,
+          "relative_l2_without_residual": 4.617728056292963e-06,
+          "median_saved_ms": 0.009215998649597157,
+          "median_speedup": 1.026281005917673,
+          "all_pairs_faster": true,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "residual_channel_alpha": 0.75,
+          "exact_residual_channels": 64,
+          "relative_l2_without_residual": 4.391013396291056e-06,
+          "median_saved_ms": -0.005478394031524669,
+          "median_speedup": 0.9850266424622462,
+          "all_pairs_faster": false,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "residual_channel_alpha": 0.75,
+          "exact_residual_channels": 128,
+          "relative_l2_without_residual": 3.968123182178987e-06,
+          "median_saved_ms": -0.04223999977111817,
+          "median_speedup": 0.8950114528976284,
+          "all_pairs_faster": false,
+          "numerical_eligible_for_model_only": true
+        },
+        {
+          "name": "half_primary_outlier_protected_residual",
+          "mode": 5,
+          "bn": 128,
+          "num_stages": 3,
+          "residual_channel_alpha": 0.75,
+          "exact_residual_channels": 256,
+          "relative_l2_without_residual": 3.3839398205886425e-06,
+          "median_saved_ms": -0.11504640579223632,
+          "median_speedup": 0.7577620698121409,
+          "all_pairs_faster": false,
+          "numerical_eligible_for_model_only": true
+        }
+      ]
+    },
+    {
+      "label": "(40960, 320, 1280) first-rank half-row view",
+      "shape": [
+        20480,
+        320,
+        1280
+      ],
+      "candidates": [
+        {
+          "name": "half_same_correction",
+          "mode": 1,
+          "bn": 64,
+          "num_stages": 3,
+          "residual_channel_alpha": null,
+          "exact_residual_channels": null,
+          "relative_l2_without_residual": 0.0,
+          "median_saved_ms": 0.0029695987701415794,
+          "median_speedup": 1.0083142167004453,
+          "all_pairs_faster": false,
+          "numerical_eligible_for_model_only": true
+        }
+      ]
+    }
+  ],
+  "full_video_PSNR_unverified": true,
+  "official_adopted": false
+}

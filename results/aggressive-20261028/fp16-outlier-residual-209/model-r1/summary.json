@@ -1,0 +1,174 @@
+{
+  "clean": true,
+  "complete_world_model": true,
+  "single_GPU": true,
+  "median_saved_ms": 0.440826416015625,
+  "six_pairs_all_faster": true,
+  "selected_FFN_calls": 10,
+  "exact_Half_residual_K_channels": 256,
+  "dynamic_weight_and_input_pack_included": true,
+  "cases": [
+    {
+      "case": "initial",
+      "errors": [
+        {
+          "relative_l2": 2.126570300619827e-05,
+          "max_abs": 0.00010585784912109375,
+          "signedzero_bits": false,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        },
+        {
+          "relative_l2": 3.44734085338826e-05,
+          "max_abs": 0.00014352798461914062,
+          "signedzero_bits": false,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        }
+      ]
+    },
+    {
+      "case": "changed_inputs",
+      "errors": [
+        {
+          "relative_l2": 2.1249807172764733e-05,
+          "max_abs": 0.00013053417205810547,
+          "signedzero_bits": false,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        },
+        {
+          "relative_l2": 3.435450964859485e-05,
+          "max_abs": 9.655952453613281e-05,
+          "signedzero_bits": false,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        }
+      ]
+    },
+    {
+      "case": "changed_all_masters",
+      "errors": [
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        }
+      ]
+    },
+    {
+      "case": "restored_all_masters",
+      "errors": [
+        {
+          "relative_l2": 2.126570300619827e-05,
+          "max_abs": 0.00010585784912109375,
+          "signedzero_bits": false,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        },
+        {
+          "relative_l2": 3.44734085338826e-05,
+          "max_abs": 0.00014352798461914062,
+          "signedzero_bits": false,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        }
+      ]
+    },
+    {
+      "case": "zero_all_masters",
+      "errors": [
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        }
+      ]
+    },
+    {
+      "case": "zero_then_restore",
+      "errors": [
+        {
+          "relative_l2": 2.126570300619827e-05,
+          "max_abs": 0.00010585784912109375,
+          "signedzero_bits": false,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        },
+        {
+          "relative_l2": 3.44734085338826e-05,
+          "max_abs": 0.00014352798461914062,
+          "signedzero_bits": false,
+          "gross_passed": true,
+          "full_video_PSNR_required": true
+        }
+      ]
+    }
+  ],
+  "full_video_PSNR_unverified": false,
+  "official_adopted": false,
+  "full_quality_passed": true,
+  "full_quality_psnr_db": 25.7433369222653,
+  "single_GPU_process_wall_s": 321.720411,
+  "full_process_acceleration_demonstrated": false
+}
