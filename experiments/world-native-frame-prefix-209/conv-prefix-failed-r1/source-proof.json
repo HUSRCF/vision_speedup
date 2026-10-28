@@ -1,0 +1,20 @@
+[
+  {
+    "source": "src/unifolm_wma/utils/native_winograd_gemm_fp16_packed_kernel.py",
+    "original_SHA256": "9bbeb5437c853f3b16fafc2140191afcdf70a1ce3d0d2693da38e7d37c412d34",
+    "original_function": "transformed_gemm_fp16_packed",
+    "candidate_function": "transformed_gemm_fp16_packed_frame_prefix",
+    "roundtrip_original_AST_exact": true,
+    "all_memory_offsets_masks_K_tiles_casts_products_and_FP32_sums_original": true,
+    "runtime_pointer_formal_arguments_unchanged": true
+  },
+  {
+    "source": "src/unifolm_wma/utils/native_winograd_gemm_fp16_kahan_kernel.py",
+    "original_SHA256": "d5206c762ead5550ab0c7ae21fa4a509252933aa7f70a6a35c9d380195aad9a5",
+    "original_function": "transformed_gemm_fp16_kahan",
+    "candidate_function": "transformed_gemm_fp16_kahan_frame_prefix",
+    "roundtrip_original_AST_exact": true,
+    "all_memory_offsets_masks_K_tiles_casts_products_and_FP32_sums_original": true,
+    "runtime_pointer_formal_arguments_unchanged": true
+  }
+]

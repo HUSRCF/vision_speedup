@@ -103,4 +103,14 @@ r2 执行的精确源码、生成的真实模型 profile 和双卡守护脚本�
 
 从本次实际生产日志提取的 23 个 world SGEMM owner 中，**21 个属于已检查的 ResBlock，2 个属于外层 Upsample**。后者没有在同一位置进行帧重排／汇合，后续必须按原权重对象绑定筛选，不能把 23 个 owner 无条件全部分片。[源码及覆盖证明](../results/aggressive-20261028/world-native-frame-prefix-209/source-r1)
 
-当前只有 CPU 源码与映射证明。新 kernel 的 GPU 数值、实际 Winograd transform 的帧排列、CUBIN 参数 ABI、新缓存 owner 接入、完整模型和视频质量均未验证，未用于上述正式 218 文件版本。
+上述 source-r1 只有 CPU 源码与映射证明。后续独立矩阵检查已通过，但原生卷积的连续前缀映射失败，详见下节；未用于上述正式 218 文件版本。
+
+## World 矩阵检查通过，原生卷积前缀假设失败
+
+GPU 矩阵 r2 对全部 14 种 packed／Kahan 配置各测试初始、修改输入、修改权重、权重清零、输入清零和恢复，共 **84 次前半列比较，全部包含 signed zero 逐位一致**。输出 canary、未写尾部、RNG 和 14 个新 CUBIN 的实际 graph 捕获／指针 ABI 检查通过。仅修改 CTA 的列覆盖，没有减少每个有效输出的三乘积或补偿精度。[精确执行源码](../experiments/world-native-frame-prefix-209/matrix-r2) · [完整样本与遥测](../results/aggressive-20261028/world-native-frame-prefix-209/matrix-r2)
+
+14 种配置的六对交替计时均更快，独立中位数之比约 **1.41～1.98×**。例如 packed `[320,2560,320]` 从约 0.750763 ms 降到 0.389291 ms，Kahan `[640,2560,640]` 从约 3.310251 ms 降到 1.672021 ms。这只覆盖一半矩阵工作量，未包含完整卷积、另一半帧、复制或通信；不能作为整模型加速。
+
+首次 r1 在数值测试前因 `/tmp` 的 noexec 属性导致 Triton launcher 无法加载。r2 为 launcher 新建私有 home 目录，大型编译中间文件仍在独立 `/tmp`，原正式缓存不变。采用轮次通过全程 GPU context 检查，原 209 文件在前后均重新核验。
+
+随后独立卷积 fixture 保留原生输入／输出变换、滤波器缓存及 bias，并在每个动态状态前毒化完整 GEMM 输出 workspace，防止旧值假通过。首个 NCHW `[320,2560,320]` 用例即失败，未获得有效卷积计时。[失败的精确源码](../experiments/world-native-frame-prefix-209/conv-prefix-failed-r1)与[原始日志](../results/aggressive-20261028/world-native-frame-prefix-209/conv-prefix-failed-r1)单独保留。**矩阵的连续前半列不能直接当作视频前八帧**；后续必须重新验证实际列与帧的映射。新 owner 的整模型接入、完整 V2 与质量均未验证，正式成绩保持 **287.745486 秒**。

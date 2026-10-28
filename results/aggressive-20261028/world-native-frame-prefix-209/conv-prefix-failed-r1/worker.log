@@ -1,0 +1,10 @@
+/home/team07/.venv/lib/python3.10/site-packages/torch/cuda/graphs.py:82: UserWarning: DEBUG: TORCH_CUDAGRAPHS_DEBUG_PATH detected. graph_ will not be freed until debug_dump is called. (Triggered internally at ../aten/src/ATen/cuda/CUDAGraph.cpp:240.)
+  super().capture_end()
+Traceback (most recent call last):
+  File "/tmp/team07-world-prefix-matrix-ens8vytm/audit_world_native_frame_prefix209_conv.py", line 178, in <module>
+    if __name__=='__main__':main()
+  File "/tmp/team07-world-prefix-matrix-ens8vytm/audit_world_native_frame_prefix209_conv.py", line 166, in main
+    row=convolution(spec,matrix,kind,extension,api);rows.append(row)
+  File "/tmp/team07-world-prefix-matrix-ens8vytm/audit_world_native_frame_prefix209_conv.py", line 108, in convolution
+    cases.append(row);assert exact and finite,(spec,kind,row)
+AssertionError: ({'geometry': [320, 2560, 320], 'family': 'packed', 'config': [32, 128, 64, 4, 1]}, 'NCHW', {'rank': 0, 'case': 'initial', 'first8_signedzero_bits': False, 'finite': True, 'max_abs': 3.4028234663852886e+38})
