@@ -11,12 +11,12 @@ def main():
     assert set(manifest)=={str(p.relative_to(code)) for p in (code/'src').rglob('*.py')}
     for name,digest in manifest.items():assert sha(code/name)==digest,name
     assert sha(code/'src/unifolm_wma/utils/native-graph-handles/team07_cuda_graph_handles.so')=='ab2f19b88cb9af02b42fb5fdcb39da49e062346fd30794be45fb81e12cb1b927'
-    assert sha(root/'results/runtime.log')=='3d543553620a172c713df12b4a911bd8b588b0002b2f6007d73c8288bf165025'
-    assert sha(root/'results/result.json')=='04fd042de333e4a84add1c8412570144a6a1ed419b70924284b9d9e6aac63cf9'
+    assert sha(root/'results/runtime.log')=='d8f1ed1635bdf8416c64338e1117b6e3ee33a905906e41802607e3e410b268a6'
+    assert sha(root/'results/result.json')=='acc75f0b52afca95a41aa8552744c7647bbf46b936464465bda05eb20043c317'
     result=json.loads((root/'results/result.json').read_text());assert result['status']=='accepted'
     cases=result['cases'];assert len(cases)==5 and sum(c['videos'] for c in cases)==103
     assert [c['rounds'] for c in cases]==[12,7,11,8,11]
-    assert abs(sum(c['process_wall_s'] for c in cases)-816.711804)<1e-6
+    assert abs(sum(c['process_wall_s'] for c in cases)-802.134091)<1e-6
     log=(root/'results/runtime.log').read_text()
     timings=re.findall(r'^TIMING case=(\S+) process_wall_s=([0-9.]+)$',log,re.M)
     assert len(timings)==5 and len({case for case,_ in timings})==5
@@ -55,8 +55,8 @@ def main():
     assert sha(root/'experiments/nonv2-ffn-59/decision-model-r1/scripts/nonv2_ffn59_mode.py')==sha(root/'experiments/nonv2-ffn-59/world-model-r1/scripts/nonv2_ffn59_mode.py')
     for row in cases:
         if row['case']=='unitree_z1_stackbox':
-            fused=json.loads((root/'experiments/nonv2-fused-half-geglu/accepted-outcome.json').read_text())
-            assert fused['official_adopted']and row['process_wall_s']==fused['Z1_s']
+            blocks=json.loads((root/'experiments/nonv2-all-blocks59/accepted-outcome.json').read_text())
+            assert blocks['official_adopted']and row['process_wall_s']==blocks['Z1_s']and row['psnr_db']==blocks['PSNR_dB']
         elif row['case'] in accepted:assert row['process_wall_s']==accepted[row['case']]['process_wall_s']
     import importlib.util
     overlay=root/'experiments/nccl-ffn-209/timed-entry'
@@ -236,6 +236,8 @@ def main():
     verify_nonv2_ffn61()
     from verify_nonv2_temporal_block62_evidence import verify as verify_nonv2_temporal62
     verify_nonv2_temporal62()
-    print('Verified: original209/historical overlays/adopted V2 initial222;historical59 nonV2/adopted60 Z1;official103 log/JSON.')
+    from verify_nonv2_all_blocks63_evidence import verify as verify_nonv2_all63
+    verify_nonv2_all63()
+    print('Verified: original209/historical overlays/adopted V2 initial222;historical59/60 nonV2/adopted63 Z1;official103 log/JSON.')
 
 if __name__=='__main__':main()

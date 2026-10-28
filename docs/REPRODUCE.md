@@ -1,4 +1,4 @@
-# V2 复现
+# 推理复现
 
 ## 环境与资源
 
@@ -61,10 +61,13 @@ python3 reproduce/run_v2.py --gpu 0
 
 ## 已采用的非 V2 分项
 
-Z1已采用60文件的Half projection／GEGLU融合版本，其他三个非V2项保留59文件快照。两者都使用非V2精度策略。例如：
+Z1已采用63文件的双卡完整内部Transformer块分片，其他三个非V2项保留59文件单卡快照。例如：
 
 ```bash
-python3 experiments/nonv2-fused-half-geglu/run_case.py --gpu 0 --workdir /fresh/executable/path/z1-review
+~/.venv/bin/python reproduce/run_z1_parallel.py --gpus 0,1 \
+  --workdir /var/tmp/team07-review-z1-63 \
+  --storage-config /var/tmp/team07-review-storage/storage-config.json \
+  --cache-dir /path/to/executable/FFN-shape-cache
 python3 experiments/nonv2-vae-all-display/run_case.py --case dual --gpu 0
 python3 experiments/nonv2-vae-all-display/run_case.py --case pencils --gpu 0
 python3 experiments/nonv2-vae-all-display/run_case.py --case g1 --gpu 0
@@ -72,7 +75,11 @@ python3 experiments/nonv2-vae-all-display/run_case.py --case g1 --gpu 0
 
 每条命令均运行完整对应分项。所需外部模型、输入、验证工具与上面的 V2 相同。反馈帧使用原始 FP32 VAE；展示帧使用独立的 Half 权重缓存，原始 master weights 保留。
 
-Z1入口先核对并建立60文件源码和独立git快照，再使用已验证的整段GPU守护脚本运行12轮／25视频。`--prepare-only`只准备源码，不使用GPU。输出为所选workdir下的普通`outputs`目录，计时／官方验证材料位于`runs`。新kernel编译、模型导入、图捕获和退出仍在原始进程计时内；冷缓存可能更慢，缓存中的host `.so`需位于可执行挂载。旧的`nonv2-vae-all-display/run_case.py --case stackbox`默认转交当前60版本；加`--historical59`可重跑旧基线。完整GPU2对照为171.304477→170.633517秒，25视频一致；GPU0正式采用166.780992秒并通过新的103视频官方汇总，跨卡／跨历史运行差值不能全部归因于kernel。
+Z1入口先核对并建立63文件源码，使用冻结的整段双卡守护脚本运行12轮／25视频。`--prepare-only`只准备源码，不使用Torch/GPU，已在本机核对完整63个源码哈希。GPU运行前需要上述私有tmpfs配置；使用前文`build_and_check.py`构建。FFN形状缓存必须位于可执行挂载，比赛机home空间很少，本次复用既有私有缓存。新kernel编译、模型导入、双模型传输、通信、图捕获、写出和helper退出都在原始进程计时内；冷缓存可能更慢。输出与计时／单项质量材料位于所选workdir的`diagnostic/runs`。其单项shell会因另外四项缺席退出1；选中的Z1执行、profile和PSNR单独检查，不能将单项原始log/JSON直接当成五项提交。
+
+63文件版本把16个空间和17个时间内部块纳入原来33次FFN汇合，保留全局帧action mask、完整5D GroupNorm和16时间步；条件投影缓存按完整／本地模式分库。原59个数学源码字节不变，原生Half GEMM形状变化会影响舍入。两阶段756参数的六状态检查与六对模型计时通过；完整Z1为152.203279秒／PSNR46.553398187dB、两rank25视频一致。新103视频官方汇总accepted，五项802.134091秒；网站尚未提交。
+
+`--variant temporal62`和`ffn61`可重建前序候选。历史单卡60入口仍保留在`experiments/nonv2-fused-half-geglu/run_case.py`；旧`nonv2-vae-all-display/run_case.py --case stackbox`仍转交这个历史60版本，加`--historical59`可重跑旧59基线。它们不代表当前63双卡默认复现入口。历史60的GPU2完整对照为171.304477→170.633517秒，GPU0正式记录166.780992秒；当前63相对该历史记录少14.577713秒，跨历史和卡数比较不能全部归因于单个kernel。
 
 ## CUDA Graph 扩展
 

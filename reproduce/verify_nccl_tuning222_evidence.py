@@ -56,7 +56,7 @@ def verify():
     actual=load(ev/'full-candidate-r1/effective-tuning-proof.json');assert actual['passed']and actual['observed_live_rank_environment']and {r['rank']for r in actual['ranks']}=={0,1}
     assert all(r['actual_tuning_env']==changes for r in actual['ranks'])
     assert abs(baseline[3]['process_wall_s']-candidate[3]['process_wall_s']-.431037)<1e-9
-    print('NCCL tuning:13 communication screens and one same-source222 complete V2 pair verified; official pair unchanged.')
+    print('NCCL tuning:13 communication screens and one same-source222 complete V2 pair verified; tuning remains unadopted.')
 
 
 if __name__=='__main__':verify()

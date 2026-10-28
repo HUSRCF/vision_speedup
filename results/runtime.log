@@ -1,5 +1,5 @@
 
-===== CLEAN CASE unitree_z1_stackbox FROM /dev/shm/team07-fused-half-candidate-meta-98wku9bd/official103-source-view =====
+===== CLEAN CASE unitree_z1_stackbox FROM /var/tmp/team07-nonv2-all-blocks63-tjdb597w/diagnostic/runs/20261028T221015Z-case-v2-nccl-3896254 =====
 SELECTED_CASE=unitree_z1_stackbox; other cases are absent from this run
 You are offline and the cache for model files in Transformers v4.22.0 has been updated while your local cache seems to be the one of a previous version. It is very likely that all your calls to any `from_pretrained()` method will fail. Remove the offline mode and enable internet connection to have your cache be updated automatically, then you can go back to offline mode.
 
@@ -7,6 +7,8 @@ You are offline and the cache for model files in Transformers v4.22.0 has been u
 0it [00:00, ?it/s]
 There was a problem when trying to write in your cache folder (/share/huggingface/hub). You should set the environment variable TRANSFORMERS_CACHE to a writable directory.
 Global seed set to 123
+[W Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function getCvarInt)
+NCCL_PARALLEL_INITIALIZED {"rank": 0, "GPUs": 2, "policy": "nonv2-all-blocks", "all_setup_inside_original_process_timer": true}
 INFERENCE_MATH requested=selective-tf32 effective=tf32 case=unitree_z1_stackbox cudnn_tf32=True matmul_tf32=True cudnn_benchmark=False cudnn_benchmark_limit=10
 STAGE_TF32 requested=decision-cudnn effective=none case=unitree_z1_stackbox ddim_prefix_steps=0
 STAGE_CUDNN_BENCHMARK requested=simulation effective=none case=unitree_z1_stackbox
@@ -57,82 +59,82 @@ CUDA_GRAPH enabled=true scope=complete_denoiser cached_normalizers=2 skip_unchan
 >>> Generate 16 frames under each generation ...
 
   0%|          | 0/12 [00:00<?, ?it/s]>>> Step 0: generating actions ...
-CUDA_GRAPH_CAPTURE index=0 allocated_gib=11.378 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=11.316 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
 >>> Step 0: interacting with world model ...
-CUDA_GRAPH_CAPTURE index=1 allocated_gib=11.546 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=1 allocated_gib=11.482 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
 >>>>>>>>>>>>>>>>>>>>>>>>
 
-  8%|▊         | 1/12 [00:15<02:52, 15.70s/it]>>> Step 1: generating actions ...
+  8%|▊         | 1/12 [00:14<02:40, 14.62s/it]>>> Step 1: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 1: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 17%|█▋        | 2/12 [00:28<02:20, 14.07s/it]>>> Step 2: generating actions ...
+ 17%|█▋        | 2/12 [00:26<02:07, 12.73s/it]>>> Step 2: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 2: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 25%|██▌       | 3/12 [00:41<02:01, 13.55s/it]>>> Step 3: generating actions ...
+ 25%|██▌       | 3/12 [00:37<01:49, 12.14s/it]>>> Step 3: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 3: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 33%|███▎      | 4/12 [00:54<01:46, 13.31s/it]>>> Step 4: generating actions ...
+ 33%|███▎      | 4/12 [00:48<01:34, 11.87s/it]>>> Step 4: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 4: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 42%|████▏     | 5/12 [01:07<01:32, 13.18s/it]>>> Step 5: generating actions ...
+ 42%|████▏     | 5/12 [01:00<01:22, 11.74s/it]>>> Step 5: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 5: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 50%|█████     | 6/12 [01:20<01:18, 13.11s/it]>>> Step 6: generating actions ...
+ 50%|█████     | 6/12 [01:11<01:09, 11.66s/it]>>> Step 6: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 6: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 58%|█████▊    | 7/12 [01:33<01:05, 13.07s/it]>>> Step 7: generating actions ...
+ 58%|█████▊    | 7/12 [01:23<00:58, 11.62s/it]>>> Step 7: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 7: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 67%|██████▋   | 8/12 [01:46<00:52, 13.04s/it]>>> Step 8: generating actions ...
+ 67%|██████▋   | 8/12 [01:34<00:46, 11.59s/it]>>> Step 8: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 8: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 75%|███████▌  | 9/12 [01:59<00:39, 13.03s/it]>>> Step 9: generating actions ...
+ 75%|███████▌  | 9/12 [01:46<00:34, 11.57s/it]>>> Step 9: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 9: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 83%|████████▎ | 10/12 [02:12<00:26, 13.02s/it]>>> Step 10: generating actions ...
+ 83%|████████▎ | 10/12 [01:58<00:23, 11.56s/it]>>> Step 10: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 10: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
- 92%|█████████▏| 11/12 [02:25<00:13, 13.02s/it]>>> Step 11: generating actions ...
+ 92%|█████████▏| 11/12 [02:09<00:11, 11.55s/it]>>> Step 11: generating actions ...
 CONDITION_CACHE_REFRESH
 >>> Step 11: interacting with world model ...
 CONDITION_CACHE_REFRESH
 >>>>>>>>>>>>>>>>>>>>>>>>
 
-100%|██████████| 12/12 [02:38<00:00, 13.02s/it]
-100%|██████████| 12/12 [02:38<00:00, 13.20s/it]
->>> Pure model compute time (CUDA; excludes load/save): 158.258s [decision 79.861s + world 78.397s; 24 generation calls]
+100%|██████████| 12/12 [02:21<00:00, 11.55s/it]
+100%|██████████| 12/12 [02:21<00:00, 11.76s/it]
+NCCL_PARALLEL_FINISH {"policy": "nonv2-all-blocks", "GPUs": 2, "full_workload_on_both_ranks": true, "rank_videos_SHA256_equal": true, "video_count": 25, "video_hashes": {"inference/5_full_fs4.mp4": "ecfedd0ff005821519745fd9a379307693f72b9e15739bf293c23894c67b0bdc", "inference/sample_5/wm/4/itr-11.mp4": "b63e97914af280f174a31bcfddfd574dbb19b5573291f4b86818f16eb5866291", "inference/sample_5/wm/4/itr-10.mp4": "8970578f036094a55630e679462f4748ddcfd75b0ce1056421465a21b1a6e82a", "inference/sample_5/wm/4/itr-9.mp4": "cf7c6afa93fd908a6798a98b43739fced7426d9b3c282b184b3e47823ba8527e", "inference/sample_5/wm/4/itr-8.mp4": "c9de99d9f0a8d92adc4404cae25ff8daf5e6a1d504dd907e1278cb0dd5688b4a", "inference/sample_5/wm/4/itr-7.mp4": "777f2827fcebb8390592e5389f2c6c9a6d73d54b14952a73e46d978a9a1f40c3", "inference/sample_5/wm/4/itr-6.mp4": "ff42f3c33ca9faf4879efe3667c20c7aaf9b6934b140d6a857225132a069259e", "inference/sample_5/wm/4/itr-5.mp4": "9aad612111e406d1bd456cd0cc721e6dea0302c108faf14e44e673b6e4be5b94", "inference/sample_5/wm/4/itr-4.mp4": "d70a987d0536fc5f0a8a12fe39d802debcbf7a91016bd6d63f1c0e57b347a2a3", "inference/sample_5/wm/4/itr-3.mp4": "c628e35b6e3d1759e3f8b33e22c6d731d7add592dd7fd980a0f98509f1c51011", "inference/sample_5/wm/4/itr-2.mp4": "d8db8f4543f4e877b06c8b92ae33d38a60f8c7898a29de29f0650090f0dfc04d", "inference/sample_5/wm/4/itr-1.mp4": "34e044c4a4c39d560a439889a2c9b51e4c4bf6b65e0285d10c5c9f6104e4c473", "inference/sample_5/wm/4/itr-0.mp4": "7dbdc84e41d99955d15fab191772449039c63faf0588841e1cd545a408838da7", "inference/sample_5/dm/4/itr-11.mp4": "99d9b159ddb77288c81f2c09a179e30347ceff6d3164bc848194387d9ff4e09e", "inference/sample_5/dm/4/itr-10.mp4": "8cd8fc0bff8906db9cf1ffef9b470e74981d3b723d935989ffa15c16b180174c", "inference/sample_5/dm/4/itr-9.mp4": "0906e3cc7b8dc7e76bc0145fe784299e53833395b1bfab231f6efa315e3a0187", "inference/sample_5/dm/4/itr-8.mp4": "0779a834fb21ae93d4e36c4666eb7774467b14de6c441d93beb14489a220770d", "inference/sample_5/dm/4/itr-7.mp4": "e1c01e0030bf4599df470a9654a12da70f65e1a62908bc4012f0e7d345496b6c", "inference/sample_5/dm/4/itr-6.mp4": "4e5197f67c5f6c31fea90ae92971faffa8fd1c318d4369ed22e26d2f0038ea25", "inference/sample_5/dm/4/itr-5.mp4": "e3242cbcf2168e2f907962332cdafbc947c09ace774a2fbb0810342d9ed5b34a", "inference/sample_5/dm/4/itr-4.mp4": "078779d43642833aa0b5b1c1c8efd7d319746f270ee06d614dc58572add92cd8", "inference/sample_5/dm/4/itr-3.mp4": "711c21fe14c8d0a198f1ab26989aada79dd63d73aced2606dd2a91bcd553ac14", "inference/sample_5/dm/4/itr-2.mp4": "cb455a644f1c9b46e57e066145f7c84d0127dca79fedce29909b8684d7adc6ba", "inference/sample_5/dm/4/itr-1.mp4": "52de8cc696e3bf4b3be7ce78ac57385ec7d758a6c8ee924c63db23d57ad2a875", "inference/sample_5/dm/4/itr-0.mp4": "4d45ce1736720636f847423a64e4322c9fd4d275dcf32446d9a8f80b991c2311"}, "helper_exit_code": 0, "setup_helper_outputs_and_teardown_inside_original_process_timer": true, "stage_captures": {"decision": 33, "world": 33}, "stage_calls": {"decision": 600, "world": 600}}
+>>> Pure model compute time (CUDA; excludes load/save): 140.951s [decision 71.235s + world 69.715s; 24 generation calls]
 NONV2_NONFEEDBACK_VAE {"clips": 24, "records": [{"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}], "owners": [{"builds": 1, "calls": 24, "feedback_calls": 24, "mode": "fp16_nchw", "master_version_guard": true}], "native_feedback_precision_and_flags_preserved": true, "all_setup_inside_process_wall": true, "denoiser_and_sampler_unchanged": true}
-NONV2_FUSED_PROJECTION_CAPTURE {"captured": 20, "records": [{"input_shape": [16, 2560, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [2560, 16, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [16, 2560, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [2560, 16, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [16, 2560, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [2560, 16, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [16, 2560, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [2560, 16, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [16, 2560, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [2560, 16, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [16, 2560, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [2560, 16, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [16, 2560, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [2560, 16, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [16, 2560, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [2560, 16, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [16, 2560, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [2560, 16, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [16, 2560, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}, {"input_shape": [2560, 16, 320], "weight_shape": [2560, 320], "dtype": "torch.float16", "config": [64, 128, 32, 8, 3]}], "no_reduced_workload": true}
 
 ===== CLEAN CASE unitree_z1_dual_arm_stackbox FROM /home/team07/benchmark-runs/unifolm/20261028T070032Z-case-dual-2184283 =====
 SELECTED_CASE=unitree_z1_dual_arm_stackbox; other cases are absent from this run
@@ -713,20 +715,20 @@ CONDITION_CACHE_REFRESH
 100%|██████████| 11/11 [02:32<00:00, 13.88s/it]
 >>> Pure model compute time (CUDA; excludes load/save): 152.486s [decision 76.786s + world 75.699s; 22 generation calls]
 NONV2_NONFEEDBACK_VAE {"clips": 22, "records": [{"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}], "owners": [{"builds": 1, "calls": 22, "feedback_calls": 22, "mode": "fp16_nchw", "master_version_guard": true}], "native_feedback_precision_and_flags_preserved": true, "all_setup_inside_process_wall": true, "denoiser_and_sampler_unchanged": true}
-PSNR case=unitree_z1_stackbox psnr_db=40.07491350059081 threshold_db=25 pass=true
+PSNR case=unitree_z1_stackbox psnr_db=46.553398187472595 threshold_db=25 pass=true
 PSNR case=unitree_z1_dual_arm_stackbox psnr_db=31.991493643096341 threshold_db=25 pass=true
 PSNR case=unitree_z1_dual_arm_stackbox_v2 psnr_db=29.675324786148643 threshold_db=25 pass=true
 PSNR case=unitree_z1_dual_arm_cleanup_pencils psnr_db=36.537127402315754 threshold_db=25 pass=true
 PSNR case=unitree_g1_pack_camera psnr_db=26.107156331795942 threshold_db=25 pass=true
 
-$ /home/team07/.venv/bin/python /share/tools/unifolm-psnr.py --results /var/tmp/team07-private222-candidate-oih602vt/diagnostic/official103-validated/outputs --reference /share/results/unifolm/fp32/reference/outputs --report /var/tmp/team07-private222-candidate-oih602vt/diagnostic/official103-validated/profiles/psnr.json
-TIMING case=unitree_z1_stackbox process_wall_s=166.780992
+$ /home/team07/.venv/bin/python /share/tools/unifolm-psnr.py --results /var/tmp/team07-nonv2-all-blocks63-tjdb597w/diagnostic/official103-validated/outputs --reference /share/results/unifolm/fp32/reference/outputs --report /var/tmp/team07-nonv2-all-blocks63-tjdb597w/diagnostic/official103-validated/profiles/psnr.json
+TIMING case=unitree_z1_stackbox process_wall_s=152.203279
 TIMING case=unitree_z1_dual_arm_stackbox process_wall_s=103.111184
 TIMING case=unitree_z1_dual_arm_stackbox_v2 process_wall_s=268.844229
 TIMING case=unitree_z1_dual_arm_cleanup_pencils process_wall_s=117.077862
 TIMING case=unitree_g1_pack_camera process_wall_s=160.897537
-RUN_SUMMARY external_wall_s=816.798136 validation_wall_s=8.851333
-RESULT_JSON=/var/tmp/team07-private222-candidate-oih602vt/diagnostic/official103-validated/result.json
-ACCEPTED external_wall_s=816.798136
+RUN_SUMMARY external_wall_s=802.225797 validation_wall_s=8.951192
+RESULT_JSON=/var/tmp/team07-nonv2-all-blocks63-tjdb597w/diagnostic/official103-validated/result.json
+ACCEPTED external_wall_s=802.225797
 
-$ /home/team07/.venv/bin/python /share/tools/unifolm-result.py --profiles /var/tmp/team07-private222-candidate-oih602vt/diagnostic/official103-validated/profiles --result /var/tmp/team07-private222-candidate-oih602vt/diagnostic/official103-validated/result.json --exit-code 0 --started 503185.80352516
+$ /home/team07/.venv/bin/python /share/tools/unifolm-result.py --profiles /var/tmp/team07-nonv2-all-blocks63-tjdb597w/diagnostic/official103-validated/profiles --result /var/tmp/team07-nonv2-all-blocks63-tjdb597w/diagnostic/official103-validated/result.json --exit-code 0 --started 506962.830652722

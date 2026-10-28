@@ -60,8 +60,11 @@ def verify():
     assert abs(pair['same_GPU_full_AB_saved_s']-3.199318)<1e-6
     adopted=load(root/'experiments/initial-boundary-221/production222/accepted-outcome.json');assert adopted['official_adopted']and adopted['all103_officially_validated']and adopted['all23_videos_SHA_equal']
     assert adopted['source_count']==222 and adopted['V2_s']==268.844229 and adopted['five_case_sum_s']==816.711804
-    official=ev/'official103';final=load(official/'result.json');assert final['status']=='accepted'and final['psnr_validation']['video_count']==103 and final==load(root/'results/result.json')
-    for n,h in adopted['official_pair_sha256'].items():assert sha(root/'results'/n)==sha(official/n)==h
+    historical=root/'results/history/official222-z1-fused-before-blocks63'
+    official=ev/'official103';final=load(official/'result.json');assert final['status']=='accepted'and final['psnr_validation']['video_count']==103 and final==load(historical/'result.json')
+    for n,h in adopted['official_pair_sha256'].items():assert sha(historical/n)==sha(official/n)==h
+    current=next(r for r in load(root/'results/result.json')['cases']if r['case']==case)
+    assert current['process_wall_s']==adopted['V2_s']and current['psnr_db']==29.675324786148643
     copies=load(official/'immutable-video-copies.json');assert copies['count']==103 and copies['ordinary_files']and copies['original_outputs_unchanged']and copies['SHA_verified_same_FS_links_or_cross_FS_copies']
     for n,h in load(official/'script-hashes.json').items():assert sha(official/n)==h
     parser=ast.parse((root/'reproduce/run_v2_parallel.py').read_text());assert any(isinstance(n,ast.keyword)and n.arg=='default'and isinstance(n.value,ast.Constant)and n.value.value==flags[1]['UNIFOLM_NCCL_PARALLEL']for n in ast.walk(parser))

@@ -83,12 +83,12 @@ def verify():
     for n,h in json.loads((gpu0_code/'asset-hashes.json').read_text()).items():assert hashlib.sha256((gpu0_code/n).read_bytes()).hexdigest()==h
     final=result/'official103-r2';outcome=json.loads((final/'result.json').read_text());assert outcome['status']=='accepted'and outcome['psnr_validation']['video_count']==103
     assert outcome==json.loads((fused_snapshot/'result.json').read_text())
-    current_Z1=next(c for c in json.loads((root/'results/result.json').read_text())['cases']if c['case']=='unitree_z1_stackbox')
-    assert current_Z1['process_wall_s']==adopted['Z1_s']and current_Z1['psnr_db']==adopted['PSNR_dB']
+    historical_Z1=next(c for c in json.loads((fused_snapshot/'result.json').read_text())['cases']if c['case']=='unitree_z1_stackbox')
+    assert historical_Z1['process_wall_s']==adopted['Z1_s']and historical_Z1['psnr_db']==adopted['PSNR_dB']
     links=json.loads((final/'immutable-video-links.json').read_text());assert links['count']==103 and links['ordinary_files']and links['existing_official103_SHA_equal_hardlinks_only']
     proof=json.loads((final/'same-run-source-proof.json').read_text());assert proof['exact_timed_source60_verified']and proof['no_GPU_rerun_or_timer_rewrite']and len(proof['hashes'])==25
     for n,h in json.loads((final/'script-hashes.json').read_text()).items():assert hashlib.sha256((final/n).read_bytes()).hexdigest()==h
-    print('Adopted Z1 Half producer:60 sources, clean model/full AB and fresh official103 evidence verified.')
+    print('Historical Z1 Half producer:60 sources, clean model/full AB and its official103 evidence verified.')
 
 
 if __name__=='__main__':verify()
