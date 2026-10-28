@@ -9,10 +9,16 @@ why per-rank directories avoid temporary binary files from the other writer.
 The [startup classifier](../startup-guard-r2) is retained.
 
 CPU preflight passed again, including120 block-boundary cases and21 owner
-identities/12 selected blocks. The bounded GPU2/3 task is pending; no complete
-model numerical/timing or full V2 result yet. All original23+45 owner/old-CUBIN
-checks still precede new replacements, and all six dynamic model states, three
-FP32 signedzero outputs, RNG and original restoration remain mandatory.
+identities/12 selected blocks. The GPU2/3 test now completed cleanly: both ranks
+passed all six dynamic states and18 FP32 signedzero output checks,570 Linear,
+782 norm and192 Conv2d master modifications/zero/restoration, original23+45
+owners/old-CUBIN gates, RNG and baseline restoration. Rank-local cache loading
+did not reproduce the previous temporary-file error.
+
+All12 blocks together were slower: baseline medians252.367/252.331ms versus
+candidate255.275/255.299ms. Median paired savings were-2.898/-2.878ms; do not
+sum the two ranks. This candidate is rejected for performance and has no full
+V2/video PSNR result. See [complete model evidence](../../../results/aggressive-20261028/world-native-frame-interleaved-209/model-r3).
 
 Follow model-r1 staging instructions using a fresh private root/cache; do not
 import the CPU-only compiler helper in GPU workers.

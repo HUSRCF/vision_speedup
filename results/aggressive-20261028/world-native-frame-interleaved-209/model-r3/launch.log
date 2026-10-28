@@ -1,0 +1,18 @@
+NCCL_MODEL_ATTEMPT=/tmp/team07-world-interleaved-model-zgs0zzhx/attempt-1
+WAIT_GPU_PAIR=2,3
+CLEAN_RUN_GPU=2
+CLEAN_RUN_GPU=3
+Traceback (most recent call last):
+  File "/tmp/team07-world-interleaved-model-zgs0zzhx/wait_nccl_geglu_model_pair.py", line 60, in <module>
+    if __name__=='__main__':main()
+  File "/tmp/team07-world-interleaved-model-zgs0zzhx/wait_nccl_geglu_model_pair.py", line 42, in main
+    rows,contexts=query();telemetry.append(dict(time_utc=time.time(),GPUs=rows));assert all(not(p-owners) for p in contexts.values()),'foreign GPU context'
+AssertionError: foreign GPU context
+
+NCCL_MODEL_CONTAMINATED_ATTEMPT_EXCLUDED=1
+NCCL_MODEL_ATTEMPT=/tmp/team07-world-interleaved-model-zgs0zzhx/attempt-2
+WAIT_GPU_PAIR=2,3
+CLEAN_RUN_GPU=2
+CLEAN_RUN_GPU=3
+NCCL_GEGLU_MODEL_PAIR_CHECK passed=true clean=true
+

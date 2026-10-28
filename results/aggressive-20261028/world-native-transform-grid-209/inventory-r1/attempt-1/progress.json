@@ -1,0 +1,7474 @@
+{
+  "rows": [
+    {
+      "geometry": [
+        320,
+        2560,
+        320
+      ],
+      "layout": "NCHW",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            320,
+            40,
+            64
+          ],
+          "input_stride": [
+            819200,
+            2560,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                12,
+                320,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                10,
+                40,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                20,
+                3,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                12,
+                320,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            320,
+            40,
+            64
+          ],
+          "input_stride": [
+            819200,
+            2560,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": false,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn8winograd27generateWinogradTilesKernelILi0EffEEvNS0_27GenerateWinogradTilesParamsIT0_T1_EE",
+              "grid": [
+                10,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                4,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                56
+              ]
+            },
+            {
+              "name": "cudnn_infer_ampere_scudnn_winograd_128x128_ldg1_ldg4_relu_tile148t_nt_v1",
+              "grid": [
+                80,
+                5,
+                4
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                276
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        320,
+        2560,
+        320
+      ],
+      "layout": "NC_permuted",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            320,
+            40,
+            64
+          ],
+          "input_stride": [
+            2560,
+            40960,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                12,
+                320,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                10,
+                40,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                20,
+                3,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                12,
+                320,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            320,
+            40,
+            64
+          ],
+          "input_stride": [
+            2560,
+            20480,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": false,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn8winograd27generateWinogradTilesKernelILi0EffEEvNS0_27GenerateWinogradTilesParamsIT0_T1_EE",
+              "grid": [
+                10,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                4,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                56
+              ]
+            },
+            {
+              "name": "cudnn_infer_ampere_scudnn_winograd_128x128_ldg1_ldg4_relu_tile148t_nt_v1",
+              "grid": [
+                80,
+                5,
+                4
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                276
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        640,
+        640,
+        640
+      ],
+      "layout": "NCHW",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            640,
+            20,
+            32
+          ],
+          "input_stride": [
+            409600,
+            640,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                20,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            640,
+            20,
+            32
+          ],
+          "input_stride": [
+            409600,
+            640,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                20,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            640,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            640,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            640,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            640,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        640,
+        640,
+        640
+      ],
+      "layout": "NC_permuted",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            640,
+            20,
+            32
+          ],
+          "input_stride": [
+            640,
+            10240,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                20,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            640,
+            20,
+            32
+          ],
+          "input_stride": [
+            640,
+            5120,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                20,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            640,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            640,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            640,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            640,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        1280,
+        192,
+        1280
+      ],
+      "layout": "NCHW",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            1280,
+            10,
+            16
+          ],
+          "input_stride": [
+            204800,
+            160,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                40,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            1280,
+            10,
+            16
+          ],
+          "input_stride": [
+            204800,
+            160,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                40,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        1280,
+        192,
+        1280
+      ],
+      "layout": "NC_permuted",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            1280,
+            10,
+            16
+          ],
+          "input_stride": [
+            160,
+            2560,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                40,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            1280,
+            10,
+            16
+          ],
+          "input_stride": [
+            160,
+            1280,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                3200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                40,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        320,
+        2560,
+        960
+      ],
+      "layout": "NCHW",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            960,
+            40,
+            64
+          ],
+          "input_stride": [
+            2457600,
+            2560,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                12,
+                960,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                30,
+                40,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                20,
+                3,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                12,
+                320,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            960,
+            40,
+            64
+          ],
+          "input_stride": [
+            2457600,
+            2560,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": false,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn8winograd27generateWinogradTilesKernelILi0EffEEvNS0_27GenerateWinogradTilesParamsIT0_T1_EE",
+              "grid": [
+                10,
+                240,
+                1
+              ],
+              "block": [
+                32,
+                4,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                56
+              ]
+            },
+            {
+              "name": "cudnn_infer_ampere_scudnn_winograd_128x128_ldg1_ldg4_relu_tile148t_nt_v1",
+              "grid": [
+                80,
+                5,
+                4
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                276
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        320,
+        2560,
+        960
+      ],
+      "layout": "NC_permuted",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            960,
+            40,
+            64
+          ],
+          "input_stride": [
+            2560,
+            40960,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                76800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                153600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                12,
+                960,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                30,
+                40,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                20,
+                3,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                12,
+                320,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            960,
+            40,
+            64
+          ],
+          "input_stride": [
+            2560,
+            20480,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": false,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                38400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                76800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn8winograd27generateWinogradTilesKernelILi0EffEEvNS0_27GenerateWinogradTilesParamsIT0_T1_EE",
+              "grid": [
+                10,
+                240,
+                1
+              ],
+              "block": [
+                32,
+                4,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                56
+              ]
+            },
+            {
+              "name": "cudnn_infer_ampere_scudnn_winograd_128x128_ldg1_ldg4_relu_tile148t_nt_v1",
+              "grid": [
+                80,
+                5,
+                4
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                276
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        640,
+        640,
+        1920
+      ],
+      "layout": "NCHW",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            1920,
+            20,
+            32
+          ],
+          "input_stride": [
+            1228800,
+            640,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                1920,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                60,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            1920,
+            20,
+            32
+          ],
+          "input_stride": [
+            1228800,
+            640,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                1920,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                60,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            1920,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            1920,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            640,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            640,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        640,
+        640,
+        1920
+      ],
+      "layout": "NC_permuted",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            1920,
+            20,
+            32
+          ],
+          "input_stride": [
+            640,
+            10240,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                38400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                76800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                1920,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                60,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            1920,
+            20,
+            32
+          ],
+          "input_stride": [
+            640,
+            5120,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                19200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                38400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                1920,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                60,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            1920,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            1920,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            640,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            640,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        1280,
+        192,
+        2560
+      ],
+      "layout": "NCHW",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            2560,
+            10,
+            16
+          ],
+          "input_stride": [
+            409600,
+            160,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                2560,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                80,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            2560,
+            10,
+            16
+          ],
+          "input_stride": [
+            409600,
+            160,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                2560,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                80,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            2560,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            2560,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        1280,
+        192,
+        2560
+      ],
+      "layout": "NC_permuted",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            2560,
+            10,
+            16
+          ],
+          "input_stride": [
+            160,
+            2560,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                2560,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                80,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            2560,
+            10,
+            16
+          ],
+          "input_stride": [
+            160,
+            1280,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                2560,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                80,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            2560,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            2560,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        1280,
+        640,
+        1280
+      ],
+      "layout": "NCHW",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            1280,
+            20,
+            32
+          ],
+          "input_stride": [
+            819200,
+            640,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                40,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            1280,
+            20,
+            32
+          ],
+          "input_stride": [
+            819200,
+            640,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                40,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        1280,
+        640,
+        1280
+      ],
+      "layout": "NC_permuted",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            1280,
+            20,
+            32
+          ],
+          "input_stride": [
+            640,
+            10240,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                40,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            1280,
+            20,
+            32
+          ],
+          "input_stride": [
+            640,
+            5120,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                40,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        640,
+        640,
+        320
+      ],
+      "layout": "NCHW",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            320,
+            20,
+            32
+          ],
+          "input_stride": [
+            204800,
+            640,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                320,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                10,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            320,
+            20,
+            32
+          ],
+          "input_stride": [
+            204800,
+            640,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": false,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn8winograd27generateWinogradTilesKernelILi0EffEEvNS0_27GenerateWinogradTilesParamsIT0_T1_EE",
+              "grid": [
+                20,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                4,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                56
+              ]
+            },
+            {
+              "name": "cudnn_infer_ampere_scudnn_winograd_128x128_ldg1_ldg4_relu_tile442t_nt_v1",
+              "grid": [
+                40,
+                3,
+                8
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                276
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        640,
+        640,
+        320
+      ],
+      "layout": "NC_permuted",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            320,
+            20,
+            32
+          ],
+          "input_stride": [
+            640,
+            10240,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                320,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                10,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            320,
+            20,
+            32
+          ],
+          "input_stride": [
+            640,
+            5120,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": false,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                3200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn8winograd27generateWinogradTilesKernelILi0EffEEvNS0_27GenerateWinogradTilesParamsIT0_T1_EE",
+              "grid": [
+                20,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                4,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                56
+              ]
+            },
+            {
+              "name": "cudnn_infer_ampere_scudnn_winograd_128x128_ldg1_ldg4_relu_tile442t_nt_v1",
+              "grid": [
+                40,
+                3,
+                8
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                276
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        1280,
+        192,
+        640
+      ],
+      "layout": "NCHW",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            640,
+            10,
+            16
+          ],
+          "input_stride": [
+            102400,
+            160,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                20,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            640,
+            10,
+            16
+          ],
+          "input_stride": [
+            102400,
+            160,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                20,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            640,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            640,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        1280,
+        192,
+        640
+      ],
+      "layout": "NC_permuted",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            640,
+            10,
+            16
+          ],
+          "input_stride": [
+            160,
+            2560,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                3200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                20,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            640,
+            10,
+            16
+          ],
+          "input_stride": [
+            160,
+            1280,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                1600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                3200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                20,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            640,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            640,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        1280,
+        192,
+        1920
+      ],
+      "layout": "NCHW",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            1920,
+            10,
+            16
+          ],
+          "input_stride": [
+            307200,
+            160,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                1920,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                60,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            1920,
+            10,
+            16
+          ],
+          "input_stride": [
+            307200,
+            160,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                1920,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                60,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            1920,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            1920,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        1280,
+        192,
+        1920
+      ],
+      "layout": "NC_permuted",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            1920,
+            10,
+            16
+          ],
+          "input_stride": [
+            160,
+            2560,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                9600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                19200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                1920,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                60,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            1920,
+            10,
+            16
+          ],
+          "input_stride": [
+            160,
+            1280,
+            16,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                4800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                9600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                1,
+                1920,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                60,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                2,
+                10,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                1,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                6400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            1920,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            1920,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            1,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            1,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        640,
+        640,
+        1280
+      ],
+      "layout": "NCHW",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            1280,
+            20,
+            32
+          ],
+          "input_stride": [
+            819200,
+            640,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                40,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            1280,
+            20,
+            32
+          ],
+          "input_stride": [
+            819200,
+            640,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                40,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            640,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            640,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        640,
+        640,
+        1280
+      ],
+      "layout": "NC_permuted",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            1280,
+            20,
+            32
+          ],
+          "input_stride": [
+            640,
+            10240,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                40,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            1280,
+            20,
+            32
+          ],
+          "input_stride": [
+            640,
+            5120,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                1280,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                40,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            1280,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            1280,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            640,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            640,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        640,
+        640,
+        960
+      ],
+      "layout": "NCHW",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            960,
+            20,
+            32
+          ],
+          "input_stride": [
+            614400,
+            640,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                960,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                30,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            960,
+            20,
+            32
+          ],
+          "input_stride": [
+            614400,
+            640,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                960,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                30,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            960,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            960,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            640,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            640,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        640,
+        640,
+        960
+      ],
+      "layout": "NC_permuted",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            960,
+            20,
+            32
+          ],
+          "input_stride": [
+            640,
+            10240,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                19200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                38400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                960,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                30,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            960,
+            20,
+            32
+          ],
+          "input_stride": [
+            640,
+            5120,
+            32,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                9600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                19200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                4,
+                960,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                30,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                5,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                4,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                12800,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [
+        {
+          "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            960,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            960,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        },
+        {
+          "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+          "full_grid": [
+            4,
+            640,
+            1
+          ],
+          "batch8_grid": [
+            4,
+            640,
+            1
+          ],
+          "observed_halving_axes": [],
+          "grid_reduction_validity_unproven": true
+        }
+      ],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        640,
+        2560,
+        640
+      ],
+      "layout": "NCHW",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            640,
+            40,
+            64
+          ],
+          "input_stride": [
+            1638400,
+            2560,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                12,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                20,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                20,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                12,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                102400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            640,
+            40,
+            64
+          ],
+          "input_stride": [
+            1638400,
+            2560,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": false,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn8winograd27generateWinogradTilesKernelILi0EffEEvNS0_27GenerateWinogradTilesParamsIT0_T1_EE",
+              "grid": [
+                20,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                4,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                56
+              ]
+            },
+            {
+              "name": "cudnn_infer_ampere_scudnn_winograd_128x128_ldg1_ldg4_relu_tile148t_nt_v1",
+              "grid": [
+                160,
+                5,
+                4
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                276
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        640,
+        2560,
+        640
+      ],
+      "layout": "NC_permuted",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            640,
+            40,
+            64
+          ],
+          "input_stride": [
+            2560,
+            40960,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                102400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                12,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                20,
+                80,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                20,
+                5,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                12,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                102400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            640,
+            40,
+            64
+          ],
+          "input_stride": [
+            2560,
+            20480,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": false,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn8winograd27generateWinogradTilesKernelILi0EffEEvNS0_27GenerateWinogradTilesParamsIT0_T1_EE",
+              "grid": [
+                20,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                4,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                56
+              ]
+            },
+            {
+              "name": "cudnn_infer_ampere_scudnn_winograd_128x128_ldg1_ldg4_relu_tile148t_nt_v1",
+              "grid": [
+                160,
+                5,
+                4
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                276
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        320,
+        2560,
+        640
+      ],
+      "layout": "NCHW",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            640,
+            40,
+            64
+          ],
+          "input_stride": [
+            1638400,
+            2560,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                12,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                20,
+                40,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                20,
+                3,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                12,
+                320,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            640,
+            40,
+            64
+          ],
+          "input_stride": [
+            1638400,
+            2560,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": false,
+          "nodes": [
+            {
+              "name": "_ZN5cudnn8winograd27generateWinogradTilesKernelILi0EffEEvNS0_27GenerateWinogradTilesParamsIT0_T1_EE",
+              "grid": [
+                10,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                4,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                56
+              ]
+            },
+            {
+              "name": "cudnn_infer_ampere_scudnn_winograd_128x128_ldg1_ldg4_relu_tile148t_nt_v1",
+              "grid": [
+                80,
+                5,
+                4
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                276
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [],
+      "RNG_unchanged": true
+    },
+    {
+      "geometry": [
+        320,
+        2560,
+        640
+      ],
+      "layout": "NC_permuted",
+      "samples": [
+        {
+          "batch": 16,
+          "input_shape": [
+            16,
+            640,
+            40,
+            64
+          ],
+          "input_stride": [
+            2560,
+            40960,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": true,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                102400,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused22winogradForwardData4x4IffEEvNS0_18WinogradDataParamsIT_T0_EE",
+              "grid": [
+                12,
+                640,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                128
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardFilter4x4IffEEvNS0_20WinogradFilterParamsIT_T0_EE",
+              "grid": [
+                20,
+                40,
+                1
+              ],
+              "block": [
+                32,
+                8,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                40
+              ]
+            },
+            {
+              "name": "ampere_sgemm_128x128_nn",
+              "grid": [
+                20,
+                3,
+                36
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                176
+              ]
+            },
+            {
+              "name": "_ZN5cudnn17winograd_nonfused24winogradForwardOutput4x4IffEEvNS0_20WinogradOutputParamsIT_T0_EE",
+              "grid": [
+                12,
+                320,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                152
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        },
+        {
+          "batch": 8,
+          "input_shape": [
+            8,
+            640,
+            40,
+            64
+          ],
+          "input_stride": [
+            2560,
+            20480,
+            64,
+            1
+          ],
+          "native_Winograd_plan_eligible": false,
+          "nodes": [
+            {
+              "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_11FillFunctorIfEENS_6detail5ArrayIPcLi1EEEEEviT0_T1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                4,
+                8
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_EEvS4_RKT_EUliE_EEviT1_",
+              "grid": [
+                51200,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                536
+              ]
+            },
+            {
+              "name": "_ZN5cudnn8winograd27generateWinogradTilesKernelILi0EffEEvNS0_27GenerateWinogradTilesParamsIT0_T1_EE",
+              "grid": [
+                10,
+                160,
+                1
+              ],
+              "block": [
+                32,
+                4,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                56
+              ]
+            },
+            {
+              "name": "cudnn_infer_ampere_scudnn_winograd_128x128_ldg1_ldg4_relu_tile148t_nt_v1",
+              "grid": [
+                80,
+                5,
+                4
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                276
+              ]
+            },
+            {
+              "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_15CUDAFunctor_addIfEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+              "grid": [
+                25600,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "shared_bytes": 0,
+              "argument_sizes": [
+                4,
+                648
+              ]
+            }
+          ],
+          "captured_output_signedzero_bits": true
+        }
+      ],
+      "calibration": [],
+      "RNG_unchanged": true
+    }
+  ]
+}

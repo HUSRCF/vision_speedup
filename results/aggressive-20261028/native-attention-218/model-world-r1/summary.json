@@ -1,0 +1,71 @@
+{
+  "clean": true,
+  "scope": "Complete world model on current adopted218 baseline",
+  "rows": [
+    {
+      "rank": 0,
+      "baseline_median_ms": 252.1553955078125,
+      "candidate_median_ms": 247.25708770751953,
+      "median_paired_saved_ms": 4.8686065673828125,
+      "all6_pairs_faster": true,
+      "native_kernel_profiles": {
+        "baseline": [
+          {
+            "name": "fmha_cutlassF_f32_aligned_64x64_rf_sm80(AttentionKernel<float, cutlass::arch::Sm80, true, 64, 64, 64, true, true, DefaultToBatchHook>::Params)",
+            "count": 70,
+            "CUDA_us": 14304.0
+          }
+        ],
+        "candidate": [
+          {
+            "name": "fmha_cutlassF_f32_aligned_64x64_rf_sm80(AttentionKernel<float, cutlass::arch::Sm80, true, 64, 64, 64, true, true, DefaultToBatchHook>::Params)",
+            "count": 70,
+            "CUDA_us": 7866.0
+          }
+        ]
+      },
+      "native_attention_calls": 70,
+      "signedzero_output_checks": 18,
+      "Linear_masters": 570,
+      "norm_masters": 782,
+      "Conv2d_masters": 192,
+      "RNG_unchanged": true,
+      "baseline_restored": true
+    },
+    {
+      "rank": 1,
+      "baseline_median_ms": 252.08524322509766,
+      "candidate_median_ms": 247.3185272216797,
+      "median_paired_saved_ms": 4.8430023193359375,
+      "all6_pairs_faster": true,
+      "native_kernel_profiles": {
+        "baseline": [
+          {
+            "name": "fmha_cutlassF_f32_aligned_64x64_rf_sm80(AttentionKernel<float, cutlass::arch::Sm80, true, 64, 64, 64, true, true, DefaultToBatchHook>::Params)",
+            "count": 70,
+            "CUDA_us": 14410.0
+          }
+        ],
+        "candidate": [
+          {
+            "name": "fmha_cutlassF_f32_aligned_64x64_rf_sm80(AttentionKernel<float, cutlass::arch::Sm80, true, 64, 64, 64, true, true, DefaultToBatchHook>::Params)",
+            "count": 70,
+            "CUDA_us": 7898.0
+          }
+        ]
+      },
+      "native_attention_calls": 70,
+      "signedzero_output_checks": 18,
+      "Linear_masters": 570,
+      "norm_masters": 782,
+      "Conv2d_masters": 192,
+      "RNG_unchanged": true,
+      "baseline_restored": true
+    }
+  ],
+  "no_extra_model_collectives": true,
+  "output_copy_in_timing": true,
+  "profiler_after_all_pairs": true,
+  "full_process_or_video_quality_result": false,
+  "official_adopted": false
+}

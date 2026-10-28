@@ -1,0 +1,67 @@
+{
+  "clean": true,
+  "numerics_passed": true,
+  "full_model_pairs": 6,
+  "rows": [
+    {
+      "rank": 0,
+      "baseline_median_ms": 252.36685180664062,
+      "candidate_median_ms": 255.27500915527344,
+      "median_paired_saved_ms": -2.8984298706054688,
+      "all6_pairs_faster": false,
+      "cases": 6,
+      "signedzero_output_checks": 18,
+      "Linear_masters": 570,
+      "norm_masters": 782,
+      "Conv2d_masters": 192,
+      "original_SGEMM_owners": 23,
+      "original_head_caches": 45,
+      "selected_SGEMM_owners": 21,
+      "selected_ResBlocks": 12,
+      "RNG_unchanged": true,
+      "baseline_restoration_bitwise": true,
+      "original_cache_restored": true
+    },
+    {
+      "rank": 1,
+      "baseline_median_ms": 252.3310089111328,
+      "candidate_median_ms": 255.2985610961914,
+      "median_paired_saved_ms": -2.8779525756835938,
+      "all6_pairs_faster": false,
+      "cases": 6,
+      "signedzero_output_checks": 18,
+      "Linear_masters": 570,
+      "norm_masters": 782,
+      "Conv2d_masters": 192,
+      "original_SGEMM_owners": 23,
+      "original_head_caches": 45,
+      "selected_SGEMM_owners": 21,
+      "selected_ResBlocks": 12,
+      "RNG_unchanged": true,
+      "baseline_restoration_bitwise": true,
+      "original_cache_restored": true
+    }
+  ],
+  "result": "All-block candidate slower; rejected for performance, no full V2 trial",
+  "official_adopted": false,
+  "full_video_PSNR_verified": false,
+  "original209_manifest_SHA256": "b251c0f24dd3648e7bc032ddb695f758b6ca5471cb1ce4bac769589c408db669",
+  "telemetry": {
+    "2": {
+      "samples": 237,
+      "peak_memory_MiB": 52508,
+      "peak_temperature_C": 66,
+      "busy_clock_MHz_min": 1365,
+      "busy_clock_MHz_max": 1410,
+      "busy_clock_MHz_median": 1410
+    },
+    "3": {
+      "samples": 237,
+      "peak_memory_MiB": 52508,
+      "peak_temperature_C": 54,
+      "busy_clock_MHz_min": 1380,
+      "busy_clock_MHz_max": 1410,
+      "busy_clock_MHz_median": 1410.0
+    }
+  }
+}
