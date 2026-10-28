@@ -29,6 +29,11 @@ states across 570 Linear,782 norm and192 Conv2d masters; all three outputs must
 match signed-zero bits, and RNG/cache/baseline restoration must pass. Six paired
 whole-world timings include all frame copies,12 gathers and version checks.
 
+The first GPU task has now terminated before model gates: attempt1 was excluded
+for a foreign CUDA context; attempt2 failed the rank-startup assertion requiring
+exactly one non-parent NVML context. See [terminal evidence](../../../results/aggressive-20261028/world-native-frame-interleaved-209/model-r1-terminal).
+No subsequent model checks or paired timings completed, so this is not evidence
+for or against the candidate's model numerics or performance.
 At this snapshot **none of those GPU model checks or timings has completed**.
 There is no complete V2 or new quality result. Current official V2 remains
 287.745486 seconds, five-case total836.651410 seconds.

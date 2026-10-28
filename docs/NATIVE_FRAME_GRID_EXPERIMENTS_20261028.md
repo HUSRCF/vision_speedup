@@ -142,6 +142,6 @@ GPU 矩阵 r2 对全部 14 种 packed／Kahan 配置各测试初始、修改输�
 
 基准与候选都启用当前 world 空间／时间并行；候选额外执行这 12 个块的 N16 填充与前八帧重排，在原完整时间卷积前汇合。保留原 23+45 owner 和旧 Kahan CUBIN 门槛，新 kernel 使用独立缓存，编译与实际捕获图参数检查后恢复原缓存路径。新的捕获见证使用完整、类型正确的 Torch 缓冲，**不重放未初始化缓冲，不声称它提供数值结果**。真正的数值门槛仍是后续六个完整模型动态状态、570／782／192 master 修改、三路逐位输出、RNG 和原图恢复。
 
-这份快照还没有完成真实 GPU 模型检查或计时。等待进程只在所选两卡同时满足原空闲条件、取得两把锁并再次核验后才创建 CUDA context；CPU 等待期间不占显存。配对完整 world 前向、12 次汇合的净成本和完整 V2 质量均待验证，正式材料不变。
+这份快照还没有完成真实 GPU 模型检查或计时。首次实际模型任务现已退出：尝试 1 因出现其他 CUDA context 被排除；尝试 2 在 rank 启动时检查 `own` NVML context 数量为一的断言失败，父进程退出。没有通过后续完整模型门槛，也没有可用配对计时。该失败发生在模型数值检查之前，不能判断候选算术是否正确或是否更快。[终态日志和状态](../results/aggressive-20261028/world-native-frame-interleaved-209/model-r1-terminal)。等待进程仍按原规则只在两卡满足空闲条件、取得两把锁并再次核验后创建 CUDA context；正式材料不变。后续新尝试需要先完善上下文初始化失败的分类，不能将该次退出当作数值失败或成功。
 
 等待期间另在 CPU 上完成了实际使用的 **9 种新 kernel** 的 SM80 静态编译，`CUDA_VISIBLE_DEVICES=''`、Torch CUDA 始终未初始化，产物写入新 kernel 专用缓存。初次尝试已生成第一个 CUBIN，但在 Triton2.3.1 随后构造运行时包装器时失败；该包装器要求无设备环境的 `UnsupportedDriver.binary_ext`。r2 在独立 CPU 进程中将最终返回对象换为编译文件读取器，保留全部编译阶段与 cache key，九种产物均完成。GPU worker 不导入此 helper，原 CUBIN 门槛与新捕获图 ABI 检查保留。该操作不提供 GPU 执行、整模型速度或质量证明，也不是冷编译耗时基准。[精确源码和说明](../experiments/world-native-frame-interleaved-209/offline-compile-r2) · [九种产物 SHA 与日志](../results/aggressive-20261028/world-native-frame-interleaved-209/offline-compile-r2) · [首次包装器失败](../results/aggressive-20261028/world-native-frame-interleaved-209/offline-compile-r1-failed)

@@ -1,0 +1,65 @@
+NCCL_MODEL_ATTEMPT=/tmp/team07-world-interleaved-model-zkos4r78/attempt-1
+WAIT_GPU_PAIR=2,3
+CLEAN_RUN_GPU=2
+CLEAN_RUN_GPU=3
+Traceback (most recent call last):
+  File "/tmp/team07-world-interleaved-model-zkos4r78/wait_nccl_geglu_model_pair.py", line 60, in <module>
+    if __name__=='__main__':main()
+  File "/tmp/team07-world-interleaved-model-zkos4r78/wait_nccl_geglu_model_pair.py", line 42, in main
+    rows,contexts=query();telemetry.append(dict(time_utc=time.time(),GPUs=rows));assert all(not(p-owners) for p in contexts.values()),'foreign GPU context'
+AssertionError: foreign GPU context
+
+NCCL_MODEL_CONTAMINATED_ATTEMPT_EXCLUDED=1
+NCCL_MODEL_ATTEMPT=/tmp/team07-world-interleaved-model-zkos4r78/attempt-2
+WAIT_GPU_PAIR=2,3
+Traceback (most recent call last):
+  File "/tmp/team07-world-interleaved-model-zkos4r78/wait_nccl_geglu_model_pair.py", line 60, in <module>
+    if __name__=='__main__':main()
+  File "/tmp/team07-world-interleaved-model-zkos4r78/wait_nccl_geglu_model_pair.py", line 34, in main
+    assert process.poll() is None and time.monotonic()<until
+AssertionError
+
+Traceback (most recent call last):
+  File "/tmp/team07-world-interleaved-model-zkos4r78/attempt-2/check_nccl_geglu_model_rank.py", line 11, in <module>
+    own=contexts[rows[physical[rank]]['uuid']]-root;assert len(own)==1
+AssertionError
+W1028 22:53:33.441000 140712924817216 torch/distributed/elastic/multiprocessing/api.py:851] Sending process 3171724 closing signal SIGTERM
+E1028 22:53:33.555000 140712924817216 torch/distributed/elastic/multiprocessing/api.py:826] failed (exitcode: 1) local_rank: 0 (pid: 3171723) of binary: /home/team07/.venv/bin/python
+Traceback (most recent call last):
+  File "/home/team07/.venv/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/team07/.venv/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 883, in <module>
+    main()
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
+    return f(*args, **kwargs)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 879, in main
+    run(args)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 870, in run
+    elastic_launch(
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 132, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 263, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+check_nccl_geglu_model_rank.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-10-28_22:53:33
+  host      : contest-player
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 3171723)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+
+Traceback (most recent call last):
+  File "/tmp/team07-world-interleaved-model-zkos4r78/retry_nccl_model_pair.py", line 18, in <module>
+    raise RuntimeError('Model diagnostic failed: '+str(attempt))
+RuntimeError: Model diagnostic failed: /tmp/team07-world-interleaved-model-zkos4r78/attempt-2
