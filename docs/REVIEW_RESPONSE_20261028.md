@@ -26,12 +26,16 @@ SpatialSoftmax 列表中有共享 module 对象；诊断按对象去重安装 ho
 
 这条建议指出的重复工作确实存在。此前已实现独立 packed-Kahan kernel，并完成七种实际几何的合成输入、原始与改动权重、清零/恢复、NaN canary、原始 workspace 污染、缓存刷新及三/四指针图参数见证检查。普通随机权重和 Half 可精确表示权重的矩阵结果均与当前 Kahan 路径逐位一致。这里的逐位等价对象是当前 Kahan kernel，不能写成对原始 native 卷积逐位等价。
 
-相同 tile 下预打包可能更快，也可能更慢；额外 Half 访存、资源占用和调度会影响结果。历史逐形状证据见 [`kahan-prepack-existing-evidence.json`](../results/aggressive-20261028/kahan-prepack-existing-evidence.json)。其中更宽 tile 的 packed 组合在合成完整卷积中有正收益，但尚未形成当前 209 文件模型的完整组合验证。
+相同 tile 下预打包可能更快，也可能更慢；额外 Half 访存、资源占用和调度会影响结果。历史逐形状证据见 [`kahan-prepack-existing-evidence.json`](../results/aggressive-20261028/kahan-prepack-existing-evidence.json)。其中更宽 tile 的 packed 组合随后已接入当前 209 文件模型，并完成完整 V2。
 
-另一个只改 BK32 tile、不预打包的整模型候选曾逐位通过，完整视频质量也通过，但总耗时较慢，未采用。不能据此推断 packed-Kahan 组合无效，也不能把单算子收益当成完整模型收益。后续组合实验应沿用 BK32、三个乘积、舍入边界、Kahan 累加和权重版本刷新，先做当前整模型配对，再决定是否正式跑视频。
+八处静态 high/low 预打包保留原 BK32、三个 Half 乘积、FP32 舍入边界和 Kahan 累加；原三指针 cubin 检查完整保留，新增四指针 ABI 经过实际图参数见证。增加的 Half 权重缓冲共 **825,753,600 字节**，随原始权重版本刷新。六组输入与全部 570 个 Linear、782 个 norm、192 个 Conv2d 参数修改／清零／恢复检查中，三个输出全部逐位一致；每个 owner 刷新五次，RNG 与原基准恢复检查通过。六对完整 world 前向均更快，中位省 **1.576950 ms**；按 550 次前向条件性外推约 **0.867 秒**，并非完整进程收益。
+
+随后完整单卡 V2 为 **324.052568 秒 / PSNR 29.675324786 dB**，11 轮、23 个视频均完成，全部视频 SHA256 与原始单卡基线相同。但它比历史单卡 316.774396 秒慢 **7.278172 秒**，因此没有替换当前双卡正式结果。两次完整进程不是同次配对测量；本次未改动的 decision 阶段 CUDA 时间也增加约 3.254 秒，不能把全部差值归因于权重预打包。新增初始化、打包和退出成本均在原 process timer 内。
+
+本次 GPU 2 共 565 个遥测样本，最高 **76°C**、显存峰值 **73,968 MiB**；利用率至少 90% 时 SM 频率 **1245–1410 MHz**、中位 **1395 MHz**。没有固定频率或调整功耗。精确代码与别名生成器见 [`kahan-packed-current209`](../experiments/kahan-packed-current209)，完整单项 log／JSON、参数与视频一致性证明见 [结果](../results/aggressive-20261028/kahan-packed-current209)。另一个只改 tile、不预打包的历史候选同样未被采用，两者是不同实验。
 
 ## 后续优先级
 
-视频主干占每步约 96%–97%。保留完整逻辑形状、只在底层分配空间块工作的版本现已完成正式运行，比上个双卡版本快 10.532237 秒，23 个视频与原始单卡基线逐文件一致；代码见 [`nccl-spatial-temporal-209`](../experiments/nccl-spatial-temporal-209)。直接输入 batch 8+8 的版本仍保留为负结果。
+视频主干占每步约 96%–97%。当前 decision/world 双阶段完整空间块分片已完成正式运行，为 **289.486308 秒**，比此前仅 world 空间块分片的 301.930663 秒快 **12.444355 秒**，23 个视频与原始单卡基线及另一 rank 逐文件一致；代码见 [`nccl-both-spatial-temporal-209`](../experiments/nccl-both-spatial-temporal-209)。直接输入 batch 8+8 的历史版本仍保留为负结果。
 
-下一步是 decision 阶段的同类分片：先清点原始算子，保留 vendor GEMM 的完整矩阵尺寸，只拆独立行的原始 Triton kernel。原始 decision 的 277 次空间块 JIT 调用元数据已发布；尚无新 decision 加速或质量结论。Decision 的 norm/layout/half-pack、动作有效前缀 attention 和 Kahan 预打包组合也仍待验证。
+Decision 分片已通过六组完整模型检查，两个 rank 的前向节省中位数为 19.006966 / 15.908356 ms。Decision 的 norm/layout/half-pack、动作有效前缀 attention、扩大卷积并行范围，以及带精度保护的量化补偿仍是后续方向。Kahan 预打包的单卡完整结论如上，尚未证明它能改善当前双卡进程时间。

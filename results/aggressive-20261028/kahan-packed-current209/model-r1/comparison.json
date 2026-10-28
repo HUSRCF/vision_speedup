@@ -1,0 +1,3533 @@
+{
+  "stages": {
+    "world": {
+      "stage": "world",
+      "cases": [
+        {
+          "case": "initial",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            }
+          ],
+          "baseline_restored_bitwise": false,
+          "attention_launches": {
+            "captured": 8,
+            "geometries": [
+              [
+                640,
+                640,
+                320
+              ],
+              [
+                1280,
+                192,
+                640
+              ],
+              [
+                1280,
+                192,
+                1920
+              ],
+              [
+                640,
+                640,
+                1280
+              ],
+              [
+                640,
+                640,
+                960
+              ],
+              [
+                640,
+                2560,
+                640
+              ],
+              [
+                320,
+                2560,
+                640
+              ],
+              [
+                320,
+                2560,
+                640
+              ]
+            ],
+            "packed_configs": [
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                1
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ]
+            ],
+            "packed_filter_bytes": 825753600,
+            "packed_refreshes": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "witnesses": [
+              {
+                "geometry": [
+                  640,
+                  640,
+                  320
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "a0991fd84e3293048467f0eabd2bd09d9d703e1bf1e182d7acd64dbd936806a9",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  1280,
+                  192,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  1
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "fd0e4e9bd439542243a99adf705d88dbcff75b347a12d9062e0ba97ccccdf398",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  1280,
+                  192,
+                  1920
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "29bc8c2d0f0af3625d847fc204fcef013262447c463cab2f9930aefe8aa64ebf",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  640,
+                  1280
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "b7f32205add267551b6bb88cb416b47bbe0cbd2273e9f1a55a50bcf6eb838430",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  640,
+                  960
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "e41941d11c4c0532e3e4a60de62ec869773803dd7891e5438e198bdcf6d300f9",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  2560,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "e259ff8c8701c1899ceb722c16d0601b3c4a7de43bda28dfc676bd79851ad483",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  320,
+                  2560,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "573a513d2847b4f41cd2fcabf41a083902b026620545894185fe9ef906a0331c",
+                "metadata_capture_never_replayed": true
+              }
+            ],
+            "original_three_pointer_cubin_gates_preserved": true,
+            "static_pack_on_original_master_version_change": true,
+            "original_native_transforms_and_23plus45_owners": true,
+            "original_BK32_Kahan_math": true,
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "changed_inputs",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            }
+          ],
+          "baseline_restored_bitwise": false,
+          "attention_launches": {
+            "captured": 8,
+            "geometries": [
+              [
+                640,
+                640,
+                320
+              ],
+              [
+                1280,
+                192,
+                640
+              ],
+              [
+                1280,
+                192,
+                1920
+              ],
+              [
+                640,
+                640,
+                1280
+              ],
+              [
+                640,
+                640,
+                960
+              ],
+              [
+                640,
+                2560,
+                640
+              ],
+              [
+                320,
+                2560,
+                640
+              ],
+              [
+                320,
+                2560,
+                640
+              ]
+            ],
+            "packed_configs": [
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                1
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ]
+            ],
+            "packed_filter_bytes": 825753600,
+            "packed_refreshes": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "witnesses": [
+              {
+                "geometry": [
+                  640,
+                  640,
+                  320
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "a0991fd84e3293048467f0eabd2bd09d9d703e1bf1e182d7acd64dbd936806a9",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  1280,
+                  192,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  1
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "fd0e4e9bd439542243a99adf705d88dbcff75b347a12d9062e0ba97ccccdf398",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  1280,
+                  192,
+                  1920
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "29bc8c2d0f0af3625d847fc204fcef013262447c463cab2f9930aefe8aa64ebf",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  640,
+                  1280
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "b7f32205add267551b6bb88cb416b47bbe0cbd2273e9f1a55a50bcf6eb838430",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  640,
+                  960
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "e41941d11c4c0532e3e4a60de62ec869773803dd7891e5438e198bdcf6d300f9",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  2560,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "e259ff8c8701c1899ceb722c16d0601b3c4a7de43bda28dfc676bd79851ad483",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  320,
+                  2560,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "573a513d2847b4f41cd2fcabf41a083902b026620545894185fe9ef906a0331c",
+                "metadata_capture_never_replayed": true
+              }
+            ],
+            "original_three_pointer_cubin_gates_preserved": true,
+            "static_pack_on_original_master_version_change": true,
+            "original_native_transforms_and_23plus45_owners": true,
+            "original_BK32_Kahan_math": true,
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "changed_all_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            }
+          ],
+          "baseline_restored_bitwise": false,
+          "attention_launches": {
+            "captured": 8,
+            "geometries": [
+              [
+                640,
+                640,
+                320
+              ],
+              [
+                1280,
+                192,
+                640
+              ],
+              [
+                1280,
+                192,
+                1920
+              ],
+              [
+                640,
+                640,
+                1280
+              ],
+              [
+                640,
+                640,
+                960
+              ],
+              [
+                640,
+                2560,
+                640
+              ],
+              [
+                320,
+                2560,
+                640
+              ],
+              [
+                320,
+                2560,
+                640
+              ]
+            ],
+            "packed_configs": [
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                1
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ]
+            ],
+            "packed_filter_bytes": 825753600,
+            "packed_refreshes": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "witnesses": [
+              {
+                "geometry": [
+                  640,
+                  640,
+                  320
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "a0991fd84e3293048467f0eabd2bd09d9d703e1bf1e182d7acd64dbd936806a9",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  1280,
+                  192,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  1
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "fd0e4e9bd439542243a99adf705d88dbcff75b347a12d9062e0ba97ccccdf398",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  1280,
+                  192,
+                  1920
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "29bc8c2d0f0af3625d847fc204fcef013262447c463cab2f9930aefe8aa64ebf",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  640,
+                  1280
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "b7f32205add267551b6bb88cb416b47bbe0cbd2273e9f1a55a50bcf6eb838430",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  640,
+                  960
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "e41941d11c4c0532e3e4a60de62ec869773803dd7891e5438e198bdcf6d300f9",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  2560,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "e259ff8c8701c1899ceb722c16d0601b3c4a7de43bda28dfc676bd79851ad483",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  320,
+                  2560,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "573a513d2847b4f41cd2fcabf41a083902b026620545894185fe9ef906a0331c",
+                "metadata_capture_never_replayed": true
+              }
+            ],
+            "original_three_pointer_cubin_gates_preserved": true,
+            "static_pack_on_original_master_version_change": true,
+            "original_native_transforms_and_23plus45_owners": true,
+            "original_BK32_Kahan_math": true,
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "restored_all_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            }
+          ],
+          "baseline_restored_bitwise": true,
+          "attention_launches": {
+            "captured": 8,
+            "geometries": [
+              [
+                640,
+                640,
+                320
+              ],
+              [
+                1280,
+                192,
+                640
+              ],
+              [
+                1280,
+                192,
+                1920
+              ],
+              [
+                640,
+                640,
+                1280
+              ],
+              [
+                640,
+                640,
+                960
+              ],
+              [
+                640,
+                2560,
+                640
+              ],
+              [
+                320,
+                2560,
+                640
+              ],
+              [
+                320,
+                2560,
+                640
+              ]
+            ],
+            "packed_configs": [
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                1
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ]
+            ],
+            "packed_filter_bytes": 825753600,
+            "packed_refreshes": [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "witnesses": [
+              {
+                "geometry": [
+                  640,
+                  640,
+                  320
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "a0991fd84e3293048467f0eabd2bd09d9d703e1bf1e182d7acd64dbd936806a9",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  1280,
+                  192,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  1
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "fd0e4e9bd439542243a99adf705d88dbcff75b347a12d9062e0ba97ccccdf398",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  1280,
+                  192,
+                  1920
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "29bc8c2d0f0af3625d847fc204fcef013262447c463cab2f9930aefe8aa64ebf",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  640,
+                  1280
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "b7f32205add267551b6bb88cb416b47bbe0cbd2273e9f1a55a50bcf6eb838430",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  640,
+                  960
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "e41941d11c4c0532e3e4a60de62ec869773803dd7891e5438e198bdcf6d300f9",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  2560,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "e259ff8c8701c1899ceb722c16d0601b3c4a7de43bda28dfc676bd79851ad483",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  320,
+                  2560,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "573a513d2847b4f41cd2fcabf41a083902b026620545894185fe9ef906a0331c",
+                "metadata_capture_never_replayed": true
+              }
+            ],
+            "original_three_pointer_cubin_gates_preserved": true,
+            "static_pack_on_original_master_version_change": true,
+            "original_native_transforms_and_23plus45_owners": true,
+            "original_BK32_Kahan_math": true,
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "zero_all_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            }
+          ],
+          "baseline_restored_bitwise": false,
+          "attention_launches": {
+            "captured": 8,
+            "geometries": [
+              [
+                640,
+                640,
+                320
+              ],
+              [
+                1280,
+                192,
+                640
+              ],
+              [
+                1280,
+                192,
+                1920
+              ],
+              [
+                640,
+                640,
+                1280
+              ],
+              [
+                640,
+                640,
+                960
+              ],
+              [
+                640,
+                2560,
+                640
+              ],
+              [
+                320,
+                2560,
+                640
+              ],
+              [
+                320,
+                2560,
+                640
+              ]
+            ],
+            "packed_configs": [
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                1
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ]
+            ],
+            "packed_filter_bytes": 825753600,
+            "packed_refreshes": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "witnesses": [
+              {
+                "geometry": [
+                  640,
+                  640,
+                  320
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "a0991fd84e3293048467f0eabd2bd09d9d703e1bf1e182d7acd64dbd936806a9",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  1280,
+                  192,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  1
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "fd0e4e9bd439542243a99adf705d88dbcff75b347a12d9062e0ba97ccccdf398",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  1280,
+                  192,
+                  1920
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "29bc8c2d0f0af3625d847fc204fcef013262447c463cab2f9930aefe8aa64ebf",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  640,
+                  1280
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "b7f32205add267551b6bb88cb416b47bbe0cbd2273e9f1a55a50bcf6eb838430",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  640,
+                  960
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "e41941d11c4c0532e3e4a60de62ec869773803dd7891e5438e198bdcf6d300f9",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  2560,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "e259ff8c8701c1899ceb722c16d0601b3c4a7de43bda28dfc676bd79851ad483",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  320,
+                  2560,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "573a513d2847b4f41cd2fcabf41a083902b026620545894185fe9ef906a0331c",
+                "metadata_capture_never_replayed": true
+              }
+            ],
+            "original_three_pointer_cubin_gates_preserved": true,
+            "static_pack_on_original_master_version_change": true,
+            "original_native_transforms_and_23plus45_owners": true,
+            "original_BK32_Kahan_math": true,
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "zero_then_restore",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            }
+          ],
+          "baseline_restored_bitwise": true,
+          "attention_launches": {
+            "captured": 8,
+            "geometries": [
+              [
+                640,
+                640,
+                320
+              ],
+              [
+                1280,
+                192,
+                640
+              ],
+              [
+                1280,
+                192,
+                1920
+              ],
+              [
+                640,
+                640,
+                1280
+              ],
+              [
+                640,
+                640,
+                960
+              ],
+              [
+                640,
+                2560,
+                640
+              ],
+              [
+                320,
+                2560,
+                640
+              ],
+              [
+                320,
+                2560,
+                640
+              ]
+            ],
+            "packed_configs": [
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                1
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              [
+                64,
+                64,
+                32,
+                4,
+                2
+              ]
+            ],
+            "packed_filter_bytes": 825753600,
+            "packed_refreshes": [
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            "witnesses": [
+              {
+                "geometry": [
+                  640,
+                  640,
+                  320
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "a0991fd84e3293048467f0eabd2bd09d9d703e1bf1e182d7acd64dbd936806a9",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  1280,
+                  192,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  1
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "fd0e4e9bd439542243a99adf705d88dbcff75b347a12d9062e0ba97ccccdf398",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  1280,
+                  192,
+                  1920
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "29bc8c2d0f0af3625d847fc204fcef013262447c463cab2f9930aefe8aa64ebf",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  640,
+                  1280
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "b7f32205add267551b6bb88cb416b47bbe0cbd2273e9f1a55a50bcf6eb838430",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  640,
+                  960
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "e41941d11c4c0532e3e4a60de62ec869773803dd7891e5438e198bdcf6d300f9",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  640,
+                  2560,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "e259ff8c8701c1899ceb722c16d0601b3c4a7de43bda28dfc676bd79851ad483",
+                "metadata_capture_never_replayed": true
+              },
+              {
+                "geometry": [
+                  320,
+                  2560,
+                  640
+                ],
+                "config": [
+                  64,
+                  64,
+                  32,
+                  4,
+                  2
+                ],
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "573a513d2847b4f41cd2fcabf41a083902b026620545894185fe9ef906a0331c",
+                "metadata_capture_never_replayed": true
+              }
+            ],
+            "original_three_pointer_cubin_gates_preserved": true,
+            "static_pack_on_original_master_version_change": true,
+            "original_native_transforms_and_23plus45_owners": true,
+            "original_BK32_Kahan_math": true,
+            "full_video_PSNR_unverified": true
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_samples_ms": [
+            293.9945068359375,
+            294.0641174316406,
+            293.9596862792969,
+            294.22283935546875,
+            293.8224792480469,
+            294.3109130859375,
+            294.8106384277344
+          ],
+          "baseline_ms": 294.0641174316406,
+          "candidate_samples_ms": [
+            292.37554931640625,
+            292.68377685546875,
+            292.1205749511719,
+            292.66943359375,
+            292.2342529296875,
+            292.1502685546875,
+            292.91314697265625
+          ],
+          "candidate_ms": 292.37554931640625,
+          "saved_ms": 1.688568115234375
+        },
+        {
+          "candidate_samples_ms": [
+            292.9510498046875,
+            292.4697570800781,
+            292.7615966796875,
+            291.6372375488281,
+            292.66021728515625,
+            292.9756164550781,
+            292.9428405761719
+          ],
+          "candidate_ms": 292.7615966796875,
+          "baseline_samples_ms": [
+            294.1603698730469,
+            293.38726806640625,
+            294.3897705078125,
+            294.7809143066406,
+            294.40716552734375,
+            294.1440124511719,
+            293.9105224609375
+          ],
+          "baseline_ms": 294.1603698730469,
+          "saved_ms": 1.398773193359375
+        },
+        {
+          "baseline_samples_ms": [
+            294.7133483886719,
+            294.4409484863281,
+            293.9781188964844,
+            294.6631774902344,
+            294.1552734375,
+            294.24639892578125,
+            294.4952392578125
+          ],
+          "baseline_ms": 294.4409484863281,
+          "candidate_samples_ms": [
+            293.0493469238281,
+            293.2838439941406,
+            292.14208984375,
+            292.7974548339844,
+            292.7882385253906,
+            292.811767578125,
+            292.68890380859375
+          ],
+          "candidate_ms": 292.7974548339844,
+          "saved_ms": 1.64349365234375
+        },
+        {
+          "candidate_samples_ms": [
+            292.4421081542969,
+            292.14617919921875,
+            292.4933166503906,
+            292.92645263671875,
+            293.45587158203125,
+            292.890625,
+            292.9203186035156
+          ],
+          "candidate_ms": 292.890625,
+          "baseline_samples_ms": [
+            294.4010314941406,
+            294.23614501953125,
+            294.181884765625,
+            294.66827392578125,
+            293.59002685546875,
+            294.5607604980469,
+            294.40716552734375
+          ],
+          "baseline_ms": 294.4010314941406,
+          "saved_ms": 1.510406494140625
+        },
+        {
+          "baseline_samples_ms": [
+            294.49420166015625,
+            294.2996520996094,
+            294.45733642578125,
+            294.1695861816406,
+            294.23614501953125,
+            294.8269958496094,
+            294.2771301269531
+          ],
+          "baseline_ms": 294.2996520996094,
+          "candidate_samples_ms": [
+            293.12103271484375,
+            292.8045959472656,
+            292.822021484375,
+            293.5469970703125,
+            293.57159423828125,
+            293.87060546875,
+            292.42266845703125
+          ],
+          "candidate_ms": 293.12103271484375,
+          "saved_ms": 1.178619384765625
+        },
+        {
+          "candidate_samples_ms": [
+            293.0667419433594,
+            293.2418518066406,
+            292.822021484375,
+            292.98687744140625,
+            293.3155822753906,
+            293.2111511230469,
+            293.4569091796875
+          ],
+          "candidate_ms": 293.2111511230469,
+          "baseline_samples_ms": [
+            294.9416809082031,
+            296.1919860839844,
+            295.02362060546875,
+            295.5960388183594,
+            295.18438720703125,
+            295.04205322265625,
+            294.74200439453125
+          ],
+          "baseline_ms": 295.04205322265625,
+          "saved_ms": 1.830902099609375
+        }
+      ],
+      "median_saved_ms": 1.5769500732421875,
+      "same_process": true,
+      "same_GPU": true,
+      "same_model_masters": true,
+      "current209_norm2_presplit_flags_preserved": true,
+      "original_graph_owners_and_all_version_checks_both_modes": true,
+      "eight_Kahan_filters_prepacked": true,
+      "all_diffusion_all_masters_tested": true,
+      "attention_launches": {
+        "captured": 8,
+        "geometries": [
+          [
+            640,
+            640,
+            320
+          ],
+          [
+            1280,
+            192,
+            640
+          ],
+          [
+            1280,
+            192,
+            1920
+          ],
+          [
+            640,
+            640,
+            1280
+          ],
+          [
+            640,
+            640,
+            960
+          ],
+          [
+            640,
+            2560,
+            640
+          ],
+          [
+            320,
+            2560,
+            640
+          ],
+          [
+            320,
+            2560,
+            640
+          ]
+        ],
+        "packed_configs": [
+          [
+            64,
+            64,
+            32,
+            4,
+            2
+          ],
+          [
+            64,
+            64,
+            32,
+            4,
+            1
+          ],
+          [
+            64,
+            64,
+            32,
+            4,
+            2
+          ],
+          [
+            64,
+            64,
+            32,
+            4,
+            2
+          ],
+          [
+            64,
+            64,
+            32,
+            4,
+            2
+          ],
+          [
+            64,
+            64,
+            32,
+            4,
+            2
+          ],
+          [
+            64,
+            64,
+            32,
+            4,
+            2
+          ],
+          [
+            64,
+            64,
+            32,
+            4,
+            2
+          ]
+        ],
+        "packed_filter_bytes": 825753600,
+        "packed_refreshes": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "witnesses": [
+          {
+            "geometry": [
+              640,
+              640,
+              320
+            ],
+            "config": [
+              64,
+              64,
+              32,
+              4,
+              2
+            ],
+            "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+            "bounded_driver_four_pointer_metadata": true,
+            "cubin_sha256": "a0991fd84e3293048467f0eabd2bd09d9d703e1bf1e182d7acd64dbd936806a9",
+            "metadata_capture_never_replayed": true
+          },
+          {
+            "geometry": [
+              1280,
+              192,
+              640
+            ],
+            "config": [
+              64,
+              64,
+              32,
+              4,
+              1
+            ],
+            "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+            "bounded_driver_four_pointer_metadata": true,
+            "cubin_sha256": "fd0e4e9bd439542243a99adf705d88dbcff75b347a12d9062e0ba97ccccdf398",
+            "metadata_capture_never_replayed": true
+          },
+          {
+            "geometry": [
+              1280,
+              192,
+              1920
+            ],
+            "config": [
+              64,
+              64,
+              32,
+              4,
+              2
+            ],
+            "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+            "bounded_driver_four_pointer_metadata": true,
+            "cubin_sha256": "29bc8c2d0f0af3625d847fc204fcef013262447c463cab2f9930aefe8aa64ebf",
+            "metadata_capture_never_replayed": true
+          },
+          {
+            "geometry": [
+              640,
+              640,
+              1280
+            ],
+            "config": [
+              64,
+              64,
+              32,
+              4,
+              2
+            ],
+            "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+            "bounded_driver_four_pointer_metadata": true,
+            "cubin_sha256": "b7f32205add267551b6bb88cb416b47bbe0cbd2273e9f1a55a50bcf6eb838430",
+            "metadata_capture_never_replayed": true
+          },
+          {
+            "geometry": [
+              640,
+              640,
+              960
+            ],
+            "config": [
+              64,
+              64,
+              32,
+              4,
+              2
+            ],
+            "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+            "bounded_driver_four_pointer_metadata": true,
+            "cubin_sha256": "e41941d11c4c0532e3e4a60de62ec869773803dd7891e5438e198bdcf6d300f9",
+            "metadata_capture_never_replayed": true
+          },
+          {
+            "geometry": [
+              640,
+              2560,
+              640
+            ],
+            "config": [
+              64,
+              64,
+              32,
+              4,
+              2
+            ],
+            "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+            "bounded_driver_four_pointer_metadata": true,
+            "cubin_sha256": "e259ff8c8701c1899ceb722c16d0601b3c4a7de43bda28dfc676bd79851ad483",
+            "metadata_capture_never_replayed": true
+          },
+          {
+            "geometry": [
+              320,
+              2560,
+              640
+            ],
+            "config": [
+              64,
+              64,
+              32,
+              4,
+              2
+            ],
+            "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+            "bounded_driver_four_pointer_metadata": true,
+            "cubin_sha256": "573a513d2847b4f41cd2fcabf41a083902b026620545894185fe9ef906a0331c",
+            "metadata_capture_never_replayed": true
+          }
+        ],
+        "original_three_pointer_cubin_gates_preserved": true,
+        "static_pack_on_original_master_version_change": true,
+        "original_native_transforms_and_23plus45_owners": true,
+        "original_BK32_Kahan_math": true,
+        "full_video_PSNR_unverified": true
+      },
+      "baseline_restoration_bitwise": true,
+      "synthetic_master_condition_refresh": [
+        {
+          "restored": false,
+          "invalidated_keys": 131,
+          "original_output_storage_preserved": true
+        },
+        {
+          "restored": true,
+          "invalidated_keys": 131,
+          "original_output_storage_preserved": true,
+          "before_explicit_invalidation": [
+            {
+              "relative_l2": 0.005625521764159203,
+              "max_abs": 0.057267069816589355,
+              "signedzero_bits": false
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0005444125272333622,
+              "max_abs": 0.0021535158157348633,
+              "signedzero_bits": false
+            }
+          ],
+          "after_explicit_invalidation": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            }
+          ]
+        },
+        {
+          "restored": false,
+          "invalidated_keys": 131,
+          "original_output_storage_preserved": true
+        },
+        {
+          "restored": true,
+          "invalidated_keys": 131,
+          "original_output_storage_preserved": true,
+          "before_explicit_invalidation": [
+            {
+              "relative_l2": 0.20817974209785461,
+              "max_abs": 1.8111679553985596,
+              "signedzero_bits": false
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.05904891714453697,
+              "max_abs": 0.20770609378814697,
+              "signedzero_bits": false
+            }
+          ],
+          "after_explicit_invalidation": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            }
+          ]
+        }
+      ],
+      "full_video_PSNR_unverified": true,
+      "balanced_warmup": 40,
+      "settle_per_mode": 2,
+      "samples_per_condition": 7,
+      "Conv2d_master_tensors": 192,
+      "Linear_master_tensors": 570,
+      "norm_master_tensors": 782,
+      "master_refresh_uses_existing_eager_forward": true,
+      "RNG_unchanged": true,
+      "reports": {
+        "baseline": {
+          "selected": 23,
+          "plans": [
+            {
+              "weight": "model.diffusion_model.input_blocks.1.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.1.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.2.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.2.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.4.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                320
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "2daa957ff67201a6158b53f025ade1b002b5b2156db96e512f0ed51488fd312f",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.4.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.5.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.5.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.7.0.in_layers.2.weight",
+              "geometry": [
+                1280,
+                192,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8f16557ec155e0480eb4305ed8b3a7adaaffacb97986332af87f6827595838eb",
+              "cached_native_filter_bytes": 117964800,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.5.0.in_layers.2.weight",
+              "geometry": [
+                1280,
+                192,
+                1920
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "d255b2d7c2386c2812154e8e8b52a39e12faca771f1d0f4536692429a6fad2e5",
+              "cached_native_filter_bytes": 353894400,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.5.3.conv.weight",
+              "geometry": [
+                1280,
+                640,
+                1280
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 235929600,
+              "packed_filter_bytes": 235929600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.6.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.7.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                1280
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "db5bcb8c4b233404a3ffbc28c3ed80d7e670f249a085603eabee34a559c345a7",
+              "cached_native_filter_bytes": 117964800,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.7.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                960
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "490ccb3992f302fa1e2bc4ad85765da525865ae7bdba9e9e6ebd2cc02191cebf",
+              "cached_native_filter_bytes": 88473600,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.3.conv.weight",
+              "geometry": [
+                640,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "e69f99bebccb2402c1e2985cf226c2da73b4adf507e396dc3c1cca77d47459aa",
+              "cached_native_filter_bytes": 58982400,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.9.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                960
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 44236800,
+              "packed_filter_bytes": 44236800
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.9.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.10.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8131985e717553e86bf86993df382b1eddaf7416d28a2c5f2b6032ffc2fa575d",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.10.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.11.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8131985e717553e86bf86993df382b1eddaf7416d28a2c5f2b6032ffc2fa575d",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.11.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            }
+          ],
+          "setup_ms": 45.80535303102806,
+          "prepacked_weights": true,
+          "direct_params": true,
+          "numerical_selected": 15,
+          "native_only_selected": 0,
+          "kahan_selected": 8,
+          "cached_native_filter_bytes": 1563033600,
+          "packed_filter_bytes": 737280000,
+          "template_bytes": 24,
+          "kahan_template_bytes": 32,
+          "original_native_transforms": true,
+          "numerical_SGEMM_only": true,
+          "first_setup_inside_timed_capture": true,
+          "full_video_PSNR_required": true
+        },
+        "candidate": {
+          "selected": 23,
+          "plans": [
+            {
+              "weight": "model.diffusion_model.input_blocks.1.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.1.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.2.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.2.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.4.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                320
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "a0991fd84e3293048467f0eabd2bd09d9d703e1bf1e182d7acd64dbd936806a9",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true,
+              "kahan_filter_prepacked": true,
+              "original_three_pointer_witness_cubin_sha256": "2daa957ff67201a6158b53f025ade1b002b5b2156db96e512f0ed51488fd312f",
+              "actual_four_pointer_metadata_witness": {
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "a0991fd84e3293048467f0eabd2bd09d9d703e1bf1e182d7acd64dbd936806a9",
+                "metadata_capture_never_replayed": true
+              },
+              "packed_filter_bytes": 29491200,
+              "packed_config": [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              "BK32_three_products_rounding_and_Kahan_preserved": true
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.4.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.5.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.5.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.7.0.in_layers.2.weight",
+              "geometry": [
+                1280,
+                192,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "fd0e4e9bd439542243a99adf705d88dbcff75b347a12d9062e0ba97ccccdf398",
+              "cached_native_filter_bytes": 117964800,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true,
+              "kahan_filter_prepacked": true,
+              "original_three_pointer_witness_cubin_sha256": "8f16557ec155e0480eb4305ed8b3a7adaaffacb97986332af87f6827595838eb",
+              "actual_four_pointer_metadata_witness": {
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "fd0e4e9bd439542243a99adf705d88dbcff75b347a12d9062e0ba97ccccdf398",
+                "metadata_capture_never_replayed": true
+              },
+              "packed_filter_bytes": 117964800,
+              "packed_config": [
+                64,
+                64,
+                32,
+                4,
+                1
+              ],
+              "BK32_three_products_rounding_and_Kahan_preserved": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.5.0.in_layers.2.weight",
+              "geometry": [
+                1280,
+                192,
+                1920
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "29bc8c2d0f0af3625d847fc204fcef013262447c463cab2f9930aefe8aa64ebf",
+              "cached_native_filter_bytes": 353894400,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true,
+              "kahan_filter_prepacked": true,
+              "original_three_pointer_witness_cubin_sha256": "d255b2d7c2386c2812154e8e8b52a39e12faca771f1d0f4536692429a6fad2e5",
+              "actual_four_pointer_metadata_witness": {
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "29bc8c2d0f0af3625d847fc204fcef013262447c463cab2f9930aefe8aa64ebf",
+                "metadata_capture_never_replayed": true
+              },
+              "packed_filter_bytes": 353894400,
+              "packed_config": [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              "BK32_three_products_rounding_and_Kahan_preserved": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.5.3.conv.weight",
+              "geometry": [
+                1280,
+                640,
+                1280
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 235929600,
+              "packed_filter_bytes": 235929600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.6.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.7.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                1280
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "b7f32205add267551b6bb88cb416b47bbe0cbd2273e9f1a55a50bcf6eb838430",
+              "cached_native_filter_bytes": 117964800,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true,
+              "kahan_filter_prepacked": true,
+              "original_three_pointer_witness_cubin_sha256": "db5bcb8c4b233404a3ffbc28c3ed80d7e670f249a085603eabee34a559c345a7",
+              "actual_four_pointer_metadata_witness": {
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "b7f32205add267551b6bb88cb416b47bbe0cbd2273e9f1a55a50bcf6eb838430",
+                "metadata_capture_never_replayed": true
+              },
+              "packed_filter_bytes": 117964800,
+              "packed_config": [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              "BK32_three_products_rounding_and_Kahan_preserved": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.7.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                960
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "e41941d11c4c0532e3e4a60de62ec869773803dd7891e5438e198bdcf6d300f9",
+              "cached_native_filter_bytes": 88473600,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true,
+              "kahan_filter_prepacked": true,
+              "original_three_pointer_witness_cubin_sha256": "490ccb3992f302fa1e2bc4ad85765da525865ae7bdba9e9e6ebd2cc02191cebf",
+              "actual_four_pointer_metadata_witness": {
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "e41941d11c4c0532e3e4a60de62ec869773803dd7891e5438e198bdcf6d300f9",
+                "metadata_capture_never_replayed": true
+              },
+              "packed_filter_bytes": 88473600,
+              "packed_config": [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              "BK32_three_products_rounding_and_Kahan_preserved": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.3.conv.weight",
+              "geometry": [
+                640,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "e259ff8c8701c1899ceb722c16d0601b3c4a7de43bda28dfc676bd79851ad483",
+              "cached_native_filter_bytes": 58982400,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true,
+              "kahan_filter_prepacked": true,
+              "original_three_pointer_witness_cubin_sha256": "e69f99bebccb2402c1e2985cf226c2da73b4adf507e396dc3c1cca77d47459aa",
+              "actual_four_pointer_metadata_witness": {
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "e259ff8c8701c1899ceb722c16d0601b3c4a7de43bda28dfc676bd79851ad483",
+                "metadata_capture_never_replayed": true
+              },
+              "packed_filter_bytes": 58982400,
+              "packed_config": [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              "BK32_three_products_rounding_and_Kahan_preserved": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.9.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                960
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 44236800,
+              "packed_filter_bytes": 44236800
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.9.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.10.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "573a513d2847b4f41cd2fcabf41a083902b026620545894185fe9ef906a0331c",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true,
+              "kahan_filter_prepacked": true,
+              "original_three_pointer_witness_cubin_sha256": "8131985e717553e86bf86993df382b1eddaf7416d28a2c5f2b6032ffc2fa575d",
+              "actual_four_pointer_metadata_witness": {
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "573a513d2847b4f41cd2fcabf41a083902b026620545894185fe9ef906a0331c",
+                "metadata_capture_never_replayed": true
+              },
+              "packed_filter_bytes": 29491200,
+              "packed_config": [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              "BK32_three_products_rounding_and_Kahan_preserved": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.10.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.11.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "573a513d2847b4f41cd2fcabf41a083902b026620545894185fe9ef906a0331c",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true,
+              "kahan_filter_prepacked": true,
+              "original_three_pointer_witness_cubin_sha256": "8131985e717553e86bf86993df382b1eddaf7416d28a2c5f2b6032ffc2fa575d",
+              "actual_four_pointer_metadata_witness": {
+                "captured_function_grid_block_shared_and_four_argument_bytes_identical": true,
+                "bounded_driver_four_pointer_metadata": true,
+                "cubin_sha256": "573a513d2847b4f41cd2fcabf41a083902b026620545894185fe9ef906a0331c",
+                "metadata_capture_never_replayed": true
+              },
+              "packed_filter_bytes": 29491200,
+              "packed_config": [
+                64,
+                64,
+                32,
+                4,
+                2
+              ],
+              "BK32_three_products_rounding_and_Kahan_preserved": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.11.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            }
+          ],
+          "setup_ms": 1235.075403994415,
+          "prepacked_weights": true,
+          "direct_params": true,
+          "numerical_selected": 15,
+          "native_only_selected": 0,
+          "kahan_selected": 8,
+          "cached_native_filter_bytes": 1563033600,
+          "packed_filter_bytes": 737280000,
+          "template_bytes": 24,
+          "kahan_template_bytes": 32,
+          "original_native_transforms": true,
+          "numerical_SGEMM_only": true,
+          "first_setup_inside_timed_capture": true,
+          "full_video_PSNR_required": true
+        }
+      },
+      "no_official_score": true
+    }
+  },
+  "ready_for_full_trial": true,
+  "no_official_score": true
+}
