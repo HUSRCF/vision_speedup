@@ -35,3 +35,11 @@
 守护程序全程未发现外来 context。两卡峰值显存均 74,170 MiB，最高温度 74／73°C；繁忙频率中位均 1410 MHz，范围分别 1335–1410／1260–1410 MHz。未改频率或结束他人作业。原 GPU0/1 排队在 CUDA 前取消后迁移到空闲 GPU1/2，旧排队证据未用作成绩。
 
 [完整对照证据](../results/aggressive-20261028/native-attention-218/full-candidate-r2)包含原 log／JSON、阶段计时、控制器覆盖、视频哈希比较、整段 telemetry 和源码证明。重新校验全部五项 **49 轮／103 视频**通过，五项合计 **829.756355 秒**；是各次有效单项汇总，不是一次连续五项墙钟。公开 `results/runtime.log`、`results/result.json` 与本机 `GPU/` 同字节，尚未上传网站。
+
+## 第二项：init_attn 的 512 通道 FFN
+
+[模型 r2](../experiments/initial-ffn-219/model-r2)已将原 producer／consumer 一起按行分片，保持 full40960 外层形状、BK32、group 对齐、原权重版本缓存和全部 JIT 函数体；整个 FFN 最后汇合一次，每 rank 发送 40 MiB。以实际已采用 219 文件为两条件共同基线，六组动态 master／输入状态及每 rank18个带符号零输出均逐位通过；570 Linear／782 norm／192 Conv2d、RNG、基线恢复和原23+45 owner／CUBIN门槛保留。两个 rank 的六对完整 world 前向均更快，中位净节省 **3.940857／3.897850 ms**，含汇合，不能将两 rank 相加。
+
+首轮在图构建后遇到测试脚本读取旧 `captured` 字段的 KeyError；r2 仅修正覆盖断言，算子代码 SHA256 未变。首轮没有数值／速度结论。新增 M20480 变体使用独立的每 rank 标准 Triton 缓存，立即恢复旧缓存目录；不替换 cache manager、不删除旧缓存。
+
+[220 文件正式候选](../experiments/initial-ffn-219/production220)已通过 CPU 生命周期及实际 storage offset 检查，正在排队进行同卡、同存储的完整进程对照。当前正式 280.850431 秒／五项829.756355秒保持；该候选完整 V2／视频质量尚待验证。下一项继续扩展时间块分片边界。

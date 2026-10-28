@@ -1,0 +1,80 @@
+{
+  "clean": true,
+  "baseline": "actual adopted219 helpers with original209 model source",
+  "source_count": 219,
+  "extra": "world init_attn512 producer+consumer row halves; one40MiB local output gather",
+  "original_JIT_bodies_and_BK32_unchanged": true,
+  "rows": [
+    {
+      "rank": 0,
+      "median_saved_ms": 3.94085693359375,
+      "all_six_pairs_faster": true,
+      "dynamic_states": 6,
+      "all18_signedzero_outputs_exact": true,
+      "RNG_unchanged": true,
+      "baseline_restored": true,
+      "initial_FFN": {
+        "captured": 1,
+        "rows": [
+          {
+            "shape": [
+              40960,
+              512,
+              2048
+            ],
+            "rank": 0,
+            "collectives": 1,
+            "original_producer_and_consumer_JIT_bodies": true,
+            "original_BK32": true,
+            "original_group_alignment": true,
+            "outer_full_shape_retained": true,
+            "output_half_MiB": 40.0
+          }
+        ],
+        "original_producer_and_consumer_JIT_bodies": true,
+        "original_BK32": true,
+        "original_master_version_cache_retained": true,
+        "one_gather_per_whole_initial_FFN": true,
+        "no_activation_or_output_replay_cache": true,
+        "default_old_kernel_cache_restored": true
+      }
+    },
+    {
+      "rank": 1,
+      "median_saved_ms": 3.8978500366210938,
+      "all_six_pairs_faster": true,
+      "dynamic_states": 6,
+      "all18_signedzero_outputs_exact": true,
+      "RNG_unchanged": true,
+      "baseline_restored": true,
+      "initial_FFN": {
+        "captured": 1,
+        "rows": [
+          {
+            "shape": [
+              40960,
+              512,
+              2048
+            ],
+            "rank": 1,
+            "collectives": 1,
+            "original_producer_and_consumer_JIT_bodies": true,
+            "original_BK32": true,
+            "original_group_alignment": true,
+            "outer_full_shape_retained": true,
+            "output_half_MiB": 40.0
+          }
+        ],
+        "original_producer_and_consumer_JIT_bodies": true,
+        "original_BK32": true,
+        "original_master_version_cache_retained": true,
+        "one_gather_per_whole_initial_FFN": true,
+        "no_activation_or_output_replay_cache": true,
+        "default_old_kernel_cache_restored": true
+      }
+    }
+  ],
+  "full_V2_and_PSNR_pending": true,
+  "official_results_unchanged": true,
+  "preceding_r1": "Terminal diagnostic KeyError reading old captured field after graph construction; r2 changes only that report assertion, no operator code change."
+}
