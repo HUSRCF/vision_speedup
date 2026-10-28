@@ -1,0 +1,11 @@
+# Spatial norm row routing — world model qualified
+
+Exact frozen221 arithmetic/helpers are the common baseline for both graphs; only candidate routes spatial norm rows. The added wrapper acts exclusively inside the active SpatialTransformer scope, not inside temporal GroupNorm. It retains every original scalar dimension/stride (including full M), JIT body, per-group reduction tree, live affine/version ownership and existing communication. Only independent sample/group pointers and grid rows are halved. No new collective or compiler variant is requested.
+
+Two locked, strictly idle GPUs1,2 completed six dynamic states and six alternating pairs. Selected570 Linear,782 norm and192 Conv2d FP32 tensors were changed/zeroed/restored, plus input changes. All18 outputs on each rank were signed-zero bitwise identical, baseline restoration and RNG checks passed.38 norm/layout launches were partitioned in the captured candidate world graph. Median complete-world-forward savings are0.488449/0.484352ms; all six pairs were faster on each rank. Do not add ranks.550 forwards extrapolate only about0.27s, and initialization may absorb that: this is a small model-level gain, not a new official V2 result.
+
+The full native209 world graph checks remain23 SGEMMs (15packed/8Kahan) and45 head filter caches; both graphs keep adopted221 spatial/FFN/temporal/native attention/initial FFN/expanded temporal routing. Source and qualified scalar routing are identical to the CPU-r1 draft.
+
+The model computation, six mutation states and six paired timings are unchanged by compact logging: omit repeated per-case controller copies, print timing/errors rather than full nested reports, and use ordinary hardlinks for completed duplicate reports. Original complete per-rank reports and guard evidence are retained. This avoids needing any historical cleanup. The first queued r1 waiter was cancelled before allocation under its reservation locks when its pair became busy; r2 is the clean GPU test.
+
+Use ADOPTED221_ROOT for the frozen materialized221 tree, CANONICAL_ROOT for original209, and the verified INIT_FFN_CACHE_DIR/TEMPORAL_BLOCK_CACHE_DIR. Import scripts/spatial_norm221_mode.py before configure_denoiser. Production/default and official result files remain220 until complete-workload quality/timing validation.

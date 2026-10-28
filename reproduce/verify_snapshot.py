@@ -157,6 +157,18 @@ def main():
         assert len(rank['pairs'])==6 and all(pair['saved_ms']>0 for pair in rank['pairs'])
         ctl=rank['attention_launches'];assert ctl['captured']==16 and ctl['no_new_collectives']
         assert sum(row['grouped_copy_nodes'] for row in ctl['rows'])==54
+    norm_root=root/'experiments/spatial-norm-221/world-model-r2'
+    for name,digest in json.loads((norm_root/'source-hashes.json').read_text()).items():assert sha(norm_root/name)==digest,name
+    assert sha(norm_root/'scripts/spatial_norm221_mode.py')==sha(root/'experiments/spatial-norm-221/cpu-r1/spatial_norm221_mode.py')
+    norm_evidence=json.loads((root/'results/aggressive-20261028/spatial-norm-221/world-model-r2/summary.json').read_text())
+    assert norm_evidence['clean'] and norm_evidence['passed'] and norm_evidence['ready_for_model']
+    assert norm_evidence['baseline_source_count']==221 and not norm_evidence['full_V2_process_or_video_quality_qualification']
+    for rank in norm_evidence['ranks']:
+        assert len(rank['cases'])==6 and rank['RNG_unchanged'] and rank['baseline_restoration_bitwise']
+        assert all(e['signedzero_bits'] for case in rank['cases'] for e in case['errors'])
+        assert len(rank['pairs'])==6 and all(pair['saved_ms']>0 for pair in rank['pairs'])
+        ctl=rank['attention_launches'];assert ctl['captured']==38 and ctl['no_new_collectives'] and ctl['no_temporal_GroupNorm_partition']
+        assert ctl['adopted221']['temporal_block']['captured']==32
     for row in cases:
         records=re.findall(r'^PSNR case='+re.escape(row['case'])+r' psnr_db=([^ ]+) threshold_db=25 pass=(\w+)$',log,re.M)
         assert len(records)==1 and records[0][1]=='true'

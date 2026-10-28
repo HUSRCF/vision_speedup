@@ -81,3 +81,14 @@ GPU guard和所有完整模型报告成功结束后，外层retry将重复ranks.
 为腾出独立系统盘输出空间而提出的8项历史已结束模型日志压缩，被自动审批拒绝：其认为原授权仅覆盖本轮新任务，历史证据处理需要用户明确批准。尚未执行历史压缩，重跑等待足够输出空间；本地正式pair保持277.436969s／826.342893s。
 
 可独立进行的空间norm草案已完成CPU检查：按SpatialTransformer scope内的独立16样本分配partial／finish_stats／apply／serial_norm／norm-layout-pack的行指针和grid，所有标量维度与stride（包括full M）不变；不增加通信，不触及TemporalTransformer的5D GroupNorm。72项布局/偏移检查、16项时间路径拒绝检查通过，无CUDA初始化；尚无GPU逐位或性能资格。精确草案见[spatial-norm-221/cpu-r1](../experiments/spatial-norm-221/cpu-r1)。
+
+
+### 空间norm world模型验证通过，收益较小
+
+以冻结221实际算术与helper为共同基线，新增空间norm行路由已完成GPU1/2上的六状态、六对完整world前向验证。每rank18路输出含signed zero逐位一致，恢复检查与RNG不变；master修改集合仍明确为570 Linear、782 norm、192 Conv2d，并未宣称修改Conv1d。
+
+候选图38个分片启动：11 partial、11 finish_stats、10 norm/layout pack、5 serial_norm、1 apply。只有样本／组行指针和grid变化，全部标量维度与stride（包括full M）、统计归约树、原JIT主体和权重版本契约保留。TemporalTransformer的5D GroupNorm不进入此包装；没有新增collective。继承221的world23 SGEMM（15packed/8Kahan）及45head filter cache检查仍通过。
+
+六对均更快，中位净省0.488449／0.484352ms／world forward。550次仅粗估约0.27秒，两个rank不能相加，初始化可能吸收这部分收益。该证据不构成完整V2提速或视频质量结论。精确源码与完整报告见[world-model-r2](../experiments/spatial-norm-221/world-model-r2)。
+
+为控制本轮磁盘使用，计算与六组状态／六对计时不变，仅省略每个case重复保存的同一controller清单，stdout改为汇总计时，已完成的新报告副本使用普通硬链接。没有压缩、删除或改写历史证据。当前正式pair和默认入口仍是220。
