@@ -24,6 +24,7 @@ NEWBIE 2.0 · team07 · NVIDIA A800 80 GB；当前 Z1、双臂堆箱、V2、清�
 - [`unifolm/world-head-filter-cache-production-sources.json`](unifolm/world-head-filter-cache-production-sources.json)：生产源码 SHA256 清单。
 - [`experiments/nonv2-vae-all-display`](experiments/nonv2-vae-all-display)：当前 G1 及历史非 V2 分项的59文件精确源码与启动参数。
 - [`experiments/decision-temporal-222`](experiments/decision-temporal-222)：当前V2的223文件增量、六对逐位模型验证、同卡完整AB、正式103视频验收与复现入口。
+- [`docs/WORLD_CO_SPLIT_20261029.md`](docs/WORLD_CO_SPLIT_20261029.md)：当前223基线的Winograd CO分片；14种几何完整逐位检查、9个owner筛选和六对真实模型净收益，完整进程对照进行中，尚未替换正式成绩。
 - [`experiments/adopted222-profile`](experiments/adopted222-profile)：原222双卡decision／world的实测热点；仅导出标量汇总。
 - [`experiments/nonv2-other-blocks63`](experiments/nonv2-other-blocks63)：当前双臂堆箱／清理铅笔的63文件源码、正式103视频验收，以及未通过质量的G1完整实验。
 - [`experiments/nonv2-all-blocks59`](experiments/nonv2-all-blocks59)：当前 Z1 的63文件增量、33个内部块分片、完整复现入口与新103视频验收证据。

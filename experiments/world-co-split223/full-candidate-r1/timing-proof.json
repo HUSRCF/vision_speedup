@@ -1,0 +1,452 @@
+{
+  "original_entry_sha256": "80a2566caedb73e85c96a99657fc4fae355268478ea8652a4caed840c19633af",
+  "candidate_entry_sha256": "b29e26f6e9ae3fa8227d045e0deb85686ac631c9a84f5ee030047874a36c4b70",
+  "four_additive_lifecycle_hooks": true,
+  "removing_only_hooks_recovers_original_exact_bytes": true,
+  "original_timer_assignment_and_profile_writer_unchanged": true,
+  "helper_spawn_after_timer_before_torch_import": true,
+  "helper_shutdown_before_profile_write": true,
+  "original209_source_files_unchanged": true,
+  "native_grid_source_SHA256": "397bdfbd73b8eab9b0b5cc0cc0720748391bf45958fb15ba9099d1648a501d34",
+  "native_grid_reuses_executed_function_source": true,
+  "prior_parallel_algorithm_preserved": true,
+  "decision_ResBlocks": 22,
+  "spatial_native_consumers": 44,
+  "all_new_imports_and_cache_grid_setup_inside_original_timer": true,
+  "variant": "both-spatial-temporal-resblock-grid-native-attention-initial-ffn-temporal-block-initial-block",
+  "original209_math_unchanged": true,
+  "adopted218_helpers_preserved_except_runtime_routing": true,
+  "native_attention_functions_AST_equal_GPU_qualified_model": true,
+  "original_four_timing_hooks_unchanged": true,
+  "adopted219_helpers_preserved_except_runtime_routing": true,
+  "initial_FFN_controller_AST_equal_GPU_qualified_model": true,
+  "original_JIT_bodies_BK32_and_weight_owners_unchanged": true,
+  "initial_FFN_one_additional_collective": true,
+  "adopted220_helpers_preserved_except_runtime_routing": true,
+  "temporal_routing_AST_equal_six_state_GPU_model": true,
+  "temporal_Controller_AST_equal_except_report": true,
+  "original209_and110JIT_bodies_unchanged": true,
+  "no_new_collectives": false,
+  "full5D_GroupNorm_all16_time_steps_and_init_attn220_preserved": false,
+  "grouped_scratch_and_copy_and_all_setup_inside_process_timer": true,
+  "initial_boundary_routing_AST_equal_world_model_r3": true,
+  "initial_boundary_Controller_AST_equal_except_report": true,
+  "full5D_GroupNorm_all16_time_steps_and_Conv1d_projections_preserved": true,
+  "initial_FFN_BK32_arithmetic_and_version_owners_preserved": true,
+  "existing_initial_gather_moved_after_residual": true,
+  "initial_QKV_copy_nodes_included": 2,
+  "source_count": 225,
+  "decision_temporal_blocks": 17,
+  "new_collectives_per_decision_forward": 17,
+  "original209_math_sources_unchanged": true,
+  "original222_routing_preserved": true,
+  "full5D_GroupNorm_and_complete16_time_steps": true,
+  "original_vendor_GEMM_descriptors_preserved": true,
+  "router_model_source_sha256": "88d6484a239bb140aba4dbff5260d325b7834bec938bddf7c4b7a08b6a74120e",
+  "production_adapter_only_changes_report_and_capture_accounting": true,
+  "full_video_PSNR_unverified": true,
+  "additional_world_collectives_per_forward": 9,
+  "relative_to_parent223_additional_decision_collectives": 0,
+  "original223_decision_temporal17_preserved": true,
+  "new_JIT_kernels": 0,
+  "original_constexpr_batch_strides_CUBIN_and_K_order": true,
+  "selected_CO_convolutions": 9,
+  "selection": {
+    "baseline_source_count": 223,
+    "selected_owner_count": 9,
+    "selected": [
+      {
+        "local_weight": "input_blocks.7.0.in_layers.2.weight",
+        "geometry": [
+          1280,
+          192,
+          640
+        ],
+        "config": [
+          32,
+          64,
+          32,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.09420798222223917
+      },
+      {
+        "local_weight": "output_blocks.5.0.in_layers.2.weight",
+        "geometry": [
+          1280,
+          192,
+          1920
+        ],
+        "config": [
+          32,
+          64,
+          32,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.5773652791976928
+      },
+      {
+        "local_weight": "output_blocks.5.3.conv.weight",
+        "geometry": [
+          1280,
+          640,
+          1280
+        ],
+        "config": [
+          32,
+          128,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.6400000254313151
+      },
+      {
+        "local_weight": "output_blocks.7.0.in_layers.2.weight",
+        "geometry": [
+          640,
+          640,
+          1280
+        ],
+        "config": [
+          32,
+          64,
+          32,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.5367467403411865
+      },
+      {
+        "local_weight": "output_blocks.8.0.in_layers.2.weight",
+        "geometry": [
+          640,
+          640,
+          960
+        ],
+        "config": [
+          32,
+          64,
+          32,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.3353599707285564
+      },
+      {
+        "local_weight": "output_blocks.8.3.conv.weight",
+        "geometry": [
+          640,
+          2560,
+          640
+        ],
+        "config": [
+          32,
+          64,
+          32,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.7307947476704917
+      },
+      {
+        "local_weight": "output_blocks.9.0.in_layers.2.weight",
+        "geometry": [
+          320,
+          2560,
+          960
+        ],
+        "config": [
+          32,
+          128,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.3543039162953693
+      },
+      {
+        "local_weight": "output_blocks.10.0.in_layers.2.weight",
+        "geometry": [
+          320,
+          2560,
+          640
+        ],
+        "config": [
+          32,
+          64,
+          32,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.32785073916117347
+      },
+      {
+        "local_weight": "output_blocks.11.0.in_layers.2.weight",
+        "geometry": [
+          320,
+          2560,
+          640
+        ],
+        "config": [
+          32,
+          64,
+          32,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.32785073916117347
+      }
+    ],
+    "excluded": [
+      {
+        "local_weight": "input_blocks.1.0.in_layers.2.weight",
+        "geometry": [
+          320,
+          2560,
+          320
+        ],
+        "config": [
+          32,
+          128,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": -0.21725869178771973,
+        "reason": "negative_or_less_than_50us_minimum_whole_conv_net_saving"
+      },
+      {
+        "local_weight": "input_blocks.1.0.out_layers.3.weight",
+        "geometry": [
+          320,
+          2560,
+          320
+        ],
+        "config": [
+          32,
+          128,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": -0.21725869178771973,
+        "reason": "negative_or_less_than_50us_minimum_whole_conv_net_saving"
+      },
+      {
+        "local_weight": "input_blocks.2.0.in_layers.2.weight",
+        "geometry": [
+          320,
+          2560,
+          320
+        ],
+        "config": [
+          32,
+          128,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": -0.21725869178771973,
+        "reason": "negative_or_less_than_50us_minimum_whole_conv_net_saving"
+      },
+      {
+        "local_weight": "input_blocks.2.0.out_layers.3.weight",
+        "geometry": [
+          320,
+          2560,
+          320
+        ],
+        "config": [
+          32,
+          128,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": -0.21725869178771973,
+        "reason": "negative_or_less_than_50us_minimum_whole_conv_net_saving"
+      },
+      {
+        "local_weight": "input_blocks.4.0.in_layers.2.weight",
+        "geometry": [
+          640,
+          640,
+          320
+        ],
+        "config": [
+          32,
+          64,
+          32,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": -0.05768533547719318,
+        "reason": "negative_or_less_than_50us_minimum_whole_conv_net_saving"
+      },
+      {
+        "local_weight": "input_blocks.4.0.out_layers.3.weight",
+        "geometry": [
+          640,
+          640,
+          640
+        ],
+        "config": [
+          64,
+          64,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.01945598920186359,
+        "reason": "negative_or_less_than_50us_minimum_whole_conv_net_saving"
+      },
+      {
+        "local_weight": "input_blocks.5.0.in_layers.2.weight",
+        "geometry": [
+          640,
+          640,
+          640
+        ],
+        "config": [
+          64,
+          64,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.01945598920186359,
+        "reason": "negative_or_less_than_50us_minimum_whole_conv_net_saving"
+      },
+      {
+        "local_weight": "input_blocks.5.0.out_layers.3.weight",
+        "geometry": [
+          640,
+          640,
+          640
+        ],
+        "config": [
+          64,
+          64,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.01945598920186359,
+        "reason": "negative_or_less_than_50us_minimum_whole_conv_net_saving"
+      },
+      {
+        "local_weight": "output_blocks.6.0.out_layers.3.weight",
+        "geometry": [
+          640,
+          640,
+          640
+        ],
+        "config": [
+          64,
+          64,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.01945598920186359,
+        "reason": "negative_or_less_than_50us_minimum_whole_conv_net_saving"
+      },
+      {
+        "local_weight": "output_blocks.7.0.out_layers.3.weight",
+        "geometry": [
+          640,
+          640,
+          640
+        ],
+        "config": [
+          64,
+          64,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.01945598920186359,
+        "reason": "negative_or_less_than_50us_minimum_whole_conv_net_saving"
+      },
+      {
+        "local_weight": "output_blocks.8.0.out_layers.3.weight",
+        "geometry": [
+          640,
+          640,
+          640
+        ],
+        "config": [
+          64,
+          64,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": 0.01945598920186359,
+        "reason": "negative_or_less_than_50us_minimum_whole_conv_net_saving"
+      },
+      {
+        "local_weight": "output_blocks.9.0.out_layers.3.weight",
+        "geometry": [
+          320,
+          2560,
+          320
+        ],
+        "config": [
+          32,
+          128,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": -0.21725869178771973,
+        "reason": "negative_or_less_than_50us_minimum_whole_conv_net_saving"
+      },
+      {
+        "local_weight": "output_blocks.10.0.out_layers.3.weight",
+        "geometry": [
+          320,
+          2560,
+          320
+        ],
+        "config": [
+          32,
+          128,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": -0.21725869178771973,
+        "reason": "negative_or_less_than_50us_minimum_whole_conv_net_saving"
+      },
+      {
+        "local_weight": "output_blocks.11.0.out_layers.3.weight",
+        "geometry": [
+          320,
+          2560,
+          320
+        ],
+        "config": [
+          32,
+          128,
+          64,
+          4,
+          1
+        ],
+        "minimum_geometry_net_saved_ms": -0.21725869178771973,
+        "reason": "negative_or_less_than_50us_minimum_whole_conv_net_saving"
+      }
+    ],
+    "minimum_net_gain_threshold_ms": 0.05,
+    "selection_uses_both_ranks_and_layouts_and_all6_pairs": true,
+    "sum_minimum_synthetic_net_saved_ms": 3.924480140209198,
+    "synthetic_budget_not_full_model_result": true
+  },
+  "pack_allgather_and_layout_restore_inside_process_timer": true,
+  "model_router_SHA256": "78bd536d9eec1f05a952be6c9744c86d7bf2f069fbc9069d0b84c0633d3be6cc",
+  "model_core_SHA256": "b29bce283fcf8a472836c6576087872023f7031950e2c4876dadd1274f5cca23",
+  "production_adapter_changes_only_report_capture_count_and_inlines_exact_selection": true
+}

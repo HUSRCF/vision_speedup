@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/var/tmp/team07-world-co223-conv-iyzcr_5z/scripts/check_world_co_split223_cpu.py", line 28, in <module>
+    y=gather_channels(x,rank);assert y.stride()==x.stride()and torch.equal(y.view(torch.uint8),x.view(torch.uint8));checks+=1
+RuntimeError: self.stride(-1) must be 1 to view Float as Byte (different element sizes), but got 320
