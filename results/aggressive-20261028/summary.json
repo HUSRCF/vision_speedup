@@ -1405,6 +1405,180 @@
           ]
         }
       ]
+    },
+    "fp16_balanced_int8_residual_current209_world_model_r1": {
+      "clean": true,
+      "official_adopted": false,
+      "complete_world_model": true,
+      "single_GPU": true,
+      "median_saved_ms": 0.9753570556640625,
+      "six_pairs_all_faster": true,
+      "selected_FFN_calls": 10,
+      "calibration_owners": 10,
+      "dynamic_weight_and_input_pack_included": true,
+      "Linear_master_tensors": 570,
+      "norm_master_tensors": 782,
+      "RNG_and_baseline_restoration": true,
+      "full_video_PSNR_unverified": true,
+      "cases": [
+        {
+          "case": "initial",
+          "errors": [
+            {
+              "relative_l2": 2.13672852286223e-05,
+              "max_abs": 0.00011134147644042969,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 3.557923210535074e-05,
+              "max_abs": 0.00010991096496582031,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            }
+          ]
+        },
+        {
+          "case": "changed_inputs",
+          "errors": [
+            {
+              "relative_l2": 2.1421002423989026e-05,
+              "max_abs": 0.00012314319610595703,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 3.564699051899741e-05,
+              "max_abs": 0.00012159347534179688,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            }
+          ]
+        },
+        {
+          "case": "changed_Linear_masters",
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            }
+          ]
+        },
+        {
+          "case": "restored_Linear_masters",
+          "errors": [
+            {
+              "relative_l2": 2.13672852286223e-05,
+              "max_abs": 0.00011134147644042969,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 3.557923210535074e-05,
+              "max_abs": 0.00010991096496582031,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            }
+          ]
+        },
+        {
+          "case": "zero_Linear_masters",
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            }
+          ]
+        },
+        {
+          "case": "zero_then_restore",
+          "errors": [
+            {
+              "relative_l2": 2.13672852286223e-05,
+              "max_abs": 0.00011134147644042969,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "relative_l2": 3.557923210535074e-05,
+              "max_abs": 0.00010991096496582031,
+              "signedzero_bits": false,
+              "gross_passed": true,
+              "full_video_PSNR_required": true
+            }
+          ]
+        }
+      ],
+      "original_source_count": 209
     }
   },
   "head_pipeline_measurement": {
