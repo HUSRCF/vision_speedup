@@ -1,0 +1,1599 @@
+{
+  "passed": true,
+  "clean": true,
+  "physical_GPUs": [
+    "0",
+    "1"
+  ],
+  "owned_host_contexts": [
+    1806441,
+    1806825,
+    1806826
+  ],
+  "observations": 104,
+  "ranks": [
+    {
+      "stage": "decision",
+      "cases": [
+        {
+          "case": "initial",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0005201984895393252,
+              "max_abs": 0.00390625,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0003507468500174582,
+              "max_abs": 0.001953125,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            }
+          ],
+          "baseline_restored_bitwise": false
+        },
+        {
+          "case": "changed_inputs",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0005247758235782385,
+              "max_abs": 0.00390625,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0003408497723285109,
+              "max_abs": 0.0009765625,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            }
+          ],
+          "baseline_restored_bitwise": false
+        },
+        {
+          "case": "changed_FFN_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0005127380136400461,
+              "max_abs": 0.00390625,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0003385909367352724,
+              "max_abs": 0.0009765625,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            }
+          ],
+          "baseline_restored_bitwise": false
+        },
+        {
+          "case": "restored_FFN_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0005201984895393252,
+              "max_abs": 0.00390625,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0003507468500174582,
+              "max_abs": 0.001953125,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            }
+          ],
+          "baseline_restored_bitwise": true
+        },
+        {
+          "case": "zero_FFN_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            }
+          ],
+          "baseline_restored_bitwise": false
+        },
+        {
+          "case": "zero_then_restore",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0005201984895393252,
+              "max_abs": 0.00390625,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0003507468500174582,
+              "max_abs": 0.001953125,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            }
+          ],
+          "baseline_restored_bitwise": true
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_samples_ms": [
+            121.77613067626953,
+            121.76588439941406,
+            121.62252807617188,
+            121.69420623779297,
+            122.09868621826172,
+            122.05260467529297,
+            121.62764739990234
+          ],
+          "baseline_ms": 121.76588439941406,
+          "candidate_samples_ms": [
+            117.85420989990234,
+            117.9125747680664,
+            117.69446563720703,
+            117.77433776855469,
+            117.5551986694336,
+            117.42822265625,
+            117.36268615722656
+          ],
+          "candidate_ms": 117.69446563720703,
+          "saved_ms": 4.071418762207031
+        },
+        {
+          "candidate_samples_ms": [
+            118.2576675415039,
+            118.05696105957031,
+            117.58386993408203,
+            117.80403137207031,
+            117.76000213623047,
+            118.34060668945312,
+            118.24537658691406
+          ],
+          "candidate_ms": 118.05696105957031,
+          "baseline_samples_ms": [
+            121.74336242675781,
+            121.88671875,
+            122.20825958251953,
+            121.82630157470703,
+            121.9082260131836,
+            121.89389038085938,
+            121.83245086669922
+          ],
+          "baseline_ms": 121.88671875,
+          "saved_ms": 3.8297576904296875
+        },
+        {
+          "baseline_samples_ms": [
+            121.97785949707031,
+            121.85497283935547,
+            121.923583984375,
+            121.92972564697266,
+            121.79558563232422,
+            121.89900970458984,
+            121.8334732055664
+          ],
+          "baseline_ms": 121.89900970458984,
+          "candidate_samples_ms": [
+            118.42253112792969,
+            118.30271911621094,
+            118.71846771240234,
+            118.08255767822266,
+            117.99961853027344,
+            117.89209747314453,
+            118.29145812988281
+          ],
+          "candidate_ms": 118.29145812988281,
+          "saved_ms": 3.6075515747070312
+        },
+        {
+          "candidate_samples_ms": [
+            118.54745483398438,
+            118.08870697021484,
+            117.90950775146484,
+            120.73165130615234,
+            118.0917739868164,
+            117.90131378173828,
+            118.79936218261719
+          ],
+          "candidate_ms": 118.0917739868164,
+          "baseline_samples_ms": [
+            121.91744232177734,
+            121.83245086669922,
+            121.76793670654297,
+            122.73152160644531,
+            122.23897552490234,
+            121.97990417480469,
+            122.20416259765625
+          ],
+          "baseline_ms": 121.97990417480469,
+          "saved_ms": 3.8881301879882812
+        },
+        {
+          "baseline_samples_ms": [
+            122.14886474609375,
+            122.08946990966797,
+            122.16012573242188,
+            122.14169311523438,
+            122.11404418945312,
+            122.16627502441406,
+            122.40383911132812
+          ],
+          "baseline_ms": 122.14886474609375,
+          "candidate_samples_ms": [
+            118.2033920288086,
+            117.87161254882812,
+            117.97401428222656,
+            117.59923553466797,
+            118.1470718383789,
+            118.65599822998047,
+            118.46348571777344
+          ],
+          "candidate_ms": 118.1470718383789,
+          "saved_ms": 4.001792907714844
+        },
+        {
+          "candidate_samples_ms": [
+            118.50444793701172,
+            118.01907348632812,
+            118.59251403808594,
+            118.44300842285156,
+            118.73075103759766,
+            117.83168029785156,
+            117.8050537109375
+          ],
+          "candidate_ms": 118.44300842285156,
+          "baseline_samples_ms": [
+            122.45196533203125,
+            122.47654724121094,
+            122.13350677490234,
+            122.30758666992188,
+            122.08844757080078,
+            122.34342193603516,
+            122.29017639160156
+          ],
+          "baseline_ms": 122.30758666992188,
+          "saved_ms": 3.8645782470703125
+        }
+      ],
+      "median_saved_ms": 3.876354217529297,
+      "same_process": true,
+      "same_GPU_pair": true,
+      "same_model_masters": true,
+      "baseline_is_original59_nonv2_FP16": true,
+      "FFN_master_tensors": 132,
+      "zero_FFN_changes_baseline": true,
+      "FFN_launches": {
+        "captured": 33,
+        "rows": [
+          {
+            "module": "init_attn.0.transformer_blocks.0",
+            "input_shape": [
+              2560,
+              16,
+              512
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 20.0,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.1.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              2560,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.1.2.transformer_blocks.0",
+            "input_shape": [
+              2560,
+              16,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.2.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              2560,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.2.2.transformer_blocks.0",
+            "input_shape": [
+              2560,
+              16,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.4.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              640,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.4.2.transformer_blocks.0",
+            "input_shape": [
+              640,
+              16,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.5.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              640,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.5.2.transformer_blocks.0",
+            "input_shape": [
+              640,
+              16,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.7.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              160,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.7.2.transformer_blocks.0",
+            "input_shape": [
+              160,
+              16,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.8.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              160,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.8.2.transformer_blocks.0",
+            "input_shape": [
+              160,
+              16,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "middle_block.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              40,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 0.78125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "middle_block.2.transformer_blocks.0",
+            "input_shape": [
+              40,
+              16,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 0.78125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.3.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              160,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.3.2.transformer_blocks.0",
+            "input_shape": [
+              160,
+              16,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.4.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              160,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.4.2.transformer_blocks.0",
+            "input_shape": [
+              160,
+              16,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.5.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              160,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.5.2.transformer_blocks.0",
+            "input_shape": [
+              160,
+              16,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.6.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              640,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.6.2.transformer_blocks.0",
+            "input_shape": [
+              640,
+              16,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.7.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              640,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.7.2.transformer_blocks.0",
+            "input_shape": [
+              640,
+              16,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.8.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              640,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.8.2.transformer_blocks.0",
+            "input_shape": [
+              640,
+              16,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.9.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              2560,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.9.2.transformer_blocks.0",
+            "input_shape": [
+              2560,
+              16,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.10.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              2560,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.10.2.transformer_blocks.0",
+            "input_shape": [
+              2560,
+              16,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.11.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              2560,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.11.2.transformer_blocks.0",
+            "input_shape": [
+              2560,
+              16,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 0,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          }
+        ],
+        "original_nonv2_FP16_math_policy": true,
+        "norms_attention_masks_and_sampling_unchanged": true,
+        "one_output_gather_per_FFN": true,
+        "original_FFN_versioned_weight_owners_retained": true,
+        "GEMM_dispatch_and_numerics_require_measurement": true,
+        "full_video_PSNR_unverified": true
+      },
+      "baseline_restoration_bitwise": true,
+      "RNG_unchanged": true,
+      "balanced_warmup": 40,
+      "settle_per_mode": 2,
+      "samples_per_condition": 7,
+      "gross_error_gate": {
+        "relative_l2": 0.005,
+        "max_abs": 0.002,
+        "logic": "either",
+        "not_official_quality": true
+      },
+      "full_video_PSNR_unverified": true,
+      "no_official_score": true
+    },
+    {
+      "stage": "decision",
+      "cases": [
+        {
+          "case": "initial",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0005201984895393252,
+              "max_abs": 0.00390625,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0003507468500174582,
+              "max_abs": 0.001953125,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            }
+          ],
+          "baseline_restored_bitwise": false
+        },
+        {
+          "case": "changed_inputs",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0005247758235782385,
+              "max_abs": 0.00390625,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0003408497723285109,
+              "max_abs": 0.0009765625,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            }
+          ],
+          "baseline_restored_bitwise": false
+        },
+        {
+          "case": "changed_FFN_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0005127380136400461,
+              "max_abs": 0.00390625,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0003385909367352724,
+              "max_abs": 0.0009765625,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            }
+          ],
+          "baseline_restored_bitwise": false
+        },
+        {
+          "case": "restored_FFN_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0005201984895393252,
+              "max_abs": 0.00390625,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0003507468500174582,
+              "max_abs": 0.001953125,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            }
+          ],
+          "baseline_restored_bitwise": true
+        },
+        {
+          "case": "zero_FFN_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            }
+          ],
+          "baseline_restored_bitwise": false
+        },
+        {
+          "case": "zero_then_restore",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0005201984895393252,
+              "max_abs": 0.00390625,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0003507468500174582,
+              "max_abs": 0.001953125,
+              "signedzero_bits": false,
+              "gross_passed": true
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true
+            }
+          ],
+          "baseline_restored_bitwise": true
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_samples_ms": [
+            122.98649597167969,
+            123.21279907226562,
+            123.03155517578125,
+            123.02642822265625,
+            123.49030303955078,
+            123.20767974853516,
+            123.18720245361328
+          ],
+          "baseline_ms": 123.18720245361328,
+          "candidate_samples_ms": [
+            117.72927856445312,
+            117.78559875488281,
+            117.7681884765625,
+            117.88697814941406,
+            117.61151885986328,
+            117.3759994506836,
+            117.48249816894531
+          ],
+          "candidate_ms": 117.72927856445312,
+          "saved_ms": 5.457923889160156
+        },
+        {
+          "candidate_samples_ms": [
+            118.2894058227539,
+            118.18086242675781,
+            117.69139099121094,
+            117.79379272460938,
+            117.78355407714844,
+            118.34368133544922,
+            118.24435424804688
+          ],
+          "candidate_ms": 118.18086242675781,
+          "baseline_samples_ms": [
+            123.15340423583984,
+            123.14419555664062,
+            123.4513931274414,
+            123.28141021728516,
+            123.2332763671875,
+            123.42476654052734,
+            122.90048217773438
+          ],
+          "baseline_ms": 123.2332763671875,
+          "saved_ms": 5.0524139404296875
+        },
+        {
+          "baseline_samples_ms": [
+            123.55379486083984,
+            123.45651245117188,
+            123.06534576416016,
+            123.35513305664062,
+            123.82514953613281,
+            123.38995361328125,
+            123.4524154663086
+          ],
+          "baseline_ms": 123.4524154663086,
+          "candidate_samples_ms": [
+            118.35903930664062,
+            118.3109130859375,
+            118.37030029296875,
+            118.04876708984375,
+            118.03648376464844,
+            117.96479797363281,
+            118.11634826660156
+          ],
+          "candidate_ms": 118.11634826660156,
+          "saved_ms": 5.336067199707031
+        },
+        {
+          "candidate_samples_ms": [
+            118.41433715820312,
+            118.10816192626953,
+            117.81222534179688,
+            120.8248291015625,
+            118.02726745605469,
+            117.86854553222656,
+            118.65907287597656
+          ],
+          "candidate_ms": 118.10816192626953,
+          "baseline_samples_ms": [
+            123.59782409667969,
+            123.55276489257812,
+            123.62035369873047,
+            123.37049865722656,
+            123.2906265258789,
+            123.83026885986328,
+            124.1343994140625
+          ],
+          "baseline_ms": 123.59782409667969,
+          "saved_ms": 5.489662170410156
+        },
+        {
+          "baseline_samples_ms": [
+            123.48722839355469,
+            123.72787475585938,
+            123.74835205078125,
+            123.5814437866211,
+            123.71865844726562,
+            124.20710754394531,
+            123.98796844482422
+          ],
+          "baseline_ms": 123.72787475585938,
+          "candidate_samples_ms": [
+            118.29862213134766,
+            117.72723388671875,
+            117.94739532470703,
+            117.63609313964844,
+            118.47885131835938,
+            118.55564880371094,
+            118.4184341430664
+          ],
+          "candidate_ms": 118.29862213134766,
+          "saved_ms": 5.429252624511719
+        },
+        {
+          "candidate_samples_ms": [
+            118.33036804199219,
+            118.05184173583984,
+            118.56793975830078,
+            118.434814453125,
+            118.6723861694336,
+            117.7548828125,
+            117.88390350341797
+          ],
+          "candidate_ms": 118.33036804199219,
+          "baseline_samples_ms": [
+            123.75552368164062,
+            123.53330993652344,
+            124.08013153076172,
+            123.45651245117188,
+            124.12210845947266,
+            123.78623962402344,
+            123.5261459350586
+          ],
+          "baseline_ms": 123.75552368164062,
+          "saved_ms": 5.4251556396484375
+        }
+      ],
+      "median_saved_ms": 5.427204132080078,
+      "same_process": true,
+      "same_GPU_pair": true,
+      "same_model_masters": true,
+      "baseline_is_original59_nonv2_FP16": true,
+      "FFN_master_tensors": 132,
+      "zero_FFN_changes_baseline": true,
+      "FFN_launches": {
+        "captured": 33,
+        "rows": [
+          {
+            "module": "init_attn.0.transformer_blocks.0",
+            "input_shape": [
+              2560,
+              16,
+              512
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 20.0,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.1.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              2560,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.1.2.transformer_blocks.0",
+            "input_shape": [
+              2560,
+              16,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.2.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              2560,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.2.2.transformer_blocks.0",
+            "input_shape": [
+              2560,
+              16,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.4.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              640,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.4.2.transformer_blocks.0",
+            "input_shape": [
+              640,
+              16,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.5.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              640,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.5.2.transformer_blocks.0",
+            "input_shape": [
+              640,
+              16,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.7.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              160,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.7.2.transformer_blocks.0",
+            "input_shape": [
+              160,
+              16,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.8.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              160,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "input_blocks.8.2.transformer_blocks.0",
+            "input_shape": [
+              160,
+              16,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "middle_block.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              40,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 0.78125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "middle_block.2.transformer_blocks.0",
+            "input_shape": [
+              40,
+              16,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 0.78125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.3.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              160,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.3.2.transformer_blocks.0",
+            "input_shape": [
+              160,
+              16,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.4.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              160,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.4.2.transformer_blocks.0",
+            "input_shape": [
+              160,
+              16,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.5.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              160,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.5.2.transformer_blocks.0",
+            "input_shape": [
+              160,
+              16,
+              1280
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 3.125,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.6.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              640,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.6.2.transformer_blocks.0",
+            "input_shape": [
+              640,
+              16,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.7.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              640,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.7.2.transformer_blocks.0",
+            "input_shape": [
+              640,
+              16,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.8.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              640,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.8.2.transformer_blocks.0",
+            "input_shape": [
+              640,
+              16,
+              640
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 6.25,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.9.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              2560,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.9.2.transformer_blocks.0",
+            "input_shape": [
+              2560,
+              16,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.10.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              2560,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.10.2.transformer_blocks.0",
+            "input_shape": [
+              2560,
+              16,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.11.1.transformer_blocks.0",
+            "input_shape": [
+              16,
+              2560,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          },
+          {
+            "module": "output_blocks.11.2.transformer_blocks.0",
+            "input_shape": [
+              2560,
+              16,
+              320
+            ],
+            "dtype": "torch.float16",
+            "rank": 1,
+            "collectives": 1,
+            "local_output_MiB": 12.5,
+            "original_FFN_forward_and_master_storage": true,
+            "native_GEMM_M_halved": true
+          }
+        ],
+        "original_nonv2_FP16_math_policy": true,
+        "norms_attention_masks_and_sampling_unchanged": true,
+        "one_output_gather_per_FFN": true,
+        "original_FFN_versioned_weight_owners_retained": true,
+        "GEMM_dispatch_and_numerics_require_measurement": true,
+        "full_video_PSNR_unverified": true
+      },
+      "baseline_restoration_bitwise": true,
+      "RNG_unchanged": true,
+      "balanced_warmup": 40,
+      "settle_per_mode": 2,
+      "samples_per_condition": 7,
+      "gross_error_gate": {
+        "relative_l2": 0.005,
+        "max_abs": 0.002,
+        "logic": "either",
+        "not_official_quality": true
+      },
+      "full_video_PSNR_unverified": true,
+      "no_official_score": true
+    }
+  ],
+  "ready_for_model": true,
+  "no_official_score": true,
+  "baseline_source_count": 59,
+  "baseline_source_manifest_sha256": "97eba8039772915a4cb70081768082adb4abd32a16c9b9a1db259b1d6ff24b50",
+  "baseline_sources": "experiments/nonv2-vae-all-display/unifolm",
+  "full_video_quality_qualified": false,
+  "numerical_scope": "six real-model states, gross error screen only; FP16 GEMM dispatch/rounding changes; official PSNR pending"
+}

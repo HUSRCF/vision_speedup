@@ -40,6 +40,19 @@ def main():
         ctl=rank['attention_launches'];assert ctl['captured']==1 and ctl['full5D_norm_and16_time_steps_preserved']
         assert ctl['rows'][0]['grouped_copy_nodes']==2 and ctl['rows'][0]['additional_collectives']==0
         assert ctl['rows'][0]['existing_gather_moved_after_residual']
+    for stage in ('decision','world'):
+        trial=root/f'experiments/nonv2-ffn-59/{stage}-model-r1'
+        for name,digest in json.loads((trial/'source-hashes.json').read_text()).items():assert sha(trial/name)==digest,name
+        ev=json.loads((root/f'results/aggressive-20261028/nonv2-ffn-59/{stage}-model-r1/summary.json').read_text())
+        assert ev['passed'] and ev['clean'] and ev['ready_for_model']
+        assert ev['baseline_source_count']==59 and not ev['full_video_quality_qualified']
+        for rank in ev['ranks']:
+            assert rank['baseline_is_original59_nonv2_FP16'] and rank['FFN_master_tensors']==132
+            assert rank['RNG_unchanged'] and rank['baseline_restoration_bitwise'] and rank['zero_FFN_changes_baseline']
+            assert rank['full_video_PSNR_unverified'] and rank['FFN_launches']['captured']==33
+            assert len(rank['cases'])==6 and all(e['gross_passed'] for case in rank['cases'] for e in case['errors'])
+            assert len(rank['pairs'])==6 and all(pair['saved_ms']>0 for pair in rank['pairs'])
+    assert sha(root/'experiments/nonv2-ffn-59/decision-model-r1/scripts/nonv2_ffn59_mode.py')==sha(root/'experiments/nonv2-ffn-59/world-model-r1/scripts/nonv2_ffn59_mode.py')
     for row in cases:
         if row['case'] in accepted:assert row['process_wall_s']==accepted[row['case']]['process_wall_s']
     import importlib.util
