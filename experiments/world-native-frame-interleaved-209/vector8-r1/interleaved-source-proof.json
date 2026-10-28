@@ -1,0 +1,44 @@
+{
+  "original_prefix_proof": [
+    {
+      "source": "src/unifolm_wma/utils/native_winograd_gemm_fp16_packed_kernel.py",
+      "original_SHA256": "9bbeb5437c853f3b16fafc2140191afcdf70a1ce3d0d2693da38e7d37c412d34",
+      "original_function": "transformed_gemm_fp16_packed",
+      "candidate_function": "transformed_gemm_fp16_packed_frame_prefix",
+      "roundtrip_original_AST_exact": true,
+      "all_memory_offsets_masks_K_tiles_casts_products_and_FP32_sums_original": true,
+      "runtime_pointer_formal_arguments_unchanged": true
+    },
+    {
+      "source": "src/unifolm_wma/utils/native_winograd_gemm_fp16_kahan_kernel.py",
+      "original_SHA256": "d5206c762ead5550ab0c7ae21fa4a509252933aa7f70a6a35c9d380195aad9a5",
+      "original_function": "transformed_gemm_fp16_kahan",
+      "candidate_function": "transformed_gemm_fp16_kahan_frame_prefix",
+      "roundtrip_original_AST_exact": true,
+      "all_memory_offsets_masks_K_tiles_casts_products_and_FP32_sums_original": true,
+      "runtime_pointer_formal_arguments_unchanged": true
+    }
+  ],
+  "interleaved_proof": [
+    {
+      "candidate": "transformed_gemm_fp16_packed_frame_interleaved",
+      "restores_contiguous_prefix_AST_exactly": true,
+      "physical_column_formula": "(logical_col//8)*16+logical_col%8",
+      "all_original_arithmetic_and_pointer_ABI_preserved": true,
+      "vector8_contiguity_hint": true,
+      "native_frame_order_requires_separate_GPU_evidence": true
+    },
+    {
+      "candidate": "transformed_gemm_fp16_kahan_frame_interleaved",
+      "restores_contiguous_prefix_AST_exactly": true,
+      "physical_column_formula": "(logical_col//8)*16+logical_col%8",
+      "all_original_arithmetic_and_pointer_ABI_preserved": true,
+      "vector8_contiguity_hint": true,
+      "native_frame_order_requires_separate_GPU_evidence": true
+    }
+  ],
+  "SHA256": "21ff342d895e5e5cdfdf3048f3df2f0605080717414d02f7d31e09c2a25e49fa",
+  "vector8_CPU_alignment_contiguity_checks": 80,
+  "vector8": true,
+  "no_GPU_or_native_frame_layout_claim": true
+}

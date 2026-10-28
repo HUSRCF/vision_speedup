@@ -114,3 +114,24 @@ GPU 矩阵 r2 对全部 14 种 packed／Kahan 配置各测试初始、修改输�
 首次 r1 在数值测试前因 `/tmp` 的 noexec 属性导致 Triton launcher 无法加载。r2 为 launcher 新建私有 home 目录，大型编译中间文件仍在独立 `/tmp`，原正式缓存不变。采用轮次通过全程 GPU context 检查，原 209 文件在前后均重新核验。
 
 随后独立卷积 fixture 保留原生输入／输出变换、滤波器缓存及 bias，并在每个动态状态前毒化完整 GEMM 输出 workspace，防止旧值假通过。首个 NCHW `[320,2560,320]` 用例即失败，未获得有效卷积计时。[失败的精确源码](../experiments/world-native-frame-prefix-209/conv-prefix-failed-r1)与[原始日志](../results/aggressive-20261028/world-native-frame-prefix-209/conv-prefix-failed-r1)单独保留。**矩阵的连续前半列不能直接当作视频前八帧**；后续必须重新验证实际列与帧的映射。新 owner 的整模型接入、完整 V2 与质量均未验证，正式成绩保持 **287.745486 秒**。
+
+## World 交错帧映射通过原生卷积检查
+
+将列映射改为 `physical_col=(logical_col//8)*16+logical_col%8`，在每组 16 列中取前八帧。r2 独立完成 **14 种几何、两种布局、两个 rank、六个动态状态，共 336 次卷积输出逐位检查**，全部包含 signed zero 相同；另有 84 次矩阵检查和 14 个新捕获图／CUBIN 指针 ABI 证明。每个动态状态均先确认完整 numerical GEMM 的填充输入结果与完整参考的对应半帧逐位相同，再毒化候选 GEMM 输出 workspace 并运行交错映射。原 numerical 全16帧恢复、原生 FP32 全16帧恢复、RNG 和缓存 canary 检查均通过。[精确源码及复现](../experiments/world-native-frame-interleaved-209) · [全部输出与配对样本](../results/aggressive-20261028/world-native-frame-interleaved-209/conv-r2)
+
+原始输入／输出变换、bias 和权重 cache 刷新均进入卷积计时；不包含双卡复制、汇合或完整模型。**11/14 种几何**在两种布局和两个 rank 中均六对更快。以下为 NCHW、rank0 的配对差值中位数，两个 rank 的差值不能相加：
+
+| 路径／几何 CO,COLS,K | 每次节省 ms |
+|---|---:|
+| packed 320,2560,960 | +0.212480 |
+| Kahan 640,640,1280 | +0.315051 |
+| Kahan 640,2560,640 | +0.690347 |
+| packed 1280,192,1280 | **−0.105131** |
+| packed 1280,192,2560 | **−0.190635** |
+| packed 1280,640,1280 | **−0.013483** |
+
+三种 packed 几何退化，不能统一采用。此前连续前缀矩阵的 1.41～1.98× 加速不适用于这条原生交错列路径。PTX 检查显示交错访问中更多加载被编译成标量操作；随后为每组连续八列增加 alignment／contiguity 提示，80 组 CPU 索引检查通过，新的独立 vector8 试验也完成相同的 336+84 次逐位检查。但仍是同样 11/14 种几何更快，未证明提示带来有意义的额外收益。[vector8 精确源码](../experiments/world-native-frame-interleaved-209/vector8-r1) · [完整结果](../results/aggressive-20261028/world-native-frame-interleaved-209/vector8-r1)
+
+交错映射的第一次 harness 在进入 Kahan 路径时因 owner 没有 `replay()` 方法而停止，没有提供最终有效计时。r2 按原模型语义先刷新 owner，再重放其 graph；未放宽数值门槛或改动生产 owner。两轮采用的结果均有独占 GPU context 全程守护，原 209 文件前后核验一致。
+
+以上为合成卷积证据。尚未将这套映射接入真实 world ResBlock，也未测双卡通信、完整模型和 V2 PSNR。后续必须先通过原 23+45 owner 与旧 CUBIN SHA 门槛，再按权重对象筛选 21 个 ResBlock owner，保留另外两个 Upsample owner；不能直接替换所有 23 个 SGEMM。当前正式 V2 仍为 **287.745486 秒**，五项 **836.651410 秒**。
