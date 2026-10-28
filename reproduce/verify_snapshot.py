@@ -234,6 +234,8 @@ def main():
     verify_nccl_tuning()
     from verify_nonv2_ffn61_evidence import verify as verify_nonv2_ffn61
     verify_nonv2_ffn61()
+    from verify_nonv2_temporal_block62_evidence import verify as verify_nonv2_temporal62
+    verify_nonv2_temporal62()
     print('Verified: original209/historical overlays/adopted V2 initial222;historical59 nonV2/adopted60 Z1;official103 log/JSON.')
 
 if __name__=='__main__':main()
