@@ -1,0 +1,65 @@
+{
+  "decision": [],
+  "world": [
+    {
+      "geometry": {
+        "BM": 64,
+        "GROUP": 32,
+        "HAS_BIAS": false,
+        "K": 320,
+        "M": 40960,
+        "N": 960,
+        "OUTPUT_GROUPS": 3,
+        "enable_fp_fusion": false,
+        "num_stages": 2,
+        "num_warps": 4
+      },
+      "calls_per_forward": 10
+    },
+    {
+      "geometry": {
+        "BM": 64,
+        "GROUP": 32,
+        "HAS_BIAS": false,
+        "K": 640,
+        "M": 10240,
+        "N": 1920,
+        "OUTPUT_GROUPS": 3,
+        "enable_fp_fusion": false,
+        "num_stages": 2,
+        "num_warps": 4
+      },
+      "calls_per_forward": 10
+    },
+    {
+      "geometry": {
+        "BM": 64,
+        "GROUP": 32,
+        "HAS_BIAS": false,
+        "K": 1280,
+        "M": 2560,
+        "N": 3840,
+        "OUTPUT_GROUPS": 3,
+        "enable_fp_fusion": false,
+        "num_stages": 2,
+        "num_warps": 4
+      },
+      "calls_per_forward": 15
+    },
+    {
+      "geometry": {
+        "BM": 32,
+        "GROUP": 32,
+        "HAS_BIAS": false,
+        "K": 1280,
+        "M": 640,
+        "N": 3840,
+        "OUTPUT_GROUPS": 3,
+        "enable_fp_fusion": false,
+        "num_stages": 2,
+        "num_warps": 4
+      },
+      "calls_per_forward": 3
+    }
+  ]
+}

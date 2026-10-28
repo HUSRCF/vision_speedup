@@ -1,0 +1,41 @@
+{
+  "prerequisites": [
+    {
+      "name": "primitive",
+      "pid": 1160214,
+      "log": "/home/team07/benchmark-runs/unifolm-launch/wait-initial-bk32-native-geglu-20261026T072744Z.log",
+      "marker": "INITIAL_BK32_GEGLU_CHECK passed=true"
+    },
+    {
+      "name": "wrappers",
+      "pid": 1168887,
+      "log": "/home/team07/benchmark-runs/unifolm-launch/wait-initial_bk32_native_geglu_runtime_guard-20261026T073522Z.log",
+      "marker": "INITIAL_BK32_NATIVE_GEGLU_RUNTIME_CHECK passed=true"
+    },
+    {
+      "name": "actual_pair",
+      "pid": 1240740,
+      "log": "/home/team07/benchmark-runs/unifolm-launch/wait-initial-native-geglu-reserved-pair-20261026T085409Z.log",
+      "marker": "INITIAL_BK32_NATIVE_GEGLU_BOTH_STAGES_CHECK passed=true"
+    }
+  ],
+  "source_root": "/home/team07/competition/unifolm-initial-native-geglu-reserved-pair-20261026T085409Z",
+  "full_root": "/home/team07/competition/unifolm-initial-native-geglu-reserved-full-20261026T085409Z",
+  "verified_source_files": [
+    "src/unifolm_wma/utils/triton_initial_bk32_geglu.py",
+    "src/unifolm_wma/utils/initial_bk32_native_geglu.py",
+    "src/unifolm_wma/utils/triton_native_geglu_activation.py",
+    "src/unifolm_wma/utils/triton_half_compensated_linear.py",
+    "src/unifolm_wma/utils/triton_compensated_linear.py",
+    "src/unifolm_wma/utils/inference_runtime.py",
+    "src/unifolm_wma/utils/geglu_output_allocation.py",
+    "src/unifolm_wma/utils/initial_world_linears.py",
+    "src/unifolm_wma/utils/triton_zero_weight_low_geglu.py",
+    "src/unifolm_wma/utils/triton_world_narrow_geglu.py",
+    "src/unifolm_wma/utils/triton_branch_protected_geglu.py",
+    "src/unifolm_wma/utils/triton_prepacked_geglu.py",
+    "src/unifolm_wma/utils/world_bk64_c320_geglu.py",
+    "src/unifolm_wma/utils/world_wide_gate_geglu.py"
+  ],
+  "leaf": "scripts/run_initial_native_geglu_reserved_full.sh"
+}

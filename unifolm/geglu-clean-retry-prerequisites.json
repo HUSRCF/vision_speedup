@@ -1,0 +1,33 @@
+{
+  "prerequisites": [
+    {
+      "name": "primitive",
+      "pid": 314954,
+      "log": "/home/team07/benchmark-runs/unifolm-launch/wait-zero_weight_low_geglu_micro-20261025T181144Z.log",
+      "marker": "ZERO_WEIGHT_LOW_GEGLU_CHECK passed=true"
+    },
+    {
+      "name": "wrappers",
+      "pid": 314988,
+      "log": "/home/team07/benchmark-runs/unifolm-launch/wait-zero_weight_low_geglu_wrappers-20261025T181144Z.log",
+      "marker": "ZERO_WEIGHT_LOW_GEGLU_WRAPPERS_CHECK passed=true"
+    },
+    {
+      "name": "actual_pair",
+      "pid": 770589,
+      "log": "/home/team07/benchmark-runs/unifolm-launch/wait-zero-weight-low-geglu-clean-pair-20261026T011445Z.log",
+      "marker": "ZERO_WEIGHT_LOW_GEGLU_BOTH_STAGES_CHECK passed=true"
+    }
+  ],
+  "source_root": "/home/team07/competition/unifolm-zero-weight-low-geglu-runtime-20261025T181144Z",
+  "full_root": "/home/team07/competition/unifolm-zero-geglu-clean-retry-full-20261026T011445Z",
+  "verified_source_files": [
+    "src/unifolm_wma/utils/triton_zero_weight_low_geglu.py",
+    "src/unifolm_wma/utils/triton_world_narrow_geglu.py",
+    "src/unifolm_wma/utils/triton_branch_protected_geglu.py",
+    "src/unifolm_wma/utils/triton_prepacked_geglu.py",
+    "src/unifolm_wma/utils/world_bk64_c320_geglu.py",
+    "src/unifolm_wma/utils/world_wide_gate_geglu.py"
+  ],
+  "leaf": "scripts/run_zero_geglu_clean_retry_full.sh"
+}

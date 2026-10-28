@@ -1,0 +1,110 @@
+{
+  "kind": "kahan",
+  "model_key": "norm2_QKV_current_model_pair_r2",
+  "comparison": {
+    "stages": {
+      "world": {
+        "stage": "world",
+        "pair_baseline": "current342_norm_presplit_stages2_BK32_prepacked15_cached23",
+        "selected_sequences": 16,
+        "same_process": true,
+        "same_gpu": true,
+        "same_weights": true,
+        "same_actual_first_world_input": true,
+        "both_modes_charge_native23_version_checks": true,
+        "first_changed_mutated_zero_restored_bits": [
+          "initial",
+          "changed_input",
+          "mutated_norm_QKV_masters",
+          "restored_masters",
+          "zero_masters",
+          "restored_after_zero"
+        ],
+        "all_six_cases_bitwise": true,
+        "initial_outputs_bitwise": true,
+        "shared_same16_QKV_cache": true,
+        "unchanged_norm_GEMM_attention_JIT": true,
+        "dispatch": {
+          "modules": 16,
+          "warm_calls": 64,
+          "calls_per_module": 4,
+          "shapes": {
+            "[2560, 16, 320]": 20,
+            "[640, 16, 640]": 20,
+            "[160, 16, 1280]": 20,
+            "[40, 16, 1280]": 4
+          }
+        },
+        "pairs": [
+          {
+            "baseline_ms": 305.7633361816406,
+            "candidate_ms": 305.57080078125,
+            "saved_ms": 0.192535400390625
+          },
+          {
+            "candidate_ms": 305.2718200683594,
+            "baseline_ms": 305.8892822265625,
+            "saved_ms": 0.617462158203125
+          },
+          {
+            "baseline_ms": 305.6936950683594,
+            "candidate_ms": 305.2195739746094,
+            "saved_ms": 0.47412109375
+          },
+          {
+            "candidate_ms": 305.2349548339844,
+            "baseline_ms": 305.7663879394531,
+            "saved_ms": 0.53143310546875
+          },
+          {
+            "baseline_ms": 305.66400146484375,
+            "candidate_ms": 305.22369384765625,
+            "saved_ms": 0.4403076171875
+          },
+          {
+            "candidate_ms": 305.2206115722656,
+            "baseline_ms": 305.80120849609375,
+            "saved_ms": 0.580596923828125
+          }
+        ],
+        "median_saved_ms": 0.502777099609375,
+        "peak_allocated_bytes": 68349186560,
+        "full_video_unverified": true,
+        "no_official_score": true
+      }
+    },
+    "no_official_score": true
+  },
+  "configs": [],
+  "cpu_policies": {
+    "passed": true,
+    "policies": [
+      "world",
+      "decision",
+      "matmul",
+      "grad",
+      "disabled",
+      "default_off",
+      "invalid_rejected",
+      "pointer_writer_conflict_rejected"
+    ],
+    "CUDA_context_initialized": false,
+    "norm_presplit_policies": {
+      "passed": true,
+      "checks": [
+        "default_off",
+        "explicit_off",
+        "invalid_rejected",
+        "enabled_dependencies_validated",
+        "missing_UNIFOLM_FUSED_RESIDUAL_NORM_rejected",
+        "missing_UNIFOLM_WORLD_ZERO_WEIGHT_LOW_QKV_rejected",
+        "missing_UNIFOLM_WORLD_ZERO_QKV_STAGES_rejected",
+        "missing_UNIFOLM_WORLD_ZERO_QKV_GROUP_rejected",
+        "missing_UNIFOLM_NORM_BUFFER_NOFILL_rejected",
+        "missing_UNIFOLM_NATIVE_SGEMM_FP16_rejected",
+        "missing_UNIFOLM_WORLD_NORM_PRESPLIT_TEMPORAL_rejected"
+      ],
+      "cuda_initialized": false
+    }
+  }
+}

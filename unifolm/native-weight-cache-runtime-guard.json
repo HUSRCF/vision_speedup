@@ -1,0 +1,191 @@
+{
+  "actual_production_host_comparison": {
+    "stages": {
+      "decision": {
+        "stage": "decision",
+        "pairs": [
+          {
+            "baseline": 246.4027587890625,
+            "candidate": 237.7734130859375,
+            "saved_ms": 8.629345703124983,
+            "order": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "candidate": 237.9638671875,
+            "baseline": 246.8423583984375,
+            "saved_ms": 8.878491210937511,
+            "order": [
+              "candidate",
+              "baseline"
+            ]
+          },
+          {
+            "baseline": 246.9486572265625,
+            "candidate": 238.061572265625,
+            "saved_ms": 8.8870849609375,
+            "order": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "candidate": 238.10693359375,
+            "baseline": 247.5802734375,
+            "saved_ms": 9.473339843750011,
+            "order": [
+              "candidate",
+              "baseline"
+            ]
+          },
+          {
+            "baseline": 247.7634521484375,
+            "candidate": 238.980810546875,
+            "saved_ms": 8.782641601562489,
+            "order": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "candidate": 239.092724609375,
+            "baseline": 247.95126953125,
+            "saved_ms": 8.858544921874994,
+            "order": [
+              "candidate",
+              "baseline"
+            ]
+          }
+        ],
+        "cache_reports": {
+          "baseline": null,
+          "candidate": {
+            "selected": 138,
+            "native_weight_readers": 143,
+            "cached_bytes": 3230515200,
+            "graph_nodes": 3419,
+            "native_convolution_unchanged": true,
+            "first_refresh_inside_timed_capture": true
+          }
+        },
+        "actual_host_inputs_and_poisoned_master_refresh_bits": true,
+        "guard_canaries_intact": true,
+        "median_saved_ms": 8.868518066406253,
+        "same_process": true,
+        "same_gpu": true,
+        "same_model_weights": true,
+        "same_actual_first_denoiser_input": true,
+        "exact_output_tensors": 3,
+        "output_signed_zero_bitwise": true,
+        "full_video_quality": "not_tested_here",
+        "alternating_order": true,
+        "no_external_event_nodes": true,
+        "no_official_score": true
+      },
+      "world": {
+        "stage": "world",
+        "pairs": [
+          {
+            "baseline": 326.1582275390625,
+            "candidate": 326.0632080078125,
+            "saved_ms": 0.09501953125004547,
+            "order": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "candidate": 326.0601318359375,
+            "baseline": 326.1362060546875,
+            "saved_ms": 0.0760742187499659,
+            "order": [
+              "candidate",
+              "baseline"
+            ]
+          },
+          {
+            "baseline": 326.1319091796875,
+            "candidate": 326.0515380859375,
+            "saved_ms": 0.08037109374998863,
+            "order": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "candidate": 326.0336181640625,
+            "baseline": 326.1115478515625,
+            "saved_ms": 0.07792968749998863,
+            "order": [
+              "candidate",
+              "baseline"
+            ]
+          },
+          {
+            "baseline": 326.10263671875,
+            "candidate": 326.053173828125,
+            "saved_ms": 0.049462890624965894,
+            "order": [
+              "baseline",
+              "candidate"
+            ]
+          },
+          {
+            "candidate": 326.027978515625,
+            "baseline": 326.1203369140625,
+            "saved_ms": 0.09235839843745453,
+            "order": [
+              "candidate",
+              "baseline"
+            ]
+          }
+        ],
+        "cache_reports": {
+          "baseline": null,
+          "candidate": null
+        },
+        "actual_host_inputs_and_poisoned_master_refresh_bits": true,
+        "guard_canaries_intact": true,
+        "median_saved_ms": 0.07915039062498863,
+        "same_process": true,
+        "same_gpu": true,
+        "same_model_weights": true,
+        "same_actual_first_denoiser_input": true,
+        "exact_output_tensors": 3,
+        "output_signed_zero_bitwise": true,
+        "full_video_quality": "not_tested_here",
+        "alternating_order": true,
+        "no_external_event_nodes": true,
+        "no_official_score": true
+      }
+    },
+    "no_official_score": true
+  },
+  "cpu_policies": {
+    "passed": true,
+    "policies": [
+      "decision",
+      "world",
+      "matmul",
+      "grad",
+      "disabled",
+      "invalid_rejected"
+    ],
+    "CUDA_context_initialized": false
+  },
+  "host_source_manifest_sha256": "103cf4455cf1c78af8f5e1c544229cae4ed602c320691c1cf6bd2c6b5846a81b",
+  "script_hashes": {
+    "scripts/profile_native_graph_weight_cache.py": "80a4e3325fbbd3d15eafefc2c8f192736c39cf9b69251070d5d469a419021a28",
+    "scripts/native_graph_weight_cache_probe.py": "8777e04b1515d5cef2bf730681463eb59c57fafe541434236556cbf1c2de3f38",
+    "scripts/cuda_graph_readonly_inventory.py": "8d0c6ae0eeeeacf4b45f01e24d359907111c9bcb000927d2b9a9fc0bec16e3fb",
+    "scripts/run_native_graph_weight_cache_pair.py": "dc29c0c19a29a05879aa8e5c9dcd0034318f57dc18bc508db1bb1729947bdcc4",
+    "scripts/prepare_native_graph_weight_cache.py": "6ccbab716bbad59f76441eef587bdf5b586a53499c1b17edcffb6bce50b079fc",
+    "src/unifolm_wma/utils/native_graph_weight_cache.py": "7a60cf82db004b8e03ec84fd6933462030f751efaa8ccd064ed700bd04e62932",
+    "src/unifolm_wma/utils/native_graph_weight_cache_probe.py": "9058f559ef6ba231746b5c56873577534fe2fde0aa245483f0ced41ac6761178",
+    "src/unifolm_wma/utils/cuda_graph_readonly_inventory.py": "8d0c6ae0eeeeacf4b45f01e24d359907111c9bcb000927d2b9a9fc0bec16e3fb",
+    "scripts/cuda_graph_handles.cpp": "e1454ac80cd0a650fadf4a7082fbfe372ceec1f209ce4e4ae8bf9b4513a49f6d",
+    "scripts/build_cuda_graph_handles.py": "5c2673e42aac6b7f5ebea25738d2b6440cfd52f7f56e29aaf972937d6347fdee"
+  }
+}

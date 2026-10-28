@@ -1,0 +1,852 @@
+{
+  "cpu_policies": {
+    "passed": true,
+    "policies": [
+      "world",
+      "decision",
+      "matmul",
+      "grad",
+      "disabled",
+      "default_off",
+      "invalid_rejected",
+      "pointer_writer_conflict_rejected"
+    ],
+    "CUDA_context_initialized": false
+  },
+  "actual_model_comparison": {
+    "stages": {
+      "world": {
+        "stage": "world",
+        "numerical_candidate": true,
+        "selected": 23,
+        "plans": [
+          {
+            "weight": "model.diffusion_model.input_blocks.1.0.in_layers.2.weight",
+            "geometry": [
+              320,
+              2560,
+              320
+            ],
+            "config": [
+              32,
+              128,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 14745600,
+            "packed_filter_bytes": 14745600
+          },
+          {
+            "weight": "model.diffusion_model.input_blocks.1.0.out_layers.3.weight",
+            "geometry": [
+              320,
+              2560,
+              320
+            ],
+            "config": [
+              32,
+              128,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 14745600,
+            "packed_filter_bytes": 14745600
+          },
+          {
+            "weight": "model.diffusion_model.input_blocks.2.0.in_layers.2.weight",
+            "geometry": [
+              320,
+              2560,
+              320
+            ],
+            "config": [
+              32,
+              128,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 14745600,
+            "packed_filter_bytes": 14745600
+          },
+          {
+            "weight": "model.diffusion_model.input_blocks.2.0.out_layers.3.weight",
+            "geometry": [
+              320,
+              2560,
+              320
+            ],
+            "config": [
+              32,
+              128,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 14745600,
+            "packed_filter_bytes": 14745600
+          },
+          {
+            "weight": "model.diffusion_model.input_blocks.4.0.in_layers.2.weight",
+            "geometry": [
+              640,
+              640,
+              320
+            ],
+            "config": null,
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": false,
+            "native_FP32_SGEMM_unchanged": true,
+            "single_executable_pointer_writer": true,
+            "cached_native_filter_bytes": 29491200
+          },
+          {
+            "weight": "model.diffusion_model.input_blocks.4.0.out_layers.3.weight",
+            "geometry": [
+              640,
+              640,
+              640
+            ],
+            "config": [
+              64,
+              64,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 58982400,
+            "packed_filter_bytes": 58982400
+          },
+          {
+            "weight": "model.diffusion_model.input_blocks.5.0.in_layers.2.weight",
+            "geometry": [
+              640,
+              640,
+              640
+            ],
+            "config": [
+              64,
+              64,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 58982400,
+            "packed_filter_bytes": 58982400
+          },
+          {
+            "weight": "model.diffusion_model.input_blocks.5.0.out_layers.3.weight",
+            "geometry": [
+              640,
+              640,
+              640
+            ],
+            "config": [
+              64,
+              64,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 58982400,
+            "packed_filter_bytes": 58982400
+          },
+          {
+            "weight": "model.diffusion_model.input_blocks.7.0.in_layers.2.weight",
+            "geometry": [
+              1280,
+              192,
+              640
+            ],
+            "config": null,
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": false,
+            "native_FP32_SGEMM_unchanged": true,
+            "single_executable_pointer_writer": true,
+            "cached_native_filter_bytes": 117964800
+          },
+          {
+            "weight": "model.diffusion_model.output_blocks.5.0.in_layers.2.weight",
+            "geometry": [
+              1280,
+              192,
+              1920
+            ],
+            "config": null,
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": false,
+            "native_FP32_SGEMM_unchanged": true,
+            "single_executable_pointer_writer": true,
+            "cached_native_filter_bytes": 353894400
+          },
+          {
+            "weight": "model.diffusion_model.output_blocks.5.3.conv.weight",
+            "geometry": [
+              1280,
+              640,
+              1280
+            ],
+            "config": [
+              32,
+              128,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 235929600,
+            "packed_filter_bytes": 235929600
+          },
+          {
+            "weight": "model.diffusion_model.output_blocks.6.0.out_layers.3.weight",
+            "geometry": [
+              640,
+              640,
+              640
+            ],
+            "config": [
+              64,
+              64,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 58982400,
+            "packed_filter_bytes": 58982400
+          },
+          {
+            "weight": "model.diffusion_model.output_blocks.7.0.in_layers.2.weight",
+            "geometry": [
+              640,
+              640,
+              1280
+            ],
+            "config": null,
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": false,
+            "native_FP32_SGEMM_unchanged": true,
+            "single_executable_pointer_writer": true,
+            "cached_native_filter_bytes": 117964800
+          },
+          {
+            "weight": "model.diffusion_model.output_blocks.7.0.out_layers.3.weight",
+            "geometry": [
+              640,
+              640,
+              640
+            ],
+            "config": [
+              64,
+              64,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 58982400,
+            "packed_filter_bytes": 58982400
+          },
+          {
+            "weight": "model.diffusion_model.output_blocks.8.0.in_layers.2.weight",
+            "geometry": [
+              640,
+              640,
+              960
+            ],
+            "config": null,
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": false,
+            "native_FP32_SGEMM_unchanged": true,
+            "single_executable_pointer_writer": true,
+            "cached_native_filter_bytes": 88473600
+          },
+          {
+            "weight": "model.diffusion_model.output_blocks.8.0.out_layers.3.weight",
+            "geometry": [
+              640,
+              640,
+              640
+            ],
+            "config": [
+              64,
+              64,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 58982400,
+            "packed_filter_bytes": 58982400
+          },
+          {
+            "weight": "model.diffusion_model.output_blocks.8.3.conv.weight",
+            "geometry": [
+              640,
+              2560,
+              640
+            ],
+            "config": null,
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": false,
+            "native_FP32_SGEMM_unchanged": true,
+            "single_executable_pointer_writer": true,
+            "cached_native_filter_bytes": 58982400
+          },
+          {
+            "weight": "model.diffusion_model.output_blocks.9.0.in_layers.2.weight",
+            "geometry": [
+              320,
+              2560,
+              960
+            ],
+            "config": [
+              32,
+              128,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 44236800,
+            "packed_filter_bytes": 44236800
+          },
+          {
+            "weight": "model.diffusion_model.output_blocks.9.0.out_layers.3.weight",
+            "geometry": [
+              320,
+              2560,
+              320
+            ],
+            "config": [
+              32,
+              128,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 14745600,
+            "packed_filter_bytes": 14745600
+          },
+          {
+            "weight": "model.diffusion_model.output_blocks.10.0.in_layers.2.weight",
+            "geometry": [
+              320,
+              2560,
+              640
+            ],
+            "config": null,
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": false,
+            "native_FP32_SGEMM_unchanged": true,
+            "single_executable_pointer_writer": true,
+            "cached_native_filter_bytes": 29491200
+          },
+          {
+            "weight": "model.diffusion_model.output_blocks.10.0.out_layers.3.weight",
+            "geometry": [
+              320,
+              2560,
+              320
+            ],
+            "config": [
+              32,
+              128,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 14745600,
+            "packed_filter_bytes": 14745600
+          },
+          {
+            "weight": "model.diffusion_model.output_blocks.11.0.in_layers.2.weight",
+            "geometry": [
+              320,
+              2560,
+              640
+            ],
+            "config": null,
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": false,
+            "native_FP32_SGEMM_unchanged": true,
+            "single_executable_pointer_writer": true,
+            "cached_native_filter_bytes": 29491200
+          },
+          {
+            "weight": "model.diffusion_model.output_blocks.11.0.out_layers.3.weight",
+            "geometry": [
+              320,
+              2560,
+              320
+            ],
+            "config": [
+              32,
+              128,
+              64,
+              4,
+              1
+            ],
+            "original_native_input_filter_output_transforms": true,
+            "original_filter_cloned_on_master_version": true,
+            "numerical_SGEMM_only": true,
+            "prepacked_FP16_high_and_scaled_residual": true,
+            "single_executable_pointer_writer": true,
+            "candidate_real_capture_params": false,
+            "direct_params_driver_metadata": true,
+            "candidate_pointer_order": [
+              "packed_filter_high",
+              "packed_filter_low",
+              "native_input_A",
+              "native_output_C"
+            ],
+            "cached_native_filter_bytes": 14745600,
+            "packed_filter_bytes": 14745600
+          }
+        ],
+        "pairs": [
+          {
+            "baseline_ms": 316.2532958984375,
+            "candidate_ms": 314.3286865234375,
+            "saved_ms": 1.9246093749999886
+          },
+          {
+            "candidate_ms": 314.3328857421875,
+            "baseline_ms": 316.330078125,
+            "saved_ms": 1.9971923828125
+          },
+          {
+            "baseline_ms": 316.3061279296875,
+            "candidate_ms": 314.3478271484375,
+            "saved_ms": 1.9583007812499886
+          },
+          {
+            "candidate_ms": 314.3337890625,
+            "baseline_ms": 316.27744140625,
+            "saved_ms": 1.9436523437499886
+          },
+          {
+            "baseline_ms": 316.2587158203125,
+            "candidate_ms": 314.3310302734375,
+            "saved_ms": 1.9276855468750114
+          },
+          {
+            "candidate_ms": 314.330322265625,
+            "baseline_ms": 316.259228515625,
+            "saved_ms": 1.9289062500000114
+          }
+        ],
+        "median_saved_ms": 1.936279296875,
+        "initial_outputs": [
+          {
+            "finite": true,
+            "relative_l2": 2.2371061346186943e-05,
+            "max_abs": 0.00011587142944335938,
+            "passed": false,
+            "first_input_diagnostic_bound_passed": true
+          },
+          {
+            "finite": true,
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "passed": true,
+            "first_input_diagnostic_bound_passed": true
+          },
+          {
+            "finite": true,
+            "relative_l2": 5.584937539227965e-05,
+            "max_abs": 0.0004930496215820312,
+            "passed": false,
+            "first_input_diagnostic_bound_passed": true
+          }
+        ],
+        "changed_input_outputs": [
+          {
+            "finite": true,
+            "relative_l2": 2.235663879375687e-05,
+            "max_abs": 0.00013589859008789062,
+            "passed": false,
+            "first_input_diagnostic_bound_passed": true
+          },
+          {
+            "finite": true,
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "passed": true,
+            "first_input_diagnostic_bound_passed": true
+          },
+          {
+            "finite": true,
+            "relative_l2": 5.0531301619099e-05,
+            "max_abs": 0.00025463104248046875,
+            "passed": false,
+            "first_input_diagnostic_bound_passed": true
+          }
+        ],
+        "mutated_master_outputs": [
+          {
+            "finite": true,
+            "relative_l2": 2.2481132862376778e-05,
+            "max_abs": 0.00015473365783691406,
+            "passed": false,
+            "first_input_diagnostic_bound_passed": true
+          },
+          {
+            "finite": true,
+            "relative_l2": 0.0,
+            "max_abs": 0.0,
+            "passed": true,
+            "first_input_diagnostic_bound_passed": true
+          },
+          {
+            "finite": true,
+            "relative_l2": 5.231229751656465e-05,
+            "max_abs": 0.00019168853759765625,
+            "passed": false,
+            "first_input_diagnostic_bound_passed": true
+          }
+        ],
+        "first_input_bound_only": true,
+        "full_video_PSNR_unverified": true,
+        "original_native_transforms": true,
+        "original_graph_definition_unchanged": true,
+        "restored_native_output_bits": true,
+        "source_inference_unchanged": true,
+        "setup_ms": 43.94548595882952,
+        "prepacked_weights": true,
+        "reference_current_FP16_bits": true,
+        "pair_baseline": "current_FP16x3",
+        "numerical_selected": 15,
+        "native_only_selected": 8,
+        "cached_native_filter_bytes": 1563033600,
+        "packed_filter_bytes": 737280000,
+        "direct_params": true,
+        "template_bytes": 24,
+        "same_process": true,
+        "same_gpu": true,
+        "same_model_weights": true,
+        "same_actual_first_denoiser_input": true,
+        "no_official_score": true
+      }
+    },
+    "no_official_score": true
+  },
+  "configs": [
+    {
+      "geometry": [
+        320,
+        2560,
+        320
+      ],
+      "config": [
+        32,
+        128,
+        64,
+        4,
+        1
+      ],
+      "primitive_median_saved_ms": 0.5860352277755737,
+      "primitive_strict_conv_3e6_passed": false
+    },
+    {
+      "geometry": [
+        640,
+        640,
+        640
+      ],
+      "config": [
+        64,
+        64,
+        64,
+        4,
+        1
+      ],
+      "primitive_median_saved_ms": 0.43985917568206784,
+      "primitive_strict_conv_3e6_passed": false
+    },
+    {
+      "geometry": [
+        1280,
+        192,
+        1280
+      ],
+      "config": [
+        64,
+        64,
+        64,
+        4,
+        1
+      ],
+      "primitive_median_saved_ms": 0.9053440093994141,
+      "primitive_strict_conv_3e6_passed": false
+    },
+    {
+      "geometry": [
+        320,
+        2560,
+        960
+      ],
+      "config": [
+        32,
+        128,
+        64,
+        4,
+        1
+      ],
+      "primitive_median_saved_ms": 1.7906943321228026,
+      "primitive_strict_conv_3e6_passed": false
+    },
+    {
+      "geometry": [
+        640,
+        640,
+        1920
+      ],
+      "config": [
+        64,
+        64,
+        64,
+        4,
+        1
+      ],
+      "primitive_median_saved_ms": 1.322239875793457,
+      "primitive_strict_conv_3e6_passed": false
+    },
+    {
+      "geometry": [
+        1280,
+        192,
+        2560
+      ],
+      "config": [
+        64,
+        64,
+        64,
+        4,
+        1
+      ],
+      "primitive_median_saved_ms": 1.824332904815674,
+      "primitive_strict_conv_3e6_passed": false
+    },
+    {
+      "geometry": [
+        1280,
+        640,
+        1280
+      ],
+      "config": [
+        32,
+        128,
+        64,
+        4,
+        1
+      ],
+      "primitive_median_saved_ms": 1.6862975120544434,
+      "primitive_strict_conv_3e6_passed": false
+    }
+  ],
+  "actual_probe_scripts": {
+    "scripts/profile_native_sgemm_pair.py": "c10ebad9617f785516289330519463a2dc08f9f3c45948023803b29ab7b6412d",
+    "scripts/native_winograd_gemm_fp16_kernel.py": "7fadac89dbe1bea73761c3579d757589dfa2dcb003a263ff5267aad585b7e75c",
+    "scripts/native_winograd_sgemm_swap.py": "63db1aa211fcace964aad86e0acd1f77eb0a04432b1690d12aa9755950c250c3",
+    "scripts/native_graph_world_filter_cache_probe.py": "f52426eeb7fdbbbf0164227cc4bbb8299e57be7fe57b7c8dfcdf39de6fa958b3",
+    "scripts/native_graph_weight_cache_probe.py": "8777e04b1515d5cef2bf730681463eb59c57fafe541434236556cbf1c2de3f38",
+    "scripts/cuda_graph_readonly_inventory.py": "8d0c6ae0eeeeacf4b45f01e24d359907111c9bcb000927d2b9a9fc0bec16e3fb",
+    "scripts/benchmark_native_winograd_sgemm_audit.py": "de7cc557c787bf265de02779610338db50171a4a091da3195e67553907c2ee00",
+    "scripts/native_winograd_gemm_kernel.py": "50de58829c7fc4f43e06414e794039d31bae144c6dadc9234e278a74ba9c85d5",
+    "scripts/benchmark_native_graph_weight_cache.py": "563cf578cf19c4d0c2276f6cecf8092a75eba27494503c725ed3e2e2eef5a022",
+    "scripts/native_sgemm_direct_params.py": "36ab9753dc466b49d93e7ee2496c80829d7c03e530f3b7725d24363691c359f1",
+    "scripts/native_sgemm_direct_profile_sources.py": "881c80d5cfbbeda99b07d966d5d6989974083761d17c2d0dd65d6fcc6c16bf03",
+    "scripts/native_sgemm_prepacked_profile_sources.py": "9c1ccd913cdbe1c6a9f7f3765f2ca6c2af39f57d27ebe537d1f717122a7d1db0",
+    "scripts/native_sgemm_prepacked_swap.py": "4cd3624a6cf0e9bf875d17310fc760e051e385b3be37fe40dee5177ecfc55407",
+    "scripts/native_winograd_gemm_fp16_packed_kernel.py": "71b5a496db27cb4fcf0e8138a9d6094341a5f9387cec5881010c8263fa80de49",
+    "scripts/run_native_sgemm_pair.py": "c5f77b55c530ed073c2ca587a77fe9eeb2e766b8a2692c61abc12c65874752c3"
+  }
+}

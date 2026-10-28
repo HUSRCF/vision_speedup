@@ -1,0 +1,1138 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "case": "initial",
+      "execution_steps": 16,
+      "all16_pixels_int32_exact": true,
+      "feedback_native_int32_exact": true,
+      "independent_outputs": true,
+      "master_cache_refreshed": true
+    },
+    {
+      "case": "short_execution",
+      "execution_steps": 12,
+      "all16_pixels_int32_exact": true,
+      "feedback_native_int32_exact": true,
+      "independent_outputs": true,
+      "master_cache_refreshed": true
+    },
+    {
+      "case": "changed_input",
+      "execution_steps": 16,
+      "all16_pixels_int32_exact": true,
+      "feedback_native_int32_exact": true,
+      "independent_outputs": true,
+      "master_cache_refreshed": true
+    },
+    {
+      "case": "restored_input",
+      "execution_steps": 16,
+      "all16_pixels_int32_exact": true,
+      "feedback_native_int32_exact": true,
+      "independent_outputs": true,
+      "master_cache_refreshed": true
+    },
+    {
+      "case": "changed_all_masters",
+      "execution_steps": 16,
+      "all16_pixels_int32_exact": true,
+      "feedback_native_int32_exact": true,
+      "independent_outputs": true,
+      "master_cache_refreshed": true
+    },
+    {
+      "case": "restored_all_masters",
+      "execution_steps": 16,
+      "all16_pixels_int32_exact": true,
+      "feedback_native_int32_exact": true,
+      "independent_outputs": true,
+      "master_cache_refreshed": true
+    },
+    {
+      "case": "zero_all_masters",
+      "execution_steps": 16,
+      "all16_pixels_int32_exact": true,
+      "feedback_native_int32_exact": true,
+      "independent_outputs": true,
+      "master_cache_refreshed": true
+    },
+    {
+      "case": "zero_then_restore",
+      "execution_steps": 16,
+      "all16_pixels_int32_exact": true,
+      "feedback_native_int32_exact": true,
+      "independent_outputs": true,
+      "master_cache_refreshed": true
+    }
+  ],
+  "stream_checks": [
+    {
+      "execution_steps": 16,
+      "nondefault_caller_restored": true,
+      "all16_pixels_int32_exact": true
+    },
+    {
+      "execution_steps": 12,
+      "nondefault_caller_restored": true,
+      "all16_pixels_int32_exact": true
+    }
+  ],
+  "exception_checks": [
+    {
+      "path": "fast",
+      "nondefault_caller_restored": true,
+      "flags_restored": true,
+      "recovery_all16_pixels_int32_exact": true
+    },
+    {
+      "path": "native",
+      "nondefault_caller_restored": true,
+      "flags_restored": true,
+      "recovery_all16_pixels_int32_exact": true
+    }
+  ],
+  "allocator_stress": [
+    {
+      "execution_steps": 16,
+      "freed_input_and_work_output_allocator_churn": true,
+      "all16_pixels_int32_exact": true
+    },
+    {
+      "execution_steps": 12,
+      "freed_input_and_work_output_allocator_churn": true,
+      "all16_pixels_int32_exact": true
+    },
+    {
+      "execution_steps": 16,
+      "freed_input_and_work_output_allocator_churn": true,
+      "all16_pixels_int32_exact": true
+    },
+    {
+      "execution_steps": 12,
+      "freed_input_and_work_output_allocator_churn": true,
+      "all16_pixels_int32_exact": true
+    },
+    {
+      "execution_steps": 16,
+      "freed_input_and_work_output_allocator_churn": true,
+      "all16_pixels_int32_exact": true
+    },
+    {
+      "execution_steps": 12,
+      "freed_input_and_work_output_allocator_churn": true,
+      "all16_pixels_int32_exact": true
+    }
+  ],
+  "trace": [
+    {
+      "path": "cached_nonfeedback",
+      "batch": 14,
+      "current_stream": 94803066377664,
+      "weight_dtype": "torch.float16",
+      "output_dtype": "torch.float32",
+      "cudnn_tf32": true,
+      "matmul_tf32": false
+    },
+    {
+      "path": "native_feedback",
+      "batch": 1,
+      "current_stream": 0,
+      "input_dtype": "torch.float32",
+      "cudnn_tf32": false,
+      "matmul_tf32": false
+    },
+    {
+      "path": "native_feedback",
+      "batch": 1,
+      "current_stream": 0,
+      "input_dtype": "torch.float32",
+      "cudnn_tf32": false,
+      "matmul_tf32": false
+    }
+  ],
+  "report": {
+    "clips": 27,
+    "rows": [
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 12,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          10,
+          11
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 12,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          10,
+          11
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 12,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          10,
+          11
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 12,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          10,
+          11
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 12,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          10,
+          11
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 12,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          10,
+          11
+        ]
+      },
+      {
+        "dataset": "unitree_z1_dual_arm_stackbox_v2",
+        "stage": "simulation",
+        "mode": "fp16_nchw",
+        "eligible": true,
+        "execution_steps": 16,
+        "feedback_frames": 2,
+        "input_shape": [
+          1,
+          4,
+          16,
+          40,
+          64
+        ],
+        "input_contiguous": true,
+        "input_FP32": true,
+        "output_shape": [
+          1,
+          3,
+          16,
+          320,
+          512
+        ],
+        "output_FP32": true,
+        "flags_before": [
+          false,
+          false
+        ],
+        "flags_restored": true,
+        "current_stream_restored": true,
+        "protected_indices": [
+          14,
+          15
+        ]
+      }
+    ],
+    "fallbacks": {},
+    "cache_report": {
+      "mode": "fp16_nchw",
+      "builds": 5,
+      "hits": 52,
+      "setup_ms": [
+        21.19641797617078,
+        11.812312994152308,
+        11.774434999097139,
+        11.720262002199888,
+        11.585041007492691
+      ],
+      "copied_weight_bytes": 98980398,
+      "original_master_version_guarded": true,
+      "original_FP32_feedback_decoder": true
+    },
+    "parallel_calls": 27,
+    "all_setup_inside_process_wall": true,
+    "numerical_candidate": false,
+    "original_FP32_decoder_masters": true,
+    "original_DDIM_and_UNet_unchanged": true,
+    "feedback_decode_original_perframe_FP32": true,
+    "nonfeedback_cached_FP16_only": true,
+    "original_cached_decoder_class": true,
+    "stream_scheduling_only": true,
+    "native_input_scale_and_batch_partitions_and_frame_order": true,
+    "input_output_record_stream_and_current_wait_work": true
+  },
+  "masters": 140,
+  "original_baseline_restored_int32_exact": true,
+  "RNG_unchanged": true,
+  "master_pointers_values_keys_unchanged": true,
+  "qualified_cached_decoder_class_retained": true,
+  "nondefault_stream_explicit_success_and_both_exceptions": true,
+  "allocator_lifetime_stress_all16_pixels_exact": true
+}

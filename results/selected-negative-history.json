@@ -1,0 +1,79 @@
+[
+  {
+    "name": "v2_half_canonical_source_experiment",
+    "state": "terminalstrictclean201.716984s/21.811781320090947dBFAILED;NOTadopted",
+    "scope": null,
+    "psnr_db": null,
+    "process_wall_s": null
+  },
+  {
+    "name": "simulation_prefix10_experiment_full",
+    "state": "terminalstrictcleanfull11:548.323051s/22.678873256774853dBqualityFAILED;NOTadopted",
+    "scope": "Accepted567.625702BK64base;worldsimulationfirst10of50cuDNNTF32remaining40FP32;worldinputstem/outputFP32;decisionunchanged;noinputpackorinitial512",
+    "psnr_db": null,
+    "process_wall_s": null
+  },
+  {
+    "name": "simulation_spatial_tf32_experiment_full",
+    "state": "terminalstrictcleanfull11:507.688889s/22.40908736996136dBqualityFAILED;NOTadopted",
+    "scope": "Accepted548.018435prepackedbase;worldlocalcuDNNTF32onlybodyspatialConv2d3x3minCI/CO320stride1;outerstageFalse;temporalConv3d/F32Conv2d,norm,videoI/O,heads,initial512,matmulacceptedprecisionretained;masterweights/outputFP32;decisionunchanged;noF2/QKV/stage3combo",
+    "psnr_db": null,
+    "process_wall_s": null
+  },
+  {
+    "name": "world_primary_geglu_both_experiment_full",
+    "state": "Terminal strictclean full11 463.321710/22.708017229509668 FAILED quality; not adopted; no repeat.",
+    "scope": "World-only22 wideGEGLU C640/1280 actual3shapes; decision retains accepted primary both; FP32 master, bias, GELU and output. Staticweights firsttimedwarm/versionrefresh; inputparts recomputed eachcall/graphreplay.",
+    "psnr_db": 22.708017229509668,
+    "process_wall_s": 463.32171
+  },
+  {
+    "name": "world_primary_geglu_value_experiment_full",
+    "state": "Terminalstrictclean full11 qualityFAILED;gateprotection insufficient;notadopted,norepeat",
+    "scope": "World-only22 wideGEGLU C640/1280 actual3shapes; decision retains accepted primary both; FP32 master, bias, GELU and output. Staticweights firsttimedwarm/versionrefresh; inputparts recomputed eachcall/graphreplay.",
+    "psnr_db": 22.656993183050858,
+    "process_wall_s": 471.996979
+  },
+  {
+    "name": "world_primary_geglu_both640_experiment_full",
+    "state": "Terminal strictclean full11 466.720348/22.689033316110358 FAILED quality; not adopted. Broad world both/value original experiments remain independently live/queued; no repeat of this scope.",
+    "scope": "Only world C64010 wideGEGLU modules; worldC1280 retains accepted3Half, decisionboth remains accepted",
+    "psnr_db": 22.689033316110358,
+    "process_wall_s": 466.720348
+  },
+  {
+    "name": "world_primary_geglu_both1280_experiment_full",
+    "state": "Terminal full11 qualityFAILED,notadopted,norepeat.",
+    "scope": "Onlyworld12C1280wideGEGLUs primaryboth,2actualshapesM2560/M640;worldC640/C320 retainacceptedcompensated. Decisionwideprimarybothretained. Exact451.752505/32.12115 base; noC320decisionprimaryorinitialGEGLUfusioncombination.",
+    "psnr_db": 22.68218827536532,
+    "process_wall_s": 445.860365
+  },
+  {
+    "name": "world_timestep_geglu_guard_diagnostic",
+    "state": "Terminal cleanGPU1 actual3shapes runtimechain; decisionexact,lowaccepted/highprimaryexact,onegraph4timestep+inputweightrefresh,contextrestore,positional/keywordbinding,6fallback/4invalidtimestep/coldcapture/narrowscopeguards passed.",
+    "scope": null,
+    "psnr_db": null,
+    "process_wall_s": null
+  },
+  {
+    "name": "world_timestep_geglu_800_experiment_full",
+    "state": "Terminalstrictclean full11 qualityFAILED; no adoption or combination. Newearly5/10wideprimaryboth scope rejected.",
+    "scope": "Only22worldC640/C1280GEGLUs use primaryboth forlive t>=800, accepted3HalfBK64otherwise; lateDDIM protected. NarrowworldC320/decision/allothermathunchanged fromofficial428.537615 limit1. Same50DDIM11rounds/2graphs.",
+    "psnr_db": 22.675913050549312,
+    "process_wall_s": 425.658084
+  },
+  {
+    "name": "world_timestep_geglu_900_experiment_full",
+    "state": "Terminalstrictclean full11 qualityFAILED; no adoption or combination. Newearly5/10wideprimaryboth scope rejected.",
+    "scope": "Only22worldC640/C1280GEGLUs use primaryboth forlive t>=900, accepted3HalfBK64otherwise; lateDDIM protected. NarrowworldC320/decision/allothermathunchanged fromofficial428.537615 limit1. Same50DDIM11rounds/2graphs.",
+    "psnr_db": 22.69143247106333,
+    "process_wall_s": 433.811078
+  },
+  {
+    "name": "attention_protected_scores_current_full_pool_r1",
+    "state": "attention_protected_scores_full_slower_or_failed",
+    "scope": "190sources;186of188oldfiles fixed,104oldJIT AST+lines fixed. One qualified PV2-product shader and hosthelper. Original QK3 products, FP32 softmax, KV/output storage and same originalJIT retained on10worldcalls; original decision146/world54 routes retained.570masters12modelcases,6positive worldpairs,8CPU and3GPU lifecyclefixtures passed. Full11x50DDIM/23videos/setup timed/wholeattempt GPUguard+telemetry. Numerical video changes allowed; PSNR>25 and faster335.300837 plus official103 required for local adoption.",
+    "psnr_db": 24.864353927334875,
+    "process_wall_s": null
+  }
+]

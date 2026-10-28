@@ -1,0 +1,28 @@
+UnifoLM 2.0.1 correctness and failure isolation
+
+Reference: /share/results/unifolm/fp32/reference/outputs (103 videos).
+For each declared case independently, require the exact video set, frame counts
+and RGB shapes. Pool squared error across every RGB value of every video:
+PSNR = 10 log10(255^2 / (sum_squared_error / total_RGB_values)).
+Each valid case must be strictly greater than 25 dB. Exact matches use JSON
+psnr_db=null, exact_match=true (runner psnr_exact_match=true) and log inf.
+A null PSNR without exact_match is unavailable evidence, not infinite PSNR.
+
+Missing video trees, extra videos inside a case, decoding errors, mismatched
+frames/shapes and PSNR failure invalidate that case; other case results remain.
+Reports always contain a passed/reason outcome per declared case. The launcher
+records inference exit codes, continues independent cases, and runs validation
+on EXIT even after an inference error. Profile/exit failures are separate gates.
+Overall failure exits nonzero but preserves JSON/log. The upload platform can
+score healthy cases as partial; no requirement that all five must pass to score.
+
+Complete workload: 12/7/11/8/11 rounds. process_wall_s includes process setup,
+model loading, inference and required output; PSNR checking time is separate.
+Final JSON/log contain matching timing/PSNR lines and status. Never forge them.
+
+Standalone validation (in the private UnifoLM environment):
+python3 /share/tools/unifolm-psnr.py --results <outputs> --report psnr.json
+
+The website checks reported evidence; it does not independently decode videos
+or prove timings. Winners deliver code/report for organizer-controlled reruns.
+See /share/PARTICIPANT_HANDBOOK.md and /share/QUICKSTART.md.
