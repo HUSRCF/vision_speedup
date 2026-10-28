@@ -1,0 +1,3754 @@
+{
+  "stages": {
+    "world": {
+      "stage": "world",
+      "cases": [
+        {
+          "case": "initial",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            }
+          ],
+          "baseline_restored_bitwise": false,
+          "attention_launches": {
+            "captured": 20,
+            "captures": [
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              }
+            ],
+            "calibration_owners": 10,
+            "fallbacks": {
+              "geometry_or_schedule": 96
+            },
+            "static_graphs": 1,
+            "dynamic_reference_graphs": 1,
+            "calibration": "same frozen first eager channel scale and outliers in both modes",
+            "original_Half_main_unchanged": true,
+            "world_middle_FFN_only": true,
+            "exact_Half_residual_K_channels": 256,
+            "dynamic_input_pack_inside_replay": true,
+            "static_weight_pack_by_original_FP32_master": true,
+            "original_Half_cache_master_signature_verified": true,
+            "weight_owners": [
+              {
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              }
+            ],
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "changed_inputs",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            }
+          ],
+          "baseline_restored_bitwise": false,
+          "attention_launches": {
+            "captured": 20,
+            "captures": [
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              }
+            ],
+            "calibration_owners": 10,
+            "fallbacks": {
+              "geometry_or_schedule": 96
+            },
+            "static_graphs": 1,
+            "dynamic_reference_graphs": 1,
+            "calibration": "same frozen first eager channel scale and outliers in both modes",
+            "original_Half_main_unchanged": true,
+            "world_middle_FFN_only": true,
+            "exact_Half_residual_K_channels": 256,
+            "dynamic_input_pack_inside_replay": true,
+            "static_weight_pack_by_original_FP32_master": true,
+            "original_Half_cache_master_signature_verified": true,
+            "weight_owners": [
+              {
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 1,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              }
+            ],
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "changed_all_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            }
+          ],
+          "baseline_restored_bitwise": false,
+          "attention_launches": {
+            "captured": 20,
+            "captures": [
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              }
+            ],
+            "calibration_owners": 10,
+            "fallbacks": {
+              "geometry_or_schedule": 108
+            },
+            "static_graphs": 1,
+            "dynamic_reference_graphs": 1,
+            "calibration": "same frozen first eager channel scale and outliers in both modes",
+            "original_Half_main_unchanged": true,
+            "world_middle_FFN_only": true,
+            "exact_Half_residual_K_channels": 256,
+            "dynamic_input_pack_inside_replay": true,
+            "static_weight_pack_by_original_FP32_master": true,
+            "original_Half_cache_master_signature_verified": true,
+            "weight_owners": [
+              {
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 2,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 2,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 2,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 2,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 2,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 2,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 2,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 2,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 2,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 2,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              }
+            ],
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "restored_all_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            }
+          ],
+          "baseline_restored_bitwise": true,
+          "attention_launches": {
+            "captured": 20,
+            "captures": [
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              }
+            ],
+            "calibration_owners": 10,
+            "fallbacks": {
+              "geometry_or_schedule": 132
+            },
+            "static_graphs": 1,
+            "dynamic_reference_graphs": 1,
+            "calibration": "same frozen first eager channel scale and outliers in both modes",
+            "original_Half_main_unchanged": true,
+            "world_middle_FFN_only": true,
+            "exact_Half_residual_K_channels": 256,
+            "dynamic_input_pack_inside_replay": true,
+            "static_weight_pack_by_original_FP32_master": true,
+            "original_Half_cache_master_signature_verified": true,
+            "weight_owners": [
+              {
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 3,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 3,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 3,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 3,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 3,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 3,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 3,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 3,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 3,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 3,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              }
+            ],
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "zero_all_masters",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            }
+          ],
+          "baseline_restored_bitwise": false,
+          "attention_launches": {
+            "captured": 20,
+            "captures": [
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              }
+            ],
+            "calibration_owners": 10,
+            "fallbacks": {
+              "geometry_or_schedule": 144
+            },
+            "static_graphs": 1,
+            "dynamic_reference_graphs": 1,
+            "calibration": "same frozen first eager channel scale and outliers in both modes",
+            "original_Half_main_unchanged": true,
+            "world_middle_FFN_only": true,
+            "exact_Half_residual_K_channels": 256,
+            "dynamic_input_pack_inside_replay": true,
+            "static_weight_pack_by_original_FP32_master": true,
+            "original_Half_cache_master_signature_verified": true,
+            "weight_owners": [
+              {
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 4,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 4,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 4,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 4,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 4,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 4,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 4,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 4,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 4,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 4,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              }
+            ],
+            "full_video_PSNR_unverified": true
+          }
+        },
+        {
+          "case": "zero_then_restore",
+          "three_outputs_gross_passed": true,
+          "errors": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            }
+          ],
+          "baseline_restored_bitwise": true,
+          "attention_launches": {
+            "captured": 20,
+            "captures": [
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": true,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              },
+              {
+                "shape": [
+                  2560,
+                  1280,
+                  5120
+                ],
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "weight_pack_inside_replay": false,
+                "exact_Half_residual_K_channels": 256
+              }
+            ],
+            "calibration_owners": 10,
+            "fallbacks": {
+              "geometry_or_schedule": 168
+            },
+            "static_graphs": 1,
+            "dynamic_reference_graphs": 1,
+            "calibration": "same frozen first eager channel scale and outliers in both modes",
+            "original_Half_main_unchanged": true,
+            "world_middle_FFN_only": true,
+            "exact_Half_residual_K_channels": 256,
+            "dynamic_input_pack_inside_replay": true,
+            "static_weight_pack_by_original_FP32_master": true,
+            "original_Half_cache_master_signature_verified": true,
+            "weight_owners": [
+              {
+                "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 5,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 5,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 5,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 5,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 5,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 5,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 5,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 5,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+                "refreshes": 5,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              },
+              {
+                "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+                "refreshes": 5,
+                "original_FP32_master_signature_current": true,
+                "all_three_packed_arrays_signedzero_bit_exact": true,
+                "packed_bytes": 7214080
+              }
+            ],
+            "full_video_PSNR_unverified": true
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_samples_ms": [
+            292.41650390625,
+            291.21844482421875,
+            292.4707946777344,
+            291.01568603515625,
+            292.18817138671875,
+            291.694580078125,
+            291.08428955078125
+          ],
+          "baseline_ms": 291.694580078125,
+          "candidate_samples_ms": [
+            291.9331970214844,
+            292.2035217285156,
+            292.1584777832031,
+            291.25018310546875,
+            291.7386169433594,
+            292.1318359375,
+            292.13287353515625
+          ],
+          "candidate_ms": 292.1318359375,
+          "saved_ms": -0.437255859375
+        },
+        {
+          "candidate_samples_ms": [
+            291.8184814453125,
+            292.4984436035156,
+            291.47442626953125,
+            291.957763671875,
+            291.4775085449219,
+            292.4011535644531,
+            291.6444091796875
+          ],
+          "candidate_ms": 291.8184814453125,
+          "baseline_samples_ms": [
+            291.00030517578125,
+            292.2874755859375,
+            292.14617919921875,
+            292.29364013671875,
+            290.90509033203125,
+            292.2731628417969,
+            291.41400146484375
+          ],
+          "baseline_ms": 292.14617919921875,
+          "saved_ms": 0.32769775390625
+        },
+        {
+          "baseline_samples_ms": [
+            292.9879150390625,
+            291.7079162597656,
+            292.5567932128906,
+            291.7754821777344,
+            292.4031982421875,
+            291.5563659667969,
+            292.91009521484375
+          ],
+          "baseline_ms": 292.4031982421875,
+          "candidate_samples_ms": [
+            292.1983947753906,
+            292.706298828125,
+            292.1553955078125,
+            292.65509033203125,
+            292.0693664550781,
+            292.4472351074219,
+            291.91986083984375
+          ],
+          "candidate_ms": 292.1983947753906,
+          "saved_ms": 0.204803466796875
+        },
+        {
+          "candidate_samples_ms": [
+            292.7667236328125,
+            291.80108642578125,
+            292.9295349121094,
+            291.66693115234375,
+            292.5854797363281,
+            292.384765625,
+            292.7349853515625
+          ],
+          "candidate_ms": 292.5854797363281,
+          "baseline_samples_ms": [
+            292.27520751953125,
+            292.3960266113281,
+            291.9413757324219,
+            292.63873291015625,
+            291.6147155761719,
+            292.4800109863281,
+            291.96185302734375
+          ],
+          "baseline_ms": 292.27520751953125,
+          "saved_ms": -0.310272216796875
+        },
+        {
+          "baseline_samples_ms": [
+            292.8015441894531,
+            293.1691589355469,
+            292.2024841308594,
+            291.9229431152344,
+            292.864013671875,
+            291.7867431640625,
+            292.79949951171875
+          ],
+          "baseline_ms": 292.79949951171875,
+          "candidate_samples_ms": [
+            292.5567932128906,
+            292.7513732910156,
+            291.820556640625,
+            292.5629577636719,
+            292.10113525390625,
+            292.5906066894531,
+            292.0110168457031
+          ],
+          "candidate_ms": 292.5567932128906,
+          "saved_ms": 0.242706298828125
+        },
+        {
+          "candidate_samples_ms": [
+            293.0176086425781,
+            291.62188720703125,
+            293.08416748046875,
+            291.8922119140625,
+            292.6868591308594,
+            291.7632141113281,
+            292.72576904296875
+          ],
+          "candidate_ms": 292.6868591308594,
+          "baseline_samples_ms": [
+            292.04376220703125,
+            292.79437255859375,
+            291.88812255859375,
+            292.8332824707031,
+            291.82769775390625,
+            292.4666748046875,
+            292.11444091796875
+          ],
+          "baseline_ms": 292.11444091796875,
+          "saved_ms": -0.572418212890625
+        }
+      ],
+      "median_saved_ms": -0.052734375,
+      "same_process": true,
+      "same_GPU": true,
+      "same_model_masters": true,
+      "current209_norm2_presplit_flags_preserved": true,
+      "original_graph_owners_and_all_version_checks_both_modes": true,
+      "static_residual_weight_pack": true,
+      "reference_previous_dynamic_packing": true,
+      "all_diffusion_all_masters_tested": true,
+      "attention_launches": {
+        "captured": 20,
+        "captures": [
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": true,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": true,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": true,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": true,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": true,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": true,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": true,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": true,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": true,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": true,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": false,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": false,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": false,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": false,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": false,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": false,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": false,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": false,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": false,
+            "exact_Half_residual_K_channels": 256
+          },
+          {
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+            "weight_pack_inside_replay": false,
+            "exact_Half_residual_K_channels": 256
+          }
+        ],
+        "calibration_owners": 10,
+        "fallbacks": {
+          "geometry_or_schedule": 168
+        },
+        "static_graphs": 1,
+        "dynamic_reference_graphs": 1,
+        "calibration": "same frozen first eager channel scale and outliers in both modes",
+        "original_Half_main_unchanged": true,
+        "world_middle_FFN_only": true,
+        "exact_Half_residual_K_channels": 256,
+        "dynamic_input_pack_inside_replay": true,
+        "static_weight_pack_by_original_FP32_master": true,
+        "original_Half_cache_master_signature_verified": true,
+        "weight_owners": [
+          {
+            "module": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+            "refreshes": 5,
+            "original_FP32_master_signature_current": true,
+            "all_three_packed_arrays_signedzero_bit_exact": true,
+            "packed_bytes": 7214080
+          },
+          {
+            "module": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+            "refreshes": 5,
+            "original_FP32_master_signature_current": true,
+            "all_three_packed_arrays_signedzero_bit_exact": true,
+            "packed_bytes": 7214080
+          },
+          {
+            "module": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+            "refreshes": 5,
+            "original_FP32_master_signature_current": true,
+            "all_three_packed_arrays_signedzero_bit_exact": true,
+            "packed_bytes": 7214080
+          },
+          {
+            "module": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+            "refreshes": 5,
+            "original_FP32_master_signature_current": true,
+            "all_three_packed_arrays_signedzero_bit_exact": true,
+            "packed_bytes": 7214080
+          },
+          {
+            "module": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+            "refreshes": 5,
+            "original_FP32_master_signature_current": true,
+            "all_three_packed_arrays_signedzero_bit_exact": true,
+            "packed_bytes": 7214080
+          },
+          {
+            "module": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+            "refreshes": 5,
+            "original_FP32_master_signature_current": true,
+            "all_three_packed_arrays_signedzero_bit_exact": true,
+            "packed_bytes": 7214080
+          },
+          {
+            "module": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+            "refreshes": 5,
+            "original_FP32_master_signature_current": true,
+            "all_three_packed_arrays_signedzero_bit_exact": true,
+            "packed_bytes": 7214080
+          },
+          {
+            "module": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+            "refreshes": 5,
+            "original_FP32_master_signature_current": true,
+            "all_three_packed_arrays_signedzero_bit_exact": true,
+            "packed_bytes": 7214080
+          },
+          {
+            "module": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+            "refreshes": 5,
+            "original_FP32_master_signature_current": true,
+            "all_three_packed_arrays_signedzero_bit_exact": true,
+            "packed_bytes": 7214080
+          },
+          {
+            "module": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+            "refreshes": 5,
+            "original_FP32_master_signature_current": true,
+            "all_three_packed_arrays_signedzero_bit_exact": true,
+            "packed_bytes": 7214080
+          }
+        ],
+        "full_video_PSNR_unverified": true
+      },
+      "baseline_restoration_bitwise": true,
+      "synthetic_master_condition_refresh": [
+        {
+          "restored": false,
+          "invalidated_keys": 131,
+          "original_output_storage_preserved": true
+        },
+        {
+          "restored": true,
+          "invalidated_keys": 131,
+          "original_output_storage_preserved": true,
+          "before_explicit_invalidation": [
+            {
+              "relative_l2": 0.0056259287521243095,
+              "max_abs": 0.05726170539855957,
+              "signedzero_bits": false
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0005426183925010264,
+              "max_abs": 0.0020818710327148438,
+              "signedzero_bits": false
+            }
+          ],
+          "after_explicit_invalidation": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            }
+          ]
+        },
+        {
+          "restored": false,
+          "invalidated_keys": 131,
+          "original_output_storage_preserved": true
+        },
+        {
+          "restored": true,
+          "invalidated_keys": 131,
+          "original_output_storage_preserved": true,
+          "before_explicit_invalidation": [
+            {
+              "relative_l2": 0.20817990601062775,
+              "max_abs": 1.8111462593078613,
+              "signedzero_bits": false
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true
+            },
+            {
+              "relative_l2": 0.0590498149394989,
+              "max_abs": 0.20785784721374512,
+              "signedzero_bits": false
+            }
+          ],
+          "after_explicit_invalidation": [
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            },
+            {
+              "relative_l2": 0.0,
+              "max_abs": 0.0,
+              "signedzero_bits": true,
+              "gross_passed": true,
+              "reference": "previous PSNR-qualified dynamic residual packing"
+            }
+          ]
+        }
+      ],
+      "full_video_PSNR_unverified": true,
+      "balanced_warmup": 40,
+      "settle_per_mode": 2,
+      "samples_per_condition": 7,
+      "Conv2d_master_tensors": 192,
+      "Linear_master_tensors": 570,
+      "norm_master_tensors": 782,
+      "master_refresh_uses_existing_eager_forward": true,
+      "RNG_unchanged": true,
+      "reports": {
+        "baseline": {
+          "selected": 23,
+          "plans": [
+            {
+              "weight": "model.diffusion_model.input_blocks.1.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.1.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.2.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.2.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.4.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                320
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "2daa957ff67201a6158b53f025ade1b002b5b2156db96e512f0ed51488fd312f",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.4.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.5.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.5.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.7.0.in_layers.2.weight",
+              "geometry": [
+                1280,
+                192,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8f16557ec155e0480eb4305ed8b3a7adaaffacb97986332af87f6827595838eb",
+              "cached_native_filter_bytes": 117964800,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.5.0.in_layers.2.weight",
+              "geometry": [
+                1280,
+                192,
+                1920
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "d255b2d7c2386c2812154e8e8b52a39e12faca771f1d0f4536692429a6fad2e5",
+              "cached_native_filter_bytes": 353894400,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.5.3.conv.weight",
+              "geometry": [
+                1280,
+                640,
+                1280
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 235929600,
+              "packed_filter_bytes": 235929600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.6.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.7.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                1280
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "db5bcb8c4b233404a3ffbc28c3ed80d7e670f249a085603eabee34a559c345a7",
+              "cached_native_filter_bytes": 117964800,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.7.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                960
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "490ccb3992f302fa1e2bc4ad85765da525865ae7bdba9e9e6ebd2cc02191cebf",
+              "cached_native_filter_bytes": 88473600,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.3.conv.weight",
+              "geometry": [
+                640,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "e69f99bebccb2402c1e2985cf226c2da73b4adf507e396dc3c1cca77d47459aa",
+              "cached_native_filter_bytes": 58982400,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.9.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                960
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 44236800,
+              "packed_filter_bytes": 44236800
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.9.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.10.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8131985e717553e86bf86993df382b1eddaf7416d28a2c5f2b6032ffc2fa575d",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.10.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.11.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8131985e717553e86bf86993df382b1eddaf7416d28a2c5f2b6032ffc2fa575d",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.11.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            }
+          ],
+          "setup_ms": 48.024352989159524,
+          "prepacked_weights": true,
+          "direct_params": true,
+          "numerical_selected": 15,
+          "native_only_selected": 0,
+          "kahan_selected": 8,
+          "cached_native_filter_bytes": 1563033600,
+          "packed_filter_bytes": 737280000,
+          "template_bytes": 24,
+          "kahan_template_bytes": 32,
+          "original_native_transforms": true,
+          "numerical_SGEMM_only": true,
+          "first_setup_inside_timed_capture": true,
+          "full_video_PSNR_required": true
+        },
+        "candidate": {
+          "selected": 23,
+          "plans": [
+            {
+              "weight": "model.diffusion_model.input_blocks.1.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.1.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.2.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.2.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.4.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                320
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "2daa957ff67201a6158b53f025ade1b002b5b2156db96e512f0ed51488fd312f",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.4.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.5.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.5.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.input_blocks.7.0.in_layers.2.weight",
+              "geometry": [
+                1280,
+                192,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8f16557ec155e0480eb4305ed8b3a7adaaffacb97986332af87f6827595838eb",
+              "cached_native_filter_bytes": 117964800,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.5.0.in_layers.2.weight",
+              "geometry": [
+                1280,
+                192,
+                1920
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "d255b2d7c2386c2812154e8e8b52a39e12faca771f1d0f4536692429a6fad2e5",
+              "cached_native_filter_bytes": 353894400,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.5.3.conv.weight",
+              "geometry": [
+                1280,
+                640,
+                1280
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 235929600,
+              "packed_filter_bytes": 235929600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.6.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.7.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                1280
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "db5bcb8c4b233404a3ffbc28c3ed80d7e670f249a085603eabee34a559c345a7",
+              "cached_native_filter_bytes": 117964800,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.7.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.0.in_layers.2.weight",
+              "geometry": [
+                640,
+                640,
+                960
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "490ccb3992f302fa1e2bc4ad85765da525865ae7bdba9e9e6ebd2cc02191cebf",
+              "cached_native_filter_bytes": 88473600,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.0.out_layers.3.weight",
+              "geometry": [
+                640,
+                640,
+                640
+              ],
+              "config": [
+                64,
+                64,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 58982400,
+              "packed_filter_bytes": 58982400
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.8.3.conv.weight",
+              "geometry": [
+                640,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "e69f99bebccb2402c1e2985cf226c2da73b4adf507e396dc3c1cca77d47459aa",
+              "cached_native_filter_bytes": 58982400,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.9.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                960
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 44236800,
+              "packed_filter_bytes": 44236800
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.9.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.10.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8131985e717553e86bf86993df382b1eddaf7416d28a2c5f2b6032ffc2fa575d",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.10.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.11.0.in_layers.2.weight",
+              "geometry": [
+                320,
+                2560,
+                640
+              ],
+              "config": null,
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "compensated_FP32_block_sum": true,
+              "single_executable_pointer_writer": true,
+              "direct_params_driver_metadata": true,
+              "direct_witness_cubin_sha256": "8131985e717553e86bf86993df382b1eddaf7416d28a2c5f2b6032ffc2fa575d",
+              "cached_native_filter_bytes": 29491200,
+              "kahan_template_bytes": 4,
+              "primitive_strict_conv_3e6_passed": false,
+              "diagnostic_gross_error_gate_only": true,
+              "full_video_PSNR_required": true
+            },
+            {
+              "weight": "model.diffusion_model.output_blocks.11.0.out_layers.3.weight",
+              "geometry": [
+                320,
+                2560,
+                320
+              ],
+              "config": [
+                32,
+                128,
+                64,
+                4,
+                1
+              ],
+              "original_native_input_filter_output_transforms": true,
+              "original_filter_cloned_on_master_version": true,
+              "numerical_SGEMM_only": true,
+              "prepacked_FP16_high_and_scaled_residual": true,
+              "single_executable_pointer_writer": true,
+              "candidate_real_capture_params": false,
+              "direct_params_driver_metadata": true,
+              "candidate_pointer_order": [
+                "packed_filter_high",
+                "packed_filter_low",
+                "native_input_A",
+                "native_output_C"
+              ],
+              "cached_native_filter_bytes": 14745600,
+              "packed_filter_bytes": 14745600
+            }
+          ],
+          "setup_ms": 56.042384007014334,
+          "prepacked_weights": true,
+          "direct_params": true,
+          "numerical_selected": 15,
+          "native_only_selected": 0,
+          "kahan_selected": 8,
+          "cached_native_filter_bytes": 1563033600,
+          "packed_filter_bytes": 737280000,
+          "template_bytes": 24,
+          "kahan_template_bytes": 32,
+          "original_native_transforms": true,
+          "numerical_SGEMM_only": true,
+          "first_setup_inside_timed_capture": true,
+          "full_video_PSNR_required": true
+        }
+      },
+      "no_official_score": true
+    }
+  },
+  "ready_for_full_trial": false,
+  "no_official_score": true
+}
