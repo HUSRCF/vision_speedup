@@ -49,6 +49,13 @@
 
 当前没有采用此候选，也没有新的官方 103 视频汇总。正在重复同 GPU 的原 59 文件单卡与 66 文件双卡完整比较，以判断这个亚秒差值是否稳定。完整运行的收益判断与模型六对交替结果分别保留。
 
+实验复现入口如下。`--prepare-only` 在比赛机上已核对全部 66 文件及计时资源 SHA；正式执行另需已验证的私有 NCCL tmpfs 适配器配置。扩展库应位于可执行挂载，可用 `--native-handles` 指定同 SHA 的原库。
+
+```bash
+python3 reproduce/run_g1_native_shared66.py --gpus 0,1 \
+  --workdir /var/tmp/g1-native-shared66 --prepare-only
+```
+
 本目录下的完整单项 `runtime.log/result.json` 包含其他四项缺失的状态，用于保留原单项执行证据；正式双文件仍在仓库根 `results/`，五项官方 103 视频重新验证通过之前不替换 `/GPU`。
 
 源码见 [experiments](../experiments/half-native-row-grid59)，原始标量报告、配对样本和遥测见 [results](../results/aggressive-20261028/half-native-row-grid59)。离线核对：

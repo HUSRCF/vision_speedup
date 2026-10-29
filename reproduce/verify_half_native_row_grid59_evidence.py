@@ -107,6 +107,9 @@ def verify():
         assert ctl['captured']==62 and ctl['GEGLU']['captured']==62 and ctl['native_linear_capture_count']==124
         assert scope['captured']==30 and scope['attention_calls']==150 and scope['new_collectives']==0
         assert sum(x['collectives'] for x in ctl['rows'])+scope['captured']==62
+    public=load(evidence/'public-repro-cpu-r1/summary.json')
+    assert public['passed'] and public['no_GPU_execution'] and public['source_count']==66 and public['exact_timed_manifest_and_assets']
+    assert public['public_script_SHA256']==hashlib.sha256((root/'reproduce/run_g1_native_shared66.py').read_bytes()).hexdigest()
     print('Original Half FFN grids:G1 bitwise model/full23-video checks passed;fresh full baseline157.612900 beats candidate159.604883;not adopted.')
 
 if __name__=='__main__':verify()
