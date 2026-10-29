@@ -11,15 +11,15 @@ def main():
     assert set(manifest)=={str(p.relative_to(code)) for p in (code/'src').rglob('*.py')}
     for name,digest in manifest.items():assert sha(code/name)==digest,name
     assert sha(code/'src/unifolm_wma/utils/native-graph-handles/team07_cuda_graph_handles.so')=='ab2f19b88cb9af02b42fb5fdcb39da49e062346fd30794be45fb81e12cb1b927'
-    assert sha(root/'results/runtime.log')=='f8d90bb63e8b01d95f3456088be376f9b80d9bd2b9aee3feef0f2de6b01c415b'
-    assert sha(root/'results/result.json')=='27e7f2b2c7a83ffadc6df7f5800f6081de13e9f883796406f99b02a5c1ac9086'
+    assert sha(root/'results/runtime.log')=='27b39570ddea3acd102c82d63d24ef323a0078cbd664fb572a30fba76b30e1f3'
+    assert sha(root/'results/result.json')=='a356d174b6ed874d1cb9c275cf704f1f181aad70f884dbbee1261345d1f76e9e'
     history=root/'results/history/official-before-g1-native68'
     assert sha(history/'runtime.log')=='ceeead88c2b68307c155793c17cb249b8d5333e9a3231c1aaac5a999a1b36e54'
     assert sha(history/'result.json')=='464f499a003c971b0fac3e3497310ea339ae124f705de94ddabd0ca813682e2b'
     result=json.loads((root/'results/result.json').read_text());assert result['status']=='accepted'
     cases=result['cases'];assert len(cases)==5 and sum(c['videos'] for c in cases)==103
     assert [c['rounds'] for c in cases]==[12,7,11,8,11]
-    assert abs(sum(c['process_wall_s'] for c in cases)-722.609176)<1e-6
+    assert abs(sum(c['process_wall_s'] for c in cases)-717.513174)<1e-6
     log=(root/'results/runtime.log').read_text()
     timings=re.findall(r'^TIMING case=(\S+) process_wall_s=([0-9.]+)$',log,re.M)
     assert len(timings)==5 and len({case for case,_ in timings})==5
@@ -63,8 +63,12 @@ def main():
     tail66=json.loads((root/'experiments/nonv2-resblock-tail73/accepted-outcome.json').read_text())
     other_tail66=json.loads((root/'experiments/nonv2-other-tail66/accepted-outcome.json').read_text())
     z1_late23_tail=json.loads((root/'experiments/z1-late23-tail66/accepted-outcome.json').read_text())
+    z1_reuse_window=json.loads((root/'experiments/z1-reuse-window66/accepted-outcome.json').read_text())
     for row in cases:
-        if row['case'] in z1_late23_tail['cases']:
+        if row['case'] in z1_reuse_window['cases']:
+            selected=z1_reuse_window['cases'][row['case']]
+            assert row['process_wall_s']==selected['current_s']and row['psnr_db']==selected['psnr_db']
+        elif row['case'] in z1_late23_tail['cases']:
             selected=z1_late23_tail['cases'][row['case']]
             assert row['process_wall_s']==selected['current_s']and row['psnr_db']==selected['psnr_db']
         elif row['case'] in other_tail66['cases']:
@@ -330,6 +334,12 @@ def main():
     verify_g1_trajectory()
     from verify_nonv2_resblock_frames72 import verify as verify_resblock_frames
     verify_resblock_frames()
+    from verify_z1_window23_tail66 import verify as verify_z1_window
+    verify_z1_window()
+    from verify_z1_tailwindow23_tail66 import verify as verify_z1_tailwindow
+    verify_z1_tailwindow()
+    from verify_z1_reuse_window66_adoption import verify as verify_z1_reuse_window
+    verify_z1_reuse_window()
     from verify_z1_late23_tail66 import verify as verify_z1_late23
     verify_z1_late23()
     from verify_nonv2_other_tail66 import verify as verify_other_tail

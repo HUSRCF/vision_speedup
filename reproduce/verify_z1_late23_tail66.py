@@ -64,7 +64,7 @@ def verify():
     row = next(x for x in load(run/'result.json')['cases'] if x['case'] == 'unitree_z1_stackbox')
     assert row['rounds'] == 12 and row['videos'] == 25 and row['execution_ok'] and row['profile_complete']
     assert row['process_wall_s'] == summary['process_wall_s'] and row['psnr_db'] == summary['psnr_db']
-    assert row['psnr_passed'] == summary['quality_passed'] == (row['psnr_db'] >= 25)
+    assert row['psnr_passed'] == summary['quality_passed'] == (row['psnr_db'] > 25)
     complete = load(run/'parallel/parallel-complete.json')
     assert complete['GPUs'] == 2 and complete['rank_videos_SHA256_equal'] and len(complete['video_hashes']) == 25
     assert complete['stage_calls'] == dict(decision=600, world=600)
@@ -107,10 +107,10 @@ def verify():
     assert adopted['case_sum_s'] == 722.609176 and adopted['previous_case_sum_s'] == 729.014469
     assert adopted['formal_saved_s'] == 6.405293
     for name, h in adopted['assembly_script_hashes'].items(): assert sha(official/name) == h
-    for name, h in adopted['pair_hashes'].items(): assert sha(repo/'results'/name) == sha(official/'validated'/name) == h
+    for name, h in adopted['pair_hashes'].items(): assert sha(repo/'results/history/official-before-z1-reuse-window66'/name) == sha(official/'validated'/name) == h
     for name, h in adopted['previous_pair_hashes'].items(): assert sha(history/name) == h
     fresh = load(official/'validated/result.json')
-    assert fresh == load(repo/'results/result.json') and fresh['status'] == 'accepted'
+    assert fresh == load(repo/'results/history/official-before-z1-reuse-window66/result.json') and fresh['status'] == 'accepted'
     assert fresh['psnr_validation']['video_count'] == 103 and sum(x['rounds'] for x in fresh['cases']) == 49
     previous = load(history/'result.json')
     for item in fresh['cases']:

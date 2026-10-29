@@ -1,0 +1,28 @@
+{
+  "case": "unitree_z1_stackbox",
+  "rounds": 12,
+  "videos": 25,
+  "GPUs": 2,
+  "source_count": 66,
+  "feature_policy": {
+    "input_start": 1,
+    "output_end": 11,
+    "start": 16,
+    "stop": 40,
+    "boundary_residual": false,
+    "scope": "deep",
+    "stages": [
+      "decision",
+      "world"
+    ]
+  },
+  "per_role_expected_gathers": {
+    "decision_full": 38,
+    "decision_reuse": 4,
+    "world_full": 38,
+    "world_reuse": 4
+  },
+  "previous_formal66_key": "z1_late23_tail66_full_r2",
+  "all_rounds_and50_steps_preserved": true,
+  "official_adopted": false
+}

@@ -133,4 +133,6 @@ G1只读时间步轨迹诊断：运行`reproduce/run_g1_feature_trajectory71.py`
 
 Z1此前采用[末端5块分帧＋原13块预测66文件](NONV2_OTHER_TAIL66_20261029.md)，完整138.945151秒／28.992932876dB；同卡原65对照146.315426秒。新103视频官方汇总accepted、全部103视频SHA不变，五项729.014469秒。入口`reproduce/run_nonv2_other_tail66.py --case z1`，其余`--gpus`、`--workdir`、`--storage-config`和可执行`--cache-dir`参数同清理铅笔完整入口；`--case dual`仅复现尚未采用的双臂候选。公开入口已在比赛机禁用CUDA精确重建两项66源码并通过CPU边界／预测器／缓存检查。使用`python reproduce/verify_nonv2_other_tail66.py`核对完整证据。
 
-Z1当前采用[23块晚区间预测＋末端5块分帧66文件](Z1_LATE23_TAIL66_20261029.md)，完整132.539858秒／30.332499792dB；GPU0／2原13块同卡完整对照138.280727秒。入口改用`reproduce/run_z1_late23_tail66.py`，不需`--case`，其余资源参数同前。新103视频汇总accepted、其他78视频SHA不变，五项722.609176秒。公开精确重建、实际23块／1200调用CPU检查和完整质量证据通过；运行`python reproduce/verify_z1_late23_tail66.py`核对。
+Z1此前采用[23块晚区间预测＋末端5块分帧66文件](Z1_LATE23_TAIL66_20261029.md)，完整132.539858秒／30.332499792dB；GPU0／2原13块同卡完整对照138.280727秒。入口改用`reproduce/run_z1_late23_tail66.py`，不需`--case`，其余资源参数同前。新103视频汇总accepted、其他78视频SHA不变，五项722.609176秒。公开精确重建、实际23块／1200调用CPU检查和完整质量证据通过；运行`python reproduce/verify_z1_late23_tail66.py`核对。
+
+Z1当前入口为`reproduce/run_z1_tailwindow23_tail66.py`，采用`[20,46)`23块预测＋末端5块分帧，完整127.443856秒／32.547700729dB，资源参数同上、不需`--start`。GPU0／2原`[20,40)`完整对照130.811717秒；新103视频汇总accepted、其他78视频SHA不变，五项717.513174秒。用`verify_z1_tailwindow23_tail66.py`核对实际窗口与完整工作量，用`verify_z1_reuse_window66_adoption.py`核对同卡比较和官方验收。`run_z1_window23_tail66.py --start 10|16`保留未采用的另两份候选。详见[完整窗口测试](Z1_REUSE_WINDOW66_20261029.md)。
