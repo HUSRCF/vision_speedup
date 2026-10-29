@@ -256,6 +256,8 @@ def main():
     verify_half_grid()
     from verify_four_way226_evidence import verify as verify_four_way
     verify_four_way(root)
+    from verify_fp16_joined_matched209 import verify as verify_matched_half
+    verify_matched_half(root)
     print('Verified: original209/historical overlays/adopted V2 CO225;adopted63 Z1/dual/pencils;historical59 G1;official103 log/JSON.')
 
 if __name__=='__main__':main()
