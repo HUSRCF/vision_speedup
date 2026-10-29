@@ -56,6 +56,38 @@ def verify():
                     assert pair==dict(fastest_rank_baseline_ms=b,slowest_rank_candidate_ms=c,saved_ms=b-c) and b>c
                 assert derived['conservative_median_saved_ms']==statistics.median(x['saved_ms'] for x in derived['conservative_pairs'])
     assert outcome['no_official_score'] and outcome['full_video_PSNR_unverified']
-    print('Original Half FFN grids:9/10 shapes qualified;G1 two-stage six-state bitwise and six paired speed checks passed;full-video quality not inferred.')
+    full=code/'full64-r1';overlay=full/'production-overlay';ev=evidence/'full64-r1'
+    manifest=load(overlay/'nccl-parallel-production-sources.json')
+    baseline=load(root/'experiments/nonv2-vae-all-display/unifolm/nonv2-aggressive-production-sources.json')
+    assert len(manifest)==64 and len(baseline)==59 and all(manifest[n]==h for n,h in baseline.items())
+    for path in overlay.glob('src/**/*.py'):
+        assert hashlib.sha256(path.read_bytes()).hexdigest()==manifest[str(path.relative_to(overlay))]
+    proof=load(overlay/'nccl-entry-timing-proof.json')
+    assert proof['source59_to64'] and proof['four_additive_lifecycle_hooks'] and proof['all_bind_capture_and_extra_replay_inside_process_timer']
+    assert proof['two_graph_ownership_and_restore_before_reset'] and proof['qualified_FFNs_per_stage']==31
+    runtime=(overlay/'src/unifolm_wma/utils/nccl_nonv2_native_ffn_runtime64.py').read_text()
+    assert runtime.index('_controller.close_owners()')<runtime.index("entry['graph'].reset()")
+    summary=load(ev/'summary.json');assert summary['clean'] and summary['workload_complete'] and summary['quality_passed']
+    assert summary['verified_source_count']==64 and summary['rounds']==11 and summary['videos']==23
+    assert summary['original_formal_23_video_SHA256_equal'] and not summary['official_adopted']
+    result=load(ev/'result.json');case=next(x for x in result['cases'] if x['case']=='unitree_g1_pack_camera')
+    assert case['process_wall_s']==summary['process_wall_s']==159.604883
+    assert case['psnr_db']==summary['psnr_db']==26.10715633179594 and case['psnr_passed']
+    assert case['rounds']==11 and case['videos']==23 and case['execution_ok'] and case['profile_complete']
+    parallel=load(ev/'parallel/parallel-complete.json')
+    assert parallel['stage_captures']==dict(decision=31,world=31) and parallel['stage_calls']==dict(decision=550,world=550)
+    assert parallel['rank_videos_SHA256_equal'] and len(parallel['video_hashes'])==23
+    assert sorted(parallel['video_hashes'].values())==sorted(summary['original_formal_video_hashes'].values())
+    for rank in (0,1):
+        ctl=load(ev/f'parallel/rank{rank}-controller.json')['controller']
+        assert ctl['captured']==62 and ctl['native_linear_capture_count']==124 and ctl['GEGLU']['captured']==62
+        assert len(ctl['native_binding'])==2 and all(len(x['kernels'])==62 for x in ctl['native_binding'])
+    baseline=load(evidence/'original59-baseline-r1/summary.json')
+    assert baseline['clean'] and baseline['workload_complete'] and baseline['quality_passed'] and baseline['verified_source_count']==59
+    assert baseline['process_wall_s']==157.6129 and baseline['psnr_db']==summary['psnr_db']
+    assert summary['same_GPU_original59_baseline_s']==baseline['process_wall_s']
+    assert summary['same_GPU_complete_saved_s']==round(baseline['process_wall_s']-summary['process_wall_s'],6)==-1.991983
+    assert not summary['full_process_speed_passed'] and summary['rejected_for_adoption'] and not summary['official103_pending']
+    print('Original Half FFN grids:G1 bitwise model/full23-video checks passed;fresh full baseline157.612900 beats candidate159.604883;not adopted.')
 
 if __name__=='__main__':verify()
