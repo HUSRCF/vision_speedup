@@ -1,0 +1,123 @@
+SELECTED_CASE=unitree_z1_dual_arm_stackbox; other cases are absent from this run
+You are offline and the cache for model files in Transformers v4.22.0 has been updated while your local cache seems to be the one of a previous version. It is very likely that all your calls to any `from_pretrained()` method will fail. Remove the offline mode and enable internet connection to have your cache be updated automatically, then you can go back to offline mode.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). You should set the environment variable TRANSFORMERS_CACHE to a writable directory.
+Global seed set to 123
+[W Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function getCvarInt)
+NCCL_PARALLEL_INITIALIZED {"rank": 0, "GPUs": 2, "policy": "nonv2-all-blocks", "all_setup_inside_original_process_timer": true}
+INFERENCE_MATH requested=selective-tf32 effective=tf32 case=unitree_z1_dual_arm_stackbox cudnn_tf32=True matmul_tf32=True cudnn_benchmark=False cudnn_benchmark_limit=10
+STAGE_TF32 requested=decision-cudnn effective=none case=unitree_z1_dual_arm_stackbox ddim_prefix_steps=0
+STAGE_CUDNN_BENCHMARK requested=simulation effective=none case=unitree_z1_dual_arm_stackbox
+TENSORBOARD_VIDEO enabled=false
+ASYNC_VIDEO enabled=true
+STREAM_FULL_VIDEO enabled=true
+DDIM_SCHEDULE_CACHE enabled=true
+SKIP_UNUSED_ACTION_PROJECTION enabled=true
+BATCH_DECISION_DECODE requested=selective enabled=true
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). Please, ensure the directory exists and can be written to.
+AE working on z of shape (1, 4, 32, 32) = 4096 dimensions.
+PARAMETER_INITIALIZATION skipped=true
+META_INITIALIZATION enabled=true
+CHECKPOINT_LOAD mmap=true assign=true
+>>> model checkpoint loaded.
+>>> Load pre-trained model ...
+UNINITIALIZED_MEMORY_FILL enabled=false deterministic_algorithms=true
+FP32_DDIM_VIDEO requested=0
+FP32_FEEDBACK_HEADS requested=0 protected_modules=0
+FULL_DENOISER_FP16 requested=non-v2 enabled=true
+FULL_DENOISER_NORM_DTYPE requested=fp16 modules=45
+DENOISER_MODE requested=native case=unitree_z1_dual_arm_stackbox wrapped={}
+TF32X3_LINEARS requested=0 convolutions=false wrapped={}
+FUSED_SELF_QKV requested=0 enabled=false modules=66
+CROSS_ATTENTION_IMPL requested=xformers effective=xformers modules=66
+ATTENTION_LAYOUT requested=bmhk modules=66
+FUSED_ATTENTION_MIX requested=1 modules=66
+ATTENTION_DTYPE requested=fp16 effective=float16 modules=66
+ATTENTION_PROJECTION_DTYPE requested=fp16 effective=float16 modules=66
+FFN_DTYPE requested=fp32 modules=33
+FUSED_GEGLU requested=1 modules=33
+FUSED_RESBLOCK_NORM requested=0 enabled=false modules=22
+TEMPORAL_CONV_DTYPE requested=fp32 enabled=false modules=0
+TEMPORAL_CONV_IMPL requested=native modules=0
+FRAMEWISE_TEMPORAL_NORM requested=0 enabled=false modules=22
+FUSED_TEMPORAL_NORM requested=0 enabled=false modules=22
+CHANNELS_LAST requested=0 enabled=false transformers=0
+FUSED_TEMPORAL_ATTENTION requested=1
+FUSED_RESIDUAL_NORM requested=1 modules=33
+TEMPORAL_LAYOUT_DIRECT requested=1 modules=17
+SPLIT_GROUP_NORM requested=1 modules=133
+SPLIT_TRANSFORMER_NORM requested=1 modules=33
+SIM_HEAD_CONV1D requested=native modules=37
+FIXED_CAST_CACHE requested=1
+CONDITION_CACHE enabled=true attention_modules=66
+CUDA_GRAPH enabled=true scope=complete_denoiser cached_normalizers=2 skip_unchanged_inputs=0 max_graphs=2
+CROSSSTEP_FEATURE_REUSE_INSTALLED {"input_start": 1, "output_end": 11, "window": [20, 40], "interval": 2, "stages": ["decision", "world"], "sampler_steps": 50, "required_rounds_preserved": true, "graph_limit": 4}
+>>> Loaded 1 preprocessed input cache(s).
+>>> Generate 16 frames under each generation ...
+  0%|          | 0/7 [00:00<?, ?it/s]>>> Step 0: generating actions ...
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=11.856 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=1 allocated_gib=11.897 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+>>> Step 0: interacting with world model ...
+CUDA_GRAPH_CAPTURE index=2 allocated_gib=12.603 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=3 allocated_gib=12.644 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 14%|█▍        | 1/7 [00:14<01:26, 14.50s/it]>>> Step 1: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 1: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 29%|██▊       | 2/7 [00:24<00:58, 11.76s/it]>>> Step 2: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 2: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 43%|████▎     | 3/7 [00:34<00:43, 10.89s/it]>>> Step 3: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 3: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 57%|█████▋    | 4/7 [00:44<00:31, 10.48s/it]>>> Step 4: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 4: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 71%|███████▏  | 5/7 [00:53<00:20, 10.25s/it]>>> Step 5: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 5: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 86%|████████▌ | 6/7 [01:03<00:10, 10.12s/it]>>> Step 6: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 6: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+100%|██████████| 7/7 [01:13<00:00, 10.04s/it]100%|██████████| 7/7 [01:13<00:00, 10.52s/it]
+CROSSSTEP_FEATURE_REUSE_COMPLETE {"experimental_dynamic_feature_reuse": true, "predictive_feature_reuse": true, "history_complete_refreshes": 2, "prediction": "current + (current - previous) * actual_position_gap_ratio", "alpha_histogram": {"1.0": 14, "0.5": 126}, "residual_cache_FP32": true, "graph_prediction_selfcheck": {"passed": true, "cases": [{"dtype": "torch.float16", "residual": false, "tail": 257, "mutated_replay_bitwise": true}, {"dtype": "torch.float16", "residual": true, "tail": 257, "mutated_replay_bitwise": true}, {"dtype": "torch.float32", "residual": false, "tail": 257, "mutated_replay_bitwise": true}, {"dtype": "torch.float32", "residual": true, "tail": 257, "mutated_replay_bitwise": true}], "no_full_model_quality_inferred": true}, "interval": 2, "window": [20, 40], "stages": ["decision", "world"], "selected_blocks": ["input_blocks.1", "input_blocks.2", "input_blocks.3", "input_blocks.4", "input_blocks.5", "input_blocks.6", "input_blocks.7", "input_blocks.8", "input_blocks.9", "input_blocks.10", "input_blocks.11", "middle_block", "output_blocks.0", "output_blocks.1", "output_blocks.2", "output_blocks.3", "output_blocks.4", "output_blocks.5", "output_blocks.6", "output_blocks.7", "output_blocks.8", "output_blocks.9", "output_blocks.10"], "counts": {"decision_calls": 350, "decision_refresh": 280, "decision_reuse": 70, "world_calls": 350, "world_refresh": 280, "world_reuse": 70}, "completed_generations": [{"stage": "decision", "generation": 0, "steps": 50}, {"stage": "world", "generation": 0, "steps": 50}, {"stage": "decision", "generation": 1, "steps": 50}, {"stage": "world", "generation": 1, "steps": 50}, {"stage": "decision", "generation": 2, "steps": 50}, {"stage": "world", "generation": 2, "steps": 50}, {"stage": "decision", "generation": 3, "steps": 50}, {"stage": "world", "generation": 3, "steps": 50}, {"stage": "decision", "generation": 4, "steps": 50}, {"stage": "world", "generation": 4, "steps": 50}, {"stage": "decision", "generation": 5, "steps": 50}, {"stage": "world", "generation": 5, "steps": 50}, {"stage": "decision", "generation": 6, "steps": 50}, {"stage": "world", "generation": 6, "steps": 50}], "invalidations": {"new_generation": 14}, "persistent_feature_bytes": 1153433600, "eager_or_capture_block_calls": {"refresh": 184, "reuse": 184}, "sampler_step_count_reduced": false, "round_count_reduced": false, "shallow_blocks_and_heads_live": true, "no_reference_or_final_output_cache": true, "full_video_PSNR_required": true, "boundary_residual": false, "current_boundary_input_live": false, "scope": "deep", "all_convolutions_and_heads_live": false, "per_module_residual": false, "graph_count": 4, "graph_roles": [["decision", false], ["decision", true], ["world", false], ["world", true]], "world_refresh_and_reuse_share_graph_pool": true, "reuse_graph_head_filter_cache": false, "reuse_graph_native_head_transforms_live": true, "full_refresh_graph_head_cache_unchanged": true}
+NCCL_PARALLEL_FINISH {"policy": "nonv2-all-blocks", "GPUs": 2, "full_workload_on_both_ranks": true, "rank_videos_SHA256_equal": true, "video_count": 15, "video_hashes": {"inference/5_full_fs4.mp4": "247a70a10c4575085ad4e2eea54db17a204a4ca14da44ab07707d8cbcfce8a09", "inference/sample_5/wm/4/itr-6.mp4": "9b9c02ec61ec8ee5f7e4505045c073c3c7b5cbb5285a373f887c80aaec574b66", "inference/sample_5/wm/4/itr-5.mp4": "e7916a9e16465d6f2ef9566d059e52f86972e2f6f72a51c3c72e1a504e89d4d0", "inference/sample_5/wm/4/itr-4.mp4": "a9d4ce5f39b00c78590357074c09bd17bb15d91e2063132e94d70e5146a5e918", "inference/sample_5/wm/4/itr-3.mp4": "efd8c22b24e231328f483572e5eab563a5fe580c56d6583c5e3d4077c83074de", "inference/sample_5/wm/4/itr-2.mp4": "37ca7d6df0a857221fda1268524a868c2ffaacfb3821bfbc8489143277fbdcc3", "inference/sample_5/wm/4/itr-1.mp4": "26f8be21d7544f785600e18c1a3c0e8e065bf59d47af7988b1174e1348c6dc53", "inference/sample_5/wm/4/itr-0.mp4": "63bcc52fb04bc9ff6d8fe112041d352497b39dc7745ccf4a318563d795b140eb", "inference/sample_5/dm/4/itr-6.mp4": "c234e4640910d6305adb99918e71071d1232561b234e98c1a025384c5cdc6da8", "inference/sample_5/dm/4/itr-5.mp4": "263ebb16fdf1528523f9275ef8c927ff052bd1d571288825d98dca213c6c8911", "inference/sample_5/dm/4/itr-4.mp4": "644550c5964e1fad0e367f0d6a09931faf0996b34e862b2c5f21327f4d5faaa9", "inference/sample_5/dm/4/itr-3.mp4": "c0a976e321ff14e9ba1be7dab712ccb468505a3849a75011a36a22a9c3c5069e", "inference/sample_5/dm/4/itr-2.mp4": "5a01b9ca3e4d1e968563bcc40a97bbdfcec98df48270fb8354bdab02f779e7de", "inference/sample_5/dm/4/itr-1.mp4": "bb63a67235e8b7da84fcb98660643a3ab87891f744b6b6144790f2e266a5f5db", "inference/sample_5/dm/4/itr-0.mp4": "ec77bb7e899a4efe78c9b7a1030222d548ca05031600f78ea006925f8c01d977"}, "helper_exit_code": 0, "setup_helper_outputs_and_teardown_inside_original_process_timer": true, "stage_captures": {"decision": 36, "world": 36}, "stage_calls": {"decision": 350, "world": 350}, "graph_role_modules": {"decision_full": ["init_attn.0.transformer_blocks.0", "input_blocks.1.1.transformer_blocks.0", "input_blocks.1.2.transformer_blocks.0", "input_blocks.2.1.transformer_blocks.0", "input_blocks.2.2.transformer_blocks.0", "input_blocks.4.1.transformer_blocks.0", "input_blocks.4.2.transformer_blocks.0", "input_blocks.5.1.transformer_blocks.0", "input_blocks.5.2.transformer_blocks.0", "input_blocks.7.1.transformer_blocks.0", "input_blocks.7.2.transformer_blocks.0", "input_blocks.8.1.transformer_blocks.0", "input_blocks.8.2.transformer_blocks.0", "middle_block.1.transformer_blocks.0", "middle_block.2.transformer_blocks.0", "output_blocks.10.1.transformer_blocks.0", "output_blocks.10.2.transformer_blocks.0", "output_blocks.11.1.transformer_blocks.0", "output_blocks.11.2.transformer_blocks.0", "output_blocks.3.1.transformer_blocks.0", "output_blocks.3.2.transformer_blocks.0", "output_blocks.4.1.transformer_blocks.0", "output_blocks.4.2.transformer_blocks.0", "output_blocks.5.1.transformer_blocks.0", "output_blocks.5.2.transformer_blocks.0", "output_blocks.6.1.transformer_blocks.0", "output_blocks.6.2.transformer_blocks.0", "output_blocks.7.1.transformer_blocks.0", "output_blocks.7.2.transformer_blocks.0", "output_blocks.8.1.transformer_blocks.0", "output_blocks.8.2.transformer_blocks.0", "output_blocks.9.1.transformer_blocks.0", "output_blocks.9.2.transformer_blocks.0"], "decision_reuse": ["init_attn.0.transformer_blocks.0", "output_blocks.11.1.transformer_blocks.0", "output_blocks.11.2.transformer_blocks.0"], "world_full": ["init_attn.0.transformer_blocks.0", "input_blocks.1.1.transformer_blocks.0", "input_blocks.1.2.transformer_blocks.0", "input_blocks.2.1.transformer_blocks.0", "input_blocks.2.2.transformer_blocks.0", "input_blocks.4.1.transformer_blocks.0", "input_blocks.4.2.transformer_blocks.0", "input_blocks.5.1.transformer_blocks.0", "input_blocks.5.2.transformer_blocks.0", "input_blocks.7.1.transformer_blocks.0", "input_blocks.7.2.transformer_blocks.0", "input_blocks.8.1.transformer_blocks.0", "input_blocks.8.2.transformer_blocks.0", "middle_block.1.transformer_blocks.0", "middle_block.2.transformer_blocks.0", "output_blocks.10.1.transformer_blocks.0", "output_blocks.10.2.transformer_blocks.0", "output_blocks.11.1.transformer_blocks.0", "output_blocks.11.2.transformer_blocks.0", "output_blocks.3.1.transformer_blocks.0", "output_blocks.3.2.transformer_blocks.0", "output_blocks.4.1.transformer_blocks.0", "output_blocks.4.2.transformer_blocks.0", "output_blocks.5.1.transformer_blocks.0", "output_blocks.5.2.transformer_blocks.0", "output_blocks.6.1.transformer_blocks.0", "output_blocks.6.2.transformer_blocks.0", "output_blocks.7.1.transformer_blocks.0", "output_blocks.7.2.transformer_blocks.0", "output_blocks.8.1.transformer_blocks.0", "output_blocks.8.2.transformer_blocks.0", "output_blocks.9.1.transformer_blocks.0", "output_blocks.9.2.transformer_blocks.0"], "world_reuse": ["init_attn.0.transformer_blocks.0", "output_blocks.11.1.transformer_blocks.0", "output_blocks.11.2.transformer_blocks.0"]}, "feature_reuse": {"experimental_dynamic_feature_reuse": true, "predictive_feature_reuse": true, "history_complete_refreshes": 2, "prediction": "current + (current - previous) * actual_position_gap_ratio", "alpha_histogram": {"1.0": 14, "0.5": 126}, "residual_cache_FP32": true, "graph_prediction_selfcheck": {"passed": true, "cases": [{"dtype": "torch.float16", "residual": false, "tail": 257, "mutated_replay_bitwise": true}, {"dtype": "torch.float16", "residual": true, "tail": 257, "mutated_replay_bitwise": true}, {"dtype": "torch.float32", "residual": false, "tail": 257, "mutated_replay_bitwise": true}, {"dtype": "torch.float32", "residual": true, "tail": 257, "mutated_replay_bitwise": true}], "no_full_model_quality_inferred": true}, "interval": 2, "window": [20, 40], "stages": ["decision", "world"], "selected_blocks": ["input_blocks.1", "input_blocks.2", "input_blocks.3", "input_blocks.4", "input_blocks.5", "input_blocks.6", "input_blocks.7", "input_blocks.8", "input_blocks.9", "input_blocks.10", "input_blocks.11", "middle_block", "output_blocks.0", "output_blocks.1", "output_blocks.2", "output_blocks.3", "output_blocks.4", "output_blocks.5", "output_blocks.6", "output_blocks.7", "output_blocks.8", "output_blocks.9", "output_blocks.10"], "counts": {"decision_calls": 350, "decision_refresh": 280, "decision_reuse": 70, "world_calls": 350, "world_refresh": 280, "world_reuse": 70}, "completed_generations": [{"stage": "decision", "generation": 0, "steps": 50}, {"stage": "world", "generation": 0, "steps": 50}, {"stage": "decision", "generation": 1, "steps": 50}, {"stage": "world", "generation": 1, "steps": 50}, {"stage": "decision", "generation": 2, "steps": 50}, {"stage": "world", "generation": 2, "steps": 50}, {"stage": "decision", "generation": 3, "steps": 50}, {"stage": "world", "generation": 3, "steps": 50}, {"stage": "decision", "generation": 4, "steps": 50}, {"stage": "world", "generation": 4, "steps": 50}, {"stage": "decision", "generation": 5, "steps": 50}, {"stage": "world", "generation": 5, "steps": 50}, {"stage": "decision", "generation": 6, "steps": 50}, {"stage": "world", "generation": 6, "steps": 50}], "invalidations": {"new_generation": 14}, "persistent_feature_bytes": 1153433600, "eager_or_capture_block_calls": {"refresh": 184, "reuse": 184}, "sampler_step_count_reduced": false, "round_count_reduced": false, "shallow_blocks_and_heads_live": true, "no_reference_or_final_output_cache": true, "full_video_PSNR_required": true, "boundary_residual": false, "current_boundary_input_live": false, "scope": "deep", "all_convolutions_and_heads_live": false, "per_module_residual": false, "graph_count": 4, "graph_roles": [["decision", false], ["decision", true], ["world", false], ["world", true]], "world_refresh_and_reuse_share_graph_pool": true, "reuse_graph_head_filter_cache": false, "reuse_graph_native_head_transforms_live": true, "full_refresh_graph_head_cache_unchanged": true}}
+>>> Pure model compute time (CUDA; excludes load/save): 73.512s [decision 37.819s + world 35.693s; 14 generation calls]
+NONV2_NONFEEDBACK_VAE {"clips": 14, "records": [{"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}], "owners": [{"builds": 1, "calls": 14, "feedback_calls": 14, "mode": "fp16_nchw", "master_version_guard": true}], "native_feedback_precision_and_flags_preserved": true, "all_setup_inside_process_wall": true, "denoiser_and_sampler_unchanged": true}
+PSNR case=unitree_z1_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_stackbox reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-cntptyjv/unitree_z1_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox psnr_db=26.556920797050235 threshold_db=25 pass=true
+PSNR case=unitree_z1_dual_arm_stackbox_v2 psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox_v2 reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-cntptyjv/unitree_z1_dual_arm_stackbox_v2
+PSNR case=unitree_z1_dual_arm_cleanup_pencils psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_cleanup_pencils reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-cntptyjv/unitree_z1_dual_arm_cleanup_pencils
+PSNR case=unitree_g1_pack_camera psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_g1_pack_camera reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-cntptyjv/unitree_g1_pack_camera
+PSNR_FAILED: Every case must be strictly greater than 25 dB
+TIMING case=unitree_z1_dual_arm_stackbox process_wall_s=88.227722
+RESULT_JSON=/var/tmp/team07-z1-late23-tail66-repeat-qqb1askp/diagnostic/runs/20261029T153017Z-case-v2-nccl-1379667/result.json
+FAILED: Incomplete case profiles

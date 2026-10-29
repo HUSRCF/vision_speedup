@@ -11,15 +11,15 @@ def main():
     assert set(manifest)=={str(p.relative_to(code)) for p in (code/'src').rglob('*.py')}
     for name,digest in manifest.items():assert sha(code/name)==digest,name
     assert sha(code/'src/unifolm_wma/utils/native-graph-handles/team07_cuda_graph_handles.so')=='ab2f19b88cb9af02b42fb5fdcb39da49e062346fd30794be45fb81e12cb1b927'
-    assert sha(root/'results/runtime.log')=='89078beeee38bc12584870b3aa4d023a1be45ed27a5807dcb8a371061423e5c8'
-    assert sha(root/'results/result.json')=='686b29d6225faa2d0e66379e308150a6d30ee376b51b667b92f6821732a32850'
+    assert sha(root/'results/runtime.log')=='292bd41a1c8ffbc56939cc155dc2bc4ccf76d5289d3ad0b2a103ea410b0714a1'
+    assert sha(root/'results/result.json')=='110c343f61eebd8eecf5b916db8d6082c7ffa4b3cb1e3fec715dfc1e104359a8'
     history=root/'results/history/official-before-g1-native68'
     assert sha(history/'runtime.log')=='ceeead88c2b68307c155793c17cb249b8d5333e9a3231c1aaac5a999a1b36e54'
     assert sha(history/'result.json')=='464f499a003c971b0fac3e3497310ea339ae124f705de94ddabd0ca813682e2b'
     result=json.loads((root/'results/result.json').read_text());assert result['status']=='accepted'
     cases=result['cases'];assert len(cases)==5 and sum(c['videos'] for c in cases)==103
     assert [c['rounds'] for c in cases]==[12,7,11,8,11]
-    assert abs(sum(c['process_wall_s'] for c in cases)-716.086762)<1e-6
+    assert abs(sum(c['process_wall_s'] for c in cases)-715.704516)<1e-6
     log=(root/'results/runtime.log').read_text()
     timings=re.findall(r'^TIMING case=(\S+) process_wall_s=([0-9.]+)$',log,re.M)
     assert len(timings)==5 and len({case for case,_ in timings})==5
@@ -65,8 +65,12 @@ def main():
     z1_late23_tail=json.loads((root/'experiments/z1-late23-tail66/accepted-outcome.json').read_text())
     z1_reuse_window=json.loads((root/'experiments/z1-reuse-window66/accepted-outcome.json').read_text())
     stop46=json.loads((root/'experiments/nonv2-stop46/accepted-outcome.json').read_text())
+    dual_tail=json.loads((root/'experiments/nonv2-other-tail66/dual-r3-accepted-outcome.json').read_text())
     for row in cases:
-        if row['case'] in stop46['cases']:
+        if row['case'] in dual_tail['cases']:
+            selected=dual_tail['cases'][row['case']]
+            assert row['process_wall_s']==selected['current_s']and row['psnr_db']==selected['psnr_db']
+        elif row['case'] in stop46['cases']:
             selected=stop46['cases'][row['case']]
             assert row['process_wall_s']==selected['current_s']and row['psnr_db']==selected['psnr_db']
         elif row['case'] in z1_reuse_window['cases']:
@@ -350,6 +354,10 @@ def main():
     verify_z1_window()
     from verify_z1_tailwindow23_tail66 import verify as verify_z1_tailwindow
     verify_z1_tailwindow()
+    from verify_g1_stale70 import verify as verify_g1_stale
+    verify_g1_stale()
+    from verify_dual_tail66_r3 import verify as verify_dual_tail
+    verify_dual_tail()
     from verify_nonv2_stop46 import verify as verify_stop46
     verify_stop46()
     from verify_nonv2_stop46_adoption import verify as verify_stop46_adoption
@@ -364,6 +372,6 @@ def main():
     verify_resblock_tail()
     from verify_static_timestep65 import verify as verify_static_time
     verify_static_time()
-    print('Verified: V2 CO225;66 stop46 late23 prediction plus tail frames Z1/pencils;65 prediction dual;68 G1;all five dual GPU;fresh official103 log/JSON.')
+    print('Verified: V2 CO225;66 late23 prediction plus tail frames Z1/pencils/dual;68 G1;all five dual GPU;fresh official103 log/JSON.')
 
 if __name__=='__main__':main()

@@ -54,12 +54,12 @@ def verify():
     for name, digest in adopted['assembly_script_hashes'].items():
         assert sha(official/name) == digest
     for name, digest in adopted['pair_hashes'].items():
-        assert sha(repo/'results'/name) == sha(official/'validated'/name) == digest
+        assert sha(repo/'results/history/official-before-dual-tail66'/name) == sha(official/'validated'/name) == digest
     for name, digest in adopted['previous_pair_hashes'].items():
         assert sha(history/name) == digest
     fresh = load(official/'validated/result.json')
     before = load(history/'result.json')
-    assert fresh == load(repo/'results/result.json') and fresh['status'] == 'accepted'
+    assert fresh == load(repo/'results/history/official-before-dual-tail66/result.json') and fresh['status'] == 'accepted'
     assert fresh['psnr_validation']['video_count'] == 103 and sum(r['rounds'] for r in fresh['cases']) == 49
     for row in fresh['cases']:
         previous = next(r for r in before['cases'] if r['case'] == row['case'])

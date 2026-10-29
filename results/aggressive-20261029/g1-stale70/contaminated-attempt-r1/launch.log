@@ -1,0 +1,11 @@
+NCCL_FULL_ATTEMPT=/var/tmp/team07-nonv2-g1-prediction70-g1-yvee7zf4/diagnostic/attempt-1
+WAIT_GPU_PAIR=0,2
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-g1-prediction70-g1-yvee7zf4/diagnostic/wait_nccl_full209.py", line 108, in <module>
+    if __name__=='__main__':main()
+  File "/var/tmp/team07-nonv2-g1-prediction70-g1-yvee7zf4/diagnostic/wait_nccl_full209.py", line 78, in main
+    assert all(not(p-per_gpu[u]) for u,p in contexts.items()),'foreign GPU context'
+AssertionError: foreign GPU context
+
+CONTAMINATED_ATTEMPT_EXCLUDED=1
+NCCL_FULL_ATTEMPT=/var/tmp/team07-nonv2-g1-prediction70-g1-yvee7zf4/diagnostic/attempt-2
