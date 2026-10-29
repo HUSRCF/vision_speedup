@@ -36,7 +36,7 @@ def verify(root):
         report=json.loads((full/'profiles/unitree_z1_dual_arm_stackbox_v2.crossstep.json').read_text())
         assert report['counts']['decision_calls']==report['counts']['world_calls']==550 and report['counts']['world_reuse']==165
         assert len(report['completed_generations'])==22 and all(g['steps']==50 for g in report['completed_generations'])
-    for revision in (3,4):
+    for revision in (3,4,5,6):
         q=p/f'full-r{revision}'
         if not q.exists():continue
         identity=json.loads((q/'identity.json').read_text());assert len(identity['manifest'])==211 and not identity['official_adopted']
@@ -55,9 +55,20 @@ def verify(root):
         assert row['rounds']==11 and row['videos']==23 and row['execution_ok'] and row['profile_complete']
         assert row['process_wall_s']==summary['process_wall_s'] and row['psnr_db']==summary['psnr_db'] and row['psnr_passed']==summary['quality_passed']
         report=json.loads((full/'profiles/unitree_z1_dual_arm_stackbox_v2.crossstep.json').read_text())
-        assert report['counts']['decision_calls']==report['counts']['world_calls']==550 and report['counts']['world_reuse']==165
+        first,last=identity['policy']['start'],identity['policy']['stop'];expected_reuse=11*sum(first<=k<last and(k-first)%2!=0 for k in range(50))
+        assert report['counts']['decision_calls']==report['counts']['world_calls']==550 and report['counts']['world_reuse']==expected_reuse
         assert len(report['completed_generations'])==22 and all(g['steps']==50 for g in report['completed_generations'])
         assert report['reuse_graph_native_head_transforms_live'] and not report['reuse_graph_head_filter_cache']
+    q=p/'residual-sanity'
+    if q.exists():
+        identity=json.loads((q/'identity.json').read_text());assert len(identity['manifest'])==211
+        for n,h in identity['manifest'].items():
+            source=q/'production-overlay'/n if base.get(n)!=h else root/'unifolm'/n
+            assert hashlib.sha256(source.read_bytes()).hexdigest()==h
+        for n,h in identity['scripts'].items():assert hashlib.sha256((q/n).read_bytes()).hexdigest()==h
+        r=json.loads((e/'residual-sanity/comparison.json').read_text())
+        assert r['boundary_residual']and r['current_boundary_input_live']and r['three_outputs_checked_calls']==200 and r['RNG_unchanged']
+        assert r['graph_count']==3 and r['synthetic_only']and not r['real_WMA_or_video_quality_verified']
     print('CROSSSTEP211 passed=true; synthetic graph consistency is separate from full-video PSNR; no official adoption.')
 
 if __name__=='__main__':verify(Path(__file__).resolve().parents[1])

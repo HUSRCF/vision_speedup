@@ -1,0 +1,199 @@
+{
+  "diagnostic_complete": true,
+  "all_dynamic_gates_passed": true,
+  "workload_complete": true,
+  "case_result": {
+    "case": "unitree_z1_dual_arm_stackbox_v2",
+    "rounds": 11,
+    "process_wall_s": 317.579932,
+    "observed_process_wall_s": 317.579932,
+    "psnr_db": 22.346029867876634,
+    "psnr_exact_match": false,
+    "psnr_passed": false,
+    "videos": 23,
+    "profile_complete": true,
+    "execution_ok": true,
+    "execution_exit_code": 0,
+    "reason": "PSNR must be strictly greater than 25 dB",
+    "pure_model_cuda_s": 308.379231
+  },
+  "crossstep": {
+    "experimental_dynamic_feature_reuse": true,
+    "interval": 2,
+    "window": [
+      10,
+      40
+    ],
+    "stages": [
+      "world"
+    ],
+    "selected_blocks": [
+      "input_blocks.9",
+      "input_blocks.10",
+      "input_blocks.11",
+      "middle_block",
+      "output_blocks.0",
+      "output_blocks.1",
+      "output_blocks.2"
+    ],
+    "counts": {
+      "decision_calls": 550,
+      "decision_refresh": 550,
+      "world_calls": 550,
+      "world_refresh": 385,
+      "world_reuse": 165
+    },
+    "completed_generations": [
+      {
+        "stage": "decision",
+        "generation": 0,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 0,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 1,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 1,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 2,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 2,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 3,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 3,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 4,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 4,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 5,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 5,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 6,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 6,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 7,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 7,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 8,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 8,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 9,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 9,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 10,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 10,
+        "steps": 50
+      }
+    ],
+    "invalidations": {
+      "new_generation": 22
+    },
+    "persistent_feature_bytes": 45875200,
+    "eager_or_capture_block_calls": {
+      "refresh": 28,
+      "reuse": 28
+    },
+    "sampler_step_count_reduced": false,
+    "round_count_reduced": false,
+    "shallow_blocks_and_heads_live": true,
+    "no_reference_or_final_output_cache": true,
+    "full_video_PSNR_required": true,
+    "boundary_residual": true,
+    "current_boundary_input_live": true,
+    "graph_count": 3,
+    "graph_roles": [
+      [
+        "decision",
+        false
+      ],
+      [
+        "world",
+        false
+      ],
+      [
+        "world",
+        true
+      ]
+    ],
+    "world_refresh_and_reuse_share_graph_pool": true,
+    "reuse_graph_head_filter_cache": false,
+    "reuse_graph_native_head_transforms_live": true,
+    "full_refresh_graph_head_cache_unchanged": true
+  },
+  "benchmark_exit_code": 1,
+  "run_directory": "/var/tmp/team07-crossstep211-full-92kefem6/diagnostic/attempt-1/run",
+  "official_adopted": false,
+  "single_GPU": true,
+  "full_video_PSNR_required": true,
+  "quality_passed": false
+}
