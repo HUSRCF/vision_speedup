@@ -1,0 +1,30 @@
+{
+  "source_count": 66,
+  "case": "unitree_z1_dual_arm_cleanup_pencils",
+  "rounds": 8,
+  "videos": 17,
+  "GPUs": 2,
+  "feature_policy": {
+    "input_start": 1,
+    "output_end": 11,
+    "start": 20,
+    "stop": 40,
+    "boundary_residual": false,
+    "scope": "deep",
+    "stages": [
+      "decision",
+      "world"
+    ]
+  },
+  "per_role_expected_gathers": {
+    "decision_full": 55,
+    "decision_reuse": 4,
+    "world_full": 55,
+    "world_reuse": 4
+  },
+  "official_adopted": false,
+  "combined_single_GPU_quality_not_inherited": true,
+  "prediction_policy": "unchanged adopted65 two-refresh linear predictor",
+  "cache_scope_isolated": true,
+  "Z1_quality_not_inherited": true
+}

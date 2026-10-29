@@ -93,7 +93,7 @@ def verify():
         assert ctl['feature_reuse']['graph_count'] == 2 and ctl['feature_reuse']['stages'] == []
     adopted = load(repo / 'experiments/nonv2-late23-prediction65/dual-accepted-outcome.json')
     for name, digest in adopted['pair_hashes'].items():
-        assert sha(repo / 'results' / name) == digest
+        assert sha(repo / 'results/history/official-before-resblock-tail66' / name) == digest
     print('G1_TRAJECTORY71_VERIFIED original70_sources_exact=true full23_video_SHA_exact=true scalar5940_each_rank=true no_approximate_feedback=true formal_unchanged=true')
 
 

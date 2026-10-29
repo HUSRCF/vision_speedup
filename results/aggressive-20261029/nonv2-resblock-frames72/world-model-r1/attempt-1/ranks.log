@@ -1,0 +1,134 @@
+[W Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function getCvarInt)
+[W Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function getCvarInt)
+You are offline and the cache for model files in Transformers v4.22.0 has been updated while your local cache seems to be the one of a previous version. It is very likely that all your calls to any `from_pretrained()` method will fail. Remove the offline mode and enable internet connection to have your cache be updated automatically, then you can go back to offline mode.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). You should set the environment variable TRANSFORMERS_CACHE to a writable directory.
+You are offline and the cache for model files in Transformers v4.22.0 has been updated while your local cache seems to be the one of a previous version. It is very likely that all your calls to any `from_pretrained()` method will fail. Remove the offline mode and enable internet connection to have your cache be updated automatically, then you can go back to offline mode.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). You should set the environment variable TRANSFORMERS_CACHE to a writable directory.
+[rank: 0] Global seed set to 123
+INFERENCE_MATH requested=selective-tf32 effective=tf32 case=unitree_z1_dual_arm_cleanup_pencils cudnn_tf32=True matmul_tf32=True cudnn_benchmark=False cudnn_benchmark_limit=10
+STAGE_TF32 requested=decision-cudnn effective=none case=unitree_z1_dual_arm_cleanup_pencils ddim_prefix_steps=0
+STAGE_CUDNN_BENCHMARK requested=simulation effective=none case=unitree_z1_dual_arm_cleanup_pencils
+TENSORBOARD_VIDEO enabled=false
+ASYNC_VIDEO enabled=true
+STREAM_FULL_VIDEO enabled=true
+DDIM_SCHEDULE_CACHE enabled=true
+SKIP_UNUSED_ACTION_PROJECTION enabled=true
+BATCH_DECISION_DECODE requested=selective enabled=true
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). Please, ensure the directory exists and can be written to.
+[rank: 1] Global seed set to 123
+INFERENCE_MATH requested=selective-tf32 effective=tf32 case=unitree_z1_dual_arm_cleanup_pencils cudnn_tf32=True matmul_tf32=True cudnn_benchmark=False cudnn_benchmark_limit=10
+STAGE_TF32 requested=decision-cudnn effective=none case=unitree_z1_dual_arm_cleanup_pencils ddim_prefix_steps=0
+STAGE_CUDNN_BENCHMARK requested=simulation effective=none case=unitree_z1_dual_arm_cleanup_pencils
+TENSORBOARD_VIDEO enabled=false
+ASYNC_VIDEO enabled=true
+STREAM_FULL_VIDEO enabled=true
+DDIM_SCHEDULE_CACHE enabled=true
+SKIP_UNUSED_ACTION_PROJECTION enabled=true
+BATCH_DECISION_DECODE requested=selective enabled=true
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). Please, ensure the directory exists and can be written to.
+AE working on z of shape (1, 4, 32, 32) = 4096 dimensions.
+AE working on z of shape (1, 4, 32, 32) = 4096 dimensions.
+PARAMETER_INITIALIZATION skipped=true
+META_INITIALIZATION enabled=true
+CHECKPOINT_LOAD mmap=true assign=true
+PARAMETER_INITIALIZATION skipped=true
+META_INITIALIZATION enabled=true
+CHECKPOINT_LOAD mmap=true assign=true
+>>> model checkpoint loaded.
+>>> model checkpoint loaded.
+>>> Load pre-trained model ...
+>>> Load pre-trained model ...
+UNINITIALIZED_MEMORY_FILL enabled=false deterministic_algorithms=true
+FP32_DDIM_VIDEO requested=0
+UNINITIALIZED_MEMORY_FILL enabled=false deterministic_algorithms=true
+FP32_DDIM_VIDEO requested=0
+FP32_FEEDBACK_HEADS requested=0 protected_modules=0
+FULL_DENOISER_FP16 requested=non-v2 enabled=true
+FULL_DENOISER_NORM_DTYPE requested=fp16 modules=45
+DENOISER_MODE requested=native case=unitree_z1_dual_arm_cleanup_pencils wrapped={}
+TF32X3_LINEARS requested=0 convolutions=false wrapped={}
+FUSED_SELF_QKV requested=0 enabled=false modules=66
+CROSS_ATTENTION_IMPL requested=xformers effective=xformers modules=66
+ATTENTION_LAYOUT requested=bmhk modules=66
+FUSED_ATTENTION_MIX requested=1 modules=66
+ATTENTION_DTYPE requested=fp16 effective=float16 modules=66
+ATTENTION_PROJECTION_DTYPE requested=fp16 effective=float16 modules=66
+FFN_DTYPE requested=fp32 modules=33
+FP32_FEEDBACK_HEADS requested=0 protected_modules=0
+FULL_DENOISER_FP16 requested=non-v2 enabled=true
+FULL_DENOISER_NORM_DTYPE requested=fp16 modules=45
+DENOISER_MODE requested=native case=unitree_z1_dual_arm_cleanup_pencils wrapped={}
+TF32X3_LINEARS requested=0 convolutions=false wrapped={}
+FUSED_GEGLU requested=1 modules=33
+FUSED_SELF_QKV requested=0 enabled=false modules=66
+FUSED_RESBLOCK_NORM requested=0 enabled=false modules=22
+TEMPORAL_CONV_DTYPE requested=fp32 enabled=false modules=0
+TEMPORAL_CONV_IMPL requested=native modules=0
+CROSS_ATTENTION_IMPL requested=xformers effective=xformers modules=66
+ATTENTION_LAYOUT requested=bmhk modules=66
+FUSED_ATTENTION_MIX requested=1 modules=66
+FRAMEWISE_TEMPORAL_NORM requested=0 enabled=false modules=22
+ATTENTION_DTYPE requested=fp16 effective=float16 modules=66
+FUSED_TEMPORAL_NORM requested=0 enabled=false modules=22
+CHANNELS_LAST requested=0 enabled=false transformers=0
+ATTENTION_PROJECTION_DTYPE requested=fp16 effective=float16 modules=66
+FUSED_TEMPORAL_ATTENTION requested=1
+FFN_DTYPE requested=fp32 modules=33
+FUSED_RESIDUAL_NORM requested=1 modules=33
+FUSED_GEGLU requested=1 modules=33
+TEMPORAL_LAYOUT_DIRECT requested=1 modules=17
+FUSED_RESBLOCK_NORM requested=0 enabled=false modules=22
+TEMPORAL_CONV_DTYPE requested=fp32 enabled=false modules=0
+TEMPORAL_CONV_IMPL requested=native modules=0
+FRAMEWISE_TEMPORAL_NORM requested=0 enabled=false modules=22
+FUSED_TEMPORAL_NORM requested=0 enabled=false modules=22
+CHANNELS_LAST requested=0 enabled=false transformers=0
+FUSED_TEMPORAL_ATTENTION requested=1
+SPLIT_GROUP_NORM requested=1 modules=133
+FUSED_RESIDUAL_NORM requested=1 modules=33
+SPLIT_TRANSFORMER_NORM requested=1 modules=33
+SIM_HEAD_CONV1D requested=native modules=37
+FIXED_CAST_CACHE requested=1
+TEMPORAL_LAYOUT_DIRECT requested=1 modules=17
+CONDITION_CACHE enabled=true attention_modules=66
+CUDA_GRAPH enabled=true scope=complete_denoiser cached_normalizers=2 skip_unchanged_inputs=0 max_graphs=2
+SPLIT_GROUP_NORM requested=1 modules=133
+SPLIT_TRANSFORMER_NORM requested=1 modules=33
+SIM_HEAD_CONV1D requested=native modules=37
+FIXED_CAST_CACHE requested=1
+CONDITION_CACHE enabled=true attention_modules=66
+CUDA_GRAPH enabled=true scope=complete_denoiser cached_normalizers=2 skip_unchanged_inputs=0 max_graphs=2
+>>> Loaded 1 preprocessed input cache(s).
+>>> Generate 16 frames under each generation ...
+  0%|          | 0/1 [00:00<?, ?it/s]>>> Step 0: generating actions ...
+>>> Loaded 1 preprocessed input cache(s).
+>>> Generate 16 frames under each generation ...
+  0%|          | 0/1 [00:00<?, ?it/s]>>> Step 0: generating actions ...
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=11.441 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=11.441 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+>>> Step 0: interacting with world model ...
+>>> Step 0: interacting with world model ...
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=11.759 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=11.759 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=11.796 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=11.796 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+NONV2_FFN59_MODEL {"median_saved_ms": 8.981502532958984, "pairs": [{"baseline_samples_ms": [106.24205017089844, 106.78374481201172, 106.52671813964844, 106.32498931884766, 107.12678527832031, 106.6240005493164, 106.61273956298828], "baseline_ms": 106.61273956298828, "candidate_samples_ms": [97.29945373535156, 97.54112243652344, 97.64454650878906, 97.46227264404297, 97.34246063232422, 97.47660827636719, 97.70086669921875], "candidate_ms": 97.47660827636719, "saved_ms": 9.136131286621094}, {"candidate_samples_ms": [97.49708557128906, 97.6343002319336, 97.42540740966797, 97.44076538085938, 97.55852508544922, 97.6732177734375, 97.73772430419922], "candidate_ms": 97.55852508544922, "baseline_samples_ms": [106.47142028808594, 106.81855773925781, 106.18777465820312, 106.76121520996094, 106.4448013305664, 106.77760314941406, 106.1734390258789], "baseline_ms": 106.47142028808594, "saved_ms": 8.912895202636719}, {"baseline_samples_ms": [106.38642883300781, 106.93836975097656, 106.65779113769531, 106.7540512084961, 106.33932495117188, 106.79808044433594, 106.498046875], "baseline_ms": 106.65779113769531, "candidate_samples_ms": [97.65990447998047, 97.83193969726562, 97.59027099609375, 97.8862075805664, 97.70291137695312, 97.60460662841797, 97.72134399414062], "candidate_ms": 97.70291137695312, "saved_ms": 8.954879760742188}, {"candidate_samples_ms": [97.70598602294922, 97.5656967163086, 97.5103988647461, 97.71212768554688, 97.62509155273438, 97.82784271240234, 97.40595245361328], "candidate_ms": 97.62509155273438, "baseline_samples_ms": [106.61580657958984, 106.36492919921875, 107.29779052734375, 106.77247619628906, 106.73152160644531, 106.96192169189453, 106.98649597167969], "baseline_ms": 106.77247619628906, "saved_ms": 9.147384643554688}, {"baseline_samples_ms": [106.63321685791016, 106.39564514160156, 106.77145385742188, 106.68646240234375, 106.57075500488281, 106.60761260986328, 106.33523559570312], "baseline_ms": 106.60761260986328, "candidate_samples_ms": [97.617919921875, 97.58515167236328, 97.5994873046875, 97.98246765136719, 97.61689758300781, 97.49504089355469, 97.51347351074219], "candidate_ms": 97.5994873046875, "saved_ms": 9.008125305175781}, {"candidate_samples_ms": [97.65888214111328, 97.98143768310547, 97.72236633300781, 97.7940444946289, 97.80531311035156, 97.77970886230469, 97.53292846679688], "candidate_ms": 97.77970886230469, "baseline_samples_ms": [106.40281677246094, 106.68953704833984, 106.69977569580078, 106.72844696044922, 106.19801330566406, 106.83289337158203, 106.6977310180664], "baseline_ms": 106.6977310180664, "saved_ms": 8.918022155761719}], "captured": 66, "cases": [{"case": "initial", "three_outputs_gross_passed": true, "errors": [{"relative_l2": 0.0005545333260670304, "max_abs": 0.00390625, "signedzero_bits": false, "gross_passed": true}, {"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}, {"relative_l2": 0.00032919584191404283, "max_abs": 0.001953125, "signedzero_bits": false, "gross_passed": true}], "baseline_restored_bitwise": false}, {"case": "changed_inputs", "three_outputs_gross_passed": true, "errors": [{"relative_l2": 0.0005552314687520266, "max_abs": 0.002197265625, "signedzero_bits": false, "gross_passed": true}, {"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}, {"relative_l2": 0.00030058345873840153, "max_abs": 0.001953125, "signedzero_bits": false, "gross_passed": true}], "baseline_restored_bitwise": false}, {"case": "changed_FFN_masters", "three_outputs_gross_passed": true, "errors": [{"relative_l2": 0.0005449514137580991, "max_abs": 0.0029296875, "signedzero_bits": false, "gross_passed": true}, {"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}, {"relative_l2": 0.00026505618006922305, "max_abs": 0.001953125, "signedzero_bits": false, "gross_passed": true}], "baseline_restored_bitwise": false}, {"case": "restored_FFN_masters", "three_outputs_gross_passed": true, "errors": [{"relative_l2": 0.0005545333260670304, "max_abs": 0.00390625, "signedzero_bits": false, "gross_passed": true}, {"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}, {"relative_l2": 0.00032919584191404283, "max_abs": 0.001953125, "signedzero_bits": false, "gross_passed": true}], "baseline_restored_bitwise": true}, {"case": "zero_FFN_masters", "three_outputs_gross_passed": true, "errors": [{"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}, {"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}, {"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}], "baseline_restored_bitwise": false}, {"case": "zero_then_restore", "three_outputs_gross_passed": true, "errors": [{"relative_l2": 0.0005545333260670304, "max_abs": 0.00390625, "signedzero_bits": false, "gross_passed": true}, {"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}, {"relative_l2": 0.00032919584191404283, "max_abs": 0.001953125, "signedzero_bits": false, "gross_passed": true}], "baseline_restored_bitwise": true}]}
+NCCL_GEGLU_209_MODEL_CHECK passed=true stage=world six_cases_gross=true baseline_restored_bitwise=true no_official_score=true
+NONV2_FFN59_MODEL {"median_saved_ms": 9.019393920898438, "pairs": [{"baseline_samples_ms": [106.38233947753906, 106.68236541748047, 106.65062713623047, 106.19084930419922, 107.1646728515625, 106.61888122558594, 106.73766326904297], "baseline_ms": 106.65062713623047, "candidate_samples_ms": [97.31788635253906, 97.5472640991211, 97.73670196533203, 97.37010955810547, 97.34451293945312, 97.62303924560547, 97.69881439208984], "candidate_ms": 97.5472640991211, "saved_ms": 9.103363037109375}, {"candidate_samples_ms": [97.5257568359375, 97.77254486083984, 97.30867004394531, 97.5656967163086, 97.46841430664062, 97.75103759765625, 97.75718688964844], "candidate_ms": 97.5656967163086, "baseline_samples_ms": [106.60044860839844, 106.58509063720703, 106.39769744873047, 106.68748474121094, 106.56050872802734, 106.66291046142578, 106.36799621582031], "baseline_ms": 106.58509063720703, "saved_ms": 9.019393920898438}, {"baseline_samples_ms": [106.32089233398438, 106.9854736328125, 106.77350616455078, 106.6055679321289, 106.39155578613281, 106.6588134765625, 106.60044860839844], "baseline_ms": 106.6055679321289, "candidate_samples_ms": [97.8554916381836, 97.64966583251953, 97.75923156738281, 97.81657409667969, 97.7080307006836, 97.49298858642578, 97.82374572753906], "candidate_ms": 97.75923156738281, "saved_ms": 8.846336364746094}, {"candidate_samples_ms": [97.68243408203125, 97.37113952636719, 97.63021087646484, 97.58719635009766, 97.79507446289062, 97.76742553710938, 97.512451171875], "candidate_ms": 97.63021087646484, "baseline_samples_ms": [106.62809753417969, 106.65984344482422, 107.20665740966797, 106.81037139892578, 106.67417907714844, 106.85747528076172, 107.00800323486328], "baseline_ms": 106.81037139892578, "saved_ms": 9.180160522460938}, {"baseline_samples_ms": [106.54822540283203, 106.53388977050781, 106.71923065185547, 106.62809753417969, 106.59635162353516, 106.65062713623047, 106.40281677246094], "baseline_ms": 106.59635162353516, "candidate_samples_ms": [97.52063751220703, 97.79302215576172, 97.71724700927734, 97.87494659423828, 97.57695770263672, 97.55443572998047, 97.39775848388672], "candidate_ms": 97.57695770263672, "saved_ms": 9.019393920898438}, {"candidate_samples_ms": [97.73056030273438, 97.9793930053711, 97.76435089111328, 97.81043243408203, 97.71110534667969, 97.67731475830078, 97.5093765258789], "candidate_ms": 97.73056030273438, "baseline_samples_ms": [106.3536605834961, 106.61580657958984, 106.79398345947266, 106.73868560791016, 106.33113861083984, 106.83699035644531, 106.68134307861328], "baseline_ms": 106.68134307861328, "saved_ms": 8.950782775878906}], "captured": 66, "cases": [{"case": "initial", "three_outputs_gross_passed": true, "errors": [{"relative_l2": 0.0005545333260670304, "max_abs": 0.00390625, "signedzero_bits": false, "gross_passed": true}, {"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}, {"relative_l2": 0.00032919584191404283, "max_abs": 0.001953125, "signedzero_bits": false, "gross_passed": true}], "baseline_restored_bitwise": false}, {"case": "changed_inputs", "three_outputs_gross_passed": true, "errors": [{"relative_l2": 0.0005552314687520266, "max_abs": 0.002197265625, "signedzero_bits": false, "gross_passed": true}, {"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}, {"relative_l2": 0.00030058345873840153, "max_abs": 0.001953125, "signedzero_bits": false, "gross_passed": true}], "baseline_restored_bitwise": false}, {"case": "changed_FFN_masters", "three_outputs_gross_passed": true, "errors": [{"relative_l2": 0.0005449514137580991, "max_abs": 0.0029296875, "signedzero_bits": false, "gross_passed": true}, {"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}, {"relative_l2": 0.00026505618006922305, "max_abs": 0.001953125, "signedzero_bits": false, "gross_passed": true}], "baseline_restored_bitwise": false}, {"case": "restored_FFN_masters", "three_outputs_gross_passed": true, "errors": [{"relative_l2": 0.0005545333260670304, "max_abs": 0.00390625, "signedzero_bits": false, "gross_passed": true}, {"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}, {"relative_l2": 0.00032919584191404283, "max_abs": 0.001953125, "signedzero_bits": false, "gross_passed": true}], "baseline_restored_bitwise": true}, {"case": "zero_FFN_masters", "three_outputs_gross_passed": true, "errors": [{"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}, {"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}, {"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}], "baseline_restored_bitwise": false}, {"case": "zero_then_restore", "three_outputs_gross_passed": true, "errors": [{"relative_l2": 0.0005545333260670304, "max_abs": 0.00390625, "signedzero_bits": false, "gross_passed": true}, {"relative_l2": 0.0, "max_abs": 0.0, "signedzero_bits": true, "gross_passed": true}, {"relative_l2": 0.00032919584191404283, "max_abs": 0.001953125, "signedzero_bits": false, "gross_passed": true}], "baseline_restored_bitwise": true}]}
+NCCL_GEGLU_209_MODEL_CHECK passed=true stage=world six_cases_gross=true baseline_restored_bitwise=true no_official_score=true
+  0%|          | 0/1 [00:30<?, ?it/s]  0%|          | 0/1 [00:30<?, ?it/s]
+
+NCCL_GEGLU_MODEL_RANK_CHECK passed=true rank=0
+NCCL_GEGLU_MODEL_RANK_CHECK passed=true rank=1
+NONV2_NONFEEDBACK_VAE {"clips": 1, "records": [{"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}], "owners": [{"builds": 1, "calls": 1, "feedback_calls": 0, "mode": "fp16_nchw", "master_version_guard": true}], "native_feedback_precision_and_flags_preserved": true, "all_setup_inside_process_wall": true, "denoiser_and_sampler_unchanged": true}
+NONV2_NONFEEDBACK_VAE {"clips": 1, "records": [{"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}], "owners": [{"builds": 1, "calls": 1, "feedback_calls": 0, "mode": "fp16_nchw", "master_version_guard": true}], "native_feedback_precision_and_flags_preserved": true, "all_setup_inside_process_wall": true, "denoiser_and_sampler_unchanged": true}

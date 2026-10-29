@@ -69,7 +69,7 @@ python3 reproduce/run_v2.py --gpu 0
 
 ## 已采用的非 V2 分项
 
-当前Z1采用65文件双卡13块两次刷新预测，双臂堆箱和清理铅笔采用65文件双卡23块短区间预测，G1采用68文件双卡时间attention与精确权重广播。对应入口：
+当前Z1采用65文件双卡13块两次刷新预测，双臂堆箱采用65文件双卡23块短区间预测，清理铅笔采用66文件23块预测＋末端5块空间分帧，G1采用68文件双卡时间attention与精确权重广播。对应入口：
 
 ```bash
 ~/.venv/bin/python reproduce/run_nonv2_prediction65.py --revision 2 --gpus 0,1 \
@@ -80,8 +80,8 @@ python3 reproduce/run_v2.py --gpu 0
   --workdir /var/tmp/team07-review-dual-late23-prediction65 \
   --storage-config /var/tmp/team07-review-storage/storage-config.json \
   --cache-dir /path/to/executable/FFN-shape-cache
-~/.venv/bin/python reproduce/run_nonv2_late23_prediction65.py --gpus 2,3 \
-  --workdir /var/tmp/team07-review-pencils-late23-65 \
+~/.venv/bin/python reproduce/run_nonv2_resblock_tail66_full.py --gpus 2,3 \
+  --workdir /var/tmp/team07-review-pencils-tail66 \
   --storage-config /var/tmp/team07-review-storage/storage-config.json \
   --cache-dir /path/to/executable/FFN-shape-cache
 ~/.venv/bin/python reproduce/run_g1_native_shared68.py --gpus 0,1 \
@@ -98,7 +98,7 @@ Z1为145.327923秒／28.992932876dB，完整12轮、25视频，两阶段各600�
 
 清理铅笔随后扩大为23块、缩短至`[20,40)`预测窗口，完整8轮17视频 **95.640695秒／26.798606240dB**，原50步和浅层／head保留，两rank视频一致。新103视频验收通过，其他86视频SHA不变，当时五项 **744.785412秒**；详见[23块方案与完整证据](NONV2_LATE23_PREDICTION65_20261029.md)。
 
-双臂继续采用23块`[20,40)`双卡预测，完整7轮15视频为 **84.577327秒／26.556920797dB**，比历史正式少5.979958秒，非同期配对。新103视频验收通过，其他88视频SHA不变，当前五项 **738.805454秒**；详见[双臂23块方案](NONV2_DUAL_LATE23_PREDICTION65_20261029.md)。
+双臂继续采用23块`[20,40)`双卡预测，完整7轮15视频为 **84.577327秒／26.556920797dB**，比历史正式少5.979958秒，非同期配对。新103视频验收通过，其他88视频SHA不变，当时五项 **738.805454秒**；详见[双臂23块方案](NONV2_DUAL_LATE23_PREDICTION65_20261029.md)。
 
 G1为155.314304秒／26.107156332dB，68文件入口保留其原始Half GEMM／GEGLU和31次汇合，只有rank0进行权重H2D，然后精确广播。两次同GPU完整对照及103视频验收见[G1记录](G1_ROOT_WEIGHT_TRANSPORT68_20261029.md)。
 
@@ -126,3 +126,7 @@ G1为155.314304秒／26.107156332dB，68文件入口保留其原始Half GEMM／G
 G1时间步预测70文件与全刷新诊断对照见[完整记录](G1_PREDICTION70_20261029.md)。`run_g1_prediction70.py --depth 13|23`复现两个质量失败候选，`run_g1_refresh_control70.py`复现全部步骤完整计算、23视频与原68逐一SHA相同的接入对照；三者均未替换上面的正式G1入口。
 
 G1只读时间步轨迹诊断：运行`reproduce/run_g1_feature_trajectory71.py`，资源配置与原G1入口一致。71源码与计时资源已在比赛机禁用CUDA精确重建，完整11轮／23视频与原正式SHA一致。使用`python reproduce/verify_g1_feature_trajectory71.py`核对证据，详见[G1轨迹诊断](G1_FEATURE_TRAJECTORY71_20261029.md)。该诊断不是新的正式速度结果。
+
+非V2残差块双卡分帧：模型入口`reproduce/run_nonv2_resblock_frames72.py`、完整入口`reproduce/run_nonv2_resblock66_full.py`，沿用已有私有tmpfs配置并显式提供可执行文件系统上的`--cache-dir`。公开重建与GPU证据见[分帧实验](NONV2_RESBLOCK_FRAMES72_20261029.md)；完整进程回退，未采用。
+
+清理铅笔现采用[末端5块分帧66文件](NONV2_RESBLOCK_TAIL73_20261029.md)，完整92.232482秒／26.798606240dB；前后原65同卡对照94.368267／93.983744秒。官方103视频汇总accepted，所有103视频与上一版SHA相同，本机双文件已更新，五项735.397241秒。

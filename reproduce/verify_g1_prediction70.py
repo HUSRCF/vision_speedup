@@ -137,11 +137,11 @@ def verify():
     for revision in(1,2):
         failure=load(evidence/f'preparation-failure-r{revision}/summary.json')
         assert failure['no_GPU_execution']and failure['corrected_in_final_preflight']
-    formal=load(repo/'results/result.json')
+    formal=load(repo/'results/history/official-before-resblock-tail66/result.json')
     assert formal['status']=='accepted'and formal['psnr_validation']['video_count']==103
     assert next(row for row in formal['cases']if row['case']=='unitree_g1_pack_camera')['process_wall_s']==155.314304
     adopted=load(repo/'experiments/nonv2-late23-prediction65/dual-accepted-outcome.json')
-    for name,h in adopted['pair_hashes'].items():assert sha(repo/'results'/name)==h
+    for name,h in adopted['pair_hashes'].items():assert sha(repo/'results/history/official-before-resblock-tail66'/name)==h
     print('G1_PREDICTION70_VERIFIED exact68_math_helpers=true full31_bindings_unchanged=true full23_videos_two_ranks=true both_quality_failed=true all_refresh_control_23_SHA_exact=true formal_pair_unchanged=true')
 
 
