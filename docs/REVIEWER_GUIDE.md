@@ -53,3 +53,5 @@
 初始 512 通道 FFN 现已进入 [220 版本](../experiments/initial-ffn-219/production220)，完整 V2 **277.436969 秒**；同卡完整对照净省 1.459912 秒，六对模型前向省3.940857／3.897850ms。注意初始 FFN 按整齐 GROUP32×BM64 边界切行，两个原 JIT 的 K 累加不变，旧权重版本缓存继续刷新；每 rank40MiB输出在一个 gather 处汇合。额外 M20480 编译使用私有每 rank 缓存，随后恢复原目录。原103视频复核、原计时器和完整工作量均保持。[实际 meta 构造清单](../results/aggressive-20261028/temporal-block-219/meta-r3)确认16个常规时间块使用 Linear 投影，init_attn 使用320→512→320 Conv1d投影，扩展边界时应分开处理。
 
 历史正式V2曾采用222（268.844229秒），新增初始时间块范围共用既有汇合，不改原209文件／110 JIT算术。完整同GPU0/1、同私有tmpfs对照272.043547→268.844229秒，23视频SHA及PSNR一致，103视频官方汇总accepted。源码与证据见`experiments/initial-boundary-221/production222`及`results/aggressive-20261028/initial-boundary-221/private-tmpfs-full`。存储适配器只影响本次进程树的新NCCL临时文件；CPU跨进程、GPU图内all-gather和实际控制文件映射均有独立证据。完整差值包含运行波动，未变decision阶段也更快；不能将3.199318秒全部归因于新增范围。
+
+近期[Z1间隔3复用与两份起始保护](Z1_INTERVAL3_20261029.md)均完整运行但未通过视频质量，未采用。请区分新增系数的GPU图重放自检、CPU仿射输出检查和完整分项PSNR；保护更多起始位置在此次测量中并未单调改善质量。正式717.513174秒双文件保持原SHA。

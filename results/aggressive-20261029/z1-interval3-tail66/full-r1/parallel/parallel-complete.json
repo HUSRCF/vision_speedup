@@ -1,0 +1,424 @@
+{
+  "policy": "nonv2-all-blocks",
+  "GPUs": 2,
+  "full_workload_on_both_ranks": true,
+  "rank_videos_SHA256_equal": true,
+  "video_count": 25,
+  "video_hashes": {
+    "inference/5_full_fs4.mp4": "defe212a6df35d1dfefc2087b1d56abfd0dd6ee036b12526a704fcf577cea6d6",
+    "inference/sample_5/wm/4/itr-11.mp4": "e84e6c6ced1483133cb2e185d726fb05b1b585e6cf78736b5d2d4bd4e23abc55",
+    "inference/sample_5/wm/4/itr-10.mp4": "646521233d660f9f399619ad6c5c6db876dbedf92226046777305ca28f363dec",
+    "inference/sample_5/wm/4/itr-9.mp4": "55583950eaf5938789348a805a234a90dc06b879f22384420c990dfb32920434",
+    "inference/sample_5/wm/4/itr-8.mp4": "cc4ced2e7c1c2db7462b2a68b14c590ee29e0908365a58319cbc083399d27268",
+    "inference/sample_5/wm/4/itr-7.mp4": "586a1c071cb61338daf89efca208d9856237f4a92bfa548ec74d25d3911f84f3",
+    "inference/sample_5/wm/4/itr-6.mp4": "309bcbac61db22b5f9c3426aee522067224ea8c8a889b4938f846703c3ed246e",
+    "inference/sample_5/wm/4/itr-5.mp4": "845f0ffc0aab7f74498ca0c5149a120df09b05bfc9199cc29b0e1e48689f02cd",
+    "inference/sample_5/wm/4/itr-4.mp4": "3061c6c18eea45da7b5332d4e4b8fe62f3026fcf1b110a753a1d2c1828f2f59e",
+    "inference/sample_5/wm/4/itr-3.mp4": "5a4420fbf4ec5654cbc4bc77a76a7ab00ab392907ff9a196b80e8c19c579870f",
+    "inference/sample_5/wm/4/itr-2.mp4": "1f71f7a4afa4c3050f2305a1358179e761271bb86598b34dacc3ec03d4683647",
+    "inference/sample_5/wm/4/itr-1.mp4": "526a741d3fc4b5cc456f0f7e56d284e9dc8b45a7839b794e7481233e775707d4",
+    "inference/sample_5/wm/4/itr-0.mp4": "ef7e015d935d8525aa21037013bd2de573b7e9efac99e6565f493cabb7614000",
+    "inference/sample_5/dm/4/itr-11.mp4": "2403f4bbac2bfa7e2ec84786f0f68b020be843252d4d06a529fe15f637b17eb5",
+    "inference/sample_5/dm/4/itr-10.mp4": "2005f3763a5db44caa86dd4f6be45c956b658edf68de301b0bf46c5ab7b792fd",
+    "inference/sample_5/dm/4/itr-9.mp4": "c926a08a9137d53c995e99ad1636846748ee6a41f400457a4a982e6a075cd999",
+    "inference/sample_5/dm/4/itr-8.mp4": "c2da44f59395904e0d9cefc78343b4104dc9e7447fc09a7dd080818b5f3bc118",
+    "inference/sample_5/dm/4/itr-7.mp4": "3579763e20d9b6b227370c11f5397398fb50f2f5ea91e57fbd69ab482da95087",
+    "inference/sample_5/dm/4/itr-6.mp4": "afc067f8b825a1b35c6d7109f3f327e73869b8d445e0d1ef8b734c4254a26c6a",
+    "inference/sample_5/dm/4/itr-5.mp4": "2afcca3b98121599c2747c5949300b2405b190e67e35b9a23c7c09b0ba63c6ab",
+    "inference/sample_5/dm/4/itr-4.mp4": "63e921e94f6618b6bc0cd6c0d2b2aaeb05d1bfa2d96b06d11f0e5374f6135b2a",
+    "inference/sample_5/dm/4/itr-3.mp4": "28b1c662eca44d0224c435d7ea4590694d63c5ce2d444d36908c34d43fe1d189",
+    "inference/sample_5/dm/4/itr-2.mp4": "dea4dbc8cd0fa08969973ca72967eb5997184726e40041b4c1579fa89b118d73",
+    "inference/sample_5/dm/4/itr-1.mp4": "e6d66d0bde1c0445c860eeb9c988cfabb69e92e5bc24196b80ad5ff636d2f322",
+    "inference/sample_5/dm/4/itr-0.mp4": "5b8bc9113e3eac15dcd0045f6050f344e1e9601a7232a6bc6d199e0ac8e85440"
+  },
+  "helper_exit_code": 0,
+  "setup_helper_outputs_and_teardown_inside_original_process_timer": true,
+  "stage_captures": {
+    "decision": 36,
+    "world": 36
+  },
+  "stage_calls": {
+    "decision": 600,
+    "world": 600
+  },
+  "graph_role_modules": {
+    "decision_full": [
+      "init_attn.0.transformer_blocks.0",
+      "input_blocks.1.1.transformer_blocks.0",
+      "input_blocks.1.2.transformer_blocks.0",
+      "input_blocks.2.1.transformer_blocks.0",
+      "input_blocks.2.2.transformer_blocks.0",
+      "input_blocks.4.1.transformer_blocks.0",
+      "input_blocks.4.2.transformer_blocks.0",
+      "input_blocks.5.1.transformer_blocks.0",
+      "input_blocks.5.2.transformer_blocks.0",
+      "input_blocks.7.1.transformer_blocks.0",
+      "input_blocks.7.2.transformer_blocks.0",
+      "input_blocks.8.1.transformer_blocks.0",
+      "input_blocks.8.2.transformer_blocks.0",
+      "middle_block.1.transformer_blocks.0",
+      "middle_block.2.transformer_blocks.0",
+      "output_blocks.10.1.transformer_blocks.0",
+      "output_blocks.10.2.transformer_blocks.0",
+      "output_blocks.11.1.transformer_blocks.0",
+      "output_blocks.11.2.transformer_blocks.0",
+      "output_blocks.3.1.transformer_blocks.0",
+      "output_blocks.3.2.transformer_blocks.0",
+      "output_blocks.4.1.transformer_blocks.0",
+      "output_blocks.4.2.transformer_blocks.0",
+      "output_blocks.5.1.transformer_blocks.0",
+      "output_blocks.5.2.transformer_blocks.0",
+      "output_blocks.6.1.transformer_blocks.0",
+      "output_blocks.6.2.transformer_blocks.0",
+      "output_blocks.7.1.transformer_blocks.0",
+      "output_blocks.7.2.transformer_blocks.0",
+      "output_blocks.8.1.transformer_blocks.0",
+      "output_blocks.8.2.transformer_blocks.0",
+      "output_blocks.9.1.transformer_blocks.0",
+      "output_blocks.9.2.transformer_blocks.0"
+    ],
+    "decision_reuse": [
+      "init_attn.0.transformer_blocks.0",
+      "output_blocks.11.1.transformer_blocks.0",
+      "output_blocks.11.2.transformer_blocks.0"
+    ],
+    "world_full": [
+      "init_attn.0.transformer_blocks.0",
+      "input_blocks.1.1.transformer_blocks.0",
+      "input_blocks.1.2.transformer_blocks.0",
+      "input_blocks.2.1.transformer_blocks.0",
+      "input_blocks.2.2.transformer_blocks.0",
+      "input_blocks.4.1.transformer_blocks.0",
+      "input_blocks.4.2.transformer_blocks.0",
+      "input_blocks.5.1.transformer_blocks.0",
+      "input_blocks.5.2.transformer_blocks.0",
+      "input_blocks.7.1.transformer_blocks.0",
+      "input_blocks.7.2.transformer_blocks.0",
+      "input_blocks.8.1.transformer_blocks.0",
+      "input_blocks.8.2.transformer_blocks.0",
+      "middle_block.1.transformer_blocks.0",
+      "middle_block.2.transformer_blocks.0",
+      "output_blocks.10.1.transformer_blocks.0",
+      "output_blocks.10.2.transformer_blocks.0",
+      "output_blocks.11.1.transformer_blocks.0",
+      "output_blocks.11.2.transformer_blocks.0",
+      "output_blocks.3.1.transformer_blocks.0",
+      "output_blocks.3.2.transformer_blocks.0",
+      "output_blocks.4.1.transformer_blocks.0",
+      "output_blocks.4.2.transformer_blocks.0",
+      "output_blocks.5.1.transformer_blocks.0",
+      "output_blocks.5.2.transformer_blocks.0",
+      "output_blocks.6.1.transformer_blocks.0",
+      "output_blocks.6.2.transformer_blocks.0",
+      "output_blocks.7.1.transformer_blocks.0",
+      "output_blocks.7.2.transformer_blocks.0",
+      "output_blocks.8.1.transformer_blocks.0",
+      "output_blocks.8.2.transformer_blocks.0",
+      "output_blocks.9.1.transformer_blocks.0",
+      "output_blocks.9.2.transformer_blocks.0"
+    ],
+    "world_reuse": [
+      "init_attn.0.transformer_blocks.0",
+      "output_blocks.11.1.transformer_blocks.0",
+      "output_blocks.11.2.transformer_blocks.0"
+    ]
+  },
+  "resblock_graph_role_modules": {
+    "decision_full": [
+      "output_blocks.10.0",
+      "output_blocks.11.0",
+      "output_blocks.7.0",
+      "output_blocks.8.0",
+      "output_blocks.9.0"
+    ],
+    "decision_reuse": [
+      "output_blocks.11.0"
+    ],
+    "world_full": [
+      "output_blocks.10.0",
+      "output_blocks.11.0",
+      "output_blocks.7.0",
+      "output_blocks.8.0",
+      "output_blocks.9.0"
+    ],
+    "world_reuse": [
+      "output_blocks.11.0"
+    ]
+  },
+  "feature_reuse": {
+    "experimental_dynamic_feature_reuse": true,
+    "predictive_feature_reuse": true,
+    "history_complete_refreshes": 2,
+    "prediction": "current + (current - previous) * actual_position_gap_ratio",
+    "alpha_histogram": {
+      "1.0": 24,
+      "2.0": 24,
+      "0.3333333333333333": 192,
+      "0.6666666666666666": 168
+    },
+    "residual_cache_FP32": true,
+    "graph_prediction_selfcheck": {
+      "passed": true,
+      "cases": [
+        {
+          "dtype": "torch.float16",
+          "residual": false,
+          "tail": 257,
+          "mutated_replay_bitwise": true,
+          "alphas": [
+            1.0,
+            0.5,
+            0.3333333333333333,
+            0.6666666666666666,
+            2.0
+          ]
+        },
+        {
+          "dtype": "torch.float16",
+          "residual": true,
+          "tail": 257,
+          "mutated_replay_bitwise": true,
+          "alphas": [
+            1.0,
+            0.5,
+            0.3333333333333333,
+            0.6666666666666666,
+            2.0
+          ]
+        },
+        {
+          "dtype": "torch.float32",
+          "residual": false,
+          "tail": 257,
+          "mutated_replay_bitwise": true,
+          "alphas": [
+            1.0,
+            0.5,
+            0.3333333333333333,
+            0.6666666666666666,
+            2.0
+          ]
+        },
+        {
+          "dtype": "torch.float32",
+          "residual": true,
+          "tail": 257,
+          "mutated_replay_bitwise": true,
+          "alphas": [
+            1.0,
+            0.5,
+            0.3333333333333333,
+            0.6666666666666666,
+            2.0
+          ]
+        }
+      ],
+      "no_full_model_quality_inferred": true
+    },
+    "interval": 3,
+    "window": [
+      20,
+      46
+    ],
+    "stages": [
+      "decision",
+      "world"
+    ],
+    "selected_blocks": [
+      "input_blocks.1",
+      "input_blocks.2",
+      "input_blocks.3",
+      "input_blocks.4",
+      "input_blocks.5",
+      "input_blocks.6",
+      "input_blocks.7",
+      "input_blocks.8",
+      "input_blocks.9",
+      "input_blocks.10",
+      "input_blocks.11",
+      "middle_block",
+      "output_blocks.0",
+      "output_blocks.1",
+      "output_blocks.2",
+      "output_blocks.3",
+      "output_blocks.4",
+      "output_blocks.5",
+      "output_blocks.6",
+      "output_blocks.7",
+      "output_blocks.8",
+      "output_blocks.9",
+      "output_blocks.10"
+    ],
+    "counts": {
+      "decision_calls": 600,
+      "decision_refresh": 396,
+      "decision_reuse": 204,
+      "world_calls": 600,
+      "world_refresh": 396,
+      "world_reuse": 204
+    },
+    "completed_generations": [
+      {
+        "stage": "decision",
+        "generation": 0,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 0,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 1,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 1,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 2,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 2,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 3,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 3,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 4,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 4,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 5,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 5,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 6,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 6,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 7,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 7,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 8,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 8,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 9,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 9,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 10,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 10,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 11,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 11,
+        "steps": 50
+      }
+    ],
+    "invalidations": {
+      "new_generation": 24
+    },
+    "persistent_feature_bytes": 1153433600,
+    "eager_or_capture_block_calls": {
+      "refresh": 184,
+      "reuse": 184
+    },
+    "sampler_step_count_reduced": false,
+    "round_count_reduced": false,
+    "shallow_blocks_and_heads_live": true,
+    "no_reference_or_final_output_cache": true,
+    "full_video_PSNR_required": true,
+    "boundary_residual": false,
+    "current_boundary_input_live": false,
+    "scope": "deep",
+    "all_convolutions_and_heads_live": false,
+    "per_module_residual": false,
+    "graph_count": 4,
+    "graph_roles": [
+      [
+        "decision",
+        false
+      ],
+      [
+        "decision",
+        true
+      ],
+      [
+        "world",
+        false
+      ],
+      [
+        "world",
+        true
+      ]
+    ],
+    "world_refresh_and_reuse_share_graph_pool": true,
+    "reuse_graph_head_filter_cache": false,
+    "reuse_graph_native_head_transforms_live": true,
+    "full_refresh_graph_head_cache_unchanged": true
+  }
+}

@@ -136,3 +136,5 @@ Z1此前采用[末端5块分帧＋原13块预测66文件](NONV2_OTHER_TAIL66_202
 Z1此前采用[23块晚区间预测＋末端5块分帧66文件](Z1_LATE23_TAIL66_20261029.md)，完整132.539858秒／30.332499792dB；GPU0／2原13块同卡完整对照138.280727秒。入口改用`reproduce/run_z1_late23_tail66.py`，不需`--case`，其余资源参数同前。新103视频汇总accepted、其他78视频SHA不变，五项722.609176秒。公开精确重建、实际23块／1200调用CPU检查和完整质量证据通过；运行`python reproduce/verify_z1_late23_tail66.py`核对。
 
 Z1当前入口为`reproduce/run_z1_tailwindow23_tail66.py`，采用`[20,46)`23块预测＋末端5块分帧，完整127.443856秒／32.547700729dB，资源参数同上、不需`--start`。GPU0／2原`[20,40)`完整对照130.811717秒；新103视频汇总accepted、其他78视频SHA不变，五项717.513174秒。用`verify_z1_tailwindow23_tail66.py`核对实际窗口与完整工作量，用`verify_z1_reuse_window66_adoption.py`核对同卡比较和官方验收。`run_z1_window23_tail66.py --start 10|16`保留未采用的另两份候选。详见[完整窗口测试](Z1_REUSE_WINDOW66_20261029.md)。
+
+Z1间隔3及起始保护的三份入口`run_z1_interval3_tail66.py`、`run_z1_interval3_primed66.py`、`run_z1_interval3_guard2_66.py`保留质量失败实验，资源参数同当前正式入口。各自CPU精确重建及完整12轮／25视频证据通过工作量检查，但PSNR均未超过25dB，因此未替换正式材料。用同名`verify_*.py`和`verify_z1_interval3_outcome.py`核对；详见[间隔3完整记录](Z1_INTERVAL3_20261029.md)。

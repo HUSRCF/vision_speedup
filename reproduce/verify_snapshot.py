@@ -334,6 +334,14 @@ def main():
     verify_g1_trajectory()
     from verify_nonv2_resblock_frames72 import verify as verify_resblock_frames
     verify_resblock_frames()
+    from verify_z1_interval3_tail66 import verify as verify_interval3
+    verify_interval3()
+    from verify_z1_interval3_primed66 import verify as verify_interval3_primed
+    verify_interval3_primed()
+    from verify_z1_interval3_guard2_66 import verify as verify_interval3_guard2
+    verify_interval3_guard2()
+    from verify_z1_interval3_outcome import verify as verify_interval3_outcome
+    verify_interval3_outcome()
     from verify_z1_window23_tail66 import verify as verify_z1_window
     verify_z1_window()
     from verify_z1_tailwindow23_tail66 import verify as verify_z1_tailwindow
