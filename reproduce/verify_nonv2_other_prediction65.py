@@ -95,11 +95,11 @@ def verify():
     for name,digest in accepted['assembly_script_hashes'].items():
         assert sha(official/name) == digest
     fresh = load(official/'validated/result.json')
-    assert fresh == load(repo/'results/result.json') and fresh['status'] == 'accepted'
+    assert fresh == load(repo/'results/history/official-before-late23-prediction65/result.json') and fresh['status'] == 'accepted'
     assert fresh['psnr_validation']['video_count'] == 103
     history = repo/'results/history/official-before-other-prediction65'
     for name,digest in accepted['pair_hashes'].items():
-        assert sha(repo/'results'/name) == sha(official/'validated'/name) == digest
+        assert sha(repo/'results/history/official-before-late23-prediction65'/name) == sha(official/'validated'/name) == digest
     for name,digest in accepted['previous_pair_hashes'].items():
         assert sha(history/name) == digest
     before = load(history/'result.json')
