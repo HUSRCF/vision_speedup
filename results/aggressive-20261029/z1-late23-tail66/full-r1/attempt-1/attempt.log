@@ -1,0 +1,7 @@
+WAIT_GPU_PAIR=0,3
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-other-tail66-z1-d8vqzag1/diagnostic/wait_nccl_full209.py", line 108, in <module>
+    if __name__=='__main__':main()
+  File "/var/tmp/team07-nonv2-other-tail66-z1-d8vqzag1/diagnostic/wait_nccl_full209.py", line 78, in main
+    assert all(not(p-per_gpu[u]) for u,p in contexts.items()),'foreign GPU context'
+AssertionError: foreign GPU context

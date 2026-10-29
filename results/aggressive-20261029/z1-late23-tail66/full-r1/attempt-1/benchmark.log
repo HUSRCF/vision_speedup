@@ -1,0 +1,68 @@
+SELECTED_CASE=unitree_z1_stackbox; other cases are absent from this run
+You are offline and the cache for model files in Transformers v4.22.0 has been updated while your local cache seems to be the one of a previous version. It is very likely that all your calls to any `from_pretrained()` method will fail. Remove the offline mode and enable internet connection to have your cache be updated automatically, then you can go back to offline mode.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). You should set the environment variable TRANSFORMERS_CACHE to a writable directory.
+Global seed set to 123
+[W Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function getCvarInt)
+NCCL_PARALLEL_INITIALIZED {"rank": 0, "GPUs": 2, "policy": "nonv2-all-blocks", "all_setup_inside_original_process_timer": true}
+INFERENCE_MATH requested=selective-tf32 effective=tf32 case=unitree_z1_stackbox cudnn_tf32=True matmul_tf32=True cudnn_benchmark=False cudnn_benchmark_limit=10
+STAGE_TF32 requested=decision-cudnn effective=none case=unitree_z1_stackbox ddim_prefix_steps=0
+STAGE_CUDNN_BENCHMARK requested=simulation effective=none case=unitree_z1_stackbox
+TENSORBOARD_VIDEO enabled=false
+ASYNC_VIDEO enabled=true
+STREAM_FULL_VIDEO enabled=true
+DDIM_SCHEDULE_CACHE enabled=true
+SKIP_UNUSED_ACTION_PROJECTION enabled=true
+BATCH_DECISION_DECODE requested=selective enabled=true
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). Please, ensure the directory exists and can be written to.
+AE working on z of shape (1, 4, 32, 32) = 4096 dimensions.
+PARAMETER_INITIALIZATION skipped=true
+META_INITIALIZATION enabled=true
+CHECKPOINT_LOAD mmap=true assign=true
+>>> model checkpoint loaded.
+>>> Load pre-trained model ...
+UNINITIALIZED_MEMORY_FILL enabled=false deterministic_algorithms=true
+FP32_DDIM_VIDEO requested=0
+FP32_FEEDBACK_HEADS requested=0 protected_modules=0
+FULL_DENOISER_FP16 requested=non-v2 enabled=true
+FULL_DENOISER_NORM_DTYPE requested=fp16 modules=45
+DENOISER_MODE requested=native case=unitree_z1_stackbox wrapped={}
+TF32X3_LINEARS requested=0 convolutions=false wrapped={}
+FUSED_SELF_QKV requested=0 enabled=false modules=66
+CROSS_ATTENTION_IMPL requested=xformers effective=xformers modules=66
+ATTENTION_LAYOUT requested=bmhk modules=66
+FUSED_ATTENTION_MIX requested=1 modules=66
+ATTENTION_DTYPE requested=fp16 effective=float16 modules=66
+ATTENTION_PROJECTION_DTYPE requested=fp16 effective=float16 modules=66
+FFN_DTYPE requested=fp32 modules=33
+FUSED_GEGLU requested=1 modules=33
+FUSED_RESBLOCK_NORM requested=0 enabled=false modules=22
+TEMPORAL_CONV_DTYPE requested=fp32 enabled=false modules=0
+TEMPORAL_CONV_IMPL requested=native modules=0
+FRAMEWISE_TEMPORAL_NORM requested=0 enabled=false modules=22
+FUSED_TEMPORAL_NORM requested=0 enabled=false modules=22
+CHANNELS_LAST requested=0 enabled=false transformers=0
+FUSED_TEMPORAL_ATTENTION requested=1
+FUSED_RESIDUAL_NORM requested=1 modules=33
+TEMPORAL_LAYOUT_DIRECT requested=1 modules=17
+SPLIT_GROUP_NORM requested=1 modules=133
+SPLIT_TRANSFORMER_NORM requested=1 modules=33
+SIM_HEAD_CONV1D requested=native modules=37
+FIXED_CAST_CACHE requested=1
+CONDITION_CACHE enabled=true attention_modules=66
+CUDA_GRAPH enabled=true scope=complete_denoiser cached_normalizers=2 skip_unchanged_inputs=0 max_graphs=2
+CROSSSTEP_FEATURE_REUSE_INSTALLED {"input_start": 1, "output_end": 11, "window": [20, 40], "interval": 2, "stages": ["decision", "world"], "sampler_steps": 50, "required_rounds_preserved": true, "graph_limit": 4}
+>>> Loaded 1 preprocessed input cache(s).
+>>> Generate 16 frames under each generation ...
+  0%|          | 0/12 [00:00<?, ?it/s]>>> Step 0: generating actions ...
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=11.856 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=1 allocated_gib=11.897 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+>>> Step 0: interacting with world model ...
+CUDA_GRAPH_CAPTURE index=2 allocated_gib=12.604 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=3 allocated_gib=12.645 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+>>>>>>>>>>>>>>>>>>>>>>>>
+  8%|▊         | 1/12 [00:13<02:33, 13.98s/it]>>> Step 1: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 1: interacting with world model ...
+CONDITION_CACHE_REFRESH

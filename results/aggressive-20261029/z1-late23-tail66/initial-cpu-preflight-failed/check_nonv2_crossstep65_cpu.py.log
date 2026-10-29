@@ -1,0 +1,12 @@
+NONV2_CROSSSTEP65_CPU passed=true all1200_calls_through_parallel_executor=true role_module_sets=true duplicate_rejected=true no_GPU=true full_video_quality_not_inferred=true
+CROSSSTEP_PREDICT_CPU passed=true affine_complete_outputs=3600 alpha_first1_steadyHalf=true two_fresh_after_invalidation=true warmup_not_extra_step=true FP32_residual=true RNG_unchanged=true no_GPU=true
+PREDICT_CACHE_SCOPE_CPU passed=true environment_and_Triton_class_restored=true original_FFN_assertion_retained=true no_GPU=true
+PENCILS_WINDOW65_CPU window20_40=true all1200_calls=true no_GPU=true
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-other-tail66-z1-rv3rqd4p/diagnostic/check_nonv2_crossstep65_cpu.py", line 218, in <module>
+    if __name__=='__main__':check_actual_late23()
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/var/tmp/team07-nonv2-other-tail66-z1-rv3rqd4p/diagnostic/check_nonv2_crossstep65_cpu.py", line 207, in check_actual_late23
+    if runtime.controller.current['reuse']:assert float(runtime.controller.alpha)==(1. if position==21 else .5)
+TypeError: 'NoneType' object is not subscriptable

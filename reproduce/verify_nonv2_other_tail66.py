@@ -112,10 +112,10 @@ def verify():
     assert adopted['selected_video_count'] == 25 and adopted['unchanged_video_count'] == 78
     for name, h in adopted['assembly_script_hashes'].items(): assert sha(official/name) == h
     fresh = load(official/'validated/result.json')
-    assert fresh == load(repo/'results/result.json') and fresh['status'] == 'accepted'
+    assert fresh == load(repo/'results/history/official-before-z1-late23-tail66/result.json') and fresh['status'] == 'accepted'
     assert fresh['psnr_validation']['video_count'] == 103
     history = repo/'results/history/official-before-other-tail66'
-    for name, h in adopted['pair_hashes'].items(): assert sha(repo/'results'/name) == sha(official/'validated'/name) == h
+    for name, h in adopted['pair_hashes'].items(): assert sha(repo/'results/history/official-before-z1-late23-tail66'/name) == sha(official/'validated'/name) == h
     for name, h in adopted['previous_pair_hashes'].items(): assert sha(history/name) == h
     previous = load(history/'result.json')
     assert adopted['previous_case_sum_s'] == 735.397241

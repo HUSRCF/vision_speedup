@@ -1,0 +1,54 @@
+{
+  "case": "unitree_z1_stackbox",
+  "official_rounds": 12,
+  "clean": false,
+  "process_wall_s": null,
+  "psnr_db": null,
+  "quality_passed": null,
+  "workload_complete": null,
+  "rank_videos_exact": null,
+  "gpu_candidates": [
+    "0",
+    "3"
+  ],
+  "verified_source_count": 66,
+  "feature_policy": {
+    "input_start": 1,
+    "output_end": 11,
+    "start": 20,
+    "stop": 40,
+    "boundary_residual": false,
+    "scope": "deep",
+    "stages": [
+      "decision",
+      "world"
+    ]
+  },
+  "official_adopted": false,
+  "timing_excluded": true,
+  "queue_retirement_proof": {
+    "owned_wait_group_terminated": true,
+    "no_foreign_process_signaled": true,
+    "no_running_benchmark_in_owned_group": true,
+    "original_PID": 1216569,
+    "members": [
+      {
+        "pid": 1216569,
+        "args": [
+          "/home/team07/.venv/bin/python",
+          "/var/tmp/team07-nonv2-other-tail66-z1-d8vqzag1/diagnostic/retry_nccl_full221.py"
+        ]
+      },
+      {
+        "pid": 1217797,
+        "args": [
+          "/home/team07/.venv/bin/python",
+          "/var/tmp/team07-nonv2-other-tail66-z1-d8vqzag1/diagnostic/wait_nccl_full209.py"
+        ]
+      }
+    ],
+    "attempt1_contaminated_and_excluded": true,
+    "attempt2_not_started": true,
+    "reason": "Migrate only our queued retry to a freshly verified idle pair"
+  }
+}
