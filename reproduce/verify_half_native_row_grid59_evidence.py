@@ -25,7 +25,7 @@ def verify():
             assert row['metadata']['only_owned_padded_Torch_views_bound'] and row['metadata']['no_argument_bytes_addresses_or_offsets_exported']
     outcome=load(evidence/'model-outcome.json')
     for stage in ('decision','world'):
-        for revision in (1,2):
+        for revision in (1,2,3):
             label=f'g1-{stage}-model-r{revision}'
             identity=load(code/label/'baseline-production-identity.json')
             assert identity['source_count']==59 and identity['actual_case']=='unitree_g1_pack_camera' and identity['official_frame_stride']==6
@@ -35,7 +35,7 @@ def verify():
             assert report['clean'] and report['passed'] and report['ready_for_model'] and report['no_official_score']
             for index,rank in enumerate(report['ranks']):
                 assert rank==load(evidence/label/f'rank{index}-report.json')
-                assert rank['stage']==stage and rank['FFN_master_tensors']==132
+                assert rank['stage']==stage and rank['FFN_master_tensors']==(580 if revision==3 else 132)
                 assert rank['RNG_unchanged'] and rank['baseline_restoration_bitwise'] and rank['zero_FFN_changes_baseline']
                 assert len(rank['cases'])==6 and all(x['signedzero_bits'] and x['relative_l2']==0 and x['max_abs']==0 for case in rank['cases'] for x in case['errors'])
                 assert len(rank['pairs'])==6 and all(x['saved_ms']>0 for x in rank['pairs'])
@@ -45,9 +45,15 @@ def verify():
                 assert len(ctl['rows'])==31 and ctl['additional_collectives_per_forward']==31
                 binding,=ctl['native_binding'];assert len(binding['kernels'])==62 and binding['outputs_poisoned_before_first_partitioned_replay']
                 assert all(x['exact_owned_Torch_input_output_weight_binding'] and x['original_compiled_function_and_K_order'] and x['no_argument_bytes_addresses_or_offsets_exported'] for x in binding['kernels'])
-                if revision==2:
+                if revision>=2:
                     assert ctl['GEGLU']['captured']==31 and ctl['GEGLU']['original_compiled_CUBIN_matched']
                     assert all(len(x['original_CUBIN_SHA256'])==64 and x['original_N_constexpr_and_rounding'] and x['owned_half_tiles_without_tail_mask_changes'] for x in ctl['GEGLU']['rows'])
+                if revision==3:
+                    spatial=ctl['spatial_shared_boundary']
+                    assert spatial['captured']==15 and spatial['attention_calls']==75 and spatial['new_collectives']==0
+                    assert sum(x['collectives'] for x in ctl['rows'])+spatial['captured']==31
+                    assert all(x['original_global_mask_slice'] and x['local_batch']==8 and x['no_new_collective'] for x in spatial['calls'])
+                    assert all(min(r['pairs'][i]['baseline_ms'] for r in report['ranks'])>max(r['pairs'][i]['candidate_ms'] for r in report['ranks']) for i in range(6))
             if revision==2:
                 derived=outcome[stage]
                 assert derived['rank_median_saved_ms']==[x['median_saved_ms'] for x in report['ranks']]
@@ -88,6 +94,19 @@ def verify():
     assert summary['same_GPU_original59_baseline_s']==baseline['process_wall_s']
     assert summary['same_GPU_complete_saved_s']==round(baseline['process_wall_s']-summary['process_wall_s'],6)==-1.991983
     assert not summary['full_process_speed_passed'] and summary['rejected_for_adoption'] and not summary['official103_pending']
+    shared=evidence/'full66-r1';summary=load(shared/'summary.json')
+    assert summary['clean'] and summary['workload_complete'] and summary['quality_passed'] and summary['verified_source_count']==66
+    assert summary['process_wall_s']==157.103843 and summary['psnr_db']==26.10715633179594
+    assert not summary['official_adopted'] and summary['adoption_pending_repeat_or_setup_optimization']
+    assert summary['same_GPU_complete_saved_s']==round(157.6129-summary['process_wall_s'],6)==0.509057
+    parallel=load(shared/'parallel/parallel-complete.json')
+    assert parallel['stage_calls']==dict(decision=550,world=550) and parallel['rank_videos_SHA256_equal']
+    assert len(parallel['video_hashes'])==23 and sorted(parallel['video_hashes'].values())==sorted(summary['original_formal_video_hashes'].values())
+    for rank in (0,1):
+        ctl=load(shared/f'parallel/rank{rank}-controller.json')['controller'];scope=ctl['spatial_shared_boundary']
+        assert ctl['captured']==62 and ctl['GEGLU']['captured']==62 and ctl['native_linear_capture_count']==124
+        assert scope['captured']==30 and scope['attention_calls']==150 and scope['new_collectives']==0
+        assert sum(x['collectives'] for x in ctl['rows'])+scope['captured']==62
     print('Original Half FFN grids:G1 bitwise model/full23-video checks passed;fresh full baseline157.612900 beats candidate159.604883;not adopted.')
 
 if __name__=='__main__':verify()
