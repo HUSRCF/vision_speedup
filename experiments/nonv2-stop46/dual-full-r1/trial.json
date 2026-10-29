@@ -1,0 +1,29 @@
+{
+  "case": "unitree_z1_dual_arm_stackbox",
+  "rounds": 7,
+  "videos": 15,
+  "GPUs": 2,
+  "source_count": 65,
+  "feature_policy": {
+    "input_start": 1,
+    "output_end": 11,
+    "start": 20,
+    "stop": 46,
+    "boundary_residual": false,
+    "scope": "deep",
+    "stages": [
+      "decision",
+      "world"
+    ]
+  },
+  "per_role_expected_gathers": {
+    "decision_full": 33,
+    "decision_reuse": 3,
+    "world_full": 33,
+    "world_reuse": 3
+  },
+  "previous_formal_key": "nonv2_late23_prediction65_dual_full_r1",
+  "existing_tail5_sharding": false,
+  "all_rounds_and50_steps_preserved": true,
+  "official_adopted": false
+}

@@ -40,10 +40,10 @@ def verify():
     assert set(adopted['selected_cases'].values()) == {'z1_tailwindow23_tail66_full_r1'}
     history = repo/'results/history/official-before-z1-reuse-window66'
     for name, h in adopted['assembly_script_hashes'].items(): assert sha(official/name) == h
-    for name, h in adopted['pair_hashes'].items(): assert sha(repo/'results'/name) == sha(official/'validated'/name) == h
+    for name, h in adopted['pair_hashes'].items(): assert sha(repo/'results/history/official-before-nonv2-stop46'/name) == sha(official/'validated'/name) == h
     for name, h in adopted['previous_pair_hashes'].items(): assert sha(history/name) == h
     fresh = load(official/'validated/result.json'); before = load(history/'result.json')
-    assert fresh == load(repo/'results/result.json') and fresh['status'] == 'accepted'
+    assert fresh == load(repo/'results/history/official-before-nonv2-stop46/result.json') and fresh['status'] == 'accepted'
     assert fresh['psnr_validation']['video_count'] == 103 and sum(x['rounds'] for x in fresh['cases']) == 49
     for row in fresh['cases']:
         previous = next(x for x in before['cases'] if x['case'] == row['case'])

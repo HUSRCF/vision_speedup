@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "no_GPU_execution": true,
+  "trials": [
+    {
+      "case_alias": "pencils",
+      "source_count": 66,
+      "exact_source_and_assets": true,
+      "actual_case_calls": 800,
+      "original_executor_and_affine3600_CPU_checked": true,
+      "lexical_cache_scope_restored": true,
+      "frame_and_temporal_boundary_CPU_checked": true,
+      "no_GPU_execution": true
+    },
+    {
+      "case_alias": "dual",
+      "source_count": 65,
+      "exact_source_and_assets": true,
+      "actual_case_calls": 700,
+      "original_executor_and_affine3600_CPU_checked": true,
+      "lexical_cache_scope_restored": true,
+      "frame_and_temporal_boundary_CPU_checked": false,
+      "no_GPU_execution": true
+    }
+  ],
+  "public_script_SHA256": "c8ffdbebfba4ea6aa91b4905985bb19471ea5bd2d871bb1870d999f1275c2d66",
+  "root": "/run/lock/team07-public-nonv2-stop46-0jzzdmdn",
+  "logs_SHA256": {
+    "pencils-prepare.log": "f10639a5109795bf6781e93a81d8d07cf39f166b90afec5da9588cb773508e6e",
+    "pencils-check_nonv2_ffn59_cpu.py.log": "2056ea72f085abe8648078139f60029cb80ca08e57fdd941456fe71b87ffd3ce",
+    "pencils-check_nonv2_crossstep65_cpu.py.log": "23b9d849c8f6b5fc010f025f672874adc85e06368535b619fdd48ccd3b6bcd35",
+    "pencils-check_nonv2_resblock_frames72_cpu.py.log": "7d02c7188a45a2d32ac0dcb2f10df2e895ec6862290cfe4ec011bab0df886bc3",
+    "dual-prepare.log": "9a83bb1c81cf1b36e08a27d730cca3080ef044d3f270b08f25098f75546dff92",
+    "dual-check_nonv2_ffn59_cpu.py.log": "2056ea72f085abe8648078139f60029cb80ca08e57fdd941456fe71b87ffd3ce",
+    "dual-check_nonv2_crossstep65_cpu.py.log": "ee9d9d1b0152352497419783587ce2275c8cccaa78df57fce72eda0b19ee1e2f"
+  },
+  "annotation_correction": "The tail5 frame CPU check runs only for pencils; dual retains its unchanged source65 sharding."
+}

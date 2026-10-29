@@ -1,0 +1,358 @@
+{
+  "clean": true,
+  "run_directory": "/var/tmp/team07-z1-late23-tail66-repeat-a16klsvu/diagnostic/runs/20261029T151417Z-case-v2-nccl-1354601",
+  "physical_GPUs": [
+    "0",
+    "1"
+  ],
+  "observations": 145,
+  "benchmark_exit_code": 1,
+  "parallel": {
+    "policy": "nonv2-all-blocks",
+    "GPUs": 2,
+    "full_workload_on_both_ranks": true,
+    "rank_videos_SHA256_equal": true,
+    "video_count": 17,
+    "video_hashes": {
+      "inference/0_full_fs4.mp4": "c7985bb6ddece56c28d807969877c6c417d2ce96d6eb36a7ccb0d4febda779c7",
+      "inference/sample_0/wm/4/itr-7.mp4": "7c8ec678f924c308c96d46ba027aa8ee3688d702f0220920ae77e798985f2edb",
+      "inference/sample_0/wm/4/itr-6.mp4": "039e57b62edffe15ce9b94fb8278738b429f6a3dd64744a601619e5af385c48a",
+      "inference/sample_0/wm/4/itr-5.mp4": "e7e89245bb54ad85a2cc35a19d67f4b12410dba68ae6995b3075e3248fa45fcb",
+      "inference/sample_0/wm/4/itr-4.mp4": "02cc39daa32595a485ffdc1807c6b84ebe293c2fd3e053313965340224bd28e3",
+      "inference/sample_0/wm/4/itr-3.mp4": "97c47dd74145e227fa88ce0c9a419200e507db83caac119c0b28b4e399720bcc",
+      "inference/sample_0/wm/4/itr-2.mp4": "257468587ef797489f19782e70b43233560f7467d49b817f516b88403e9c7805",
+      "inference/sample_0/wm/4/itr-1.mp4": "ddd7da066db619edf7405599bbd1b4acf55fec965d4033cf1ec64f2cdb911a68",
+      "inference/sample_0/wm/4/itr-0.mp4": "dd3fe5b53357c1d7a8342bfcd9393af861bb301a305c924cc442f26742443c86",
+      "inference/sample_0/dm/4/itr-7.mp4": "0bc9dc7270e27d8bc937d5fb00c80b398dd7fec39dfa90add9870bddf063c18b",
+      "inference/sample_0/dm/4/itr-6.mp4": "52d575017d7fb30212d508f72a824719ff1638c98ad2634fc4338c444ca8dd78",
+      "inference/sample_0/dm/4/itr-5.mp4": "09e238f38dc77b3047e424210723b38e3b7f3a4702050a2db329d4c061dc75d8",
+      "inference/sample_0/dm/4/itr-4.mp4": "3063865f0b2ba8d609a335894d0dc189fcd081d1708de57d9472468a64d816c1",
+      "inference/sample_0/dm/4/itr-3.mp4": "c5ba558b384d0d2aa287ab7f485a9162d21e274e2b72246fb5ced65f4de5d5e0",
+      "inference/sample_0/dm/4/itr-2.mp4": "83ddd425a312a72dd0f969c46a71aeca8e46c145a2ea7aa3c57729cccf1fc647",
+      "inference/sample_0/dm/4/itr-1.mp4": "2bba57d0d2df81d60b74210da507410b8caf0aeff286aa17d0ac37d7143cdf5c",
+      "inference/sample_0/dm/4/itr-0.mp4": "f8f3c7bf2b5352dcbdd9cfca3924a0ea6082cb191b44fce5340f3f8f450fb426"
+    },
+    "helper_exit_code": 0,
+    "setup_helper_outputs_and_teardown_inside_original_process_timer": true,
+    "stage_captures": {
+      "decision": 36,
+      "world": 36
+    },
+    "stage_calls": {
+      "decision": 400,
+      "world": 400
+    },
+    "graph_role_modules": {
+      "decision_full": [
+        "init_attn.0.transformer_blocks.0",
+        "input_blocks.1.1.transformer_blocks.0",
+        "input_blocks.1.2.transformer_blocks.0",
+        "input_blocks.2.1.transformer_blocks.0",
+        "input_blocks.2.2.transformer_blocks.0",
+        "input_blocks.4.1.transformer_blocks.0",
+        "input_blocks.4.2.transformer_blocks.0",
+        "input_blocks.5.1.transformer_blocks.0",
+        "input_blocks.5.2.transformer_blocks.0",
+        "input_blocks.7.1.transformer_blocks.0",
+        "input_blocks.7.2.transformer_blocks.0",
+        "input_blocks.8.1.transformer_blocks.0",
+        "input_blocks.8.2.transformer_blocks.0",
+        "middle_block.1.transformer_blocks.0",
+        "middle_block.2.transformer_blocks.0",
+        "output_blocks.10.1.transformer_blocks.0",
+        "output_blocks.10.2.transformer_blocks.0",
+        "output_blocks.11.1.transformer_blocks.0",
+        "output_blocks.11.2.transformer_blocks.0",
+        "output_blocks.3.1.transformer_blocks.0",
+        "output_blocks.3.2.transformer_blocks.0",
+        "output_blocks.4.1.transformer_blocks.0",
+        "output_blocks.4.2.transformer_blocks.0",
+        "output_blocks.5.1.transformer_blocks.0",
+        "output_blocks.5.2.transformer_blocks.0",
+        "output_blocks.6.1.transformer_blocks.0",
+        "output_blocks.6.2.transformer_blocks.0",
+        "output_blocks.7.1.transformer_blocks.0",
+        "output_blocks.7.2.transformer_blocks.0",
+        "output_blocks.8.1.transformer_blocks.0",
+        "output_blocks.8.2.transformer_blocks.0",
+        "output_blocks.9.1.transformer_blocks.0",
+        "output_blocks.9.2.transformer_blocks.0"
+      ],
+      "decision_reuse": [
+        "init_attn.0.transformer_blocks.0",
+        "output_blocks.11.1.transformer_blocks.0",
+        "output_blocks.11.2.transformer_blocks.0"
+      ],
+      "world_full": [
+        "init_attn.0.transformer_blocks.0",
+        "input_blocks.1.1.transformer_blocks.0",
+        "input_blocks.1.2.transformer_blocks.0",
+        "input_blocks.2.1.transformer_blocks.0",
+        "input_blocks.2.2.transformer_blocks.0",
+        "input_blocks.4.1.transformer_blocks.0",
+        "input_blocks.4.2.transformer_blocks.0",
+        "input_blocks.5.1.transformer_blocks.0",
+        "input_blocks.5.2.transformer_blocks.0",
+        "input_blocks.7.1.transformer_blocks.0",
+        "input_blocks.7.2.transformer_blocks.0",
+        "input_blocks.8.1.transformer_blocks.0",
+        "input_blocks.8.2.transformer_blocks.0",
+        "middle_block.1.transformer_blocks.0",
+        "middle_block.2.transformer_blocks.0",
+        "output_blocks.10.1.transformer_blocks.0",
+        "output_blocks.10.2.transformer_blocks.0",
+        "output_blocks.11.1.transformer_blocks.0",
+        "output_blocks.11.2.transformer_blocks.0",
+        "output_blocks.3.1.transformer_blocks.0",
+        "output_blocks.3.2.transformer_blocks.0",
+        "output_blocks.4.1.transformer_blocks.0",
+        "output_blocks.4.2.transformer_blocks.0",
+        "output_blocks.5.1.transformer_blocks.0",
+        "output_blocks.5.2.transformer_blocks.0",
+        "output_blocks.6.1.transformer_blocks.0",
+        "output_blocks.6.2.transformer_blocks.0",
+        "output_blocks.7.1.transformer_blocks.0",
+        "output_blocks.7.2.transformer_blocks.0",
+        "output_blocks.8.1.transformer_blocks.0",
+        "output_blocks.8.2.transformer_blocks.0",
+        "output_blocks.9.1.transformer_blocks.0",
+        "output_blocks.9.2.transformer_blocks.0"
+      ],
+      "world_reuse": [
+        "init_attn.0.transformer_blocks.0",
+        "output_blocks.11.1.transformer_blocks.0",
+        "output_blocks.11.2.transformer_blocks.0"
+      ]
+    },
+    "resblock_graph_role_modules": {
+      "decision_full": [
+        "output_blocks.10.0",
+        "output_blocks.11.0",
+        "output_blocks.7.0",
+        "output_blocks.8.0",
+        "output_blocks.9.0"
+      ],
+      "decision_reuse": [
+        "output_blocks.11.0"
+      ],
+      "world_full": [
+        "output_blocks.10.0",
+        "output_blocks.11.0",
+        "output_blocks.7.0",
+        "output_blocks.8.0",
+        "output_blocks.9.0"
+      ],
+      "world_reuse": [
+        "output_blocks.11.0"
+      ]
+    },
+    "feature_reuse": {
+      "experimental_dynamic_feature_reuse": true,
+      "predictive_feature_reuse": true,
+      "history_complete_refreshes": 2,
+      "prediction": "current + (current - previous) * actual_position_gap_ratio",
+      "alpha_histogram": {
+        "1.0": 16,
+        "0.5": 144
+      },
+      "residual_cache_FP32": true,
+      "graph_prediction_selfcheck": {
+        "passed": true,
+        "cases": [
+          {
+            "dtype": "torch.float16",
+            "residual": false,
+            "tail": 257,
+            "mutated_replay_bitwise": true
+          },
+          {
+            "dtype": "torch.float16",
+            "residual": true,
+            "tail": 257,
+            "mutated_replay_bitwise": true
+          },
+          {
+            "dtype": "torch.float32",
+            "residual": false,
+            "tail": 257,
+            "mutated_replay_bitwise": true
+          },
+          {
+            "dtype": "torch.float32",
+            "residual": true,
+            "tail": 257,
+            "mutated_replay_bitwise": true
+          }
+        ],
+        "no_full_model_quality_inferred": true
+      },
+      "interval": 2,
+      "window": [
+        20,
+        40
+      ],
+      "stages": [
+        "decision",
+        "world"
+      ],
+      "selected_blocks": [
+        "input_blocks.1",
+        "input_blocks.2",
+        "input_blocks.3",
+        "input_blocks.4",
+        "input_blocks.5",
+        "input_blocks.6",
+        "input_blocks.7",
+        "input_blocks.8",
+        "input_blocks.9",
+        "input_blocks.10",
+        "input_blocks.11",
+        "middle_block",
+        "output_blocks.0",
+        "output_blocks.1",
+        "output_blocks.2",
+        "output_blocks.3",
+        "output_blocks.4",
+        "output_blocks.5",
+        "output_blocks.6",
+        "output_blocks.7",
+        "output_blocks.8",
+        "output_blocks.9",
+        "output_blocks.10"
+      ],
+      "counts": {
+        "decision_calls": 400,
+        "decision_refresh": 320,
+        "decision_reuse": 80,
+        "world_calls": 400,
+        "world_refresh": 320,
+        "world_reuse": 80
+      },
+      "completed_generations": [
+        {
+          "stage": "decision",
+          "generation": 0,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 0,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 1,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 1,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 2,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 2,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 3,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 3,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 4,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 4,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 5,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 5,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 6,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 6,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 7,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 7,
+          "steps": 50
+        }
+      ],
+      "invalidations": {
+        "new_generation": 16
+      },
+      "persistent_feature_bytes": 1153433600,
+      "eager_or_capture_block_calls": {
+        "refresh": 184,
+        "reuse": 184
+      },
+      "sampler_step_count_reduced": false,
+      "round_count_reduced": false,
+      "shallow_blocks_and_heads_live": true,
+      "no_reference_or_final_output_cache": true,
+      "full_video_PSNR_required": true,
+      "boundary_residual": false,
+      "current_boundary_input_live": false,
+      "scope": "deep",
+      "all_convolutions_and_heads_live": false,
+      "per_module_residual": false,
+      "graph_count": 4,
+      "graph_roles": [
+        [
+          "decision",
+          false
+        ],
+        [
+          "decision",
+          true
+        ],
+        [
+          "world",
+          false
+        ],
+        [
+          "world",
+          true
+        ]
+      ],
+      "world_refresh_and_reuse_share_graph_pool": true,
+      "reuse_graph_head_filter_cache": false,
+      "reuse_graph_native_head_transforms_live": true,
+      "full_refresh_graph_head_cache_unchanged": true
+    }
+  },
+  "smoke_only": false,
+  "no_official_adoption": true
+}
