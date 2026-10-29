@@ -124,3 +124,5 @@ G1为155.314304秒／26.107156332dB，68文件入口保留其原始Half GEMM／G
 比赛机home镜像余量151552字节，容器根文件系统仍有约70GB。此次新decision形状使用`/run/lock`下0700私有目录，CPU编译和dlopen检查通过；旧warm缓存未清理或改写。`/var/tmp`、`/tmp`和`/dev/shm`均为noexec，不能用于新launcher `.so`。公开223入口及默认转交入口均在比赛机完成CPU准备检查，重建的223源码及计时资源与实际运行相同；检查本身不初始化GPU。该检查不保证任意冷缓存能通过原Kahan cubin完整SHA门槛，原路径限制仍适用。
 
 G1时间步预测70文件与全刷新诊断对照见[完整记录](G1_PREDICTION70_20261029.md)。`run_g1_prediction70.py --depth 13|23`复现两个质量失败候选，`run_g1_refresh_control70.py`复现全部步骤完整计算、23视频与原68逐一SHA相同的接入对照；三者均未替换上面的正式G1入口。
+
+G1只读时间步轨迹诊断：运行`reproduce/run_g1_feature_trajectory71.py`，资源配置与原G1入口一致。71源码与计时资源已在比赛机禁用CUDA精确重建，完整11轮／23视频与原正式SHA一致。使用`python reproduce/verify_g1_feature_trajectory71.py`核对证据，详见[G1轨迹诊断](G1_FEATURE_TRAJECTORY71_20261029.md)。该诊断不是新的正式速度结果。

@@ -314,6 +314,8 @@ def main():
     verify_v2_late('both-late7-r4','public-late7-repro-cpu-r4',9,3)
     from verify_g1_prediction70 import verify as verify_g1_prediction
     verify_g1_prediction()
+    from verify_g1_feature_trajectory71 import verify as verify_g1_trajectory
+    verify_g1_trajectory()
     from verify_static_timestep65 import verify as verify_static_time
     verify_static_time()
     print('Verified: V2 CO225;65 two-refresh prediction Z1/dual/pencils;68 G1;all five dual GPU;fresh official103 log/JSON.')
