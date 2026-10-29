@@ -1,0 +1,97 @@
+SINGLE_TMP_ATTEMPT=1
+Traceback (most recent call last):
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/diagnostic/guard_crossstep211.py", line 124, in <module>
+    if __name__=='__main__':main()
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/diagnostic/guard_crossstep211.py", line 110, in main
+    result=attempt(root,args.entry,args.gpu,index)
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/diagnostic/guard_crossstep211.py", line 74, in attempt
+    assert process.returncode==0,(directory/'worker.log').read_text()[-8000:]
+AssertionError: ates, intermediates = self.ddim_sampling(
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/models/samplers/ddim.py", line 288, in ddim_sampling
+    outs = self.p_sample_ddim(
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/utils/crossstep_feature_runtime.py", line 95, in sample
+    result=parent_sampler(sampler,*args,**kwargs);active.finish_step();return result
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/models/samplers/ddim.py", line 373, in p_sample_ddim
+    model_output, model_output_action, model_output_state = self.model.apply_model(
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/utils/crossstep_feature_runtime.py", line 68, in apply
+    with native_weight_cache_scope(stage,reuse):result=self.graph(*args,**kwargs)
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/utils/cuda_graph.py", line 102, in __call__
+    self.entries[key] = self.capture(args, kwargs, leaves, spec)
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/utils/cuda_graph.py", line 164, in capture
+    expected = self.original(*args, **kwargs)
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/models/ddpms.py", line 1270, in apply_model
+    x_recon, x_action_recon, x_state_recon = self.model(
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/models/ddpms.py", line 2484, in forward
+    out = self.diffusion_model(xc,
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/modules/networks/wma_model.py", line 909, in forward
+    context = self._prepare_inference_context(context, t)
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/modules/networks/wma_model.py", line 787, in _prepare_inference_context
+    context_agent_action = self.action_token_projector(
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/modules/encoders/condition.py", line 650, in forward
+    latents = attn(x, latents) + latents
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/modules/encoders/condition.py", line 575, in forward
+    q = self.to_q(latents)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/utils/triton_compensated_linear.py", line 154, in forward
+    return half_compensated_linear(value, module.weight, module.bias,
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/utils/triton_half_compensated_linear.py", line 129, in half_compensated_linear
+    _half_compensated_gemm[grid](
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 167, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/utils/decision_zero_low_runtime.py", line 212, in inline_launched
+    return active.inline_launch(grid,args,kwargs)
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/utils/decision_zero_low_runtime.py", line 122, in inline_launch
+    if (not enabled or torch.is_grad_enabled() or torch.is_autocast_enabled()
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/utils/decision_zero_low_runtime.py", line 27, in __bool__
+    def __bool__(self):return flag_enabled()
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/source/src/unifolm_wma/utils/decision_zero_low_runtime.py", line 22, in flag_enabled
+    raise ValueError('Decision prepacked zero-low requires '+name+'='+expected)
+ValueError: Decision prepacked zero-low requires UNIFOLM_NATIVE_GRAPH_WEIGHT_CACHE=1
+CASE_EXECUTION_FAILED case=unitree_z1_dual_arm_stackbox_v2 exit_code=1
+PSNR case=unitree_z1_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_stackbox reason=Missing video directory or symlink: /run/lock/team07-v2-prediction211-o6cf7nt0/diagnostic/attempt-1/run/outputs/unitree_z1_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox reason=Missing video directory or symlink: /run/lock/team07-v2-prediction211-o6cf7nt0/diagnostic/attempt-1/run/outputs/unitree_z1_dual_arm_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox_v2 psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox_v2 reason=No MP4 videos in /run/lock/team07-v2-prediction211-o6cf7nt0/diagnostic/attempt-1/run/outputs/unitree_z1_dual_arm_stackbox_v2
+PSNR case=unitree_z1_dual_arm_cleanup_pencils psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_cleanup_pencils reason=Missing video directory or symlink: /run/lock/team07-v2-prediction211-o6cf7nt0/diagnostic/attempt-1/run/outputs/unitree_z1_dual_arm_cleanup_pencils
+PSNR case=unitree_g1_pack_camera psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_g1_pack_camera reason=Missing video directory or symlink: /run/lock/team07-v2-prediction211-o6cf7nt0/diagnostic/attempt-1/run/outputs/unitree_g1_pack_camera
+PSNR_FAILED: Every case must be strictly greater than 25 dB
+RESULT_JSON=/run/lock/team07-v2-prediction211-o6cf7nt0/diagnostic/attempt-1/run/result.json
+FAILED: Incomplete case profiles
+Traceback (most recent call last):
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/diagnostic/run_crossstep_full211.py", line 34, in <module>
+    if __name__=='__main__':main()
+  File "/run/lock/team07-v2-prediction211-o6cf7nt0/diagnostic/run_crossstep_full211.py", line 17, in main
+    reuse=json.loads((run/'profiles/unitree_z1_dual_arm_stackbox_v2.crossstep.json').read_text())
+  File "/home/team07/.venv/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/home/team07/.venv/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/run/lock/team07-v2-prediction211-o6cf7nt0/diagnostic/attempt-1/run/profiles/unitree_z1_dual_arm_stackbox_v2.crossstep.json'
+

@@ -1,0 +1,29 @@
+{
+  "case": "unitree_z1_dual_arm_stackbox_v2",
+  "rounds": 11,
+  "videos": 23,
+  "base": "unifolm",
+  "source_count": 211,
+  "feature_policy": {
+    "input_start": 6,
+    "output_end": 6,
+    "start": 10,
+    "stop": 40,
+    "boundary_residual": false,
+    "scope": "deep",
+    "stages": [
+      "world"
+    ]
+  },
+  "read_only": false,
+  "official_adopted": false,
+  "prediction_policy": {
+    "history": 2,
+    "actual_position_gap_ratio": true,
+    "first_reuse_alpha": 1.0,
+    "subsequent_reuse_alpha": 0.5,
+    "all_rounds_and50_steps_preserved": true,
+    "nonv2_quality_not_inherited": true,
+    "V2_full_refresh_math_and_FP32_attention_preserved": true
+  }
+}

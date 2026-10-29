@@ -291,6 +291,10 @@ def main():
     verify_prediction_dual()
     from verify_nonv2_other_prediction65 import verify as verify_prediction_other
     verify_prediction_other()
+    from verify_nonv2_pencils_window65 import verify as verify_pencils_window
+    verify_pencils_window()
+    from verify_v2_prediction211 import verify as verify_v2_prediction
+    verify_v2_prediction()
     from verify_static_timestep65 import verify as verify_static_time
     verify_static_time()
     print('Verified: V2 CO225;65 two-refresh prediction Z1/dual;63 pencils;68 G1;all five dual GPU;fresh official103 log/JSON.')

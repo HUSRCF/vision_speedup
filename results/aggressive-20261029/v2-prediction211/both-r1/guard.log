@@ -1,0 +1,77 @@
+SINGLE_TMP_ATTEMPT=1
+Traceback (most recent call last):
+  File "/run/lock/team07-v2-prediction211-yz9qjded/diagnostic/guard_crossstep211.py", line 124, in <module>
+    if __name__=='__main__':main()
+  File "/run/lock/team07-v2-prediction211-yz9qjded/diagnostic/guard_crossstep211.py", line 110, in main
+    result=attempt(root,args.entry,args.gpu,index)
+  File "/run/lock/team07-v2-prediction211-yz9qjded/diagnostic/guard_crossstep211.py", line 74, in attempt
+    assert process.returncode==0,(directory/'worker.log').read_text()[-8000:]
+AssertionError:  64, 1], "groups": 32, "size": 25600, "silu": false, "input_ptr": 140279342432256, "affine_ptrs": [140293082960384, 140293082961920]}], "fallbacks": {"unqualified_geometry": 776}, "original_modules_and_master_storage": true, "original4096_reduction_layout_preserved": true, "FP32_stats_affine_SiLU_preserved": true, "serial_original_partials_vector1024_output": true, "qualified_contiguous_geometries_only": true, "original_unqualified_fallback": true, "stage": "decision"}
+TWO_PRODUCT_TILES_CAPTURE {"captured": 0, "rows": [], "fallbacks": {}, "original_JIT_object_and_saved_run_retained": true, "original_five_tensor_arguments": true, "original_BK64_two_products_and_inline_split": true, "original_graph_owners_version_and_master_cache": true, "world_only": true, "only_qualified_launch_tiles": true, "stage": "decision"}
+NORM_PROJECTION_PACK_CAPTURE {"captured": 0, "rows": [], "fallbacks": {"decision": 160}, "original_transformer_forward_retained": true, "original_projection_owner_and_version_guards": true, "parent_JIT_run_restored_outside_projection": true, "real_normalized_F32_MC_for_fallback": true, "original4096_statistics_and_FP32_affine": true, "no_cross_step_input_cache": true, "world_only": true, "pending": 0, "stage": "decision"}
+OUT_PROJECTION_RESIDUAL_CAPTURE {"captured": 0, "rows": [], "fallbacks": {"decision": 160}, "only_transformer_final_return_changed": true, "original_projection_owner_and_version_guards": true, "parent_JIT_run_restored_outside_projection": true, "input_GN_MC_pack_and_private_GEMM_owners_retained": true, "original_FP32_store_boundary": true, "residual_add_once": true, "no_cross_step_input_cache": true, "world_only": true, "stage": "decision"}
+WORLD_PERSISTENT_ZERO_LOW_CAPTURE {"captured": 0, "rows": [], "fallbacks": {"unqualified": 408}, "original_JIT_and_outer_stage_controllers": true, "original_graph_and_weight_version_guards": true, "no_host_Count_read": true, "both_live_Count_branches": true, "both_launches_inside_graph": true, "no_cross_step_input_cache": true, "original_FP32_K64_tree": true, "input_norm_projection_pack_and_parent_two_product_owners_unchanged": true, "stage": "decision"}
+NATIVE_GRAPH_WEIGHT_CACHE {"selected": 62, "native_weight_readers": 64, "cached_bytes": 384614400, "graph_nodes": 1904, "native_convolution_unchanged": true, "first_refresh_inside_timed_capture": true}
+
+  0%|          | 0/11 [00:07<?, ?it/s]
+Traceback (most recent call last):
+  File "/run/lock/team07-v2-prediction211-yz9qjded/source/scripts/evaluation/world_model_interaction_crossstep.py", line 1501, in <module>
+    run_inference(args, timing)
+  File "/run/lock/team07-v2-prediction211-yz9qjded/source/scripts/evaluation/world_model_interaction_crossstep.py", line 1188, in run_inference
+    pred_videos_0, pred_actions, _ = image_guided_synthesis_sim_mode(
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/run/lock/team07-v2-prediction211-yz9qjded/source/scripts/evaluation/world_model_interaction_crossstep.py", line 804, in image_guided_synthesis_sim_mode
+    samples, actions, states, intermedia = ddim_sampler.sample(
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/run/lock/team07-v2-prediction211-yz9qjded/source/src/unifolm_wma/models/samplers/ddim.py", line 158, in sample
+    samples, actions, states, intermediates = self.ddim_sampling(
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/run/lock/team07-v2-prediction211-yz9qjded/source/src/unifolm_wma/models/samplers/ddim.py", line 288, in ddim_sampling
+    outs = self.p_sample_ddim(
+  File "/run/lock/team07-v2-prediction211-yz9qjded/source/src/unifolm_wma/utils/crossstep_feature_runtime.py", line 82, in sample
+    result=parent_sampler(sampler,*args,**kwargs);active.finish_step();return result
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/run/lock/team07-v2-prediction211-yz9qjded/source/src/unifolm_wma/models/samplers/ddim.py", line 373, in p_sample_ddim
+    model_output, model_output_action, model_output_state = self.model.apply_model(
+  File "/run/lock/team07-v2-prediction211-yz9qjded/source/src/unifolm_wma/utils/crossstep_feature_runtime.py", line 55, in apply
+    result=self.graph(*args,**kwargs)
+  File "/run/lock/team07-v2-prediction211-yz9qjded/source/src/unifolm_wma/utils/cuda_graph.py", line 102, in __call__
+    self.entries[key] = self.capture(args, kwargs, leaves, spec)
+  File "/run/lock/team07-v2-prediction211-yz9qjded/source/src/unifolm_wma/utils/cuda_graph.py", line 195, in capture
+    weight_cache = NativeGraphWeights(graph, self.original.__self__)
+  File "/run/lock/team07-v2-prediction211-yz9qjded/source/src/unifolm_wma/utils/native_graph_weight_cache.py", line 78, in __init__
+    attach(self,model,extension,api,inventory)
+  File "/run/lock/team07-v2-prediction211-yz9qjded/source/src/unifolm_wma/utils/native_conv1d_weight_cache.py", line 112, in attach
+    return Controller(owner,model,extension,api,inventory)
+  File "/run/lock/team07-v2-prediction211-yz9qjded/source/src/unifolm_wma/utils/native_conv1d_weight_cache.py", line 53, in __init__
+    assert len(owner.caches)==138 and owner.report['native_weight_readers']==143
+AssertionError
+CASE_EXECUTION_FAILED case=unitree_z1_dual_arm_stackbox_v2 exit_code=1
+PSNR case=unitree_z1_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_stackbox reason=Missing video directory or symlink: /run/lock/team07-v2-prediction211-yz9qjded/diagnostic/attempt-1/run/outputs/unitree_z1_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox reason=Missing video directory or symlink: /run/lock/team07-v2-prediction211-yz9qjded/diagnostic/attempt-1/run/outputs/unitree_z1_dual_arm_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox_v2 psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox_v2 reason=No MP4 videos in /run/lock/team07-v2-prediction211-yz9qjded/diagnostic/attempt-1/run/outputs/unitree_z1_dual_arm_stackbox_v2
+PSNR case=unitree_z1_dual_arm_cleanup_pencils psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_cleanup_pencils reason=Missing video directory or symlink: /run/lock/team07-v2-prediction211-yz9qjded/diagnostic/attempt-1/run/outputs/unitree_z1_dual_arm_cleanup_pencils
+PSNR case=unitree_g1_pack_camera psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_g1_pack_camera reason=Missing video directory or symlink: /run/lock/team07-v2-prediction211-yz9qjded/diagnostic/attempt-1/run/outputs/unitree_g1_pack_camera
+PSNR_FAILED: Every case must be strictly greater than 25 dB
+RESULT_JSON=/run/lock/team07-v2-prediction211-yz9qjded/diagnostic/attempt-1/run/result.json
+FAILED: Incomplete case profiles
+Traceback (most recent call last):
+  File "/run/lock/team07-v2-prediction211-yz9qjded/diagnostic/run_crossstep_full211.py", line 33, in <module>
+    if __name__=='__main__':main()
+  File "/run/lock/team07-v2-prediction211-yz9qjded/diagnostic/run_crossstep_full211.py", line 17, in main
+    reuse=json.loads((run/'profiles/unitree_z1_dual_arm_stackbox_v2.crossstep.json').read_text())
+  File "/home/team07/.venv/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/home/team07/.venv/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/run/lock/team07-v2-prediction211-yz9qjded/diagnostic/attempt-1/run/profiles/unitree_z1_dual_arm_stackbox_v2.crossstep.json'
+

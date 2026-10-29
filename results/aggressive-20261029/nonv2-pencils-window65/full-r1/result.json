@@ -1,0 +1,278 @@
+{
+  "problem": "unifolm",
+  "status": "failed",
+  "exit_code": 1,
+  "external_wall_s": 110.970926,
+  "validation_wall_s": 2.439905768027529,
+  "reason": "Incomplete case profiles",
+  "validation": {
+    "benchmark_exit_ok": false,
+    "complete_cases_ok": false,
+    "psnr_ok": false
+  },
+  "review_flags": [],
+  "validation_notes": [],
+  "workload": {
+    "cases": 5,
+    "rounds": [
+      12,
+      7,
+      11,
+      8,
+      11
+    ]
+  },
+  "cases": [
+    {
+      "case": "unitree_z1_stackbox",
+      "rounds": 12,
+      "process_wall_s": null,
+      "observed_process_wall_s": null,
+      "psnr_db": null,
+      "psnr_exact_match": false,
+      "psnr_passed": false,
+      "videos": 0,
+      "profile_complete": false,
+      "execution_ok": true,
+      "execution_exit_code": 0,
+      "reason": "Incomplete case profile",
+      "pure_model_cuda_s": 0
+    },
+    {
+      "case": "unitree_z1_dual_arm_stackbox",
+      "rounds": 7,
+      "process_wall_s": null,
+      "observed_process_wall_s": null,
+      "psnr_db": null,
+      "psnr_exact_match": false,
+      "psnr_passed": false,
+      "videos": 0,
+      "profile_complete": false,
+      "execution_ok": true,
+      "execution_exit_code": 0,
+      "reason": "Incomplete case profile",
+      "pure_model_cuda_s": 0
+    },
+    {
+      "case": "unitree_z1_dual_arm_stackbox_v2",
+      "rounds": 11,
+      "process_wall_s": null,
+      "observed_process_wall_s": null,
+      "psnr_db": null,
+      "psnr_exact_match": false,
+      "psnr_passed": false,
+      "videos": 0,
+      "profile_complete": false,
+      "execution_ok": true,
+      "execution_exit_code": 0,
+      "reason": "Incomplete case profile",
+      "pure_model_cuda_s": 0
+    },
+    {
+      "case": "unitree_z1_dual_arm_cleanup_pencils",
+      "rounds": 8,
+      "process_wall_s": 109.448996,
+      "observed_process_wall_s": 109.448996,
+      "psnr_db": 35.38954958643925,
+      "psnr_exact_match": false,
+      "psnr_passed": true,
+      "videos": 17,
+      "profile_complete": true,
+      "execution_ok": true,
+      "execution_exit_code": 0,
+      "reason": null,
+      "pure_model_cuda_s": 92.35726
+    },
+    {
+      "case": "unitree_g1_pack_camera",
+      "rounds": 11,
+      "process_wall_s": null,
+      "observed_process_wall_s": null,
+      "psnr_db": null,
+      "psnr_exact_match": false,
+      "psnr_passed": false,
+      "videos": 0,
+      "profile_complete": false,
+      "execution_ok": true,
+      "execution_exit_code": 0,
+      "reason": "Incomplete case profile",
+      "pure_model_cuda_s": 0
+    }
+  ],
+  "psnr_validation": {
+    "metric": "psnr_rgb_uint8",
+    "threshold_db": 25.0,
+    "comparison": "strictly_greater",
+    "aggregation": "case_pooled_rgb_mse",
+    "reference_dir": "/share/results/unifolm/fp32/reference/outputs",
+    "video_count": 17,
+    "psnr_ok": false,
+    "cases": {
+      "unitree_z1_stackbox": {
+        "psnr_db": null,
+        "exact_match": false,
+        "passed": false,
+        "video_count": 0,
+        "frames": 0,
+        "reason": "Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-yjl948y2/unitree_z1_stackbox"
+      },
+      "unitree_z1_dual_arm_stackbox": {
+        "psnr_db": null,
+        "exact_match": false,
+        "passed": false,
+        "video_count": 0,
+        "frames": 0,
+        "reason": "Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-yjl948y2/unitree_z1_dual_arm_stackbox"
+      },
+      "unitree_z1_dual_arm_stackbox_v2": {
+        "psnr_db": null,
+        "exact_match": false,
+        "passed": false,
+        "video_count": 0,
+        "frames": 0,
+        "reason": "Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-yjl948y2/unitree_z1_dual_arm_stackbox_v2"
+      },
+      "unitree_z1_dual_arm_cleanup_pencils": {
+        "psnr_db": 35.38954958643925,
+        "exact_match": false,
+        "passed": true,
+        "video_count": 17,
+        "frames": 384,
+        "reason": null,
+        "mse": 18.798595465554133
+      },
+      "unitree_g1_pack_camera": {
+        "psnr_db": null,
+        "exact_match": false,
+        "passed": false,
+        "video_count": 0,
+        "frames": 0,
+        "reason": "Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-yjl948y2/unitree_g1_pack_camera"
+      }
+    },
+    "per_video": {
+      "unitree_z1_dual_arm_cleanup_pencils/inference/0_full_fs4.mp4": {
+        "frames": 128,
+        "rgb_values": 62914560,
+        "squared_error": 427551912.0,
+        "psnr_db": 39.808426716040344,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/dm/4/itr-0.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 50202672.0,
+        "psnr_db": 40.08014704777214,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/dm/4/itr-1.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 111425423.0,
+        "psnr_db": 36.61757246082639,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/dm/4/itr-2.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 28494919.0,
+        "psnr_db": 42.53974110758356,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/dm/4/itr-3.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 323881676.0,
+        "psnr_db": 31.983551595728954,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/dm/4/itr-4.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 223162847.0,
+        "psnr_db": 33.601196442537486,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/dm/4/itr-5.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 803535658.0,
+        "psnr_db": 28.037363835972787,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/dm/4/itr-6.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 553153587.0,
+        "psnr_db": 29.658958045607633,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/dm/4/itr-7.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 601265558.0,
+        "psnr_db": 29.296752104589984,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/wm/4/itr-0.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 14600243.0,
+        "psnr_db": 45.44381453488984,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/wm/4/itr-1.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 22572029.0,
+        "psnr_db": 43.55170937969767,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/wm/4/itr-2.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 21334749.0,
+        "psnr_db": 43.79653999720804,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/wm/4/itr-3.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 167540926.0,
+        "psnr_db": 34.84620626077244,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/wm/4/itr-4.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 47857473.0,
+        "psnr_db": 40.28791774543255,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/wm/4/itr-5.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 74205386.0,
+        "psnr_db": 38.38306109009689,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/wm/4/itr-6.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 45258646.0,
+        "psnr_db": 40.530399804862455,
+        "exact_match": false
+      },
+      "unitree_z1_dual_arm_cleanup_pencils/inference/sample_0/wm/4/itr-7.mp4": {
+        "frames": 16,
+        "rgb_values": 7864320,
+        "squared_error": 32072383.0,
+        "psnr_db": 42.02610308034814,
+        "exact_match": false
+      }
+    },
+    "validation_wall_s": 2.439905768027529
+  },
+  "video_count": 17,
+  "pure_model_cuda_s": 92.35726
+}
