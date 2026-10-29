@@ -1,0 +1,27 @@
+{
+  "source_count": 65,
+  "case": "unitree_z1_stackbox",
+  "rounds": 12,
+  "videos": 25,
+  "GPUs": 2,
+  "feature_policy": {
+    "input_start": 9,
+    "output_end": 3,
+    "start": 10,
+    "stop": 40,
+    "boundary_residual": false,
+    "scope": "deep",
+    "stages": [
+      "decision",
+      "world"
+    ]
+  },
+  "per_role_expected_gathers": {
+    "decision_full": 33,
+    "decision_reuse": 31,
+    "world_full": 33,
+    "world_reuse": 31
+  },
+  "official_adopted": false,
+  "combined_single_GPU_quality_not_inherited": true
+}
