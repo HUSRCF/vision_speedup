@@ -42,12 +42,12 @@ def verify():
   assert feature_report['counts']['decision_calls']==feature_report['counts']['world_calls']==600
   assert feature_report['counts']['decision_reuse']==feature_report['counts']['world_reuse']==180
   assert not feature_report['round_count_reduced']and not feature_report['sampler_step_count_reduced']
- accepted=load(repo/'experiments/nonv2-crossstep65/accepted-outcome.json');fresh=load(evidence/'official103/validated/result.json');formal=load(repo/'results/result.json')
+ accepted=load(repo/'experiments/nonv2-crossstep65/accepted-outcome.json');fresh=load(evidence/'official103/validated/result.json');formal=load(repo/'results/history/official-before-prediction65/result.json')
  assert accepted['official_adopted']and accepted['official103_accepted']and accepted['GPUs']==2
  assert accepted['case_sum_s']==764.366152 and accepted['formal_saved_s']==1.364890 and accepted['historical_comparison_not_matched_AB']
  assert fresh==formal and fresh['status']=='accepted'and fresh['psnr_validation']['video_count']==103
  history=repo/'results/history/official-before-crossstep65'
- for n,h in accepted['pair_hashes'].items():assert sha(repo/'results'/n)==sha(evidence/'official103/validated'/n)==h
+ for n,h in accepted['pair_hashes'].items():assert sha(repo/'results/history/official-before-prediction65'/n)==sha(evidence/'official103/validated'/n)==h
  for n,h in accepted['previous_pair_hashes'].items():assert sha(history/n)==h
  before=load(history/'result.json')
  for row in formal['cases']:

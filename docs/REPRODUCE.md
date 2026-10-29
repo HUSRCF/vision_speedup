@@ -69,11 +69,11 @@ python3 reproduce/run_v2.py --gpu 0
 
 ## 已采用的非 V2 分项
 
-当前Z1采用65文件双卡时间步复用，双臂堆箱／清理铅笔采用63文件双卡内部Transformer分片，G1采用68文件双卡时间attention与精确权重广播。对应入口：
+当前Z1采用65文件双卡13块两次刷新预测，双臂堆箱／清理铅笔采用63文件双卡内部Transformer分片，G1采用68文件双卡时间attention与精确权重广播。对应入口：
 
 ```bash
-~/.venv/bin/python reproduce/run_nonv2_crossstep65.py --gpus 0,1 \
-  --workdir /var/tmp/team07-review-z1-65 \
+~/.venv/bin/python reproduce/run_nonv2_prediction65.py --revision 2 --gpus 0,1 \
+  --workdir /var/tmp/team07-review-z1-prediction65 \
   --storage-config /var/tmp/team07-review-storage/storage-config.json \
   --cache-dir /path/to/executable/FFN-shape-cache
 ~/.venv/bin/python reproduce/run_nonv2_parallel.py --case dual --gpus 0,1 \
@@ -92,7 +92,7 @@ python3 reproduce/run_v2.py --gpu 0
 
 每条命令均运行完整分项，先核对冻结源码与计时资源；`--prepare-only`只重建源码，不使用GPU。所需外部模型、输入和验证工具与V2相同。source与NCCL backing需位于同一私有tmpfs；FFN新形状缓存必须位于可执行挂载。初始化、模型搬运、通信、图捕获、视频写出及helper退出均计入原进程时间。单项shell会因其他四项缺席退出1，选中分项的执行、profile和PSNR另行检查，不能把单项原始log／JSON直接当成五项提交。
 
-Z1为150.838389秒／26.081602114dB，完整12轮、25视频，两阶段各600次调用。7块深层分支每阶段每轮在15个位置复用，保留全部50步、浅层、head和采样更新；四张图分别核对33／31个汇合。该组合重新验证了质量，没有继承单卡PSNR。新103视频汇总accepted，其他78视频SHA不变，正式五项合计764.366152秒。与历史Z1的1.364890秒差值不是同期配对收益，详见[完整证据](NONV2_CROSSSTEP65_20261029.md)。
+Z1为145.327923秒／28.992932876dB，完整12轮、25视频，两阶段各600次调用。13块深层分支由最近两次完整刷新预测当前特征，每阶段每轮15个位置预测，保留全部50步、浅层、head和采样更新；四张图分别核对33／21个汇合。新预测kernel缓存作用域恢复环境及Triton缓存类，原FFN断言保留；可选`--prediction-cache-parent`指定可执行缓存父目录。该双卡组合独立验证质量，新103视频汇总accepted、其他78视频SHA不变，正式五项合计758.855686秒。比历史正式Z1少5.510466秒，非同期配对，详见[完整证据](NONV2_PREDICTION65_20261029.md)。历史7块65入口`run_nonv2_crossstep65.py`继续保留。
 
 G1为155.314304秒／26.107156332dB，68文件入口保留其原始Half GEMM／GEGLU和31次汇合，只有rank0进行权重H2D，然后精确广播。两次同GPU完整对照及103视频验收见[G1记录](G1_ROOT_WEIGHT_TRANSPORT68_20261029.md)。
 
