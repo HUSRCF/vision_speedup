@@ -1,0 +1,144 @@
+{
+  "decision": {
+    "physical_GPUs": [
+      "0",
+      "1"
+    ],
+    "all_six_states_three_outputs_bitwise": true,
+    "partitioned_master_tensors": [
+      512,
+      512
+    ],
+    "raw_rank_median_saved_ms": [
+      -0.44083404541015625,
+      1.0383338928222656
+    ],
+    "raw_all_rank_all_pair_speed_gate": false,
+    "pairs": [
+      {
+        "index": 0,
+        "fastest_rank_baseline_ms": 124.4395523071289,
+        "slowest_rank_baseline_ms": 125.83628845214844,
+        "slowest_rank_candidate_ms": 124.6904296875,
+        "fastest_single_rank_minus_candidate_ms": -0.25087738037109375,
+        "slowest_baseline_minus_candidate_ms": 1.1458587646484375
+      },
+      {
+        "index": 1,
+        "fastest_rank_baseline_ms": 124.65766143798828,
+        "slowest_rank_baseline_ms": 125.87725067138672,
+        "slowest_rank_candidate_ms": 124.86553955078125,
+        "fastest_single_rank_minus_candidate_ms": -0.20787811279296875,
+        "slowest_baseline_minus_candidate_ms": 1.0117111206054688
+      },
+      {
+        "index": 2,
+        "fastest_rank_baseline_ms": 124.66073608398438,
+        "slowest_rank_baseline_ms": 125.90489959716797,
+        "slowest_rank_candidate_ms": 125.09696197509766,
+        "fastest_single_rank_minus_candidate_ms": -0.43622589111328125,
+        "slowest_baseline_minus_candidate_ms": 0.8079376220703125
+      },
+      {
+        "index": 3,
+        "fastest_rank_baseline_ms": 124.68531036376953,
+        "slowest_rank_baseline_ms": 126.2561264038086,
+        "slowest_rank_candidate_ms": 125.35091400146484,
+        "fastest_single_rank_minus_candidate_ms": -0.6656036376953125,
+        "slowest_baseline_minus_candidate_ms": 0.90521240234375
+      },
+      {
+        "index": 4,
+        "fastest_rank_baseline_ms": 124.67609405517578,
+        "slowest_rank_baseline_ms": 126.36876678466797,
+        "slowest_rank_candidate_ms": 125.3038101196289,
+        "fastest_single_rank_minus_candidate_ms": -0.627716064453125,
+        "slowest_baseline_minus_candidate_ms": 1.0649566650390625
+      },
+      {
+        "index": 5,
+        "fastest_rank_baseline_ms": 124.83891296386719,
+        "slowest_rank_baseline_ms": 126.41484832763672,
+        "slowest_rank_candidate_ms": 125.28435516357422,
+        "fastest_single_rank_minus_candidate_ms": -0.44544219970703125,
+        "slowest_baseline_minus_candidate_ms": 1.1304931640625
+      }
+    ],
+    "median_fastest_single_rank_minus_candidate_ms": -0.44083404541015625,
+    "six_pair_conservative_gate": false
+  },
+  "world": {
+    "physical_GPUs": [
+      "2",
+      "3"
+    ],
+    "all_six_states_three_outputs_bitwise": true,
+    "partitioned_master_tensors": [
+      512,
+      512
+    ],
+    "raw_rank_median_saved_ms": [
+      1.1115493774414062,
+      -0.31180572509765625
+    ],
+    "raw_all_rank_all_pair_speed_gate": false,
+    "pairs": [
+      {
+        "index": 0,
+        "fastest_rank_baseline_ms": 126.36262512207031,
+        "slowest_rank_baseline_ms": 127.56377410888672,
+        "slowest_rank_candidate_ms": 127.00466918945312,
+        "fastest_single_rank_minus_candidate_ms": -0.6420440673828125,
+        "slowest_baseline_minus_candidate_ms": 0.5591049194335938
+      },
+      {
+        "index": 1,
+        "fastest_rank_baseline_ms": 126.51725006103516,
+        "slowest_rank_baseline_ms": 127.77164459228516,
+        "slowest_rank_candidate_ms": 126.77222442626953,
+        "fastest_single_rank_minus_candidate_ms": -0.254974365234375,
+        "slowest_baseline_minus_candidate_ms": 0.999420166015625
+      },
+      {
+        "index": 2,
+        "fastest_rank_baseline_ms": 126.57868957519531,
+        "slowest_rank_baseline_ms": 127.83001708984375,
+        "slowest_rank_candidate_ms": 127.12242889404297,
+        "fastest_single_rank_minus_candidate_ms": -0.5437393188476562,
+        "slowest_baseline_minus_candidate_ms": 0.7075881958007812
+      },
+      {
+        "index": 3,
+        "fastest_rank_baseline_ms": 126.51315307617188,
+        "slowest_rank_baseline_ms": 128.14437866210938,
+        "slowest_rank_candidate_ms": 127.0456314086914,
+        "fastest_single_rank_minus_candidate_ms": -0.5324783325195312,
+        "slowest_baseline_minus_candidate_ms": 1.0987472534179688
+      },
+      {
+        "index": 4,
+        "fastest_rank_baseline_ms": 126.60530853271484,
+        "slowest_rank_baseline_ms": 127.9815673828125,
+        "slowest_rank_candidate_ms": 126.85721588134766,
+        "fastest_single_rank_minus_candidate_ms": -0.2519073486328125,
+        "slowest_baseline_minus_candidate_ms": 1.1243515014648438
+      },
+      {
+        "index": 5,
+        "fastest_rank_baseline_ms": 126.45887756347656,
+        "slowest_rank_baseline_ms": 128.4700164794922,
+        "slowest_rank_candidate_ms": 127.08454132080078,
+        "fastest_single_rank_minus_candidate_ms": -0.6256637573242188,
+        "slowest_baseline_minus_candidate_ms": 1.3854751586914062
+      }
+    ],
+    "median_fastest_single_rank_minus_candidate_ms": -0.5381088256835938,
+    "six_pair_conservative_gate": false
+  },
+  "full_case_not_run": true,
+  "official_adopted": false,
+  "official_pair_unchanged": true,
+  "stages_run_concurrently_on_disjoint_GPU_pairs": true,
+  "not_an_official_score_or_process_time": true,
+  "reason": "Both raw all-rank and fastest-single-rank net speed tests fail. Full16 GEMMs remain replicated; sixteen gathers and local attention output copies are included but their separate costs were not profiled. No full-case speed claim."
+}

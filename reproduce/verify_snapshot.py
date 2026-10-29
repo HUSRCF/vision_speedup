@@ -250,6 +250,8 @@ def main():
     verify_decision223()
     from verify_world_co223_evidence import verify as verify_world_co223
     verify_world_co223()
+    from verify_nonv2_native_attention59_evidence import verify as verify_g1_attention
+    verify_g1_attention()
     print('Verified: original209/historical overlays/adopted V2 CO225;adopted63 Z1/dual/pencils;historical59 G1;official103 log/JSON.')
 
 if __name__=='__main__':main()
