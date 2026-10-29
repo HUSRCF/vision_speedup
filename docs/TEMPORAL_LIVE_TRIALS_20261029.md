@@ -40,18 +40,24 @@
 |---|---:|---:|---|---:|
 | 两阶段复用7块 | 167.403315 | 30.254356344 | decision180＋world180 | 4 |
 | 仅world复用7块 | 171.283568 | 25.823488604 | world180 | 3 |
+| 两阶段复用13块 | 161.281284 | 24.469409469，未通过 | decision180＋world180 | 4 |
+| 两阶段复用23块 | 134.832107 | 19.986869989，未通过 | decision180＋world180 | 4 |
 
 两项全程guard及完整工作量检查通过，均通过选中分项的官方PSNR门槛。其他四项未在这些单项任务中运行，原始JSON因此不是五项accepted提交。两种策略的PSNR没有呈现简单单调关系；闭环最终质量必须实测。
 
-两项均慢于当前正式双卡Z1的152.203279秒，没有同期同GPU原59完整AB，不宣称已获得可采用的进程收益。更大范围13块与23块的两个版本已准备：13块尝试多次被外来GPU上下文中断，已排除，guard继续等待空卡；23块尚无有效完整运行。二者没有性能／质量结论。
+7块两项均慢于当前正式双卡Z1的152.203279秒，没有同期同GPU原59完整AB，不宣称已获得可采用的进程收益。13块经四次外来上下文干扰后，第五次完成全程独占运行；23块首次完成。两者均保留全部工作量，但质量失败，不能采用。
+
+下一轮冻结了三个候选：V2差量仅用于5个空间FFN，7个时间／middle FFN保留原路径；Z1的23块改为当前输入加缓存分支残差；Z1只缓存16个空间Transformer残差，时间层、卷积和head实时计算。后两个已启动，V2精度保护版因GPU占用尚未启动。准备和CPU检查不是完整GPU质量／收益结论。
+
+结合原63双卡模块清单的静态分析，7块仅覆盖33个Transformer汇合中的2个，13块覆盖12个，23块覆盖30个；只缓存空间16块则保留17个时间块。该组合尚未实现，计数只说明潜在覆盖范围，不能据此推算实际双卡收益。公开保留了模块名与原报告SHA。
 
 首个Z1尝试沿用了V2按TF32开关识别阶段的做法，但非V2两个阶段都启用TF32。发现后中止自己的任务，保留部分日志，未使用其耗时或质量。修正版本使用条件`c_crossattn_action[2]`中的显式`sim_mode`，CPU检查覆盖两种TF32开关和两个阶段；完整结果也核对两阶段各600次调用及24个完整50步序列。
 
 ## 复现与证据
 
-- [冻结源码与guards](../experiments/temporal-live-trials)：包含实际输入、实际替换、Z1两个完整结果、两个未完成候选及首个中断尝试。
+- [冻结源码与guards](../experiments/temporal-live-trials)：包含实际输入、实际替换、Z1四个完整结果、三个新候选及首个中断尝试。
 - [完整标量证据](../results/aggressive-20261029/temporal-live-trials)：原始log／JSON、误差、频率／温度遥测和视频hash；没有视频或操作数数组。
-- [公开入口](../reproduce/run_temporal_live_trial.py)已在比赛机禁用CUDA重建七份源码，逐文件匹配实测／准备的manifest和计时资源。
+- [公开入口](../reproduce/run_temporal_live_trial.py)已在比赛机禁用CUDA重建十份源码，逐文件匹配实测／准备的manifest和计时资源。
 
 ```bash
 python reproduce/verify_temporal_live_trials.py
@@ -60,3 +66,5 @@ python reproduce/run_temporal_live_trial.py --trial actual-input-r1 --gpu 0 \
 ```
 
 GPU完整复现去掉`--prepare-only`，使用比赛授权的外部资源及可执行挂载。可通过`--native-handles`指定已核对SHA的原句柄扩展，通过`--exec-cache-dir`指定新的可执行launcher缓存目录。GPU空闲、双文件锁、全程外来上下文、原始warm CUBIN指纹检查全部保留。新文件和缓存位于自有`/run/lock`目录，没有清理home、共享缓存或历史证据。
+
+CPU公开重建副本已在保留原路径、逐文件SHA与权限核对后迁移至自有可执行盘，私有tmpfs增加89247744字节空闲。此次只移动已结束的CPU重建目录，没有迁移GPU计时源码、输出、warm cache或NCCL控制根；原128MiB准备阈值保持不变。[迁移标量记录](../results/aggressive-20261029/cpu-rebuild-relocation-r1/relocation-report.json)。
