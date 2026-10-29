@@ -1,0 +1,38 @@
+{
+  "source_count": 65,
+  "case": "unitree_z1_dual_arm_stackbox",
+  "rounds": 7,
+  "videos": 15,
+  "GPUs": 2,
+  "feature_policy": {
+    "input_start": 1,
+    "output_end": 11,
+    "start": 20,
+    "stop": 40,
+    "boundary_residual": false,
+    "scope": "deep",
+    "stages": [
+      "decision",
+      "world"
+    ]
+  },
+  "per_role_expected_gathers": {
+    "decision_full": 33,
+    "decision_reuse": 3,
+    "world_full": 33,
+    "world_reuse": 3
+  },
+  "official_adopted": false,
+  "combined_single_GPU_quality_not_inherited": true,
+  "prediction_policy": {
+    "history": 2,
+    "actual_position_gap_ratio": true,
+    "FP32_residual": false,
+    "first_reuse_alpha": 1.0,
+    "subsequent_reuse_alpha": 0.5,
+    "all_rounds_and50_steps_preserved": true,
+    "model_quality_not_inferred_from_CPU": true
+  },
+  "cache_scope_isolated": true,
+  "Z1_quality_not_inherited": true
+}

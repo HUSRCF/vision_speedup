@@ -69,15 +69,15 @@ python3 reproduce/run_v2.py --gpu 0
 
 ## 已采用的非 V2 分项
 
-当前Z1和双臂堆箱采用65文件双卡13块两次刷新预测，清理铅笔采用65文件双卡23块短区间预测，G1采用68文件双卡时间attention与精确权重广播。对应入口：
+当前Z1采用65文件双卡13块两次刷新预测，双臂堆箱和清理铅笔采用65文件双卡23块短区间预测，G1采用68文件双卡时间attention与精确权重广播。对应入口：
 
 ```bash
 ~/.venv/bin/python reproduce/run_nonv2_prediction65.py --revision 2 --gpus 0,1 \
   --workdir /var/tmp/team07-review-z1-prediction65 \
   --storage-config /var/tmp/team07-review-storage/storage-config.json \
   --cache-dir /path/to/executable/FFN-shape-cache
-~/.venv/bin/python reproduce/run_nonv2_other_prediction65.py --case dual --gpus 0,1 \
-  --workdir /var/tmp/team07-review-dual-prediction65 \
+~/.venv/bin/python reproduce/run_nonv2_dual_late23_prediction65.py --gpus 0,1 \
+  --workdir /var/tmp/team07-review-dual-late23-prediction65 \
   --storage-config /var/tmp/team07-review-storage/storage-config.json \
   --cache-dir /path/to/executable/FFN-shape-cache
 ~/.venv/bin/python reproduce/run_nonv2_late23_prediction65.py --gpus 2,3 \
@@ -96,7 +96,9 @@ Z1为145.327923秒／28.992932876dB，完整12轮、25视频，两阶段各600�
 
 双臂随后采用同一13块预测模块，完整7轮／15视频为90.557285秒／26.513549583dB，保留全部50步和33／21汇合；新103视频验收通过，其他88视频SHA不变，五项更新为755.093960秒。清理铅笔同方案100.661865秒／19.202957201dB，质量失败，未采用。详见[完整记录](NONV2_OTHER_PREDICTION65_20261029.md)。
 
-清理铅笔随后扩大为23块、缩短至`[20,40)`预测窗口，完整8轮17视频 **95.640695秒／26.798606240dB**，原50步和浅层／head保留，两rank视频一致。新103视频验收通过，其他86视频SHA不变，当前五项 **744.785412秒**；详见[23块方案与完整证据](NONV2_LATE23_PREDICTION65_20261029.md)。
+清理铅笔随后扩大为23块、缩短至`[20,40)`预测窗口，完整8轮17视频 **95.640695秒／26.798606240dB**，原50步和浅层／head保留，两rank视频一致。新103视频验收通过，其他86视频SHA不变，当时五项 **744.785412秒**；详见[23块方案与完整证据](NONV2_LATE23_PREDICTION65_20261029.md)。
+
+双臂继续采用23块`[20,40)`双卡预测，完整7轮15视频为 **84.577327秒／26.556920797dB**，比历史正式少5.979958秒，非同期配对。新103视频验收通过，其他88视频SHA不变，当前五项 **738.805454秒**；详见[双臂23块方案](NONV2_DUAL_LATE23_PREDICTION65_20261029.md)。
 
 G1为155.314304秒／26.107156332dB，68文件入口保留其原始Half GEMM／GEGLU和31次汇合，只有rank0进行权重H2D，然后精确广播。两次同GPU完整对照及103视频验收见[G1记录](G1_ROOT_WEIGHT_TRANSPORT68_20261029.md)。
 
