@@ -38,7 +38,7 @@ def verify():
     assert hashes['all23_SHA256_equal']and len(hashes['current_hashes'])==23 and hashes['current_hashes']==hashes['baseline_hashes']
     assert actual['case_result']['psnr_db']==29.675324786148643
     for required in('delta-full-r2','z1-both-r2','z1-world-r2'):assert(evidence/required/'summary.json').is_file()
-    for label in('delta-full-r2','delta-protected-r3','z1-both-r2','z1-world-r2','z1-both-r3','z1-both-r4','z1-both-r5','z1-both-r6'):
+    for label in('delta-full-r2','delta-protected-r3','z1-both-r2','z1-world-r2','z1-both-r3','z1-both-r4','z1-both-r5','z1-both-r6','z1-both-r7'):
         out=evidence/label
         if not(out/'summary.json').exists():continue # Prepared trials have no performance/quality claim.
         summary=load(out/'summary.json');assert not summary['official_adopted']
@@ -69,7 +69,7 @@ def verify():
             assert reuse['counts'].get('decision_reuse',0)==(180 if 'decision'in policy['stages']else 0)
             assert reuse['boundary_residual']==policy['boundary_residual']and reuse['current_boundary_input_live']==policy['boundary_residual']
             if label in('z1-both-r2','z1-world-r2'):assert row['psnr_passed']
-            if label in('z1-both-r3','z1-both-r4'):assert not row['psnr_passed']
+            if label in('z1-both-r3','z1-both-r4','z1-both-r6','z1-both-r7'):assert not row['psnr_passed']
     failed=evidence/'z1-both-r1-interrupted';summary=load(failed/'summary.json')
     assert not summary['clean']and summary['interrupted_due_to_TF32_stage_label_bug']and summary['process_wall_s']is None
     assert 'KeyboardInterrupt'in(failed/'guard.log').read_text()
@@ -78,8 +78,12 @@ def verify():
     assert public['public_script_SHA256']==sha(repo/'reproduce/run_temporal_live_trial.py')
     public2=load(evidence/'public-repro-cpu-r2/summary.json');assert public2['passed']and public2['no_GPU_execution']
     assert len(public2['trials'])==10 and all(r['exact_timed_manifest_and_assets']for r in public2['trials'])
-    assert {r['trial']for r in public2['trials']}=={f.name for f in code.iterdir()}
+    assert {r['trial']for r in public2['trials']}=={f.name for f in code.iterdir()}-{'z1-both-r7'}
     assert public2['public_script_SHA256']==sha(repo/'reproduce/run_temporal_live_trial.py')
+    public3=load(evidence/'public-repro-cpu-r3/summary.json');assert public3['passed']and public3['no_GPU_execution']
+    assert len(public3['trials'])==11 and all(r['exact_timed_manifest_and_assets']for r in public3['trials'])
+    assert {r['trial']for r in public3['trials']}=={f.name for f in code.iterdir()}
+    assert public3['public_script_SHA256']==sha(repo/'reproduce/run_temporal_live_trial.py')
     coverage=load(evidence/'qualified63-transformer-coverage.json')
     assert sha(repo/coverage['qualified_report'])==coverage['qualified_report_SHA256']
     original=load(repo/coverage['qualified_report'])['controller']['rows']
@@ -92,7 +96,7 @@ def verify():
         assert row['retained_transformer_modules']==expected
         assert row['reuse_step_gathers_if_combined']==len(expected)
     assert coverage['combined_runtime_not_yet_implemented_or_GPU_qualified']and coverage['no_speedup_inferred']
-    print('Temporal live trials: actual49 adjacent pairs/timings/unchanged23 videos;live-delta and full Z1 quality evidence;ten public source reconstructions and conditional module coverage verified.')
+    print('Temporal live trials: actual49 adjacent pairs/timings/unchanged23 videos;live-delta and full Z1 quality evidence;eleven public source reconstructions and conditional module coverage verified.')
 
 
 if __name__=='__main__':verify()
