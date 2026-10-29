@@ -98,6 +98,8 @@ G1为155.314304秒／26.107156332dB，68文件入口保留其原始Half GEMM／G
 
 历史Z1的63入口`run_z1_parallel.py`以及62／61候选继续保留；历史G1单卡59与失败63候选也保留。`run_nonv2_parallel.py --case g1`只复现PSNR19.081776215dB的失败候选，不能作为当前G1成绩。精确静态时间嵌入缓存仍是独立实验，没有替换上述正式配置。
 
+双臂／清理铅笔的双卡深层时间步缓存65候选另见[完整记录](NONV2_OTHER_CROSSSTEP65_20261029.md)。两项完整运行均通过质量及双rank一致性，但未改善历史正式时间，未采用。入口 `run_nonv2_other_crossstep65.py --case dual|pencils` 使用相同的 `--gpus`、`--workdir`、`--storage-config`、`--cache-dir` 参数；可用 `--prepare-only` 精确重建而不执行GPU。检查命令为 `python reproduce/verify_nonv2_other_crossstep65.py`。
+
 ## CUDA Graph 扩展
 
 已附带本次运行使用的 `unifolm/src/unifolm_wma/utils/native-graph-handles/team07_cuda_graph_handles.so`，SHA256 为 `ab2f19b88cb9af02b42fb5fdcb39da49e062346fd30794be45fb81e12cb1b927`。

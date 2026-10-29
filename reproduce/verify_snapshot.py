@@ -279,6 +279,8 @@ def main():
     verify_temporal_live()
     from verify_nonv2_crossstep65 import verify as verify_temporal_dual
     verify_temporal_dual()
+    from verify_nonv2_other_crossstep65 import verify as verify_other_temporal_dual
+    verify_other_temporal_dual()
     from verify_static_timestep65 import verify as verify_static_time
     verify_static_time()
     print('Verified: V2 CO225;65 temporal-reuse Z1;63 dual/pencils;68 G1;all five dual GPU;fresh official103 log/JSON.')
