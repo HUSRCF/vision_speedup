@@ -1,0 +1,362 @@
+{
+  "clean": true,
+  "run_directory": "/var/tmp/team07-nonv2-other-prediction65-pencils-lkk2g95w/diagnostic/runs/20261029T101051Z-case-v2-nccl-934072",
+  "physical_GPUs": [
+    "1",
+    "3"
+  ],
+  "observations": 160,
+  "benchmark_exit_code": 1,
+  "parallel": {
+    "policy": "nonv2-all-blocks",
+    "GPUs": 2,
+    "full_workload_on_both_ranks": true,
+    "rank_videos_SHA256_equal": true,
+    "video_count": 17,
+    "video_hashes": {
+      "inference/0_full_fs4.mp4": "4eadf7070ce955792065bbba515c6cf6bb0b3186579feb4964ef7fa3d636ee32",
+      "inference/sample_0/wm/4/itr-7.mp4": "36b4465ae8d66e621877444821384be198950dab4fb915d69617b9093f2a9725",
+      "inference/sample_0/wm/4/itr-6.mp4": "26be3fe49122b95ffc84f4acd214c5979ec1e1738587a96242de227d0332308d",
+      "inference/sample_0/wm/4/itr-5.mp4": "a9f544f8b4847017890642d47e6762c32c11aa26f53986c1499848c5524a6f53",
+      "inference/sample_0/wm/4/itr-4.mp4": "c33c0479b06f70dbea569f6a64a1b9b7d9e9c8ce3794640d66fba1e0c6b20a9a",
+      "inference/sample_0/wm/4/itr-3.mp4": "20ad75789b0a0a62c0e0e9e8008022039d50cc9b64028b0f4b145c30d6ed9782",
+      "inference/sample_0/wm/4/itr-2.mp4": "69e1cfc95b686dff2a47dc137fbcda2a121968e7594500151590a77ff6f76eca",
+      "inference/sample_0/wm/4/itr-1.mp4": "e0a046131a251b45318ef4cfb1885266e14cdaeaa6ac8eeddc64acae16140ff4",
+      "inference/sample_0/wm/4/itr-0.mp4": "1f81aed9ec9dacd755ec79afe4e7777b6782bca6d1380d987b669d3c4bd3c63e",
+      "inference/sample_0/dm/4/itr-7.mp4": "c0e482e26e35b589af6ef6132b447e57353b75609f681d26e98d6f929e0b2d4a",
+      "inference/sample_0/dm/4/itr-6.mp4": "9d01e34cee13ed72981570103828d940b5e461d1a8c61b8e87e914119e59893d",
+      "inference/sample_0/dm/4/itr-5.mp4": "64a48d1d49db13ac66b037bd28df4f802de0cf7d0c79a9c4377723a91e8e3477",
+      "inference/sample_0/dm/4/itr-4.mp4": "825f539890bacfa2faaaa6f9a35b774b9ae12d9249d74ac8c1da8b56c5a5ab27",
+      "inference/sample_0/dm/4/itr-3.mp4": "cb1b9f461ccacd35e375360b44e7da81137956b4286de32560bbf6e27ba5994d",
+      "inference/sample_0/dm/4/itr-2.mp4": "73df3f378457fdd5f4162a26124683738d716e083dc45ea158625b65a1dc142d",
+      "inference/sample_0/dm/4/itr-1.mp4": "ea5b0b2c0ea8f709216c722864f859bf6eb0dd4bd4c969ccb7585608e2fb610c",
+      "inference/sample_0/dm/4/itr-0.mp4": "ad99a3fa676eb77a184491eb38f81f7445774fad5efc221c8db7b7f714710d9f"
+    },
+    "helper_exit_code": 0,
+    "setup_helper_outputs_and_teardown_inside_original_process_timer": true,
+    "stage_captures": {
+      "decision": 54,
+      "world": 54
+    },
+    "stage_calls": {
+      "decision": 400,
+      "world": 400
+    },
+    "graph_role_modules": {
+      "decision_full": [
+        "init_attn.0.transformer_blocks.0",
+        "input_blocks.1.1.transformer_blocks.0",
+        "input_blocks.1.2.transformer_blocks.0",
+        "input_blocks.2.1.transformer_blocks.0",
+        "input_blocks.2.2.transformer_blocks.0",
+        "input_blocks.4.1.transformer_blocks.0",
+        "input_blocks.4.2.transformer_blocks.0",
+        "input_blocks.5.1.transformer_blocks.0",
+        "input_blocks.5.2.transformer_blocks.0",
+        "input_blocks.7.1.transformer_blocks.0",
+        "input_blocks.7.2.transformer_blocks.0",
+        "input_blocks.8.1.transformer_blocks.0",
+        "input_blocks.8.2.transformer_blocks.0",
+        "middle_block.1.transformer_blocks.0",
+        "middle_block.2.transformer_blocks.0",
+        "output_blocks.10.1.transformer_blocks.0",
+        "output_blocks.10.2.transformer_blocks.0",
+        "output_blocks.11.1.transformer_blocks.0",
+        "output_blocks.11.2.transformer_blocks.0",
+        "output_blocks.3.1.transformer_blocks.0",
+        "output_blocks.3.2.transformer_blocks.0",
+        "output_blocks.4.1.transformer_blocks.0",
+        "output_blocks.4.2.transformer_blocks.0",
+        "output_blocks.5.1.transformer_blocks.0",
+        "output_blocks.5.2.transformer_blocks.0",
+        "output_blocks.6.1.transformer_blocks.0",
+        "output_blocks.6.2.transformer_blocks.0",
+        "output_blocks.7.1.transformer_blocks.0",
+        "output_blocks.7.2.transformer_blocks.0",
+        "output_blocks.8.1.transformer_blocks.0",
+        "output_blocks.8.2.transformer_blocks.0",
+        "output_blocks.9.1.transformer_blocks.0",
+        "output_blocks.9.2.transformer_blocks.0"
+      ],
+      "decision_reuse": [
+        "init_attn.0.transformer_blocks.0",
+        "input_blocks.1.1.transformer_blocks.0",
+        "input_blocks.1.2.transformer_blocks.0",
+        "input_blocks.2.1.transformer_blocks.0",
+        "input_blocks.2.2.transformer_blocks.0",
+        "input_blocks.4.1.transformer_blocks.0",
+        "input_blocks.4.2.transformer_blocks.0",
+        "input_blocks.5.1.transformer_blocks.0",
+        "input_blocks.5.2.transformer_blocks.0",
+        "output_blocks.10.1.transformer_blocks.0",
+        "output_blocks.10.2.transformer_blocks.0",
+        "output_blocks.11.1.transformer_blocks.0",
+        "output_blocks.11.2.transformer_blocks.0",
+        "output_blocks.6.1.transformer_blocks.0",
+        "output_blocks.6.2.transformer_blocks.0",
+        "output_blocks.7.1.transformer_blocks.0",
+        "output_blocks.7.2.transformer_blocks.0",
+        "output_blocks.8.1.transformer_blocks.0",
+        "output_blocks.8.2.transformer_blocks.0",
+        "output_blocks.9.1.transformer_blocks.0",
+        "output_blocks.9.2.transformer_blocks.0"
+      ],
+      "world_full": [
+        "init_attn.0.transformer_blocks.0",
+        "input_blocks.1.1.transformer_blocks.0",
+        "input_blocks.1.2.transformer_blocks.0",
+        "input_blocks.2.1.transformer_blocks.0",
+        "input_blocks.2.2.transformer_blocks.0",
+        "input_blocks.4.1.transformer_blocks.0",
+        "input_blocks.4.2.transformer_blocks.0",
+        "input_blocks.5.1.transformer_blocks.0",
+        "input_blocks.5.2.transformer_blocks.0",
+        "input_blocks.7.1.transformer_blocks.0",
+        "input_blocks.7.2.transformer_blocks.0",
+        "input_blocks.8.1.transformer_blocks.0",
+        "input_blocks.8.2.transformer_blocks.0",
+        "middle_block.1.transformer_blocks.0",
+        "middle_block.2.transformer_blocks.0",
+        "output_blocks.10.1.transformer_blocks.0",
+        "output_blocks.10.2.transformer_blocks.0",
+        "output_blocks.11.1.transformer_blocks.0",
+        "output_blocks.11.2.transformer_blocks.0",
+        "output_blocks.3.1.transformer_blocks.0",
+        "output_blocks.3.2.transformer_blocks.0",
+        "output_blocks.4.1.transformer_blocks.0",
+        "output_blocks.4.2.transformer_blocks.0",
+        "output_blocks.5.1.transformer_blocks.0",
+        "output_blocks.5.2.transformer_blocks.0",
+        "output_blocks.6.1.transformer_blocks.0",
+        "output_blocks.6.2.transformer_blocks.0",
+        "output_blocks.7.1.transformer_blocks.0",
+        "output_blocks.7.2.transformer_blocks.0",
+        "output_blocks.8.1.transformer_blocks.0",
+        "output_blocks.8.2.transformer_blocks.0",
+        "output_blocks.9.1.transformer_blocks.0",
+        "output_blocks.9.2.transformer_blocks.0"
+      ],
+      "world_reuse": [
+        "init_attn.0.transformer_blocks.0",
+        "input_blocks.1.1.transformer_blocks.0",
+        "input_blocks.1.2.transformer_blocks.0",
+        "input_blocks.2.1.transformer_blocks.0",
+        "input_blocks.2.2.transformer_blocks.0",
+        "input_blocks.4.1.transformer_blocks.0",
+        "input_blocks.4.2.transformer_blocks.0",
+        "input_blocks.5.1.transformer_blocks.0",
+        "input_blocks.5.2.transformer_blocks.0",
+        "output_blocks.10.1.transformer_blocks.0",
+        "output_blocks.10.2.transformer_blocks.0",
+        "output_blocks.11.1.transformer_blocks.0",
+        "output_blocks.11.2.transformer_blocks.0",
+        "output_blocks.6.1.transformer_blocks.0",
+        "output_blocks.6.2.transformer_blocks.0",
+        "output_blocks.7.1.transformer_blocks.0",
+        "output_blocks.7.2.transformer_blocks.0",
+        "output_blocks.8.1.transformer_blocks.0",
+        "output_blocks.8.2.transformer_blocks.0",
+        "output_blocks.9.1.transformer_blocks.0",
+        "output_blocks.9.2.transformer_blocks.0"
+      ]
+    },
+    "feature_reuse": {
+      "experimental_dynamic_feature_reuse": true,
+      "predictive_feature_reuse": true,
+      "history_complete_refreshes": 2,
+      "prediction": "current + (current - previous) * actual_position_gap_ratio",
+      "alpha_histogram": {
+        "1.0": 16,
+        "0.5": 224
+      },
+      "residual_cache_FP32": true,
+      "graph_prediction_selfcheck": {
+        "passed": true,
+        "cases": [
+          {
+            "dtype": "torch.float16",
+            "residual": false,
+            "tail": 257,
+            "mutated_replay_bitwise": true
+          },
+          {
+            "dtype": "torch.float16",
+            "residual": true,
+            "tail": 257,
+            "mutated_replay_bitwise": true
+          },
+          {
+            "dtype": "torch.float32",
+            "residual": false,
+            "tail": 257,
+            "mutated_replay_bitwise": true
+          },
+          {
+            "dtype": "torch.float32",
+            "residual": true,
+            "tail": 257,
+            "mutated_replay_bitwise": true
+          }
+        ],
+        "no_full_model_quality_inferred": true
+      },
+      "interval": 2,
+      "window": [
+        10,
+        40
+      ],
+      "stages": [
+        "decision",
+        "world"
+      ],
+      "selected_blocks": [
+        "input_blocks.6",
+        "input_blocks.7",
+        "input_blocks.8",
+        "input_blocks.9",
+        "input_blocks.10",
+        "input_blocks.11",
+        "middle_block",
+        "output_blocks.0",
+        "output_blocks.1",
+        "output_blocks.2",
+        "output_blocks.3",
+        "output_blocks.4",
+        "output_blocks.5"
+      ],
+      "counts": {
+        "decision_calls": 400,
+        "decision_refresh": 280,
+        "decision_reuse": 120,
+        "world_calls": 400,
+        "world_refresh": 280,
+        "world_reuse": 120
+      },
+      "completed_generations": [
+        {
+          "stage": "decision",
+          "generation": 0,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 0,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 1,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 1,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 2,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 2,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 3,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 3,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 4,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 4,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 5,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 5,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 6,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 6,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 7,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 7,
+          "steps": 50
+        }
+      ],
+      "invalidations": {
+        "new_generation": 16
+      },
+      "persistent_feature_bytes": 288358400,
+      "eager_or_capture_block_calls": {
+        "refresh": 104,
+        "reuse": 104
+      },
+      "sampler_step_count_reduced": false,
+      "round_count_reduced": false,
+      "shallow_blocks_and_heads_live": true,
+      "no_reference_or_final_output_cache": true,
+      "full_video_PSNR_required": true,
+      "boundary_residual": false,
+      "current_boundary_input_live": false,
+      "scope": "deep",
+      "all_convolutions_and_heads_live": false,
+      "per_module_residual": false,
+      "graph_count": 4,
+      "graph_roles": [
+        [
+          "decision",
+          false
+        ],
+        [
+          "decision",
+          true
+        ],
+        [
+          "world",
+          false
+        ],
+        [
+          "world",
+          true
+        ]
+      ],
+      "world_refresh_and_reuse_share_graph_pool": true,
+      "reuse_graph_head_filter_cache": false,
+      "reuse_graph_native_head_transforms_live": true,
+      "full_refresh_graph_head_cache_unchanged": true
+    }
+  },
+  "smoke_only": false,
+  "no_official_adoption": true
+}

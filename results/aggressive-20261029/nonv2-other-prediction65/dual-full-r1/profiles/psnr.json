@@ -1,0 +1,160 @@
+{
+  "metric": "psnr_rgb_uint8",
+  "threshold_db": 25.0,
+  "comparison": "strictly_greater",
+  "aggregation": "case_pooled_rgb_mse",
+  "reference_dir": "/share/results/unifolm/fp32/reference/outputs",
+  "video_count": 15,
+  "psnr_ok": false,
+  "cases": {
+    "unitree_z1_stackbox": {
+      "psnr_db": null,
+      "exact_match": false,
+      "passed": false,
+      "video_count": 0,
+      "frames": 0,
+      "reason": "Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-breq5fia/unitree_z1_stackbox"
+    },
+    "unitree_z1_dual_arm_stackbox": {
+      "psnr_db": 26.513549583269583,
+      "exact_match": false,
+      "passed": true,
+      "video_count": 15,
+      "frames": 336,
+      "reason": null,
+      "mse": 145.11937608264742
+    },
+    "unitree_z1_dual_arm_stackbox_v2": {
+      "psnr_db": null,
+      "exact_match": false,
+      "passed": false,
+      "video_count": 0,
+      "frames": 0,
+      "reason": "Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-breq5fia/unitree_z1_dual_arm_stackbox_v2"
+    },
+    "unitree_z1_dual_arm_cleanup_pencils": {
+      "psnr_db": null,
+      "exact_match": false,
+      "passed": false,
+      "video_count": 0,
+      "frames": 0,
+      "reason": "Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-breq5fia/unitree_z1_dual_arm_cleanup_pencils"
+    },
+    "unitree_g1_pack_camera": {
+      "psnr_db": null,
+      "exact_match": false,
+      "passed": false,
+      "video_count": 0,
+      "frames": 0,
+      "reason": "Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-breq5fia/unitree_g1_pack_camera"
+    }
+  },
+  "per_video": {
+    "unitree_z1_dual_arm_stackbox/inference/5_full_fs4.mp4": {
+      "frames": 112,
+      "rgb_values": 55050240,
+      "squared_error": 6869132088.0,
+      "psnr_db": 27.169377099559217,
+      "exact_match": false
+    },
+    "unitree_z1_dual_arm_stackbox/inference/sample_5/dm/4/itr-0.mp4": {
+      "frames": 16,
+      "rgb_values": 7864320,
+      "squared_error": 55133061.0,
+      "psnr_db": 39.67329432262853,
+      "exact_match": false
+    },
+    "unitree_z1_dual_arm_stackbox/inference/sample_5/dm/4/itr-1.mp4": {
+      "frames": 16,
+      "rgb_values": 7864320,
+      "squared_error": 282712032.0,
+      "psnr_db": 32.57397245427467,
+      "exact_match": false
+    },
+    "unitree_z1_dual_arm_stackbox/inference/sample_5/dm/4/itr-2.mp4": {
+      "frames": 16,
+      "rgb_values": 7864320,
+      "squared_error": 658461272.0,
+      "psnr_db": 28.9021130091616,
+      "exact_match": false
+    },
+    "unitree_z1_dual_arm_stackbox/inference/sample_5/dm/4/itr-3.mp4": {
+      "frames": 16,
+      "rgb_values": 7864320,
+      "squared_error": 4699302674.0,
+      "psnr_db": 20.36708119455056,
+      "exact_match": false
+    },
+    "unitree_z1_dual_arm_stackbox/inference/sample_5/dm/4/itr-4.mp4": {
+      "frames": 16,
+      "rgb_values": 7864320,
+      "squared_error": 2385346718.0,
+      "psnr_db": 23.31190023441859,
+      "exact_match": false
+    },
+    "unitree_z1_dual_arm_stackbox/inference/sample_5/dm/4/itr-5.mp4": {
+      "frames": 16,
+      "rgb_values": 7864320,
+      "squared_error": 1822289685.0,
+      "psnr_db": 24.481241206669555,
+      "exact_match": false
+    },
+    "unitree_z1_dual_arm_stackbox/inference/sample_5/dm/4/itr-6.mp4": {
+      "frames": 16,
+      "rgb_values": 7864320,
+      "squared_error": 326181742.0,
+      "psnr_db": 31.952818897576286,
+      "exact_match": false
+    },
+    "unitree_z1_dual_arm_stackbox/inference/sample_5/wm/4/itr-0.mp4": {
+      "frames": 16,
+      "rgb_values": 7864320,
+      "squared_error": 203587546.0,
+      "psnr_db": 33.999903300282796,
+      "exact_match": false
+    },
+    "unitree_z1_dual_arm_stackbox/inference/sample_5/wm/4/itr-1.mp4": {
+      "frames": 16,
+      "rgb_values": 7864320,
+      "squared_error": 75806361.0,
+      "psnr_db": 38.29035888222591,
+      "exact_match": false
+    },
+    "unitree_z1_dual_arm_stackbox/inference/sample_5/wm/4/itr-2.mp4": {
+      "frames": 16,
+      "rgb_values": 7864320,
+      "squared_error": 609305407.0,
+      "psnr_db": 29.239065054514555,
+      "exact_match": false
+    },
+    "unitree_z1_dual_arm_stackbox/inference/sample_5/wm/4/itr-3.mp4": {
+      "frames": 16,
+      "rgb_values": 7864320,
+      "squared_error": 1694174638.0,
+      "psnr_db": 24.79783361526527,
+      "exact_match": false
+    },
+    "unitree_z1_dual_arm_stackbox/inference/sample_5/wm/4/itr-4.mp4": {
+      "frames": 16,
+      "rgb_values": 7864320,
+      "squared_error": 2405838525.0,
+      "psnr_db": 23.27475062521621,
+      "exact_match": false
+    },
+    "unitree_z1_dual_arm_stackbox/inference/sample_5/wm/4/itr-5.mp4": {
+      "frames": 16,
+      "rgb_values": 7864320,
+      "squared_error": 1360501494.0,
+      "psnr_db": 25.750425145137925,
+      "exact_match": false
+    },
+    "unitree_z1_dual_arm_stackbox/inference/sample_5/wm/4/itr-6.mp4": {
+      "frames": 16,
+      "rgb_values": 7864320,
+      "squared_error": 518796203.0,
+      "psnr_db": 29.937447486587693,
+      "exact_match": false
+    }
+  },
+  "validation_wall_s": 1.5655038369586691
+}
