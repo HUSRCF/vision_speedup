@@ -275,6 +275,8 @@ def main():
     verify_g1_transport()
     from verify_nonv2_root64 import verify as verify_nonv2_transport
     verify_nonv2_transport()
+    from verify_temporal_live_trials import verify as verify_temporal_live
+    verify_temporal_live()
     print('Verified: V2 CO225;63 Z1/dual/pencils;68 G1;all five dual GPU;fresh official103 log/JSON.')
 
 if __name__=='__main__':main()

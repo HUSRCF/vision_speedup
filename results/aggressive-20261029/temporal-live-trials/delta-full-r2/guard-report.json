@@ -1,0 +1,292 @@
+{
+  "clean": true,
+  "GPU": "0",
+  "owned_host_contexts": [
+    3751705
+  ],
+  "observations": 880,
+  "attempt": 1,
+  "diagnostic": {
+    "diagnostic_complete": true,
+    "all_dynamic_gates_passed": true,
+    "workload_complete": true,
+    "case_result": {
+      "case": "unitree_z1_dual_arm_stackbox_v2",
+      "rounds": 11,
+      "process_wall_s": 318.427327,
+      "observed_process_wall_s": 318.427327,
+      "psnr_db": 24.82881782867743,
+      "psnr_exact_match": false,
+      "psnr_passed": false,
+      "videos": 23,
+      "profile_complete": true,
+      "execution_ok": true,
+      "execution_exit_code": 0,
+      "reason": "PSNR must be strictly greater than 25 dB",
+      "pure_model_cuda_s": 308.667044
+    },
+    "crossstep": {
+      "temporal_delta_runtime": true,
+      "counts": {
+        "decision_calls": 550,
+        "decision_refresh": 550,
+        "world_calls": 550,
+        "world_refresh": 385,
+        "world_reuse": 165
+      },
+      "completed_generations": [
+        {
+          "stage": "decision",
+          "generation": 0,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 0,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 1,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 1,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 2,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 2,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 3,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 3,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 4,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 4,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 5,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 5,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 6,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 6,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 7,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 7,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 8,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 8,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 9,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 9,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 10,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 10,
+          "steps": 50
+        }
+      ],
+      "graph_count": 2,
+      "owners": [
+        {
+          "name": "input_blocks.7.1.transformer_blocks.0.ff.net.2",
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "captures": 1
+        },
+        {
+          "name": "input_blocks.7.2.transformer_blocks.0.ff.net.2",
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "captures": 1
+        },
+        {
+          "name": "input_blocks.8.1.transformer_blocks.0.ff.net.2",
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "captures": 1
+        },
+        {
+          "name": "input_blocks.8.2.transformer_blocks.0.ff.net.2",
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "captures": 1
+        },
+        {
+          "name": "middle_block.1.transformer_blocks.0.ff.net.2",
+          "shape": [
+            640,
+            1280,
+            5120
+          ],
+          "captures": 1
+        },
+        {
+          "name": "middle_block.2.transformer_blocks.0.ff.net.2",
+          "shape": [
+            640,
+            1280,
+            5120
+          ],
+          "captures": 1
+        },
+        {
+          "name": "output_blocks.3.1.transformer_blocks.0.ff.net.2",
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "captures": 1
+        },
+        {
+          "name": "output_blocks.3.2.transformer_blocks.0.ff.net.2",
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "captures": 1
+        },
+        {
+          "name": "output_blocks.4.1.transformer_blocks.0.ff.net.2",
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "captures": 1
+        },
+        {
+          "name": "output_blocks.4.2.transformer_blocks.0.ff.net.2",
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "captures": 1
+        },
+        {
+          "name": "output_blocks.5.1.transformer_blocks.0.ff.net.2",
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "captures": 1
+        },
+        {
+          "name": "output_blocks.5.2.transformer_blocks.0.ff.net.2",
+          "shape": [
+            2560,
+            1280,
+            5120
+          ],
+          "captures": 1
+        }
+      ],
+      "owner_count": 12,
+      "window": [
+        10,
+        40
+      ],
+      "interval": 2,
+      "stages": [
+        "world"
+      ],
+      "persistent_cache_bytes": 963379200,
+      "invalidations": {
+        "new_world_generation": 11
+      },
+      "fresh_current_inputs_bias_and_residual": true,
+      "cached_prebias_product_only": true,
+      "weight_low_nonzero_falls_back": true,
+      "master_changes_require_graph_rebuild": true,
+      "condition_and_generation_invalidation": true,
+      "sampler_step_count_reduced": false,
+      "round_count_reduced": false,
+      "no_native_argument_inspection": true,
+      "no_weights_or_features_exported": true,
+      "full_video_PSNR_required": true,
+      "official_adopted": false
+    },
+    "benchmark_exit_code": 1,
+    "run_directory": "/run/lock/team07-delta-actual-m0qnlhze/diagnostic/attempt-1/run",
+    "official_adopted": false,
+    "single_GPU": true,
+    "full_video_PSNR_required": true,
+    "quality_passed": false
+  }
+}
