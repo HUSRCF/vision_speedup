@@ -63,6 +63,8 @@ def verify():
             else:
                 assert reuse['protected_spatial_only']and len(reuse['protected_owners'])==7
                 assert all(not o['name'].startswith('middle_block.')and '.1.transformer_blocks.'in o['name']for o in reuse['owners'])
+                assert not row['psnr_passed']and row['psnr_db']==24.700666489339852
+                assert reuse['persistent_cache_bytes']==458752000
         else:
             policy=metadata['feature_policy'];assert len(reuse['selected_blocks'])==(16 if policy['scope']=='spatial'else 12-policy['input_start']+1+policy['output_end'])
             assert reuse['counts']['world_reuse']==180 and reuse['graph_count']==2+len(policy['stages'])

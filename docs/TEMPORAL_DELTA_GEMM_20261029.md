@@ -47,3 +47,5 @@ world中当前所有网络计算仍需进行；此方法只可能减少个别线
 下一步应定位需要保护的层级／阶段，或改进差量的近似精度，再重新验证完整质量与进程净收益。当前没有与225双卡结合，没有新的103视频汇总，也没有替换本机GPU双文件。不能因为只差约0.17dB就视为通过。
 
 [冻结代码](../experiments/temporal-delta-gemm)与[原始标量结果／遥测](../results/aggressive-20261029/temporal-delta-gemm)保留三轮结果，包括负收益行。`python3 reproduce/verify_temporal_delta_gemm.py` 核对哈希与证据范围。
+
+后续5个空间owner保护版也完成：320.733691秒／24.700666489dB，7个时间／middle owner保留原路，完整11轮／23视频及全程guard通过，但质量失败。它没有与225双卡组合，没有修改正式材料。
