@@ -1,0 +1,142 @@
+{
+  "cases": {
+    "z1": {
+      "baseline": {
+        "process_wall_s": 151.859141,
+        "model_to_gpu_s": 3.514885,
+        "psnr_db": 46.553398187472595,
+        "GPUs": 2
+      },
+      "candidate": {
+        "process_wall_s": 151.324568,
+        "model_to_gpu_s": 3.018551,
+        "psnr_db": 46.553398187472595,
+        "GPUs": 2
+      },
+      "saved_s": 0.534573
+    },
+    "dual": {
+      "baseline": {
+        "process_wall_s": 96.122203,
+        "model_to_gpu_s": 3.554692,
+        "psnr_db": 31.97220677605095,
+        "GPUs": 2
+      },
+      "candidate": {
+        "process_wall_s": 95.335225,
+        "model_to_gpu_s": 3.127723,
+        "psnr_db": 31.97220677605095,
+        "GPUs": 2
+      },
+      "saved_s": 0.786978
+    },
+    "pencils": {
+      "baseline": {
+        "process_wall_s": 106.959295,
+        "model_to_gpu_s": 4.071061,
+        "psnr_db": 34.88192688831743,
+        "GPUs": 2
+      },
+      "candidate": {
+        "process_wall_s": 106.836203,
+        "model_to_gpu_s": 2.731938,
+        "psnr_db": 34.88192688831743,
+        "GPUs": 2
+      },
+      "saved_s": 0.123092
+    }
+  },
+  "telemetry": {
+    "z1_baseline": {
+      "0": {
+        "observations": 241,
+        "peak_temperature_C": 60,
+        "busy_sm_clock_MHz_median": 1410.0,
+        "peak_memory_MiB": 29234
+      },
+      "1": {
+        "observations": 241,
+        "peak_temperature_C": 71,
+        "busy_sm_clock_MHz_median": 1380,
+        "peak_memory_MiB": 29234
+      }
+    },
+    "z1_candidate": {
+      "0": {
+        "observations": 241,
+        "peak_temperature_C": 60,
+        "busy_sm_clock_MHz_median": 1410.0,
+        "peak_memory_MiB": 31060
+      },
+      "1": {
+        "observations": 241,
+        "peak_temperature_C": 72,
+        "busy_sm_clock_MHz_median": 1380,
+        "peak_memory_MiB": 31060
+      }
+    },
+    "dual_baseline": {
+      "2": {
+        "observations": 145,
+        "peak_temperature_C": 71,
+        "busy_sm_clock_MHz_median": 1380,
+        "peak_memory_MiB": 29234
+      },
+      "3": {
+        "observations": 145,
+        "peak_temperature_C": 57,
+        "busy_sm_clock_MHz_median": 1395,
+        "peak_memory_MiB": 29234
+      }
+    },
+    "dual_candidate": {
+      "2": {
+        "observations": 142,
+        "peak_temperature_C": 69,
+        "busy_sm_clock_MHz_median": 1380,
+        "peak_memory_MiB": 31060
+      },
+      "3": {
+        "observations": 142,
+        "peak_temperature_C": 56,
+        "busy_sm_clock_MHz_median": 1395,
+        "peak_memory_MiB": 31060
+      }
+    },
+    "pencils_baseline": {
+      "0": {
+        "observations": 160,
+        "peak_temperature_C": 60,
+        "busy_sm_clock_MHz_median": 1395.0,
+        "peak_memory_MiB": 29234
+      },
+      "1": {
+        "observations": 160,
+        "peak_temperature_C": 72,
+        "busy_sm_clock_MHz_median": 1380.0,
+        "peak_memory_MiB": 29234
+      }
+    },
+    "pencils_candidate": {
+      "0": {
+        "observations": 158,
+        "peak_temperature_C": 58,
+        "busy_sm_clock_MHz_median": 1410.0,
+        "peak_memory_MiB": 31060
+      },
+      "1": {
+        "observations": 158,
+        "peak_temperature_C": 68,
+        "busy_sm_clock_MHz_median": 1380,
+        "peak_memory_MiB": 31060
+      }
+    }
+  },
+  "one_complete_pair_per_case": true,
+  "repeated_full_process_pairs": false,
+  "all57_output_video_SHA256_equal_original": true,
+  "all_steps_and_rounds_preserved": true,
+  "official_adopted": false,
+  "reason": "Small single-pair gains only;dual and pencils candidates are slower than their retained historical formal cases. No fresh official103 assembly or local pair replacement.",
+  "current_formal_five_case_sum_s": 765.731042
+}
