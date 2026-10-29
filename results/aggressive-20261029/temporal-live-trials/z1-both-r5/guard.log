@@ -1,0 +1,12 @@
+SINGLE_TMP_ATTEMPT=1
+FOREIGN_CONTEXT_ATTEMPT_EXCLUDED=1
+WAIT_IDLE_GPU=3
+SINGLE_TMP_ATTEMPT=2
+FOREIGN_CONTEXT_ATTEMPT_EXCLUDED=2
+WAIT_IDLE_GPU=3
+Traceback (most recent call last):
+  File "/run/lock/team07-nonv2-crossstep61-ri8za0fl/diagnostic/guard_crossstep211.py", line 124, in <module>
+    if __name__=='__main__':main()
+  File "/run/lock/team07-nonv2-crossstep61-ri8za0fl/diagnostic/guard_crossstep211.py", line 106, in main
+    assert time.monotonic()<deadline,'No idle GPU window'
+AssertionError: No idle GPU window

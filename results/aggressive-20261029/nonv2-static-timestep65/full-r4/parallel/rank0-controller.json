@@ -1,0 +1,3536 @@
+{
+  "controller": {
+    "captured": 132,
+    "rows": [
+      {
+        "module": "init_attn.0.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          512
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 20.0,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.1.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.1.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.2.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.2.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.4.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.4.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.5.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.5.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.7.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.7.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.8.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.8.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "middle_block.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          40,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 0.78125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "middle_block.2.transformer_blocks.0",
+        "input_shape": [
+          40,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 0.78125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.3.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.3.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.4.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.4.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.5.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.5.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.6.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.6.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.7.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.7.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.8.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.8.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.9.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.9.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.10.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.10.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.11.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.11.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "init_attn.0.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          512
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 20.0,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.1.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.1.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.2.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.2.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.4.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.4.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.5.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.5.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.7.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.7.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.8.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.8.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "middle_block.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          40,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 0.78125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "middle_block.2.transformer_blocks.0",
+        "input_shape": [
+          40,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 0.78125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.3.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.3.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.4.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.4.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.5.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.5.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.6.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.6.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.7.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.7.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.8.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.8.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.9.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.9.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.10.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.10.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.11.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.11.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "init_attn.0.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          512
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 20.0,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.1.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.1.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.2.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.2.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.4.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.4.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.5.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.5.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.7.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.7.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.8.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.8.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "middle_block.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          40,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 0.78125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "middle_block.2.transformer_blocks.0",
+        "input_shape": [
+          40,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 0.78125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.3.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.3.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.4.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.4.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.5.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.5.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.6.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.6.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.7.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.7.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.8.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.8.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.9.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.9.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.10.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.10.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.11.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.11.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "init_attn.0.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          512
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 20.0,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.1.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.1.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.2.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.2.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.4.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.4.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.5.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.5.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.7.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.7.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.8.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "input_blocks.8.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "middle_block.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          40,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 0.78125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "middle_block.2.transformer_blocks.0",
+        "input_shape": [
+          40,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 0.78125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.3.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.3.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.4.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.4.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.5.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.5.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 3.125,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.6.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.6.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.7.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.7.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.8.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.8.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 6.25,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.9.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.9.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.10.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.10.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.11.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "spatial_inner_block",
+        "original_global_frame_action_mask": true,
+        "condition_cache_banked_per_mode": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      },
+      {
+        "module": "output_blocks.11.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "dtype": "torch.float16",
+        "rank": 0,
+        "collectives": 1,
+        "local_output_MiB": 12.5,
+        "scope": "temporal_inner_block",
+        "full16_time_steps": true,
+        "full5D_GroupNorm_outside_shard": true,
+        "original_block_forward_and_Half_master_storage": true,
+        "additional_collectives": 0
+      }
+    ],
+    "original_nonv2_FP16_math_policy": true,
+    "norms_attention_masks_and_sampling_unchanged": true,
+    "one_output_gather_per_FFN": true,
+    "original_FFN_versioned_weight_owners_retained": true,
+    "GEMM_dispatch_and_numerics_require_measurement": true,
+    "full_video_PSNR_unverified": true,
+    "temporal_blocks": 17,
+    "spatial_FFNs": 0,
+    "temporal_block_captured": 68,
+    "same33_collectives_as_FFN_only": true,
+    "full5D_GroupNorm_and_boundary_projections_outside_shard": true,
+    "temporal_QKV_attention_norm_residual_FFN_sharded": true,
+    "baseline_is_original59_nonv2_FP16": true,
+    "spatial_blocks": 16,
+    "spatial_block_captured": 64,
+    "global_action_mask_preserved": true,
+    "condition_caches_banked": true,
+    "mix_uses_original_warm_specialization_with_whole_local_tile_grid": true
+  },
+  "stage_captures": {
+    "decision": 66,
+    "world": 66
+  },
+  "graph_role_modules": {
+    "decision_fill": [
+      "init_attn.0.transformer_blocks.0",
+      "input_blocks.1.1.transformer_blocks.0",
+      "input_blocks.1.2.transformer_blocks.0",
+      "input_blocks.2.1.transformer_blocks.0",
+      "input_blocks.2.2.transformer_blocks.0",
+      "input_blocks.4.1.transformer_blocks.0",
+      "input_blocks.4.2.transformer_blocks.0",
+      "input_blocks.5.1.transformer_blocks.0",
+      "input_blocks.5.2.transformer_blocks.0",
+      "input_blocks.7.1.transformer_blocks.0",
+      "input_blocks.7.2.transformer_blocks.0",
+      "input_blocks.8.1.transformer_blocks.0",
+      "input_blocks.8.2.transformer_blocks.0",
+      "middle_block.1.transformer_blocks.0",
+      "middle_block.2.transformer_blocks.0",
+      "output_blocks.10.1.transformer_blocks.0",
+      "output_blocks.10.2.transformer_blocks.0",
+      "output_blocks.11.1.transformer_blocks.0",
+      "output_blocks.11.2.transformer_blocks.0",
+      "output_blocks.3.1.transformer_blocks.0",
+      "output_blocks.3.2.transformer_blocks.0",
+      "output_blocks.4.1.transformer_blocks.0",
+      "output_blocks.4.2.transformer_blocks.0",
+      "output_blocks.5.1.transformer_blocks.0",
+      "output_blocks.5.2.transformer_blocks.0",
+      "output_blocks.6.1.transformer_blocks.0",
+      "output_blocks.6.2.transformer_blocks.0",
+      "output_blocks.7.1.transformer_blocks.0",
+      "output_blocks.7.2.transformer_blocks.0",
+      "output_blocks.8.1.transformer_blocks.0",
+      "output_blocks.8.2.transformer_blocks.0",
+      "output_blocks.9.1.transformer_blocks.0",
+      "output_blocks.9.2.transformer_blocks.0"
+    ],
+    "world_fill": [
+      "init_attn.0.transformer_blocks.0",
+      "input_blocks.1.1.transformer_blocks.0",
+      "input_blocks.1.2.transformer_blocks.0",
+      "input_blocks.2.1.transformer_blocks.0",
+      "input_blocks.2.2.transformer_blocks.0",
+      "input_blocks.4.1.transformer_blocks.0",
+      "input_blocks.4.2.transformer_blocks.0",
+      "input_blocks.5.1.transformer_blocks.0",
+      "input_blocks.5.2.transformer_blocks.0",
+      "input_blocks.7.1.transformer_blocks.0",
+      "input_blocks.7.2.transformer_blocks.0",
+      "input_blocks.8.1.transformer_blocks.0",
+      "input_blocks.8.2.transformer_blocks.0",
+      "middle_block.1.transformer_blocks.0",
+      "middle_block.2.transformer_blocks.0",
+      "output_blocks.10.1.transformer_blocks.0",
+      "output_blocks.10.2.transformer_blocks.0",
+      "output_blocks.11.1.transformer_blocks.0",
+      "output_blocks.11.2.transformer_blocks.0",
+      "output_blocks.3.1.transformer_blocks.0",
+      "output_blocks.3.2.transformer_blocks.0",
+      "output_blocks.4.1.transformer_blocks.0",
+      "output_blocks.4.2.transformer_blocks.0",
+      "output_blocks.5.1.transformer_blocks.0",
+      "output_blocks.5.2.transformer_blocks.0",
+      "output_blocks.6.1.transformer_blocks.0",
+      "output_blocks.6.2.transformer_blocks.0",
+      "output_blocks.7.1.transformer_blocks.0",
+      "output_blocks.7.2.transformer_blocks.0",
+      "output_blocks.8.1.transformer_blocks.0",
+      "output_blocks.8.2.transformer_blocks.0",
+      "output_blocks.9.1.transformer_blocks.0",
+      "output_blocks.9.2.transformer_blocks.0"
+    ],
+    "decision_read": [
+      "init_attn.0.transformer_blocks.0",
+      "input_blocks.1.1.transformer_blocks.0",
+      "input_blocks.1.2.transformer_blocks.0",
+      "input_blocks.2.1.transformer_blocks.0",
+      "input_blocks.2.2.transformer_blocks.0",
+      "input_blocks.4.1.transformer_blocks.0",
+      "input_blocks.4.2.transformer_blocks.0",
+      "input_blocks.5.1.transformer_blocks.0",
+      "input_blocks.5.2.transformer_blocks.0",
+      "input_blocks.7.1.transformer_blocks.0",
+      "input_blocks.7.2.transformer_blocks.0",
+      "input_blocks.8.1.transformer_blocks.0",
+      "input_blocks.8.2.transformer_blocks.0",
+      "middle_block.1.transformer_blocks.0",
+      "middle_block.2.transformer_blocks.0",
+      "output_blocks.10.1.transformer_blocks.0",
+      "output_blocks.10.2.transformer_blocks.0",
+      "output_blocks.11.1.transformer_blocks.0",
+      "output_blocks.11.2.transformer_blocks.0",
+      "output_blocks.3.1.transformer_blocks.0",
+      "output_blocks.3.2.transformer_blocks.0",
+      "output_blocks.4.1.transformer_blocks.0",
+      "output_blocks.4.2.transformer_blocks.0",
+      "output_blocks.5.1.transformer_blocks.0",
+      "output_blocks.5.2.transformer_blocks.0",
+      "output_blocks.6.1.transformer_blocks.0",
+      "output_blocks.6.2.transformer_blocks.0",
+      "output_blocks.7.1.transformer_blocks.0",
+      "output_blocks.7.2.transformer_blocks.0",
+      "output_blocks.8.1.transformer_blocks.0",
+      "output_blocks.8.2.transformer_blocks.0",
+      "output_blocks.9.1.transformer_blocks.0",
+      "output_blocks.9.2.transformer_blocks.0"
+    ],
+    "world_read": [
+      "init_attn.0.transformer_blocks.0",
+      "input_blocks.1.1.transformer_blocks.0",
+      "input_blocks.1.2.transformer_blocks.0",
+      "input_blocks.2.1.transformer_blocks.0",
+      "input_blocks.2.2.transformer_blocks.0",
+      "input_blocks.4.1.transformer_blocks.0",
+      "input_blocks.4.2.transformer_blocks.0",
+      "input_blocks.5.1.transformer_blocks.0",
+      "input_blocks.5.2.transformer_blocks.0",
+      "input_blocks.7.1.transformer_blocks.0",
+      "input_blocks.7.2.transformer_blocks.0",
+      "input_blocks.8.1.transformer_blocks.0",
+      "input_blocks.8.2.transformer_blocks.0",
+      "middle_block.1.transformer_blocks.0",
+      "middle_block.2.transformer_blocks.0",
+      "output_blocks.10.1.transformer_blocks.0",
+      "output_blocks.10.2.transformer_blocks.0",
+      "output_blocks.11.1.transformer_blocks.0",
+      "output_blocks.11.2.transformer_blocks.0",
+      "output_blocks.3.1.transformer_blocks.0",
+      "output_blocks.3.2.transformer_blocks.0",
+      "output_blocks.4.1.transformer_blocks.0",
+      "output_blocks.4.2.transformer_blocks.0",
+      "output_blocks.5.1.transformer_blocks.0",
+      "output_blocks.5.2.transformer_blocks.0",
+      "output_blocks.6.1.transformer_blocks.0",
+      "output_blocks.6.2.transformer_blocks.0",
+      "output_blocks.7.1.transformer_blocks.0",
+      "output_blocks.7.2.transformer_blocks.0",
+      "output_blocks.8.1.transformer_blocks.0",
+      "output_blocks.8.2.transformer_blocks.0",
+      "output_blocks.9.1.transformer_blocks.0",
+      "output_blocks.9.2.transformer_blocks.0"
+    ]
+  },
+  "feature_reuse": {
+    "exact_static_timestep_cache": true,
+    "modules": [
+      "time_embed",
+      "fps_embedding",
+      "input_blocks.1.0.emb_layers",
+      "input_blocks.2.0.emb_layers",
+      "input_blocks.4.0.emb_layers",
+      "input_blocks.5.0.emb_layers",
+      "input_blocks.7.0.emb_layers",
+      "input_blocks.8.0.emb_layers",
+      "input_blocks.10.0.emb_layers",
+      "input_blocks.11.0.emb_layers",
+      "middle_block.0.emb_layers",
+      "middle_block.3.emb_layers",
+      "output_blocks.0.0.emb_layers",
+      "output_blocks.1.0.emb_layers",
+      "output_blocks.2.0.emb_layers",
+      "output_blocks.3.0.emb_layers",
+      "output_blocks.4.0.emb_layers",
+      "output_blocks.5.0.emb_layers",
+      "output_blocks.6.0.emb_layers",
+      "output_blocks.7.0.emb_layers",
+      "output_blocks.8.0.emb_layers",
+      "output_blocks.9.0.emb_layers",
+      "output_blocks.10.0.emb_layers",
+      "output_blocks.11.0.emb_layers"
+    ],
+    "counts": {
+      "decision_calls": 600,
+      "decision_fill": 50,
+      "world_calls": 600,
+      "world_fill": 50,
+      "decision_read": 550,
+      "world_read": 550
+    },
+    "completed_generations": [
+      {
+        "stage": "decision",
+        "generation": 0,
+        "steps": 50,
+        "read": false
+      },
+      {
+        "stage": "world",
+        "generation": 0,
+        "steps": 50,
+        "read": false
+      },
+      {
+        "stage": "decision",
+        "generation": 1,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 1,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 2,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 2,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 3,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 3,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 4,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 4,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 5,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 5,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 6,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 6,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 7,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 7,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 8,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 8,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 9,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 9,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 10,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 10,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 11,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 11,
+        "steps": 50,
+        "read": true
+      }
+    ],
+    "persistent_bytes": 65024000,
+    "capture_rows": [
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "time_embed",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "fps_embedding",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "middle_block.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "middle_block.3.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.0.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.3.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.6.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.9.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "time_embed",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "fps_embedding",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "middle_block.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "middle_block.3.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.0.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.3.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.6.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.9.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "time_embed",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "fps_embedding",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "middle_block.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "middle_block.3.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.0.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.3.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.6.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.9.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "time_embed",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "fps_embedding",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "middle_block.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "middle_block.3.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.0.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.3.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.6.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.9.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      }
+    ],
+    "sampler_steps_reduced": false,
+    "rounds_reduced": false,
+    "dynamic_features_cached": false,
+    "master_schedule_fs_backend_changes_rejected": true,
+    "precision_changed": false,
+    "stages": [
+      "decision",
+      "world"
+    ],
+    "graph_count": 4,
+    "graph_roles": [
+      [
+        "decision",
+        false
+      ],
+      [
+        "world",
+        false
+      ],
+      [
+        "decision",
+        true
+      ],
+      [
+        "world",
+        true
+      ]
+    ],
+    "parallel_executor_preserved": true,
+    "full_and_read_share_per_stage_pool": true,
+    "graph_copy_selfcheck": {
+      "passed": true,
+      "bitwise_graph_copy_slots": 100,
+      "dtypes": [
+        "float16",
+        "float32"
+      ],
+      "includes_signedzero_infinity_NaN": true
+    }
+  }
+}

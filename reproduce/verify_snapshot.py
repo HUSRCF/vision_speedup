@@ -11,15 +11,15 @@ def main():
     assert set(manifest)=={str(p.relative_to(code)) for p in (code/'src').rglob('*.py')}
     for name,digest in manifest.items():assert sha(code/name)==digest,name
     assert sha(code/'src/unifolm_wma/utils/native-graph-handles/team07_cuda_graph_handles.so')=='ab2f19b88cb9af02b42fb5fdcb39da49e062346fd30794be45fb81e12cb1b927'
-    assert sha(root/'results/runtime.log')=='57589eec7009e2f7f9a1ea4a40f1f51ba3620b2de9b1dd0f202ae531875d6e48'
-    assert sha(root/'results/result.json')=='8bef735f6f241200e0e13ef562f177d2c2dc7df9a162c98cabc87e6212cbf3fc'
+    assert sha(root/'results/runtime.log')=='6ce16dcf27c877463c1695b1102ada13a227a37684a248a7df2133bea54d2626'
+    assert sha(root/'results/result.json')=='57fe6277fcd9eaaf0584d62c1811b7de452de63c41dd4c1f6451429c79a4485e'
     history=root/'results/history/official-before-g1-native68'
     assert sha(history/'runtime.log')=='ceeead88c2b68307c155793c17cb249b8d5333e9a3231c1aaac5a999a1b36e54'
     assert sha(history/'result.json')=='464f499a003c971b0fac3e3497310ea339ae124f705de94ddabd0ca813682e2b'
     result=json.loads((root/'results/result.json').read_text());assert result['status']=='accepted'
     cases=result['cases'];assert len(cases)==5 and sum(c['videos'] for c in cases)==103
     assert [c['rounds'] for c in cases]==[12,7,11,8,11]
-    assert abs(sum(c['process_wall_s'] for c in cases)-765.731042)<1e-6
+    assert abs(sum(c['process_wall_s'] for c in cases)-764.366152)<1e-6
     log=(root/'results/runtime.log').read_text()
     timings=re.findall(r'^TIMING case=(\S+) process_wall_s=([0-9.]+)$',log,re.M)
     assert len(timings)==5 and len({case for case,_ in timings})==5
@@ -62,7 +62,7 @@ def main():
             selected=other63['cases'][row['case']]
             assert row['process_wall_s']==selected['current_s']and row['psnr_db']==selected['psnr_db']
         elif row['case']=='unitree_z1_stackbox':
-            blocks=json.loads((root/'experiments/nonv2-all-blocks59/accepted-outcome.json').read_text())
+            blocks=json.loads((root/'experiments/nonv2-crossstep65/accepted-outcome.json').read_text())
             assert blocks['official_adopted']and row['process_wall_s']==blocks['Z1_s']and row['psnr_db']==blocks['PSNR_dB']
         elif row['case']=='unitree_g1_pack_camera':
             current_g1=json.loads((root/'experiments/half-native-shared68/accepted-outcome.json').read_text())
@@ -279,6 +279,8 @@ def main():
     verify_temporal_live()
     from verify_nonv2_crossstep65 import verify as verify_temporal_dual
     verify_temporal_dual()
-    print('Verified: V2 CO225;63 Z1/dual/pencils;68 G1;all five dual GPU;fresh official103 log/JSON.')
+    from verify_static_timestep65 import verify as verify_static_time
+    verify_static_time()
+    print('Verified: V2 CO225;65 temporal-reuse Z1;63 dual/pencils;68 G1;all five dual GPU;fresh official103 log/JSON.')
 
 if __name__=='__main__':main()

@@ -81,7 +81,7 @@ def verify_adoption(root):
     result=load(official/'result.json');assert result==load(historical/'result.json')and result['status']=='accepted'and result['psnr_validation']['video_count']==103
     case=next(r for r in result['cases']if r['case']=='unitree_z1_stackbox')
     assert case['process_wall_s']==outcome['Z1_s']and case['psnr_db']==outcome['PSNR_dB']and case['psnr_passed']
-    current=next(r for r in load(root/'results/result.json')['cases']if r['case']=='unitree_z1_stackbox')
+    current=next(r for r in load(root/'results/history/official-before-crossstep65/result.json')['cases']if r['case']=='unitree_z1_stackbox')
     assert current['process_wall_s']==case['process_wall_s']and current['psnr_db']==case['psnr_db']and current['psnr_passed']
     links=load(official/'immutable-video-links.json');assert links['count']==103 and all(links[k]for k in('ordinary_files','original_outputs_unchanged','selected25_from_new_timed_run','other78_SHA_equal_prior_accepted','no_GPU_rerun_or_timer_rewrite'))
     before=root/'results/history/official222-z1-fused-before-blocks63'

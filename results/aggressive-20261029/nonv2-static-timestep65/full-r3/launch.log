@@ -1,0 +1,66 @@
+NCCL_FULL_ATTEMPT=/var/tmp/team07-nonv2-static-time65-skdcftuy/diagnostic/attempt-1
+WAIT_GPU_PAIR=1,2
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-static-time65-skdcftuy/diagnostic/wait_nccl_full209.py", line 108, in <module>
+    if __name__=='__main__':main()
+  File "/var/tmp/team07-nonv2-static-time65-skdcftuy/diagnostic/wait_nccl_full209.py", line 83, in main
+    assert (parallel/'parallel-complete.json').is_file(),(workspace/'benchmark.log').read_text()[-5000:]
+AssertionError: -time65-skdcftuy/source/src/unifolm_wma/modules/networks/wma_model.py", line 956, in forward
+[rank0]:     h = self.init_attn(h, emb, context=context, batch_size=b)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-skdcftuy/source/src/unifolm_wma/modules/networks/wma_model.py", line 61, in forward
+[rank0]:     x = layer(x, context)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-skdcftuy/source/src/unifolm_wma/modules/attention.py", line 857, in forward
+[rank0]:     x = block(x, mask=mask)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-skdcftuy/source/src/unifolm_wma/utils/nonv2_temporal_block59_mode.py", line 51, in forward
+[rank0]:     result=temporal_inference(value,self.rank,_before,dist.all_gather_into_tensor,mask)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-skdcftuy/source/src/unifolm_wma/utils/nonv2_temporal_block59_mode.py", line 18, in temporal_inference
+[rank0]:     local=forward(value[rows],context=None,mask=local_mask)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-skdcftuy/source/src/unifolm_wma/modules/attention.py", line 626, in forward
+[rank0]:     return checkpoint(self._forward, input_tuple, self.parameters(),
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-skdcftuy/source/src/unifolm_wma/utils/common.py", line 111, in checkpoint
+[rank0]:     return func(*inputs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-skdcftuy/source/src/unifolm_wma/modules/attention.py", line 637, in _forward
+[rank0]:     return self.ff(normalized) + x
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-skdcftuy/source/src/unifolm_wma/utils/nonv2_temporal_block59_mode.py", line 41, in local_ffn
+[rank0]:     with base.candidate_cache(self.rank):return _forward(value)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/contextlib.py", line 135, in __enter__
+[rank0]:     return next(self.gen)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-skdcftuy/source/src/unifolm_wma/utils/nonv2_ffn59_mode.py", line 19, in candidate_cache
+[rank0]:     assert 'TRITON_CACHE_MANAGER' not in os.environ
+[rank0]: AssertionError
+CASE_EXECUTION_FAILED case=unitree_z1_stackbox exit_code=1
+PSNR case=unitree_z1_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_stackbox reason=No MP4 videos in /var/tmp/team07-nonv2-all-blocks63-rank0-output-_i3b6nv6/unitree_z1_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-_i3b6nv6/unitree_z1_dual_arm_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox_v2 psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox_v2 reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-_i3b6nv6/unitree_z1_dual_arm_stackbox_v2
+PSNR case=unitree_z1_dual_arm_cleanup_pencils psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_cleanup_pencils reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-_i3b6nv6/unitree_z1_dual_arm_cleanup_pencils
+PSNR case=unitree_g1_pack_camera psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_g1_pack_camera reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-_i3b6nv6/unitree_g1_pack_camera
+PSNR_FAILED: Every case must be strictly greater than 25 dB
+RESULT_JSON=/var/tmp/team07-nonv2-static-time65-skdcftuy/diagnostic/runs/20261029T090107Z-case-v2-nccl-830546/result.json
+FAILED: Incomplete case profiles
+
+
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-static-time65-skdcftuy/diagnostic/retry_nccl_full221.py", line 15, in <module>
+    raise RuntimeError('Timed evaluator failed; retained '+str(attempt))
+RuntimeError: Timed evaluator failed; retained /var/tmp/team07-nonv2-static-time65-skdcftuy/diagnostic/attempt-1

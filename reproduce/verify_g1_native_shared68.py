@@ -81,13 +81,14 @@ def verify():
     public=load(evidence/'public-repro-cpu-r1/summary.json')
     assert public['passed']and public['no_GPU_execution']and public['source_count']==68 and public['exact_timed_manifest_and_assets']
     assert public['public_script_SHA256']==hashlib.sha256((repo/'reproduce/run_g1_native_shared68.py').read_bytes()).hexdigest()
-    accepted=load(code/'accepted-outcome.json');formal=load(repo/'results/result.json');fresh=load(evidence/'official103/validated/result.json')
+    accepted=load(code/'accepted-outcome.json');formal=load(repo/'results/history/official-before-crossstep65/result.json');fresh=load(evidence/'official103/validated/result.json')
     assert accepted['official_adopted']and accepted['official103_accepted']and accepted['official_video_count']==103 and accepted['GPUs']==2
     assert accepted['G1_s']==155.314304 and accepted['case_sum_s']==765.731042 and accepted['formal_saved_s']==5.583233
     assert fresh==formal and fresh['status']=='accepted'and fresh['psnr_validation']['video_count']==103 and fresh['psnr_validation']['psnr_ok']
     for name,digest in accepted['pair_hashes'].items():
-        assert hashlib.sha256((repo/'results'/name).read_bytes()).hexdigest()==digest
-        assert (repo/'results'/name).read_bytes()==(evidence/'official103/validated'/name).read_bytes()
+        assert hashlib.sha256((repo/'results/history/official-before-crossstep65'/name).read_bytes()).hexdigest()==digest
+        assert (repo/'results/history/official-before-crossstep65'/name).read_bytes()==(evidence/'official103/validated'/name).read_bytes()
+    current=load(repo/'results/result.json');assert next(c for c in current['cases']if c['case']=='unitree_g1_pack_camera')==next(c for c in formal['cases']if c['case']=='unitree_g1_pack_camera')
     copies=load(evidence/'official103/validated/immutable-video-copies.json')
     assert copies['count']==103 and copies['ordinary_files']and copies['original_outputs_unchanged']
     print('Adopted G1 shared68: exact transport,standard device lifecycle,two positive complete comparisons,unchanged23 videos,fresh official103 verified.')

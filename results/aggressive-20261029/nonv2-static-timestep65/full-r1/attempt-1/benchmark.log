@@ -1,0 +1,129 @@
+SELECTED_CASE=unitree_z1_stackbox; other cases are absent from this run
+You are offline and the cache for model files in Transformers v4.22.0 has been updated while your local cache seems to be the one of a previous version. It is very likely that all your calls to any `from_pretrained()` method will fail. Remove the offline mode and enable internet connection to have your cache be updated automatically, then you can go back to offline mode.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). You should set the environment variable TRANSFORMERS_CACHE to a writable directory.
+Global seed set to 123
+[W Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function getCvarInt)
+NCCL_PARALLEL_INITIALIZED {"rank": 0, "GPUs": 2, "policy": "nonv2-all-blocks", "all_setup_inside_original_process_timer": true}
+INFERENCE_MATH requested=selective-tf32 effective=tf32 case=unitree_z1_stackbox cudnn_tf32=True matmul_tf32=True cudnn_benchmark=False cudnn_benchmark_limit=10
+STAGE_TF32 requested=decision-cudnn effective=none case=unitree_z1_stackbox ddim_prefix_steps=0
+STAGE_CUDNN_BENCHMARK requested=simulation effective=none case=unitree_z1_stackbox
+TENSORBOARD_VIDEO enabled=false
+ASYNC_VIDEO enabled=true
+STREAM_FULL_VIDEO enabled=true
+DDIM_SCHEDULE_CACHE enabled=true
+SKIP_UNUSED_ACTION_PROJECTION enabled=true
+BATCH_DECISION_DECODE requested=selective enabled=true
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). Please, ensure the directory exists and can be written to.
+AE working on z of shape (1, 4, 32, 32) = 4096 dimensions.
+PARAMETER_INITIALIZATION skipped=true
+META_INITIALIZATION enabled=true
+CHECKPOINT_LOAD mmap=true assign=true
+>>> model checkpoint loaded.
+>>> Load pre-trained model ...
+UNINITIALIZED_MEMORY_FILL enabled=false deterministic_algorithms=true
+FP32_DDIM_VIDEO requested=0
+FP32_FEEDBACK_HEADS requested=0 protected_modules=0
+FULL_DENOISER_FP16 requested=non-v2 enabled=true
+FULL_DENOISER_NORM_DTYPE requested=fp16 modules=45
+DENOISER_MODE requested=native case=unitree_z1_stackbox wrapped={}
+TF32X3_LINEARS requested=0 convolutions=false wrapped={}
+FUSED_SELF_QKV requested=0 enabled=false modules=66
+CROSS_ATTENTION_IMPL requested=xformers effective=xformers modules=66
+ATTENTION_LAYOUT requested=bmhk modules=66
+FUSED_ATTENTION_MIX requested=1 modules=66
+ATTENTION_DTYPE requested=fp16 effective=float16 modules=66
+ATTENTION_PROJECTION_DTYPE requested=fp16 effective=float16 modules=66
+FFN_DTYPE requested=fp32 modules=33
+FUSED_GEGLU requested=1 modules=33
+FUSED_RESBLOCK_NORM requested=0 enabled=false modules=22
+TEMPORAL_CONV_DTYPE requested=fp32 enabled=false modules=0
+TEMPORAL_CONV_IMPL requested=native modules=0
+FRAMEWISE_TEMPORAL_NORM requested=0 enabled=false modules=22
+FUSED_TEMPORAL_NORM requested=0 enabled=false modules=22
+CHANNELS_LAST requested=0 enabled=false transformers=0
+FUSED_TEMPORAL_ATTENTION requested=1
+FUSED_RESIDUAL_NORM requested=1 modules=33
+TEMPORAL_LAYOUT_DIRECT requested=1 modules=17
+SPLIT_GROUP_NORM requested=1 modules=133
+SPLIT_TRANSFORMER_NORM requested=1 modules=33
+SIM_HEAD_CONV1D requested=native modules=37
+FIXED_CAST_CACHE requested=1
+CONDITION_CACHE enabled=true attention_modules=66
+CUDA_GRAPH enabled=true scope=complete_denoiser cached_normalizers=2 skip_unchanged_inputs=0 max_graphs=2
+STATIC_TIMESTEP_CACHE_INSTALLED {"modules": ["time_embed", "fps_embedding", "input_blocks.1.0.emb_layers", "input_blocks.2.0.emb_layers", "input_blocks.4.0.emb_layers", "input_blocks.5.0.emb_layers", "input_blocks.7.0.emb_layers", "input_blocks.8.0.emb_layers", "input_blocks.10.0.emb_layers", "input_blocks.11.0.emb_layers", "middle_block.0.emb_layers", "middle_block.3.emb_layers", "output_blocks.0.0.emb_layers", "output_blocks.1.0.emb_layers", "output_blocks.2.0.emb_layers", "output_blocks.3.0.emb_layers", "output_blocks.4.0.emb_layers", "output_blocks.5.0.emb_layers", "output_blocks.6.0.emb_layers", "output_blocks.7.0.emb_layers", "output_blocks.8.0.emb_layers", "output_blocks.9.0.emb_layers", "output_blocks.10.0.emb_layers", "output_blocks.11.0.emb_layers"], "sampler_steps": 50, "precision_changed": false, "all_rounds_preserved": true}
+>>> Loaded 1 preprocessed input cache(s).
+>>> Generate 16 frames under each generation ...
+  0%|          | 0/12 [00:00<?, ?it/s]>>> Step 0: generating actions ...
+  0%|          | 0/12 [00:02<?, ?it/s]
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/src/unifolm_wma/utils/cuda_graph.py", line 160, in capture
+[rank0]:     outputs = self.original(*static_args, **static_kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/src/unifolm_wma/models/ddpms.py", line 1270, in apply_model
+[rank0]:     x_recon, x_action_recon, x_state_recon = self.model(
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/src/unifolm_wma/models/ddpms.py", line 2484, in forward
+[rank0]:     out = self.diffusion_model(xc,
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/src/unifolm_wma/modules/networks/wma_model.py", line 923, in forward
+[rank0]:     emb = self.time_embed(t_emb)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/src/unifolm_wma/utils/static_timestep_cache.py", line 44, in forward
+[rank0]:     table.index_copy_(0,self.index,value.unsqueeze(0))
+[rank0]: RuntimeError: CUDA error: operation not permitted when stream is capturing
+[rank0]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank0]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+[rank0]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+[rank0]: During handling of the above exception, another exception occurred:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/scripts/evaluation/world_model_interaction.py", line 1474, in <module>
+[rank0]:     run_inference(args, timing)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/scripts/evaluation/world_model_interaction.py", line 1170, in run_inference
+[rank0]:     pred_videos_0, pred_actions, _ = image_guided_synthesis_sim_mode(
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/scripts/evaluation/world_model_interaction.py", line 805, in image_guided_synthesis_sim_mode
+[rank0]:     samples, actions, states, intermedia = ddim_sampler.sample(
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/src/unifolm_wma/models/samplers/ddim.py", line 158, in sample
+[rank0]:     samples, actions, states, intermediates = self.ddim_sampling(
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/src/unifolm_wma/models/samplers/ddim.py", line 287, in ddim_sampling
+[rank0]:     outs = self.p_sample_ddim(
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/src/unifolm_wma/utils/static_timestep_runtime.py", line 76, in sample
+[rank0]:     result=parent_sampler(sampler,*args,**kwargs);active.finish_step();return result
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/src/unifolm_wma/models/samplers/ddim.py", line 372, in p_sample_ddim
+[rank0]:     model_output, model_output_action, model_output_state = self.model.apply_model(
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/src/unifolm_wma/utils/static_timestep_runtime.py", line 52, in apply
+[rank0]:     result=self.executor(*args,**kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/src/unifolm_wma/utils/nccl_nonv2_all_blocks_runtime63.py", line 152, in apply
+[rank0]:     with _mode(True):result=original(*args,**kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/src/unifolm_wma/utils/cuda_graph.py", line 103, in __call__
+[rank0]:     self.entries[key] = self.capture(args, kwargs, leaves, spec)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-_c5c45d0/source/src/unifolm_wma/utils/cuda_graph.py", line 159, in capture
+[rank0]:     with torch.cuda.graph(graph, stream=stream, pool=getattr(self, "experimental_capture_pool", None)):
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/cuda/graphs.py", line 184, in __exit__
+[rank0]:     self.cuda_graph.capture_end()
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/cuda/graphs.py", line 82, in capture_end
+[rank0]:     super().capture_end()
+[rank0]: RuntimeError: CUDA error: operation failed due to a previous error during capture
+[rank0]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank0]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+[rank0]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+

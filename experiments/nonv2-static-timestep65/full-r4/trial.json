@@ -1,0 +1,24 @@
+{
+  "source_count": 65,
+  "case": "unitree_z1_stackbox",
+  "rounds": 12,
+  "videos": 25,
+  "GPUs": 2,
+  "feature_policy": {
+    "scope": "exact_static_time_MLPs",
+    "stages": [
+      "decision",
+      "world"
+    ],
+    "sampler_steps": 50
+  },
+  "per_role_expected_gathers": {
+    "decision_fill": 33,
+    "decision_read": 33,
+    "world_fill": 33,
+    "world_read": 33
+  },
+  "official_adopted": false,
+  "exact_static_timestep_cache": true,
+  "full_video_bitwise_required": true
+}

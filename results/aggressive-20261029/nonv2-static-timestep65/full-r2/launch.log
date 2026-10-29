@@ -1,0 +1,69 @@
+NCCL_FULL_ATTEMPT=/var/tmp/team07-nonv2-static-time65-bwfpofad/diagnostic/attempt-1
+WAIT_GPU_PAIR=1,2
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-static-time65-bwfpofad/diagnostic/wait_nccl_full209.py", line 108, in <module>
+    if __name__=='__main__':main()
+  File "/var/tmp/team07-nonv2-static-time65-bwfpofad/diagnostic/wait_nccl_full209.py", line 83, in main
+    assert (parallel/'parallel-complete.json').is_file(),(workspace/'benchmark.log').read_text()[-5000:]
+AssertionError: ed=fp32 enabled=false modules=0
+TEMPORAL_CONV_IMPL requested=native modules=0
+FRAMEWISE_TEMPORAL_NORM requested=0 enabled=false modules=22
+FUSED_TEMPORAL_NORM requested=0 enabled=false modules=22
+CHANNELS_LAST requested=0 enabled=false transformers=0
+FUSED_TEMPORAL_ATTENTION requested=1
+FUSED_RESIDUAL_NORM requested=1 modules=33
+TEMPORAL_LAYOUT_DIRECT requested=1 modules=17
+SPLIT_GROUP_NORM requested=1 modules=133
+SPLIT_TRANSFORMER_NORM requested=1 modules=33
+SIM_HEAD_CONV1D requested=native modules=37
+FIXED_CAST_CACHE requested=1
+CONDITION_CACHE enabled=true attention_modules=66
+CUDA_GRAPH enabled=true scope=complete_denoiser cached_normalizers=2 skip_unchanged_inputs=0 max_graphs=2
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-bwfpofad/source/scripts/evaluation/world_model_interaction.py", line 1474, in <module>
+[rank0]:     run_inference(args, timing)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-bwfpofad/source/scripts/evaluation/world_model_interaction.py", line 1007, in run_inference
+[rank0]:     _feature_runtime.install(model)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-bwfpofad/source/src/unifolm_wma/utils/static_timestep_runtime.py", line 71, in install
+[rank0]:     assert active is None;active=Runtime(model);parent_sampler=DDIMSampler.p_sample_ddim
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-bwfpofad/source/src/unifolm_wma/utils/static_timestep_runtime.py", line 27, in __init__
+[rank0]:     self.copy_check=graph_copy_selfcheck(next(model.model.diffusion_model.parameters()).device)if next(model.model.diffusion_model.parameters()).is_cuda else None
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-bwfpofad/source/src/unifolm_wma/utils/static_timestep_cache.py", line 61, in graph_copy_selfcheck
+[rank0]:     store_slot(table,index,value);result=load_slot(table,index)
+[rank0]:   File "/var/tmp/team07-nonv2-static-time65-bwfpofad/source/src/unifolm_wma/utils/static_timestep_cache.py", line 39, in store_slot
+[rank0]:     _store_slot[(triton.cdiv(value.numel(),256),)](value,table,index,value.numel(),BLOCK=256)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 167, in <lambda>
+[rank0]:     return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 416, in run
+[rank0]:     self.cache[device][key] = compile(
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/compiler.py", line 178, in compile
+[rank0]:     so_path = backend.make_launcher_stub(src, metadata)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/backends/cuda.py", line 216, in make_launcher_stub
+[rank0]:     return make_stub(src.name, src.signature, constants, ids, enable_warp_specialization=enable_warp_specialization)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/triton/compiler/make_launcher.py", line 39, in make_stub
+[rank0]:     return so_cache_manager.put(f.read(), so_name, binary=True)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/triton/runtime/cache.py", line 124, in put
+[rank0]:     f.write(data)
+[rank0]: OSError: [Errno 28] No space left on device
+CASE_EXECUTION_FAILED case=unitree_z1_stackbox exit_code=1
+PSNR case=unitree_z1_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_stackbox reason=No MP4 videos in /var/tmp/team07-nonv2-all-blocks63-rank0-output-li7k_3i8/unitree_z1_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-li7k_3i8/unitree_z1_dual_arm_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox_v2 psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox_v2 reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-li7k_3i8/unitree_z1_dual_arm_stackbox_v2
+PSNR case=unitree_z1_dual_arm_cleanup_pencils psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_cleanup_pencils reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-li7k_3i8/unitree_z1_dual_arm_cleanup_pencils
+PSNR case=unitree_g1_pack_camera psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_g1_pack_camera reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-li7k_3i8/unitree_g1_pack_camera
+PSNR_FAILED: Every case must be strictly greater than 25 dB
+RESULT_JSON=/var/tmp/team07-nonv2-static-time65-bwfpofad/diagnostic/runs/20261029T085452Z-case-v2-nccl-822435/result.json
+FAILED: Incomplete case profiles
+
+
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-static-time65-bwfpofad/diagnostic/retry_nccl_full221.py", line 15, in <module>
+    raise RuntimeError('Timed evaluator failed; retained '+str(attempt))
+RuntimeError: Timed evaluator failed; retained /var/tmp/team07-nonv2-static-time65-bwfpofad/diagnostic/attempt-1

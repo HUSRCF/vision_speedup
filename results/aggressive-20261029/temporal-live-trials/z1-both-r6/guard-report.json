@@ -1,0 +1,236 @@
+{
+  "clean": true,
+  "GPU": "0",
+  "owned_host_contexts": [
+    4172935
+  ],
+  "observations": 436,
+  "attempt": 3,
+  "diagnostic": {
+    "diagnostic_complete": true,
+    "all_dynamic_gates_passed": true,
+    "workload_complete": true,
+    "case_result": {
+      "case": "unitree_z1_stackbox",
+      "rounds": 12,
+      "process_wall_s": 161.075708,
+      "observed_process_wall_s": 161.075708,
+      "psnr_db": 19.40262980982679,
+      "psnr_exact_match": false,
+      "psnr_passed": false,
+      "videos": 25,
+      "profile_complete": true,
+      "execution_ok": true,
+      "execution_exit_code": 0,
+      "reason": "PSNR must be strictly greater than 25 dB",
+      "pure_model_cuda_s": 150.748507
+    },
+    "crossstep": {
+      "experimental_dynamic_feature_reuse": true,
+      "interval": 2,
+      "window": [
+        10,
+        40
+      ],
+      "stages": [
+        "decision",
+        "world"
+      ],
+      "selected_blocks": [
+        "input_blocks.1.1",
+        "input_blocks.2.1",
+        "input_blocks.4.1",
+        "input_blocks.5.1",
+        "input_blocks.7.1",
+        "input_blocks.8.1",
+        "middle_block.1",
+        "output_blocks.3.1",
+        "output_blocks.4.1",
+        "output_blocks.5.1",
+        "output_blocks.6.1",
+        "output_blocks.7.1",
+        "output_blocks.8.1",
+        "output_blocks.9.1",
+        "output_blocks.10.1",
+        "output_blocks.11.1"
+      ],
+      "counts": {
+        "decision_calls": 600,
+        "decision_refresh": 420,
+        "decision_reuse": 180,
+        "world_calls": 600,
+        "world_refresh": 420,
+        "world_reuse": 180
+      },
+      "completed_generations": [
+        {
+          "stage": "decision",
+          "generation": 0,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 0,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 1,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 1,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 2,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 2,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 3,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 3,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 4,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 4,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 5,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 5,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 6,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 6,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 7,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 7,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 8,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 8,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 9,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 9,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 10,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 10,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 11,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 11,
+          "steps": 50
+        }
+      ],
+      "invalidations": {
+        "new_generation": 24
+      },
+      "persistent_feature_bytes": 462028800,
+      "eager_or_capture_block_calls": {
+        "refresh": 128,
+        "reuse": 128
+      },
+      "sampler_step_count_reduced": false,
+      "round_count_reduced": false,
+      "shallow_blocks_and_heads_live": false,
+      "no_reference_or_final_output_cache": true,
+      "full_video_PSNR_required": true,
+      "boundary_residual": false,
+      "current_boundary_input_live": false,
+      "scope": "spatial",
+      "all_convolutions_and_heads_live": true,
+      "per_module_residual": true,
+      "graph_count": 4,
+      "graph_roles": [
+        [
+          "decision",
+          false
+        ],
+        [
+          "decision",
+          true
+        ],
+        [
+          "world",
+          false
+        ],
+        [
+          "world",
+          true
+        ]
+      ],
+      "world_refresh_and_reuse_share_graph_pool": true,
+      "reuse_graph_head_filter_cache": false,
+      "reuse_graph_native_head_transforms_live": true,
+      "full_refresh_graph_head_cache_unchanged": true
+    },
+    "benchmark_exit_code": 1,
+    "run_directory": "/run/lock/team07-nonv2-crossstep61-t5pse5ie/diagnostic/attempt-3/run",
+    "official_adopted": false,
+    "single_GPU": true,
+    "full_video_PSNR_required": true,
+    "quality_passed": false
+  }
+}

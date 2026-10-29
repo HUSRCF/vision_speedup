@@ -69,11 +69,11 @@ python3 reproduce/run_v2.py --gpu 0
 
 ## 已采用的非 V2 分项
 
-Z1、双臂堆箱和清理铅笔已分别采用63文件的双卡完整内部Transformer块分片；G1保留59文件单卡快照。例如：
+当前Z1采用65文件双卡时间步复用，双臂堆箱／清理铅笔采用63文件双卡内部Transformer分片，G1采用68文件双卡时间attention与精确权重广播。对应入口：
 
 ```bash
-~/.venv/bin/python reproduce/run_z1_parallel.py --gpus 0,1 \
-  --workdir /var/tmp/team07-review-z1-63 \
+~/.venv/bin/python reproduce/run_nonv2_crossstep65.py --gpus 0,1 \
+  --workdir /var/tmp/team07-review-z1-65 \
   --storage-config /var/tmp/team07-review-storage/storage-config.json \
   --cache-dir /path/to/executable/FFN-shape-cache
 ~/.venv/bin/python reproduce/run_nonv2_parallel.py --case dual --gpus 0,1 \
@@ -84,18 +84,19 @@ Z1、双臂堆箱和清理铅笔已分别采用63文件的双卡完整内部Tran
   --workdir /var/tmp/team07-review-pencils-63 \
   --storage-config /var/tmp/team07-review-storage/storage-config.json \
   --cache-dir /path/to/executable/FFN-shape-cache
-python3 experiments/nonv2-vae-all-display/run_case.py --case g1 --gpu 0
+~/.venv/bin/python reproduce/run_g1_native_shared68.py --gpus 0,1 \
+  --workdir /var/tmp/team07-review-g1-68 \
+  --storage-config /var/tmp/team07-review-storage/storage-config.json \
+  --cache-dir /path/to/executable/FFN-shape-cache
 ```
 
-每条命令均运行完整对应分项。所需外部模型、输入、验证工具与上面的 V2 相同。反馈帧使用原始 FP32 VAE；展示帧使用独立的 Half 权重缓存，原始 master weights 保留。
+每条命令均运行完整分项，先核对冻结源码与计时资源；`--prepare-only`只重建源码，不使用GPU。所需外部模型、输入和验证工具与V2相同。source与NCCL backing需位于同一私有tmpfs；FFN新形状缓存必须位于可执行挂载。初始化、模型搬运、通信、图捕获、视频写出及helper退出均计入原进程时间。单项shell会因其他四项缺席退出1，选中分项的执行、profile和PSNR另行检查，不能把单项原始log／JSON直接当成五项提交。
 
-Z1入口先核对并建立63文件源码，使用冻结的整段双卡守护脚本运行12轮／25视频。`--prepare-only`只准备源码，不使用Torch/GPU，已在本机核对完整63个源码哈希。GPU运行前需要上述私有tmpfs配置；使用前文`build_and_check.py`构建。FFN形状缓存必须位于可执行挂载，比赛机home空间很少，本次复用既有私有缓存。新kernel编译、模型导入、双模型传输、通信、图捕获、写出和helper退出都在原始进程计时内；冷缓存可能更慢。输出与计时／单项质量材料位于所选workdir的`diagnostic/runs`。其单项shell会因另外四项缺席退出1；选中的Z1执行、profile和PSNR单独检查，不能将单项原始log/JSON直接当成五项提交。
+Z1为150.838389秒／26.081602114dB，完整12轮、25视频，两阶段各600次调用。7块深层分支每阶段每轮在15个位置复用，保留全部50步、浅层、head和采样更新；四张图分别核对33／31个汇合。该组合重新验证了质量，没有继承单卡PSNR。新103视频汇总accepted，其他78视频SHA不变，正式五项合计764.366152秒。与历史Z1的1.364890秒差值不是同期配对收益，详见[完整证据](NONV2_CROSSSTEP65_20261029.md)。
 
-63文件版本把16个空间和17个时间内部块纳入原来33次FFN汇合，保留全局帧action mask、完整5D GroupNorm和16时间步；条件投影缓存按完整／本地模式分库。原59个数学源码字节不变，原生Half GEMM形状变化会影响舍入。两阶段756参数的六状态检查与六对模型计时通过；完整Z1为152.203279秒／PSNR46.553398187dB、两rank25视频一致。当时103视频官方汇总accepted、五项802.134091秒。随后双臂堆箱94.319011秒／31.972206776dB和清理铅笔105.949243秒／34.881926888dB分别完成7／8轮、15／17视频，两rank一致，重新汇总103视频accepted，当时五项782.213299秒；随后V2采用223，当前五项778.585395秒，其他四项不变，网站尚未提交。
+G1为155.314304秒／26.107156332dB，68文件入口保留其原始Half GEMM／GEGLU和31次汇合，只有rank0进行权重H2D，然后精确广播。两次同GPU完整对照及103视频验收见[G1记录](G1_ROOT_WEIGHT_TRANSPORT68_20261029.md)。
 
-`run_nonv2_parallel.py`的`--prepare-only`在比赛机已检查三个分项的精确63文件清单与计时资源，不使用GPU。它只按分项替换三个数据集断言，数学helper与Z1相同，原分项flags、步数和frame stride保留。`--case g1`仅用于复现失败候选：完整11轮／23视频为142.834192秒但PSNR19.081776215dB，未通过质量，不能作为当前G1成绩。当前G1仍用上面的单卡命令。
-
-`--variant temporal62`和`ffn61`可重建前序候选。历史单卡60入口仍保留在`experiments/nonv2-fused-half-geglu/run_case.py`；旧`nonv2-vae-all-display/run_case.py --case stackbox`仍转交这个历史60版本，加`--historical59`可重跑旧59基线。它们不代表当前63双卡默认复现入口。历史60的GPU2完整对照为171.304477→170.633517秒，GPU0正式记录166.780992秒；当前63相对该历史记录少14.577713秒，跨历史和卡数比较不能全部归因于单个kernel。
+历史Z1的63入口`run_z1_parallel.py`以及62／61候选继续保留；历史G1单卡59与失败63候选也保留。`run_nonv2_parallel.py --case g1`只复现PSNR19.081776215dB的失败候选，不能作为当前G1成绩。精确静态时间嵌入缓存仍是独立实验，没有替换上述正式配置。
 
 ## CUDA Graph 扩展
 

@@ -1,0 +1,1371 @@
+{
+  "policy": "nonv2-all-blocks",
+  "GPUs": 2,
+  "full_workload_on_both_ranks": true,
+  "rank_videos_SHA256_equal": true,
+  "video_count": 25,
+  "video_hashes": {
+    "inference/5_full_fs4.mp4": "ecfedd0ff005821519745fd9a379307693f72b9e15739bf293c23894c67b0bdc",
+    "inference/sample_5/wm/4/itr-11.mp4": "b63e97914af280f174a31bcfddfd574dbb19b5573291f4b86818f16eb5866291",
+    "inference/sample_5/wm/4/itr-10.mp4": "8970578f036094a55630e679462f4748ddcfd75b0ce1056421465a21b1a6e82a",
+    "inference/sample_5/wm/4/itr-9.mp4": "cf7c6afa93fd908a6798a98b43739fced7426d9b3c282b184b3e47823ba8527e",
+    "inference/sample_5/wm/4/itr-8.mp4": "c9de99d9f0a8d92adc4404cae25ff8daf5e6a1d504dd907e1278cb0dd5688b4a",
+    "inference/sample_5/wm/4/itr-7.mp4": "777f2827fcebb8390592e5389f2c6c9a6d73d54b14952a73e46d978a9a1f40c3",
+    "inference/sample_5/wm/4/itr-6.mp4": "ff42f3c33ca9faf4879efe3667c20c7aaf9b6934b140d6a857225132a069259e",
+    "inference/sample_5/wm/4/itr-5.mp4": "9aad612111e406d1bd456cd0cc721e6dea0302c108faf14e44e673b6e4be5b94",
+    "inference/sample_5/wm/4/itr-4.mp4": "d70a987d0536fc5f0a8a12fe39d802debcbf7a91016bd6d63f1c0e57b347a2a3",
+    "inference/sample_5/wm/4/itr-3.mp4": "c628e35b6e3d1759e3f8b33e22c6d731d7add592dd7fd980a0f98509f1c51011",
+    "inference/sample_5/wm/4/itr-2.mp4": "d8db8f4543f4e877b06c8b92ae33d38a60f8c7898a29de29f0650090f0dfc04d",
+    "inference/sample_5/wm/4/itr-1.mp4": "34e044c4a4c39d560a439889a2c9b51e4c4bf6b65e0285d10c5c9f6104e4c473",
+    "inference/sample_5/wm/4/itr-0.mp4": "7dbdc84e41d99955d15fab191772449039c63faf0588841e1cd545a408838da7",
+    "inference/sample_5/dm/4/itr-11.mp4": "99d9b159ddb77288c81f2c09a179e30347ceff6d3164bc848194387d9ff4e09e",
+    "inference/sample_5/dm/4/itr-10.mp4": "8cd8fc0bff8906db9cf1ffef9b470e74981d3b723d935989ffa15c16b180174c",
+    "inference/sample_5/dm/4/itr-9.mp4": "0906e3cc7b8dc7e76bc0145fe784299e53833395b1bfab231f6efa315e3a0187",
+    "inference/sample_5/dm/4/itr-8.mp4": "0779a834fb21ae93d4e36c4666eb7774467b14de6c441d93beb14489a220770d",
+    "inference/sample_5/dm/4/itr-7.mp4": "e1c01e0030bf4599df470a9654a12da70f65e1a62908bc4012f0e7d345496b6c",
+    "inference/sample_5/dm/4/itr-6.mp4": "4e5197f67c5f6c31fea90ae92971faffa8fd1c318d4369ed22e26d2f0038ea25",
+    "inference/sample_5/dm/4/itr-5.mp4": "e3242cbcf2168e2f907962332cdafbc947c09ace774a2fbb0810342d9ed5b34a",
+    "inference/sample_5/dm/4/itr-4.mp4": "078779d43642833aa0b5b1c1c8efd7d319746f270ee06d614dc58572add92cd8",
+    "inference/sample_5/dm/4/itr-3.mp4": "711c21fe14c8d0a198f1ab26989aada79dd63d73aced2606dd2a91bcd553ac14",
+    "inference/sample_5/dm/4/itr-2.mp4": "cb455a644f1c9b46e57e066145f7c84d0127dca79fedce29909b8684d7adc6ba",
+    "inference/sample_5/dm/4/itr-1.mp4": "52de8cc696e3bf4b3be7ce78ac57385ec7d758a6c8ee924c63db23d57ad2a875",
+    "inference/sample_5/dm/4/itr-0.mp4": "4d45ce1736720636f847423a64e4322c9fd4d275dcf32446d9a8f80b991c2311"
+  },
+  "helper_exit_code": 0,
+  "setup_helper_outputs_and_teardown_inside_original_process_timer": true,
+  "stage_captures": {
+    "decision": 66,
+    "world": 66
+  },
+  "stage_calls": {
+    "decision": 600,
+    "world": 600
+  },
+  "graph_role_modules": {
+    "decision_fill": [
+      "init_attn.0.transformer_blocks.0",
+      "input_blocks.1.1.transformer_blocks.0",
+      "input_blocks.1.2.transformer_blocks.0",
+      "input_blocks.2.1.transformer_blocks.0",
+      "input_blocks.2.2.transformer_blocks.0",
+      "input_blocks.4.1.transformer_blocks.0",
+      "input_blocks.4.2.transformer_blocks.0",
+      "input_blocks.5.1.transformer_blocks.0",
+      "input_blocks.5.2.transformer_blocks.0",
+      "input_blocks.7.1.transformer_blocks.0",
+      "input_blocks.7.2.transformer_blocks.0",
+      "input_blocks.8.1.transformer_blocks.0",
+      "input_blocks.8.2.transformer_blocks.0",
+      "middle_block.1.transformer_blocks.0",
+      "middle_block.2.transformer_blocks.0",
+      "output_blocks.10.1.transformer_blocks.0",
+      "output_blocks.10.2.transformer_blocks.0",
+      "output_blocks.11.1.transformer_blocks.0",
+      "output_blocks.11.2.transformer_blocks.0",
+      "output_blocks.3.1.transformer_blocks.0",
+      "output_blocks.3.2.transformer_blocks.0",
+      "output_blocks.4.1.transformer_blocks.0",
+      "output_blocks.4.2.transformer_blocks.0",
+      "output_blocks.5.1.transformer_blocks.0",
+      "output_blocks.5.2.transformer_blocks.0",
+      "output_blocks.6.1.transformer_blocks.0",
+      "output_blocks.6.2.transformer_blocks.0",
+      "output_blocks.7.1.transformer_blocks.0",
+      "output_blocks.7.2.transformer_blocks.0",
+      "output_blocks.8.1.transformer_blocks.0",
+      "output_blocks.8.2.transformer_blocks.0",
+      "output_blocks.9.1.transformer_blocks.0",
+      "output_blocks.9.2.transformer_blocks.0"
+    ],
+    "world_fill": [
+      "init_attn.0.transformer_blocks.0",
+      "input_blocks.1.1.transformer_blocks.0",
+      "input_blocks.1.2.transformer_blocks.0",
+      "input_blocks.2.1.transformer_blocks.0",
+      "input_blocks.2.2.transformer_blocks.0",
+      "input_blocks.4.1.transformer_blocks.0",
+      "input_blocks.4.2.transformer_blocks.0",
+      "input_blocks.5.1.transformer_blocks.0",
+      "input_blocks.5.2.transformer_blocks.0",
+      "input_blocks.7.1.transformer_blocks.0",
+      "input_blocks.7.2.transformer_blocks.0",
+      "input_blocks.8.1.transformer_blocks.0",
+      "input_blocks.8.2.transformer_blocks.0",
+      "middle_block.1.transformer_blocks.0",
+      "middle_block.2.transformer_blocks.0",
+      "output_blocks.10.1.transformer_blocks.0",
+      "output_blocks.10.2.transformer_blocks.0",
+      "output_blocks.11.1.transformer_blocks.0",
+      "output_blocks.11.2.transformer_blocks.0",
+      "output_blocks.3.1.transformer_blocks.0",
+      "output_blocks.3.2.transformer_blocks.0",
+      "output_blocks.4.1.transformer_blocks.0",
+      "output_blocks.4.2.transformer_blocks.0",
+      "output_blocks.5.1.transformer_blocks.0",
+      "output_blocks.5.2.transformer_blocks.0",
+      "output_blocks.6.1.transformer_blocks.0",
+      "output_blocks.6.2.transformer_blocks.0",
+      "output_blocks.7.1.transformer_blocks.0",
+      "output_blocks.7.2.transformer_blocks.0",
+      "output_blocks.8.1.transformer_blocks.0",
+      "output_blocks.8.2.transformer_blocks.0",
+      "output_blocks.9.1.transformer_blocks.0",
+      "output_blocks.9.2.transformer_blocks.0"
+    ],
+    "decision_read": [
+      "init_attn.0.transformer_blocks.0",
+      "input_blocks.1.1.transformer_blocks.0",
+      "input_blocks.1.2.transformer_blocks.0",
+      "input_blocks.2.1.transformer_blocks.0",
+      "input_blocks.2.2.transformer_blocks.0",
+      "input_blocks.4.1.transformer_blocks.0",
+      "input_blocks.4.2.transformer_blocks.0",
+      "input_blocks.5.1.transformer_blocks.0",
+      "input_blocks.5.2.transformer_blocks.0",
+      "input_blocks.7.1.transformer_blocks.0",
+      "input_blocks.7.2.transformer_blocks.0",
+      "input_blocks.8.1.transformer_blocks.0",
+      "input_blocks.8.2.transformer_blocks.0",
+      "middle_block.1.transformer_blocks.0",
+      "middle_block.2.transformer_blocks.0",
+      "output_blocks.10.1.transformer_blocks.0",
+      "output_blocks.10.2.transformer_blocks.0",
+      "output_blocks.11.1.transformer_blocks.0",
+      "output_blocks.11.2.transformer_blocks.0",
+      "output_blocks.3.1.transformer_blocks.0",
+      "output_blocks.3.2.transformer_blocks.0",
+      "output_blocks.4.1.transformer_blocks.0",
+      "output_blocks.4.2.transformer_blocks.0",
+      "output_blocks.5.1.transformer_blocks.0",
+      "output_blocks.5.2.transformer_blocks.0",
+      "output_blocks.6.1.transformer_blocks.0",
+      "output_blocks.6.2.transformer_blocks.0",
+      "output_blocks.7.1.transformer_blocks.0",
+      "output_blocks.7.2.transformer_blocks.0",
+      "output_blocks.8.1.transformer_blocks.0",
+      "output_blocks.8.2.transformer_blocks.0",
+      "output_blocks.9.1.transformer_blocks.0",
+      "output_blocks.9.2.transformer_blocks.0"
+    ],
+    "world_read": [
+      "init_attn.0.transformer_blocks.0",
+      "input_blocks.1.1.transformer_blocks.0",
+      "input_blocks.1.2.transformer_blocks.0",
+      "input_blocks.2.1.transformer_blocks.0",
+      "input_blocks.2.2.transformer_blocks.0",
+      "input_blocks.4.1.transformer_blocks.0",
+      "input_blocks.4.2.transformer_blocks.0",
+      "input_blocks.5.1.transformer_blocks.0",
+      "input_blocks.5.2.transformer_blocks.0",
+      "input_blocks.7.1.transformer_blocks.0",
+      "input_blocks.7.2.transformer_blocks.0",
+      "input_blocks.8.1.transformer_blocks.0",
+      "input_blocks.8.2.transformer_blocks.0",
+      "middle_block.1.transformer_blocks.0",
+      "middle_block.2.transformer_blocks.0",
+      "output_blocks.10.1.transformer_blocks.0",
+      "output_blocks.10.2.transformer_blocks.0",
+      "output_blocks.11.1.transformer_blocks.0",
+      "output_blocks.11.2.transformer_blocks.0",
+      "output_blocks.3.1.transformer_blocks.0",
+      "output_blocks.3.2.transformer_blocks.0",
+      "output_blocks.4.1.transformer_blocks.0",
+      "output_blocks.4.2.transformer_blocks.0",
+      "output_blocks.5.1.transformer_blocks.0",
+      "output_blocks.5.2.transformer_blocks.0",
+      "output_blocks.6.1.transformer_blocks.0",
+      "output_blocks.6.2.transformer_blocks.0",
+      "output_blocks.7.1.transformer_blocks.0",
+      "output_blocks.7.2.transformer_blocks.0",
+      "output_blocks.8.1.transformer_blocks.0",
+      "output_blocks.8.2.transformer_blocks.0",
+      "output_blocks.9.1.transformer_blocks.0",
+      "output_blocks.9.2.transformer_blocks.0"
+    ]
+  },
+  "feature_reuse": {
+    "exact_static_timestep_cache": true,
+    "modules": [
+      "time_embed",
+      "fps_embedding",
+      "input_blocks.1.0.emb_layers",
+      "input_blocks.2.0.emb_layers",
+      "input_blocks.4.0.emb_layers",
+      "input_blocks.5.0.emb_layers",
+      "input_blocks.7.0.emb_layers",
+      "input_blocks.8.0.emb_layers",
+      "input_blocks.10.0.emb_layers",
+      "input_blocks.11.0.emb_layers",
+      "middle_block.0.emb_layers",
+      "middle_block.3.emb_layers",
+      "output_blocks.0.0.emb_layers",
+      "output_blocks.1.0.emb_layers",
+      "output_blocks.2.0.emb_layers",
+      "output_blocks.3.0.emb_layers",
+      "output_blocks.4.0.emb_layers",
+      "output_blocks.5.0.emb_layers",
+      "output_blocks.6.0.emb_layers",
+      "output_blocks.7.0.emb_layers",
+      "output_blocks.8.0.emb_layers",
+      "output_blocks.9.0.emb_layers",
+      "output_blocks.10.0.emb_layers",
+      "output_blocks.11.0.emb_layers"
+    ],
+    "counts": {
+      "decision_calls": 600,
+      "decision_fill": 50,
+      "world_calls": 600,
+      "world_fill": 50,
+      "decision_read": 550,
+      "world_read": 550
+    },
+    "completed_generations": [
+      {
+        "stage": "decision",
+        "generation": 0,
+        "steps": 50,
+        "read": false
+      },
+      {
+        "stage": "world",
+        "generation": 0,
+        "steps": 50,
+        "read": false
+      },
+      {
+        "stage": "decision",
+        "generation": 1,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 1,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 2,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 2,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 3,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 3,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 4,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 4,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 5,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 5,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 6,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 6,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 7,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 7,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 8,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 8,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 9,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 9,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 10,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 10,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "decision",
+        "generation": 11,
+        "steps": 50,
+        "read": true
+      },
+      {
+        "stage": "world",
+        "generation": 11,
+        "steps": 50,
+        "read": true
+      }
+    ],
+    "persistent_bytes": 65024000,
+    "capture_rows": [
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "time_embed",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "fps_embedding",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "input_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "middle_block.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "middle_block.3.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.0.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.3.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.6.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.9.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": false,
+        "module": "output_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "time_embed",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "fps_embedding",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "input_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "middle_block.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "middle_block.3.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.0.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.3.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.6.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.9.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": false,
+        "module": "output_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "time_embed",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "fps_embedding",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "input_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "middle_block.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "middle_block.3.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.0.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.3.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.6.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.9.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "decision",
+        "read": true,
+        "module": "output_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "time_embed",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "fps_embedding",
+        "shape": [
+          1,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "input_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "middle_block.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "middle_block.3.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.0.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.1.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.2.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.3.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.4.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.5.0.emb_layers",
+        "shape": [
+          16,
+          1280
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.6.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.7.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.8.0.emb_layers",
+        "shape": [
+          16,
+          640
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.9.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.10.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      },
+      {
+        "stage": "world",
+        "read": true,
+        "module": "output_blocks.11.0.emb_layers",
+        "shape": [
+          16,
+          320
+        ],
+        "dtype": "torch.float16"
+      }
+    ],
+    "sampler_steps_reduced": false,
+    "rounds_reduced": false,
+    "dynamic_features_cached": false,
+    "master_schedule_fs_backend_changes_rejected": true,
+    "precision_changed": false,
+    "stages": [
+      "decision",
+      "world"
+    ],
+    "graph_count": 4,
+    "graph_roles": [
+      [
+        "decision",
+        false
+      ],
+      [
+        "world",
+        false
+      ],
+      [
+        "decision",
+        true
+      ],
+      [
+        "world",
+        true
+      ]
+    ],
+    "parallel_executor_preserved": true,
+    "full_and_read_share_per_stage_pool": true,
+    "graph_copy_selfcheck": {
+      "passed": true,
+      "bitwise_graph_copy_slots": 100,
+      "dtypes": [
+        "float16",
+        "float32"
+      ],
+      "includes_signedzero_infinity_NaN": true
+    }
+  }
+}
