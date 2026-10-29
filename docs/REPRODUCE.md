@@ -129,4 +129,6 @@ G1只读时间步轨迹诊断：运行`reproduce/run_g1_feature_trajectory71.py`
 
 非V2残差块双卡分帧：模型入口`reproduce/run_nonv2_resblock_frames72.py`、完整入口`reproduce/run_nonv2_resblock66_full.py`，沿用已有私有tmpfs配置并显式提供可执行文件系统上的`--cache-dir`。公开重建与GPU证据见[分帧实验](NONV2_RESBLOCK_FRAMES72_20261029.md)；完整进程回退，未采用。
 
-清理铅笔现采用[末端5块分帧66文件](NONV2_RESBLOCK_TAIL73_20261029.md)，完整92.232482秒／26.798606240dB；前后原65同卡对照94.368267／93.983744秒。官方103视频汇总accepted，所有103视频与上一版SHA相同，本机双文件已更新，五项735.397241秒。
+清理铅笔现采用[末端5块分帧66文件](NONV2_RESBLOCK_TAIL73_20261029.md)，完整92.232482秒／26.798606240dB；前后原65同卡对照94.368267／93.983744秒。官方103视频汇总accepted，所有103视频与上一版SHA相同，本机双文件已更新，当时五项735.397241秒，最新见下。
+
+Z1现采用[末端5块分帧＋原13块预测66文件](NONV2_OTHER_TAIL66_20261029.md)，完整138.945151秒／28.992932876dB；同卡原65对照146.315426秒。新103视频官方汇总accepted、全部103视频SHA不变，五项729.014469秒。入口`reproduce/run_nonv2_other_tail66.py --case z1`，其余`--gpus`、`--workdir`、`--storage-config`和可执行`--cache-dir`参数同清理铅笔完整入口；`--case dual`仅复现尚未采用的双臂候选。公开入口已在比赛机禁用CUDA精确重建两项66源码并通过CPU边界／预测器／缓存检查。使用`python reproduce/verify_nonv2_other_tail66.py`核对完整证据。

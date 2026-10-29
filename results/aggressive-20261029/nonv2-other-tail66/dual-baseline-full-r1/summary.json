@@ -1,0 +1,45 @@
+{
+  "case": "unitree_z1_dual_arm_stackbox",
+  "official_rounds": 7,
+  "state": "terminal_nonv2_all_blocks63_failure",
+  "clean": false,
+  "process_wall_s": null,
+  "psnr_db": null,
+  "quality_passed": null,
+  "workload_complete": null,
+  "rank_videos_exact": null,
+  "gpu_candidates": [
+    "1",
+    "3"
+  ],
+  "verified_source_count": 65,
+  "immutable_source_repeat_of": "nonv2_late23_prediction65_dual_full_r1",
+  "all_source_and_assets_SHA_unchanged": true,
+  "official_adopted": false,
+  "control_retirement": {
+    "owned_wait_group_terminated": true,
+    "no_foreign_process_signaled": true,
+    "no_running_benchmark_in_owned_group": true,
+    "original_PID": 1201128,
+    "members": [
+      {
+        "pid": 1201128,
+        "args": [
+          "/home/team07/.venv/bin/python",
+          "/var/tmp/team07-other-tail66-repeat-dual-baseline-vkhlvbpy/diagnostic/retry_nccl_full221.py"
+        ]
+      },
+      {
+        "pid": 1201715,
+        "args": [
+          "/home/team07/.venv/bin/python",
+          "/var/tmp/team07-other-tail66-repeat-dual-baseline-vkhlvbpy/diagnostic/wait_nccl_full209.py"
+        ]
+      }
+    ],
+    "attempt1_contaminated_and_excluded": true,
+    "attempt2_not_started": true,
+    "reason": "All other GPUs occupied; retain Z1 qualified improvement and defer dual timing decision"
+  },
+  "timing_excluded": true
+}

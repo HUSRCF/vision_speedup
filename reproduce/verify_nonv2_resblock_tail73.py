@@ -104,10 +104,10 @@ def verify():
     assert adopted['selected_video_count']==17 and adopted['unchanged_video_count']==86
     for name,h in adopted['assembly_script_hashes'].items():assert sha(official/name)==h
     fresh=load(official/'validated/result.json')
-    assert fresh==load(repo/'results/result.json') and fresh['status']=='accepted'
+    assert fresh==load(repo/'results/history/official-before-other-tail66/result.json') and fresh['status']=='accepted'
     assert fresh['psnr_validation']['video_count']==103
     history=repo/'results/history/official-before-resblock-tail66'
-    for name,h in adopted['pair_hashes'].items():assert sha(repo/'results'/name)==sha(official/'validated'/name)==h
+    for name,h in adopted['pair_hashes'].items():assert sha(repo/'results/history/official-before-other-tail66'/name)==sha(official/'validated'/name)==h
     for name,h in adopted['previous_pair_hashes'].items():assert sha(history/name)==h
     previous=load(history/'result.json')
     for row in fresh['cases']:

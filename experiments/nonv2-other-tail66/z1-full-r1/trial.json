@@ -1,0 +1,29 @@
+{
+  "case": "unitree_z1_stackbox",
+  "rounds": 12,
+  "videos": 25,
+  "GPUs": 2,
+  "source_count": 66,
+  "original65_key": "nonv2_predict65_z1_deep13_full_r2",
+  "feature_policy": {
+    "input_start": 6,
+    "output_end": 6,
+    "start": 10,
+    "stop": 40,
+    "boundary_residual": false,
+    "scope": "deep",
+    "stages": [
+      "decision",
+      "world"
+    ]
+  },
+  "per_role_expected_gathers": {
+    "decision_full": 38,
+    "decision_reuse": 26,
+    "world_full": 38,
+    "world_reuse": 26
+  },
+  "pencils_quality_not_inherited": true,
+  "original_sampler_and_predictor_unchanged": true,
+  "official_adopted": false
+}

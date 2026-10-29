@@ -1,0 +1,142 @@
+SELECTED_CASE=unitree_z1_stackbox; other cases are absent from this run
+You are offline and the cache for model files in Transformers v4.22.0 has been updated while your local cache seems to be the one of a previous version. It is very likely that all your calls to any `from_pretrained()` method will fail. Remove the offline mode and enable internet connection to have your cache be updated automatically, then you can go back to offline mode.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). You should set the environment variable TRANSFORMERS_CACHE to a writable directory.
+Global seed set to 123
+[W Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function getCvarInt)
+NCCL_PARALLEL_INITIALIZED {"rank": 0, "GPUs": 2, "policy": "nonv2-all-blocks", "all_setup_inside_original_process_timer": true}
+INFERENCE_MATH requested=selective-tf32 effective=tf32 case=unitree_z1_stackbox cudnn_tf32=True matmul_tf32=True cudnn_benchmark=False cudnn_benchmark_limit=10
+STAGE_TF32 requested=decision-cudnn effective=none case=unitree_z1_stackbox ddim_prefix_steps=0
+STAGE_CUDNN_BENCHMARK requested=simulation effective=none case=unitree_z1_stackbox
+TENSORBOARD_VIDEO enabled=false
+ASYNC_VIDEO enabled=true
+STREAM_FULL_VIDEO enabled=true
+DDIM_SCHEDULE_CACHE enabled=true
+SKIP_UNUSED_ACTION_PROJECTION enabled=true
+BATCH_DECISION_DECODE requested=selective enabled=true
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). Please, ensure the directory exists and can be written to.
+AE working on z of shape (1, 4, 32, 32) = 4096 dimensions.
+PARAMETER_INITIALIZATION skipped=true
+META_INITIALIZATION enabled=true
+CHECKPOINT_LOAD mmap=true assign=true
+>>> model checkpoint loaded.
+>>> Load pre-trained model ...
+UNINITIALIZED_MEMORY_FILL enabled=false deterministic_algorithms=true
+FP32_DDIM_VIDEO requested=0
+FP32_FEEDBACK_HEADS requested=0 protected_modules=0
+FULL_DENOISER_FP16 requested=non-v2 enabled=true
+FULL_DENOISER_NORM_DTYPE requested=fp16 modules=45
+DENOISER_MODE requested=native case=unitree_z1_stackbox wrapped={}
+TF32X3_LINEARS requested=0 convolutions=false wrapped={}
+FUSED_SELF_QKV requested=0 enabled=false modules=66
+CROSS_ATTENTION_IMPL requested=xformers effective=xformers modules=66
+ATTENTION_LAYOUT requested=bmhk modules=66
+FUSED_ATTENTION_MIX requested=1 modules=66
+ATTENTION_DTYPE requested=fp16 effective=float16 modules=66
+ATTENTION_PROJECTION_DTYPE requested=fp16 effective=float16 modules=66
+FFN_DTYPE requested=fp32 modules=33
+FUSED_GEGLU requested=1 modules=33
+FUSED_RESBLOCK_NORM requested=0 enabled=false modules=22
+TEMPORAL_CONV_DTYPE requested=fp32 enabled=false modules=0
+TEMPORAL_CONV_IMPL requested=native modules=0
+FRAMEWISE_TEMPORAL_NORM requested=0 enabled=false modules=22
+FUSED_TEMPORAL_NORM requested=0 enabled=false modules=22
+CHANNELS_LAST requested=0 enabled=false transformers=0
+FUSED_TEMPORAL_ATTENTION requested=1
+FUSED_RESIDUAL_NORM requested=1 modules=33
+TEMPORAL_LAYOUT_DIRECT requested=1 modules=17
+SPLIT_GROUP_NORM requested=1 modules=133
+SPLIT_TRANSFORMER_NORM requested=1 modules=33
+SIM_HEAD_CONV1D requested=native modules=37
+FIXED_CAST_CACHE requested=1
+CONDITION_CACHE enabled=true attention_modules=66
+CUDA_GRAPH enabled=true scope=complete_denoiser cached_normalizers=2 skip_unchanged_inputs=0 max_graphs=2
+CROSSSTEP_FEATURE_REUSE_INSTALLED {"input_start": 6, "output_end": 6, "window": [10, 40], "interval": 2, "stages": ["decision", "world"], "sampler_steps": 50, "required_rounds_preserved": true, "graph_limit": 4}
+>>> Loaded 1 preprocessed input cache(s).
+>>> Generate 16 frames under each generation ...
+  0%|          | 0/12 [00:00<?, ?it/s]>>> Step 0: generating actions ...
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=11.454 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=1 allocated_gib=11.495 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+>>> Step 0: interacting with world model ...
+CUDA_GRAPH_CAPTURE index=2 allocated_gib=11.795 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=3 allocated_gib=11.836 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+>>>>>>>>>>>>>>>>>>>>>>>>
+  8%|▊         | 1/12 [00:14<02:38, 14.45s/it]>>> Step 1: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 1: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 17%|█▋        | 2/12 [00:24<01:58, 11.88s/it]>>> Step 2: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 2: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 25%|██▌       | 3/12 [00:34<01:39, 11.07s/it]>>> Step 3: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 3: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 33%|███▎      | 4/12 [00:44<01:25, 10.69s/it]>>> Step 4: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 4: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 42%|████▏     | 5/12 [00:54<01:13, 10.49s/it]>>> Step 5: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 5: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 50%|█████     | 6/12 [01:05<01:02, 10.37s/it]>>> Step 6: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 6: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 58%|█████▊    | 7/12 [01:15<00:51, 10.31s/it]>>> Step 7: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 7: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 67%|██████▋   | 8/12 [01:25<00:41, 10.26s/it]>>> Step 8: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 8: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 75%|███████▌  | 9/12 [01:35<00:30, 10.23s/it]>>> Step 9: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 9: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 83%|████████▎ | 10/12 [01:45<00:20, 10.22s/it]>>> Step 10: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 10: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 92%|█████████▏| 11/12 [01:55<00:10, 10.20s/it]>>> Step 11: generating actions ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>> Step 11: interacting with world model ...
+CONDITION_CACHE_REFRESH
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+100%|██████████| 12/12 [02:06<00:00, 10.20s/it]100%|██████████| 12/12 [02:06<00:00, 10.51s/it]
+CROSSSTEP_FEATURE_REUSE_COMPLETE {"experimental_dynamic_feature_reuse": true, "predictive_feature_reuse": true, "history_complete_refreshes": 2, "prediction": "current + (current - previous) * actual_position_gap_ratio", "alpha_histogram": {"1.0": 24, "0.5": 336}, "residual_cache_FP32": true, "graph_prediction_selfcheck": {"passed": true, "cases": [{"dtype": "torch.float16", "residual": false, "tail": 257, "mutated_replay_bitwise": true}, {"dtype": "torch.float16", "residual": true, "tail": 257, "mutated_replay_bitwise": true}, {"dtype": "torch.float32", "residual": false, "tail": 257, "mutated_replay_bitwise": true}, {"dtype": "torch.float32", "residual": true, "tail": 257, "mutated_replay_bitwise": true}], "no_full_model_quality_inferred": true}, "interval": 2, "window": [10, 40], "stages": ["decision", "world"], "selected_blocks": ["input_blocks.6", "input_blocks.7", "input_blocks.8", "input_blocks.9", "input_blocks.10", "input_blocks.11", "middle_block", "output_blocks.0", "output_blocks.1", "output_blocks.2", "output_blocks.3", "output_blocks.4", "output_blocks.5"], "counts": {"decision_calls": 600, "decision_refresh": 420, "decision_reuse": 180, "world_calls": 600, "world_refresh": 420, "world_reuse": 180}, "completed_generations": [{"stage": "decision", "generation": 0, "steps": 50}, {"stage": "world", "generation": 0, "steps": 50}, {"stage": "decision", "generation": 1, "steps": 50}, {"stage": "world", "generation": 1, "steps": 50}, {"stage": "decision", "generation": 2, "steps": 50}, {"stage": "world", "generation": 2, "steps": 50}, {"stage": "decision", "generation": 3, "steps": 50}, {"stage": "world", "generation": 3, "steps": 50}, {"stage": "decision", "generation": 4, "steps": 50}, {"stage": "world", "generation": 4, "steps": 50}, {"stage": "decision", "generation": 5, "steps": 50}, {"stage": "world", "generation": 5, "steps": 50}, {"stage": "decision", "generation": 6, "steps": 50}, {"stage": "world", "generation": 6, "steps": 50}, {"stage": "decision", "generation": 7, "steps": 50}, {"stage": "world", "generation": 7, "steps": 50}, {"stage": "decision", "generation": 8, "steps": 50}, {"stage": "world", "generation": 8, "steps": 50}, {"stage": "decision", "generation": 9, "steps": 50}, {"stage": "world", "generation": 9, "steps": 50}, {"stage": "decision", "generation": 10, "steps": 50}, {"stage": "world", "generation": 10, "steps": 50}, {"stage": "decision", "generation": 11, "steps": 50}, {"stage": "world", "generation": 11, "steps": 50}], "invalidations": {"new_generation": 24}, "persistent_feature_bytes": 288358400, "eager_or_capture_block_calls": {"refresh": 104, "reuse": 104}, "sampler_step_count_reduced": false, "round_count_reduced": false, "shallow_blocks_and_heads_live": true, "no_reference_or_final_output_cache": true, "full_video_PSNR_required": true, "boundary_residual": false, "current_boundary_input_live": false, "scope": "deep", "all_convolutions_and_heads_live": false, "per_module_residual": false, "graph_count": 4, "graph_roles": [["decision", false], ["decision", true], ["world", false], ["world", true]], "world_refresh_and_reuse_share_graph_pool": true, "reuse_graph_head_filter_cache": false, "reuse_graph_native_head_transforms_live": true, "full_refresh_graph_head_cache_unchanged": true}
