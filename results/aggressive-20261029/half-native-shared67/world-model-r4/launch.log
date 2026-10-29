@@ -1,0 +1,130 @@
+NCCL_MODEL_ATTEMPT=/var/tmp/team07-nonv2-native-ffn-grid59-420wrbpp/attempt-1
+WAIT_GPU_PAIR=2,3
+CLEAN_RUN_GPU=2
+CLEAN_RUN_GPU=3
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-native-ffn-grid59-420wrbpp/wait_nccl_geglu_model_pair.py", line 60, in <module>
+    if __name__=='__main__':main()
+  File "/var/tmp/team07-nonv2-native-ffn-grid59-420wrbpp/wait_nccl_geglu_model_pair.py", line 44, in main
+    assert process.returncode==0,Path('ranks.log').read_text()[-6000:]
+AssertionError: [W Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function getCvarInt)
+[W Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function getCvarInt)
+You are offline and the cache for model files in Transformers v4.22.0 has been updated while your local cache seems to be the one of a previous version. It is very likely that all your calls to any `from_pretrained()` method will fail. Remove the offline mode and enable internet connection to have your cache be updated automatically, then you can go back to offline mode.
+
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). You should set the environment variable TRANSFORMERS_CACHE to a writable directory.
+[rank: 1] Global seed set to 123
+INFERENCE_MATH requested=selective-tf32 effective=tf32 case=unitree_g1_pack_camera cudnn_tf32=True matmul_tf32=True cudnn_benchmark=False cudnn_benchmark_limit=10
+STAGE_TF32 requested=decision-cudnn effective=none case=unitree_g1_pack_camera ddim_prefix_steps=0
+STAGE_CUDNN_BENCHMARK requested=simulation effective=none case=unitree_g1_pack_camera
+TENSORBOARD_VIDEO enabled=false
+ASYNC_VIDEO enabled=true
+STREAM_FULL_VIDEO enabled=true
+DDIM_SCHEDULE_CACHE enabled=true
+SKIP_UNUSED_ACTION_PROJECTION enabled=true
+BATCH_DECISION_DECODE requested=selective enabled=true
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). Please, ensure the directory exists and can be written to.
+AE working on z of shape (1, 4, 32, 32) = 4096 dimensions.
+PARAMETER_INITIALIZATION skipped=true
+META_INITIALIZATION enabled=true
+CHECKPOINT_LOAD mmap=true assign=true
+W1029 13:44:47.972000 139819408394048 torch/distributed/elastic/multiprocessing/api.py:851] Sending process 496083 closing signal SIGTERM
+E1029 13:44:48.136000 139819408394048 torch/distributed/elastic/multiprocessing/api.py:826] failed (exitcode: -11) local_rank: 0 (pid: 496082) of binary: /home/team07/.venv/bin/python
+Traceback (most recent call last):
+  File "/home/team07/.venv/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/team07/.venv/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 883, in <module>
+    main()
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
+    return f(*args, **kwargs)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 879, in main
+    run(args)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 870, in run
+    elastic_launch(
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 132, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 263, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+========================================================
+check_nccl_geglu_model_rank.py FAILED
+--------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+--------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-10-29_13:44:47
+  host      : contest-player
+  rank      : 0 (local_rank: 0)
+  exitcode  : -11 (pid: 496082)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 496082
+========================================================
+
+
+[W Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function getCvarInt)
+[W Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function getCvarInt)
+You are offline and the cache for model files in Transformers v4.22.0 has been updated while your local cache seems to be the one of a previous version. It is very likely that all your calls to any `from_pretrained()` method will fail. Remove the offline mode and enable internet connection to have your cache be updated automatically, then you can go back to offline mode.
+
+0it [00:00, ?it/s]
+0it [00:00, ?it/s]
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). You should set the environment variable TRANSFORMERS_CACHE to a writable directory.
+[rank: 1] Global seed set to 123
+INFERENCE_MATH requested=selective-tf32 effective=tf32 case=unitree_g1_pack_camera cudnn_tf32=True matmul_tf32=True cudnn_benchmark=False cudnn_benchmark_limit=10
+STAGE_TF32 requested=decision-cudnn effective=none case=unitree_g1_pack_camera ddim_prefix_steps=0
+STAGE_CUDNN_BENCHMARK requested=simulation effective=none case=unitree_g1_pack_camera
+TENSORBOARD_VIDEO enabled=false
+ASYNC_VIDEO enabled=true
+STREAM_FULL_VIDEO enabled=true
+DDIM_SCHEDULE_CACHE enabled=true
+SKIP_UNUSED_ACTION_PROJECTION enabled=true
+BATCH_DECISION_DECODE requested=selective enabled=true
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). Please, ensure the directory exists and can be written to.
+AE working on z of shape (1, 4, 32, 32) = 4096 dimensions.
+PARAMETER_INITIALIZATION skipped=true
+META_INITIALIZATION enabled=true
+CHECKPOINT_LOAD mmap=true assign=true
+W1029 13:44:47.972000 139819408394048 torch/distributed/elastic/multiprocessing/api.py:851] Sending process 496083 closing signal SIGTERM
+E1029 13:44:48.136000 139819408394048 torch/distributed/elastic/multiprocessing/api.py:826] failed (exitcode: -11) local_rank: 0 (pid: 496082) of binary: /home/team07/.venv/bin/python
+Traceback (most recent call last):
+  File "/home/team07/.venv/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/team07/.venv/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 883, in <module>
+    main()
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
+    return f(*args, **kwargs)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 879, in main
+    run(args)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 870, in run
+    elastic_launch(
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 132, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 263, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+========================================================
+check_nccl_geglu_model_rank.py FAILED
+--------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+--------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-10-29_13:44:47
+  host      : contest-player
+  rank      : 0 (local_rank: 0)
+  exitcode  : -11 (pid: 496082)
+  error_file: <N/A>
+  traceback : Signal 11 (SIGSEGV) received by PID 496082
+========================================================
+
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-native-ffn-grid59-420wrbpp/retry_nccl_model_pair.py", line 19, in <module>
+    raise RuntimeError('Model diagnostic failed: '+str(attempt))
+RuntimeError: Model diagnostic failed: /var/tmp/team07-nonv2-native-ffn-grid59-420wrbpp/attempt-1

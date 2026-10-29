@@ -1,0 +1,65 @@
+NCCL_FULL_ATTEMPT=/var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/diagnostic/attempt-1
+WAIT_GPU_PAIR=0,1
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/diagnostic/wait_nccl_full209.py", line 108, in <module>
+    if __name__=='__main__':main()
+  File "/var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/diagnostic/wait_nccl_full209.py", line 83, in main
+    assert (parallel/'parallel-complete.json').is_file(),(workspace/'benchmark.log').read_text()[-5000:]
+AssertionError: _size=b)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/source/src/unifolm_wma/modules/networks/wma_model.py", line 61, in forward
+[rank0]:     x = layer(x, context)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/source/src/unifolm_wma/modules/attention.py", line 857, in forward
+[rank0]:     x = block(x, mask=mask)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/source/src/unifolm_wma/utils/nonv2_native_ffn_grid59_temporal_mode.py", line 101, in forward
+[rank0]:     result=_before(value,*args,**kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/source/src/unifolm_wma/modules/attention.py", line 626, in forward
+[rank0]:     return checkpoint(self._forward, input_tuple, self.parameters(),
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/source/src/unifolm_wma/utils/common.py", line 111, in checkpoint
+[rank0]:     return func(*inputs)
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/source/src/unifolm_wma/modules/attention.py", line 632, in _forward
+[rank0]:     attended = self.attn1(self.norm1(x),
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/source/src/unifolm_wma/modules/attention.py", line 184, in forward
+[rank0]:     return self.to_out(fused_temporal_attention(q, k, v, h, self.scale))
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/source/src/unifolm_wma/utils/triton_temporal_attention.py", line 65, in fused_temporal_attention
+[rank0]:     _temporal_attention[(query.shape[0] * heads,)](
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/triton/runtime/jit.py", line 167, in <lambda>
+[rank0]:     return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/source/src/unifolm_wma/utils/nonv2_native_ffn_grid59_temporal_mode.py", line 38, in launch
+[rank0]:     assert tuple(kwargs['grid'])==(q.shape[0]*heads,) and key in active.temporal_cubins
+[rank0]: AssertionError
+CASE_EXECUTION_FAILED case=unitree_g1_pack_camera exit_code=1
+PSNR case=unitree_z1_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_stackbox reason=Missing video directory or symlink: /var/tmp/team07-nonv2-native-shared67-rank0-output-c80vcg70/unitree_z1_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox reason=Missing video directory or symlink: /var/tmp/team07-nonv2-native-shared67-rank0-output-c80vcg70/unitree_z1_dual_arm_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox_v2 psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox_v2 reason=Missing video directory or symlink: /var/tmp/team07-nonv2-native-shared67-rank0-output-c80vcg70/unitree_z1_dual_arm_stackbox_v2
+PSNR case=unitree_z1_dual_arm_cleanup_pencils psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_cleanup_pencils reason=Missing video directory or symlink: /var/tmp/team07-nonv2-native-shared67-rank0-output-c80vcg70/unitree_z1_dual_arm_cleanup_pencils
+PSNR case=unitree_g1_pack_camera psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_g1_pack_camera reason=No MP4 videos in /var/tmp/team07-nonv2-native-shared67-rank0-output-c80vcg70/unitree_g1_pack_camera
+PSNR_FAILED: Every case must be strictly greater than 25 dB
+RESULT_JSON=/var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/diagnostic/runs/20261029T054940Z-case-v2-nccl-502733/result.json
+FAILED: Incomplete case profiles
+
+
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/diagnostic/retry_nccl_full221.py", line 15, in <module>
+    raise RuntimeError('Timed evaluator failed; retained '+str(attempt))
+RuntimeError: Timed evaluator failed; retained /var/tmp/team07-nonv2-native-shared67-g1-37i_7i9j/diagnostic/attempt-1

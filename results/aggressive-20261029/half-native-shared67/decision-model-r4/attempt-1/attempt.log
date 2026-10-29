@@ -1,0 +1,89 @@
+WAIT_GPU_PAIR=0,1
+CLEAN_RUN_GPU=0
+CLEAN_RUN_GPU=1
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/wait_nccl_geglu_model_pair.py", line 60, in <module>
+    if __name__=='__main__':main()
+  File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/wait_nccl_geglu_model_pair.py", line 44, in main
+    assert process.returncode==0,Path('ranks.log').read_text()[-6000:]
+AssertionError: (str(script),run_name='__main__')
+[rank1]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 289, in run_path
+[rank1]:     return _run_module_code(code, init_globals, run_name,
+[rank1]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 96, in _run_module_code
+[rank1]:     _run_code(code, mod_globals, init_globals,
+[rank1]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 86, in _run_code
+[rank1]:     exec(code, run_globals)
+[rank1]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/profile_nccl_geglu_209_pair.py", line 151, in <module>
+[rank1]:     if __name__=='__main__':main()
+[rank1]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/profile_nccl_geglu_209_pair.py", line 146, in main
+[rank1]:     try:runpy.run_path(str(script),run_name='__main__')
+[rank1]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 289, in run_path
+[rank1]:     return _run_module_code(code, init_globals, run_name,
+[rank1]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 96, in _run_module_code
+[rank1]:     _run_code(code, mod_globals, init_globals,
+[rank1]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 86, in _run_code
+[rank1]:     exec(code, run_globals)
+[rank1]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/evaluation/world_model_interaction.py", line 1466, in <module>
+[rank1]:     run_inference(args, timing)
+[rank1]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/evaluation/world_model_interaction.py", line 1164, in run_inference
+[rank1]:     pred_videos_0, pred_actions, _ = image_guided_synthesis_sim_mode(
+[rank1]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank1]:     return func(*args, **kwargs)
+[rank1]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/evaluation/world_model_interaction.py", line 803, in image_guided_synthesis_sim_mode
+[rank1]:     samples, actions, states, intermedia = ddim_sampler.sample(
+[rank1]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank1]:     return func(*args, **kwargs)
+[rank1]:   File "/home/team07/competition/unifolm-nonv2-aggressive-g1-vae-all-display-20261028T060305Z/src/unifolm_wma/models/samplers/ddim.py", line 158, in sample
+[rank1]:     samples, actions, states, intermediates = self.ddim_sampling(
+[rank1]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank1]:     return func(*args, **kwargs)
+[rank1]:   File "/home/team07/competition/unifolm-nonv2-aggressive-g1-vae-all-display-20261028T060305Z/src/unifolm_wma/models/samplers/ddim.py", line 287, in ddim_sampling
+[rank1]:     outs = self.p_sample_ddim(
+[rank1]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank1]:     return func(*args, **kwargs)
+[rank1]:   File "/home/team07/competition/unifolm-nonv2-aggressive-g1-vae-all-display-20261028T060305Z/src/unifolm_wma/models/samplers/ddim.py", line 372, in p_sample_ddim
+[rank1]:     model_output, model_output_action, model_output_state = self.model.apply_model(
+[rank1]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/profile_nccl_geglu_209_pair.py", line 72, in diagnose
+[rank1]:     ctl=controller.report();assert ctl['captured']==31 and ctl['native_linear_capture_count']==62 and ctl['GEGLU']['captured']==31 and ctl['spatial_shared_boundary']['captured']==15 and ctl['spatial_shared_boundary']['attention_calls']==75 and ctl['temporal_shared_boundary']['captured']==16 and ctl['temporal_shared_boundary']['attention_calls']==32
+[rank1]: AssertionError
+E1029 13:44:38.794000 140075705452352 torch/distributed/elastic/multiprocessing/api.py:826] failed (exitcode: 1) local_rank: 0 (pid: 494635) of binary: /home/team07/.venv/bin/python
+Traceback (most recent call last):
+  File "/home/team07/.venv/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/team07/.venv/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 883, in <module>
+    main()
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
+    return f(*args, **kwargs)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 879, in main
+    run(args)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 870, in run
+    elastic_launch(
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 132, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 263, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+check_nccl_geglu_model_rank.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-10-29_13:44:38
+  host      : contest-player
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 494636)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-10-29_13:44:38
+  host      : contest-player
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 494635)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+

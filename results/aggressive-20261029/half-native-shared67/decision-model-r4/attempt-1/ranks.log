@@ -1,0 +1,242 @@
+[W Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function getCvarInt)
+[W Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function getCvarInt)
+You are offline and the cache for model files in Transformers v4.22.0 has been updated while your local cache seems to be the one of a previous version. It is very likely that all your calls to any `from_pretrained()` method will fail. Remove the offline mode and enable internet connection to have your cache be updated automatically, then you can go back to offline mode.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). You should set the environment variable TRANSFORMERS_CACHE to a writable directory.
+You are offline and the cache for model files in Transformers v4.22.0 has been updated while your local cache seems to be the one of a previous version. It is very likely that all your calls to any `from_pretrained()` method will fail. Remove the offline mode and enable internet connection to have your cache be updated automatically, then you can go back to offline mode.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). You should set the environment variable TRANSFORMERS_CACHE to a writable directory.
+[rank: 1] Global seed set to 123
+INFERENCE_MATH requested=selective-tf32 effective=tf32 case=unitree_g1_pack_camera cudnn_tf32=True matmul_tf32=True cudnn_benchmark=False cudnn_benchmark_limit=10
+STAGE_TF32 requested=decision-cudnn effective=none case=unitree_g1_pack_camera ddim_prefix_steps=0
+STAGE_CUDNN_BENCHMARK requested=simulation effective=none case=unitree_g1_pack_camera
+TENSORBOARD_VIDEO enabled=false
+ASYNC_VIDEO enabled=true
+STREAM_FULL_VIDEO enabled=true
+DDIM_SCHEDULE_CACHE enabled=true
+SKIP_UNUSED_ACTION_PROJECTION enabled=true
+BATCH_DECISION_DECODE requested=selective enabled=true
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). Please, ensure the directory exists and can be written to.
+[rank: 0] Global seed set to 123
+INFERENCE_MATH requested=selective-tf32 effective=tf32 case=unitree_g1_pack_camera cudnn_tf32=True matmul_tf32=True cudnn_benchmark=False cudnn_benchmark_limit=10
+STAGE_TF32 requested=decision-cudnn effective=none case=unitree_g1_pack_camera ddim_prefix_steps=0
+STAGE_CUDNN_BENCHMARK requested=simulation effective=none case=unitree_g1_pack_camera
+TENSORBOARD_VIDEO enabled=false
+ASYNC_VIDEO enabled=true
+STREAM_FULL_VIDEO enabled=true
+DDIM_SCHEDULE_CACHE enabled=true
+SKIP_UNUSED_ACTION_PROJECTION enabled=true
+BATCH_DECISION_DECODE requested=selective enabled=true
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). Please, ensure the directory exists and can be written to.
+AE working on z of shape (1, 4, 32, 32) = 4096 dimensions.
+PARAMETER_INITIALIZATION skipped=true
+META_INITIALIZATION enabled=true
+CHECKPOINT_LOAD mmap=true assign=true
+AE working on z of shape (1, 4, 32, 32) = 4096 dimensions.
+PARAMETER_INITIALIZATION skipped=true
+META_INITIALIZATION enabled=true
+CHECKPOINT_LOAD mmap=true assign=true
+>>> model checkpoint loaded.
+>>> Load pre-trained model ...
+>>> model checkpoint loaded.
+>>> Load pre-trained model ...
+UNINITIALIZED_MEMORY_FILL enabled=false deterministic_algorithms=true
+FP32_DDIM_VIDEO requested=0
+UNINITIALIZED_MEMORY_FILL enabled=false deterministic_algorithms=true
+FP32_DDIM_VIDEO requested=0
+FP32_FEEDBACK_HEADS requested=1 protected_modules=862
+FULL_DENOISER_FP16 requested=non-v2 enabled=true
+FULL_DENOISER_NORM_DTYPE requested=fp16 modules=45
+DENOISER_MODE requested=native case=unitree_g1_pack_camera wrapped={}
+TF32X3_LINEARS requested=0 convolutions=false wrapped={}
+FP32_FEEDBACK_HEADS requested=1 protected_modules=862
+FULL_DENOISER_FP16 requested=non-v2 enabled=true
+FULL_DENOISER_NORM_DTYPE requested=fp16 modules=45
+DENOISER_MODE requested=native case=unitree_g1_pack_camera wrapped={}
+TF32X3_LINEARS requested=0 convolutions=false wrapped={}
+FUSED_SELF_QKV requested=0 enabled=false modules=66
+FUSED_SELF_QKV requested=0 enabled=false modules=66
+CROSS_ATTENTION_IMPL requested=xformers effective=xformers modules=66
+ATTENTION_LAYOUT requested=bmhk modules=66
+FUSED_ATTENTION_MIX requested=1 modules=66
+CROSS_ATTENTION_IMPL requested=xformers effective=xformers modules=66
+ATTENTION_LAYOUT requested=bmhk modules=66
+FUSED_ATTENTION_MIX requested=1 modules=66
+ATTENTION_DTYPE requested=fp16 effective=float16 modules=66
+ATTENTION_DTYPE requested=fp16 effective=float16 modules=66
+ATTENTION_PROJECTION_DTYPE requested=fp16 effective=float16 modules=66
+ATTENTION_PROJECTION_DTYPE requested=fp16 effective=float16 modules=66
+FFN_DTYPE requested=fp32 modules=33
+FFN_DTYPE requested=fp32 modules=33
+FUSED_GEGLU requested=1 modules=33
+FUSED_GEGLU requested=1 modules=33
+FUSED_RESBLOCK_NORM requested=0 enabled=false modules=22
+TEMPORAL_CONV_DTYPE requested=fp32 enabled=false modules=0
+TEMPORAL_CONV_IMPL requested=native modules=0
+FUSED_RESBLOCK_NORM requested=0 enabled=false modules=22
+TEMPORAL_CONV_DTYPE requested=fp32 enabled=false modules=0
+TEMPORAL_CONV_IMPL requested=native modules=0
+FRAMEWISE_TEMPORAL_NORM requested=0 enabled=false modules=22
+FRAMEWISE_TEMPORAL_NORM requested=0 enabled=false modules=22
+FUSED_TEMPORAL_NORM requested=0 enabled=false modules=22
+CHANNELS_LAST requested=0 enabled=false transformers=0
+FUSED_TEMPORAL_NORM requested=0 enabled=false modules=22
+CHANNELS_LAST requested=0 enabled=false transformers=0
+FUSED_TEMPORAL_ATTENTION requested=1
+FUSED_TEMPORAL_ATTENTION requested=1
+FUSED_RESIDUAL_NORM requested=1 modules=33
+FUSED_RESIDUAL_NORM requested=1 modules=33
+TEMPORAL_LAYOUT_DIRECT requested=1 modules=17
+TEMPORAL_LAYOUT_DIRECT requested=1 modules=17
+SPLIT_GROUP_NORM requested=1 modules=133
+SPLIT_GROUP_NORM requested=1 modules=133
+SPLIT_TRANSFORMER_NORM requested=1 modules=33
+SPLIT_TRANSFORMER_NORM requested=1 modules=33
+SIM_HEAD_CONV1D requested=native modules=37
+FIXED_CAST_CACHE requested=1
+SIM_HEAD_CONV1D requested=native modules=37
+FIXED_CAST_CACHE requested=1
+CONDITION_CACHE enabled=true attention_modules=66
+CONDITION_CACHE enabled=true attention_modules=66
+CUDA_GRAPH enabled=true scope=complete_denoiser cached_normalizers=2 skip_unchanged_inputs=0 max_graphs=2
+CUDA_GRAPH enabled=true scope=complete_denoiser cached_normalizers=2 skip_unchanged_inputs=0 max_graphs=2
+>>> Loaded 1 preprocessed input cache(s).
+>>> Generate 16 frames under each generation ...
+>>> Loaded 1 preprocessed input cache(s).
+>>> Generate 16 frames under each generation ...
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]>>> Step 0: generating actions ...
+>>> Step 0: generating actions ...
+/home/team07/.venv/lib/python3.10/site-packages/torch/cuda/graphs.py:82: UserWarning: DEBUG: TORCH_CUDAGRAPHS_DEBUG_PATH detected. graph_ will not be freed until debug_dump is called. (Triggered internally at ../aten/src/ATen/cuda/CUDAGraph.cpp:240.)
+  super().capture_end()
+/home/team07/.venv/lib/python3.10/site-packages/torch/cuda/graphs.py:82: UserWarning: DEBUG: TORCH_CUDAGRAPHS_DEBUG_PATH detected. graph_ will not be freed until debug_dump is called. (Triggered internally at ../aten/src/ATen/cuda/CUDAGraph.cpp:240.)
+  super().capture_end()
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=13.312 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=13.312 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=19.896 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=19.896 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+  0%|          | 0/1 [00:04<?, ?it/s]
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/check_nccl_geglu_model_rank.py", line 26, in <module>
+[rank0]:     runpy.run_path(str(script),run_name='__main__')
+[rank0]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 289, in run_path
+[rank0]:     return _run_module_code(code, init_globals, run_name,
+[rank0]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 96, in _run_module_code
+[rank0]:     _run_code(code, mod_globals, init_globals,
+[rank0]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 86, in _run_code
+[rank0]:     exec(code, run_globals)
+[rank0]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/profile_nccl_geglu_209_pair.py", line 151, in <module>
+[rank0]:     if __name__=='__main__':main()
+[rank0]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/profile_nccl_geglu_209_pair.py", line 146, in main
+[rank0]:     try:runpy.run_path(str(script),run_name='__main__')
+[rank0]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 289, in run_path
+[rank0]:     return _run_module_code(code, init_globals, run_name,
+[rank0]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 96, in _run_module_code
+[rank0]:     _run_code(code, mod_globals, init_globals,
+[rank0]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 86, in _run_code
+[rank0]:     exec(code, run_globals)
+[rank0]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/evaluation/world_model_interaction.py", line 1466, in <module>
+[rank0]:     run_inference(args, timing)
+[rank0]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/evaluation/world_model_interaction.py", line 1164, in run_inference
+[rank0]:     pred_videos_0, pred_actions, _ = image_guided_synthesis_sim_mode(
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/evaluation/world_model_interaction.py", line 803, in image_guided_synthesis_sim_mode
+[rank0]:     samples, actions, states, intermedia = ddim_sampler.sample(
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/home/team07/competition/unifolm-nonv2-aggressive-g1-vae-all-display-20261028T060305Z/src/unifolm_wma/models/samplers/ddim.py", line 158, in sample
+[rank0]:     samples, actions, states, intermediates = self.ddim_sampling(
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/home/team07/competition/unifolm-nonv2-aggressive-g1-vae-all-display-20261028T060305Z/src/unifolm_wma/models/samplers/ddim.py", line 287, in ddim_sampling
+[rank0]:     outs = self.p_sample_ddim(
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/home/team07/competition/unifolm-nonv2-aggressive-g1-vae-all-display-20261028T060305Z/src/unifolm_wma/models/samplers/ddim.py", line 372, in p_sample_ddim
+[rank0]:     model_output, model_output_action, model_output_state = self.model.apply_model(
+[rank0]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/profile_nccl_geglu_209_pair.py", line 72, in diagnose
+[rank0]:     ctl=controller.report();assert ctl['captured']==31 and ctl['native_linear_capture_count']==62 and ctl['GEGLU']['captured']==31 and ctl['spatial_shared_boundary']['captured']==15 and ctl['spatial_shared_boundary']['attention_calls']==75 and ctl['temporal_shared_boundary']['captured']==16 and ctl['temporal_shared_boundary']['attention_calls']==32
+[rank0]: AssertionError
+  0%|          | 0/1 [00:04<?, ?it/s]
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/check_nccl_geglu_model_rank.py", line 26, in <module>
+[rank1]:     runpy.run_path(str(script),run_name='__main__')
+[rank1]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 289, in run_path
+[rank1]:     return _run_module_code(code, init_globals, run_name,
+[rank1]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 96, in _run_module_code
+[rank1]:     _run_code(code, mod_globals, init_globals,
+[rank1]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 86, in _run_code
+[rank1]:     exec(code, run_globals)
+[rank1]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/profile_nccl_geglu_209_pair.py", line 151, in <module>
+[rank1]:     if __name__=='__main__':main()
+[rank1]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/profile_nccl_geglu_209_pair.py", line 146, in main
+[rank1]:     try:runpy.run_path(str(script),run_name='__main__')
+[rank1]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 289, in run_path
+[rank1]:     return _run_module_code(code, init_globals, run_name,
+[rank1]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 96, in _run_module_code
+[rank1]:     _run_code(code, mod_globals, init_globals,
+[rank1]:   File "/home/team07/.venv/lib/python3.10/runpy.py", line 86, in _run_code
+[rank1]:     exec(code, run_globals)
+[rank1]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/evaluation/world_model_interaction.py", line 1466, in <module>
+[rank1]:     run_inference(args, timing)
+[rank1]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/evaluation/world_model_interaction.py", line 1164, in run_inference
+[rank1]:     pred_videos_0, pred_actions, _ = image_guided_synthesis_sim_mode(
+[rank1]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank1]:     return func(*args, **kwargs)
+[rank1]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/evaluation/world_model_interaction.py", line 803, in image_guided_synthesis_sim_mode
+[rank1]:     samples, actions, states, intermedia = ddim_sampler.sample(
+[rank1]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank1]:     return func(*args, **kwargs)
+[rank1]:   File "/home/team07/competition/unifolm-nonv2-aggressive-g1-vae-all-display-20261028T060305Z/src/unifolm_wma/models/samplers/ddim.py", line 158, in sample
+[rank1]:     samples, actions, states, intermediates = self.ddim_sampling(
+[rank1]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank1]:     return func(*args, **kwargs)
+[rank1]:   File "/home/team07/competition/unifolm-nonv2-aggressive-g1-vae-all-display-20261028T060305Z/src/unifolm_wma/models/samplers/ddim.py", line 287, in ddim_sampling
+[rank1]:     outs = self.p_sample_ddim(
+[rank1]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank1]:     return func(*args, **kwargs)
+[rank1]:   File "/home/team07/competition/unifolm-nonv2-aggressive-g1-vae-all-display-20261028T060305Z/src/unifolm_wma/models/samplers/ddim.py", line 372, in p_sample_ddim
+[rank1]:     model_output, model_output_action, model_output_state = self.model.apply_model(
+[rank1]:   File "/var/tmp/team07-nonv2-native-ffn-grid59-fj8de88y/attempt-1/scripts/profile_nccl_geglu_209_pair.py", line 72, in diagnose
+[rank1]:     ctl=controller.report();assert ctl['captured']==31 and ctl['native_linear_capture_count']==62 and ctl['GEGLU']['captured']==31 and ctl['spatial_shared_boundary']['captured']==15 and ctl['spatial_shared_boundary']['attention_calls']==75 and ctl['temporal_shared_boundary']['captured']==16 and ctl['temporal_shared_boundary']['attention_calls']==32
+[rank1]: AssertionError
+E1029 13:44:38.794000 140075705452352 torch/distributed/elastic/multiprocessing/api.py:826] failed (exitcode: 1) local_rank: 0 (pid: 494635) of binary: /home/team07/.venv/bin/python
+Traceback (most recent call last):
+  File "/home/team07/.venv/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/team07/.venv/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 883, in <module>
+    main()
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
+    return f(*args, **kwargs)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 879, in main
+    run(args)
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 870, in run
+    elastic_launch(
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 132, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 263, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+check_nccl_geglu_model_rank.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-10-29_13:44:38
+  host      : contest-player
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 494636)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-10-29_13:44:38
+  host      : contest-player
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 494635)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

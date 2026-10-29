@@ -262,6 +262,8 @@ def main():
     verify_crossstep(root)
     from verify_temporal_delta_gemm import verify as verify_delta
     verify_delta(root)
+    from verify_g1_native_shared67 import verify as verify_g1_temporal
+    verify_g1_temporal()
     print('Verified: original209/historical overlays/adopted V2 CO225;adopted63 Z1/dual/pencils;historical59 G1;official103 log/JSON.')
 
 if __name__=='__main__':main()
