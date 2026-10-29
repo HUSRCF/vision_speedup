@@ -260,6 +260,8 @@ def main():
     verify_matched_half(root)
     from verify_crossstep211 import verify as verify_crossstep
     verify_crossstep(root)
+    from verify_temporal_delta_gemm import verify as verify_delta
+    verify_delta(root)
     print('Verified: original209/historical overlays/adopted V2 CO225;adopted63 Z1/dual/pencils;historical59 G1;official103 log/JSON.')
 
 if __name__=='__main__':main()

@@ -27,7 +27,7 @@ def build(repo,output,revision):
     return source,diagnostic
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--revision',type=int,choices=(3,4,5,6),required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--prepare-only',action='store_true');p.add_argument('--gpu',choices=tuple('0123'),default='0');p.add_argument('--cache-dir',type=Path);p.add_argument('--python',type=Path,default=Path.home()/'.venv/bin/python');a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--revision',type=int,choices=(3,4,5,6,7,8),required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--prepare-only',action='store_true');p.add_argument('--gpu',choices=tuple('0123'),default='0');p.add_argument('--cache-dir',type=Path);p.add_argument('--python',type=Path,default=Path.home()/'.venv/bin/python');a=p.parse_args()
     if not a.prepare_only and a.cache_dir is None:p.error('--cache-dir is required on an executable filesystem')
     repo=Path(__file__).resolve().parents[1];source,diagnostic=build(repo,a.output.resolve(),a.revision)
     if a.prepare_only:return

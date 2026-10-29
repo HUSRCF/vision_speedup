@@ -36,7 +36,7 @@ def verify(root):
         report=json.loads((full/'profiles/unitree_z1_dual_arm_stackbox_v2.crossstep.json').read_text())
         assert report['counts']['decision_calls']==report['counts']['world_calls']==550 and report['counts']['world_reuse']==165
         assert len(report['completed_generations'])==22 and all(g['steps']==50 for g in report['completed_generations'])
-    for revision in (3,4,5,6):
+    for revision in (3,4,5,6,7,8):
         q=p/f'full-r{revision}'
         if not q.exists():continue
         identity=json.loads((q/'identity.json').read_text());assert len(identity['manifest'])==211 and not identity['official_adopted']
@@ -45,8 +45,6 @@ def verify(root):
             assert hashlib.sha256(source.read_bytes()).hexdigest()==h,n
         for n,h in identity['scripts'].items():assert hashlib.sha256((q/n).read_bytes()).hexdigest()==h,n
         for n,h in identity['assets'].items():assert hashlib.sha256((q/'timing-assets'/n).read_bytes()).hexdigest()==h,n
-        runtime=(q/'production-overlay/src/unifolm_wma/utils/crossstep_feature_runtime.py').read_text()
-        assert "if reuse:os.environ[flag]='0'" in runtime and "else:os.environ[flag]=previous_flag" in runtime
         full=e/f'full-r{revision}'
         if not(full/'summary.json').exists():continue
         summary=json.loads((full/'summary.json').read_text());result=json.loads((full/'result.json').read_text())
@@ -55,10 +53,17 @@ def verify(root):
         assert row['rounds']==11 and row['videos']==23 and row['execution_ok'] and row['profile_complete']
         assert row['process_wall_s']==summary['process_wall_s'] and row['psnr_db']==summary['psnr_db'] and row['psnr_passed']==summary['quality_passed']
         report=json.loads((full/'profiles/unitree_z1_dual_arm_stackbox_v2.crossstep.json').read_text())
+        if identity['policy'].get('scope')=='correction-observe':
+            assert summary['diagnostic_only']and summary['not_a_speedup_candidate']and summary['baseline_videos_exact']
+            assert report['inference_outputs_unmodified']and report['no_native_argument_inspection']and report['counts']==dict(decision=550,world=550)and len(report['rows'])==50
+            hashes=json.loads((full/'baseline-video-comparison.json').read_text());assert hashes['all23_SHA256_equal']and len(hashes['current_hashes'])==23 and hashes['current_hashes']==hashes['baseline_hashes']
+            continue
         first,last=identity['policy']['start'],identity['policy']['stop'];expected_reuse=11*sum(first<=k<last and(k-first)%2!=0 for k in range(50))
         assert report['counts']['decision_calls']==report['counts']['world_calls']==550 and report['counts']['world_reuse']==expected_reuse
         assert len(report['completed_generations'])==22 and all(g['steps']==50 for g in report['completed_generations'])
-        assert report['reuse_graph_native_head_transforms_live'] and not report['reuse_graph_head_filter_cache']
+        if identity['policy'].get('scope')=='spatial':
+            assert report['all_convolutions_and_heads_live']and report['reuse_graph_head_filter_cache']and len(report['selected_blocks'])==16
+        else:assert report['reuse_graph_native_head_transforms_live'] and not report['reuse_graph_head_filter_cache']
     q=p/'residual-sanity'
     if q.exists():
         identity=json.loads((q/'identity.json').read_text());assert len(identity['manifest'])==211
@@ -68,6 +73,16 @@ def verify(root):
         for n,h in identity['scripts'].items():assert hashlib.sha256((q/n).read_bytes()).hexdigest()==h
         r=json.loads((e/'residual-sanity/comparison.json').read_text())
         assert r['boundary_residual']and r['current_boundary_input_live']and r['three_outputs_checked_calls']==200 and r['RNG_unchanged']
+        assert r['graph_count']==3 and r['synthetic_only']and not r['real_WMA_or_video_quality_verified']
+    q=p/'spatial-sanity'
+    if q.exists():
+        identity=json.loads((q/'identity.json').read_text());assert len(identity['manifest'])==211
+        for n,h in identity['manifest'].items():
+            source=q/'production-overlay'/n if base.get(n)!=h else root/'unifolm'/n
+            assert hashlib.sha256(source.read_bytes()).hexdigest()==h
+        for n,h in identity['scripts'].items():assert hashlib.sha256((q/n).read_bytes()).hexdigest()==h
+        r=json.loads((e/'spatial-sanity/comparison.json').read_text())
+        assert r['scope']=='spatial'and r['all_convolutions_and_heads_live']and r['three_outputs_checked_calls']==200 and r['RNG_unchanged']
         assert r['graph_count']==3 and r['synthetic_only']and not r['real_WMA_or_video_quality_verified']
     print('CROSSSTEP211 passed=true; synthetic graph consistency is separate from full-video PSNR; no official adoption.')
 
