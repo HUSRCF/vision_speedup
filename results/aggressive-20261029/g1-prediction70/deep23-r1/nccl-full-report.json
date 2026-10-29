@@ -1,0 +1,316 @@
+{
+  "clean": true,
+  "run_directory": "/var/tmp/team07-nonv2-g1-prediction70-g1-guhscdyc/diagnostic/runs/20261029T121840Z-case-v2-nccl-1092355",
+  "physical_GPUs": [
+    "0",
+    "1"
+  ],
+  "observations": 222,
+  "benchmark_exit_code": 1,
+  "parallel": {
+    "policy": "nonv2-native-shared-root-move",
+    "GPUs": 2,
+    "full_workload_on_both_ranks": true,
+    "rank_videos_SHA256_equal": true,
+    "video_count": 23,
+    "video_hashes": {
+      "inference/0_full_fs6.mp4": "cd7d8a9afc7f0353a0715210a3b21aaf9468e995f4f0050c120d79d8f6e6716f",
+      "inference/sample_0/wm/6/itr-10.mp4": "f3de959bf1e631a8783bf0ab96dfd3d8789d72e7b6da5d1a96ff0831fb4e35ea",
+      "inference/sample_0/wm/6/itr-9.mp4": "54be4138e2284c1598d89e1c4646afbd868c2422ecd5d86f397359baf962a374",
+      "inference/sample_0/wm/6/itr-8.mp4": "b47f03a80eb129e857c96bfee93963109afd9625eba566f5a2a772cf48c978cd",
+      "inference/sample_0/wm/6/itr-7.mp4": "9fde486e2e046d84c5c3906c22b3500c674d5b7d3b58dd756986fdc28af2c8ba",
+      "inference/sample_0/wm/6/itr-6.mp4": "1ada6f1a821c5ab207ac4e32c4fcc648f6d1cf727d5d56213e95c58504d42f79",
+      "inference/sample_0/wm/6/itr-5.mp4": "35abd9ed14d1e2a6b0205ab3f3901b0ee3a1b1a7553ebab85754d4ca5faa1af4",
+      "inference/sample_0/wm/6/itr-4.mp4": "8b323245350cf5d2c6d6fcecb2e1ce84fce1c901679dd1437a1772c13edcad7b",
+      "inference/sample_0/wm/6/itr-3.mp4": "299b317eefb10df148cb1ea76b7d065b47127a20ea077126b573d53c04244eaa",
+      "inference/sample_0/wm/6/itr-2.mp4": "745ccee809f140dc99078bc0ef12d466b9ef683004631ad7b6fe3c32cbf0b52e",
+      "inference/sample_0/wm/6/itr-1.mp4": "1440fcb3f44ec9b078318444ed1be41e4aaad3c19311dda0335a32caedb35c0a",
+      "inference/sample_0/wm/6/itr-0.mp4": "63d2399e9de6e3d1ce1bb0e00cde972628f6c70cadb393e70eddfb89263a6ce6",
+      "inference/sample_0/dm/6/itr-10.mp4": "4da7307c1436d5ab2fcd57ddc1df8dd954ade9b7332238ea3a41873e0940cedd",
+      "inference/sample_0/dm/6/itr-9.mp4": "a237f613fb731bafbe74fa48f1bb6aff8d23f01b0dc32cb79b8ce9e76f8434ca",
+      "inference/sample_0/dm/6/itr-8.mp4": "f930069bc427af2edfebc9b7b8ccc846d847913125b395a055195bca2907e41b",
+      "inference/sample_0/dm/6/itr-7.mp4": "0bf5de0e9346e38f6d8adf0c2f4acb745fb190e8c7c65c5642477a23a5b613b4",
+      "inference/sample_0/dm/6/itr-6.mp4": "449d51cc9f9bbc5537fbaaa406b86a80b338b1e958d52b12426cf9b09dae7f6a",
+      "inference/sample_0/dm/6/itr-5.mp4": "e4cf7a0d74e543c0e84c11fd8dc31f05127ca6d10ad492c1d4131aad9d2f7d68",
+      "inference/sample_0/dm/6/itr-4.mp4": "2643de3b9b083cf58c630c2e7221543c5668b64f07495b285dc54245b7ec2f2f",
+      "inference/sample_0/dm/6/itr-3.mp4": "bc070b2919b776a611cfc2466457896578114f3babfb742749c4a49349a52923",
+      "inference/sample_0/dm/6/itr-2.mp4": "21d00554e9646309d173dea754987e013929ac95ee22380570bc0aed40288ded",
+      "inference/sample_0/dm/6/itr-1.mp4": "3a6b34cd3e9a4cc22348dd13cdbadd41f33930cdbb51114c653599b8d56a97c5",
+      "inference/sample_0/dm/6/itr-0.mp4": "815b0af5ab5977b43bbeddfa020c9d60855e8a146bf3571722414555f3d62f46"
+    },
+    "helper_exit_code": 0,
+    "setup_helper_outputs_and_teardown_inside_original_process_timer": true,
+    "stage_captures": {
+      "decision": 31,
+      "world": 31
+    },
+    "stage_calls": {
+      "decision": 550,
+      "world": 550
+    },
+    "graph_roles": {
+      "decision_full": {
+        "partition_enabled": true,
+        "native_FFN_partitions": 31,
+        "original_full_vendor_shapes": true,
+        "native_binding_required": true
+      },
+      "decision_reuse": {
+        "partition_enabled": false,
+        "native_FFN_partitions": 0,
+        "original_full_vendor_shapes": true,
+        "native_binding_required": false
+      },
+      "world_full": {
+        "partition_enabled": true,
+        "native_FFN_partitions": 31,
+        "original_full_vendor_shapes": true,
+        "native_binding_required": true
+      },
+      "world_reuse": {
+        "partition_enabled": false,
+        "native_FFN_partitions": 0,
+        "original_full_vendor_shapes": true,
+        "native_binding_required": false
+      }
+    },
+    "feature_reuse": {
+      "experimental_dynamic_feature_reuse": true,
+      "predictive_feature_reuse": true,
+      "history_complete_refreshes": 2,
+      "prediction": "current + (current - previous) * actual_position_gap_ratio",
+      "alpha_histogram": {
+        "1.0": 22,
+        "0.5": 198
+      },
+      "residual_cache_FP32": true,
+      "graph_prediction_selfcheck": {
+        "passed": true,
+        "cases": [
+          {
+            "dtype": "torch.float16",
+            "residual": false,
+            "tail": 257,
+            "mutated_replay_bitwise": true
+          },
+          {
+            "dtype": "torch.float16",
+            "residual": true,
+            "tail": 257,
+            "mutated_replay_bitwise": true
+          },
+          {
+            "dtype": "torch.float32",
+            "residual": false,
+            "tail": 257,
+            "mutated_replay_bitwise": true
+          },
+          {
+            "dtype": "torch.float32",
+            "residual": true,
+            "tail": 257,
+            "mutated_replay_bitwise": true
+          }
+        ],
+        "no_full_model_quality_inferred": true
+      },
+      "interval": 2,
+      "window": [
+        20,
+        40
+      ],
+      "stages": [
+        "decision",
+        "world"
+      ],
+      "selected_blocks": [
+        "input_blocks.1",
+        "input_blocks.2",
+        "input_blocks.3",
+        "input_blocks.4",
+        "input_blocks.5",
+        "input_blocks.6",
+        "input_blocks.7",
+        "input_blocks.8",
+        "input_blocks.9",
+        "input_blocks.10",
+        "input_blocks.11",
+        "middle_block",
+        "output_blocks.0",
+        "output_blocks.1",
+        "output_blocks.2",
+        "output_blocks.3",
+        "output_blocks.4",
+        "output_blocks.5",
+        "output_blocks.6",
+        "output_blocks.7",
+        "output_blocks.8",
+        "output_blocks.9",
+        "output_blocks.10"
+      ],
+      "counts": {
+        "decision_calls": 550,
+        "decision_refresh": 440,
+        "decision_reuse": 110,
+        "world_calls": 550,
+        "world_refresh": 440,
+        "world_reuse": 110
+      },
+      "completed_generations": [
+        {
+          "stage": "decision",
+          "generation": 0,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 0,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 1,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 1,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 2,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 2,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 3,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 3,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 4,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 4,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 5,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 5,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 6,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 6,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 7,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 7,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 8,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 8,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 9,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 9,
+          "steps": 50
+        },
+        {
+          "stage": "decision",
+          "generation": 10,
+          "steps": 50
+        },
+        {
+          "stage": "world",
+          "generation": 10,
+          "steps": 50
+        }
+      ],
+      "invalidations": {
+        "new_generation": 22
+      },
+      "persistent_feature_bytes": 1153433600,
+      "eager_or_capture_block_calls": {
+        "refresh": 184,
+        "reuse": 184
+      },
+      "sampler_step_count_reduced": false,
+      "round_count_reduced": false,
+      "shallow_blocks_and_heads_live": true,
+      "no_reference_or_final_output_cache": true,
+      "full_video_PSNR_required": true,
+      "boundary_residual": false,
+      "current_boundary_input_live": false,
+      "scope": "deep",
+      "all_convolutions_and_heads_live": false,
+      "per_module_residual": false,
+      "graph_count": 4,
+      "graph_roles": [
+        [
+          "decision",
+          false
+        ],
+        [
+          "decision",
+          true
+        ],
+        [
+          "world",
+          false
+        ],
+        [
+          "world",
+          true
+        ]
+      ],
+      "world_refresh_and_reuse_share_graph_pool": true,
+      "reuse_graph_head_filter_cache": false,
+      "reuse_graph_native_head_transforms_live": true,
+      "full_refresh_graph_head_cache_unchanged": true
+    }
+  },
+  "smoke_only": false,
+  "no_official_adoption": true
+}

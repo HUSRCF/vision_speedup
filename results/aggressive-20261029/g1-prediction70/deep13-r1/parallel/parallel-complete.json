@@ -1,0 +1,294 @@
+{
+  "policy": "nonv2-native-shared-root-move",
+  "GPUs": 2,
+  "full_workload_on_both_ranks": true,
+  "rank_videos_SHA256_equal": true,
+  "video_count": 23,
+  "video_hashes": {
+    "inference/0_full_fs6.mp4": "ea4d61ea6fd57bd03b9e07880b1995fd34a9262a3d6cdcda7a473b08821ba7e7",
+    "inference/sample_0/wm/6/itr-10.mp4": "ceaea4c01ac0a9e263219e293068f802afa886a906428d149c3bf79ab8188969",
+    "inference/sample_0/wm/6/itr-9.mp4": "669d126f852a5470237259be69ae5c60971b7ce9f6bf0711086099687748ffac",
+    "inference/sample_0/wm/6/itr-8.mp4": "2f804bd20b64571a426b6b996b2626e8a81547c55faf656595f97ac6eeecfb6a",
+    "inference/sample_0/wm/6/itr-7.mp4": "538c74d672884ade6ff0cf7ab37f1783fe2046c92b3f26a323d45aaedc23313a",
+    "inference/sample_0/wm/6/itr-6.mp4": "b56e75fae8a3af87ac7fb80860332e8aafd8b973d763a9b4b79602ec92e1b8c8",
+    "inference/sample_0/wm/6/itr-5.mp4": "8ebe13ca4df42e69e17db9bb9989e0137a307506092e4d106415005fbe832551",
+    "inference/sample_0/wm/6/itr-4.mp4": "ea96956b42e136ff9187df80504db0e62f7173a87a3e31433a21b05ea6d2da80",
+    "inference/sample_0/wm/6/itr-3.mp4": "75e7ce89aed426b752de0c5efbe761a31322b485942e42b83b386cca3d5578d9",
+    "inference/sample_0/wm/6/itr-2.mp4": "5841be65fb3df8a34b4a93f9fe323c6aa593e14550f58c4155bfdb5b93bc7451",
+    "inference/sample_0/wm/6/itr-1.mp4": "b062f6c3d895afe9fa4cdfbaa2e512367c0eac3f4fa7ad2c4a94db0f8bda57da",
+    "inference/sample_0/wm/6/itr-0.mp4": "b58942372dc4263dee4ae710dc08db02dc28b4a692d9e3084133b6bb23895a1d",
+    "inference/sample_0/dm/6/itr-10.mp4": "e77e53382cfaeb1c306e6d48198335221bcc92f8534e288d24577d22fb2ab385",
+    "inference/sample_0/dm/6/itr-9.mp4": "a94911a5d0ebe3ecf92980d7d5b1f8bf8d8c0633c504a48a9f76d0c91e3c36e4",
+    "inference/sample_0/dm/6/itr-8.mp4": "18c79adffc1b2c95fce1bc57d0e1dc7cbf7b2ff7f9245e465e0e2e59ef1f43c3",
+    "inference/sample_0/dm/6/itr-7.mp4": "7c98d41ff0866b2565c3eefea9334566aabb5539dede603e03a7a5990a742e61",
+    "inference/sample_0/dm/6/itr-6.mp4": "20ac50e42c3251be5ddba4404e234fb16e84beed705122ed1a586189366d34b7",
+    "inference/sample_0/dm/6/itr-5.mp4": "b9571728b5715c84209afb909544225dd1eb2dfcff9be214687e588b559e9dae",
+    "inference/sample_0/dm/6/itr-4.mp4": "c783eb3ade9c7dbc70bfdaf594f17309199279430b312cc3f78ba2d2039a0b44",
+    "inference/sample_0/dm/6/itr-3.mp4": "05d3d8141a5332f5eca58cfe6f8359097b068d5a73bc3a6181240eb9bbe6399a",
+    "inference/sample_0/dm/6/itr-2.mp4": "1ba5f13d8077f4d9177e481fe009d90b21ee3935b2b5fc55657a09bc85142af2",
+    "inference/sample_0/dm/6/itr-1.mp4": "f8ced91b43585ff0330aa43baeded18f9accf555ade4ba2c69148972f54d6220",
+    "inference/sample_0/dm/6/itr-0.mp4": "8e97589b439ad42fd1b7a1425c48b36e3745ab15da357b59b9b35d3f2d1a2734"
+  },
+  "helper_exit_code": 0,
+  "setup_helper_outputs_and_teardown_inside_original_process_timer": true,
+  "stage_captures": {
+    "decision": 31,
+    "world": 31
+  },
+  "stage_calls": {
+    "decision": 550,
+    "world": 550
+  },
+  "graph_roles": {
+    "decision_full": {
+      "partition_enabled": true,
+      "native_FFN_partitions": 31,
+      "original_full_vendor_shapes": true,
+      "native_binding_required": true
+    },
+    "decision_reuse": {
+      "partition_enabled": false,
+      "native_FFN_partitions": 0,
+      "original_full_vendor_shapes": true,
+      "native_binding_required": false
+    },
+    "world_full": {
+      "partition_enabled": true,
+      "native_FFN_partitions": 31,
+      "original_full_vendor_shapes": true,
+      "native_binding_required": true
+    },
+    "world_reuse": {
+      "partition_enabled": false,
+      "native_FFN_partitions": 0,
+      "original_full_vendor_shapes": true,
+      "native_binding_required": false
+    }
+  },
+  "feature_reuse": {
+    "experimental_dynamic_feature_reuse": true,
+    "predictive_feature_reuse": true,
+    "history_complete_refreshes": 2,
+    "prediction": "current + (current - previous) * actual_position_gap_ratio",
+    "alpha_histogram": {
+      "1.0": 22,
+      "0.5": 198
+    },
+    "residual_cache_FP32": true,
+    "graph_prediction_selfcheck": {
+      "passed": true,
+      "cases": [
+        {
+          "dtype": "torch.float16",
+          "residual": false,
+          "tail": 257,
+          "mutated_replay_bitwise": true
+        },
+        {
+          "dtype": "torch.float16",
+          "residual": true,
+          "tail": 257,
+          "mutated_replay_bitwise": true
+        },
+        {
+          "dtype": "torch.float32",
+          "residual": false,
+          "tail": 257,
+          "mutated_replay_bitwise": true
+        },
+        {
+          "dtype": "torch.float32",
+          "residual": true,
+          "tail": 257,
+          "mutated_replay_bitwise": true
+        }
+      ],
+      "no_full_model_quality_inferred": true
+    },
+    "interval": 2,
+    "window": [
+      20,
+      40
+    ],
+    "stages": [
+      "decision",
+      "world"
+    ],
+    "selected_blocks": [
+      "input_blocks.6",
+      "input_blocks.7",
+      "input_blocks.8",
+      "input_blocks.9",
+      "input_blocks.10",
+      "input_blocks.11",
+      "middle_block",
+      "output_blocks.0",
+      "output_blocks.1",
+      "output_blocks.2",
+      "output_blocks.3",
+      "output_blocks.4",
+      "output_blocks.5"
+    ],
+    "counts": {
+      "decision_calls": 550,
+      "decision_refresh": 440,
+      "decision_reuse": 110,
+      "world_calls": 550,
+      "world_refresh": 440,
+      "world_reuse": 110
+    },
+    "completed_generations": [
+      {
+        "stage": "decision",
+        "generation": 0,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 0,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 1,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 1,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 2,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 2,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 3,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 3,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 4,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 4,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 5,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 5,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 6,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 6,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 7,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 7,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 8,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 8,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 9,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 9,
+        "steps": 50
+      },
+      {
+        "stage": "decision",
+        "generation": 10,
+        "steps": 50
+      },
+      {
+        "stage": "world",
+        "generation": 10,
+        "steps": 50
+      }
+    ],
+    "invalidations": {
+      "new_generation": 22
+    },
+    "persistent_feature_bytes": 288358400,
+    "eager_or_capture_block_calls": {
+      "refresh": 104,
+      "reuse": 104
+    },
+    "sampler_step_count_reduced": false,
+    "round_count_reduced": false,
+    "shallow_blocks_and_heads_live": true,
+    "no_reference_or_final_output_cache": true,
+    "full_video_PSNR_required": true,
+    "boundary_residual": false,
+    "current_boundary_input_live": false,
+    "scope": "deep",
+    "all_convolutions_and_heads_live": false,
+    "per_module_residual": false,
+    "graph_count": 4,
+    "graph_roles": [
+      [
+        "decision",
+        false
+      ],
+      [
+        "decision",
+        true
+      ],
+      [
+        "world",
+        false
+      ],
+      [
+        "world",
+        true
+      ]
+    ],
+    "world_refresh_and_reuse_share_graph_pool": true,
+    "reuse_graph_head_filter_cache": false,
+    "reuse_graph_native_head_transforms_live": true,
+    "full_refresh_graph_head_cache_unchanged": true
+  }
+}

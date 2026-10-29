@@ -1,0 +1,30 @@
+{
+  "case": "unitree_g1_pack_camera",
+  "rounds": 11,
+  "videos": 23,
+  "GPUs": 2,
+  "source_count": 70,
+  "feature_policy": {
+    "input_start": 1,
+    "output_end": 11,
+    "start": 20,
+    "stop": 40,
+    "boundary_residual": false,
+    "scope": "deep",
+    "stages": [
+      "decision",
+      "world"
+    ]
+  },
+  "selected_parent_blocks": 23,
+  "graph_role_partition_counts": {
+    "decision_full": 31,
+    "decision_reuse": 0,
+    "world_full": 31,
+    "world_reuse": 0
+  },
+  "original68_native_math_unchanged": true,
+  "full_graph_only_qualified_native_binding": true,
+  "reuse_graph_native_full_shapes": true,
+  "official_adopted": false
+}

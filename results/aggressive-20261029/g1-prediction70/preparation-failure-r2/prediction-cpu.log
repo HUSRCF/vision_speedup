@@ -1,0 +1,16 @@
+NONV2_CROSSSTEP65_CPU passed=true all1200_calls_through_parallel_executor=true role_module_sets=true duplicate_rejected=true no_GPU=true full_video_quality_not_inferred=true
+CROSSSTEP_PREDICT_CPU passed=true affine_complete_outputs=3600 alpha_first1_steadyHalf=true two_fresh_after_invalidation=true warmup_not_extra_step=true FP32_residual=true RNG_unchanged=true no_GPU=true
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-g1-prediction70-g1-1_5g9699/diagnostic/check_g1_prediction70_cpu.py", line 169, in <module>
+    if __name__=='__main__':check_cache_scope()
+  File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/var/tmp/team07-nonv2-g1-prediction70-g1-1_5g9699/diagnostic/check_g1_prediction70_cpu.py", line 164, in check_cache_scope
+    obj=cache.get_cache_manager('team07-original-native-CPU-check');assert type(obj)is cache.FileCacheManager
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/runtime/cache.py", line 264, in get_cache_manager
+    return __cache_cls(key)
+  File "/home/team07/.venv/lib/python3.10/site-packages/triton/runtime/cache.py", line 64, in __init__
+    os.makedirs(self.cache_dir, exist_ok=True)
+  File "/home/team07/.venv/lib/python3.10/os.py", line 225, in makedirs
+    mkdir(name, mode)
+OSError: [Errno 28] No space left on device: '/home/team07/.triton/cache/team07-original-native-CPU-check'
