@@ -1,0 +1,356 @@
+{
+  "pairs": [
+    {
+      "revision": 1,
+      "baseline_s": 157.6129,
+      "candidate_s": 157.103843,
+      "saved_s": 0.509057,
+      "phases": {
+        "baseline": {
+          "total_process_wall_s": 157.6129,
+          "unprofiled_wall_s": 2.809111,
+          "stages": {
+            "checkpoint_deserialize": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.131227
+            },
+            "checkpoint_load_state_dict": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.123055
+            },
+            "config_and_model_construct": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 1.506081
+            },
+            "decision_generation": {
+              "count": 11,
+              "cuda_s": 75.273084,
+              "wall_s": 75.273774
+            },
+            "full_video_write": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 8e-06
+            },
+            "inference_optimization_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.097906
+            },
+            "input_cache_load": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.00281
+            },
+            "iteration_result_write": {
+              "count": 11,
+              "cuda_s": 0.0,
+              "wall_s": 0.145684
+            },
+            "model_to_gpu": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 2.722081
+            },
+            "output_directory_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 7.4e-05
+            },
+            "output_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 4.5e-05
+            },
+            "reproducibility_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.001137
+            },
+            "simulation_generation": {
+              "count": 11,
+              "cuda_s": 74.180722,
+              "wall_s": 74.181345
+            },
+            "tensorboard_close": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 5e-06
+            },
+            "video_writer_close": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.618557
+            }
+          }
+        },
+        "candidate": {
+          "total_process_wall_s": 157.103843,
+          "unprofiled_wall_s": 4.775432,
+          "stages": {
+            "checkpoint_deserialize": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.130917
+            },
+            "checkpoint_load_state_dict": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.125586
+            },
+            "config_and_model_construct": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 1.468306
+            },
+            "decision_generation": {
+              "count": 11,
+              "cuda_s": 73.435847,
+              "wall_s": 73.436476
+            },
+            "full_video_write": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 7e-06
+            },
+            "inference_optimization_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.115925
+            },
+            "input_cache_load": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.002734
+            },
+            "iteration_result_write": {
+              "count": 11,
+              "cuda_s": 0.0,
+              "wall_s": 0.158553
+            },
+            "model_to_gpu": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 3.157565
+            },
+            "output_directory_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 7e-05
+            },
+            "output_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 6.3e-05
+            },
+            "reproducibility_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.914469
+            },
+            "simulation_generation": {
+              "count": 11,
+              "cuda_s": 72.224385,
+              "wall_s": 72.225081
+            },
+            "tensorboard_close": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 1e-06
+            },
+            "video_writer_close": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.592658
+            }
+          }
+        }
+      },
+      "both_clean_complete_quality_passed": true
+    },
+    {
+      "revision": 2,
+      "baseline_s": 157.274943,
+      "candidate_s": 157.496967,
+      "saved_s": -0.222024,
+      "phases": {
+        "baseline": {
+          "total_process_wall_s": 157.274943,
+          "unprofiled_wall_s": 2.755433,
+          "stages": {
+            "checkpoint_deserialize": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.132754
+            },
+            "checkpoint_load_state_dict": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.122758
+            },
+            "config_and_model_construct": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 1.521832
+            },
+            "decision_generation": {
+              "count": 11,
+              "cuda_s": 75.210623,
+              "wall_s": 75.211402
+            },
+            "full_video_write": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 8e-06
+            },
+            "inference_optimization_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.09728
+            },
+            "input_cache_load": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.002647
+            },
+            "iteration_result_write": {
+              "count": 11,
+              "cuda_s": 0.0,
+              "wall_s": 0.150846
+            },
+            "model_to_gpu": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 2.689083
+            },
+            "output_directory_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 6.5e-05
+            },
+            "output_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 4.5e-05
+            },
+            "reproducibility_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.001215
+            },
+            "simulation_generation": {
+              "count": 11,
+              "cuda_s": 73.992305,
+              "wall_s": 73.992993
+            },
+            "tensorboard_close": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 1e-06
+            },
+            "video_writer_close": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.596581
+            }
+          }
+        },
+        "candidate": {
+          "total_process_wall_s": 157.496967,
+          "unprofiled_wall_s": 4.540963,
+          "stages": {
+            "checkpoint_deserialize": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.132324
+            },
+            "checkpoint_load_state_dict": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.125049
+            },
+            "config_and_model_construct": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 1.491344
+            },
+            "decision_generation": {
+              "count": 11,
+              "cuda_s": 73.492557,
+              "wall_s": 73.493198
+            },
+            "full_video_write": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 9e-06
+            },
+            "inference_optimization_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.124052
+            },
+            "input_cache_load": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.002746
+            },
+            "iteration_result_write": {
+              "count": 11,
+              "cuda_s": 0.0,
+              "wall_s": 0.154649
+            },
+            "model_to_gpu": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 3.611277
+            },
+            "output_directory_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 7.4e-05
+            },
+            "output_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 7.4e-05
+            },
+            "reproducibility_setup": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.901495
+            },
+            "simulation_generation": {
+              "count": 11,
+              "cuda_s": 72.324075,
+              "wall_s": 72.324695
+            },
+            "tensorboard_close": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 1e-06
+            },
+            "video_writer_close": {
+              "count": 1,
+              "cuda_s": 0.0,
+              "wall_s": 0.595014
+            }
+          }
+        }
+      },
+      "both_clean_complete_quality_passed": true
+    }
+  ],
+  "candidate_sources_assets_flags_guard_identical": true,
+  "original59_math_and_full_vendor_shapes_preserved": true,
+  "all23_formal_and_rank_videos_SHA_equal": true,
+  "complete_speed_gate_all_pairs_positive": false,
+  "official_adopted": false,
+  "formal_pair_unchanged": true,
+  "formal_five_sum_s": 771.314275,
+  "not_an_official_score": true,
+  "decision": "defer_shared66_due_to_unstable_subsecond_process_gain",
+  "next_direction": "Expand useful work inside existing gather boundaries or reduce ordinary initialization overhead;do not inherit model-only speed as full-process gain."
+}

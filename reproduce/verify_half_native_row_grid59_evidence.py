@@ -110,6 +110,24 @@ def verify():
     public=load(evidence/'public-repro-cpu-r1/summary.json')
     assert public['passed'] and public['no_GPU_execution'] and public['source_count']==66 and public['exact_timed_manifest_and_assets']
     assert public['public_script_SHA256']==hashlib.sha256((root/'reproduce/run_g1_native_shared66.py').read_bytes()).hexdigest()
-    print('Original Half FFN grids:G1 bitwise model/full23-video checks passed;fresh full baseline157.612900 beats candidate159.604883;not adopted.')
+    repeated=load(evidence/'complete-repeat-outcome.json')
+    assert not repeated['complete_speed_gate_all_pairs_positive'] and not repeated['official_adopted'] and repeated['formal_pair_unchanged']
+    assert repeated['candidate_sources_assets_flags_guard_identical'] and repeated['all23_formal_and_rank_videos_SHA_equal']
+    identity=load(evidence/'full66-r1/production-identity.json')
+    assert identity==load(evidence/'full66-r2/production-identity.json')
+    assert len(identity['manifest'])==66 and identity['manifest']==load(code/'full66-r1/production-overlay/nccl-parallel-production-sources.json')
+    assert identity['asset_hashes']==load(code/'full66-r1/asset-hashes.json') and identity['script_hashes']==load(code/'full66-r1/guard-source-hashes.json')
+    assert len(repeated['pairs'])==2
+    for i,pair in enumerate(repeated['pairs'],1):
+        base=load(evidence/f'original59-baseline-r{i}/summary.json');candidate=load(evidence/f'full66-r{i}/summary.json')
+        assert base['clean'] and candidate['clean'] and base['workload_complete'] and candidate['workload_complete']
+        assert base['psnr_db']==candidate['psnr_db']==26.10715633179594
+        assert pair['baseline_s']==base['process_wall_s'] and pair['candidate_s']==candidate['process_wall_s']
+        assert pair['saved_s']==round(pair['baseline_s']-pair['candidate_s'],6)
+        assert pair['both_clean_complete_quality_passed']
+        manifest=load(evidence/f'original59-baseline-r{i}/g1-native-half-baseline-sources.json')
+        assert manifest==load(root/'experiments/nonv2-vae-all-display/unifolm/nonv2-aggressive-production-sources.json')
+    assert [x['saved_s'] for x in repeated['pairs']]==[0.509057,-0.222024]
+    print('G1 original Half grids/shared attention:bitwise models and unchanged full videos passed;repeat complete gains +0.509057/-0.222024s unstable;not adopted.')
 
 if __name__=='__main__':verify()
