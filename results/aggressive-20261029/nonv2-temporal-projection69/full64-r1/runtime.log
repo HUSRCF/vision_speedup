@@ -1,0 +1,112 @@
+SELECTED_CASE=unitree_z1_dual_arm_cleanup_pencils; other cases are absent from this run
+You are offline and the cache for model files in Transformers v4.22.0 has been updated while your local cache seems to be the one of a previous version. It is very likely that all your calls to any `from_pretrained()` method will fail. Remove the offline mode and enable internet connection to have your cache be updated automatically, then you can go back to offline mode.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). You should set the environment variable TRANSFORMERS_CACHE to a writable directory.
+Global seed set to 123
+[W Utils.hpp:135] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function getCvarInt)
+NCCL_PARALLEL_INITIALIZED {"rank": 0, "GPUs": 2, "policy": "nonv2-all-blocks", "all_setup_inside_original_process_timer": true}
+INFERENCE_MATH requested=selective-tf32 effective=tf32 case=unitree_z1_dual_arm_cleanup_pencils cudnn_tf32=True matmul_tf32=True cudnn_benchmark=False cudnn_benchmark_limit=10
+STAGE_TF32 requested=decision-cudnn effective=none case=unitree_z1_dual_arm_cleanup_pencils ddim_prefix_steps=0
+STAGE_CUDNN_BENCHMARK requested=simulation effective=none case=unitree_z1_dual_arm_cleanup_pencils
+TENSORBOARD_VIDEO enabled=false
+ASYNC_VIDEO enabled=true
+STREAM_FULL_VIDEO enabled=true
+DDIM_SCHEDULE_CACHE enabled=true
+SKIP_UNUSED_ACTION_PROJECTION enabled=true
+BATCH_DECISION_DECODE requested=selective enabled=true
+There was a problem when trying to write in your cache folder (/share/huggingface/hub). Please, ensure the directory exists and can be written to.
+AE working on z of shape (1, 4, 32, 32) = 4096 dimensions.
+PARAMETER_INITIALIZATION skipped=true
+META_INITIALIZATION enabled=true
+CHECKPOINT_LOAD mmap=true assign=true
+>>> model checkpoint loaded.
+>>> Load pre-trained model ...
+UNINITIALIZED_MEMORY_FILL enabled=false deterministic_algorithms=true
+FP32_DDIM_VIDEO requested=0
+FP32_FEEDBACK_HEADS requested=0 protected_modules=0
+FULL_DENOISER_FP16 requested=non-v2 enabled=true
+FULL_DENOISER_NORM_DTYPE requested=fp16 modules=45
+DENOISER_MODE requested=native case=unitree_z1_dual_arm_cleanup_pencils wrapped={}
+TF32X3_LINEARS requested=0 convolutions=false wrapped={}
+FUSED_SELF_QKV requested=0 enabled=false modules=66
+CROSS_ATTENTION_IMPL requested=xformers effective=xformers modules=66
+ATTENTION_LAYOUT requested=bmhk modules=66
+FUSED_ATTENTION_MIX requested=1 modules=66
+ATTENTION_DTYPE requested=fp16 effective=float16 modules=66
+ATTENTION_PROJECTION_DTYPE requested=fp16 effective=float16 modules=66
+FFN_DTYPE requested=fp32 modules=33
+FUSED_GEGLU requested=1 modules=33
+FUSED_RESBLOCK_NORM requested=0 enabled=false modules=22
+TEMPORAL_CONV_DTYPE requested=fp32 enabled=false modules=0
+TEMPORAL_CONV_IMPL requested=native modules=0
+FRAMEWISE_TEMPORAL_NORM requested=0 enabled=false modules=22
+FUSED_TEMPORAL_NORM requested=0 enabled=false modules=22
+CHANNELS_LAST requested=0 enabled=false transformers=0
+FUSED_TEMPORAL_ATTENTION requested=1
+FUSED_RESIDUAL_NORM requested=1 modules=33
+TEMPORAL_LAYOUT_DIRECT requested=1 modules=17
+SPLIT_GROUP_NORM requested=1 modules=133
+SPLIT_TRANSFORMER_NORM requested=1 modules=33
+SIM_HEAD_CONV1D requested=native modules=37
+FIXED_CAST_CACHE requested=1
+CONDITION_CACHE enabled=true attention_modules=66
+CUDA_GRAPH enabled=true scope=complete_denoiser cached_normalizers=2 skip_unchanged_inputs=0 max_graphs=2
+>>> Loaded 1 preprocessed input cache(s).
+>>> Generate 16 frames under each generation ...
+  0%|          | 0/8 [00:00<?, ?it/s]>>> Step 0: generating actions ...
+CUDA_GRAPH_CAPTURE index=0 allocated_gib=11.316 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+>>> Step 0: interacting with world model ...
+CUDA_GRAPH_CAPTURE index=1 allocated_gib=11.481 cudnn_tf32=True matmul_tf32=True eager_match=bitwise
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 12%|█▎        | 1/8 [00:14<01:40, 14.42s/it]>>> Step 1: generating actions ...
+CONDITION_CACHE_REFRESH
+>>> Step 1: interacting with world model ...
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 25%|██▌       | 2/8 [00:25<01:15, 12.65s/it]>>> Step 2: generating actions ...
+CONDITION_CACHE_REFRESH
+>>> Step 2: interacting with world model ...
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 38%|███▊      | 3/8 [00:37<01:00, 12.08s/it]>>> Step 3: generating actions ...
+CONDITION_CACHE_REFRESH
+>>> Step 3: interacting with world model ...
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 50%|█████     | 4/8 [00:48<00:47, 11.82s/it]>>> Step 4: generating actions ...
+CONDITION_CACHE_REFRESH
+>>> Step 4: interacting with world model ...
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 62%|██████▎   | 5/8 [01:00<00:35, 11.67s/it]>>> Step 5: generating actions ...
+CONDITION_CACHE_REFRESH
+>>> Step 5: interacting with world model ...
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 75%|███████▌  | 6/8 [01:11<00:23, 11.59s/it]>>> Step 6: generating actions ...
+CONDITION_CACHE_REFRESH
+>>> Step 6: interacting with world model ...
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+ 88%|████████▊ | 7/8 [01:22<00:11, 11.54s/it]>>> Step 7: generating actions ...
+CONDITION_CACHE_REFRESH
+>>> Step 7: interacting with world model ...
+CONDITION_CACHE_REFRESH
+>>>>>>>>>>>>>>>>>>>>>>>>
+100%|██████████| 8/8 [01:34<00:00, 11.51s/it]100%|██████████| 8/8 [01:34<00:00, 11.80s/it]
+NCCL_PARALLEL_FINISH {"policy": "nonv2-all-blocks", "GPUs": 2, "full_workload_on_both_ranks": true, "rank_videos_SHA256_equal": true, "video_count": 17, "video_hashes": {"inference/0_full_fs4.mp4": "9f9b9d7c273c348871bd3d859d72010f7c1429d5ce0544c84fd733ccfd2af382", "inference/sample_0/wm/4/itr-7.mp4": "8e21c54ead20b83880a6c0f431f9cfbea72132f3695f54a50c08075276941574", "inference/sample_0/wm/4/itr-6.mp4": "308700e7b0eaf62f084cc1f8f48a145dcb3e1d508a1ea1f3f2107d6582ad1de8", "inference/sample_0/wm/4/itr-5.mp4": "91dc29ec3926f9537443108cd512e2d517a8cdbc5dfe644b378630b2ae16f724", "inference/sample_0/wm/4/itr-4.mp4": "fa4e78894907013ec82d5164bb4282a4666d4ef6a50f86b14423be5a0c9ef9ef", "inference/sample_0/wm/4/itr-3.mp4": "c628dd93208acb73b4e2745f6368ec431e173f656b8e92c5b8ef758174057a42", "inference/sample_0/wm/4/itr-2.mp4": "fd2b06acd8467b53a7c2b6d349e5b8770c9b027f3cb42d77d7c531f91600fa2e", "inference/sample_0/wm/4/itr-1.mp4": "532c42bde9f3f40003064ad7ff99cf1adbcdf952ca005ab4dff543b51f12f65c", "inference/sample_0/wm/4/itr-0.mp4": "643f66e7efa0ed9f72d4e65930c7206acb9bdfdc11ed29ef02c199893d794f51", "inference/sample_0/dm/4/itr-7.mp4": "9978096bfef0191fcbf155252d75d41fa5d82a3922b480964336c84830da2c15", "inference/sample_0/dm/4/itr-6.mp4": "a2c811c915a04ef2c3cbe80b540d1101aaa87e4a886f4c56419934b53920e006", "inference/sample_0/dm/4/itr-5.mp4": "d8ada50ef2aa93d686b9fcd6d97dfe1c0e2a64fc62c2b14c8b4602d2fee04787", "inference/sample_0/dm/4/itr-4.mp4": "42df0ae9367a919ff7b6c21ea54d9de767f760ff0d958d70c426ef7e688ea0fa", "inference/sample_0/dm/4/itr-3.mp4": "ad45a472c9e089a9fd2780f3f64d4447d399e3b7dc0275bb586f37fb4144068f", "inference/sample_0/dm/4/itr-2.mp4": "120d08e306ee3c569fc24f04697f53c1ea1d137e0340b5cfa68ac3cae62e4528", "inference/sample_0/dm/4/itr-1.mp4": "5d79320951e4c4ad57a4f99bc6a6e4c0f4cee302a2f1a1c3a3b398d3e6702e60", "inference/sample_0/dm/4/itr-0.mp4": "d45719a9bc159f6aeb788e1cc3c19223e6841a6758aa75d8e1eb974dd756ac93"}, "helper_exit_code": 0, "setup_helper_outputs_and_teardown_inside_original_process_timer": true, "stage_captures": {"decision": 33, "world": 33}, "stage_calls": {"decision": 400, "world": 400}}
+>>> Pure model compute time (CUDA; excludes load/save): 94.265s [decision 47.699s + world 46.566s; 16 generation calls]
+NONV2_NONFEEDBACK_VAE {"clips": 16, "records": [{"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}, {"stage": "decision", "display_only": true, "partitions": [[false, 0, 16]], "flags": [true, true]}, {"stage": "simulation", "execution_steps": 16, "partitions": [[false, 0, 14], [true, 14, 15], [true, 15, 16]], "flags": [true, true]}], "owners": [{"builds": 1, "calls": 16, "feedback_calls": 16, "mode": "fp16_nchw", "master_version_guard": true}], "native_feedback_precision_and_flags_preserved": true, "all_setup_inside_process_wall": true, "denoiser_and_sampler_unchanged": true}
+PSNR case=unitree_z1_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_stackbox reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-7gn_yp9b/unitree_z1_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-7gn_yp9b/unitree_z1_dual_arm_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox_v2 psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox_v2 reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-7gn_yp9b/unitree_z1_dual_arm_stackbox_v2
+PSNR case=unitree_z1_dual_arm_cleanup_pencils psnr_db=36.122616449827255 threshold_db=25 pass=true
+PSNR case=unitree_g1_pack_camera psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_g1_pack_camera reason=Missing video directory or symlink: /var/tmp/team07-nonv2-all-blocks63-rank0-output-7gn_yp9b/unitree_g1_pack_camera
+PSNR_FAILED: Every case must be strictly greater than 25 dB
+TIMING case=unitree_z1_dual_arm_cleanup_pencils process_wall_s=105.976138
+RESULT_JSON=/var/tmp/team07-nonv2-projection64-pencils-5ho67_b0/diagnostic-pair13/runs/20261029T111421Z-case-v2-nccl-1009033/result.json
+FAILED: Incomplete case profiles

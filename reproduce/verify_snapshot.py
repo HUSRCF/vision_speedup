@@ -293,6 +293,8 @@ def main():
     verify_prediction_other()
     from verify_nonv2_pencils_window65 import verify as verify_pencils_window
     verify_pencils_window()
+    from verify_nonv2_temporal_projection69 import verify as verify_temporal_projection
+    verify_temporal_projection()
     from verify_v2_prediction211 import verify as verify_v2_prediction
     verify_v2_prediction()
     from verify_static_timestep65 import verify as verify_static_time
