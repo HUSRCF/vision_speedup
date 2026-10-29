@@ -49,9 +49,9 @@ def verify():
                 assert pair['fastest_rank_baseline_ms']==fast and pair['slowest_rank_candidate_ms']==candidate
                 assert pair['fastest_single_rank_minus_candidate_ms']==fast-candidate<0
             assert derived['median_fastest_single_rank_minus_candidate_ms']==statistics.median(x['fastest_single_rank_minus_candidate_ms']for x in derived['pairs'])
-    current=load(root/'results/result.json');g1=next(x for x in current['cases']if x['case']=='unitree_g1_pack_camera')
+    current=load(root/'results/history/official-before-g1-native68/result.json');g1=next(x for x in current['cases']if x['case']=='unitree_g1_pack_camera')
     assert g1['process_wall_s']==160.897537 and g1['psnr_db']==26.10715633179594
-    print('G1 attention-only:512 masters/six-state bitwise passed;two-stage paired speed gates failed;full-video qualification not claimed;formal G1 unchanged.')
+    print('Historical G1 attention-only:512 masters/six-state bitwise passed;speed gates failed;original59 formal evidence retained.')
 
 
 if __name__=='__main__':verify()

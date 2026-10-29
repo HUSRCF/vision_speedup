@@ -129,9 +129,10 @@ def verify_adoption(root,outcome):
         for phase in('decision_generation','simulation_generation'):assert profile['stages'][phase]==pair['complete'][variant][phase]
     official=evidence/'official103';history=root/'results/history/official223-before-world-co225'
     for n,h in outcome['previous_pair_sha256'].items():assert sha(history/n)==h
-    for n,h in outcome['official_pair_sha256'].items():assert sha(official/n)==sha(root/'results'/n)==h
+    current_archive=root/'results/history/official-before-g1-native68'
+    for n,h in outcome['official_pair_sha256'].items():assert sha(official/n)==sha(current_archive/n)==h
     for n,h in load(official/'script-hashes.json').items():assert sha(official/n)==h
-    result=load(official/'result.json');assert result==load(root/'results/result.json')and result['status']=='accepted'and result['psnr_validation']['video_count']==103
+    result=load(official/'result.json');assert result==load(current_archive/'result.json')and result['status']=='accepted'and result['psnr_validation']['video_count']==103
     old={r['case']:r for r in load(history/'result.json')['cases']}
     for row in result['cases']:
         previous=old[row['case']]

@@ -1,0 +1,30 @@
+{
+  "official_adopted": true,
+  "G1_s": 155.314304,
+  "PSNR_dB": 26.10715633179594,
+  "case_sum_s": 765.731042,
+  "external_wall_s": 765.815235,
+  "source_count": 68,
+  "GPUs": 2,
+  "rounds": 11,
+  "steps_per_stage": 50,
+  "videos": 23,
+  "official_video_count": 103,
+  "official103_accepted": true,
+  "all23_original_formal_and_rank_SHA_equal": true,
+  "two_positive_same_GPU_full_comparisons": true,
+  "selected_candidate_revision": 2,
+  "previous_G1_s": 160.897537,
+  "formal_saved_s": 5.583233,
+  "pair_hashes": {
+    "runtime.log": "57589eec7009e2f7f9a1ea4a40f1f51ba3620b2de9b1dd0f202ae531875d6e48",
+    "result.json": "8bef735f6f241200e0e13ef562f177d2c2dc7df9a162c98cabc87e6212cbf3fc"
+  },
+  "previous_pair_hashes": {
+    "runtime.log": "ceeead88c2b68307c155793c17cb249b8d5333e9a3231c1aaac5a999a1b36e54",
+    "result.json": "464f499a003c971b0fac3e3497310ea339ae124f705de94ddabd0ca813682e2b"
+  },
+  "local_GPU_pair_updated": true,
+  "website_uploaded": false,
+  "scope": "G1 original Half GEMM and GEGLU grids;75 spatial plus32 temporal attention calls per stage share31 existing gathers. Root-only H2D then256-byte aligned typed broadcasts and standard cuda device lifecycle inside original model_to_gpu timer. Full vendor shapes,K order,GroupNorm,16T,FP32 feedback preserved;two positive complete same-GPU comparisons;fresh103 official validation;unchanged23 videos."
+}

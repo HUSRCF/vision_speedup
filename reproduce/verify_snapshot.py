@@ -11,12 +11,15 @@ def main():
     assert set(manifest)=={str(p.relative_to(code)) for p in (code/'src').rglob('*.py')}
     for name,digest in manifest.items():assert sha(code/name)==digest,name
     assert sha(code/'src/unifolm_wma/utils/native-graph-handles/team07_cuda_graph_handles.so')=='ab2f19b88cb9af02b42fb5fdcb39da49e062346fd30794be45fb81e12cb1b927'
-    assert sha(root/'results/runtime.log')=='ceeead88c2b68307c155793c17cb249b8d5333e9a3231c1aaac5a999a1b36e54'
-    assert sha(root/'results/result.json')=='464f499a003c971b0fac3e3497310ea339ae124f705de94ddabd0ca813682e2b'
+    assert sha(root/'results/runtime.log')=='57589eec7009e2f7f9a1ea4a40f1f51ba3620b2de9b1dd0f202ae531875d6e48'
+    assert sha(root/'results/result.json')=='8bef735f6f241200e0e13ef562f177d2c2dc7df9a162c98cabc87e6212cbf3fc'
+    history=root/'results/history/official-before-g1-native68'
+    assert sha(history/'runtime.log')=='ceeead88c2b68307c155793c17cb249b8d5333e9a3231c1aaac5a999a1b36e54'
+    assert sha(history/'result.json')=='464f499a003c971b0fac3e3497310ea339ae124f705de94ddabd0ca813682e2b'
     result=json.loads((root/'results/result.json').read_text());assert result['status']=='accepted'
     cases=result['cases'];assert len(cases)==5 and sum(c['videos'] for c in cases)==103
     assert [c['rounds'] for c in cases]==[12,7,11,8,11]
-    assert abs(sum(c['process_wall_s'] for c in cases)-771.314275)<1e-6
+    assert abs(sum(c['process_wall_s'] for c in cases)-765.731042)<1e-6
     log=(root/'results/runtime.log').read_text()
     timings=re.findall(r'^TIMING case=(\S+) process_wall_s=([0-9.]+)$',log,re.M)
     assert len(timings)==5 and len({case for case,_ in timings})==5
@@ -61,6 +64,10 @@ def main():
         elif row['case']=='unitree_z1_stackbox':
             blocks=json.loads((root/'experiments/nonv2-all-blocks59/accepted-outcome.json').read_text())
             assert blocks['official_adopted']and row['process_wall_s']==blocks['Z1_s']and row['psnr_db']==blocks['PSNR_dB']
+        elif row['case']=='unitree_g1_pack_camera':
+            current_g1=json.loads((root/'experiments/half-native-shared68/accepted-outcome.json').read_text())
+            assert current_g1['official_adopted']and current_g1['official103_accepted']and current_g1['source_count']==68
+            assert row['process_wall_s']==current_g1['G1_s']and row['psnr_db']==current_g1['PSNR_dB']
         elif row['case'] in accepted:assert row['process_wall_s']==accepted[row['case']]['process_wall_s']
     import importlib.util
     overlay=root/'experiments/nccl-ffn-209/timed-entry'
@@ -264,6 +271,8 @@ def main():
     verify_delta(root)
     from verify_g1_native_shared67 import verify as verify_g1_temporal
     verify_g1_temporal()
-    print('Verified: original209/historical overlays/adopted V2 CO225;adopted63 Z1/dual/pencils;historical59 G1;official103 log/JSON.')
+    from verify_g1_native_shared68 import verify as verify_g1_transport
+    verify_g1_transport()
+    print('Verified: V2 CO225;63 Z1/dual/pencils;68 G1;all five dual GPU;fresh official103 log/JSON.')
 
 if __name__=='__main__':main()

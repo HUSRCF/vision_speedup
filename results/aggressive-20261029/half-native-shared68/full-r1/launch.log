@@ -1,0 +1,64 @@
+NCCL_FULL_ATTEMPT=/var/tmp/team07-nonv2-native-shared68-g1-1_gllpt9/diagnostic/attempt-1
+WAIT_GPU_PAIR=0,1
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-native-shared68-g1-1_gllpt9/diagnostic/wait_nccl_full209.py", line 108, in <module>
+    if __name__=='__main__':main()
+  File "/var/tmp/team07-nonv2-native-shared68-g1-1_gllpt9/diagnostic/wait_nccl_full209.py", line 83, in main
+    assert (parallel/'parallel-complete.json').is_file(),(workspace/'benchmark.log').read_text()[-5000:]
+AssertionError: "/var/tmp/team07-nonv2-native-shared68-g1-1_gllpt9/source/src/unifolm_wma/models/samplers/ddim.py", line 287, in ddim_sampling
+[rank0]:     outs = self.p_sample_ddim(
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared68-g1-1_gllpt9/source/src/unifolm_wma/models/samplers/ddim.py", line 372, in p_sample_ddim
+[rank0]:     model_output, model_output_action, model_output_state = self.model.apply_model(
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared68-g1-1_gllpt9/source/src/unifolm_wma/utils/nccl_nonv2_native_shared_runtime68.py", line 134, in apply
+[rank0]:     with _mode(True):result=original(*args,**kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared68-g1-1_gllpt9/source/src/unifolm_wma/utils/cuda_graph.py", line 95, in __call__
+[rank0]:     return self.original(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared68-g1-1_gllpt9/source/src/unifolm_wma/models/ddpms.py", line 1270, in apply_model
+[rank0]:     x_recon, x_action_recon, x_state_recon = self.model(
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared68-g1-1_gllpt9/source/src/unifolm_wma/models/ddpms.py", line 2484, in forward
+[rank0]:     out = self.diffusion_model(xc,
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/var/tmp/team07-nonv2-native-shared68-g1-1_gllpt9/source/src/unifolm_wma/modules/networks/wma_model.py", line 943, in forward
+[rank0]:     fs_embed = self.fps_embedding(fs_emb)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/container.py", line 217, in forward
+[rank0]:     input = module(input)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/home/team07/.venv/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 116, in forward
+[rank0]:     return F.linear(input, self.weight, self.bias)
+[rank0]: RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking argument for argument mat1 in method wrapper_CUDA_addmm)
+CASE_EXECUTION_FAILED case=unitree_g1_pack_camera exit_code=1
+PSNR case=unitree_z1_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_stackbox reason=Missing video directory or symlink: /var/tmp/team07-nonv2-native-shared68-rank0-output-qd0nup50/unitree_z1_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox reason=Missing video directory or symlink: /var/tmp/team07-nonv2-native-shared68-rank0-output-qd0nup50/unitree_z1_dual_arm_stackbox
+PSNR case=unitree_z1_dual_arm_stackbox_v2 psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_stackbox_v2 reason=Missing video directory or symlink: /var/tmp/team07-nonv2-native-shared68-rank0-output-qd0nup50/unitree_z1_dual_arm_stackbox_v2
+PSNR case=unitree_z1_dual_arm_cleanup_pencils psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_z1_dual_arm_cleanup_pencils reason=Missing video directory or symlink: /var/tmp/team07-nonv2-native-shared68-rank0-output-qd0nup50/unitree_z1_dual_arm_cleanup_pencils
+PSNR case=unitree_g1_pack_camera psnr_db=nan threshold_db=25 pass=false
+PSNR_CASE_ERROR case=unitree_g1_pack_camera reason=No MP4 videos in /var/tmp/team07-nonv2-native-shared68-rank0-output-qd0nup50/unitree_g1_pack_camera
+PSNR_FAILED: Every case must be strictly greater than 25 dB
+RESULT_JSON=/var/tmp/team07-nonv2-native-shared68-g1-1_gllpt9/diagnostic/runs/20261029T060834Z-case-v2-nccl-518454/result.json
+FAILED: Incomplete case profiles
+
+
+Traceback (most recent call last):
+  File "/var/tmp/team07-nonv2-native-shared68-g1-1_gllpt9/diagnostic/retry_nccl_full221.py", line 15, in <module>
+    raise RuntimeError('Timed evaluator failed; retained '+str(attempt))
+RuntimeError: Timed evaluator failed; retained /var/tmp/team07-nonv2-native-shared68-g1-1_gllpt9/diagnostic/attempt-1
