@@ -1,0 +1,2270 @@
+{
+  "stage": "world",
+  "cases": [
+    {
+      "case": "initial",
+      "three_outputs_gross_passed": true,
+      "errors": [
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        }
+      ],
+      "baseline_restored_bitwise": false
+    },
+    {
+      "case": "changed_inputs",
+      "three_outputs_gross_passed": true,
+      "errors": [
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        }
+      ],
+      "baseline_restored_bitwise": false
+    },
+    {
+      "case": "changed_FFN_masters",
+      "three_outputs_gross_passed": true,
+      "errors": [
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        }
+      ],
+      "baseline_restored_bitwise": false
+    },
+    {
+      "case": "restored_FFN_masters",
+      "three_outputs_gross_passed": true,
+      "errors": [
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        }
+      ],
+      "baseline_restored_bitwise": true
+    },
+    {
+      "case": "zero_FFN_masters",
+      "three_outputs_gross_passed": true,
+      "errors": [
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        }
+      ],
+      "baseline_restored_bitwise": false
+    },
+    {
+      "case": "zero_then_restore",
+      "three_outputs_gross_passed": true,
+      "errors": [
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        },
+        {
+          "relative_l2": 0.0,
+          "max_abs": 0.0,
+          "signedzero_bits": true,
+          "gross_passed": true
+        }
+      ],
+      "baseline_restored_bitwise": true
+    }
+  ],
+  "pairs": [
+    {
+      "baseline_samples_ms": [
+        127.5863037109375,
+        128.06553649902344,
+        127.46649932861328,
+        127.87097930908203,
+        127.8054428100586,
+        127.23506927490234,
+        127.9283218383789
+      ],
+      "baseline_ms": 127.8054428100586,
+      "candidate_samples_ms": [
+        121.82015991210938,
+        121.6184310913086,
+        122.12940979003906,
+        122.10790252685547,
+        121.96659088134766,
+        122.3526382446289,
+        121.78431701660156
+      ],
+      "candidate_ms": 121.96659088134766,
+      "saved_ms": 5.8388519287109375
+    },
+    {
+      "candidate_samples_ms": [
+        121.8887710571289,
+        121.73926544189453,
+        121.56825256347656,
+        121.83654022216797,
+        121.92153930664062,
+        122.18675231933594,
+        121.9420166015625
+      ],
+      "candidate_ms": 121.8887710571289,
+      "baseline_samples_ms": [
+        127.65900421142578,
+        128.09933471679688,
+        128.01023864746094,
+        127.3722915649414,
+        127.55558776855469,
+        127.8177261352539,
+        127.73887634277344
+      ],
+      "baseline_ms": 127.73887634277344,
+      "saved_ms": 5.850105285644531
+    },
+    {
+      "baseline_samples_ms": [
+        126.86540985107422,
+        128.0235595703125,
+        128.0696258544922,
+        128.0696258544922,
+        127.52793884277344,
+        128.4075469970703,
+        127.82796478271484
+      ],
+      "baseline_ms": 128.0235595703125,
+      "candidate_samples_ms": [
+        122.1560287475586,
+        121.75462341308594,
+        121.98912048339844,
+        122.37824249267578,
+        121.91539001464844,
+        122.50726318359375,
+        122.6956787109375
+      ],
+      "candidate_ms": 122.1560287475586,
+      "saved_ms": 5.867530822753906
+    },
+    {
+      "candidate_samples_ms": [
+        122.04851531982422,
+        121.97068786621094,
+        121.99833679199219,
+        122.00243377685547,
+        122.01062774658203,
+        122.37619018554688,
+        121.91129302978516
+      ],
+      "candidate_ms": 122.00243377685547,
+      "baseline_samples_ms": [
+        127.95903778076172,
+        128.27442932128906,
+        128.08396911621094,
+        127.71942138671875,
+        127.82284545898438,
+        128.0307159423828,
+        128.10751342773438
+      ],
+      "baseline_ms": 128.0307159423828,
+      "saved_ms": 6.028282165527344
+    },
+    {
+      "baseline_samples_ms": [
+        127.99897766113281,
+        128.2652130126953,
+        128.1669158935547,
+        128.64512634277344,
+        128.0542755126953,
+        128.73318481445312,
+        127.9447021484375
+      ],
+      "baseline_ms": 128.1669158935547,
+      "candidate_samples_ms": [
+        122.32498931884766,
+        122.79193878173828,
+        122.69363403320312,
+        122.608642578125,
+        122.50624084472656,
+        122.18367767333984,
+        122.01779174804688
+      ],
+      "candidate_ms": 122.50624084472656,
+      "saved_ms": 5.660675048828125
+    },
+    {
+      "candidate_samples_ms": [
+        122.13555145263672,
+        122.1580810546875,
+        122.37721252441406,
+        122.23283386230469,
+        122.176513671875,
+        122.18163299560547,
+        122.58509063720703
+      ],
+      "candidate_ms": 122.18163299560547,
+      "baseline_samples_ms": [
+        128.0245819091797,
+        128.31231689453125,
+        128.10342407226562,
+        127.86892700195312,
+        128.31231689453125,
+        128.09727478027344,
+        128.14028930664062
+      ],
+      "baseline_ms": 128.10342407226562,
+      "saved_ms": 5.921791076660156
+    }
+  ],
+  "median_saved_ms": 5.858818054199219,
+  "same_process": true,
+  "same_GPU_pair": true,
+  "same_model_masters": true,
+  "baseline_is_original59_nonv2_FP16": true,
+  "FFN_master_tensors": 132,
+  "zero_FFN_changes_baseline": true,
+  "FFN_launches": {
+    "captured": 31,
+    "rows": [
+      {
+        "module": "init_attn.0.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          512
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 20.0
+      },
+      {
+        "module": "input_blocks.1.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 12.5
+      },
+      {
+        "module": "input_blocks.1.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 12.5
+      },
+      {
+        "module": "input_blocks.2.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 12.5
+      },
+      {
+        "module": "input_blocks.2.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 12.5
+      },
+      {
+        "module": "input_blocks.4.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 6.25
+      },
+      {
+        "module": "input_blocks.4.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 6.25
+      },
+      {
+        "module": "input_blocks.5.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 6.25
+      },
+      {
+        "module": "input_blocks.5.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 6.25
+      },
+      {
+        "module": "input_blocks.7.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 3.125
+      },
+      {
+        "module": "input_blocks.7.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 3.125
+      },
+      {
+        "module": "input_blocks.8.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 3.125
+      },
+      {
+        "module": "input_blocks.8.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 3.125
+      },
+      {
+        "module": "output_blocks.3.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 3.125
+      },
+      {
+        "module": "output_blocks.3.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 3.125
+      },
+      {
+        "module": "output_blocks.4.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 3.125
+      },
+      {
+        "module": "output_blocks.4.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 3.125
+      },
+      {
+        "module": "output_blocks.5.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          160,
+          1280
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 3.125
+      },
+      {
+        "module": "output_blocks.5.2.transformer_blocks.0",
+        "input_shape": [
+          160,
+          16,
+          1280
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 3.125
+      },
+      {
+        "module": "output_blocks.6.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 6.25
+      },
+      {
+        "module": "output_blocks.6.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 6.25
+      },
+      {
+        "module": "output_blocks.7.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 6.25
+      },
+      {
+        "module": "output_blocks.7.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 6.25
+      },
+      {
+        "module": "output_blocks.8.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          640,
+          640
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 6.25
+      },
+      {
+        "module": "output_blocks.8.2.transformer_blocks.0",
+        "input_shape": [
+          640,
+          16,
+          640
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 6.25
+      },
+      {
+        "module": "output_blocks.9.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 12.5
+      },
+      {
+        "module": "output_blocks.9.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 12.5
+      },
+      {
+        "module": "output_blocks.10.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 12.5
+      },
+      {
+        "module": "output_blocks.10.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 12.5
+      },
+      {
+        "module": "output_blocks.11.1.transformer_blocks.0",
+        "input_shape": [
+          16,
+          2560,
+          320
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 12.5
+      },
+      {
+        "module": "output_blocks.11.2.transformer_blocks.0",
+        "input_shape": [
+          2560,
+          16,
+          320
+        ],
+        "collectives": 1,
+        "full_GEMM_descriptors_preserved": true,
+        "local_output_MiB": 12.5
+      }
+    ],
+    "native_linear_capture_count": 62,
+    "native_binding": [
+      {
+        "selected_FFNs": 31,
+        "selected_native_GEMMs": 62,
+        "original_full_shape_vendor_dispatch": true,
+        "debug_metadata_only_capture_edit": true,
+        "retained_owned_tensor_lifetimes": true,
+        "outputs_poisoned_before_first_partitioned_replay": true,
+        "kernels": [
+          {
+            "module": "init_attn.0.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              40960,
+              4096,
+              512
+            ],
+            "row_axis": 0,
+            "kernel_name": "_ZN7cutlass6KernelI66cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8EEvNT_6ParamsE",
+            "original_grid": [
+              2560,
+              4,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "init_attn.0.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              40960,
+              512,
+              2048
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              4,
+              320,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.1.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              40960,
+              2560,
+              320
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              20,
+              320,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.1.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              40960,
+              320,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              3,
+              320,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.1.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              40960,
+              2560,
+              320
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              20,
+              320,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.1.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              40960,
+              320,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              3,
+              320,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.2.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              40960,
+              2560,
+              320
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              20,
+              320,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.2.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              40960,
+              320,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              3,
+              320,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.2.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              40960,
+              2560,
+              320
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              20,
+              320,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.2.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              40960,
+              320,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              3,
+              320,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.4.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              10240,
+              5120,
+              640
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              40,
+              80,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.4.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              10240,
+              640,
+              2560
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              5,
+              80,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.4.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              10240,
+              5120,
+              640
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              40,
+              80,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.4.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              10240,
+              640,
+              2560
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              5,
+              80,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.5.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              10240,
+              5120,
+              640
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              40,
+              80,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.5.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              10240,
+              640,
+              2560
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              5,
+              80,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.5.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              10240,
+              5120,
+              640
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              40,
+              80,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.5.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              10240,
+              640,
+              2560
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              5,
+              80,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.7.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              2560,
+              10240,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              80,
+              10,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.7.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              5,
+              20,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.7.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              2560,
+              10240,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              80,
+              10,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.7.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              5,
+              20,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.8.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              2560,
+              10240,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              80,
+              10,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.8.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              5,
+              20,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.8.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              2560,
+              10240,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              80,
+              10,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "input_blocks.8.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              5,
+              20,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.3.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              2560,
+              10240,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              80,
+              10,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.3.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              5,
+              20,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.3.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              2560,
+              10240,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              80,
+              10,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.3.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              5,
+              20,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.4.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              2560,
+              10240,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              80,
+              10,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.4.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              5,
+              20,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.4.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              2560,
+              10240,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              80,
+              10,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.4.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              5,
+              20,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.5.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              2560,
+              10240,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              80,
+              10,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.5.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              5,
+              20,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.5.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              2560,
+              10240,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              80,
+              10,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.5.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              2560,
+              1280,
+              5120
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+            "original_grid": [
+              5,
+              20,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.6.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              10240,
+              5120,
+              640
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              40,
+              80,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.6.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              10240,
+              640,
+              2560
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              5,
+              80,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.6.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              10240,
+              5120,
+              640
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              40,
+              80,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.6.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              10240,
+              640,
+              2560
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              5,
+              80,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.7.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              10240,
+              5120,
+              640
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              40,
+              80,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.7.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              10240,
+              640,
+              2560
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              5,
+              80,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.7.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              10240,
+              5120,
+              640
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              40,
+              80,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.7.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              10240,
+              640,
+              2560
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              5,
+              80,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.8.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              10240,
+              5120,
+              640
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              40,
+              80,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.8.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              10240,
+              640,
+              2560
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              5,
+              80,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.8.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              10240,
+              5120,
+              640
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              40,
+              80,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.8.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              10240,
+              640,
+              2560
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              5,
+              80,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.9.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              40960,
+              2560,
+              320
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              20,
+              320,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.9.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              40960,
+              320,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              3,
+              320,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.9.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              40960,
+              2560,
+              320
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              20,
+              320,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.9.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              40960,
+              320,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              3,
+              320,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.10.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              40960,
+              2560,
+              320
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              20,
+              320,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.10.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              40960,
+              320,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              3,
+              320,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.10.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              40960,
+              2560,
+              320
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              20,
+              320,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.10.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              40960,
+              320,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              3,
+              320,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.11.1.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              40960,
+              2560,
+              320
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              20,
+              320,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.11.1.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              40960,
+              320,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              3,
+              320,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.11.2.transformer_blocks.0",
+            "role": "producer",
+            "shape": [
+              40960,
+              2560,
+              320
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              20,
+              320,
+              1
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          },
+          {
+            "module": "output_blocks.11.2.transformer_blocks.0",
+            "role": "consumer",
+            "shape": [
+              40960,
+              320,
+              1280
+            ],
+            "row_axis": 1,
+            "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+            "original_grid": [
+              3,
+              320,
+              2
+            ],
+            "original_compiled_function_and_K_order": true,
+            "original_descriptors_and_all_argument_bytes_except_owned_starts": true,
+            "exact_owned_Torch_input_output_weight_binding": true,
+            "synthetic_padded_six_state_domain_qualified": true,
+            "no_argument_bytes_addresses_or_offsets_exported": true
+          }
+        ]
+      }
+    ],
+    "original59_math_and_full16_GEMM_shapes": true,
+    "full5D_GroupNorm_and16T_preserved": true,
+    "new_JIT_kernels": 0,
+    "additional_collectives_per_forward": 31,
+    "full_video_PSNR_unverified": true,
+    "GEGLU": {
+      "captured": 31,
+      "rows": [
+        {
+          "module": "init_attn.0.transformer_blocks.0",
+          "N": 83886080,
+          "channels": 2048,
+          "block": 1024,
+          "original_CUBIN_SHA256": "d1275e55d18a440e80f29159d609b5cffe0a174787db58bf4a7821a98c5f4425",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "input_blocks.1.1.transformer_blocks.0",
+          "N": 52428800,
+          "channels": 1280,
+          "block": 1024,
+          "original_CUBIN_SHA256": "57220ebc1d9d82e30c4b831e970d6df58eba56a5b83357294d790b5ab4331e85",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "input_blocks.1.2.transformer_blocks.0",
+          "N": 52428800,
+          "channels": 1280,
+          "block": 1024,
+          "original_CUBIN_SHA256": "57220ebc1d9d82e30c4b831e970d6df58eba56a5b83357294d790b5ab4331e85",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "input_blocks.2.1.transformer_blocks.0",
+          "N": 52428800,
+          "channels": 1280,
+          "block": 1024,
+          "original_CUBIN_SHA256": "57220ebc1d9d82e30c4b831e970d6df58eba56a5b83357294d790b5ab4331e85",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "input_blocks.2.2.transformer_blocks.0",
+          "N": 52428800,
+          "channels": 1280,
+          "block": 1024,
+          "original_CUBIN_SHA256": "57220ebc1d9d82e30c4b831e970d6df58eba56a5b83357294d790b5ab4331e85",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "input_blocks.4.1.transformer_blocks.0",
+          "N": 26214400,
+          "channels": 2560,
+          "block": 1024,
+          "original_CUBIN_SHA256": "d497f3555d6f0465713d5598b5d68569c6f35605d87a7b7831c8fc28e8281d50",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "input_blocks.4.2.transformer_blocks.0",
+          "N": 26214400,
+          "channels": 2560,
+          "block": 1024,
+          "original_CUBIN_SHA256": "d497f3555d6f0465713d5598b5d68569c6f35605d87a7b7831c8fc28e8281d50",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "input_blocks.5.1.transformer_blocks.0",
+          "N": 26214400,
+          "channels": 2560,
+          "block": 1024,
+          "original_CUBIN_SHA256": "d497f3555d6f0465713d5598b5d68569c6f35605d87a7b7831c8fc28e8281d50",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "input_blocks.5.2.transformer_blocks.0",
+          "N": 26214400,
+          "channels": 2560,
+          "block": 1024,
+          "original_CUBIN_SHA256": "d497f3555d6f0465713d5598b5d68569c6f35605d87a7b7831c8fc28e8281d50",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "input_blocks.7.1.transformer_blocks.0",
+          "N": 13107200,
+          "channels": 5120,
+          "block": 1024,
+          "original_CUBIN_SHA256": "e0eeaa74f26ea0a75f783b2448102276a3f4b83463ae2ea7730ac1fa399cb9ea",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "input_blocks.7.2.transformer_blocks.0",
+          "N": 13107200,
+          "channels": 5120,
+          "block": 1024,
+          "original_CUBIN_SHA256": "e0eeaa74f26ea0a75f783b2448102276a3f4b83463ae2ea7730ac1fa399cb9ea",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "input_blocks.8.1.transformer_blocks.0",
+          "N": 13107200,
+          "channels": 5120,
+          "block": 1024,
+          "original_CUBIN_SHA256": "e0eeaa74f26ea0a75f783b2448102276a3f4b83463ae2ea7730ac1fa399cb9ea",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "input_blocks.8.2.transformer_blocks.0",
+          "N": 13107200,
+          "channels": 5120,
+          "block": 1024,
+          "original_CUBIN_SHA256": "e0eeaa74f26ea0a75f783b2448102276a3f4b83463ae2ea7730ac1fa399cb9ea",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.3.1.transformer_blocks.0",
+          "N": 13107200,
+          "channels": 5120,
+          "block": 1024,
+          "original_CUBIN_SHA256": "e0eeaa74f26ea0a75f783b2448102276a3f4b83463ae2ea7730ac1fa399cb9ea",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.3.2.transformer_blocks.0",
+          "N": 13107200,
+          "channels": 5120,
+          "block": 1024,
+          "original_CUBIN_SHA256": "e0eeaa74f26ea0a75f783b2448102276a3f4b83463ae2ea7730ac1fa399cb9ea",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.4.1.transformer_blocks.0",
+          "N": 13107200,
+          "channels": 5120,
+          "block": 1024,
+          "original_CUBIN_SHA256": "e0eeaa74f26ea0a75f783b2448102276a3f4b83463ae2ea7730ac1fa399cb9ea",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.4.2.transformer_blocks.0",
+          "N": 13107200,
+          "channels": 5120,
+          "block": 1024,
+          "original_CUBIN_SHA256": "e0eeaa74f26ea0a75f783b2448102276a3f4b83463ae2ea7730ac1fa399cb9ea",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.5.1.transformer_blocks.0",
+          "N": 13107200,
+          "channels": 5120,
+          "block": 1024,
+          "original_CUBIN_SHA256": "e0eeaa74f26ea0a75f783b2448102276a3f4b83463ae2ea7730ac1fa399cb9ea",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.5.2.transformer_blocks.0",
+          "N": 13107200,
+          "channels": 5120,
+          "block": 1024,
+          "original_CUBIN_SHA256": "e0eeaa74f26ea0a75f783b2448102276a3f4b83463ae2ea7730ac1fa399cb9ea",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.6.1.transformer_blocks.0",
+          "N": 26214400,
+          "channels": 2560,
+          "block": 1024,
+          "original_CUBIN_SHA256": "d497f3555d6f0465713d5598b5d68569c6f35605d87a7b7831c8fc28e8281d50",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.6.2.transformer_blocks.0",
+          "N": 26214400,
+          "channels": 2560,
+          "block": 1024,
+          "original_CUBIN_SHA256": "d497f3555d6f0465713d5598b5d68569c6f35605d87a7b7831c8fc28e8281d50",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.7.1.transformer_blocks.0",
+          "N": 26214400,
+          "channels": 2560,
+          "block": 1024,
+          "original_CUBIN_SHA256": "d497f3555d6f0465713d5598b5d68569c6f35605d87a7b7831c8fc28e8281d50",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.7.2.transformer_blocks.0",
+          "N": 26214400,
+          "channels": 2560,
+          "block": 1024,
+          "original_CUBIN_SHA256": "d497f3555d6f0465713d5598b5d68569c6f35605d87a7b7831c8fc28e8281d50",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.8.1.transformer_blocks.0",
+          "N": 26214400,
+          "channels": 2560,
+          "block": 1024,
+          "original_CUBIN_SHA256": "d497f3555d6f0465713d5598b5d68569c6f35605d87a7b7831c8fc28e8281d50",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.8.2.transformer_blocks.0",
+          "N": 26214400,
+          "channels": 2560,
+          "block": 1024,
+          "original_CUBIN_SHA256": "d497f3555d6f0465713d5598b5d68569c6f35605d87a7b7831c8fc28e8281d50",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.9.1.transformer_blocks.0",
+          "N": 52428800,
+          "channels": 1280,
+          "block": 1024,
+          "original_CUBIN_SHA256": "57220ebc1d9d82e30c4b831e970d6df58eba56a5b83357294d790b5ab4331e85",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.9.2.transformer_blocks.0",
+          "N": 52428800,
+          "channels": 1280,
+          "block": 1024,
+          "original_CUBIN_SHA256": "57220ebc1d9d82e30c4b831e970d6df58eba56a5b83357294d790b5ab4331e85",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.10.1.transformer_blocks.0",
+          "N": 52428800,
+          "channels": 1280,
+          "block": 1024,
+          "original_CUBIN_SHA256": "57220ebc1d9d82e30c4b831e970d6df58eba56a5b83357294d790b5ab4331e85",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.10.2.transformer_blocks.0",
+          "N": 52428800,
+          "channels": 1280,
+          "block": 1024,
+          "original_CUBIN_SHA256": "57220ebc1d9d82e30c4b831e970d6df58eba56a5b83357294d790b5ab4331e85",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.11.1.transformer_blocks.0",
+          "N": 52428800,
+          "channels": 1280,
+          "block": 1024,
+          "original_CUBIN_SHA256": "57220ebc1d9d82e30c4b831e970d6df58eba56a5b83357294d790b5ab4331e85",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        },
+        {
+          "module": "output_blocks.11.2.transformer_blocks.0",
+          "N": 52428800,
+          "channels": 1280,
+          "block": 1024,
+          "original_CUBIN_SHA256": "57220ebc1d9d82e30c4b831e970d6df58eba56a5b83357294d790b5ab4331e85",
+          "original_N_constexpr_and_rounding": true,
+          "owned_half_tiles_without_tail_mask_changes": true
+        }
+      ],
+      "no_new_JIT_kernel_or_arithmetic": true,
+      "original_compiled_CUBIN_matched": true,
+      "full_N_constexpr_and_GELU_Half_rounding_preserved": true
+    }
+  },
+  "original_native_GEMM_row_grids": true,
+  "G1_FP32_feedback_head_policy_preserved": true,
+  "baseline_restoration_bitwise": true,
+  "RNG_unchanged": true,
+  "balanced_warmup": 40,
+  "settle_per_mode": 2,
+  "samples_per_condition": 7,
+  "gross_error_gate": {
+    "relative_l2": 0.005,
+    "max_abs": 0.002,
+    "logic": "either",
+    "not_official_quality": true
+  },
+  "full_video_PSNR_unverified": true,
+  "no_official_score": true
+}

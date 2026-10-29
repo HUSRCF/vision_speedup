@@ -1,0 +1,1991 @@
+{
+  "synthetic_only": true,
+  "no_official_score": true,
+  "rows": [
+    {
+      "shape": [
+        40960,
+        2560,
+        320
+      ],
+      "supported": true,
+      "row_axis": 1,
+      "axis_trials": [
+        {
+          "axis": 0,
+          "owned_half_and_other_rows_and_padding_passed": false
+        },
+        {
+          "axis": 1,
+          "owned_half_and_other_rows_and_padding_passed": true
+        }
+      ],
+      "cases": [
+        {
+          "case": "initial",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_weights_and_bias",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_weights",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "restored",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_samples_ms": [
+            0.4380671977996826,
+            0.43827199935913086,
+            0.43765759468078613,
+            0.4378623962402344,
+            0.43765759468078613,
+            0.4374527931213379,
+            0.43765759468078613
+          ],
+          "baseline_ms": 0.43765759468078613,
+          "candidate_samples_ms": [
+            0.23162879943847656,
+            0.23121919631958007,
+            0.23101439476013183,
+            0.23121919631958007,
+            0.23101439476013183,
+            0.23101439476013183,
+            0.23121919631958007
+          ],
+          "candidate_ms": 0.23121919631958007,
+          "saved_ms": 0.20643839836120606
+        },
+        {
+          "candidate_samples_ms": [
+            0.23101439476013183,
+            0.23121919631958007,
+            0.23101439476013183,
+            0.23101439476013183,
+            0.23101439476013183,
+            0.23121919631958007,
+            0.23142399787902831
+          ],
+          "candidate_ms": 0.23101439476013183,
+          "baseline_samples_ms": [
+            0.4378623962402344,
+            0.4378623962402344,
+            0.4378623962402344,
+            0.43765759468078613,
+            0.43765759468078613,
+            0.4374527931213379,
+            0.43765759468078613
+          ],
+          "baseline_ms": 0.43765759468078613,
+          "saved_ms": 0.2066431999206543
+        },
+        {
+          "baseline_samples_ms": [
+            0.43765759468078613,
+            0.4378623962402344,
+            0.4378623962402344,
+            0.43765759468078613,
+            0.43765759468078613,
+            0.43765759468078613,
+            0.43765759468078613
+          ],
+          "baseline_ms": 0.43765759468078613,
+          "candidate_samples_ms": [
+            0.23121919631958007,
+            0.23121919631958007,
+            0.23101439476013183,
+            0.23101439476013183,
+            0.23142399787902831,
+            0.23101439476013183,
+            0.2308095932006836
+          ],
+          "candidate_ms": 0.23101439476013183,
+          "saved_ms": 0.2066431999206543
+        },
+        {
+          "candidate_samples_ms": [
+            0.23101439476013183,
+            0.23121919631958007,
+            0.23121919631958007,
+            0.2308095932006836,
+            0.23142399787902831,
+            0.23162879943847656,
+            0.23121919631958007
+          ],
+          "candidate_ms": 0.23121919631958007,
+          "baseline_samples_ms": [
+            0.43765759468078613,
+            0.4378623962402344,
+            0.4378623962402344,
+            0.4374527931213379,
+            0.43765759468078613,
+            0.4374527931213379,
+            0.4374527931213379
+          ],
+          "baseline_ms": 0.43765759468078613,
+          "saved_ms": 0.20643839836120606
+        },
+        {
+          "baseline_samples_ms": [
+            0.4380671977996826,
+            0.43827199935913086,
+            0.4378623962402344,
+            0.43765759468078613,
+            0.43765759468078613,
+            0.4374527931213379,
+            0.43765759468078613
+          ],
+          "baseline_ms": 0.43765759468078613,
+          "candidate_samples_ms": [
+            0.23142399787902831,
+            0.23121919631958007,
+            0.23121919631958007,
+            0.23101439476013183,
+            0.2308095932006836,
+            0.2308095932006836,
+            0.23101439476013183
+          ],
+          "candidate_ms": 0.23101439476013183,
+          "saved_ms": 0.2066431999206543
+        },
+        {
+          "candidate_samples_ms": [
+            0.23142399787902831,
+            0.23101439476013183,
+            0.23101439476013183,
+            0.23101439476013183,
+            0.2308095932006836,
+            0.23101439476013183,
+            0.2308095932006836
+          ],
+          "candidate_ms": 0.23101439476013183,
+          "baseline_samples_ms": [
+            0.43765759468078613,
+            0.3874815940856934,
+            0.3876863956451416,
+            0.3876863956451416,
+            0.3876863956451416,
+            0.3874815940856934,
+            0.3874815940856934
+          ],
+          "baseline_ms": 0.3876863956451416,
+          "saved_ms": 0.1566720008850098
+        }
+      ],
+      "median_saved_ms": 0.20654079914093018,
+      "RNG_unchanged": true,
+      "restored_original_bitwise": true,
+      "metadata": {
+        "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+        "original_grid": [
+          20,
+          320,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "original_function_and_all_descriptor_bytes_except_owned_starts_preserved": true,
+        "only_owned_padded_Torch_views_bound": true,
+        "no_argument_bytes_addresses_or_offsets_exported": true
+      },
+      "timing_is_GEMM_graph_only_excludes_gather": true,
+      "full_FFN_and_model_and_video_unverified": true
+    },
+    {
+      "shape": [
+        40960,
+        320,
+        1280
+      ],
+      "supported": true,
+      "row_axis": 1,
+      "axis_trials": [
+        {
+          "axis": 1,
+          "owned_half_and_other_rows_and_padding_passed": true
+        }
+      ],
+      "cases": [
+        {
+          "case": "initial",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_weights_and_bias",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_weights",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "restored",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_samples_ms": [
+            0.20623359680175782,
+            0.20582399368286133,
+            0.20541439056396485,
+            0.20582399368286133,
+            0.20500481128692627,
+            0.2052095890045166,
+            0.20439040660858154
+          ],
+          "baseline_ms": 0.20541439056396485,
+          "candidate_samples_ms": [
+            0.11325440406799317,
+            0.11325440406799317,
+            0.11325440406799317,
+            0.11325440406799317,
+            0.11263999938964844,
+            0.11202559471130372,
+            0.11223039627075196
+          ],
+          "candidate_ms": 0.11325440406799317,
+          "saved_ms": 0.09215998649597168
+        },
+        {
+          "candidate_samples_ms": [
+            0.1124351978302002,
+            0.1124351978302002,
+            0.11223039627075196,
+            0.11325440406799317,
+            0.11202559471130372,
+            0.11202559471130372,
+            0.11223039627075196
+          ],
+          "candidate_ms": 0.11223039627075196,
+          "baseline_samples_ms": [
+            0.20295679569244385,
+            0.20254719257354736,
+            0.20234239101409912,
+            0.20295679569244385,
+            0.2027519941329956,
+            0.20336639881134033,
+            0.20295679569244385
+          ],
+          "baseline_ms": 0.20295679569244385,
+          "saved_ms": 0.09072639942169189
+        },
+        {
+          "baseline_samples_ms": [
+            0.20480000972747803,
+            0.20459520816802979,
+            0.20398080348968506,
+            0.20480000972747803,
+            0.20439040660858154,
+            0.20398080348968506,
+            0.20439040660858154
+          ],
+          "baseline_ms": 0.20439040660858154,
+          "candidate_samples_ms": [
+            0.11345920562744141,
+            0.11345920562744141,
+            0.11304960250854493,
+            0.11304960250854493,
+            0.11345920562744141,
+            0.11304960250854493,
+            0.11284480094909669
+          ],
+          "candidate_ms": 0.11304960250854493,
+          "saved_ms": 0.09134080410003662
+        },
+        {
+          "candidate_samples_ms": [
+            0.11325440406799317,
+            0.11284480094909669,
+            0.11304960250854493,
+            0.11304960250854493,
+            0.11284480094909669,
+            0.11263999938964844,
+            0.11284480094909669
+          ],
+          "candidate_ms": 0.11284480094909669,
+          "baseline_samples_ms": [
+            0.2041856050491333,
+            0.20439040660858154,
+            0.20541439056396485,
+            0.20746240615844727,
+            0.20746240615844727,
+            0.20725760459899903,
+            0.20725760459899903
+          ],
+          "baseline_ms": 0.20725760459899903,
+          "saved_ms": 0.09441280364990234
+        },
+        {
+          "baseline_samples_ms": [
+            0.20848639011383058,
+            0.20889599323272706,
+            0.2070528030395508,
+            0.2076672077178955,
+            0.208076810836792,
+            0.20746240615844727,
+            0.20725760459899903
+          ],
+          "baseline_ms": 0.2076672077178955,
+          "candidate_samples_ms": [
+            0.11509759426116943,
+            0.11489280462265014,
+            0.1146880030632019,
+            0.11448320150375366,
+            0.11509759426116943,
+            0.11489280462265014,
+            0.11489280462265014
+          ],
+          "candidate_ms": 0.11489280462265014,
+          "saved_ms": 0.09277440309524537
+        },
+        {
+          "candidate_samples_ms": [
+            0.11509759426116943,
+            0.11489280462265014,
+            0.11489280462265014,
+            0.1146880030632019,
+            0.11509759426116943,
+            0.1146880030632019,
+            0.1146880030632019
+          ],
+          "candidate_ms": 0.11489280462265014,
+          "baseline_samples_ms": [
+            0.2076672077178955,
+            0.20787200927734376,
+            0.208076810836792,
+            0.2076672077178955,
+            0.2076672077178955,
+            0.20787200927734376,
+            0.2076672077178955
+          ],
+          "baseline_ms": 0.2076672077178955,
+          "saved_ms": 0.09277440309524537
+        }
+      ],
+      "median_saved_ms": 0.09246719479560853,
+      "RNG_unchanged": true,
+      "restored_original_bitwise": true,
+      "metadata": {
+        "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+        "original_grid": [
+          3,
+          320,
+          2
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "original_function_and_all_descriptor_bytes_except_owned_starts_preserved": true,
+        "only_owned_padded_Torch_views_bound": true,
+        "no_argument_bytes_addresses_or_offsets_exported": true
+      },
+      "timing_is_GEMM_graph_only_excludes_gather": true,
+      "full_FFN_and_model_and_video_unverified": true
+    },
+    {
+      "shape": [
+        10240,
+        5120,
+        640
+      ],
+      "supported": true,
+      "row_axis": 1,
+      "axis_trials": [
+        {
+          "axis": 0,
+          "owned_half_and_other_rows_and_padding_passed": false
+        },
+        {
+          "axis": 1,
+          "owned_half_and_other_rows_and_padding_passed": true
+        }
+      ],
+      "cases": [
+        {
+          "case": "initial",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_weights_and_bias",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_weights",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "restored",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_samples_ms": [
+            0.3008512020111084,
+            0.30023679733276365,
+            0.30023679733276365,
+            0.3004415988922119,
+            0.3004415988922119,
+            0.3004415988922119,
+            0.2994175910949707
+          ],
+          "baseline_ms": 0.3004415988922119,
+          "candidate_samples_ms": [
+            0.15872000455856322,
+            0.15851520299911498,
+            0.15831040143966674,
+            0.15831040143966674,
+            0.15831040143966674,
+            0.15831040143966674,
+            0.15831040143966674
+          ],
+          "candidate_ms": 0.15831040143966674,
+          "saved_ms": 0.14213119745254515
+        },
+        {
+          "candidate_samples_ms": [
+            0.15831040143966674,
+            0.15851520299911498,
+            0.15851520299911498,
+            0.15851520299911498,
+            0.15851520299911498,
+            0.15851520299911498,
+            0.15851520299911498
+          ],
+          "candidate_ms": 0.15851520299911498,
+          "baseline_samples_ms": [
+            0.3004415988922119,
+            0.3082240104675293,
+            0.30801920890808104,
+            0.30842878818511965,
+            0.3082240104675293,
+            0.3078144073486328,
+            0.30801920890808104
+          ],
+          "baseline_ms": 0.30801920890808104,
+          "saved_ms": 0.14950400590896606
+        },
+        {
+          "baseline_samples_ms": [
+            0.3086335897445679,
+            0.30883839130401614,
+            0.30801920890808104,
+            0.3082240104675293,
+            0.30801920890808104,
+            0.3082240104675293,
+            0.30842878818511965
+          ],
+          "baseline_ms": 0.3082240104675293,
+          "candidate_samples_ms": [
+            0.17182719707489014,
+            0.1716223955154419,
+            0.17141760587692262,
+            0.1716223955154419,
+            0.17182719707489014,
+            0.17121280431747438,
+            0.17182719707489014
+          ],
+          "candidate_ms": 0.1716223955154419,
+          "saved_ms": 0.1366016149520874
+        },
+        {
+          "candidate_samples_ms": [
+            0.17203199863433838,
+            0.17182719707489014,
+            0.17182719707489014,
+            0.17121280431747438,
+            0.1716223955154419,
+            0.17141760587692262,
+            0.17182719707489014
+          ],
+          "candidate_ms": 0.17182719707489014,
+          "baseline_samples_ms": [
+            0.32194559574127196,
+            0.32194559574127196,
+            0.32194559574127196,
+            0.32194559574127196,
+            0.32194559574127196,
+            0.32194559574127196,
+            0.32194559574127196
+          ],
+          "baseline_ms": 0.32194559574127196,
+          "saved_ms": 0.15011839866638182
+        },
+        {
+          "baseline_samples_ms": [
+            0.32194559574127196,
+            0.32235519886016845,
+            0.3221503973007202,
+            0.3215359926223755,
+            0.32194559574127196,
+            0.32235519886016845,
+            0.3215359926223755
+          ],
+          "baseline_ms": 0.32194559574127196,
+          "candidate_samples_ms": [
+            0.17203199863433838,
+            0.17182719707489014,
+            0.17141760587692262,
+            0.17141760587692262,
+            0.17182719707489014,
+            0.17141760587692262,
+            0.17141760587692262
+          ],
+          "candidate_ms": 0.17141760587692262,
+          "saved_ms": 0.15052798986434934
+        },
+        {
+          "candidate_samples_ms": [
+            0.17203199863433838,
+            0.17141760587692262,
+            0.17182719707489014,
+            0.1716223955154419,
+            0.1716223955154419,
+            0.17182719707489014,
+            0.17182719707489014
+          ],
+          "candidate_ms": 0.17182719707489014,
+          "baseline_samples_ms": [
+            0.32235519886016845,
+            0.3221503973007202,
+            0.32194559574127196,
+            0.32235519886016845,
+            0.3221503973007202,
+            0.3221503973007202,
+            0.3221503973007202
+          ],
+          "baseline_ms": 0.3221503973007202,
+          "saved_ms": 0.15032320022583007
+        }
+      ],
+      "median_saved_ms": 0.14981120228767394,
+      "RNG_unchanged": true,
+      "restored_original_bitwise": true,
+      "metadata": {
+        "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+        "original_grid": [
+          40,
+          80,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "original_function_and_all_descriptor_bytes_except_owned_starts_preserved": true,
+        "only_owned_padded_Torch_views_bound": true,
+        "no_argument_bytes_addresses_or_offsets_exported": true
+      },
+      "timing_is_GEMM_graph_only_excludes_gather": true,
+      "full_FFN_and_model_and_video_unverified": true
+    },
+    {
+      "shape": [
+        10240,
+        640,
+        2560
+      ],
+      "supported": true,
+      "row_axis": 1,
+      "axis_trials": [
+        {
+          "axis": 1,
+          "owned_half_and_other_rows_and_padding_passed": true
+        }
+      ],
+      "cases": [
+        {
+          "case": "initial",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_weights_and_bias",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_weights",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "restored",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_samples_ms": [
+            0.16261119842529298,
+            0.16240639686584474,
+            0.16261119842529298,
+            0.16261119842529298,
+            0.16281599998474122,
+            0.16240639686584474,
+            0.1622015953063965
+          ],
+          "baseline_ms": 0.16261119842529298,
+          "candidate_samples_ms": [
+            0.09052159786224365,
+            0.09031680226325989,
+            0.09011200070381165,
+            0.09031680226325989,
+            0.09052159786224365,
+            0.09052159786224365,
+            0.09031680226325989
+          ],
+          "candidate_ms": 0.09031680226325989,
+          "saved_ms": 0.07229439616203309
+        },
+        {
+          "candidate_samples_ms": [
+            0.09072639942169189,
+            0.09031680226325989,
+            0.09031680226325989,
+            0.09031680226325989,
+            0.09011200070381165,
+            0.09052159786224365,
+            0.08970239758491516
+          ],
+          "candidate_ms": 0.09031680226325989,
+          "baseline_samples_ms": [
+            0.1615872025489807,
+            0.1615872025489807,
+            0.16138240098953247,
+            0.16138240098953247,
+            0.16179200410842895,
+            0.16138240098953247,
+            0.16138240098953247
+          ],
+          "baseline_ms": 0.16138240098953247,
+          "saved_ms": 0.07106559872627258
+        },
+        {
+          "baseline_samples_ms": [
+            0.16179200410842895,
+            0.17244160175323486,
+            0.16138240098953247,
+            0.16138240098953247,
+            0.16179200410842895,
+            0.1615872025489807,
+            0.1615872025489807
+          ],
+          "baseline_ms": 0.1615872025489807,
+          "candidate_samples_ms": [
+            0.08970239758491516,
+            0.08908799886703492,
+            0.08929280042648316,
+            0.08929280042648316,
+            0.08970239758491516,
+            0.0894976019859314,
+            0.0894976019859314
+          ],
+          "candidate_ms": 0.0894976019859314,
+          "saved_ms": 0.0720896005630493
+        },
+        {
+          "candidate_samples_ms": [
+            0.0899071991443634,
+            0.08970239758491516,
+            0.08929280042648316,
+            0.08970239758491516,
+            0.08970239758491516,
+            0.0899071991443634,
+            0.0894976019859314
+          ],
+          "candidate_ms": 0.08970239758491516,
+          "baseline_samples_ms": [
+            0.16179200410842895,
+            0.16179200410842895,
+            0.16179200410842895,
+            0.16179200410842895,
+            0.1615872025489807,
+            0.16138240098953247,
+            0.1615872025489807
+          ],
+          "baseline_ms": 0.16179200410842895,
+          "saved_ms": 0.07208960652351379
+        },
+        {
+          "baseline_samples_ms": [
+            0.16179200410842895,
+            0.16179200410842895,
+            0.16179200410842895,
+            0.1615872025489807,
+            0.16179200410842895,
+            0.16179200410842895,
+            0.16424959897994995
+          ],
+          "baseline_ms": 0.16179200410842895,
+          "candidate_samples_ms": [
+            0.09256960153579712,
+            0.09236479997634887,
+            0.09236479997634887,
+            0.09236479997634887,
+            0.09256960153579712,
+            0.09236479997634887,
+            0.09256960153579712
+          ],
+          "candidate_ms": 0.09236479997634887,
+          "saved_ms": 0.06942720413208008
+        },
+        {
+          "candidate_samples_ms": [
+            0.09277439713478089,
+            0.09236479997634887,
+            0.09236479997634887,
+            0.09215999841690063,
+            0.09236479997634887,
+            0.09236479997634887,
+            0.09236479997634887
+          ],
+          "candidate_ms": 0.09236479997634887,
+          "baseline_samples_ms": [
+            0.16547839641571044,
+            0.1652735948562622,
+            0.16506880521774292,
+            0.16547839641571044,
+            0.16547839641571044,
+            0.1652735948562622,
+            0.1652735948562622
+          ],
+          "baseline_ms": 0.1652735948562622,
+          "saved_ms": 0.07290879487991332
+        }
+      ],
+      "median_saved_ms": 0.07208960354328155,
+      "RNG_unchanged": true,
+      "restored_original_bitwise": true,
+      "metadata": {
+        "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+        "original_grid": [
+          5,
+          80,
+          2
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "original_function_and_all_descriptor_bytes_except_owned_starts_preserved": true,
+        "only_owned_padded_Torch_views_bound": true,
+        "no_argument_bytes_addresses_or_offsets_exported": true
+      },
+      "timing_is_GEMM_graph_only_excludes_gather": true,
+      "full_FFN_and_model_and_video_unverified": true
+    },
+    {
+      "shape": [
+        2560,
+        10240,
+        1280
+      ],
+      "supported": true,
+      "row_axis": 1,
+      "axis_trials": [
+        {
+          "axis": 0,
+          "owned_half_and_other_rows_and_padding_passed": false
+        },
+        {
+          "axis": 1,
+          "owned_half_and_other_rows_and_padding_passed": true
+        }
+      ],
+      "cases": [
+        {
+          "case": "initial",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_weights_and_bias",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_weights",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "restored",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_samples_ms": [
+            0.3123199939727783,
+            0.31191039085388184,
+            0.3115008115768433,
+            0.31191039085388184,
+            0.31191039085388184,
+            0.31191039085388184,
+            0.3117055892944336
+          ],
+          "baseline_ms": 0.31191039085388184,
+          "candidate_samples_ms": [
+            0.16281599998474122,
+            0.16117759943008422,
+            0.16138240098953247,
+            0.16117759943008422,
+            0.16138240098953247,
+            0.16138240098953247,
+            0.1615872025489807
+          ],
+          "candidate_ms": 0.16138240098953247,
+          "saved_ms": 0.15052798986434937
+        },
+        {
+          "candidate_samples_ms": [
+            0.1615872025489807,
+            0.16117759943008422,
+            0.16117759943008422,
+            0.16138240098953247,
+            0.16117759943008422,
+            0.16138240098953247,
+            0.16138240098953247
+          ],
+          "candidate_ms": 0.16138240098953247,
+          "baseline_samples_ms": [
+            0.30883839130401614,
+            0.3086335897445679,
+            0.3092479944229126,
+            0.3117055892944336,
+            0.3117055892944336,
+            0.3121151924133301,
+            0.3117055892944336
+          ],
+          "baseline_ms": 0.3117055892944336,
+          "saved_ms": 0.15032318830490113
+        },
+        {
+          "baseline_samples_ms": [
+            0.31191039085388184,
+            0.31191039085388184,
+            0.3117055892944336,
+            0.31191039085388184,
+            0.31191039085388184,
+            0.31293439865112305,
+            0.31293439865112305
+          ],
+          "baseline_ms": 0.31191039085388184,
+          "candidate_samples_ms": [
+            0.16363519430160522,
+            0.16568319797515868,
+            0.16547839641571044,
+            0.16547839641571044,
+            0.16547839641571044,
+            0.16568319797515868,
+            0.16568319797515868
+          ],
+          "candidate_ms": 0.16547839641571044,
+          "saved_ms": 0.1464319944381714
+        },
+        {
+          "candidate_samples_ms": [
+            0.16588799953460692,
+            0.16547839641571044,
+            0.1652735948562622,
+            0.1652735948562622,
+            0.1652735948562622,
+            0.16547839641571044,
+            0.1652735948562622
+          ],
+          "candidate_ms": 0.1652735948562622,
+          "baseline_samples_ms": [
+            0.316211199760437,
+            0.3166208028793335,
+            0.31641600131988523,
+            0.31641600131988523,
+            0.316211199760437,
+            0.31641600131988523,
+            0.316211199760437
+          ],
+          "baseline_ms": 0.31641600131988523,
+          "saved_ms": 0.15114240646362304
+        },
+        {
+          "baseline_samples_ms": [
+            0.3168256044387817,
+            0.31641600131988523,
+            0.3166208028793335,
+            0.3166208028793335,
+            0.3168256044387817,
+            0.31641600131988523,
+            0.31641600131988523
+          ],
+          "baseline_ms": 0.3166208028793335,
+          "candidate_samples_ms": [
+            0.16547839641571044,
+            0.16568319797515868,
+            0.1652735948562622,
+            0.16547839641571044,
+            0.1652735948562622,
+            0.16547839641571044,
+            0.16547839641571044
+          ],
+          "candidate_ms": 0.16547839641571044,
+          "saved_ms": 0.15114240646362304
+        },
+        {
+          "candidate_samples_ms": [
+            0.16568319797515868,
+            0.16547839641571044,
+            0.16568319797515868,
+            0.16547839641571044,
+            0.16547839641571044,
+            0.16547839641571044,
+            0.1652735948562622
+          ],
+          "candidate_ms": 0.16547839641571044,
+          "baseline_samples_ms": [
+            0.3166208028793335,
+            0.31641600131988523,
+            0.3166208028793335,
+            0.31641600131988523,
+            0.31641600131988523,
+            0.3168256044387817,
+            0.3166208028793335
+          ],
+          "baseline_ms": 0.3166208028793335,
+          "saved_ms": 0.15114240646362304
+        }
+      ],
+      "median_saved_ms": 0.15083519816398622,
+      "RNG_unchanged": true,
+      "restored_original_bitwise": true,
+      "metadata": {
+        "kernel_name": "ampere_fp16_s16816gemm_fp16_128x256_ldg8_relu_f2f_stages_64x3_tn",
+        "original_grid": [
+          80,
+          10,
+          1
+        ],
+        "block": [
+          256,
+          1,
+          1
+        ],
+        "original_function_and_all_descriptor_bytes_except_owned_starts_preserved": true,
+        "only_owned_padded_Torch_views_bound": true,
+        "no_argument_bytes_addresses_or_offsets_exported": true
+      },
+      "timing_is_GEMM_graph_only_excludes_gather": true,
+      "full_FFN_and_model_and_video_unverified": true
+    },
+    {
+      "shape": [
+        2560,
+        1280,
+        5120
+      ],
+      "supported": true,
+      "row_axis": 1,
+      "axis_trials": [
+        {
+          "axis": 1,
+          "owned_half_and_other_rows_and_padding_passed": true
+        }
+      ],
+      "cases": [
+        {
+          "case": "initial",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_weights_and_bias",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_weights",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "restored",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_samples_ms": [
+            0.15237120389938355,
+            0.15175679922103882,
+            0.15155199766159058,
+            0.15134719610214234,
+            0.15175679922103882,
+            0.15155199766159058,
+            0.15155199766159058
+          ],
+          "baseline_ms": 0.15155199766159058,
+          "candidate_samples_ms": [
+            0.08765439987182617,
+            0.08724480271339416,
+            0.08765439987182617,
+            0.08765439987182617,
+            0.08744959831237793,
+            0.08744959831237793,
+            0.08765439987182617
+          ],
+          "candidate_ms": 0.08765439987182617,
+          "saved_ms": 0.06389759778976441
+        },
+        {
+          "candidate_samples_ms": [
+            0.08765439987182617,
+            0.08765439987182617,
+            0.08724480271339416,
+            0.08806399703025818,
+            0.08744959831237793,
+            0.08744959831237793,
+            0.08785920143127442
+          ],
+          "candidate_ms": 0.08765439987182617,
+          "baseline_samples_ms": [
+            0.15196160078048707,
+            0.15175679922103882,
+            0.15134719610214234,
+            0.15155199766159058,
+            0.15155199766159058,
+            0.15155199766159058,
+            0.15155199766159058
+          ],
+          "baseline_ms": 0.15155199766159058,
+          "saved_ms": 0.06389759778976441
+        },
+        {
+          "baseline_samples_ms": [
+            0.15175679922103882,
+            0.15155199766159058,
+            0.15175679922103882,
+            0.15175679922103882,
+            0.15155199766159058,
+            0.15175679922103882,
+            0.15175679922103882
+          ],
+          "baseline_ms": 0.15175679922103882,
+          "candidate_samples_ms": [
+            0.08744959831237793,
+            0.08765439987182617,
+            0.08724480271339416,
+            0.08785920143127442,
+            0.08765439987182617,
+            0.08765439987182617,
+            0.08744959831237793
+          ],
+          "candidate_ms": 0.08765439987182617,
+          "saved_ms": 0.06410239934921265
+        },
+        {
+          "candidate_samples_ms": [
+            0.08765439987182617,
+            0.08765439987182617,
+            0.08744959831237793,
+            0.08765439987182617,
+            0.08744959831237793,
+            0.08765439987182617,
+            0.08744959831237793
+          ],
+          "candidate_ms": 0.08765439987182617,
+          "baseline_samples_ms": [
+            0.15278079509735107,
+            0.15155199766159058,
+            0.15155199766159058,
+            0.15155199766159058,
+            0.15175679922103882,
+            0.15155199766159058,
+            0.15155199766159058
+          ],
+          "baseline_ms": 0.15155199766159058,
+          "saved_ms": 0.06389759778976441
+        },
+        {
+          "baseline_samples_ms": [
+            0.15155199766159058,
+            0.15155199766159058,
+            0.15134719610214234,
+            0.15155199766159058,
+            0.15155199766159058,
+            0.15175679922103882,
+            0.1511423945426941
+          ],
+          "baseline_ms": 0.15155199766159058,
+          "candidate_samples_ms": [
+            0.08806399703025818,
+            0.08744959831237793,
+            0.08765439987182617,
+            0.08744959831237793,
+            0.08744959831237793,
+            0.08765439987182617,
+            0.08765439987182617
+          ],
+          "candidate_ms": 0.08765439987182617,
+          "saved_ms": 0.06389759778976441
+        },
+        {
+          "candidate_samples_ms": [
+            0.08785920143127442,
+            0.08744959831237793,
+            0.08785920143127442,
+            0.08724480271339416,
+            0.08765439987182617,
+            0.08744959831237793,
+            0.08765439987182617
+          ],
+          "candidate_ms": 0.08765439987182617,
+          "baseline_samples_ms": [
+            0.15196160078048707,
+            0.15134719610214234,
+            0.15134719610214234,
+            0.15134719610214234,
+            0.1511423945426941,
+            0.15155199766159058,
+            0.15175679922103882
+          ],
+          "baseline_ms": 0.15134719610214234,
+          "saved_ms": 0.06369279623031616
+        }
+      ],
+      "median_saved_ms": 0.06389759778976441,
+      "RNG_unchanged": true,
+      "restored_original_bitwise": true,
+      "metadata": {
+        "kernel_name": "ampere_fp16_s16816gemm_fp16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+        "original_grid": [
+          5,
+          20,
+          2
+        ],
+        "block": [
+          256,
+          1,
+          1
+        ],
+        "original_function_and_all_descriptor_bytes_except_owned_starts_preserved": true,
+        "only_owned_padded_Torch_views_bound": true,
+        "no_argument_bytes_addresses_or_offsets_exported": true
+      },
+      "timing_is_GEMM_graph_only_excludes_gather": true,
+      "full_FFN_and_model_and_video_unverified": true
+    },
+    {
+      "shape": [
+        640,
+        10240,
+        1280
+      ],
+      "supported": false,
+      "reason": "No halved grid axis preserves exact owned row domain on both ranks",
+      "axis_trials": [
+        {
+          "axis": 0,
+          "owned_half_and_other_rows_and_padding_passed": false
+        },
+        {
+          "axis": 2,
+          "owned_half_and_other_rows_and_padding_passed": false
+        }
+      ],
+      "metadata": {
+        "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+        "original_grid": [
+          80,
+          5,
+          2
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "original_function_and_all_descriptor_bytes_except_owned_starts_preserved": true,
+        "only_owned_padded_Torch_views_bound": true,
+        "no_argument_bytes_addresses_or_offsets_exported": true
+      }
+    },
+    {
+      "shape": [
+        640,
+        1280,
+        5120
+      ],
+      "supported": true,
+      "row_axis": 1,
+      "axis_trials": [
+        {
+          "axis": 0,
+          "owned_half_and_other_rows_and_padding_passed": false
+        },
+        {
+          "axis": 1,
+          "owned_half_and_other_rows_and_padding_passed": true
+        }
+      ],
+      "cases": [
+        {
+          "case": "initial",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_weights_and_bias",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_weights",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "restored",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_samples_ms": [
+            0.054067200422286986,
+            0.0536575973033905,
+            0.0536575973033905,
+            0.053452801704406736,
+            0.053452801704406736,
+            0.0536575973033905,
+            0.05324800014495849
+          ],
+          "baseline_ms": 0.0536575973033905,
+          "candidate_samples_ms": [
+            0.04444159865379334,
+            0.04423680007457733,
+            0.04423680007457733,
+            0.04423680007457733,
+            0.04403199851512909,
+            0.04423680007457733,
+            0.04403199851512909
+          ],
+          "candidate_ms": 0.04423680007457733,
+          "saved_ms": 0.009420797228813171
+        },
+        {
+          "candidate_samples_ms": [
+            0.04444159865379334,
+            0.04444159865379334,
+            0.04423680007457733,
+            0.04444159865379334,
+            0.04423680007457733,
+            0.04403199851512909,
+            0.04423680007457733
+          ],
+          "candidate_ms": 0.04423680007457733,
+          "baseline_samples_ms": [
+            0.053862398862838744,
+            0.053452801704406736,
+            0.053452801704406736,
+            0.053452801704406736,
+            0.053452801704406736,
+            0.053452801704406736,
+            0.053452801704406736
+          ],
+          "baseline_ms": 0.053452801704406736,
+          "saved_ms": 0.009216001629829405
+        },
+        {
+          "baseline_samples_ms": [
+            0.05324800014495849,
+            0.053452801704406736,
+            0.053452801704406736,
+            0.053452801704406736,
+            0.05324800014495849,
+            0.053452801704406736,
+            0.053452801704406736
+          ],
+          "baseline_ms": 0.053452801704406736,
+          "candidate_samples_ms": [
+            0.04444159865379334,
+            0.04423680007457733,
+            0.04423680007457733,
+            0.04423680007457733,
+            0.04423680007457733,
+            0.04423680007457733,
+            0.04403199851512909
+          ],
+          "candidate_ms": 0.04423680007457733,
+          "saved_ms": 0.009216001629829405
+        },
+        {
+          "candidate_samples_ms": [
+            0.04444159865379334,
+            0.04423680007457733,
+            0.04423680007457733,
+            0.04464640021324158,
+            0.04423680007457733,
+            0.04423680007457733,
+            0.04423680007457733
+          ],
+          "candidate_ms": 0.04423680007457733,
+          "baseline_samples_ms": [
+            0.053452801704406736,
+            0.05324800014495849,
+            0.0536575973033905,
+            0.053452801704406736,
+            0.053452801704406736,
+            0.053452801704406736,
+            0.053452801704406736
+          ],
+          "baseline_ms": 0.053452801704406736,
+          "saved_ms": 0.009216001629829405
+        },
+        {
+          "baseline_samples_ms": [
+            0.0536575973033905,
+            0.053452801704406736,
+            0.053452801704406736,
+            0.053452801704406736,
+            0.053452801704406736,
+            0.05324800014495849,
+            0.05324800014495849
+          ],
+          "baseline_ms": 0.053452801704406736,
+          "candidate_samples_ms": [
+            0.04444159865379334,
+            0.04444159865379334,
+            0.04423680007457733,
+            0.04423680007457733,
+            0.04444159865379334,
+            0.04444159865379334,
+            0.04423680007457733
+          ],
+          "candidate_ms": 0.04444159865379334,
+          "saved_ms": 0.009011203050613398
+        },
+        {
+          "candidate_samples_ms": [
+            0.04444159865379334,
+            0.04423680007457733,
+            0.04423680007457733,
+            0.04444159865379334,
+            0.04444159865379334,
+            0.04423680007457733,
+            0.04444159865379334
+          ],
+          "candidate_ms": 0.04444159865379334,
+          "baseline_samples_ms": [
+            0.0536575973033905,
+            0.053452801704406736,
+            0.053452801704406736,
+            0.0536575973033905,
+            0.05324800014495849,
+            0.053452801704406736,
+            0.053452801704406736
+          ],
+          "baseline_ms": 0.053452801704406736,
+          "saved_ms": 0.009011203050613398
+        }
+      ],
+      "median_saved_ms": 0.009216001629829405,
+      "RNG_unchanged": true,
+      "restored_original_bitwise": true,
+      "metadata": {
+        "kernel_name": "ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2f_stages_64x4_tn",
+        "original_grid": [
+          10,
+          10,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "original_function_and_all_descriptor_bytes_except_owned_starts_preserved": true,
+        "only_owned_padded_Torch_views_bound": true,
+        "no_argument_bytes_addresses_or_offsets_exported": true
+      },
+      "timing_is_GEMM_graph_only_excludes_gather": true,
+      "full_FFN_and_model_and_video_unverified": true
+    },
+    {
+      "shape": [
+        40960,
+        4096,
+        512
+      ],
+      "supported": true,
+      "row_axis": 0,
+      "axis_trials": [
+        {
+          "axis": 0,
+          "owned_half_and_other_rows_and_padding_passed": true
+        }
+      ],
+      "cases": [
+        {
+          "case": "initial",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_weights_and_bias",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_weights",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "restored",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_samples_ms": [
+            0.7856128215789795,
+            0.7858176231384277,
+            0.7854080200195312,
+            0.7856128215789795,
+            0.7860223770141601,
+            0.7856128215789795,
+            0.7856128215789795
+          ],
+          "baseline_ms": 0.7856128215789795,
+          "candidate_samples_ms": [
+            0.4395008087158203,
+            0.4388864040374756,
+            0.43929600715637207,
+            0.43868160247802734,
+            0.43909120559692383,
+            0.43909120559692383,
+            0.4388864040374756
+          ],
+          "candidate_ms": 0.43909120559692383,
+          "saved_ms": 0.34652161598205566
+        },
+        {
+          "candidate_samples_ms": [
+            0.43929600715637207,
+            0.43929600715637207,
+            0.43929600715637207,
+            0.4388864040374756,
+            0.4388864040374756,
+            0.43909120559692383,
+            0.43868160247802734
+          ],
+          "candidate_ms": 0.43909120559692383,
+          "baseline_samples_ms": [
+            0.8556544303894043,
+            0.8546303749084473,
+            0.8544256210327148,
+            0.8550399780273438,
+            0.8546303749084473,
+            0.8544256210327148,
+            0.8548352241516113
+          ],
+          "baseline_ms": 0.8546303749084473,
+          "saved_ms": 0.41553916931152346
+        },
+        {
+          "baseline_samples_ms": [
+            0.8644607543945313,
+            0.8642560005187988,
+            0.8648703575134278,
+            0.8691712379455566,
+            0.8751104354858399,
+            0.8753151893615723,
+            0.8755200386047364
+          ],
+          "baseline_ms": 0.8691712379455566,
+          "candidate_samples_ms": [
+            0.44994559288024905,
+            0.4497407913208008,
+            0.44953598976135256,
+            0.4497407913208008,
+            0.4497407913208008,
+            0.4491263866424561,
+            0.4491263866424561
+          ],
+          "candidate_ms": 0.4497407913208008,
+          "saved_ms": 0.4194304466247558
+        },
+        {
+          "candidate_samples_ms": [
+            0.44994559288024905,
+            0.44953598976135256,
+            0.44953598976135256,
+            0.44994559288024905,
+            0.4497407913208008,
+            0.44953598976135256,
+            0.44953598976135256
+          ],
+          "candidate_ms": 0.44953598976135256,
+          "baseline_samples_ms": [
+            0.8652799606323243,
+            0.8646656036376953,
+            0.8646656036376953,
+            0.8646656036376953,
+            0.8642560005187988,
+            0.8650752067565918,
+            0.8648703575134278
+          ],
+          "baseline_ms": 0.8646656036376953,
+          "saved_ms": 0.41512961387634273
+        },
+        {
+          "baseline_samples_ms": [
+            0.8681471824645997,
+            0.8677375793457032,
+            0.8683520317077636,
+            0.8687616348266601,
+            0.8685567855834961,
+            0.8683520317077636,
+            0.8685567855834961
+          ],
+          "baseline_ms": 0.8683520317077636,
+          "candidate_samples_ms": [
+            0.4462592124938965,
+            0.44605441093444825,
+            0.44646401405334474,
+            0.445849609375,
+            0.4462592124938965,
+            0.44605441093444825,
+            0.445849609375
+          ],
+          "candidate_ms": 0.44605441093444825,
+          "saved_ms": 0.4222976207733154
+        },
+        {
+          "candidate_samples_ms": [
+            0.4462592124938965,
+            0.4462592124938965,
+            0.4462592124938965,
+            0.44605441093444825,
+            0.4462592124938965,
+            0.44646401405334474,
+            0.44605441093444825
+          ],
+          "candidate_ms": 0.4462592124938965,
+          "baseline_samples_ms": [
+            0.8683520317077636,
+            0.8679424285888672,
+            0.8679424285888672,
+            0.8642560005187988,
+            0.8644607543945313,
+            0.8646656036376953,
+            0.8648703575134278
+          ],
+          "baseline_ms": 0.8648703575134278,
+          "saved_ms": 0.4186111450195313
+        }
+      ],
+      "median_saved_ms": 0.41707515716552734,
+      "RNG_unchanged": true,
+      "restored_original_bitwise": true,
+      "metadata": {
+        "kernel_name": "_ZN7cutlass6KernelI66cutlass_80_tensorop_f16_s16816gemm_relu_f16_128x128_32x5_tn_align8EEvNT_6ParamsE",
+        "original_grid": [
+          2560,
+          4,
+          1
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "original_function_and_all_descriptor_bytes_except_owned_starts_preserved": true,
+        "only_owned_padded_Torch_views_bound": true,
+        "no_argument_bytes_addresses_or_offsets_exported": true
+      },
+      "timing_is_GEMM_graph_only_excludes_gather": true,
+      "full_FFN_and_model_and_video_unverified": true
+    },
+    {
+      "shape": [
+        40960,
+        512,
+        2048
+      ],
+      "supported": true,
+      "row_axis": 1,
+      "axis_trials": [
+        {
+          "axis": 0,
+          "owned_half_and_other_rows_and_padding_passed": false
+        },
+        {
+          "axis": 1,
+          "owned_half_and_other_rows_and_padding_passed": true
+        }
+      ],
+      "cases": [
+        {
+          "case": "initial",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "changed_weights_and_bias",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_weights",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "zero_inputs",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        },
+        {
+          "case": "restored",
+          "full_reconstruction_signedzero_bits": true,
+          "owned_rows_and_unowned_rows_and_padding_passed": true,
+          "owned_addmm_and_F_linear_bitwise": true
+        }
+      ],
+      "pairs": [
+        {
+          "baseline_samples_ms": [
+            0.37068800926208495,
+            0.3704832077026367,
+            0.3704832077026367,
+            0.37068800926208495,
+            0.37068800926208495,
+            0.3704832077026367,
+            0.3708928108215332
+          ],
+          "baseline_ms": 0.37068800926208495,
+          "candidate_samples_ms": [
+            0.19496959447860718,
+            0.1947648048400879,
+            0.19456000328063966,
+            0.1947648048400879,
+            0.1947648048400879,
+            0.1947648048400879,
+            0.1947648048400879
+          ],
+          "candidate_ms": 0.1947648048400879,
+          "saved_ms": 0.17592320442199705
+        },
+        {
+          "candidate_samples_ms": [
+            0.19517439603805542,
+            0.1947648048400879,
+            0.1947648048400879,
+            0.1947648048400879,
+            0.1947648048400879,
+            0.1947648048400879,
+            0.19496959447860718
+          ],
+          "candidate_ms": 0.1947648048400879,
+          "baseline_samples_ms": [
+            0.3708928108215332,
+            0.3708928108215332,
+            0.37068800926208495,
+            0.37068800926208495,
+            0.3708928108215332,
+            0.3713023900985718,
+            0.3708928108215332
+          ],
+          "baseline_ms": 0.3708928108215332,
+          "saved_ms": 0.1761280059814453
+        },
+        {
+          "baseline_samples_ms": [
+            0.3708928108215332,
+            0.37109758853912356,
+            0.37109758853912356,
+            0.37109758853912356,
+            0.3713023900985718,
+            0.37109758853912356,
+            0.3708928108215332
+          ],
+          "baseline_ms": 0.37109758853912356,
+          "candidate_samples_ms": [
+            0.1947648048400879,
+            0.20336639881134033,
+            0.21135358810424804,
+            0.21135358810424804,
+            0.21073920726776124,
+            0.21155838966369628,
+            0.21135358810424804
+          ],
+          "candidate_ms": 0.21135358810424804,
+          "saved_ms": 0.15974400043487552
+        },
+        {
+          "candidate_samples_ms": [
+            0.21094400882720948,
+            0.21073920726776124,
+            0.21094400882720948,
+            0.21073920726776124,
+            0.21094400882720948,
+            0.21073920726776124,
+            0.21032960414886476
+          ],
+          "candidate_ms": 0.21073920726776124,
+          "baseline_samples_ms": [
+            0.3989504098892212,
+            0.3989504098892212,
+            0.39874560832977296,
+            0.3989504098892212,
+            0.40222721099853515,
+            0.4087808132171631,
+            0.40857601165771484
+          ],
+          "baseline_ms": 0.3989504098892212,
+          "saved_ms": 0.18821120262145996
+        },
+        {
+          "baseline_samples_ms": [
+            0.4083712100982666,
+            0.4083712100982666,
+            0.4079616069793701,
+            0.4077568054199219,
+            0.40816640853881836,
+            0.40816640853881836,
+            0.40816640853881836
+          ],
+          "baseline_ms": 0.40816640853881836,
+          "candidate_samples_ms": [
+            0.21626880168914794,
+            0.21565439701080322,
+            0.21565439701080322,
+            0.21544959545135497,
+            0.21544959545135497,
+            0.21544959545135497,
+            0.21524479389190673
+          ],
+          "candidate_ms": 0.21544959545135497,
+          "saved_ms": 0.19271681308746338
+        },
+        {
+          "candidate_samples_ms": [
+            0.21544959545135497,
+            0.21544959545135497,
+            0.21565439701080322,
+            0.21319680213928222,
+            0.21319680213928222,
+            0.21299200057983397,
+            0.21319680213928222
+          ],
+          "candidate_ms": 0.21319680213928222,
+          "baseline_samples_ms": [
+            0.40325121879577636,
+            0.40366082191467284,
+            0.4034560203552246,
+            0.4030464172363281,
+            0.4034560203552246,
+            0.4034560203552246,
+            0.4034560203552246
+          ],
+          "baseline_ms": 0.4034560203552246,
+          "saved_ms": 0.19025921821594238
+        }
+      ],
+      "median_saved_ms": 0.18216960430145263,
+      "RNG_unchanged": true,
+      "restored_original_bitwise": true,
+      "metadata": {
+        "kernel_name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_relu_f2f_stages_32x5_tn",
+        "original_grid": [
+          4,
+          320,
+          2
+        ],
+        "block": [
+          128,
+          1,
+          1
+        ],
+        "original_function_and_all_descriptor_bytes_except_owned_starts_preserved": true,
+        "only_owned_padded_Torch_views_bound": true,
+        "no_argument_bytes_addresses_or_offsets_exported": true
+      },
+      "timing_is_GEMM_graph_only_excludes_gather": true,
+      "full_FFN_and_model_and_video_unverified": true
+    }
+  ],
+  "supported_shapes": 9,
+  "all_supported_cases_bitwise": true,
+  "full_FFN_and_model_and_video_unverified": true,
+  "no_kernel_argument_or_address_exports": true
+}
